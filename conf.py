@@ -41,7 +41,9 @@ except git.exc.InvalidGitRepositoryError:
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['sphinx.ext.githubpages', 'sphinxext.remoteliteralinclude']
+extensions = ['sphinx.ext.githubpages', 'sphinxext.remoteliteralinclude', 'sphinxcontrib.spelling']
+
+spelling_word_list_filename='spelling_wordlist.txt'
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
