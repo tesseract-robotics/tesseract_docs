@@ -23,7 +23,11 @@ curr_path = os.path.abspath('.')
 # The try catch is need because of the subversion tool when it creates the master.
 try:
   repo = git.Repo(curr_path)
-  current_branch = repo.active_branch.name
+  head = repo.head
+  if (head.is_detached):
+    current_branch = str(head.commit)
+  else:
+    current_branch = repo.active_branch.name
 except git.exc.InvalidGitRepositoryError:
   current_branch = ''
 
@@ -123,9 +127,9 @@ html_context = {
     #"wiki_title": "Tesseract",
     "display_github": True,
     "github_user": "ros-industrial-consortium",
-    "github_repo": "tesseract",
+    "github_repo": "tesseract_docs",
     "github_version": current_branch,
-    "conf_py_path": "gh_pages/",
+    "conf_py_path": "",
     "source_suffix": source_suffix,
     "css_files": ['_static/override.css'],
 }
