@@ -25,7 +25,7 @@ try:
   repo = git.Repo(curr_path)
   head = repo.head
   if (head.is_detached):
-    current_branch = head.commit
+    current_branch = str(head.commit)
   else:
     current_branch = repo.active_branch.name
 except git.exc.InvalidGitRepositoryError:
