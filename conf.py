@@ -23,7 +23,11 @@ curr_path = os.path.abspath('.')
 # The try catch is need because of the subversion tool when it creates the master.
 try:
   repo = git.Repo(curr_path)
-  current_branch = repo.active_branch.name
+  head = repo.head
+  if (head.is_detached):
+    current_branch = head.commit
+  elif:
+    current_branch = repo.active_branch.name
 except git.exc.InvalidGitRepositoryError:
   current_branch = ''
 
