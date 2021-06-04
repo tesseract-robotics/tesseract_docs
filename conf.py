@@ -123,9 +123,9 @@ html_context = {
     #"wiki_title": "Tesseract",
     "display_github": True,
     "github_user": "ros-industrial-consortium",
-    "github_repo": "tesseract",
+    "github_repo": "tesseract_docs",
     "github_version": current_branch,
-    "conf_py_path": "gh_pages/",
+    "conf_py_path": "",
     "source_suffix": source_suffix,
     "css_files": ['_static/override.css'],
 }
