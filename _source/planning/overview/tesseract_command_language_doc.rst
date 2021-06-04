@@ -59,7 +59,7 @@ The last component is to create the program which would be sent to the motion pl
 
 Now that the program has been created additional utility function will be discussed.
 
-One useful feature of the Command Language, is it can be serialized to xml and de-serialized from xml.
+One useful feature of the Command Language, is it can be serialized to xml and deserialized from xml.
 
 .. code-block:: c++
 

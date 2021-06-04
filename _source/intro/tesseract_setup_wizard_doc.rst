@@ -35,7 +35,7 @@ Step 1: Start
    tesseract-ignition.tesseract-setup-wizard
 
 .. note:: The Tesseract Setup Wizard contains a toolbar with pages for each component of the SRDF file.
-          To navigate to different pages, you must click on the dark grey background of the tool bar, hold,
+          To navigate to different pages, you must click on the dark gray background of the tool bar, hold,
           and drag you mouse left or right.
 
 
@@ -73,7 +73,7 @@ that in as well.
 * Click, hold, and drag left to move to the next page.
 
 
-Step 3: Generate/Edit Allowed Collison Matrix
+Step 3: Generate/Edit Allowed Collision Matrix
 =============================================
 
 .. image:: /_static/tesseract_setup_wizard_collision_matrix.png
@@ -86,7 +86,7 @@ to each other or are never in collision should be ignored by the Tesseract Colli
 
 * To generate an allowed collision matrix:
 
-  1. Click **GENERATE**. After a couple seconds you should see the table poplulate with your default collision matrix.
+  1. Click **GENERATE**. After a couple seconds you should see the table populate with your default collision matrix.
 
   2. Inspect your collision matrix and ensure that there are no link pairs that should not be disabled for collision checking.
 
@@ -243,7 +243,7 @@ Step 7: Setting OPW Parameters
 
 .. image:: /_static/tesseract_setup_wizard_opw_kinematics.png
 
-OPW is an effecient inverse kinematics solver for robots with parallel bases and spherical wrists. This algorithm
+OPW is an efficient inverse kinematics solver for robots with parallel bases and spherical wrists. This algorithm
 requires 7 measurements from the robot's specification sheet to be defined here. These values will be stored
 in the SRDF and used by the OPW solver.
 

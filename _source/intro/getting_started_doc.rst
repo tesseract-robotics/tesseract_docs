@@ -8,7 +8,7 @@ Before installing Tesseract and it's dependencies, make sure you have the most u
   sudo apt-get update
   sudo apt-get dist-upgrade
 
-Installing ROS Noetic (Optionl)
+Installing ROS Noetic (Optional)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The Robot Operating System (ROS) is an open source set of software libraries and tools that help you
@@ -83,7 +83,7 @@ Installing Dependencies
 Installing Taskflow
 -------------------
 
-Taskflow is a general purpose parallel and heterogenous task programming system.
+Taskflow is a general purpose parallel and heterogeneous task programming system.
 
 You can install taskflow by with the following commands: ::
 
@@ -98,7 +98,7 @@ Clone the repositories in the dependencies.rosinstall file using wstool: ::
 
   wstool init ~/tesseract_ws/src/ ~/tesseract_ws/src/tesseract_planning/dependencies.rosinstall
 
-Installing Debian Dependencies with ROSDep (Optionl)
+Installing Debian Dependencies with ROSDep (Optional)
 ----------------------------------------------------
 
 Run the following command to automatically install all debian dependencies listed in each package.xml file: ::

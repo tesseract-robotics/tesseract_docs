@@ -36,7 +36,7 @@ Tesseract uses the meshes specified in the URDF for collision checking. The URDF
 
 Test your URDF
 """"""""""""""
-It is very important to test your URDF out and make sure things are ok. The ROS URDF packages provide a check_urdf tool. To verify your URDF using the check_urdf tool, follow the instructions `here <http://wiki.ros.org/urdf#Verification>`_.
+It is very important to test your URDF out and make sure things are okay. The ROS URDF packages provide a check_urdf tool. To verify your URDF using the check_urdf tool, follow the instructions `here <http://wiki.ros.org/urdf#Verification>`_.
 
 URDF Examples
 ^^^^^^^^^^^^^
