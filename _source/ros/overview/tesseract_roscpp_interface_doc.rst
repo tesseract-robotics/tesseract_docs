@@ -70,7 +70,7 @@ the translation unit is setup with using-declarations and required strings.
 The primary functionality is in the `run()` method of the class.
 
 * Get parameters from the ROS Parameter Server and pass them into the Tesseract environment (`env_`).
-* Create the environment monitor that understands contact points within the envrionment.
+* Create the environment monitor that understands contact points within the environment.
 * Create an octomap of a cube that is given to the environment monitor.
 
 .. 'literalinclude' directive can be used if developing changes within a local workspace.

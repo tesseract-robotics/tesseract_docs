@@ -30,7 +30,12 @@ Features
 
 #. URDF Version
 
-   * The original implementation of Tesseract interpreted mesh tags different than what is called version 2. It originally converted mesh geometry types to convex hull because there was no way to distinguish different types of meshes. Now in version 2 it supports the shape types (mesh, convex_mesh, sdf_mesh, etc.), therefore in version 2 the mesh tag is now interpreted as a detailed mesh and is no longer converted to a convex hull. To get the same behavior using version 2 change the tag to convex_mesh and set convert equal to true. For backwards compatibility any URDF without a version is assumed version 1 and mesh tags will be converted to convex hulls.
+   * The original implementation of Tesseract interpreted mesh tags different than what is called version 2. It
+     originally converted mesh geometry types to convex hull because there was no way to distinguish different types of
+     meshes. Now in version 2 it supports the shape types (mesh, convex_mesh, sdf_mesh, etc.), therefore in version 2
+     the mesh tag is now interpreted as a detailed mesh and is no longer converted to a convex hull. To get the same
+     behavior using version 2 change the tag to convex_mesh and set convert equal to true. For backwards compatibility
+     any URDF without a version is assumed version 1 and mesh tags will be converted to convex hulls.
 
 Change URDF Version
 ===================
@@ -127,7 +132,7 @@ There are two methods for creating an octomap collision object. The first is to 
    </octomap>
 
 
-This will create an octomap shape type. Each occupied cell is represented by either a box, shere outside, or sphere inside shape.
+This will create an octomap shape type. Each occupied cell is represented by either a box, sphere outside, or sphere inside shape.
 
 .. list-table:: Octomap Element
    :widths: 25 25 50
@@ -141,7 +146,8 @@ This will create an octomap shape type. Each occupied cell is represented by eit
      - Currently three shape types (box, sphere_inside, sphere_outside).
    * - prune
      - Optional
-     - This executes the octree toMaxLikelihood() the prune() method prior to creating shape which will combine adjacent occupied cell into larget cells resulting in fewer shapes.
+     - This executes the octree `toMaxLikelihood()` the `prune()` method prior to creating shape which will combine
+       adjacent occupied cell into target cells resulting in fewer shapes.
 
 .. list-table:: Octree Element
    :widths: 25 25 50
@@ -163,7 +169,7 @@ This will create an octomap shape type. Each occupied cell is represented by eit
      - Description
    * - filename
      - Required
-     - A path to a PCL point clound file.
+     - A path to a PCL point cloud file.
    * - resolution
      - Required
      - The resolution of the octree populated by the provided point cloud
@@ -175,7 +181,8 @@ Create Origin
 
    <origin xyz="0 0 0" rpy="0 0 0" wxyz="1 0 0 0"/>;
 
-This allows the ability to use a quaternion instead of roll, pitch and yaw values. It is acceptable to have both to allow backwards compatability with other parsers, but the quaternion will take preference over rpy.
+This allows the ability to use a quaternion instead of roll, pitch and yaw values. It is acceptable to have both to
+allow backwards compatibility with other parsers, but the quaternion will take preference over rpy.
 
 .. list-table::
    :widths: 25 25 50
@@ -184,7 +191,7 @@ This allows the ability to use a quaternion instead of roll, pitch and yaw value
    * - Parameter
      - Required/Optional
      - Description
-   * - wxyz
+   * - `wxyz`
      - Optional
      - A Quaternion = [w, x, y, z]. It will be normalized on creation.
 
@@ -197,4 +204,4 @@ Acceleration Limits
 
 .. note::
 
-   For backwards compatability acceleration is required. If not provided it is assigned to be 0.5 * velocity.
+   For backwards compatibility acceleration is required. If not provided it is assigned to be 0.5 * velocity.

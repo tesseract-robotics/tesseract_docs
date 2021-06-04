@@ -90,7 +90,7 @@ Example Explanation
 
    .. Note::
 
-      This should be the same as a mesh, but when interperated as the collision object it will be encoded as a signed distance field.
+      This should be the same as a mesh, but when interpreted as the collision object it will be encoded as a signed distance field.
 
    .. rli:: https://raw.githubusercontent.com/steviedale/tesseract/update/tesseract_documentation/tesseract_geometry/examples/create_geometries_example.cpp
       :language: c++
@@ -125,7 +125,7 @@ Example Explanation
 
    .. Note::
 
-      It is benificial to prune the octree prior to creating the tesseract octree shap to simplify
+      It is beneficial to prune the octree prior to creating the tesseract octree shape to simplify
 
    Octree support multiple shape types to represent a cell in the octree.
 

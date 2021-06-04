@@ -53,7 +53,7 @@ CompositeInstruction Class
 
 The `CompositeInstruction` class inherits from the `Instruction` base class. This class allows the user
 to combine multiple `Instruction` objects into one `Instruction`. A `CompositeInstruction` object holds
-a list of instructions and enum indicating the type of ordering for the instuctions (`ORDERED`, `UNORDERED`,
+a list of instructions and enum indicating the type of ordering for the instructions (`ORDERED`, `UNORDERED`,
 `ORDERED_AND_REVERABLE`).
 
 ProcessPlanningRequest Class
@@ -86,7 +86,7 @@ ProcessPlanningServer Class
 The `ProcessPlanningServer` class is responsible for accepting `ProcessPlanningRequest` objects and returning
 the `ProcessPlanningFuture` objects.
 
-The typical workflow for creating a `ProcessPlanningServer` objcet and using it to solve a `ProcessPlanningRequest` is:
+The typical workflow for creating a `ProcessPlanningServer` object and using it to solve a `ProcessPlanningRequest` is:
 
 - Create a `ProcessPlanningServer` object: ::
 
@@ -111,7 +111,7 @@ ProcessPlanningFuture Class
 ---------------------------
 
 The `ProcessPlanningFuture` class is the type that gets returned when the `ProcessPlanningServer` solves a process
-plan. After calling `run()` the `ProcessPlanningServer` asynchonously solves the process plan and initializes the
+plan. After calling `run()` the `ProcessPlanningServer` asynchronously solves the process plan and initializes the
 `ProcessPlanningFuture` object with the process plan results upon completion.
 
 Running the Freespace Example
