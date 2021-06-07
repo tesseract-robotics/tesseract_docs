@@ -74,7 +74,7 @@ that in as well.
 
 
 Step 3: Generate/Edit Allowed Collision Matrix
-=============================================
+==============================================
 
 .. image:: /_static/tesseract_setup_wizard_collision_matrix.png
 

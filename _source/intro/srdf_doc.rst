@@ -11,30 +11,38 @@ Collection of Joints
 """"""""""""""""""""
 A group can be specified as a collection of joints. All the child links of each joint are automatically included in the group.
 
-Collection of Links
-"""""""""""""""""""
-A group can also be specified as a collection of links. All the parent joints of the links are also included in the group.
-
 Serial Chain
 """"""""""""
 A serial chain is specified using the base link and the tip link. The tip link in a chain is the child link of the last joint in the chain. The base link in a chain is the parent link for the first joint in the chain.
 
-Collection of Sub-Groups
-""""""""""""""""""""""""
-A group can also be a collection of groups. E.g., you can define left_arm and right_arm as two groups and then define a new group called both_arms that includes these two groups.
-
-End-Effectors
-^^^^^^^^^^^^^
-Certain groups in a robot can be given a special designation as an end-effector. An end-effector is typically connected to another group (like an arm) through a fixed joint. Note that when specifying groups that are end-effectors, it's important to make sure that there are no common links between the end-effector and the parent group it is connected to.
-
-Self-Collisions
-^^^^^^^^^^^^^^^
-The Default Self-Collision Matrix Generator (part of Setup Assistant) searches for pairs of links on the robot that can safely be disabled from collision checking, decreasing motion planning processing time. These pairs of links are disabled when they are always in collision, never in collision, in collision in the robot's default position or when the links are adjacent to each other on the kinematic chain. The sampling density specifies how many random robot positions to check for self collision. Higher densities require more computation time while lower densities have a higher possibility of disabling pairs that should not be disabled. The default value is 10,000 collision checks. Collision checking is done in parallel to decrease processing time.
-
-Robot Poses
-^^^^^^^^^^^
+Group States
+^^^^^^^^^^^^
 The SRDF can also store fixed configurations of the robot. A typical example of the SRDF in this case is in defining a HOME position for a manipulator. The configuration is stored with a string id, which can be used to recover the configuration later.
+
+Group Tool Center Points
+^^^^^^^^^^^^^^^^^^^^^^^^
+Store fixed tool center point definitions by string id, which can be used to recover the tool center point during operation like planning.
+
+Add OPW Inverse Kinematics Solver
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Add and assign a OPW inverse kinematics solver to an already defined group.
+
+Add ROP Inverse Kinematics Solver
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Add and assign a Robot on Positioner (ROP) inverse kinematics solver to an already defined group. This assumes a custom invserse kinematics solver already exists for the robot and the positioner is to be sample at some resolution to find a larger set of inverse kinematic solutions.
+
+Add REP Inverse Kinematics Solver
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Add and assign a Robot with External Positioner (REP) inverse kinematics solver to an already defined group. This assumes a custom invserse kinematics solver already exists for the robot and the positioner is to be sample at some resolution to find a larger set of inverse kinematic solutions.
+
+Define Collision Margin Data
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+In most industrial applications a single contact margin distance is not sutable because there are objects that constantly work within close proximity. This would limit the contact distance to be smaller than desired for other links allowing all objects to operate close to one another. The Tesseract contact checkers allow for a default margin to be defined along with link pair collision margins elimating this issue. This is configurable from within the SRDF file shown below.
+
+Allowed Collision Matrix
+^^^^^^^^^^^^^^^^^^^^^^^^
+Define link pairs that are allowed to be in collision with each other. This is used during contact checking to avoid checking links that are allowed to be in collision and contact data should not be calculated.
 
 SRDF Documentation
 ^^^^^^^^^^^^^^^^^^
-For information about the syntax for the SRDF, read more details on the `ROS SRDF Wiki page <http://www.ros.org/wiki/srdf>`_.
+For information about the syntax for the Tesseract SRDF, read more details on the `Tesseract SRDF Package page <../core/packages/tesseract_srdf_doc.html>`_.

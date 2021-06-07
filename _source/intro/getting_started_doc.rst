@@ -9,7 +9,7 @@ Before installing Tesseract and it's dependencies, make sure you have the most u
   sudo apt-get dist-upgrade
 
 Installing ROS Noetic (Optional)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The Robot Operating System (ROS) is an open source set of software libraries and tools that help you
 build robot applications. The `tesseract`, `tesseract_planning`, and `tesseract_python` repositories are
@@ -99,7 +99,7 @@ Clone the repositories in the dependencies.rosinstall file using wstool: ::
   wstool init ~/tesseract_ws/src/ ~/tesseract_ws/src/tesseract_planning/dependencies.rosinstall
 
 Installing Debian Dependencies with ROSDep (Optional)
-----------------------------------------------------
+-----------------------------------------------------
 
 Run the following command to automatically install all debian dependencies listed in each package.xml file: ::
 
