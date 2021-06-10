@@ -132,7 +132,7 @@ Specifying a chain is the most common way to specify kinematics group.
 6. Click **ADD GROUP** to add the chain to your list of kinematics groups.
 
 Method 2: Select All Joints
---------------------------
+---------------------------
 
 You can also specify a kinematics group by specifying each joint in the group. To do this:
 
@@ -151,7 +151,7 @@ You can also specify a kinematics group by specifying each joint in the group. T
 7. Once you have added all joints to your group, click **ADD GROUP**.
 
 Method 3: Select All Links
----------------------------
+--------------------------
 
 You can also specify a kinematics group by specifying each link in the group. To do this:
 
