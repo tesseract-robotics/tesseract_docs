@@ -71,11 +71,11 @@ Move to the source directory: ::
 
 Clone Tesseract Planning repository into your workspace: ::
 
-  git clone https://github.com/ros-industrial-consortium/tesseract_planning
+  git clone https://github.com/tesseract-robotics/tesseract_planning
 
 If you are using the Robot Operating System (ROS), you can also clone the Tesseract ROS repository: ::
 
-  git clone https://github.com/ros-industrial-consortium/tesseract_ros
+  git clone https://github.com/tesseract-robotics/tesseract_ros
 
 Installing Dependencies
 ^^^^^^^^^^^^^^^^^^^^^^^

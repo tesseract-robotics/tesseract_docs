@@ -124,7 +124,7 @@ Running the Freespace Example
 The Full Freespace Example
 ==========================
 
-.. rli:: https://raw.githubusercontent.com/ros-industrial-consortium/tesseract_planning/master/tesseract_process_managers/examples/freespace_manager_example.cpp
+.. rli:: https://raw.githubusercontent.com/tesseract-robotics/tesseract_planning/master/tesseract_process_managers/examples/freespace_manager_example.cpp
    :language: c++
 
 Stepping Through the Freespace Example
@@ -135,37 +135,37 @@ Initial Setup
 
 Define resource locator function:
 
-.. rli:: https://raw.githubusercontent.com/ros-industrial-consortium/tesseract_planning/master/tesseract_process_managers/examples/freespace_manager_example.cpp
+.. rli:: https://raw.githubusercontent.com/tesseract-robotics/tesseract_planning/master/tesseract_process_managers/examples/freespace_manager_example.cpp
    :language: c++
    :lines: 20-45
 
 Create resource locator object:
 
-.. rli:: https://raw.githubusercontent.com/ros-industrial-consortium/tesseract_planning/master/tesseract_process_managers/examples/freespace_manager_example.cpp
+.. rli:: https://raw.githubusercontent.com/tesseract-robotics/tesseract_planning/master/tesseract_process_managers/examples/freespace_manager_example.cpp
    :language: c++
    :lines: 52-53
 
 Create environment object:
 
-.. rli:: https://raw.githubusercontent.com/ros-industrial-consortium/tesseract_planning/master/tesseract_process_managers/examples/freespace_manager_example.cpp
+.. rli:: https://raw.githubusercontent.com/tesseract-robotics/tesseract_planning/master/tesseract_process_managers/examples/freespace_manager_example.cpp
    :language: c++
    :lines: 54
 
 Initialize environment with URDF and SRDF files:
 
-.. rli:: https://raw.githubusercontent.com/ros-industrial-consortium/tesseract_planning/master/tesseract_process_managers/examples/freespace_manager_example.cpp
+.. rli:: https://raw.githubusercontent.com/tesseract-robotics/tesseract_planning/master/tesseract_process_managers/examples/freespace_manager_example.cpp
    :language: c++
    :lines: 55-57
 
 Dynamically load in ignition visualizer if exists:
 
-.. rli:: https://raw.githubusercontent.com/ros-industrial-consortium/tesseract_planning/master/tesseract_process_managers/examples/freespace_manager_example.cpp
+.. rli:: https://raw.githubusercontent.com/tesseract-robotics/tesseract_planning/master/tesseract_process_managers/examples/freespace_manager_example.cpp
    :language: c++
    :lines: 60-61
 
 Visualize the environment:
 
-.. rli:: https://raw.githubusercontent.com/ros-industrial-consortium/tesseract_planning/master/tesseract_process_managers/examples/freespace_manager_example.cpp
+.. rli:: https://raw.githubusercontent.com/tesseract-robotics/tesseract_planning/master/tesseract_process_managers/examples/freespace_manager_example.cpp
    :language: c++
    :lines: 63-68
 
@@ -174,19 +174,19 @@ Defining the Process Plan
 
 Create process planning server:
 
-.. rli:: https://raw.githubusercontent.com/ros-industrial-consortium/tesseract_planning/master/tesseract_process_managers/examples/freespace_manager_example.cpp
+.. rli:: https://raw.githubusercontent.com/tesseract-robotics/tesseract_planning/master/tesseract_process_managers/examples/freespace_manager_example.cpp
    :language: c++
    :lines: 71-72
 
 Create process planning request:
 
-.. rli:: https://raw.githubusercontent.com/ros-industrial-consortium/tesseract_planning/master/tesseract_process_managers/examples/freespace_manager_example.cpp
+.. rli:: https://raw.githubusercontent.com/tesseract-robotics/tesseract_planning/master/tesseract_process_managers/examples/freespace_manager_example.cpp
    :language: c++
    :lines: 75-76
 
 Define the program:
 
-.. rli:: https://raw.githubusercontent.com/ros-industrial-consortium/tesseract_planning/master/tesseract_process_managers/examples/freespace_manager_example.cpp
+.. rli:: https://raw.githubusercontent.com/tesseract-robotics/tesseract_planning/master/tesseract_process_managers/examples/freespace_manager_example.cpp
    :language: c++
    :lines: 79-80
 
@@ -195,7 +195,7 @@ Solving the Process Plan
 
 Solve the process plan:
 
-.. rli:: https://raw.githubusercontent.com/ros-industrial-consortium/tesseract_planning/master/tesseract_process_managers/examples/freespace_manager_example.cpp
+.. rli:: https://raw.githubusercontent.com/tesseract-robotics/tesseract_planning/master/tesseract_process_managers/examples/freespace_manager_example.cpp
    :language: c++
    :lines: 86-87
 
@@ -204,6 +204,6 @@ Visualizing Results
 
 Plot the process trajectory:
 
-.. rli:: https://raw.githubusercontent.com/ros-industrial-consortium/tesseract_planning/master/tesseract_process_managers/examples/freespace_manager_example.cpp
+.. rli:: https://raw.githubusercontent.com/tesseract-robotics/tesseract_planning/master/tesseract_process_managers/examples/freespace_manager_example.cpp
    :language: c++
    :lines: 90-94
