@@ -7,7 +7,7 @@ Tesseract ROSCPP Interface
    This tutorial was heavily inspired from `MoveIt! tutorials <https://ros-planning.github.io/moveit_tutorials/doc/move_group_interface/move_group_interface_tutorial.html>`_.
    Credit should be recognized for the tutorial structure and some text content.
 
-For Tesseract, the most common interface will be through ROS with the `tesseract_ros package <https://github.com/ros-industrial-consortium/tesseract_ros>`_.
+For Tesseract, the most common interface will be through ROS with the `tesseract_ros package <https://github.com/tesseract-robotics/tesseract_ros>`_.
 It provides functionality for common operations such as setting joint or pose goals, creating motion plans,
 moving the robot, adding objects into the environment, etc.
 
@@ -17,7 +17,7 @@ If you haven't already done so, make sure you've completed the steps in `Getting
 
 The Launch File
 ---------------
-The entire launch file is `here on GitHub <https://github.com/ros-industrial-consortium/tesseract_ros/blob/master/tesseract_ros_examples/launch/basic_cartesian_example.launch>`_
+The entire launch file is `here on GitHub <https://github.com/tesseract-robotics/tesseract_ros/blob/master/tesseract_ros_examples/launch/basic_cartesian_example.launch>`_
 
 Running the Code
 ----------------
@@ -43,20 +43,20 @@ The entire example code is written from one executable node that links against a
 
 **Executable Node:**
 
-* `basic_cartesian_example_node.cpp <https://github.com/ros-industrial-consortium/tesseract_ros/blob/master/tesseract_ros_examples/src/basic_cartesian_example_node.cpp>`_
+* `basic_cartesian_example_node.cpp <https://github.com/tesseract-robotics/tesseract_ros/blob/master/tesseract_ros_examples/src/basic_cartesian_example_node.cpp>`_
 
 **BasicCartesianExample(...) Class:**
 
-* `basic_cartesian_example.h <https://github.com/ros-industrial-consortium/tesseract_ros/blob/master/tesseract_ros_examples/include/tesseract_ros_examples/basic_cartesian_example.h>`_
-* `basic_cartesian_example.cpp <https://github.com/ros-industrial-consortium/tesseract_ros/blob/master/tesseract_ros_examples/src/basic_cartesian_example.cpp>`_
+* `basic_cartesian_example.h <https://github.com/tesseract-robotics/tesseract_ros/blob/master/tesseract_ros_examples/include/tesseract_ros_examples/basic_cartesian_example.h>`_
+* `basic_cartesian_example.cpp <https://github.com/tesseract-robotics/tesseract_ros/blob/master/tesseract_ros_examples/src/basic_cartesian_example.cpp>`_
 
-Next we step through the code piece by piece. The `basic_cartesian_example_node.cpp <https://github.com/ros-industrial-consortium/tesseract_ros/blob/master/tesseract_ros_examples/src/basic_cartesian_example_node.cpp>`_
+Next we step through the code piece by piece. The `basic_cartesian_example_node.cpp <https://github.com/tesseract-robotics/tesseract_ros/blob/master/tesseract_ros_examples/src/basic_cartesian_example_node.cpp>`_
 initializes ROS, instantiates the `BasicCartesianExample(...)` class, and calls the `run()` method from the class.
 
-.. rli:: https://raw.githubusercontent.com/ros-industrial-consortium/tesseract_ros/master/tesseract_ros_examples/src/basic_cartesian_example_node.cpp
+.. rli:: https://raw.githubusercontent.com/tesseract-robotics/tesseract_ros/master/tesseract_ros_examples/src/basic_cartesian_example_node.cpp
    :language: c++
 
-For the `BasicCartesianExample(...)` class within `basic_cartesian_example.cpp <https://github.com/ros-industrial-consortium/tesseract_ros/blob/master/tesseract_ros_examples/src/basic_cartesian_example.cpp>`_,
+For the `BasicCartesianExample(...)` class within `basic_cartesian_example.cpp <https://github.com/tesseract-robotics/tesseract_ros/blob/master/tesseract_ros_examples/src/basic_cartesian_example.cpp>`_,
 the translation unit is setup with using-declarations and required strings.
 
 .. 'literalinclude' directive can be used if developing changes within a local workspace.

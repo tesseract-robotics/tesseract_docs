@@ -14,24 +14,25 @@ contact distance per object, and perform collision checks.
 Features
 ========
 
-#. Add/Remove collision objects consisting of multiple collision shapes.
-#. Enable/Disable collision objects
-#. Set collision objects transformation
-#. Set contact distance threshold. If two objects are further than this distance they are ignored.
-#. Perform Contact Test with various exit conditions
+.. include:: /_source/core/packages/tesseract_collision_features_doc.rst
 
-   * Exit on first **tesseract::ContactTestType::FIRST**
-   * Store only closest for each collision object **tesseract::ContactTestType::CLOSEST**
-   * Store all contacts for each collision object **tesseract::ContactTestType::ALL**
+Contact Test Types
+==================
 
+.. include:: /_source/core/packages/tesseract_collision_contact_test_types_doc.rst
+
+Available Contact Checkers
+==========================
+
+.. include:: /_source/core/packages/tesseract_collision_available_contact_checkers_doc.rst
 
 Discrete Collision Checker Example
 ==================================
 
-.. rli:: https://raw.githubusercontent.com/ros-industrial-consortium/tesseract/master/tesseract_collision/examples/box_box_example.cpp
+.. rli:: https://raw.githubusercontent.com/tesseract-robotics/tesseract/master/tesseract_collision/examples/box_box_example.cpp
    :language: c++
 
-You can find this example `here <https://github.com/ros-industrial-consortium/tesseract/blob/master/tesseract_collision/examples/box_box_example.cpp>`_.
+You can find this example `here <https://github.com/tesseract-robotics/tesseract/blob/master/tesseract_collision/examples/box_box_example.cpp>`_.
 
 Example Explanation
 -------------------
@@ -39,27 +40,10 @@ Example Explanation
 Create Contact Checker
 ^^^^^^^^^^^^^^^^^^^^^^
 
-.. rli:: https://raw.githubusercontent.com/ros-industrial-consortium/tesseract/master/tesseract_collision/examples/box_box_example.cpp
+.. rli:: https://raw.githubusercontent.com/tesseract-robotics/tesseract/master/tesseract_collision/examples/box_box_example.cpp
    :language: c++
    :start-after: // documentation:start:1:
    :end-before: // documentation:end:1:
-
-There are several available contact checkers.
-
-  * Recommended
-
-    * BulletDiscreteBVHManager
-    * BulletCastBVHManager
-
-  * Alternative
-
-    * BulletDiscreteSimpleManager
-    * BulletCastSimpleManager
-
-  * Beta
-
-    * FCLDiscreteBVHManager
-
 
 Add Collision Objects to Contact Checker
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -67,7 +51,7 @@ Add Collision Objects to Contact Checker
 Add a collision object in a enabled state
 """""""""""""""""""""""""""""""""""""""""
 
-.. rli:: https://raw.githubusercontent.com/ros-industrial-consortium/tesseract/master/tesseract_collision/examples/box_box_example.cpp
+.. rli:: https://raw.githubusercontent.com/tesseract-robotics/tesseract/master/tesseract_collision/examples/box_box_example.cpp
    :language: c++
    :start-after: // documentation:start:2:
    :end-before: // documentation:end:2:
@@ -78,7 +62,7 @@ Add a collision object in a enabled state
 Add collision object in a disabled state
 """"""""""""""""""""""""""""""""""""""""
 
-.. rli:: https://raw.githubusercontent.com/ros-industrial-consortium/tesseract/master/tesseract_collision/examples/box_box_example.cpp
+.. rli:: https://raw.githubusercontent.com/tesseract-robotics/tesseract/master/tesseract_collision/examples/box_box_example.cpp
    :language: c++
    :start-after: // documentation:start:3:
    :end-before: // documentation:end:3:
@@ -86,14 +70,14 @@ Add collision object in a disabled state
 Create convex hull from mesh file
 """""""""""""""""""""""""""""""""
 
-.. rli:: https://raw.githubusercontent.com/ros-industrial-consortium/tesseract/master/tesseract_collision/examples/box_box_example.cpp
+.. rli:: https://raw.githubusercontent.com/tesseract-robotics/tesseract/master/tesseract_collision/examples/box_box_example.cpp
    :language: c++
    :start-after: documentation:start:4:
    :end-before: documentation:end:4:
 
 Add convex hull collision object
 """"""""""""""""""""""""""""""""
-.. rli:: https://raw.githubusercontent.com/ros-industrial-consortium/tesseract/master/tesseract_collision/examples/box_box_example.cpp
+.. rli:: https://raw.githubusercontent.com/tesseract-robotics/tesseract/master/tesseract_collision/examples/box_box_example.cpp
    :language: c++
    :start-after: documentation:start:5:
    :end-before: documentation:end:5:
@@ -101,7 +85,7 @@ Add convex hull collision object
 Set the active collision objects
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. rli:: https://raw.githubusercontent.com/ros-industrial-consortium/tesseract/master/tesseract_collision/examples/box_box_example.cpp
+.. rli:: https://raw.githubusercontent.com/tesseract-robotics/tesseract/master/tesseract_collision/examples/box_box_example.cpp
    :language: c++
    :start-after: documentation:start:6:
    :end-before: documentation:end:6:
@@ -109,7 +93,7 @@ Set the active collision objects
 Set the contact distance threshold
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. rli:: https://raw.githubusercontent.com/ros-industrial-consortium/tesseract/master/tesseract_collision/examples/box_box_example.cpp
+.. rli:: https://raw.githubusercontent.com/tesseract-robotics/tesseract/master/tesseract_collision/examples/box_box_example.cpp
    :language: c++
    :start-after: documentation:start:7:
    :end-before: documentation:end:7:
@@ -117,7 +101,7 @@ Set the contact distance threshold
 Set the collision object's transform
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. rli:: https://raw.githubusercontent.com/ros-industrial-consortium/tesseract/master/tesseract_collision/examples/box_box_example.cpp
+.. rli:: https://raw.githubusercontent.com/tesseract-robotics/tesseract/master/tesseract_collision/examples/box_box_example.cpp
    :language: c++
    :start-after: documentation:start:8:
    :end-before: documentation:end:8:
@@ -129,7 +113,7 @@ Perform collision check
 
    One object is inside another object
 
-.. rli:: https://raw.githubusercontent.com/ros-industrial-consortium/tesseract/master/tesseract_collision/examples/box_box_example.cpp
+.. rli:: https://raw.githubusercontent.com/tesseract-robotics/tesseract/master/tesseract_collision/examples/box_box_example.cpp
    :language: c++
    :start-after: documentation:start:9:
    :end-before: documentation:end:9:
@@ -137,7 +121,7 @@ Perform collision check
 Set the collision object's transform
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. rli:: https://raw.githubusercontent.com/ros-industrial-consortium/tesseract/master/tesseract_collision/examples/box_box_example.cpp
+.. rli:: https://raw.githubusercontent.com/tesseract-robotics/tesseract/master/tesseract_collision/examples/box_box_example.cpp
    :language: c++
    :start-after: documentation:start:10:
    :end-before: documentation:end:10:
@@ -149,7 +133,7 @@ Perform collision check
 
    The objects are outside the contact threshold
 
-.. rli:: https://raw.githubusercontent.com/ros-industrial-consortium/tesseract/master/tesseract_collision/examples/box_box_example.cpp
+.. rli:: https://raw.githubusercontent.com/tesseract-robotics/tesseract/master/tesseract_collision/examples/box_box_example.cpp
    :language: c++
    :start-after: documentation:start:11:
    :end-before: documentation:end:11:
@@ -157,7 +141,7 @@ Perform collision check
 Change contact distance threshold
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. rli:: https://raw.githubusercontent.com/ros-industrial-consortium/tesseract/master/tesseract_collision/examples/box_box_example.cpp
+.. rli:: https://raw.githubusercontent.com/tesseract-robotics/tesseract/master/tesseract_collision/examples/box_box_example.cpp
    :language: c++
    :start-after: // documentation:start:12:
    :end-before: // documentation:end:12:
@@ -170,7 +154,7 @@ Perform collision check
 
    The objects are inside the contact threshold
 
-.. rli:: https://raw.githubusercontent.com/ros-industrial-consortium/tesseract/master/tesseract_collision/examples/box_box_example.cpp
+.. rli:: https://raw.githubusercontent.com/tesseract-robotics/tesseract/master/tesseract_collision/examples/box_box_example.cpp
    :language: c++
    :start-after: // documentation:start:13:
    :end-before: // documentation:end:13:
