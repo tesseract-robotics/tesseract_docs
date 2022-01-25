@@ -9,7 +9,53 @@ understands nothing about connectivity of the object within. It purely allows fo
 user to add objects to the checker, set object transforms, enable/disable objects, set
 contact distance per object, and perform collision checks.
 
+.. Note::
+
+   The contact managers are load as plugins through a yaml config file which is added to the SRDF file.
+
 .. image:: /_static/continuous_first.gif
+
+Contact Manager Plugin Config
+=============================
+
+The contact manager config file has four sections:
+
+==================  ===========
+Section             Description
+==================  ===========
+search_paths        A list of locations to search for libraries. It searches in the order provided.
+search_libraries    A list of libraries to search for classes
+discrete_plugins    The discrete contact manater plugins plugins.
+continuous_plugins  The continuous contact manater plugins plugins.
+==================  ===========
+
+Example Config file:
+
+.. code-block:: yaml
+
+   contact_manager_plugins:
+     search_paths:
+       - /usr/local/lib
+     search_libraries:
+       - tesseract_collision_bullet_factories
+       - tesseract_collision_fcl_factories
+     discrete_plugins:
+       default: BulletDiscreteBVHManager
+       plugins:
+         BulletDiscreteBVHManager:
+           class: BulletDiscreteBVHManagerFactory
+         BulletDiscreteSimpleManager:
+           class: BulletDiscreteSimpleManagerFactory
+         FCLDiscreteBVHManager:
+           class: FCLDiscreteBVHManagerFactory
+     continuous_plugins:
+       default: BulletCastBVHManager
+       plugins:
+         BulletCastBVHManager:
+           class: BulletCastBVHManagerFactory
+         BulletCastSimpleManager:
+           class: BulletCastSimpleManagerFactory
+
 
 Features
 ========

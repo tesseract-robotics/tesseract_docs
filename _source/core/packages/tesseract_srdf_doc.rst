@@ -10,15 +10,23 @@ Tesseract has its own SRDF format which is similar to the one used through ROS, 
 Features
 ========
 
-#. Groups - Groups define collections of links and joints that are used for planning.
-#. Group States - Define a state for a group by name for easy access during operation like planning.
-#. Group Tool Center Points - Define a TCP for a group by name for easy access during operation like planning.
-#. Optimized Inverse Kinematics - Define custom inverse kinematics to be used for a group.
-  * OPW - Ortho-Parallel Basis with Spherical Wrist Inverse Kinematic Solver
-  * ROP - Robot On Positioner (ROP) inverse kinematics solver
-  * REP - Robot with External Positioner (REP) inverse kinematics solver
-#. Collision Margins - Define default collision margin along with link pair collision margin data
-#. Allowed Collisions - Define link pair allowed collisions
+================================  ===========
+Feature                           Description
+================================  ===========
+Groups                            | Groups define collections of links and joints that are used
+                                  | for planning.
+Group States                      | Define a state for a group by name for easy access during
+                                  | operation like planning.
+Group Tool Center Points          | Define a TCP for a group by name for easy access during
+                                  | operation like planning.
+Kinematics Plugin Config          | A config file defining kinematics plugins:
+                                  | (OPW, IKFast, KDL, ROP and REP)
+Contact Manager Plugin Config     | A config file defining contact manager plugins
+Calibration Config                | A config file defining calibration information
+Collision Margins                 | Define default collision margin along with link pair
+                                  | collision margin data
+Allowed Collisions                | Define link pair allowed collisions
+================================  ===========
 
 
 Example File
@@ -74,21 +82,14 @@ Example File
            <tcp name="scanner" xyz="  0   0 0.2" wxyz="1 0 0 0"/>
        </group_tcps>
 
-       <group_opw group="manipulator_chain" a1="0.10000000000000001" a2="-0.13500000000000001" b="0" c1="0.61499999999999999" c2="0.70499999999999996" c3="0.755" c4="0.085000000000000006" offsets="0.000000 0.000000 -1.570796 0.000000 0.000000 0.000000" sign_corrections="1 1 1 1 1 1"/>
+       <!--Groups kinematic plugins -->
+       <kinematics_plugin_config filename="package://tesseract_support/urdf/abb_irb2400_plugins.yaml"/>
 
-       <group_rop group="gantry" solver_name="ROPSolver1">
-         <manipulator group="manipulator" ik_solver="OPWInvKin" reach="2.3"/>
-         <positioner group="positioner" fk_solver="KDLFwdKin">
-           <joint name="joint_axis_1" resolution="0.1"/>
-         </positioner>
-       </group_rop>
+       <!--Contact Managers plugins -->
+       <contact_managers_plugin_config filename="package://tesseract_support/urdf/contact_manager_plugins.yaml"/>
 
-       <group_rep group="gantry" solver_name="REPSolver1">
-         <manipulator group="manipulator" ik_solver="OPWInvKin" reach="2.3"/>
-         <positioner group="positioner" fk_solver="KDLFwdKin">
-           <joint name="joint_axis_1" resolution="0.1"/>
-         </positioner>
-       </group_rep>
+       <!--Calibration config information -->
+       <calibration_config filename="calibration_config.yaml"/>
 
        <collision_margins default_margin="0.025">
          <pair_margin link1="link_6" link2="link_5" margin="0.01"/>
@@ -200,50 +201,69 @@ Store fixed tool center point definitions by string id, which can be used to rec
    </group_tcps>
 
 
-Add OPW Inverse Kinematics Solver
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Add Kinematics Plugin Config
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Add and assign a OPW inverse kinematics solver to an already defined group.
+Add an entry to the SRDF for loading a yaml config file defining the kinematics plugins.
 
-.. image:: /_static/tesseract_setup_wizard_opw_diagram.png
+.. Note::
 
-.. code-block:: xml
-
-   <group_opw group="manipulator_chain" a1="0.10000000000000001" a2="-0.13500000000000001" b="0" c1="0.61499999999999999" c2="0.70499999999999996" c3="0.755" c4="0.085000000000000006" offsets="0.000000 0.000000 -1.570796 0.000000 0.000000 0.000000" sign_corrections="1 1 1 1 1 1"/>
-
-
-Add ROP Inverse Kinematics Solver
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Add and assign a Robot on Positioner (ROP) inverse kinematics solver to an already defined group. This assumes a custom invserse kinematics solver already exists for the robot and the positioner is to be sample at some resolution to find a larger set of inverse kinematic solutions.
-
-Optional Attributes: solver_name and fk_solver
+   Reference the `kinematics documentation <tesseract_kinematics_doc.html#kinematics-plugin-config>`_ on the creation of the yaml file.
 
 .. code-block:: xml
 
-   <group_rop group="gantry" solver_name="REPSolver1">
-     <manipulator group="manipulator" ik_solver="OPWInvKin" reach="2.3"/>
-     <positioner group="positioner" fk_solver="KDLFwdKin">
-       <joint name="joint_axis_1" resolution="0.1"/>
-     </positioner>
-   </group_rop>
+   <kinematics_plugin_config filename="kinematics_plugin_config.yaml"/>
 
 
-Add REP Inverse Kinematics Solver
+Add Contact Manager Plugin Config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Add and assign a Robot with External Positioner (REP) inverse kinematics solver to an already defined group. This assumes a custom invserse kinematics solver already exists for the robot and the positioner is to be sample at some resolution to find a larger set of inverse kinematic solutions.
+Add an entry to the SRDF for loading a yaml config file defining the contact manager plugins.
 
-Optional Attributes: solver_name and fk_solver
+.. Note::
+
+   Reference the `collision documentation <tesseract_collision_doc.html#contact-manager-plugin-config>`_ on the creation of the yaml file.
 
 .. code-block:: xml
 
-   <group_rep group="gantry" solver_name="REPSolver1">
-     <manipulator group="manipulator" ik_solver="OPWInvKin" reach="2.3"/>
-     <positioner group="positioner" fk_solver="KDLFwdKin">
-       <joint name="joint_axis_1" resolution="0.1"/>
-     </positioner>
-   </group_rep>
+   <contact_managers_plugin_config filename="contact_managers_plugin_config.yaml"/>
+
+Add Calibration Config
+^^^^^^^^^^^^^^^^^^^^^^
+
+Add an entry to the SRDF for loading a yaml config file defining the calibration information. The config file defines new origin for joints.
+
+.. code-block:: xml
+
+   <calibration_config filename="calibration_config.yaml"/>
+
+
+Example Config File: `calibration_config.yaml`
+
+.. code-block:: yaml
+
+   calibration:
+     joints:
+       joint_1:
+         position:
+           x: 1
+           y: 2
+           z: 3
+         orientation:
+           x: 0
+           y: 0
+           z: 0
+           w: 1
+       joint_2:
+         position:
+           x: 4
+           y: 5
+           z: 6
+         orientation:
+           x: 0
+           y: 0
+           z: 0
+           w: 1
 
 
 Define Collision Margin Data
