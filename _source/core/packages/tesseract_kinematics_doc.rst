@@ -4,7 +4,9 @@ Tesseract Kinematics Package
 
 This package contains a common interface for Forward and Inverse kinematics for Chain, Tree's and Graphs including implementation using KDL and OPW Kinematics.
 
-The kinematics are load as plugins through a yaml config file which is added to the SRDF file.
+.. Note::
+
+   The kinematics are load as plugins through a yaml config file which is added to the SRDF file.
 
 
 ************************
