@@ -1,0 +1,213 @@
+\hypertarget{classtesseract__scene__graph_1_1OFKTRootNode}{}\doxysection{tesseract\+\_\+scene\+\_\+graph\+::OFKTRoot\+Node Class Reference}
+\label{classtesseract__scene__graph_1_1OFKTRootNode}\index{tesseract\_scene\_graph::OFKTRootNode@{tesseract\_scene\_graph::OFKTRootNode}}
+
+
+{\ttfamily \#include $<$ofkt\+\_\+nodes.\+h$>$}
+
+
+
+Inheritance diagram for tesseract\+\_\+scene\+\_\+graph\+::OFKTRoot\+Node\+:
+% FIG 0
+
+
+Collaboration diagram for tesseract\+\_\+scene\+\_\+graph\+::OFKTRoot\+Node\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+EIGEN\+\_\+\+MAKE\+\_\+\+ALIGNED\+\_\+\+OPERATOR\+\_\+\+NEW \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTRootNode_a565237dda5af1217bcd54ef8fbc574f2}{OFKTRoot\+Node}} (std\+::string link\+\_\+name)
+\begin{DoxyCompactList}\small\item\em This should only be used for the root node of the tree. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTRootNode_a66cc3950d2bb88ddb2179a3eac67b60e}{set\+Parent}} (\mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode}{OFKTNode}} $\ast$parent) override
+\begin{DoxyCompactList}\small\item\em Set the parent node. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTRootNode_ac30baad43c45c6ea02a864b5c4de8ecd}{store\+Joint\+Value}} (double joint\+\_\+value) override
+\begin{DoxyCompactList}\small\item\em Set the nodes joint value if it has one. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTRootNode_a1569c01a71ab2e46a7df946a17c8d67f}{set\+Static\+Transformation}} (Eigen\+::\+Isometry3d static\+\_\+tf) override
+\begin{DoxyCompactList}\small\item\em Set the static transformation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTRootNode_a42945d191fad7fb0f90a570aaf8512b9}{compute\+And\+Store\+Local\+Transformation}} () override
+\begin{DoxyCompactList}\small\item\em Compute and save the local transformation \textquotesingle{}L = S $\ast$ J(\+Joint Value)\textquotesingle{}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTRootNode_add569faf12e6707c4859aee4b3671989}{compute\+And\+Store\+World\+Transformation}} () override
+\begin{DoxyCompactList}\small\item\em Compute and store the nodes world transformation. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTRootNode_a8d6eb376df18a0dbf488bae3629472c2}{update\+World\+Transformation\+Required}} () const override
+\begin{DoxyCompactList}\small\item\em Indicates if an update of the world transformation is required. \end{DoxyCompactList}\item 
+Eigen\+::\+Isometry3d \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTRootNode_a0c71bbb5f19427580753c14b6e8d01fe}{compute\+Local\+Transformation}} (double joint\+\_\+value) const override
+\begin{DoxyCompactList}\small\item\em Compute the local tranformation but do not save. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTRootNode_a04c5cec13fafb90debd7afa7a3c833c4}{OFKTState\+Solver}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTRootNode_a565237dda5af1217bcd54ef8fbc574f2}\label{classtesseract__scene__graph_1_1OFKTRootNode_a565237dda5af1217bcd54ef8fbc574f2}} 
+\index{tesseract\_scene\_graph::OFKTRootNode@{tesseract\_scene\_graph::OFKTRootNode}!OFKTRootNode@{OFKTRootNode}}
+\index{OFKTRootNode@{OFKTRootNode}!tesseract\_scene\_graph::OFKTRootNode@{tesseract\_scene\_graph::OFKTRootNode}}
+\doxysubsubsection{\texorpdfstring{OFKTRootNode()}{OFKTRootNode()}}
+{\footnotesize\ttfamily tesseract\+\_\+scene\+\_\+graph\+::\+OFKTRoot\+Node\+::\+OFKTRoot\+Node (\begin{DoxyParamCaption}\item[{std\+::string}]{link\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+This should only be used for the root node of the tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em link\+\_\+name} & The link name associated with the node \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTRootNode_a42945d191fad7fb0f90a570aaf8512b9}\label{classtesseract__scene__graph_1_1OFKTRootNode_a42945d191fad7fb0f90a570aaf8512b9}} 
+\index{tesseract\_scene\_graph::OFKTRootNode@{tesseract\_scene\_graph::OFKTRootNode}!computeAndStoreLocalTransformation@{computeAndStoreLocalTransformation}}
+\index{computeAndStoreLocalTransformation@{computeAndStoreLocalTransformation}!tesseract\_scene\_graph::OFKTRootNode@{tesseract\_scene\_graph::OFKTRootNode}}
+\doxysubsubsection{\texorpdfstring{computeAndStoreLocalTransformation()}{computeAndStoreLocalTransformation()}}
+{\footnotesize\ttfamily void tesseract\+\_\+scene\+\_\+graph\+::\+OFKTRoot\+Node\+::compute\+And\+Store\+Local\+Transformation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Compute and save the local transformation \textquotesingle{}L = S $\ast$ J(\+Joint Value)\textquotesingle{}. 
+
+This should reset the flag such that \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a8d9c30e9bb4391e058954a8be9cc01d5}{has\+Joint\+Value\+Changed()}} returns false 
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode_a26d0beee2bcf07592b232993d2e42f5c}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTNode}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTRootNode_add569faf12e6707c4859aee4b3671989}\label{classtesseract__scene__graph_1_1OFKTRootNode_add569faf12e6707c4859aee4b3671989}} 
+\index{tesseract\_scene\_graph::OFKTRootNode@{tesseract\_scene\_graph::OFKTRootNode}!computeAndStoreWorldTransformation@{computeAndStoreWorldTransformation}}
+\index{computeAndStoreWorldTransformation@{computeAndStoreWorldTransformation}!tesseract\_scene\_graph::OFKTRootNode@{tesseract\_scene\_graph::OFKTRootNode}}
+\doxysubsubsection{\texorpdfstring{computeAndStoreWorldTransformation()}{computeAndStoreWorldTransformation()}}
+{\footnotesize\ttfamily void tesseract\+\_\+scene\+\_\+graph\+::\+OFKTRoot\+Node\+::compute\+And\+Store\+World\+Transformation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Compute and store the nodes world transformation. 
+
+This should reset the flag such that \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTRootNode_a8d6eb376df18a0dbf488bae3629472c2}{update\+World\+Transformation\+Required()}} returns false 
+
+Reimplemented from \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a19a8ae88ecef3d63f5874321147494bd}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTBase\+Node}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTRootNode_a0c71bbb5f19427580753c14b6e8d01fe}\label{classtesseract__scene__graph_1_1OFKTRootNode_a0c71bbb5f19427580753c14b6e8d01fe}} 
+\index{tesseract\_scene\_graph::OFKTRootNode@{tesseract\_scene\_graph::OFKTRootNode}!computeLocalTransformation@{computeLocalTransformation}}
+\index{computeLocalTransformation@{computeLocalTransformation}!tesseract\_scene\_graph::OFKTRootNode@{tesseract\_scene\_graph::OFKTRootNode}}
+\doxysubsubsection{\texorpdfstring{computeLocalTransformation()}{computeLocalTransformation()}}
+{\footnotesize\ttfamily Eigen\+::\+Isometry3d tesseract\+\_\+scene\+\_\+graph\+::\+OFKTRoot\+Node\+::compute\+Local\+Transformation (\begin{DoxyParamCaption}\item[{double}]{joint\+\_\+value }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Compute the local tranformation but do not save. 
+
+This provides a const method for computing the local transform.
+
+
+\begin{DoxyParams}{Parameters}
+{\em joint\+\_\+value} & The joint value for calculating the local transformation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The local transformation for the provided joint value 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a909b4b722c13ea6e85c40adbe120f87b}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTBase\+Node}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTRootNode_a66cc3950d2bb88ddb2179a3eac67b60e}\label{classtesseract__scene__graph_1_1OFKTRootNode_a66cc3950d2bb88ddb2179a3eac67b60e}} 
+\index{tesseract\_scene\_graph::OFKTRootNode@{tesseract\_scene\_graph::OFKTRootNode}!setParent@{setParent}}
+\index{setParent@{setParent}!tesseract\_scene\_graph::OFKTRootNode@{tesseract\_scene\_graph::OFKTRootNode}}
+\doxysubsubsection{\texorpdfstring{setParent()}{setParent()}}
+{\footnotesize\ttfamily void tesseract\+\_\+scene\+\_\+graph\+::\+OFKTRoot\+Node\+::set\+Parent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode}{OFKTNode}} $\ast$}]{parent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Set the parent node. 
+
+This should indicate that \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTRootNode_a8d6eb376df18a0dbf488bae3629472c2}{update\+World\+Transformation\+Required()}} = true
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & The parent node \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a28a0b85fb901f1caf4f4927ebc3c7b15}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTBase\+Node}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTRootNode_a1569c01a71ab2e46a7df946a17c8d67f}\label{classtesseract__scene__graph_1_1OFKTRootNode_a1569c01a71ab2e46a7df946a17c8d67f}} 
+\index{tesseract\_scene\_graph::OFKTRootNode@{tesseract\_scene\_graph::OFKTRootNode}!setStaticTransformation@{setStaticTransformation}}
+\index{setStaticTransformation@{setStaticTransformation}!tesseract\_scene\_graph::OFKTRootNode@{tesseract\_scene\_graph::OFKTRootNode}}
+\doxysubsubsection{\texorpdfstring{setStaticTransformation()}{setStaticTransformation()}}
+{\footnotesize\ttfamily void tesseract\+\_\+scene\+\_\+graph\+::\+OFKTRoot\+Node\+::set\+Static\+Transformation (\begin{DoxyParamCaption}\item[{Eigen\+::\+Isometry3d}]{static\+\_\+tf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Set the static transformation. 
+
+This should recompute the local transformation and \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTRootNode_a8d6eb376df18a0dbf488bae3629472c2}{update\+World\+Transformation\+Required()}} = true.
+
+
+\begin{DoxyParams}{Parameters}
+{\em static\+\_\+tf} & The new static transformation \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a13009fa15aba352ad70fbf7d6f2882c2}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTBase\+Node}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTRootNode_ac30baad43c45c6ea02a864b5c4de8ecd}\label{classtesseract__scene__graph_1_1OFKTRootNode_ac30baad43c45c6ea02a864b5c4de8ecd}} 
+\index{tesseract\_scene\_graph::OFKTRootNode@{tesseract\_scene\_graph::OFKTRootNode}!storeJointValue@{storeJointValue}}
+\index{storeJointValue@{storeJointValue}!tesseract\_scene\_graph::OFKTRootNode@{tesseract\_scene\_graph::OFKTRootNode}}
+\doxysubsubsection{\texorpdfstring{storeJointValue()}{storeJointValue()}}
+{\footnotesize\ttfamily void tesseract\+\_\+scene\+\_\+graph\+::\+OFKTRoot\+Node\+::store\+Joint\+Value (\begin{DoxyParamCaption}\item[{double}]{joint\+\_\+value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Set the nodes joint value if it has one. 
+
+This should indicate \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a8d9c30e9bb4391e058954a8be9cc01d5}{has\+Joint\+Value\+Changed()}} = true
+
+
+\begin{DoxyParams}{Parameters}
+{\em joint\+\_\+value} & The joint value \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a09bf85c903c7b06af846a994860990f0}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTBase\+Node}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTRootNode_a8d6eb376df18a0dbf488bae3629472c2}\label{classtesseract__scene__graph_1_1OFKTRootNode_a8d6eb376df18a0dbf488bae3629472c2}} 
+\index{tesseract\_scene\_graph::OFKTRootNode@{tesseract\_scene\_graph::OFKTRootNode}!updateWorldTransformationRequired@{updateWorldTransformationRequired}}
+\index{updateWorldTransformationRequired@{updateWorldTransformationRequired}!tesseract\_scene\_graph::OFKTRootNode@{tesseract\_scene\_graph::OFKTRootNode}}
+\doxysubsubsection{\texorpdfstring{updateWorldTransformationRequired()}{updateWorldTransformationRequired()}}
+{\footnotesize\ttfamily bool tesseract\+\_\+scene\+\_\+graph\+::\+OFKTRoot\+Node\+::update\+World\+Transformation\+Required (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Indicates if an update of the world transformation is required. 
+
+This should get set to true when either of the following happen.
+\begin{DoxyItemize}
+\item If \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTRootNode_a66cc3950d2bb88ddb2179a3eac67b60e}{set\+Parent()}} was called
+\item If \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTRootNode_a1569c01a71ab2e46a7df946a17c8d67f}{set\+Static\+Transformation()}} was called
+\end{DoxyItemize}
+
+Note\+: set\+Joint\+Value() is not handle here because that is captured by \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a8d9c30e9bb4391e058954a8be9cc01d5}{has\+Joint\+Value\+Changed()}} \begin{DoxyReturn}{Returns}
+If true, the world transformation need to be recalculated. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_ad0ab4f405a66c8a311e597a3ddc57b82}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTBase\+Node}}.
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTRootNode_a04c5cec13fafb90debd7afa7a3c833c4}\label{classtesseract__scene__graph_1_1OFKTRootNode_a04c5cec13fafb90debd7afa7a3c833c4}} 
+\index{tesseract\_scene\_graph::OFKTRootNode@{tesseract\_scene\_graph::OFKTRootNode}!OFKTStateSolver@{OFKTStateSolver}}
+\index{OFKTStateSolver@{OFKTStateSolver}!tesseract\_scene\_graph::OFKTRootNode@{tesseract\_scene\_graph::OFKTRootNode}}
+\doxysubsubsection{\texorpdfstring{OFKTStateSolver}{OFKTStateSolver}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver}{OFKTState\+Solver}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+tesseract\+\_\+state\+\_\+solver/include/tesseract\+\_\+state\+\_\+solver/ofkt/\mbox{\hyperlink{ofkt__nodes_8h}{ofkt\+\_\+nodes.\+h}}\item 
+tesseract\+\_\+state\+\_\+solver/src/\mbox{\hyperlink{ofkt__nodes_8cpp}{ofkt\+\_\+nodes.\+cpp}}\end{DoxyCompactItemize}

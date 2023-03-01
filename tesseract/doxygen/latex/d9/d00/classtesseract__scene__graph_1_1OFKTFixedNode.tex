@@ -1,0 +1,159 @@
+\hypertarget{classtesseract__scene__graph_1_1OFKTFixedNode}{}\doxysection{tesseract\+\_\+scene\+\_\+graph\+::OFKTFixed\+Node Class Reference}
+\label{classtesseract__scene__graph_1_1OFKTFixedNode}\index{tesseract\_scene\_graph::OFKTFixedNode@{tesseract\_scene\_graph::OFKTFixedNode}}
+
+
+{\ttfamily \#include $<$ofkt\+\_\+nodes.\+h$>$}
+
+
+
+Inheritance diagram for tesseract\+\_\+scene\+\_\+graph\+::OFKTFixed\+Node\+:
+% FIG 0
+
+
+Collaboration diagram for tesseract\+\_\+scene\+\_\+graph\+::OFKTFixed\+Node\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+EIGEN\+\_\+\+MAKE\+\_\+\+ALIGNED\+\_\+\+OPERATOR\+\_\+\+NEW \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTFixedNode_a029e75611f90d63583448f63eb40f096}{OFKTFixed\+Node}} (\mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode}{OFKTNode}} $\ast$parent, std\+::string link\+\_\+name, std\+::string \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aad74bf9891b141c288c96b20caff4dfa}{joint\+\_\+name}}, const Eigen\+::\+Isometry3d \&static\+\_\+tf)
+\item 
+void \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTFixedNode_a734b18b3bfd566e59bf82bdcaf1f0019}{store\+Joint\+Value}} (double joint\+\_\+value) override
+\begin{DoxyCompactList}\small\item\em Set the nodes joint value if it has one. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTFixedNode_a8263084b728064f55a19b19c7bcd72bd}{get\+Joint\+Value}} () const override
+\begin{DoxyCompactList}\small\item\em Get the current joint value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTFixedNode_a18bdb53223fad4b6185a66eb7630e7f7}{set\+Static\+Transformation}} (Eigen\+::\+Isometry3d static\+\_\+tf) override
+\begin{DoxyCompactList}\small\item\em Set the static transformation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTFixedNode_a859993174282115489c6f894da7625b8}{compute\+And\+Store\+Local\+Transformation}} () override
+\begin{DoxyCompactList}\small\item\em Compute and save the local transformation \textquotesingle{}L = S $\ast$ J(\+Joint Value)\textquotesingle{}. \end{DoxyCompactList}\item 
+Eigen\+::\+Isometry3d \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTFixedNode_acd17d4ffea29bbe33dd79ec53a45d04f}{compute\+Local\+Transformation}} (double joint\+\_\+value) const override
+\begin{DoxyCompactList}\small\item\em Compute the local tranformation but do not save. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTFixedNode_a04c5cec13fafb90debd7afa7a3c833c4}{OFKTState\+Solver}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTFixedNode_a029e75611f90d63583448f63eb40f096}\label{classtesseract__scene__graph_1_1OFKTFixedNode_a029e75611f90d63583448f63eb40f096}} 
+\index{tesseract\_scene\_graph::OFKTFixedNode@{tesseract\_scene\_graph::OFKTFixedNode}!OFKTFixedNode@{OFKTFixedNode}}
+\index{OFKTFixedNode@{OFKTFixedNode}!tesseract\_scene\_graph::OFKTFixedNode@{tesseract\_scene\_graph::OFKTFixedNode}}
+\doxysubsubsection{\texorpdfstring{OFKTFixedNode()}{OFKTFixedNode()}}
+{\footnotesize\ttfamily tesseract\+\_\+scene\+\_\+graph\+::\+OFKTFixed\+Node\+::\+OFKTFixed\+Node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode}{OFKTNode}} $\ast$}]{parent,  }\item[{std\+::string}]{link\+\_\+name,  }\item[{std\+::string}]{joint\+\_\+name,  }\item[{const Eigen\+::\+Isometry3d \&}]{static\+\_\+tf }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTFixedNode_a859993174282115489c6f894da7625b8}\label{classtesseract__scene__graph_1_1OFKTFixedNode_a859993174282115489c6f894da7625b8}} 
+\index{tesseract\_scene\_graph::OFKTFixedNode@{tesseract\_scene\_graph::OFKTFixedNode}!computeAndStoreLocalTransformation@{computeAndStoreLocalTransformation}}
+\index{computeAndStoreLocalTransformation@{computeAndStoreLocalTransformation}!tesseract\_scene\_graph::OFKTFixedNode@{tesseract\_scene\_graph::OFKTFixedNode}}
+\doxysubsubsection{\texorpdfstring{computeAndStoreLocalTransformation()}{computeAndStoreLocalTransformation()}}
+{\footnotesize\ttfamily void tesseract\+\_\+scene\+\_\+graph\+::\+OFKTFixed\+Node\+::compute\+And\+Store\+Local\+Transformation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Compute and save the local transformation \textquotesingle{}L = S $\ast$ J(\+Joint Value)\textquotesingle{}. 
+
+This should reset the flag such that \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a8d9c30e9bb4391e058954a8be9cc01d5}{has\+Joint\+Value\+Changed()}} returns false 
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode_a26d0beee2bcf07592b232993d2e42f5c}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTNode}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTFixedNode_acd17d4ffea29bbe33dd79ec53a45d04f}\label{classtesseract__scene__graph_1_1OFKTFixedNode_acd17d4ffea29bbe33dd79ec53a45d04f}} 
+\index{tesseract\_scene\_graph::OFKTFixedNode@{tesseract\_scene\_graph::OFKTFixedNode}!computeLocalTransformation@{computeLocalTransformation}}
+\index{computeLocalTransformation@{computeLocalTransformation}!tesseract\_scene\_graph::OFKTFixedNode@{tesseract\_scene\_graph::OFKTFixedNode}}
+\doxysubsubsection{\texorpdfstring{computeLocalTransformation()}{computeLocalTransformation()}}
+{\footnotesize\ttfamily Eigen\+::\+Isometry3d tesseract\+\_\+scene\+\_\+graph\+::\+OFKTFixed\+Node\+::compute\+Local\+Transformation (\begin{DoxyParamCaption}\item[{double}]{joint\+\_\+value }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Compute the local tranformation but do not save. 
+
+This provides a const method for computing the local transform.
+
+
+\begin{DoxyParams}{Parameters}
+{\em joint\+\_\+value} & The joint value for calculating the local transformation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The local transformation for the provided joint value 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a909b4b722c13ea6e85c40adbe120f87b}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTBase\+Node}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTFixedNode_a8263084b728064f55a19b19c7bcd72bd}\label{classtesseract__scene__graph_1_1OFKTFixedNode_a8263084b728064f55a19b19c7bcd72bd}} 
+\index{tesseract\_scene\_graph::OFKTFixedNode@{tesseract\_scene\_graph::OFKTFixedNode}!getJointValue@{getJointValue}}
+\index{getJointValue@{getJointValue}!tesseract\_scene\_graph::OFKTFixedNode@{tesseract\_scene\_graph::OFKTFixedNode}}
+\doxysubsubsection{\texorpdfstring{getJointValue()}{getJointValue()}}
+{\footnotesize\ttfamily double tesseract\+\_\+scene\+\_\+graph\+::\+OFKTFixed\+Node\+::get\+Joint\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the current joint value. 
+
+\begin{DoxyReturn}{Returns}
+The current joint value 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a8efa646a89820e0ab8330c2ea5d9e112}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTBase\+Node}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTFixedNode_a18bdb53223fad4b6185a66eb7630e7f7}\label{classtesseract__scene__graph_1_1OFKTFixedNode_a18bdb53223fad4b6185a66eb7630e7f7}} 
+\index{tesseract\_scene\_graph::OFKTFixedNode@{tesseract\_scene\_graph::OFKTFixedNode}!setStaticTransformation@{setStaticTransformation}}
+\index{setStaticTransformation@{setStaticTransformation}!tesseract\_scene\_graph::OFKTFixedNode@{tesseract\_scene\_graph::OFKTFixedNode}}
+\doxysubsubsection{\texorpdfstring{setStaticTransformation()}{setStaticTransformation()}}
+{\footnotesize\ttfamily void tesseract\+\_\+scene\+\_\+graph\+::\+OFKTFixed\+Node\+::set\+Static\+Transformation (\begin{DoxyParamCaption}\item[{Eigen\+::\+Isometry3d}]{static\+\_\+tf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Set the static transformation. 
+
+This should recompute the local transformation and \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_ad0ab4f405a66c8a311e597a3ddc57b82}{update\+World\+Transformation\+Required()}} = true.
+
+
+\begin{DoxyParams}{Parameters}
+{\em static\+\_\+tf} & The new static transformation \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a13009fa15aba352ad70fbf7d6f2882c2}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTBase\+Node}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTFixedNode_a734b18b3bfd566e59bf82bdcaf1f0019}\label{classtesseract__scene__graph_1_1OFKTFixedNode_a734b18b3bfd566e59bf82bdcaf1f0019}} 
+\index{tesseract\_scene\_graph::OFKTFixedNode@{tesseract\_scene\_graph::OFKTFixedNode}!storeJointValue@{storeJointValue}}
+\index{storeJointValue@{storeJointValue}!tesseract\_scene\_graph::OFKTFixedNode@{tesseract\_scene\_graph::OFKTFixedNode}}
+\doxysubsubsection{\texorpdfstring{storeJointValue()}{storeJointValue()}}
+{\footnotesize\ttfamily void tesseract\+\_\+scene\+\_\+graph\+::\+OFKTFixed\+Node\+::store\+Joint\+Value (\begin{DoxyParamCaption}\item[{double}]{joint\+\_\+value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Set the nodes joint value if it has one. 
+
+This should indicate \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a8d9c30e9bb4391e058954a8be9cc01d5}{has\+Joint\+Value\+Changed()}} = true
+
+
+\begin{DoxyParams}{Parameters}
+{\em joint\+\_\+value} & The joint value \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a09bf85c903c7b06af846a994860990f0}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTBase\+Node}}.
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTFixedNode_a04c5cec13fafb90debd7afa7a3c833c4}\label{classtesseract__scene__graph_1_1OFKTFixedNode_a04c5cec13fafb90debd7afa7a3c833c4}} 
+\index{tesseract\_scene\_graph::OFKTFixedNode@{tesseract\_scene\_graph::OFKTFixedNode}!OFKTStateSolver@{OFKTStateSolver}}
+\index{OFKTStateSolver@{OFKTStateSolver}!tesseract\_scene\_graph::OFKTFixedNode@{tesseract\_scene\_graph::OFKTFixedNode}}
+\doxysubsubsection{\texorpdfstring{OFKTStateSolver}{OFKTStateSolver}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver}{OFKTState\+Solver}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+tesseract\+\_\+state\+\_\+solver/include/tesseract\+\_\+state\+\_\+solver/ofkt/\mbox{\hyperlink{ofkt__nodes_8h}{ofkt\+\_\+nodes.\+h}}\item 
+tesseract\+\_\+state\+\_\+solver/src/\mbox{\hyperlink{ofkt__nodes_8cpp}{ofkt\+\_\+nodes.\+cpp}}\end{DoxyCompactItemize}

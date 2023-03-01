@@ -1,0 +1,61 @@
+\hypertarget{macros_8h_source}{}\doxysection{macros.\+h}
+\label{macros_8h_source}\index{tesseract\_common/include/tesseract\_common/macros.h@{tesseract\_common/include/tesseract\_common/macros.h}}
+\mbox{\hyperlink{macros_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#ifndef TESSERACT\_COMMON\_MACROS\_H}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define TESSERACT\_COMMON\_MACROS\_H}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{comment}{// clang-\/format off}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#if defined(\_\_GNUC\_\_) || defined(\_\_clang\_\_)}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#define DEPRECATED(X) \_\_attribute\_\_((deprecated(X)))}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#if defined(\_\_clang\_\_)}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#define TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH                                                                                  \(\backslash\)}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{  \_Pragma("{}GCC diagnostic push"{}}) \_Pragma("{}GCC diagnostic ignored \(\backslash\)"{}-\/Wall\(\backslash\)"{}"{})                                           \(\backslash\)}
+\DoxyCodeLine{37      \_Pragma("{}GCC diagnostic ignored \(\backslash\)"{}-\/Wint-\/to-\/pointer-\/cast\(\backslash\)"{}"{})                                                           \(\backslash\)}
+\DoxyCodeLine{38          \_Pragma("{}GCC diagnostic ignored \(\backslash\)"{}-\/Wunused-\/parameter\(\backslash\)"{}"{})                                                          \(\backslash\)}
+\DoxyCodeLine{39              \_Pragma("{}GCC diagnostic ignored \(\backslash\)"{}-\/Winconsistent-\/missing-\/override\(\backslash\)"{}"{})                                     \(\backslash\)}
+\DoxyCodeLine{40                  \_Pragma("{}GCC diagnostic ignored \(\backslash\)"{}-\/Wconversion\(\backslash\)"{}"{})                                                        \(\backslash\)}
+\DoxyCodeLine{41                      \_Pragma("{}GCC diagnostic ignored \(\backslash\)"{}-\/Wfloat-\/conversion\(\backslash\)"{}"{})                                              \(\backslash\)}
+\DoxyCodeLine{42                          \_Pragma("{}GCC diagnostic ignored \(\backslash\)"{}-\/Wmaybe-\/uninitialized\(\backslash\)"{}"{})                                       \(\backslash\)}
+\DoxyCodeLine{43                              \_Pragma("{}GCC diagnostic ignored \(\backslash\)"{}-\/Wunused-\/variable\(\backslash\)"{}"{})                                       \(\backslash\)}
+\DoxyCodeLine{44                                  \_Pragma("{}GCC diagnostic ignored \(\backslash\)"{}-\/Wclass-\/memaccess\(\backslash\)"{}"{})                                   \(\backslash\)}
+\DoxyCodeLine{45                                      \_Pragma("{}GCC diagnostic ignored \(\backslash\)"{}-\/Wsign-\/conversion\(\backslash\)"{}"{})                           \(\backslash\)}
+\DoxyCodeLine{46                                         \_Pragma("{}GCC diagnostic ignored \(\backslash\)"{}-\/Wdeprecated-\/declarations\(\backslash\)"{}"{})}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#define TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH                                                                          \(\backslash\)}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{  \_Pragma("{}GCC diagnostic push"{}}) \_Pragma("{}GCC diagnostic ignored \(\backslash\)"{}-\/Wall\(\backslash\)"{}"{})                                           \(\backslash\)}
+\DoxyCodeLine{50       \_Pragma("{}GCC diagnostic ignored \(\backslash\)"{}-\/Wint-\/to-\/pointer-\/cast\(\backslash\)"{}"{})                                                      \(\backslash\)}
+\DoxyCodeLine{51           \_Pragma("{}GCC diagnostic ignored \(\backslash\)"{}-\/Wunused-\/parameter\(\backslash\)"{}"{})                                                     \(\backslash\)}
+\DoxyCodeLine{52               \_Pragma("{}GCC diagnostic ignored \(\backslash\)"{}-\/Wsuggest-\/override\(\backslash\)"{}"{})                                                 \(\backslash\)}
+\DoxyCodeLine{53                   \_Pragma("{}GCC diagnostic ignored \(\backslash\)"{}-\/Wconversion\(\backslash\)"{}"{})                                                   \(\backslash\)}
+\DoxyCodeLine{54                       \_Pragma("{}GCC diagnostic ignored \(\backslash\)"{}-\/Wfloat-\/conversion\(\backslash\)"{}"{})                                         \(\backslash\)}
+\DoxyCodeLine{55                           \_Pragma("{}GCC diagnostic ignored \(\backslash\)"{}-\/Wmaybe-\/uninitialized\(\backslash\)"{}"{})                                      \(\backslash\)}
+\DoxyCodeLine{56                               \_Pragma("{}GCC diagnostic ignored \(\backslash\)"{}-\/Wunused-\/variable\(\backslash\)"{}"{})                                      \(\backslash\)}
+\DoxyCodeLine{57                                   \_Pragma("{}GCC diagnostic ignored \(\backslash\)"{}-\/Wclass-\/memaccess\(\backslash\)"{}"{})                                  \(\backslash\)}
+\DoxyCodeLine{58                                       \_Pragma("{}GCC diagnostic ignored \(\backslash\)"{}-\/Wsign-\/conversion\(\backslash\)"{}"{})                          \(\backslash\)}
+\DoxyCodeLine{59                                           \_Pragma("{}GCC diagnostic ignored \(\backslash\)"{}-\/Wdeprecated-\/declarations\(\backslash\)"{}"{})}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#define TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP \_Pragma("{}GCC diagnostic pop"{}})}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#elif defined(\_MSC\_VER)}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#define DEPRECATED(X) \_\_declspec(deprecated(X))}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#define TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#pragma message("{}WARNING: You need to implement MACROS for this compiler"{}})}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#define DEPRECATED(X)}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#define TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#define TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#define UNUSED(x) (void)(x)}}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 \textcolor{comment}{// clang-\/format on}}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_COMMON\_MACROS\_H}}
+
+\end{DoxyCode}

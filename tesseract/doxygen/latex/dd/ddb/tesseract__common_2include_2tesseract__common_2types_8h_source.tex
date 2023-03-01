@@ -1,0 +1,224 @@
+\hypertarget{tesseract__common_2include_2tesseract__common_2types_8h_source}{}\doxysection{types.\+h}
+\label{tesseract__common_2include_2tesseract__common_2types_8h_source}\index{tesseract\_common/include/tesseract\_common/types.h@{tesseract\_common/include/tesseract\_common/types.h}}
+\mbox{\hyperlink{tesseract__common_2include_2tesseract__common_2types_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#ifndef TESSERACT\_COMMON\_TYPES\_H}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define TESSERACT\_COMMON\_TYPES\_H}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{macros_8h}{tesseract\_common/macros.h}}>}}
+\DoxyCodeLine{30 \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include <boost/serialization/access.hpp>}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include <Eigen/Core>}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include <Eigen/Geometry>}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#include <unordered\_map>}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#include <boost/filesystem.hpp>}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#include <yaml-\/cpp/yaml.h>}}
+\DoxyCodeLine{40 \mbox{\hyperlink{namespaceTESSERACT__COMMON__IGNORE__WARNINGS__POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{kinematic__limits_8h}{tesseract\_common/kinematic\_limits.h}}>}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__common}{tesseract\_common}}}
+\DoxyCodeLine{45 \{}
+\DoxyCodeLine{47 \textcolor{keyword}{namespace }fs = boost::filesystem;}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{50 \textcolor{keyword}{using }\mbox{\hyperlink{namespacetesseract__common_a000d15c3ab8d8ba4ebdaae64153b053a}{AlignedVector}} = std::vector<T, Eigen::aligned\_allocator<T>>;}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{keyword}{template} <\textcolor{keyword}{typename} Key, \textcolor{keyword}{typename} Value>}
+\DoxyCodeLine{53 \textcolor{keyword}{using }\mbox{\hyperlink{namespacetesseract__common_a2c5a4b6149060671cf8c3f9d15ef58c4}{AlignedMap}} = std::map<Key, Value, std::less<Key>, Eigen::aligned\_allocator<std::pair<const Key, Value>>>;}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{keyword}{template} <\textcolor{keyword}{typename} Key, \textcolor{keyword}{typename} Value>}
+\DoxyCodeLine{56 \textcolor{keyword}{using }\mbox{\hyperlink{namespacetesseract__common_a85a5c73ede3e67335c3e09f9f3bc33a3}{AlignedUnorderedMap}} = std::unordered\_map<Key,}
+\DoxyCodeLine{57                                                Value,}
+\DoxyCodeLine{58                                                std::hash<Key>,}
+\DoxyCodeLine{59                                                std::equal\_to<Key>,}
+\DoxyCodeLine{60                                                Eigen::aligned\_allocator<std::pair<const Key, Value>>>;}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \textcolor{keyword}{using }\mbox{\hyperlink{namespacetesseract__common_a94d9921fc7ed323609ac57d06f939cb6}{VectorIsometry3d}} = \mbox{\hyperlink{namespacetesseract__common_a000d15c3ab8d8ba4ebdaae64153b053a}{AlignedVector<Eigen::Isometry3d>}};}
+\DoxyCodeLine{63 \textcolor{keyword}{using }\mbox{\hyperlink{namespacetesseract__common_a7f208ea8b9c62f41c593647319d56f37}{VectorVector4d}} = \mbox{\hyperlink{namespacetesseract__common_a000d15c3ab8d8ba4ebdaae64153b053a}{AlignedVector<Eigen::Vector4d>}};}
+\DoxyCodeLine{64 \textcolor{keyword}{using }\mbox{\hyperlink{namespacetesseract__common_af89ed6517f4c84bdb2b037bb40f7d9d9}{VectorVector3d}} = std::vector<Eigen::Vector3d>;}
+\DoxyCodeLine{65 \textcolor{keyword}{using }\mbox{\hyperlink{namespacetesseract__common_ac60e1af30f961fc086b69e330c6434d4}{VectorVector2d}} = \mbox{\hyperlink{namespacetesseract__common_a000d15c3ab8d8ba4ebdaae64153b053a}{AlignedVector<Eigen::Vector2d>}};}
+\DoxyCodeLine{66 \textcolor{keyword}{using }\mbox{\hyperlink{namespacetesseract__common_a67bde3cb7bb235f0f61c370ef8bc74d8}{TransformMap}} = \mbox{\hyperlink{namespacetesseract__common_a2c5a4b6149060671cf8c3f9d15ef58c4}{AlignedMap<std::string, Eigen::Isometry3d>}};}
+\DoxyCodeLine{67 \textcolor{keyword}{using }\mbox{\hyperlink{namespacetesseract__common_a917718f518f98714fce17e831ec1ea11}{Toolpath}} = \mbox{\hyperlink{namespacetesseract__common_a000d15c3ab8d8ba4ebdaae64153b053a}{AlignedVector<VectorIsometry3d>}};}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \textcolor{keyword}{using }\mbox{\hyperlink{namespacetesseract__common_a431ff65777ee0bed71e7671390638244}{TrajArray}} = Eigen::Matrix<double, Eigen::Dynamic, Eigen::Dynamic, Eigen::RowMajor>;}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 \textcolor{keyword}{using }\mbox{\hyperlink{namespacetesseract__common_a5b28b7ae665b374a7ca166d496f648ce}{LinkNamesPair}} = std::pair<std::string, std::string>;}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \textcolor{keyword}{struct }\mbox{\hyperlink{structtesseract__common_1_1PairHash}{PairHash}}}
+\DoxyCodeLine{74 \{}
+\DoxyCodeLine{75   std::size\_t \mbox{\hyperlink{structtesseract__common_1_1PairHash_a70062519b69d39bb67e47bee8b1439be}{operator()}}(\textcolor{keyword}{const} \mbox{\hyperlink{namespacetesseract__common_a5b28b7ae665b374a7ca166d496f648ce}{LinkNamesPair}}\& pair) \textcolor{keyword}{const};}
+\DoxyCodeLine{76 \};}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{86 \mbox{\hyperlink{namespacetesseract__common_a5b28b7ae665b374a7ca166d496f648ce}{LinkNamesPair}} \mbox{\hyperlink{namespacetesseract__common_a11bc9620a27eede3300420410e0b4a7a}{makeOrderedLinkPair}}(\textcolor{keyword}{const} std::string\& link\_name1, \textcolor{keyword}{const} std::string\& link\_name2);}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{89 \textcolor{comment}{// NOLINTNEXTLINE}}
+\DoxyCodeLine{90 \textcolor{keyword}{struct }\mbox{\hyperlink{structtesseract__common_1_1PluginInfo}{PluginInfo}}}
+\DoxyCodeLine{91 \{}
+\DoxyCodeLine{93   std::string \mbox{\hyperlink{structtesseract__common_1_1PluginInfo_a799c037060abd59bb3475f16ef19ef6b}{class\_name}};}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{96   YAML::Node \mbox{\hyperlink{structtesseract__common_1_1PluginInfo_a94f240db508f5cc8080598142254ba37}{config}};}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{99   std::string \mbox{\hyperlink{structtesseract__common_1_1PluginInfo_aa252b8584e9994d2cd43aecb0d257ae1}{getConfigString}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101   \textcolor{keywordtype}{bool} \mbox{\hyperlink{structtesseract__common_1_1PluginInfo_aaac23712ef5f658a72271dd193fee546}{operator==}}(\textcolor{keyword}{const} \mbox{\hyperlink{structtesseract__common_1_1PluginInfo}{PluginInfo}}\& rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{102   \textcolor{keywordtype}{bool} \mbox{\hyperlink{structtesseract__common_1_1PluginInfo_acfa36c9f1e857ef847efb1c0d9defaca}{operator!=}}(\textcolor{keyword}{const} \mbox{\hyperlink{structtesseract__common_1_1PluginInfo}{PluginInfo}}\& rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104 \textcolor{keyword}{private}:}
+\DoxyCodeLine{105   \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{structtesseract__common_1_1PluginInfo_ac98d07dd8f7b70e16ccb9a01abf56b9c}{boost::serialization::access}};}
+\DoxyCodeLine{106   \textcolor{keyword}{template} <\textcolor{keyword}{class} Archive>}
+\DoxyCodeLine{107   \textcolor{keywordtype}{void} \mbox{\hyperlink{structtesseract__common_1_1PluginInfo_ab41cac53dc13a7952e4ff58aeb43d8b1}{save}}(Archive\& ar, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} version) \textcolor{keyword}{const};  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109   \textcolor{keyword}{template} <\textcolor{keyword}{class} Archive>}
+\DoxyCodeLine{110   \textcolor{keywordtype}{void} \mbox{\hyperlink{structtesseract__common_1_1PluginInfo_a76eb07bb2a20dc955f6f0f124f364d2f}{load}}(Archive\& ar, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} version);  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112   \textcolor{keyword}{template} <\textcolor{keyword}{class} Archive>}
+\DoxyCodeLine{113   \textcolor{keywordtype}{void} \mbox{\hyperlink{structtesseract__common_1_1PluginInfo_acd114fbde42ddf4aae1f42677dac0f9b}{serialize}}(Archive\& ar, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} version);  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{114 \};}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{117 \textcolor{keyword}{using }\mbox{\hyperlink{namespacetesseract__common_a43d1f6e0418164a6db0e1c447150340e}{PluginInfoMap}} = std::map<std::string, PluginInfo>;}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119 \textcolor{keyword}{struct }\mbox{\hyperlink{structtesseract__common_1_1PluginInfoContainer}{PluginInfoContainer}}}
+\DoxyCodeLine{120 \{}
+\DoxyCodeLine{121   std::string \mbox{\hyperlink{structtesseract__common_1_1PluginInfoContainer_a7e37004869c25acd06cd39295f974c8d}{default\_plugin}};}
+\DoxyCodeLine{122   \mbox{\hyperlink{namespacetesseract__common_a43d1f6e0418164a6db0e1c447150340e}{PluginInfoMap}} \mbox{\hyperlink{structtesseract__common_1_1PluginInfoContainer_a43862b3d071da42423ce25ecf7066e0d}{plugins}};}
+\DoxyCodeLine{123   \textcolor{keywordtype}{void} \mbox{\hyperlink{structtesseract__common_1_1PluginInfoContainer_a11f3aebbf790d117d59d794580e2eda7}{clear}}();}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125   \textcolor{keywordtype}{bool} \mbox{\hyperlink{structtesseract__common_1_1PluginInfoContainer_a9575e34f7d08823bea604e85356a1d72}{operator==}}(\textcolor{keyword}{const} \mbox{\hyperlink{structtesseract__common_1_1PluginInfoContainer}{PluginInfoContainer}}\& rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{126   \textcolor{keywordtype}{bool} \mbox{\hyperlink{structtesseract__common_1_1PluginInfoContainer_a4c00d5d5456cb8df90b2c94d389ae19b}{operator!=}}(\textcolor{keyword}{const} \mbox{\hyperlink{structtesseract__common_1_1PluginInfoContainer}{PluginInfoContainer}}\& rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128 \textcolor{keyword}{private}:}
+\DoxyCodeLine{129   \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{structtesseract__common_1_1PluginInfoContainer_ac98d07dd8f7b70e16ccb9a01abf56b9c}{boost::serialization::access}};}
+\DoxyCodeLine{130   \textcolor{keyword}{template} <\textcolor{keyword}{class} Archive>}
+\DoxyCodeLine{131   \textcolor{keywordtype}{void} \mbox{\hyperlink{structtesseract__common_1_1PluginInfoContainer_a6c433bb14bf442647f278da4bf85eea1}{serialize}}(Archive\& ar, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} version);  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{132 \};}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{135 \textcolor{keyword}{struct }\mbox{\hyperlink{structtesseract__common_1_1KinematicsPluginInfo}{KinematicsPluginInfo}}}
+\DoxyCodeLine{136 \{}
+\DoxyCodeLine{138   std::set<std::string> \mbox{\hyperlink{structtesseract__common_1_1KinematicsPluginInfo_ad7d83f5d13b1d374720aab5d59c3d055}{search\_paths}};}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{141   std::set<std::string> \mbox{\hyperlink{structtesseract__common_1_1KinematicsPluginInfo_a78883c184e4558ba61255ff7414fce71}{search\_libraries}};}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{144   std::map<std::string, tesseract\_common::PluginInfoContainer> \mbox{\hyperlink{structtesseract__common_1_1KinematicsPluginInfo_acd01f7bd08872e0725df7dc0372748ba}{fwd\_plugin\_infos}};}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{147   std::map<std::string, tesseract\_common::PluginInfoContainer> \mbox{\hyperlink{structtesseract__common_1_1KinematicsPluginInfo_a6175523ac6bad698b2f8172025a0e185}{inv\_plugin\_infos}};}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{150   \textcolor{keywordtype}{void} \mbox{\hyperlink{structtesseract__common_1_1KinematicsPluginInfo_a111afeca17089b492a728e3f53d4fb2d}{insert}}(\textcolor{keyword}{const} \mbox{\hyperlink{structtesseract__common_1_1KinematicsPluginInfo}{KinematicsPluginInfo}}\& other);}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{153   \textcolor{keywordtype}{void} \mbox{\hyperlink{structtesseract__common_1_1KinematicsPluginInfo_afa07a53eb0ff226cdd88da9d3b184657}{clear}}();}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{156   \textcolor{keywordtype}{bool} \mbox{\hyperlink{structtesseract__common_1_1KinematicsPluginInfo_a10c0875a3c2708a9394a6654accdd11d}{empty}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{158   \textcolor{comment}{// Yaml Config key}}
+\DoxyCodeLine{159   \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keyword}{const} std::string \mbox{\hyperlink{structtesseract__common_1_1KinematicsPluginInfo_a52737d75fa5a7db043d972b0015818be}{CONFIG\_KEY}}\{ \textcolor{stringliteral}{"{}kinematic\_plugins"{}} \};}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{161   \textcolor{keywordtype}{bool} \mbox{\hyperlink{structtesseract__common_1_1KinematicsPluginInfo_a9e51b028042b108909104cc78c2d5d3b}{operator==}}(\textcolor{keyword}{const} \mbox{\hyperlink{structtesseract__common_1_1KinematicsPluginInfo}{KinematicsPluginInfo}}\& rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{162   \textcolor{keywordtype}{bool} \mbox{\hyperlink{structtesseract__common_1_1KinematicsPluginInfo_adb13acaa6ff5c2007e1c5b8128047451}{operator!=}}(\textcolor{keyword}{const} \mbox{\hyperlink{structtesseract__common_1_1KinematicsPluginInfo}{KinematicsPluginInfo}}\& rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{163 }
+\DoxyCodeLine{164 \textcolor{keyword}{private}:}
+\DoxyCodeLine{165   \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{structtesseract__common_1_1KinematicsPluginInfo_ac98d07dd8f7b70e16ccb9a01abf56b9c}{boost::serialization::access}};}
+\DoxyCodeLine{166   \textcolor{keyword}{template} <\textcolor{keyword}{class} Archive>}
+\DoxyCodeLine{167   \textcolor{keywordtype}{void} \mbox{\hyperlink{structtesseract__common_1_1KinematicsPluginInfo_af330e8d172f35e10c9f323faa1b36983}{serialize}}(Archive\& ar, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} version);  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{168 \};}
+\DoxyCodeLine{169 }
+\DoxyCodeLine{171 \textcolor{keyword}{struct }\mbox{\hyperlink{structtesseract__common_1_1ContactManagersPluginInfo}{ContactManagersPluginInfo}}}
+\DoxyCodeLine{172 \{}
+\DoxyCodeLine{174   std::set<std::string> \mbox{\hyperlink{structtesseract__common_1_1ContactManagersPluginInfo_acebe4a87330fe24b0eb8f44d41c10631}{search\_paths}};}
+\DoxyCodeLine{175 }
+\DoxyCodeLine{177   std::set<std::string> \mbox{\hyperlink{structtesseract__common_1_1ContactManagersPluginInfo_a9618bea0166ab631059215a9fce16294}{search\_libraries}};}
+\DoxyCodeLine{178 }
+\DoxyCodeLine{180   \mbox{\hyperlink{structtesseract__common_1_1PluginInfoContainer}{tesseract\_common::PluginInfoContainer}} \mbox{\hyperlink{structtesseract__common_1_1ContactManagersPluginInfo_ad4e8cec98432f19161b0e29e70235b4d}{discrete\_plugin\_infos}};}
+\DoxyCodeLine{181 }
+\DoxyCodeLine{183   \mbox{\hyperlink{structtesseract__common_1_1PluginInfoContainer}{tesseract\_common::PluginInfoContainer}} \mbox{\hyperlink{structtesseract__common_1_1ContactManagersPluginInfo_acc79d1166c4b4ca623f222bf4c5da9b7}{continuous\_plugin\_infos}};}
+\DoxyCodeLine{184 }
+\DoxyCodeLine{186   \textcolor{keywordtype}{void} \mbox{\hyperlink{structtesseract__common_1_1ContactManagersPluginInfo_ae9772a9c9ee7606f0a156a91a7447c80}{insert}}(\textcolor{keyword}{const} \mbox{\hyperlink{structtesseract__common_1_1ContactManagersPluginInfo}{ContactManagersPluginInfo}}\& other);}
+\DoxyCodeLine{187 }
+\DoxyCodeLine{189   \textcolor{keywordtype}{void} \mbox{\hyperlink{structtesseract__common_1_1ContactManagersPluginInfo_a266c8f02153a88e56d9fc5d79bbb757e}{clear}}();}
+\DoxyCodeLine{190 }
+\DoxyCodeLine{192   \textcolor{keywordtype}{bool} \mbox{\hyperlink{structtesseract__common_1_1ContactManagersPluginInfo_a06fae270dff2e103a58c9ab0ff51410e}{empty}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{193 }
+\DoxyCodeLine{194   \textcolor{comment}{// Yaml Config key}}
+\DoxyCodeLine{195   \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keyword}{const} std::string \mbox{\hyperlink{structtesseract__common_1_1ContactManagersPluginInfo_a79ebab783c331df144500b098cc2e7aa}{CONFIG\_KEY}}\{ \textcolor{stringliteral}{"{}contact\_manager\_plugins"{}} \};}
+\DoxyCodeLine{196 }
+\DoxyCodeLine{197   \textcolor{keywordtype}{bool} \mbox{\hyperlink{structtesseract__common_1_1ContactManagersPluginInfo_ab78e5cc39e5f60943e7eaf9098b50324}{operator==}}(\textcolor{keyword}{const} \mbox{\hyperlink{structtesseract__common_1_1ContactManagersPluginInfo}{ContactManagersPluginInfo}}\& rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{198   \textcolor{keywordtype}{bool} \mbox{\hyperlink{structtesseract__common_1_1ContactManagersPluginInfo_af7468c947e0722f043643eb15a2cad04}{operator!=}}(\textcolor{keyword}{const} \mbox{\hyperlink{structtesseract__common_1_1ContactManagersPluginInfo}{ContactManagersPluginInfo}}\& rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{199 }
+\DoxyCodeLine{200 \textcolor{keyword}{private}:}
+\DoxyCodeLine{201   \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{structtesseract__common_1_1ContactManagersPluginInfo_ac98d07dd8f7b70e16ccb9a01abf56b9c}{boost::serialization::access}};}
+\DoxyCodeLine{202   \textcolor{keyword}{template} <\textcolor{keyword}{class} Archive>}
+\DoxyCodeLine{203   \textcolor{keywordtype}{void} \mbox{\hyperlink{structtesseract__common_1_1ContactManagersPluginInfo_a239de44e3cd4c3ba1e07c1ca8d33e65d}{serialize}}(Archive\& ar, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} version);  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{204 \};}
+\DoxyCodeLine{205 }
+\DoxyCodeLine{207 \textcolor{keyword}{struct }\mbox{\hyperlink{structtesseract__common_1_1TaskComposerPluginInfo}{TaskComposerPluginInfo}}}
+\DoxyCodeLine{208 \{}
+\DoxyCodeLine{210   std::set<std::string> \mbox{\hyperlink{structtesseract__common_1_1TaskComposerPluginInfo_ab45a6c6320dbc898baedbb13c453a27d}{search\_paths}};}
+\DoxyCodeLine{211 }
+\DoxyCodeLine{213   std::set<std::string> \mbox{\hyperlink{structtesseract__common_1_1TaskComposerPluginInfo_ab271a7b9679f22e39177d6788957479a}{search\_libraries}};}
+\DoxyCodeLine{214 }
+\DoxyCodeLine{216   \mbox{\hyperlink{structtesseract__common_1_1PluginInfoContainer}{tesseract\_common::PluginInfoContainer}} \mbox{\hyperlink{structtesseract__common_1_1TaskComposerPluginInfo_aaf5e978f99262c763babb425297ad73a}{executor\_plugin\_infos}};}
+\DoxyCodeLine{217 }
+\DoxyCodeLine{219   \mbox{\hyperlink{structtesseract__common_1_1PluginInfoContainer}{tesseract\_common::PluginInfoContainer}} \mbox{\hyperlink{structtesseract__common_1_1TaskComposerPluginInfo_a298249dc9fd936d7423cdfa3cdd78ac9}{task\_plugin\_infos}};}
+\DoxyCodeLine{220 }
+\DoxyCodeLine{222   \textcolor{keywordtype}{void} \mbox{\hyperlink{structtesseract__common_1_1TaskComposerPluginInfo_a34a2a8ad0c4fcbb9a0d63b070aaddd5a}{insert}}(\textcolor{keyword}{const} \mbox{\hyperlink{structtesseract__common_1_1TaskComposerPluginInfo}{TaskComposerPluginInfo}}\& other);}
+\DoxyCodeLine{223 }
+\DoxyCodeLine{225   \textcolor{keywordtype}{void} \mbox{\hyperlink{structtesseract__common_1_1TaskComposerPluginInfo_a0e4ef622ff82990e83649a32cf9785c9}{clear}}();}
+\DoxyCodeLine{226 }
+\DoxyCodeLine{228   \textcolor{keywordtype}{bool} \mbox{\hyperlink{structtesseract__common_1_1TaskComposerPluginInfo_a07d6ec396947912f8f7603ebd42c2f53}{empty}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{229 }
+\DoxyCodeLine{230   \textcolor{comment}{// Yaml Config key}}
+\DoxyCodeLine{231   \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keyword}{const} std::string \mbox{\hyperlink{structtesseract__common_1_1TaskComposerPluginInfo_a896b27dad511c6604c25c478c733501c}{CONFIG\_KEY}}\{ \textcolor{stringliteral}{"{}task\_composer\_plugins"{}} \};}
+\DoxyCodeLine{232 }
+\DoxyCodeLine{233   \textcolor{keywordtype}{bool} \mbox{\hyperlink{structtesseract__common_1_1TaskComposerPluginInfo_a498ec28be0c5b37113017355f4b039ce}{operator==}}(\textcolor{keyword}{const} \mbox{\hyperlink{structtesseract__common_1_1TaskComposerPluginInfo}{TaskComposerPluginInfo}}\& rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{234   \textcolor{keywordtype}{bool} \mbox{\hyperlink{structtesseract__common_1_1TaskComposerPluginInfo_a65b71c5abb04b007796d92d0675863bb}{operator!=}}(\textcolor{keyword}{const} \mbox{\hyperlink{structtesseract__common_1_1TaskComposerPluginInfo}{TaskComposerPluginInfo}}\& rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{235 }
+\DoxyCodeLine{236 \textcolor{keyword}{private}:}
+\DoxyCodeLine{237   \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{structtesseract__common_1_1TaskComposerPluginInfo_ac98d07dd8f7b70e16ccb9a01abf56b9c}{boost::serialization::access}};}
+\DoxyCodeLine{238   \textcolor{keyword}{template} <\textcolor{keyword}{class} Archive>}
+\DoxyCodeLine{239   \textcolor{keywordtype}{void} \mbox{\hyperlink{structtesseract__common_1_1TaskComposerPluginInfo_afc8e7b85e2db0c71aa781720fffaf90e}{serialize}}(Archive\& ar, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} version);  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{240 \};}
+\DoxyCodeLine{241 }
+\DoxyCodeLine{243 \textcolor{keyword}{struct }\mbox{\hyperlink{structtesseract__common_1_1CalibrationInfo}{CalibrationInfo}}}
+\DoxyCodeLine{244 \{}
+\DoxyCodeLine{245   \textcolor{comment}{// LCOV\_EXCL\_START}}
+\DoxyCodeLine{246   EIGEN\_MAKE\_ALIGNED\_OPERATOR\_NEW}
+\DoxyCodeLine{247   \textcolor{comment}{// LCOV\_EXCL\_STOP}}
+\DoxyCodeLine{248 }
+\DoxyCodeLine{249   \mbox{\hyperlink{structtesseract__common_1_1CalibrationInfo_a075e532353af56a53a98ba7537be7ac2}{CalibrationInfo}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{250 }
+\DoxyCodeLine{256   \mbox{\hyperlink{namespacetesseract__common_a67bde3cb7bb235f0f61c370ef8bc74d8}{tesseract\_common::TransformMap}} \mbox{\hyperlink{structtesseract__common_1_1CalibrationInfo_af24c4ce364f56a5ad94a8748d2ffe7b6}{joints}};}
+\DoxyCodeLine{257 }
+\DoxyCodeLine{259   \textcolor{keywordtype}{void} \mbox{\hyperlink{structtesseract__common_1_1CalibrationInfo_a416719026dce8e08e5873ed91e690ea7}{insert}}(\textcolor{keyword}{const} \mbox{\hyperlink{structtesseract__common_1_1CalibrationInfo}{CalibrationInfo}}\& other);}
+\DoxyCodeLine{260 }
+\DoxyCodeLine{262   \textcolor{keywordtype}{void} \mbox{\hyperlink{structtesseract__common_1_1CalibrationInfo_a8c7307fb6391f3aa8f600c6c20b6820d}{clear}}();}
+\DoxyCodeLine{263 }
+\DoxyCodeLine{265   \textcolor{keywordtype}{bool} \mbox{\hyperlink{structtesseract__common_1_1CalibrationInfo_a2f6bd872001c3cb2d73db7747b21ab82}{empty}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{266 }
+\DoxyCodeLine{267   \textcolor{comment}{// Yaml Config key}}
+\DoxyCodeLine{268   \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keyword}{const} std::string \mbox{\hyperlink{structtesseract__common_1_1CalibrationInfo_a42ce10541c60efddfd41d021679fc135}{CONFIG\_KEY}}\{ \textcolor{stringliteral}{"{}calibration"{}} \};}
+\DoxyCodeLine{269 }
+\DoxyCodeLine{270   \textcolor{keywordtype}{bool} \mbox{\hyperlink{structtesseract__common_1_1CalibrationInfo_a04418abcbe7b59d707050358624aafef}{operator==}}(\textcolor{keyword}{const} \mbox{\hyperlink{structtesseract__common_1_1CalibrationInfo}{CalibrationInfo}}\& rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{271   \textcolor{keywordtype}{bool} \mbox{\hyperlink{structtesseract__common_1_1CalibrationInfo_a71e0220b6fbaaa0f83cb64a6278a0a11}{operator!=}}(\textcolor{keyword}{const} \mbox{\hyperlink{structtesseract__common_1_1CalibrationInfo}{CalibrationInfo}}\& rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{272 }
+\DoxyCodeLine{273 \textcolor{keyword}{private}:}
+\DoxyCodeLine{274   \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{structtesseract__common_1_1CalibrationInfo_ac98d07dd8f7b70e16ccb9a01abf56b9c}{boost::serialization::access}};}
+\DoxyCodeLine{275   \textcolor{keyword}{template} <\textcolor{keyword}{class} Archive>}
+\DoxyCodeLine{276   \textcolor{keywordtype}{void} \mbox{\hyperlink{structtesseract__common_1_1CalibrationInfo_a76365286458653fa09357c7e4e2adc49}{serialize}}(Archive\& ar, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} version);  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{277 \};}
+\DoxyCodeLine{278 \}  \textcolor{comment}{// namespace tesseract\_common}}
+\DoxyCodeLine{279 }
+\DoxyCodeLine{280 \textcolor{preprocessor}{\#include <boost/serialization/export.hpp>}}
+\DoxyCodeLine{281 \textcolor{preprocessor}{\#include <boost/serialization/tracking.hpp>}}
+\DoxyCodeLine{282 BOOST\_CLASS\_EXPORT\_KEY2(\mbox{\hyperlink{structtesseract__common_1_1PluginInfo}{tesseract\_common::PluginInfo}}, \textcolor{stringliteral}{"{}PluginInfo"{}})}
+\DoxyCodeLine{283 BOOST\_CLASS\_EXPORT\_KEY2(\mbox{\hyperlink{namespacetesseract__common}{tesseract\_common}}::PluginInfoContainer, "{}PluginInfoContainer"{})}
+\DoxyCodeLine{284 BOOST\_CLASS\_EXPORT\_KEY2(\mbox{\hyperlink{namespacetesseract__common}{tesseract\_common}}::KinematicsPluginInfo, "{}KinematicsPluginInfo"{})}
+\DoxyCodeLine{285 BOOST\_CLASS\_EXPORT\_KEY2(\mbox{\hyperlink{namespacetesseract__common}{tesseract\_common}}::ContactManagersPluginInfo, "{}ContactManagersPluginInfo"{})}
+\DoxyCodeLine{286 BOOST\_CLASS\_EXPORT\_KEY2(\mbox{\hyperlink{namespacetesseract__common}{tesseract\_common}}::TaskComposerPluginInfo, "{}TaskComposerPluginInfo"{})}
+\DoxyCodeLine{287 BOOST\_CLASS\_EXPORT\_KEY2(\mbox{\hyperlink{namespacetesseract__common}{tesseract\_common}}::CalibrationInfo, "{}CalibrationInfo"{})}
+\DoxyCodeLine{288 }
+\DoxyCodeLine{289 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_COMMON\_TYPES\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,64 @@
+\hypertarget{kdl__utils_8cpp}{}\doxysection{tesseract\+\_\+kinematics/kdl/src/kdl\+\_\+utils.cpp File Reference}
+\label{kdl__utils_8cpp}\index{tesseract\_kinematics/kdl/src/kdl\_utils.cpp@{tesseract\_kinematics/kdl/src/kdl\_utils.cpp}}
+
+
+Tesseract KDL utility functions.  
+
+
+{\ttfamily \#include $<$tesseract\+\_\+kinematics/kdl/kdl\+\_\+utils.\+h$>$}\newline
+Include dependency graph for kdl\+\_\+utils.\+cpp\+:
+% FIG 0
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacetesseract__kinematics}{tesseract\+\_\+kinematics}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespacetesseract__kinematics_a31f7f29dd370fc43ca385827cdc44947}{tesseract\+\_\+kinematics\+::\+KDLTo\+Eigen}} (const KDL\+::\+Frame \&frame, Eigen\+::\+Isometry3d \&\mbox{\hyperlink{collision__core__unit_8cpp_a0711277889ece6b8e49c8ad05d361167}{transform}})
+\begin{DoxyCompactList}\small\item\em Convert KDL\+::\+Frame to Eigen\+::\+Isometry3d. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespacetesseract__kinematics_a3f809ae73e283a469271cb69460079e3}{tesseract\+\_\+kinematics\+::\+Eigen\+To\+KDL}} (const Eigen\+::\+Isometry3d \&\mbox{\hyperlink{collision__core__unit_8cpp_a0711277889ece6b8e49c8ad05d361167}{transform}}, KDL\+::\+Frame \&frame)
+\begin{DoxyCompactList}\small\item\em Convert Eigen\+::\+Isometry3d to KDL\+::\+Frame. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespacetesseract__kinematics_afe07309f1c4d122c337ed9fdc5c92280}{tesseract\+\_\+kinematics\+::\+KDLTo\+Eigen}} (const KDL\+::\+Jacobian \&\mbox{\hyperlink{kinematics__core__unit_8cpp_afd43241933d01af91643a779b829d7a7}{jacobian}}, Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$ matrix)
+\begin{DoxyCompactList}\small\item\em Convert KDL\+::\+Jacobian to Eigen\+::\+Matrix. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespacetesseract__kinematics_ab343312c8807fe55149efc686a18496d}{tesseract\+\_\+kinematics\+::\+KDLTo\+Eigen}} (const KDL\+::\+Jacobian \&\mbox{\hyperlink{kinematics__core__unit_8cpp_afd43241933d01af91643a779b829d7a7}{jacobian}}, const std\+::vector$<$ int $>$ \&q\+\_\+nrs, Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$ matrix)
+\begin{DoxyCompactList}\small\item\em Convert a subset of KDL\+::\+Jacobian to Eigen\+::\+Matrix. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespacetesseract__kinematics_aff79a8e38a3d87ca0fd981ef87eac794}{tesseract\+\_\+kinematics\+::\+Eigen\+To\+KDL}} (const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xd $>$ \&vec, KDL\+::\+Jnt\+Array \&\mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_ae41993a59637cf36532d3620b8203555}{joints}})
+\begin{DoxyCompactList}\small\item\em Convert Eigen\+::\+Vector to KDL\+::\+Jnt\+Array. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespacetesseract__kinematics_acc243b4eaa4f3dc348e7d41b10608a43}{tesseract\+\_\+kinematics\+::\+KDLTo\+Eigen}} (const KDL\+::\+Jnt\+Array \&\mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_ae41993a59637cf36532d3620b8203555}{joints}}, Eigen\+::\+Ref$<$ Eigen\+::\+Vector\+Xd $>$ vec)
+\begin{DoxyCompactList}\small\item\em Convert KDL\+::\+Jnt\+Array to Eigen\+::\+Vector. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacetesseract__kinematics_a306a7754f21af1cbb624c86feed433d0}{tesseract\+\_\+kinematics\+::parse\+Scene\+Graph}} (KDLChain\+Data \&results, const \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph}{tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+Graph}} \&\mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a8d4d0dc3a6b9a7030970bf9ed3764756}{scene\+\_\+graph}}, const std\+::vector$<$ std\+::pair$<$ std\+::string, std\+::string $>$ $>$ \&chains)
+\begin{DoxyCompactList}\small\item\em Parse KDL chain data from the scene graph. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacetesseract__kinematics_a2155d49cf12de450b17aa74b4333755c}{tesseract\+\_\+kinematics\+::parse\+Scene\+Graph}} (KDLChain\+Data \&results, const \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph}{tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+Graph}} \&\mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a8d4d0dc3a6b9a7030970bf9ed3764756}{scene\+\_\+graph}}, const std\+::string \&base\+\_\+name, const std\+::string \&tip\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Parse KDL chain data from the scene graph. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Tesseract KDL utility functions. 
+
+\begin{DoxyAuthor}{Author}
+Levi Armstrong 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+May 27, 2018 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+TODO 
+\end{DoxyVersion}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000195}{Bug}}]No known bugs\end{DoxyRefDesc}
+
+
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2017, Southwest Research Institute
+\end{DoxyCopyright}
+\begin{DoxyParagraph}{License}
+Software License Agreement (Apache License) 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+Licensed under the Apache License, Version 2.\+0 (the \char`\"{}\+License\char`\"{}); you may not use this file except in compliance with the License. You may obtain a copy of the License at \href{http://www.apache.org/licenses/LICENSE-2.0}{\texttt{ http\+://www.\+apache.\+org/licenses/\+LICENSE-\/2.\+0}} 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \char`\"{}\+AS IS\char`\"{} BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License. 
+\end{DoxyParagraph}

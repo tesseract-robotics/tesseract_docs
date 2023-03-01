@@ -1,0 +1,193 @@
+\hypertarget{classtesseract__common_1_1Resource}{}\doxysection{tesseract\+\_\+common\+::Resource Class Reference}
+\label{classtesseract__common_1_1Resource}\index{tesseract\_common::Resource@{tesseract\_common::Resource}}
+
+
+Represents resource data available from a file or url.  
+
+
+
+
+{\ttfamily \#include $<$resource\+\_\+locator.\+h$>$}
+
+
+
+Inheritance diagram for tesseract\+\_\+common\+::Resource\+:
+% FIG 0
+
+
+Collaboration diagram for tesseract\+\_\+common\+::Resource\+:
+% FIG 1
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{classtesseract__common_1_1Resource_acdba916fa227bef4391c469581844dc6}{Ptr}} = std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classtesseract__common_1_1Resource}{Resource}} $>$
+\item 
+using \mbox{\hyperlink{classtesseract__common_1_1Resource_ab1639f2420acb1637e16386860d65962}{Const\+Ptr}} = std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{classtesseract__common_1_1Resource}{Resource}} $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{classtesseract__common_1_1Resource_a02ac803c93b947368fdb4fd10ea7009e}{is\+File}} () const =0
+\begin{DoxyCompactList}\small\item\em Returns true if the located resource is a local file. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classtesseract__common_1_1Resource_a5f2d2d041015de23185c3f0d3f8e870d}{get\+Url}} () const =0
+\begin{DoxyCompactList}\small\item\em Get the original URL used to locate the file. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classtesseract__common_1_1Resource_aebc39966d58d01bde580de5a2828aba8}{get\+File\+Path}} () const =0
+\begin{DoxyCompactList}\small\item\em Get the file path of the resource. Only valid if \mbox{\hyperlink{classtesseract__common_1_1Resource_a02ac803c93b947368fdb4fd10ea7009e}{is\+File()}} is true. \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{classtesseract__common_1_1Resource_acede5a5949fc47aa099d93575e06fff0}{get\+Resource\+Contents}} () const =0
+\begin{DoxyCompactList}\small\item\em Get the resource as bytes. This function may block. \end{DoxyCompactList}\item 
+virtual std\+::shared\+\_\+ptr$<$ std\+::istream $>$ \mbox{\hyperlink{classtesseract__common_1_1Resource_a0fff51327ddd31c51771e24ecbff1815}{get\+Resource\+Content\+Stream}} () const =0
+\begin{DoxyCompactList}\small\item\em Get the resource as a std\+::istream. This function and the returned stream may block. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtesseract__common_1_1Resource_a252f7028257c1ce21c64db27bbad1db7}{operator==}} (const \mbox{\hyperlink{classtesseract__common_1_1Resource}{Resource}} \&rhs) const
+\item 
+bool \mbox{\hyperlink{classtesseract__common_1_1Resource_aa2af478bc10209e4ac11c5e6f005554a}{operator!=}} (const \mbox{\hyperlink{classtesseract__common_1_1Resource}{Resource}} \&rhs) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class Archive $>$ }\\void \mbox{\hyperlink{classtesseract__common_1_1Resource_a41ed2f44d4ebd56e95c4dc1c81b42617}{serialize}} (Archive \&ar, const unsigned int version)
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classtesseract__common_1_1Resource_ac98d07dd8f7b70e16ccb9a01abf56b9c}{boost\+::serialization\+::access}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents resource data available from a file or url. 
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classtesseract__common_1_1Resource_ab1639f2420acb1637e16386860d65962}\label{classtesseract__common_1_1Resource_ab1639f2420acb1637e16386860d65962}} 
+\index{tesseract\_common::Resource@{tesseract\_common::Resource}!ConstPtr@{ConstPtr}}
+\index{ConstPtr@{ConstPtr}!tesseract\_common::Resource@{tesseract\_common::Resource}}
+\doxysubsubsection{\texorpdfstring{ConstPtr}{ConstPtr}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classtesseract__common_1_1Resource_ab1639f2420acb1637e16386860d65962}{tesseract\+\_\+common\+::\+Resource\+::\+Const\+Ptr}} =  std\+::shared\+\_\+ptr$<$const \mbox{\hyperlink{classtesseract__common_1_1Resource}{Resource}}$>$}
+
+\mbox{\Hypertarget{classtesseract__common_1_1Resource_acdba916fa227bef4391c469581844dc6}\label{classtesseract__common_1_1Resource_acdba916fa227bef4391c469581844dc6}} 
+\index{tesseract\_common::Resource@{tesseract\_common::Resource}!Ptr@{Ptr}}
+\index{Ptr@{Ptr}!tesseract\_common::Resource@{tesseract\_common::Resource}}
+\doxysubsubsection{\texorpdfstring{Ptr}{Ptr}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classtesseract__common_1_1Resource_acdba916fa227bef4391c469581844dc6}{tesseract\+\_\+common\+::\+Resource\+::\+Ptr}} =  std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classtesseract__common_1_1Resource}{Resource}}$>$}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtesseract__common_1_1Resource_aebc39966d58d01bde580de5a2828aba8}\label{classtesseract__common_1_1Resource_aebc39966d58d01bde580de5a2828aba8}} 
+\index{tesseract\_common::Resource@{tesseract\_common::Resource}!getFilePath@{getFilePath}}
+\index{getFilePath@{getFilePath}!tesseract\_common::Resource@{tesseract\_common::Resource}}
+\doxysubsubsection{\texorpdfstring{getFilePath()}{getFilePath()}}
+{\footnotesize\ttfamily virtual std\+::string tesseract\+\_\+common\+::\+Resource\+::get\+File\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the file path of the resource. Only valid if \mbox{\hyperlink{classtesseract__common_1_1Resource_a02ac803c93b947368fdb4fd10ea7009e}{is\+File()}} is true. 
+
+\begin{DoxyReturn}{Returns}
+The file path to the resource 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classtesseract__common_1_1SimpleLocatedResource_a5d404074de07304851c0f1e6a4ae60a6}{tesseract\+\_\+common\+::\+Simple\+Located\+Resource}}, and \mbox{\hyperlink{classtesseract__common_1_1BytesResource_ad5a8251e98b7b69578f10e26b41740dc}{tesseract\+\_\+common\+::\+Bytes\+Resource}}.
+
+\mbox{\Hypertarget{classtesseract__common_1_1Resource_acede5a5949fc47aa099d93575e06fff0}\label{classtesseract__common_1_1Resource_acede5a5949fc47aa099d93575e06fff0}} 
+\index{tesseract\_common::Resource@{tesseract\_common::Resource}!getResourceContents@{getResourceContents}}
+\index{getResourceContents@{getResourceContents}!tesseract\_common::Resource@{tesseract\_common::Resource}}
+\doxysubsubsection{\texorpdfstring{getResourceContents()}{getResourceContents()}}
+{\footnotesize\ttfamily virtual std\+::vector$<$ uint8\+\_\+t $>$ tesseract\+\_\+common\+::\+Resource\+::get\+Resource\+Contents (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the resource as bytes. This function may block. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classtesseract__common_1_1Resource}{Resource}} bytes as a uint8\+\_\+t vector 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classtesseract__common_1_1SimpleLocatedResource_a0310ee72241f3354cc6650b1563208b9}{tesseract\+\_\+common\+::\+Simple\+Located\+Resource}}, and \mbox{\hyperlink{classtesseract__common_1_1BytesResource_a93ed2cb6d39f30a1a78684e9d7bc43d8}{tesseract\+\_\+common\+::\+Bytes\+Resource}}.
+
+\mbox{\Hypertarget{classtesseract__common_1_1Resource_a0fff51327ddd31c51771e24ecbff1815}\label{classtesseract__common_1_1Resource_a0fff51327ddd31c51771e24ecbff1815}} 
+\index{tesseract\_common::Resource@{tesseract\_common::Resource}!getResourceContentStream@{getResourceContentStream}}
+\index{getResourceContentStream@{getResourceContentStream}!tesseract\_common::Resource@{tesseract\_common::Resource}}
+\doxysubsubsection{\texorpdfstring{getResourceContentStream()}{getResourceContentStream()}}
+{\footnotesize\ttfamily virtual std\+::shared\+\_\+ptr$<$ std\+::istream $>$ tesseract\+\_\+common\+::\+Resource\+::get\+Resource\+Content\+Stream (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the resource as a std\+::istream. This function and the returned stream may block. 
+
+\begin{DoxyReturn}{Returns}
+A std\+::istream shared pointer for the resource data 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classtesseract__common_1_1SimpleLocatedResource_ac02173e3d26d4bf7a0f6df483a5ecd39}{tesseract\+\_\+common\+::\+Simple\+Located\+Resource}}, and \mbox{\hyperlink{classtesseract__common_1_1BytesResource_af86bd1a845f03aedc0b2ca011f3a0328}{tesseract\+\_\+common\+::\+Bytes\+Resource}}.
+
+\mbox{\Hypertarget{classtesseract__common_1_1Resource_a5f2d2d041015de23185c3f0d3f8e870d}\label{classtesseract__common_1_1Resource_a5f2d2d041015de23185c3f0d3f8e870d}} 
+\index{tesseract\_common::Resource@{tesseract\_common::Resource}!getUrl@{getUrl}}
+\index{getUrl@{getUrl}!tesseract\_common::Resource@{tesseract\_common::Resource}}
+\doxysubsubsection{\texorpdfstring{getUrl()}{getUrl()}}
+{\footnotesize\ttfamily virtual std\+::string tesseract\+\_\+common\+::\+Resource\+::get\+Url (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the original URL used to locate the file. 
+
+\begin{DoxyReturn}{Returns}
+The URL of the resource 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classtesseract__common_1_1SimpleLocatedResource_a8568f815d66fa698acb683494d639573}{tesseract\+\_\+common\+::\+Simple\+Located\+Resource}}, and \mbox{\hyperlink{classtesseract__common_1_1BytesResource_a269bf1dee29d01f4201046218db862a9}{tesseract\+\_\+common\+::\+Bytes\+Resource}}.
+
+\mbox{\Hypertarget{classtesseract__common_1_1Resource_a02ac803c93b947368fdb4fd10ea7009e}\label{classtesseract__common_1_1Resource_a02ac803c93b947368fdb4fd10ea7009e}} 
+\index{tesseract\_common::Resource@{tesseract\_common::Resource}!isFile@{isFile}}
+\index{isFile@{isFile}!tesseract\_common::Resource@{tesseract\_common::Resource}}
+\doxysubsubsection{\texorpdfstring{isFile()}{isFile()}}
+{\footnotesize\ttfamily virtual bool tesseract\+\_\+common\+::\+Resource\+::is\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Returns true if the located resource is a local file. 
+
+\begin{DoxyReturn}{Returns}
+true if the resource is a local file, otherwise false 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classtesseract__common_1_1SimpleLocatedResource_a2fada93191b6bc685fcc0f4fba521a88}{tesseract\+\_\+common\+::\+Simple\+Located\+Resource}}, and \mbox{\hyperlink{classtesseract__common_1_1BytesResource_aa8fceb3e4c13e49246c1b24acba410bd}{tesseract\+\_\+common\+::\+Bytes\+Resource}}.
+
+\mbox{\Hypertarget{classtesseract__common_1_1Resource_aa2af478bc10209e4ac11c5e6f005554a}\label{classtesseract__common_1_1Resource_aa2af478bc10209e4ac11c5e6f005554a}} 
+\index{tesseract\_common::Resource@{tesseract\_common::Resource}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!tesseract\_common::Resource@{tesseract\_common::Resource}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool tesseract\+\_\+common\+::\+Resource\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtesseract__common_1_1Resource}{Resource}} \&}]{rhs }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classtesseract__common_1_1Resource_a252f7028257c1ce21c64db27bbad1db7}\label{classtesseract__common_1_1Resource_a252f7028257c1ce21c64db27bbad1db7}} 
+\index{tesseract\_common::Resource@{tesseract\_common::Resource}!operator==@{operator==}}
+\index{operator==@{operator==}!tesseract\_common::Resource@{tesseract\_common::Resource}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool tesseract\+\_\+common\+::\+Resource\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtesseract__common_1_1Resource}{Resource}} \&}]{rhs }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classtesseract__common_1_1Resource_a41ed2f44d4ebd56e95c4dc1c81b42617}\label{classtesseract__common_1_1Resource_a41ed2f44d4ebd56e95c4dc1c81b42617}} 
+\index{tesseract\_common::Resource@{tesseract\_common::Resource}!serialize@{serialize}}
+\index{serialize@{serialize}!tesseract\_common::Resource@{tesseract\_common::Resource}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily template$<$class Archive $>$ \\
+void tesseract\+\_\+common\+::\+Resource\+::serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{ar,  }\item[{const unsigned int}]{version }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classtesseract__common_1_1Resource_ac98d07dd8f7b70e16ccb9a01abf56b9c}\label{classtesseract__common_1_1Resource_ac98d07dd8f7b70e16ccb9a01abf56b9c}} 
+\index{tesseract\_common::Resource@{tesseract\_common::Resource}!boost::serialization::access@{boost::serialization::access}}
+\index{boost::serialization::access@{boost::serialization::access}!tesseract\_common::Resource@{tesseract\_common::Resource}}
+\doxysubsubsection{\texorpdfstring{boost::serialization::access}{boost::serialization::access}}
+{\footnotesize\ttfamily friend class boost\+::serialization\+::access\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+tesseract\+\_\+common/include/tesseract\+\_\+common/\mbox{\hyperlink{resource__locator_8h}{resource\+\_\+locator.\+h}}\item 
+tesseract\+\_\+common/src/\mbox{\hyperlink{resource__locator_8cpp}{resource\+\_\+locator.\+cpp}}\end{DoxyCompactItemize}

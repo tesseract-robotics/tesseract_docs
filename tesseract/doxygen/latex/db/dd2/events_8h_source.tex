@@ -1,0 +1,53 @@
+\hypertarget{events_8h_source}{}\doxysection{events.\+h}
+\label{events_8h_source}\index{tesseract\_environment/include/tesseract\_environment/events.h@{tesseract\_environment/include/tesseract\_environment/events.h}}
+\mbox{\hyperlink{events_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#ifndef TESSERACT\_ENVIRONMENT\_EVENTS\_H}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define TESSERACT\_ENVIRONMENT\_EVENTS\_H}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{command_8h}{tesseract\_environment/command.h}}>}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{scene__state_8h}{tesseract\_scene\_graph/scene\_state.h}}>}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__environment}{tesseract\_environment}}}
+\DoxyCodeLine{32 \{}
+\DoxyCodeLine{33 \textcolor{keyword}{enum class} \mbox{\hyperlink{namespacetesseract__environment_aed7a9146b435502090a922144486578d}{Events}}}
+\DoxyCodeLine{34 \{}
+\DoxyCodeLine{35   \mbox{\hyperlink{namespacetesseract__environment_aed7a9146b435502090a922144486578da4708fbfa940a1361e29903d30d9c2c7a}{COMMAND\_APPLIED}} = 0,}
+\DoxyCodeLine{36   \mbox{\hyperlink{namespacetesseract__environment_aed7a9146b435502090a922144486578da5fba6bb654fe79357954dbcbb88a3f6c}{SCENE\_STATE\_CHANGED}} = 1}
+\DoxyCodeLine{37 \};}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{40 \textcolor{keyword}{struct }\mbox{\hyperlink{structtesseract__environment_1_1Event}{Event}}}
+\DoxyCodeLine{41 \{}
+\DoxyCodeLine{42   \mbox{\hyperlink{structtesseract__environment_1_1Event_a9656682658a3217d26931b86ed46c13f}{Event}}(\mbox{\hyperlink{namespacetesseract__environment_aed7a9146b435502090a922144486578d}{Events}} \mbox{\hyperlink{structtesseract__environment_1_1Event_a309388940a7f2d46d5a8109ae2ab32eb}{type}}) : \mbox{\hyperlink{structtesseract__environment_1_1Event_a309388940a7f2d46d5a8109ae2ab32eb}{type}}(\mbox{\hyperlink{structtesseract__environment_1_1Event_a309388940a7f2d46d5a8109ae2ab32eb}{type}}) \{\}}
+\DoxyCodeLine{43   \textcolor{keyword}{virtual} \mbox{\hyperlink{structtesseract__environment_1_1Event_a1201ebd5b5e58802cdc4d8a661a99716}{\string~Event}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45   \textcolor{keyword}{const} \mbox{\hyperlink{namespacetesseract__environment_aed7a9146b435502090a922144486578d}{Events}} \mbox{\hyperlink{structtesseract__environment_1_1Event_a309388940a7f2d46d5a8109ae2ab32eb}{type}};}
+\DoxyCodeLine{46 \};}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{52 \textcolor{keyword}{struct }\mbox{\hyperlink{structtesseract__environment_1_1CommandAppliedEvent}{CommandAppliedEvent}} : \textcolor{keyword}{public} \mbox{\hyperlink{structtesseract__environment_1_1Event}{Event}}}
+\DoxyCodeLine{53 \{}
+\DoxyCodeLine{54   \mbox{\hyperlink{structtesseract__environment_1_1CommandAppliedEvent_a674faa61df882b6417a9dba9c4ba9d71}{CommandAppliedEvent}}(\textcolor{keyword}{const} \mbox{\hyperlink{namespacetesseract__environment_acb95740502ec41d80a94a7631d4b7a3c}{Commands}}\& \mbox{\hyperlink{structtesseract__environment_1_1CommandAppliedEvent_aef4b7a2905f0582dfa7ff433ef8240a8}{commands}}, \textcolor{keywordtype}{int} \mbox{\hyperlink{structtesseract__environment_1_1CommandAppliedEvent_a33839151411855db40c37c76ac5b8b16}{revision}})}
+\DoxyCodeLine{55     : \mbox{\hyperlink{structtesseract__environment_1_1Event}{Event}}(\mbox{\hyperlink{namespacetesseract__environment_aed7a9146b435502090a922144486578d}{Events}}::\mbox{\hyperlink{namespacetesseract__environment_aed7a9146b435502090a922144486578da4708fbfa940a1361e29903d30d9c2c7a}{COMMAND\_APPLIED}}), \mbox{\hyperlink{structtesseract__environment_1_1CommandAppliedEvent_aef4b7a2905f0582dfa7ff433ef8240a8}{commands}}(\mbox{\hyperlink{structtesseract__environment_1_1CommandAppliedEvent_aef4b7a2905f0582dfa7ff433ef8240a8}{commands}}), \mbox{\hyperlink{structtesseract__environment_1_1CommandAppliedEvent_a33839151411855db40c37c76ac5b8b16}{revision}}(\mbox{\hyperlink{structtesseract__environment_1_1CommandAppliedEvent_a33839151411855db40c37c76ac5b8b16}{revision}})}
+\DoxyCodeLine{56   \{}
+\DoxyCodeLine{57   \}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59   \textcolor{keyword}{const} \mbox{\hyperlink{namespacetesseract__environment_acb95740502ec41d80a94a7631d4b7a3c}{Commands}}\& \mbox{\hyperlink{structtesseract__environment_1_1CommandAppliedEvent_aef4b7a2905f0582dfa7ff433ef8240a8}{commands}};}
+\DoxyCodeLine{60   \textcolor{keywordtype}{int} \mbox{\hyperlink{structtesseract__environment_1_1CommandAppliedEvent_a33839151411855db40c37c76ac5b8b16}{revision}};}
+\DoxyCodeLine{61 \};}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{67 \textcolor{keyword}{struct }\mbox{\hyperlink{structtesseract__environment_1_1SceneStateChangedEvent}{SceneStateChangedEvent}} : \textcolor{keyword}{public} \mbox{\hyperlink{structtesseract__environment_1_1Event}{Event}}}
+\DoxyCodeLine{68 \{}
+\DoxyCodeLine{69   \mbox{\hyperlink{structtesseract__environment_1_1SceneStateChangedEvent_adbbd12825a0d2f8d0a9a6c25e2cc5cda}{SceneStateChangedEvent}}(\textcolor{keyword}{const} \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{tesseract\_scene\_graph::SceneState}}\& \mbox{\hyperlink{structtesseract__environment_1_1SceneStateChangedEvent_adcca093a7afa4d6ba8ffe65ef518bc6f}{state}})}
+\DoxyCodeLine{70     : \mbox{\hyperlink{structtesseract__environment_1_1Event}{Event}}(\mbox{\hyperlink{namespacetesseract__environment_aed7a9146b435502090a922144486578d}{Events}}::\mbox{\hyperlink{namespacetesseract__environment_aed7a9146b435502090a922144486578da5fba6bb654fe79357954dbcbb88a3f6c}{SCENE\_STATE\_CHANGED}}), \mbox{\hyperlink{structtesseract__environment_1_1SceneStateChangedEvent_adcca093a7afa4d6ba8ffe65ef518bc6f}{state}}(\mbox{\hyperlink{structtesseract__environment_1_1SceneStateChangedEvent_adcca093a7afa4d6ba8ffe65ef518bc6f}{state}})}
+\DoxyCodeLine{71   \{}
+\DoxyCodeLine{72   \}}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74   \textcolor{keyword}{const} \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{tesseract\_scene\_graph::SceneState}}\& \mbox{\hyperlink{structtesseract__environment_1_1SceneStateChangedEvent_adcca093a7afa4d6ba8ffe65ef518bc6f}{state}};}
+\DoxyCodeLine{75 \};}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 \textcolor{keyword}{using }\mbox{\hyperlink{namespacetesseract__environment_a842b4038cfb894a0b9cc45e6aea1e8c5}{EventCallbackFn}} = std::function<void(\textcolor{keyword}{const} \mbox{\hyperlink{structtesseract__environment_1_1Event}{Event}}\& event)>;}
+\DoxyCodeLine{78 \}  \textcolor{comment}{// namespace tesseract\_environment}}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_ENVIRONMENT\_EVENTS\_H}}
+
+\end{DoxyCode}

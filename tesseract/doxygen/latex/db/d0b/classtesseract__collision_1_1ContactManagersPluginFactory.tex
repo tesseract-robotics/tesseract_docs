@@ -1,0 +1,558 @@
+\hypertarget{classtesseract__collision_1_1ContactManagersPluginFactory}{}\doxysection{tesseract\+\_\+collision\+::Contact\+Managers\+Plugin\+Factory Class Reference}
+\label{classtesseract__collision_1_1ContactManagersPluginFactory}\index{tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}}
+
+
+{\ttfamily \#include $<$contact\+\_\+managers\+\_\+plugin\+\_\+factory.\+h$>$}
+
+
+
+Collaboration diagram for tesseract\+\_\+collision\+::Contact\+Managers\+Plugin\+Factory\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_a402fcf942bd0f7e87e2c2f83911b1bef}{Contact\+Managers\+Plugin\+Factory}} ()
+\item 
+\mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_a0c9a2d1528bbce71aa09aa53b718ab04}{$\sim$\+Contact\+Managers\+Plugin\+Factory}} ()
+\item 
+\mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_a0d77a0560f9d4352ea5d24622ace2a8b}{Contact\+Managers\+Plugin\+Factory}} (const \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory}{Contact\+Managers\+Plugin\+Factory}} \&)=default
+\item 
+\mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory}{Contact\+Managers\+Plugin\+Factory}} \& \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_a4d11868e5b8fbdc5467a9229dd8901d4}{operator=}} (const \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory}{Contact\+Managers\+Plugin\+Factory}} \&)=default
+\item 
+\mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_a681fe65ad2e7e965f63bc63cef8abc2a}{Contact\+Managers\+Plugin\+Factory}} (\mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory}{Contact\+Managers\+Plugin\+Factory}} \&\&)=default
+\item 
+\mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory}{Contact\+Managers\+Plugin\+Factory}} \& \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_ab47b34623781721e8de88e19145ae6fb}{operator=}} (\mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory}{Contact\+Managers\+Plugin\+Factory}} \&\&)=default
+\item 
+\mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_a073917eecf98314baeb7c52955ae4b66}{Contact\+Managers\+Plugin\+Factory}} (YAML\+::\+Node \mbox{\hyperlink{collision__core__unit_8cpp_a2013c60ebd4a63f15fafe2287736ae37}{config}})
+\begin{DoxyCompactList}\small\item\em Load plugins from yaml node. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_ac9cea555555fc14f3474fa7016c9859b}{Contact\+Managers\+Plugin\+Factory}} (const tesseract\+\_\+common\+::fs\+::path \&\mbox{\hyperlink{collision__core__unit_8cpp_a2013c60ebd4a63f15fafe2287736ae37}{config}})
+\begin{DoxyCompactList}\small\item\em Load plugins from file path. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_af443153e2b08919c8f221660fc9cda8f}{Contact\+Managers\+Plugin\+Factory}} (const std\+::string \&\mbox{\hyperlink{collision__core__unit_8cpp_a2013c60ebd4a63f15fafe2287736ae37}{config}})
+\begin{DoxyCompactList}\small\item\em Load plugins from string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_ae1bb7f5b20a62cc72ab498b86cf8862c}{add\+Search\+Path}} (const std\+::string \&path)
+\begin{DoxyCompactList}\small\item\em Add location for the plugin loader to search. \end{DoxyCompactList}\item 
+std\+::set$<$ std\+::string $>$ \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_abba279cdeb75c502c70b6b31af3d993b}{get\+Search\+Paths}} () const
+\begin{DoxyCompactList}\small\item\em Get the plugin search paths. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_a80035ba3dcd3d2fe34a71c7459bc302b}{clear\+Search\+Paths}} ()
+\begin{DoxyCompactList}\small\item\em Clear the search paths. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_ab465759ee4c5838e7be164958c5f163e}{add\+Search\+Library}} (const std\+::string \&library\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Add a library to search for plugin name. \end{DoxyCompactList}\item 
+std\+::set$<$ std\+::string $>$ \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_ad3d350dd95449f85bbe57c7ddd07d234}{get\+Search\+Libraries}} () const
+\begin{DoxyCompactList}\small\item\em Get the plugin search libraries. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_a77596799af7ea33dc2486351e8f230d5}{clear\+Search\+Libraries}} ()
+\begin{DoxyCompactList}\small\item\em Clean the search libraries. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_a401c5843b914e25d663d7c682ae7dc80}{add\+Discrete\+Contact\+Manager\+Plugin}} (const std\+::string \&\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}, \mbox{\hyperlink{structtesseract__common_1_1PluginInfo}{tesseract\+\_\+common\+::\+Plugin\+Info}} \mbox{\hyperlink{contact__managers__factory__unit_8cpp_aa85411aa79e8b65adf666700a5a44add}{plugin\+\_\+info}})
+\begin{DoxyCompactList}\small\item\em Add a discrete contact manager plugin. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_a61b8caba5438c15abd7d472822efcd0c}{has\+Discrete\+Contact\+Manager\+Plugins}} () const
+\begin{DoxyCompactList}\small\item\em Check if it has discrete contact manager plugins. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacetesseract__common_a43d1f6e0418164a6db0e1c447150340e}{tesseract\+\_\+common\+::\+Plugin\+Info\+Map}} \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_af54063011c3e109131fe5f4916874ffe}{get\+Discrete\+Contact\+Manager\+Plugins}} () const
+\begin{DoxyCompactList}\small\item\em Get the map of discrete contact manager plugin. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_adc04de4a93adb8c77db6ae22956b762d}{remove\+Discrete\+Contact\+Manager\+Plugin}} (const std\+::string \&\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}})
+\begin{DoxyCompactList}\small\item\em Remove discrete contact manager plugin. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_a5dfc0e174af81f9c1820356568549cbf}{set\+Default\+Discrete\+Contact\+Manager\+Plugin}} (const std\+::string \&\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}})
+\begin{DoxyCompactList}\small\item\em Set a default discrete contact manager. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_a084f6d82b5c3407759a476533e1589d5}{get\+Default\+Discrete\+Contact\+Manager\+Plugin}} () const
+\begin{DoxyCompactList}\small\item\em Get the default discrete contact manager. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_ae35befbfd8ff14780aafa81a15dbad82}{add\+Continuous\+Contact\+Manager\+Plugin}} (const std\+::string \&\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}, \mbox{\hyperlink{structtesseract__common_1_1PluginInfo}{tesseract\+\_\+common\+::\+Plugin\+Info}} \mbox{\hyperlink{contact__managers__factory__unit_8cpp_aa85411aa79e8b65adf666700a5a44add}{plugin\+\_\+info}})
+\begin{DoxyCompactList}\small\item\em Add a continuous contact manager plugin. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_a28dabdd5ddda589a68b6eeb0894340de}{has\+Continuous\+Contact\+Manager\+Plugins}} () const
+\begin{DoxyCompactList}\small\item\em Check if it has continuous contact manager plugins. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacetesseract__common_a43d1f6e0418164a6db0e1c447150340e}{tesseract\+\_\+common\+::\+Plugin\+Info\+Map}} \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_ac4f2179464877cd56e2b6824731d5afb}{get\+Continuous\+Contact\+Manager\+Plugins}} () const
+\begin{DoxyCompactList}\small\item\em Get the map of continuous contact manager plugin. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_ae9526f34186dd6ae87808d16d194c069}{remove\+Continuous\+Contact\+Manager\+Plugin}} (const std\+::string \&\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}})
+\begin{DoxyCompactList}\small\item\em Remove continuous contact manager plugin. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_a8c6f25b872d325a16260afd411834886}{set\+Default\+Continuous\+Contact\+Manager\+Plugin}} (const std\+::string \&\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}})
+\begin{DoxyCompactList}\small\item\em Set a default continuous contact manager. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_adf360a91ac0f2535647327971f910c69}{get\+Default\+Continuous\+Contact\+Manager\+Plugin}} () const
+\begin{DoxyCompactList}\small\item\em Get the default continuous contact manager. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a52a7b770e7b6cec875254d7cdea3c314}{Discrete\+Contact\+Manager\+::\+UPtr}} \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_a66b4286cbaf71c71ea2c46a111bdcaed}{create\+Discrete\+Contact\+Manager}} (const std\+::string \&\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}) const
+\begin{DoxyCompactList}\small\item\em Get discrete contact manager object given name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a52a7b770e7b6cec875254d7cdea3c314}{Discrete\+Contact\+Manager\+::\+UPtr}} \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_a09ec490702f0861a42ed1e1064f21e10}{create\+Discrete\+Contact\+Manager}} (const std\+::string \&\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}, const \mbox{\hyperlink{structtesseract__common_1_1PluginInfo}{tesseract\+\_\+common\+::\+Plugin\+Info}} \&\mbox{\hyperlink{contact__managers__factory__unit_8cpp_aa85411aa79e8b65adf666700a5a44add}{plugin\+\_\+info}}) const
+\begin{DoxyCompactList}\small\item\em Get discrete contact manager object given plugin info. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtesseract__collision_1_1ContinuousContactManager_af3e8b59ffc319924eb2a7e3925bb6e56}{Continuous\+Contact\+Manager\+::\+UPtr}} \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_aff83c1c5fd091d2a2efb281af2401c9d}{create\+Continuous\+Contact\+Manager}} (const std\+::string \&\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}) const
+\begin{DoxyCompactList}\small\item\em Get continuous contact manager object given name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtesseract__collision_1_1ContinuousContactManager_af3e8b59ffc319924eb2a7e3925bb6e56}{Continuous\+Contact\+Manager\+::\+UPtr}} \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_aa68d6f23f4b19bec737fef04f04fced4}{create\+Continuous\+Contact\+Manager}} (const std\+::string \&\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}, const \mbox{\hyperlink{structtesseract__common_1_1PluginInfo}{tesseract\+\_\+common\+::\+Plugin\+Info}} \&\mbox{\hyperlink{contact__managers__factory__unit_8cpp_aa85411aa79e8b65adf666700a5a44add}{plugin\+\_\+info}}) const
+\begin{DoxyCompactList}\small\item\em Get continuous contact manager object given plugin info. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_af64750889290d8bdd52a7a1e34df8d40}{save\+Config}} (const boost\+::filesystem\+::path \&\mbox{\hyperlink{resource__locator__unit_8cpp_a803157d97edf460a9f115ca41b182e73}{file\+\_\+path}}) const
+\begin{DoxyCompactList}\small\item\em Save the plugin information to a yaml config file. \end{DoxyCompactList}\item 
+YAML\+::\+Node \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_a709b65fb4fc0ad58fcdba96adad9c559}{get\+Config}} () const
+\begin{DoxyCompactList}\small\item\em Get the plugin information config as a yaml node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManagerFactory_a0e81355d33b06da2e342608267209350}{Discrete\+Contact\+Manager\+Factory\+::\+Ptr}} $>$ \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_a0fd083c648e4ec85463320a7a1e50041}{discrete\+\_\+factories\+\_\+}}
+\item 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{classtesseract__collision_1_1ContinuousContactManagerFactory_a124ff62aa13a3dd3315c9ead622ae331}{Continuous\+Contact\+Manager\+Factory\+::\+Ptr}} $>$ \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_a193ecf35d45efa1fd15f9094412f14cc}{continuous\+\_\+factories\+\_\+}}
+\item 
+\mbox{\hyperlink{structtesseract__common_1_1PluginInfoContainer}{tesseract\+\_\+common\+::\+Plugin\+Info\+Container}} \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_a993e35990a4bf3a9729afb993d4c4766}{discrete\+\_\+plugin\+\_\+info\+\_\+}}
+\item 
+\mbox{\hyperlink{structtesseract__common_1_1PluginInfoContainer}{tesseract\+\_\+common\+::\+Plugin\+Info\+Container}} \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_af0aec6afd68c05b9f81d75d4f8caf7a1}{continuous\+\_\+plugin\+\_\+info\+\_\+}}
+\item 
+\mbox{\hyperlink{classtesseract__common_1_1PluginLoader}{tesseract\+\_\+common\+::\+Plugin\+Loader}} \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_a1c25a869dca05ccfb0f490e5eda0d3ff}{plugin\+\_\+loader\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtesseract__collision_1_1ContactManagersPluginFactory_a402fcf942bd0f7e87e2c2f83911b1bef}\label{classtesseract__collision_1_1ContactManagersPluginFactory_a402fcf942bd0f7e87e2c2f83911b1bef}} 
+\index{tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}!ContactManagersPluginFactory@{ContactManagersPluginFactory}}
+\index{ContactManagersPluginFactory@{ContactManagersPluginFactory}!tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}}
+\doxysubsubsection{\texorpdfstring{ContactManagersPluginFactory()}{ContactManagersPluginFactory()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily tesseract\+\_\+collision\+::\+Contact\+Managers\+Plugin\+Factory\+::\+Contact\+Managers\+Plugin\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1ContactManagersPluginFactory_a0c9a2d1528bbce71aa09aa53b718ab04}\label{classtesseract__collision_1_1ContactManagersPluginFactory_a0c9a2d1528bbce71aa09aa53b718ab04}} 
+\index{tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}!````~ContactManagersPluginFactory@{$\sim$ContactManagersPluginFactory}}
+\index{````~ContactManagersPluginFactory@{$\sim$ContactManagersPluginFactory}!tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}}
+\doxysubsubsection{\texorpdfstring{$\sim$ContactManagersPluginFactory()}{~ContactManagersPluginFactory()}}
+{\footnotesize\ttfamily tesseract\+\_\+collision\+::\+Contact\+Managers\+Plugin\+Factory\+::$\sim$\+Contact\+Managers\+Plugin\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1ContactManagersPluginFactory_a0d77a0560f9d4352ea5d24622ace2a8b}\label{classtesseract__collision_1_1ContactManagersPluginFactory_a0d77a0560f9d4352ea5d24622ace2a8b}} 
+\index{tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}!ContactManagersPluginFactory@{ContactManagersPluginFactory}}
+\index{ContactManagersPluginFactory@{ContactManagersPluginFactory}!tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}}
+\doxysubsubsection{\texorpdfstring{ContactManagersPluginFactory()}{ContactManagersPluginFactory()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily tesseract\+\_\+collision\+::\+Contact\+Managers\+Plugin\+Factory\+::\+Contact\+Managers\+Plugin\+Factory (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory}{Contact\+Managers\+Plugin\+Factory}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1ContactManagersPluginFactory_a681fe65ad2e7e965f63bc63cef8abc2a}\label{classtesseract__collision_1_1ContactManagersPluginFactory_a681fe65ad2e7e965f63bc63cef8abc2a}} 
+\index{tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}!ContactManagersPluginFactory@{ContactManagersPluginFactory}}
+\index{ContactManagersPluginFactory@{ContactManagersPluginFactory}!tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}}
+\doxysubsubsection{\texorpdfstring{ContactManagersPluginFactory()}{ContactManagersPluginFactory()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily tesseract\+\_\+collision\+::\+Contact\+Managers\+Plugin\+Factory\+::\+Contact\+Managers\+Plugin\+Factory (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory}{Contact\+Managers\+Plugin\+Factory}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1ContactManagersPluginFactory_a073917eecf98314baeb7c52955ae4b66}\label{classtesseract__collision_1_1ContactManagersPluginFactory_a073917eecf98314baeb7c52955ae4b66}} 
+\index{tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}!ContactManagersPluginFactory@{ContactManagersPluginFactory}}
+\index{ContactManagersPluginFactory@{ContactManagersPluginFactory}!tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}}
+\doxysubsubsection{\texorpdfstring{ContactManagersPluginFactory()}{ContactManagersPluginFactory()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily tesseract\+\_\+collision\+::\+Contact\+Managers\+Plugin\+Factory\+::\+Contact\+Managers\+Plugin\+Factory (\begin{DoxyParamCaption}\item[{YAML\+::\+Node}]{config }\end{DoxyParamCaption})}
+
+
+
+Load plugins from yaml node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em config} & The config node \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__collision_1_1ContactManagersPluginFactory_ac9cea555555fc14f3474fa7016c9859b}\label{classtesseract__collision_1_1ContactManagersPluginFactory_ac9cea555555fc14f3474fa7016c9859b}} 
+\index{tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}!ContactManagersPluginFactory@{ContactManagersPluginFactory}}
+\index{ContactManagersPluginFactory@{ContactManagersPluginFactory}!tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}}
+\doxysubsubsection{\texorpdfstring{ContactManagersPluginFactory()}{ContactManagersPluginFactory()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily tesseract\+\_\+collision\+::\+Contact\+Managers\+Plugin\+Factory\+::\+Contact\+Managers\+Plugin\+Factory (\begin{DoxyParamCaption}\item[{const tesseract\+\_\+common\+::fs\+::path \&}]{config }\end{DoxyParamCaption})}
+
+
+
+Load plugins from file path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em config} & The config file path \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__collision_1_1ContactManagersPluginFactory_af443153e2b08919c8f221660fc9cda8f}\label{classtesseract__collision_1_1ContactManagersPluginFactory_af443153e2b08919c8f221660fc9cda8f}} 
+\index{tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}!ContactManagersPluginFactory@{ContactManagersPluginFactory}}
+\index{ContactManagersPluginFactory@{ContactManagersPluginFactory}!tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}}
+\doxysubsubsection{\texorpdfstring{ContactManagersPluginFactory()}{ContactManagersPluginFactory()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily tesseract\+\_\+collision\+::\+Contact\+Managers\+Plugin\+Factory\+::\+Contact\+Managers\+Plugin\+Factory (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{config }\end{DoxyParamCaption})}
+
+
+
+Load plugins from string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em config} & The config string \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtesseract__collision_1_1ContactManagersPluginFactory_ae35befbfd8ff14780aafa81a15dbad82}\label{classtesseract__collision_1_1ContactManagersPluginFactory_ae35befbfd8ff14780aafa81a15dbad82}} 
+\index{tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}!addContinuousContactManagerPlugin@{addContinuousContactManagerPlugin}}
+\index{addContinuousContactManagerPlugin@{addContinuousContactManagerPlugin}!tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}}
+\doxysubsubsection{\texorpdfstring{addContinuousContactManagerPlugin()}{addContinuousContactManagerPlugin()}}
+{\footnotesize\ttfamily void tesseract\+\_\+collision\+::\+Contact\+Managers\+Plugin\+Factory\+::add\+Continuous\+Contact\+Manager\+Plugin (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{\mbox{\hyperlink{structtesseract__common_1_1PluginInfo}{tesseract\+\_\+common\+::\+Plugin\+Info}}}]{plugin\+\_\+info }\end{DoxyParamCaption})}
+
+
+
+Add a continuous contact manager plugin. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name \\
+\hline
+{\em plugin\+\_\+info} & The plugin information \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__collision_1_1ContactManagersPluginFactory_a401c5843b914e25d663d7c682ae7dc80}\label{classtesseract__collision_1_1ContactManagersPluginFactory_a401c5843b914e25d663d7c682ae7dc80}} 
+\index{tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}!addDiscreteContactManagerPlugin@{addDiscreteContactManagerPlugin}}
+\index{addDiscreteContactManagerPlugin@{addDiscreteContactManagerPlugin}!tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}}
+\doxysubsubsection{\texorpdfstring{addDiscreteContactManagerPlugin()}{addDiscreteContactManagerPlugin()}}
+{\footnotesize\ttfamily void tesseract\+\_\+collision\+::\+Contact\+Managers\+Plugin\+Factory\+::add\+Discrete\+Contact\+Manager\+Plugin (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{\mbox{\hyperlink{structtesseract__common_1_1PluginInfo}{tesseract\+\_\+common\+::\+Plugin\+Info}}}]{plugin\+\_\+info }\end{DoxyParamCaption})}
+
+
+
+Add a discrete contact manager plugin. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name \\
+\hline
+{\em plugin\+\_\+info} & The plugin information \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__collision_1_1ContactManagersPluginFactory_ab465759ee4c5838e7be164958c5f163e}\label{classtesseract__collision_1_1ContactManagersPluginFactory_ab465759ee4c5838e7be164958c5f163e}} 
+\index{tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}!addSearchLibrary@{addSearchLibrary}}
+\index{addSearchLibrary@{addSearchLibrary}!tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}}
+\doxysubsubsection{\texorpdfstring{addSearchLibrary()}{addSearchLibrary()}}
+{\footnotesize\ttfamily void tesseract\+\_\+collision\+::\+Contact\+Managers\+Plugin\+Factory\+::add\+Search\+Library (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{library\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Add a library to search for plugin name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em library\+\_\+name} & The library name without the prefix or suffix \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__collision_1_1ContactManagersPluginFactory_ae1bb7f5b20a62cc72ab498b86cf8862c}\label{classtesseract__collision_1_1ContactManagersPluginFactory_ae1bb7f5b20a62cc72ab498b86cf8862c}} 
+\index{tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}!addSearchPath@{addSearchPath}}
+\index{addSearchPath@{addSearchPath}!tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}}
+\doxysubsubsection{\texorpdfstring{addSearchPath()}{addSearchPath()}}
+{\footnotesize\ttfamily void tesseract\+\_\+collision\+::\+Contact\+Managers\+Plugin\+Factory\+::add\+Search\+Path (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})}
+
+
+
+Add location for the plugin loader to search. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The full path to the directory \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__collision_1_1ContactManagersPluginFactory_a77596799af7ea33dc2486351e8f230d5}\label{classtesseract__collision_1_1ContactManagersPluginFactory_a77596799af7ea33dc2486351e8f230d5}} 
+\index{tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}!clearSearchLibraries@{clearSearchLibraries}}
+\index{clearSearchLibraries@{clearSearchLibraries}!tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}}
+\doxysubsubsection{\texorpdfstring{clearSearchLibraries()}{clearSearchLibraries()}}
+{\footnotesize\ttfamily void tesseract\+\_\+collision\+::\+Contact\+Managers\+Plugin\+Factory\+::clear\+Search\+Libraries (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clean the search libraries. 
+
+\mbox{\Hypertarget{classtesseract__collision_1_1ContactManagersPluginFactory_a80035ba3dcd3d2fe34a71c7459bc302b}\label{classtesseract__collision_1_1ContactManagersPluginFactory_a80035ba3dcd3d2fe34a71c7459bc302b}} 
+\index{tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}!clearSearchPaths@{clearSearchPaths}}
+\index{clearSearchPaths@{clearSearchPaths}!tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}}
+\doxysubsubsection{\texorpdfstring{clearSearchPaths()}{clearSearchPaths()}}
+{\footnotesize\ttfamily void tesseract\+\_\+collision\+::\+Contact\+Managers\+Plugin\+Factory\+::clear\+Search\+Paths (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clear the search paths. 
+
+\mbox{\Hypertarget{classtesseract__collision_1_1ContactManagersPluginFactory_aff83c1c5fd091d2a2efb281af2401c9d}\label{classtesseract__collision_1_1ContactManagersPluginFactory_aff83c1c5fd091d2a2efb281af2401c9d}} 
+\index{tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}!createContinuousContactManager@{createContinuousContactManager}}
+\index{createContinuousContactManager@{createContinuousContactManager}!tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}}
+\doxysubsubsection{\texorpdfstring{createContinuousContactManager()}{createContinuousContactManager()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__collision_1_1ContinuousContactManager_af3e8b59ffc319924eb2a7e3925bb6e56}{Continuous\+Contact\+Manager\+::\+UPtr}} tesseract\+\_\+collision\+::\+Contact\+Managers\+Plugin\+Factory\+::create\+Continuous\+Contact\+Manager (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption}) const}
+
+
+
+Get continuous contact manager object given name. 
+
+This looks for continuous contact manager plugin info. If not found nullptr is returned. 
+\begin{DoxyParams}{Parameters}
+{\em name} & The name \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__collision_1_1ContactManagersPluginFactory_aa68d6f23f4b19bec737fef04f04fced4}\label{classtesseract__collision_1_1ContactManagersPluginFactory_aa68d6f23f4b19bec737fef04f04fced4}} 
+\index{tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}!createContinuousContactManager@{createContinuousContactManager}}
+\index{createContinuousContactManager@{createContinuousContactManager}!tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}}
+\doxysubsubsection{\texorpdfstring{createContinuousContactManager()}{createContinuousContactManager()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__collision_1_1ContinuousContactManager_af3e8b59ffc319924eb2a7e3925bb6e56}{Continuous\+Contact\+Manager\+::\+UPtr}} tesseract\+\_\+collision\+::\+Contact\+Managers\+Plugin\+Factory\+::create\+Continuous\+Contact\+Manager (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const \mbox{\hyperlink{structtesseract__common_1_1PluginInfo}{tesseract\+\_\+common\+::\+Plugin\+Info}} \&}]{plugin\+\_\+info }\end{DoxyParamCaption}) const}
+
+
+
+Get continuous contact manager object given plugin info. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name \\
+\hline
+{\em plugin\+\_\+info} & The plugin information to create kinematics object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__collision_1_1ContactManagersPluginFactory_a66b4286cbaf71c71ea2c46a111bdcaed}\label{classtesseract__collision_1_1ContactManagersPluginFactory_a66b4286cbaf71c71ea2c46a111bdcaed}} 
+\index{tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}!createDiscreteContactManager@{createDiscreteContactManager}}
+\index{createDiscreteContactManager@{createDiscreteContactManager}!tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}}
+\doxysubsubsection{\texorpdfstring{createDiscreteContactManager()}{createDiscreteContactManager()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a52a7b770e7b6cec875254d7cdea3c314}{Discrete\+Contact\+Manager\+::\+UPtr}} tesseract\+\_\+collision\+::\+Contact\+Managers\+Plugin\+Factory\+::create\+Discrete\+Contact\+Manager (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption}) const}
+
+
+
+Get discrete contact manager object given name. 
+
+This looks for discrete contact manager plugin info. If not found nullptr is returned. 
+\begin{DoxyParams}{Parameters}
+{\em name} & The name \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__collision_1_1ContactManagersPluginFactory_a09ec490702f0861a42ed1e1064f21e10}\label{classtesseract__collision_1_1ContactManagersPluginFactory_a09ec490702f0861a42ed1e1064f21e10}} 
+\index{tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}!createDiscreteContactManager@{createDiscreteContactManager}}
+\index{createDiscreteContactManager@{createDiscreteContactManager}!tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}}
+\doxysubsubsection{\texorpdfstring{createDiscreteContactManager()}{createDiscreteContactManager()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a52a7b770e7b6cec875254d7cdea3c314}{Discrete\+Contact\+Manager\+::\+UPtr}} tesseract\+\_\+collision\+::\+Contact\+Managers\+Plugin\+Factory\+::create\+Discrete\+Contact\+Manager (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const \mbox{\hyperlink{structtesseract__common_1_1PluginInfo}{tesseract\+\_\+common\+::\+Plugin\+Info}} \&}]{plugin\+\_\+info }\end{DoxyParamCaption}) const}
+
+
+
+Get discrete contact manager object given plugin info. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name \\
+\hline
+{\em plugin\+\_\+info} & The plugin information to create kinematics object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__collision_1_1ContactManagersPluginFactory_a709b65fb4fc0ad58fcdba96adad9c559}\label{classtesseract__collision_1_1ContactManagersPluginFactory_a709b65fb4fc0ad58fcdba96adad9c559}} 
+\index{tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}!getConfig@{getConfig}}
+\index{getConfig@{getConfig}!tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}}
+\doxysubsubsection{\texorpdfstring{getConfig()}{getConfig()}}
+{\footnotesize\ttfamily YAML\+::\+Node tesseract\+\_\+collision\+::\+Contact\+Managers\+Plugin\+Factory\+::get\+Config (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the plugin information config as a yaml node. 
+
+\begin{DoxyReturn}{Returns}
+The plugin information config yaml node/ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__collision_1_1ContactManagersPluginFactory_ac4f2179464877cd56e2b6824731d5afb}\label{classtesseract__collision_1_1ContactManagersPluginFactory_ac4f2179464877cd56e2b6824731d5afb}} 
+\index{tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}!getContinuousContactManagerPlugins@{getContinuousContactManagerPlugins}}
+\index{getContinuousContactManagerPlugins@{getContinuousContactManagerPlugins}!tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}}
+\doxysubsubsection{\texorpdfstring{getContinuousContactManagerPlugins()}{getContinuousContactManagerPlugins()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacetesseract__common_a43d1f6e0418164a6db0e1c447150340e}{tesseract\+\_\+common\+::\+Plugin\+Info\+Map}} tesseract\+\_\+collision\+::\+Contact\+Managers\+Plugin\+Factory\+::get\+Continuous\+Contact\+Manager\+Plugins (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the map of continuous contact manager plugin. 
+
+\begin{DoxyReturn}{Returns}
+A map of plugins 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__collision_1_1ContactManagersPluginFactory_adf360a91ac0f2535647327971f910c69}\label{classtesseract__collision_1_1ContactManagersPluginFactory_adf360a91ac0f2535647327971f910c69}} 
+\index{tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}!getDefaultContinuousContactManagerPlugin@{getDefaultContinuousContactManagerPlugin}}
+\index{getDefaultContinuousContactManagerPlugin@{getDefaultContinuousContactManagerPlugin}!tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}}
+\doxysubsubsection{\texorpdfstring{getDefaultContinuousContactManagerPlugin()}{getDefaultContinuousContactManagerPlugin()}}
+{\footnotesize\ttfamily std\+::string tesseract\+\_\+collision\+::\+Contact\+Managers\+Plugin\+Factory\+::get\+Default\+Continuous\+Contact\+Manager\+Plugin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the default continuous contact manager. 
+
+\begin{DoxyReturn}{Returns}
+The default continuous contact manager name 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__collision_1_1ContactManagersPluginFactory_a084f6d82b5c3407759a476533e1589d5}\label{classtesseract__collision_1_1ContactManagersPluginFactory_a084f6d82b5c3407759a476533e1589d5}} 
+\index{tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}!getDefaultDiscreteContactManagerPlugin@{getDefaultDiscreteContactManagerPlugin}}
+\index{getDefaultDiscreteContactManagerPlugin@{getDefaultDiscreteContactManagerPlugin}!tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}}
+\doxysubsubsection{\texorpdfstring{getDefaultDiscreteContactManagerPlugin()}{getDefaultDiscreteContactManagerPlugin()}}
+{\footnotesize\ttfamily std\+::string tesseract\+\_\+collision\+::\+Contact\+Managers\+Plugin\+Factory\+::get\+Default\+Discrete\+Contact\+Manager\+Plugin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the default discrete contact manager. 
+
+\begin{DoxyReturn}{Returns}
+The default discrete contact manager 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__collision_1_1ContactManagersPluginFactory_af54063011c3e109131fe5f4916874ffe}\label{classtesseract__collision_1_1ContactManagersPluginFactory_af54063011c3e109131fe5f4916874ffe}} 
+\index{tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}!getDiscreteContactManagerPlugins@{getDiscreteContactManagerPlugins}}
+\index{getDiscreteContactManagerPlugins@{getDiscreteContactManagerPlugins}!tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}}
+\doxysubsubsection{\texorpdfstring{getDiscreteContactManagerPlugins()}{getDiscreteContactManagerPlugins()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacetesseract__common_a43d1f6e0418164a6db0e1c447150340e}{tesseract\+\_\+common\+::\+Plugin\+Info\+Map}} tesseract\+\_\+collision\+::\+Contact\+Managers\+Plugin\+Factory\+::get\+Discrete\+Contact\+Manager\+Plugins (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the map of discrete contact manager plugin. 
+
+\begin{DoxyReturn}{Returns}
+A map of plugins 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__collision_1_1ContactManagersPluginFactory_ad3d350dd95449f85bbe57c7ddd07d234}\label{classtesseract__collision_1_1ContactManagersPluginFactory_ad3d350dd95449f85bbe57c7ddd07d234}} 
+\index{tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}!getSearchLibraries@{getSearchLibraries}}
+\index{getSearchLibraries@{getSearchLibraries}!tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}}
+\doxysubsubsection{\texorpdfstring{getSearchLibraries()}{getSearchLibraries()}}
+{\footnotesize\ttfamily std\+::set$<$ std\+::string $>$ tesseract\+\_\+collision\+::\+Contact\+Managers\+Plugin\+Factory\+::get\+Search\+Libraries (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the plugin search libraries. 
+
+\begin{DoxyReturn}{Returns}
+The search libraries 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__collision_1_1ContactManagersPluginFactory_abba279cdeb75c502c70b6b31af3d993b}\label{classtesseract__collision_1_1ContactManagersPluginFactory_abba279cdeb75c502c70b6b31af3d993b}} 
+\index{tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}!getSearchPaths@{getSearchPaths}}
+\index{getSearchPaths@{getSearchPaths}!tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}}
+\doxysubsubsection{\texorpdfstring{getSearchPaths()}{getSearchPaths()}}
+{\footnotesize\ttfamily std\+::set$<$ std\+::string $>$ tesseract\+\_\+collision\+::\+Contact\+Managers\+Plugin\+Factory\+::get\+Search\+Paths (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the plugin search paths. 
+
+\begin{DoxyReturn}{Returns}
+The search paths 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__collision_1_1ContactManagersPluginFactory_a28dabdd5ddda589a68b6eeb0894340de}\label{classtesseract__collision_1_1ContactManagersPluginFactory_a28dabdd5ddda589a68b6eeb0894340de}} 
+\index{tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}!hasContinuousContactManagerPlugins@{hasContinuousContactManagerPlugins}}
+\index{hasContinuousContactManagerPlugins@{hasContinuousContactManagerPlugins}!tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}}
+\doxysubsubsection{\texorpdfstring{hasContinuousContactManagerPlugins()}{hasContinuousContactManagerPlugins()}}
+{\footnotesize\ttfamily bool tesseract\+\_\+collision\+::\+Contact\+Managers\+Plugin\+Factory\+::has\+Continuous\+Contact\+Manager\+Plugins (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Check if it has continuous contact manager plugins. 
+
+\begin{DoxyReturn}{Returns}
+True if continuous Plugin\+Info\+Map is not empty, otherwise fale 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__collision_1_1ContactManagersPluginFactory_a61b8caba5438c15abd7d472822efcd0c}\label{classtesseract__collision_1_1ContactManagersPluginFactory_a61b8caba5438c15abd7d472822efcd0c}} 
+\index{tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}!hasDiscreteContactManagerPlugins@{hasDiscreteContactManagerPlugins}}
+\index{hasDiscreteContactManagerPlugins@{hasDiscreteContactManagerPlugins}!tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}}
+\doxysubsubsection{\texorpdfstring{hasDiscreteContactManagerPlugins()}{hasDiscreteContactManagerPlugins()}}
+{\footnotesize\ttfamily bool tesseract\+\_\+collision\+::\+Contact\+Managers\+Plugin\+Factory\+::has\+Discrete\+Contact\+Manager\+Plugins (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Check if it has discrete contact manager plugins. 
+
+\begin{DoxyReturn}{Returns}
+True if discrete Plugin\+Info\+Map is not empty, otherwise fale 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__collision_1_1ContactManagersPluginFactory_a4d11868e5b8fbdc5467a9229dd8901d4}\label{classtesseract__collision_1_1ContactManagersPluginFactory_a4d11868e5b8fbdc5467a9229dd8901d4}} 
+\index{tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}!operator=@{operator=}}
+\index{operator=@{operator=}!tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory}{Contact\+Managers\+Plugin\+Factory}} \& tesseract\+\_\+collision\+::\+Contact\+Managers\+Plugin\+Factory\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory}{Contact\+Managers\+Plugin\+Factory}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1ContactManagersPluginFactory_ab47b34623781721e8de88e19145ae6fb}\label{classtesseract__collision_1_1ContactManagersPluginFactory_ab47b34623781721e8de88e19145ae6fb}} 
+\index{tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}!operator=@{operator=}}
+\index{operator=@{operator=}!tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory}{Contact\+Managers\+Plugin\+Factory}} \& tesseract\+\_\+collision\+::\+Contact\+Managers\+Plugin\+Factory\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory}{Contact\+Managers\+Plugin\+Factory}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1ContactManagersPluginFactory_ae9526f34186dd6ae87808d16d194c069}\label{classtesseract__collision_1_1ContactManagersPluginFactory_ae9526f34186dd6ae87808d16d194c069}} 
+\index{tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}!removeContinuousContactManagerPlugin@{removeContinuousContactManagerPlugin}}
+\index{removeContinuousContactManagerPlugin@{removeContinuousContactManagerPlugin}!tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}}
+\doxysubsubsection{\texorpdfstring{removeContinuousContactManagerPlugin()}{removeContinuousContactManagerPlugin()}}
+{\footnotesize\ttfamily void tesseract\+\_\+collision\+::\+Contact\+Managers\+Plugin\+Factory\+::remove\+Continuous\+Contact\+Manager\+Plugin (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
+
+
+
+Remove continuous contact manager plugin. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the contact manager to remove \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__collision_1_1ContactManagersPluginFactory_adc04de4a93adb8c77db6ae22956b762d}\label{classtesseract__collision_1_1ContactManagersPluginFactory_adc04de4a93adb8c77db6ae22956b762d}} 
+\index{tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}!removeDiscreteContactManagerPlugin@{removeDiscreteContactManagerPlugin}}
+\index{removeDiscreteContactManagerPlugin@{removeDiscreteContactManagerPlugin}!tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}}
+\doxysubsubsection{\texorpdfstring{removeDiscreteContactManagerPlugin()}{removeDiscreteContactManagerPlugin()}}
+{\footnotesize\ttfamily void tesseract\+\_\+collision\+::\+Contact\+Managers\+Plugin\+Factory\+::remove\+Discrete\+Contact\+Manager\+Plugin (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
+
+
+
+Remove discrete contact manager plugin. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the contact manager to remove \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__collision_1_1ContactManagersPluginFactory_af64750889290d8bdd52a7a1e34df8d40}\label{classtesseract__collision_1_1ContactManagersPluginFactory_af64750889290d8bdd52a7a1e34df8d40}} 
+\index{tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}!saveConfig@{saveConfig}}
+\index{saveConfig@{saveConfig}!tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}}
+\doxysubsubsection{\texorpdfstring{saveConfig()}{saveConfig()}}
+{\footnotesize\ttfamily void tesseract\+\_\+collision\+::\+Contact\+Managers\+Plugin\+Factory\+::save\+Config (\begin{DoxyParamCaption}\item[{const boost\+::filesystem\+::path \&}]{file\+\_\+path }\end{DoxyParamCaption}) const}
+
+
+
+Save the plugin information to a yaml config file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+path} & The file path \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__collision_1_1ContactManagersPluginFactory_a8c6f25b872d325a16260afd411834886}\label{classtesseract__collision_1_1ContactManagersPluginFactory_a8c6f25b872d325a16260afd411834886}} 
+\index{tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}!setDefaultContinuousContactManagerPlugin@{setDefaultContinuousContactManagerPlugin}}
+\index{setDefaultContinuousContactManagerPlugin@{setDefaultContinuousContactManagerPlugin}!tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}}
+\doxysubsubsection{\texorpdfstring{setDefaultContinuousContactManagerPlugin()}{setDefaultContinuousContactManagerPlugin()}}
+{\footnotesize\ttfamily void tesseract\+\_\+collision\+::\+Contact\+Managers\+Plugin\+Factory\+::set\+Default\+Continuous\+Contact\+Manager\+Plugin (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
+
+
+
+Set a default continuous contact manager. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__collision_1_1ContactManagersPluginFactory_a5dfc0e174af81f9c1820356568549cbf}\label{classtesseract__collision_1_1ContactManagersPluginFactory_a5dfc0e174af81f9c1820356568549cbf}} 
+\index{tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}!setDefaultDiscreteContactManagerPlugin@{setDefaultDiscreteContactManagerPlugin}}
+\index{setDefaultDiscreteContactManagerPlugin@{setDefaultDiscreteContactManagerPlugin}!tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}}
+\doxysubsubsection{\texorpdfstring{setDefaultDiscreteContactManagerPlugin()}{setDefaultDiscreteContactManagerPlugin()}}
+{\footnotesize\ttfamily void tesseract\+\_\+collision\+::\+Contact\+Managers\+Plugin\+Factory\+::set\+Default\+Discrete\+Contact\+Manager\+Plugin (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
+
+
+
+Set a default discrete contact manager. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classtesseract__collision_1_1ContactManagersPluginFactory_a193ecf35d45efa1fd15f9094412f14cc}\label{classtesseract__collision_1_1ContactManagersPluginFactory_a193ecf35d45efa1fd15f9094412f14cc}} 
+\index{tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}!continuous\_factories\_@{continuous\_factories\_}}
+\index{continuous\_factories\_@{continuous\_factories\_}!tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}}
+\doxysubsubsection{\texorpdfstring{continuous\_factories\_}{continuous\_factories\_}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, \mbox{\hyperlink{classtesseract__collision_1_1ContinuousContactManagerFactory_a124ff62aa13a3dd3315c9ead622ae331}{Continuous\+Contact\+Manager\+Factory\+::\+Ptr}}$>$ tesseract\+\_\+collision\+::\+Contact\+Managers\+Plugin\+Factory\+::continuous\+\_\+factories\+\_\+\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1ContactManagersPluginFactory_af0aec6afd68c05b9f81d75d4f8caf7a1}\label{classtesseract__collision_1_1ContactManagersPluginFactory_af0aec6afd68c05b9f81d75d4f8caf7a1}} 
+\index{tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}!continuous\_plugin\_info\_@{continuous\_plugin\_info\_}}
+\index{continuous\_plugin\_info\_@{continuous\_plugin\_info\_}!tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}}
+\doxysubsubsection{\texorpdfstring{continuous\_plugin\_info\_}{continuous\_plugin\_info\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtesseract__common_1_1PluginInfoContainer}{tesseract\+\_\+common\+::\+Plugin\+Info\+Container}} tesseract\+\_\+collision\+::\+Contact\+Managers\+Plugin\+Factory\+::continuous\+\_\+plugin\+\_\+info\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1ContactManagersPluginFactory_a0fd083c648e4ec85463320a7a1e50041}\label{classtesseract__collision_1_1ContactManagersPluginFactory_a0fd083c648e4ec85463320a7a1e50041}} 
+\index{tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}!discrete\_factories\_@{discrete\_factories\_}}
+\index{discrete\_factories\_@{discrete\_factories\_}!tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}}
+\doxysubsubsection{\texorpdfstring{discrete\_factories\_}{discrete\_factories\_}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManagerFactory_a0e81355d33b06da2e342608267209350}{Discrete\+Contact\+Manager\+Factory\+::\+Ptr}}$>$ tesseract\+\_\+collision\+::\+Contact\+Managers\+Plugin\+Factory\+::discrete\+\_\+factories\+\_\+\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1ContactManagersPluginFactory_a993e35990a4bf3a9729afb993d4c4766}\label{classtesseract__collision_1_1ContactManagersPluginFactory_a993e35990a4bf3a9729afb993d4c4766}} 
+\index{tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}!discrete\_plugin\_info\_@{discrete\_plugin\_info\_}}
+\index{discrete\_plugin\_info\_@{discrete\_plugin\_info\_}!tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}}
+\doxysubsubsection{\texorpdfstring{discrete\_plugin\_info\_}{discrete\_plugin\_info\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtesseract__common_1_1PluginInfoContainer}{tesseract\+\_\+common\+::\+Plugin\+Info\+Container}} tesseract\+\_\+collision\+::\+Contact\+Managers\+Plugin\+Factory\+::discrete\+\_\+plugin\+\_\+info\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1ContactManagersPluginFactory_a1c25a869dca05ccfb0f490e5eda0d3ff}\label{classtesseract__collision_1_1ContactManagersPluginFactory_a1c25a869dca05ccfb0f490e5eda0d3ff}} 
+\index{tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}!plugin\_loader\_@{plugin\_loader\_}}
+\index{plugin\_loader\_@{plugin\_loader\_}!tesseract\_collision::ContactManagersPluginFactory@{tesseract\_collision::ContactManagersPluginFactory}}
+\doxysubsubsection{\texorpdfstring{plugin\_loader\_}{plugin\_loader\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__common_1_1PluginLoader}{tesseract\+\_\+common\+::\+Plugin\+Loader}} tesseract\+\_\+collision\+::\+Contact\+Managers\+Plugin\+Factory\+::plugin\+\_\+loader\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+tesseract\+\_\+collision/core/include/tesseract\+\_\+collision/core/\mbox{\hyperlink{contact__managers__plugin__factory_8h}{contact\+\_\+managers\+\_\+plugin\+\_\+factory.\+h}}\item 
+tesseract\+\_\+collision/core/src/\mbox{\hyperlink{contact__managers__plugin__factory_8cpp}{contact\+\_\+managers\+\_\+plugin\+\_\+factory.\+cpp}}\end{DoxyCompactItemize}

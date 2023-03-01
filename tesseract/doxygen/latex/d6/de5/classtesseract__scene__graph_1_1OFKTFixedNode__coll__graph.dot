@@ -1,0 +1,45 @@
+digraph "tesseract_scene_graph::OFKTFixedNode"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [label="tesseract_scene_graph\l::OFKTFixedNode",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="tesseract_scene_graph\l::OFKTBaseNode",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$d0/da9/classtesseract__scene__graph_1_1OFKTBaseNode.html",tooltip=" "];
+  Node3 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="tesseract_scene_graph\l::OFKTNode",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$de/d52/classtesseract__scene__graph_1_1OFKTNode.html",tooltip="The OFKT node is contains multiple trasformation which are described below."];
+  Node3 -> Node2 [dir="back",color="darkorchid3",style="dashed",label=" parent_" ];
+  Node4 -> Node2 [dir="back",color="darkorchid3",style="dashed",label=" joint_name_\nlink_name_" ];
+  Node4 [label="std::string",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+  Node5 -> Node4 [dir="back",color="steelblue1",style="solid"];
+  Node5 [label="std::basic_string\<\l Char \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+  Node6 -> Node2 [dir="back",color="darkorchid3",style="dashed",label=" children_" ];
+  Node6 [label="std::vector\< tesseract\l_scene_graph::OFKTNode * \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+  Node7 -> Node6 [dir="back",color="darkorchid3",style="dashed",label=" elements" ];
+  Node7 [label="tesseract_geometry\l::PolygonMesh",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$d8/dc9/classtesseract__geometry_1_1PolygonMesh.html",tooltip=" "];
+  Node8 -> Node7 [dir="back",color="steelblue1",style="solid"];
+  Node8 [label="tesseract_geometry\l::Geometry",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$df/d1a/classtesseract__geometry_1_1Geometry.html",tooltip=" "];
+  Node9 -> Node7 [dir="back",color="darkorchid3",style="dashed",label=" normals_\nvertices_" ];
+  Node9 [label="std::shared_ptr\< const\l tesseract_common::VectorVector3d \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+  Node7 -> Node9 [dir="back",color="darkorchid3",style="dashed",label=" ptr" ];
+  Node10 -> Node7 [dir="back",color="darkorchid3",style="dashed",label=" faces_" ];
+  Node10 [label="std::shared_ptr\< const\l Eigen::VectorXi \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+  Node7 -> Node10 [dir="back",color="darkorchid3",style="dashed",label=" ptr" ];
+  Node11 -> Node7 [dir="back",color="darkorchid3",style="dashed",label=" resource_" ];
+  Node11 [label="std::shared_ptr\< const\l Resource \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+  Node7 -> Node11 [dir="back",color="darkorchid3",style="dashed",label=" ptr" ];
+  Node12 -> Node7 [dir="back",color="darkorchid3",style="dashed",label=" vertex_colors_" ];
+  Node12 [label="std::shared_ptr\< const\l tesseract_common::VectorVector4d \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+  Node7 -> Node12 [dir="back",color="darkorchid3",style="dashed",label=" ptr" ];
+  Node13 -> Node7 [dir="back",color="darkorchid3",style="dashed",label=" mesh_material_" ];
+  Node13 [label="std::shared_ptr\< MeshMaterial \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+  Node7 -> Node13 [dir="back",color="darkorchid3",style="dashed",label=" ptr" ];
+  Node14 -> Node7 [dir="back",color="darkorchid3",style="dashed",label=" mesh_textures_" ];
+  Node14 [label="std::shared_ptr\< const\l std::vector\< MeshTexture\l::Ptr \> \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+  Node7 -> Node14 [dir="back",color="darkorchid3",style="dashed",label=" ptr" ];
+  Node15 -> Node2 [dir="back",color="darkorchid3",style="dashed",label=" children_const_" ];
+  Node15 [label="std::vector\< const\l tesseract_scene_graph\l::OFKTNode * \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+  Node7 -> Node15 [dir="back",color="darkorchid3",style="dashed",label=" elements" ];
+}

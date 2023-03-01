@@ -1,0 +1,96 @@
+\hypertarget{vhacdCircularList_8h_source}{}\doxysection{vhacd\+Circular\+List.\+h}
+\label{vhacdCircularList_8h_source}\index{tesseract\_collision/vhacd/include/tesseract\_collision/vhacd/inc/vhacdCircularList.h@{tesseract\_collision/vhacd/include/tesseract\_collision/vhacd/inc/vhacdCircularList.h}}
+\mbox{\hyperlink{vhacdCircularList_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* Copyright (c) 2011 Khaled Mamou (kmamou at gmail dot com)}}
+\DoxyCodeLine{2 \textcolor{comment}{ All rights reserved.}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{ Redistribution and use in source and binary forms, with or without modification, are permitted provided that the}}
+\DoxyCodeLine{6 \textcolor{comment}{ following conditions are met:}}
+\DoxyCodeLine{7 \textcolor{comment}{}}
+\DoxyCodeLine{8 \textcolor{comment}{ 1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following}}
+\DoxyCodeLine{9 \textcolor{comment}{ disclaimer.}}
+\DoxyCodeLine{10 \textcolor{comment}{}}
+\DoxyCodeLine{11 \textcolor{comment}{ 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following}}
+\DoxyCodeLine{12 \textcolor{comment}{ disclaimer in the documentation and/or other materials provided with the distribution.}}
+\DoxyCodeLine{13 \textcolor{comment}{}}
+\DoxyCodeLine{14 \textcolor{comment}{ 3. The names of the contributors may not be used to endorse or promote products derived from this software without}}
+\DoxyCodeLine{15 \textcolor{comment}{ specific prior written permission.}}
+\DoxyCodeLine{16 \textcolor{comment}{}}
+\DoxyCodeLine{17 \textcolor{comment}{ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES,}}
+\DoxyCodeLine{18 \textcolor{comment}{ INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE}}
+\DoxyCodeLine{19 \textcolor{comment}{ DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,}}
+\DoxyCodeLine{20 \textcolor{comment}{ SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR}}
+\DoxyCodeLine{21 \textcolor{comment}{ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,}}
+\DoxyCodeLine{22 \textcolor{comment}{ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF}}
+\DoxyCodeLine{23 \textcolor{comment}{ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{24 \textcolor{comment}{ */}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__collision}{tesseract\_collision}}}
+\DoxyCodeLine{30 \{}
+\DoxyCodeLine{31 \textcolor{keyword}{namespace }\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD}{VHACD}}}
+\DoxyCodeLine{32 \{}
+\DoxyCodeLine{34 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{35 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularListElement}{CircularListElement}}}
+\DoxyCodeLine{36 \{}
+\DoxyCodeLine{37 \textcolor{keyword}{public}:}
+\DoxyCodeLine{38   \mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{T}}\& \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularListElement_a50dc017624e2817928ceb54fd9ba2e76}{GetData}}() \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularListElement_aa6bde590f0f7c59b2b44736a72506ae7}{m\_data}}; \}}
+\DoxyCodeLine{39   \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{T}}\& \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularListElement_a437087abd698909eea10607443d616fc}{GetData}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularListElement_aa6bde590f0f7c59b2b44736a72506ae7}{m\_data}}; \}}
+\DoxyCodeLine{40   \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularListElement}{CircularListElement<T>}}*\& \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularListElement_a3c9b7bbc5431766f5fe2c60ae7cac883}{GetNext}}() \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularListElement_af354043b7a60219e8f64f5e916b3294d}{m\_next}}; \}}
+\DoxyCodeLine{41   \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularListElement}{CircularListElement<T>}}*\& \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularListElement_aece1fb4c116b7c05e983d1c67a9021cb}{GetPrev}}() \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularListElement_ae67f2cce8c82bb9fe7d911239cb58032}{m\_prev}}; \}}
+\DoxyCodeLine{42   \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularListElement}{CircularListElement<T>}}*\& \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularListElement_a66943d3fa5b8ad7e65087165e257179c}{GetNext}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularListElement_af354043b7a60219e8f64f5e916b3294d}{m\_next}}; \}}
+\DoxyCodeLine{43   \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularListElement}{CircularListElement<T>}}*\& \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularListElement_a73d495a989f5c5cdab8b4af45df17d57}{GetPrev}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularListElement_ae67f2cce8c82bb9fe7d911239cb58032}{m\_prev}}; \}}
+\DoxyCodeLine{45   \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularListElement_a4291f1d15f0e767af69f4d92df51a748}{CircularListElement}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{T}}\& \mbox{\hyperlink{collision__margin__data__unit_8cpp_a0992235f6cab11fba6116193c7f42b8b}{data}}) \{ \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularListElement_aa6bde590f0f7c59b2b44736a72506ae7}{m\_data}} = \mbox{\hyperlink{collision__margin__data__unit_8cpp_a0992235f6cab11fba6116193c7f42b8b}{data}}; \}}
+\DoxyCodeLine{46   \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularListElement_a0c02bac3fea144d047b5b923ce6fe9c2}{CircularListElement}}(\textcolor{keywordtype}{void}) \{\}}
+\DoxyCodeLine{48   \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularListElement_a149bc98d8cd66d241115d89890430cdc}{\string~CircularListElement}}(\textcolor{keywordtype}{void}) \{\}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{keyword}{private}:}
+\DoxyCodeLine{51   \mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{T}} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularListElement_aa6bde590f0f7c59b2b44736a72506ae7}{m\_data}};}
+\DoxyCodeLine{52   \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularListElement}{CircularListElement<T>}}* \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularListElement_af354043b7a60219e8f64f5e916b3294d}{m\_next}};}
+\DoxyCodeLine{53   \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularListElement}{CircularListElement<T>}}* \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularListElement_ae67f2cce8c82bb9fe7d911239cb58032}{m\_prev}};}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55   \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularListElement_ab5052d77858a2f74863aeb3f9580a9f6}{CircularListElement}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularListElement}{CircularListElement}}\& rhs);}
+\DoxyCodeLine{56 \};}
+\DoxyCodeLine{58 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{59 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularList}{CircularList}}}
+\DoxyCodeLine{60 \{}
+\DoxyCodeLine{61 \textcolor{keyword}{public}:}
+\DoxyCodeLine{62   \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularListElement}{CircularListElement<T>}}*\& \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularList_a5c1ce05a45880161be1d6587c508c838}{GetHead}}() \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularList_a4d217539be1ee3f625ad5a03a1bc1dfc}{m\_head}}; \}}
+\DoxyCodeLine{63   \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularListElement}{CircularListElement<T>}}* \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularList_a12a46ecc2f8d7b71456e2cd2ee8ad67f}{GetHead}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularList_a4d217539be1ee3f625ad5a03a1bc1dfc}{m\_head}}; \}}
+\DoxyCodeLine{64   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularList_a274c8bd7709422164ecf0e6425da2e8e}{IsEmpty}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularList_ac966aed93081cf4c0d1066e4b18bfce5}{m\_size}} == 0); \}}
+\DoxyCodeLine{65   \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularList_a720794f2712005ed59bc6f9a4f619946}{GetSize}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularList_ac966aed93081cf4c0d1066e4b18bfce5}{m\_size}}; \}}
+\DoxyCodeLine{66   \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{T}}\& \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularList_a8dd7e11b38b88719e67af667cea26f91}{GetData}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularList_a4d217539be1ee3f625ad5a03a1bc1dfc}{m\_head}}-\/>GetData(); \}}
+\DoxyCodeLine{67   \mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{T}}\& \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularList_a0f04dc3a6acdd1211da5e51f00d66080}{GetData}}() \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularList_a4d217539be1ee3f625ad5a03a1bc1dfc}{m\_head}}-\/>GetData(); \}}
+\DoxyCodeLine{68   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularList_a19a82ead69fe5c1051a62e41332cbd9f}{Delete}}();}
+\DoxyCodeLine{69   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularList_a19a82ead69fe5c1051a62e41332cbd9f}{Delete}}(\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularListElement}{CircularListElement<T>}}* \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a28b99876d88ada1b6ef77a1aee31bc32}{element}});}
+\DoxyCodeLine{70   \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularListElement}{CircularListElement<T>}}* \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularList_ac786929bd126f5eefb6814756c1eac53}{Add}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{T}}* \mbox{\hyperlink{collision__margin__data__unit_8cpp_a0992235f6cab11fba6116193c7f42b8b}{data}} = 0);}
+\DoxyCodeLine{71   \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularListElement}{CircularListElement<T>}}* \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularList_ac786929bd126f5eefb6814756c1eac53}{Add}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{T}}\& \mbox{\hyperlink{collision__margin__data__unit_8cpp_a0992235f6cab11fba6116193c7f42b8b}{data}});}
+\DoxyCodeLine{72   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularList_ae62fecebe50d8f04786d97fbd32b398a}{Next}}();}
+\DoxyCodeLine{73   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularList_a22edee068a3f5f923319715e70df26a9}{Prev}}();}
+\DoxyCodeLine{74   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularList_a89a735cb255286274148289b8799080a}{Clear}}()}
+\DoxyCodeLine{75   \{}
+\DoxyCodeLine{76     \textcolor{keywordflow}{while} (\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularList_a19a82ead69fe5c1051a62e41332cbd9f}{Delete}}())}
+\DoxyCodeLine{77       ;}
+\DoxyCodeLine{78   \};}
+\DoxyCodeLine{79   \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularList}{CircularList}}\& \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularList_aea4169ea3d4f22044dd00820f052aae6}{operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularList}{CircularList}}\& rhs);}
+\DoxyCodeLine{81   \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularList_a1cbf9bd1867dc302b5d219f2368b08a0}{CircularList}}()}
+\DoxyCodeLine{82   \{}
+\DoxyCodeLine{83     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularList_a4d217539be1ee3f625ad5a03a1bc1dfc}{m\_head}} = 0;}
+\DoxyCodeLine{84     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularList_ac966aed93081cf4c0d1066e4b18bfce5}{m\_size}} = 0;}
+\DoxyCodeLine{85   \}}
+\DoxyCodeLine{86   \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularList_a1cbf9bd1867dc302b5d219f2368b08a0}{CircularList}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularList}{CircularList}}\& rhs);}
+\DoxyCodeLine{88   \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularList_a25f8d1afcb3472a65e86f3b8d3eed252}{\string~CircularList}}(\textcolor{keywordtype}{void}) \{ \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularList_a89a735cb255286274148289b8799080a}{Clear}}(); \};}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90 \textcolor{keyword}{private}:}
+\DoxyCodeLine{91   \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularListElement}{CircularListElement<T>}}* \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularList_a4d217539be1ee3f625ad5a03a1bc1dfc}{m\_head}};  }
+\DoxyCodeLine{92   \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1CircularList_ac966aed93081cf4c0d1066e4b18bfce5}{m\_size}};                   }
+\DoxyCodeLine{93 \};}
+\DoxyCodeLine{94 \}  \textcolor{comment}{// namespace VHACD}}
+\DoxyCodeLine{95 \}  \textcolor{comment}{// namespace tesseract\_collision}}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{vhacdCircularList_8inl}{vhacdCircularList.inl}}"{}}}
+
+\end{DoxyCode}

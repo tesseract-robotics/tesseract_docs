@@ -1,0 +1,185 @@
+\hypertarget{classtesseract__geometry_1_1MeshMaterial}{}\doxysection{tesseract\+\_\+geometry\+::Mesh\+Material Class Reference}
+\label{classtesseract__geometry_1_1MeshMaterial}\index{tesseract\_geometry::MeshMaterial@{tesseract\_geometry::MeshMaterial}}
+
+
+Represents material information extracted from a mesh file.  
+
+
+
+
+{\ttfamily \#include $<$mesh\+\_\+material.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{classtesseract__geometry_1_1MeshMaterial_ad67358c38f5044f5759070974ec73e54}{Ptr}} = std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classtesseract__geometry_1_1MeshMaterial}{Mesh\+Material}} $>$
+\item 
+using \mbox{\hyperlink{classtesseract__geometry_1_1MeshMaterial_a40e28bff7129cc427bee736136b13e72}{Const\+Ptr}} = std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{classtesseract__geometry_1_1MeshMaterial}{Mesh\+Material}} $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtesseract__geometry_1_1MeshMaterial_a9b85bb3a9fd4d7f389363a0168c0648c}{Mesh\+Material}} (Eigen\+::\+Vector4d base\+Color\+Factor, double metallic\+Factor, double roughness\+Factor, Eigen\+::\+Vector4d emissive\+Factor)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classtesseract__geometry_1_1MeshMaterial}{Mesh\+Material}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtesseract__geometry_1_1MeshMaterial_af43f2f67f60fc8c461904d96019f7419}{Mesh\+Material}} ()=default
+\item 
+Eigen\+::\+Vector4d \mbox{\hyperlink{classtesseract__geometry_1_1MeshMaterial_a61235b03fa1e0c15e779b07f532e14ef}{get\+Base\+Color\+Factor}} () const
+\begin{DoxyCompactList}\small\item\em Get the base color of the mesh. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classtesseract__geometry_1_1MeshMaterial_abb187c0e82382354171e44a4d1fdfc6b}{get\+Metallic\+Factor}} () const
+\begin{DoxyCompactList}\small\item\em Get the Metallic Factor of the mesh (PBR parameter) \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classtesseract__geometry_1_1MeshMaterial_a737f31dab85d6a222f54035719ce6923}{get\+Roughness\+Factor}} () const
+\begin{DoxyCompactList}\small\item\em Get the Roughness Factor of the mesh (PBR parameter) \end{DoxyCompactList}\item 
+Eigen\+::\+Vector4d \mbox{\hyperlink{classtesseract__geometry_1_1MeshMaterial_aba4bcd1f12b66557a0ef20f4b2fd6120}{get\+Emissive\+Factor}} () const
+\begin{DoxyCompactList}\small\item\em Get the emissive factor of the mesh. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Eigen\+::\+Vector4d \mbox{\hyperlink{classtesseract__geometry_1_1MeshMaterial_a8bbf7e891f27d68a9ad338fa7d36e7d3}{base\+\_\+color\+\_\+factor\+\_\+}}
+\item 
+double \mbox{\hyperlink{classtesseract__geometry_1_1MeshMaterial_a7950576acdaa2cca592ed38a1a8f5c9c}{metallic\+\_\+factor\+\_\+}} = 0
+\item 
+double \mbox{\hyperlink{classtesseract__geometry_1_1MeshMaterial_a34a564c8851d1293f1b7a3ed68836a1d}{roughness\+\_\+factor\+\_\+}} = 0.\+5
+\item 
+Eigen\+::\+Vector4d \mbox{\hyperlink{classtesseract__geometry_1_1MeshMaterial_ade218b7f81a004f58315f4c84dcd932d}{emissive\+\_\+factor\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents material information extracted from a mesh file. 
+
+\mbox{\hyperlink{classtesseract__geometry_1_1Mesh}{Mesh}} files contain material information. The mesh parser will extract the material information and store it in a \mbox{\hyperlink{classtesseract__geometry_1_1MeshMaterial}{Mesh\+Material}} instance. The \mbox{\hyperlink{classtesseract__geometry_1_1MeshMaterial}{Mesh\+Material}} class uses a subset PBR Metallic workflow, as specified in the gl\+TF 2.\+0 file format standard. The four parameters supported are base\+Color\+Factor, metallic\+Factor, roughness\+Factor, and emmisive\+Factor. (The \mbox{\hyperlink{classtesseract__geometry_1_1MeshTexture}{Mesh\+Texture}} class stores diffuse textures that can be used for decals and fiducial marks, and is stored separately from \mbox{\hyperlink{classtesseract__geometry_1_1MeshMaterial}{Mesh\+Material}}.) These four parameters and \mbox{\hyperlink{classtesseract__geometry_1_1MeshTexture}{Mesh\+Texture}} should be enough to display \char`\"{}\+CAD quality\char`\"{} renderings in visualizers. The full mesh file should be used when higher quality rendering is required.
+
+The \mbox{\hyperlink{classtesseract__geometry_1_1MeshMaterial}{Mesh\+Material}} favors PBR materials extracted from gl\+TF 2.\+0 files. COLLADA does not support PBR. Only \char`\"{}\+Diffuse\char`\"{} and \char`\"{}\+Emissive\char`\"{} are read. \char`\"{}\+Specular\char`\"{} and \char`\"{}\+Ambient\char`\"{} are ignored. 
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classtesseract__geometry_1_1MeshMaterial_a40e28bff7129cc427bee736136b13e72}\label{classtesseract__geometry_1_1MeshMaterial_a40e28bff7129cc427bee736136b13e72}} 
+\index{tesseract\_geometry::MeshMaterial@{tesseract\_geometry::MeshMaterial}!ConstPtr@{ConstPtr}}
+\index{ConstPtr@{ConstPtr}!tesseract\_geometry::MeshMaterial@{tesseract\_geometry::MeshMaterial}}
+\doxysubsubsection{\texorpdfstring{ConstPtr}{ConstPtr}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classtesseract__geometry_1_1MeshMaterial_a40e28bff7129cc427bee736136b13e72}{tesseract\+\_\+geometry\+::\+Mesh\+Material\+::\+Const\+Ptr}} =  std\+::shared\+\_\+ptr$<$const \mbox{\hyperlink{classtesseract__geometry_1_1MeshMaterial}{Mesh\+Material}}$>$}
+
+\mbox{\Hypertarget{classtesseract__geometry_1_1MeshMaterial_ad67358c38f5044f5759070974ec73e54}\label{classtesseract__geometry_1_1MeshMaterial_ad67358c38f5044f5759070974ec73e54}} 
+\index{tesseract\_geometry::MeshMaterial@{tesseract\_geometry::MeshMaterial}!Ptr@{Ptr}}
+\index{Ptr@{Ptr}!tesseract\_geometry::MeshMaterial@{tesseract\_geometry::MeshMaterial}}
+\doxysubsubsection{\texorpdfstring{Ptr}{Ptr}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classtesseract__geometry_1_1MeshMaterial_ad67358c38f5044f5759070974ec73e54}{tesseract\+\_\+geometry\+::\+Mesh\+Material\+::\+Ptr}} =  std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classtesseract__geometry_1_1MeshMaterial}{Mesh\+Material}}$>$}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtesseract__geometry_1_1MeshMaterial_a9b85bb3a9fd4d7f389363a0168c0648c}\label{classtesseract__geometry_1_1MeshMaterial_a9b85bb3a9fd4d7f389363a0168c0648c}} 
+\index{tesseract\_geometry::MeshMaterial@{tesseract\_geometry::MeshMaterial}!MeshMaterial@{MeshMaterial}}
+\index{MeshMaterial@{MeshMaterial}!tesseract\_geometry::MeshMaterial@{tesseract\_geometry::MeshMaterial}}
+\doxysubsubsection{\texorpdfstring{MeshMaterial()}{MeshMaterial()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily tesseract\+\_\+geometry\+::\+Mesh\+Material\+::\+Mesh\+Material (\begin{DoxyParamCaption}\item[{Eigen\+::\+Vector4d}]{base\+Color\+Factor,  }\item[{double}]{metallic\+Factor,  }\item[{double}]{roughness\+Factor,  }\item[{Eigen\+::\+Vector4d}]{emissive\+Factor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{classtesseract__geometry_1_1MeshMaterial}{Mesh\+Material}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em base\+Color\+Factor} & The base color of the mesh \\
+\hline
+{\em metallic\+Factor} & The metallic factor parameter (PBR parameter) \\
+\hline
+{\em roughness\+Factor} & The roughness factor parameter (PBR parameter) \\
+\hline
+{\em emissive\+Factor} & The emissivity of the mesh \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__geometry_1_1MeshMaterial_af43f2f67f60fc8c461904d96019f7419}\label{classtesseract__geometry_1_1MeshMaterial_af43f2f67f60fc8c461904d96019f7419}} 
+\index{tesseract\_geometry::MeshMaterial@{tesseract\_geometry::MeshMaterial}!MeshMaterial@{MeshMaterial}}
+\index{MeshMaterial@{MeshMaterial}!tesseract\_geometry::MeshMaterial@{tesseract\_geometry::MeshMaterial}}
+\doxysubsubsection{\texorpdfstring{MeshMaterial()}{MeshMaterial()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily tesseract\+\_\+geometry\+::\+Mesh\+Material\+::\+Mesh\+Material (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtesseract__geometry_1_1MeshMaterial_a61235b03fa1e0c15e779b07f532e14ef}\label{classtesseract__geometry_1_1MeshMaterial_a61235b03fa1e0c15e779b07f532e14ef}} 
+\index{tesseract\_geometry::MeshMaterial@{tesseract\_geometry::MeshMaterial}!getBaseColorFactor@{getBaseColorFactor}}
+\index{getBaseColorFactor@{getBaseColorFactor}!tesseract\_geometry::MeshMaterial@{tesseract\_geometry::MeshMaterial}}
+\doxysubsubsection{\texorpdfstring{getBaseColorFactor()}{getBaseColorFactor()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector4d tesseract\+\_\+geometry\+::\+Mesh\+Material\+::get\+Base\+Color\+Factor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the base color of the mesh. 
+
+\begin{DoxyReturn}{Returns}
+The base color in RGBA 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__geometry_1_1MeshMaterial_aba4bcd1f12b66557a0ef20f4b2fd6120}\label{classtesseract__geometry_1_1MeshMaterial_aba4bcd1f12b66557a0ef20f4b2fd6120}} 
+\index{tesseract\_geometry::MeshMaterial@{tesseract\_geometry::MeshMaterial}!getEmissiveFactor@{getEmissiveFactor}}
+\index{getEmissiveFactor@{getEmissiveFactor}!tesseract\_geometry::MeshMaterial@{tesseract\_geometry::MeshMaterial}}
+\doxysubsubsection{\texorpdfstring{getEmissiveFactor()}{getEmissiveFactor()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector4d tesseract\+\_\+geometry\+::\+Mesh\+Material\+::get\+Emissive\+Factor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the emissive factor of the mesh. 
+
+\char`\"{}\+Emissive factor\char`\"{} is used to make the mesh \char`\"{}glow\char`\"{}. How this is interpreted depends on the rendering engine.
+
+\begin{DoxyReturn}{Returns}
+The emissive factor in RGBA 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__geometry_1_1MeshMaterial_abb187c0e82382354171e44a4d1fdfc6b}\label{classtesseract__geometry_1_1MeshMaterial_abb187c0e82382354171e44a4d1fdfc6b}} 
+\index{tesseract\_geometry::MeshMaterial@{tesseract\_geometry::MeshMaterial}!getMetallicFactor@{getMetallicFactor}}
+\index{getMetallicFactor@{getMetallicFactor}!tesseract\_geometry::MeshMaterial@{tesseract\_geometry::MeshMaterial}}
+\doxysubsubsection{\texorpdfstring{getMetallicFactor()}{getMetallicFactor()}}
+{\footnotesize\ttfamily double tesseract\+\_\+geometry\+::\+Mesh\+Material\+::get\+Metallic\+Factor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the Metallic Factor of the mesh (PBR parameter) 
+
+\begin{DoxyReturn}{Returns}
+The metallic factor, between 0 and 1 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__geometry_1_1MeshMaterial_a737f31dab85d6a222f54035719ce6923}\label{classtesseract__geometry_1_1MeshMaterial_a737f31dab85d6a222f54035719ce6923}} 
+\index{tesseract\_geometry::MeshMaterial@{tesseract\_geometry::MeshMaterial}!getRoughnessFactor@{getRoughnessFactor}}
+\index{getRoughnessFactor@{getRoughnessFactor}!tesseract\_geometry::MeshMaterial@{tesseract\_geometry::MeshMaterial}}
+\doxysubsubsection{\texorpdfstring{getRoughnessFactor()}{getRoughnessFactor()}}
+{\footnotesize\ttfamily double tesseract\+\_\+geometry\+::\+Mesh\+Material\+::get\+Roughness\+Factor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the Roughness Factor of the mesh (PBR parameter) 
+
+\begin{DoxyReturn}{Returns}
+The roughness factor, between 0 and 1 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classtesseract__geometry_1_1MeshMaterial_a8bbf7e891f27d68a9ad338fa7d36e7d3}\label{classtesseract__geometry_1_1MeshMaterial_a8bbf7e891f27d68a9ad338fa7d36e7d3}} 
+\index{tesseract\_geometry::MeshMaterial@{tesseract\_geometry::MeshMaterial}!base\_color\_factor\_@{base\_color\_factor\_}}
+\index{base\_color\_factor\_@{base\_color\_factor\_}!tesseract\_geometry::MeshMaterial@{tesseract\_geometry::MeshMaterial}}
+\doxysubsubsection{\texorpdfstring{base\_color\_factor\_}{base\_color\_factor\_}}
+{\footnotesize\ttfamily Eigen\+::\+Vector4d tesseract\+\_\+geometry\+::\+Mesh\+Material\+::base\+\_\+color\+\_\+factor\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__geometry_1_1MeshMaterial_ade218b7f81a004f58315f4c84dcd932d}\label{classtesseract__geometry_1_1MeshMaterial_ade218b7f81a004f58315f4c84dcd932d}} 
+\index{tesseract\_geometry::MeshMaterial@{tesseract\_geometry::MeshMaterial}!emissive\_factor\_@{emissive\_factor\_}}
+\index{emissive\_factor\_@{emissive\_factor\_}!tesseract\_geometry::MeshMaterial@{tesseract\_geometry::MeshMaterial}}
+\doxysubsubsection{\texorpdfstring{emissive\_factor\_}{emissive\_factor\_}}
+{\footnotesize\ttfamily Eigen\+::\+Vector4d tesseract\+\_\+geometry\+::\+Mesh\+Material\+::emissive\+\_\+factor\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__geometry_1_1MeshMaterial_a7950576acdaa2cca592ed38a1a8f5c9c}\label{classtesseract__geometry_1_1MeshMaterial_a7950576acdaa2cca592ed38a1a8f5c9c}} 
+\index{tesseract\_geometry::MeshMaterial@{tesseract\_geometry::MeshMaterial}!metallic\_factor\_@{metallic\_factor\_}}
+\index{metallic\_factor\_@{metallic\_factor\_}!tesseract\_geometry::MeshMaterial@{tesseract\_geometry::MeshMaterial}}
+\doxysubsubsection{\texorpdfstring{metallic\_factor\_}{metallic\_factor\_}}
+{\footnotesize\ttfamily double tesseract\+\_\+geometry\+::\+Mesh\+Material\+::metallic\+\_\+factor\+\_\+ = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__geometry_1_1MeshMaterial_a34a564c8851d1293f1b7a3ed68836a1d}\label{classtesseract__geometry_1_1MeshMaterial_a34a564c8851d1293f1b7a3ed68836a1d}} 
+\index{tesseract\_geometry::MeshMaterial@{tesseract\_geometry::MeshMaterial}!roughness\_factor\_@{roughness\_factor\_}}
+\index{roughness\_factor\_@{roughness\_factor\_}!tesseract\_geometry::MeshMaterial@{tesseract\_geometry::MeshMaterial}}
+\doxysubsubsection{\texorpdfstring{roughness\_factor\_}{roughness\_factor\_}}
+{\footnotesize\ttfamily double tesseract\+\_\+geometry\+::\+Mesh\+Material\+::roughness\+\_\+factor\+\_\+ = 0.\+5\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+tesseract\+\_\+geometry/include/tesseract\+\_\+geometry/impl/\mbox{\hyperlink{mesh__material_8h}{mesh\+\_\+material.\+h}}\end{DoxyCompactItemize}

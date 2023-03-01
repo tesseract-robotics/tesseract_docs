@@ -1,0 +1,539 @@
+\hypertarget{contact__managers__factory__unit_8cpp}{}\doxysection{tesseract\+\_\+collision/test/contact\+\_\+managers\+\_\+factory\+\_\+unit.cpp File Reference}
+\label{contact__managers__factory__unit_8cpp}\index{tesseract\_collision/test/contact\_managers\_factory\_unit.cpp@{tesseract\_collision/test/contact\_managers\_factory\_unit.cpp}}
+
+
+Tesseract collision contact managers factory test.  
+
+
+{\ttfamily \#include $<$tesseract\+\_\+common/macros.\+h$>$}\newline
+{\ttfamily \#include $<$gtest/gtest.\+h$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+collision/core/contact\+\_\+managers\+\_\+plugin\+\_\+factory.\+h$>$}\newline
+Include dependency graph for contact\+\_\+managers\+\_\+factory\+\_\+unit.\+cpp\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{contact__managers__factory__unit_8cpp_acf5a22d527d13f4382612534c922304e}{run\+Contact\+Managers\+Factory\+Test}} (const tesseract\+\_\+common\+::fs\+::path \&\mbox{\hyperlink{contact__managers__factory__unit_8cpp_adab96363548cee960cc8508434b1b4d3}{config\+\_\+path}})
+\item 
+\mbox{\hyperlink{contact__managers__factory__unit_8cpp_a27d2da75ad805fe2bd12649df8445171}{run\+Contact\+Managers\+Factory\+Test}} (\mbox{\hyperlink{contact__managers__factory__unit_8cpp_adab96363548cee960cc8508434b1b4d3}{config\+\_\+path}})
+\item 
+\mbox{\hyperlink{contact__managers__factory__unit_8cpp_a4657027b79e5ebbb98ad1dab70e0fe7d}{run\+Contact\+Managers\+Factory\+Test}} (\mbox{\hyperlink{contact__managers__factory__unit_8cpp_ae173adafdde7b3fc3373a0fbf9f60b4f}{export\+\_\+config\+\_\+path}})
+\item 
+\mbox{\hyperlink{contact__managers__factory__unit_8cpp_a878f6480cc511a792c3e8ca3464905c8}{EXPECT\+\_\+\+EQ}} (sp.\+size(), 2)
+\item 
+\mbox{\hyperlink{contact__managers__factory__unit_8cpp_a416e32dfee4de44330100ba2654f346a}{for}} (\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a395d31593a673a3b0efd30ad8d2bba78}{auto}} \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a325f3c2b297a245575c6f2f91bd5f1e2}{it}}=search\+\_\+paths.\+begin();\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a325f3c2b297a245575c6f2f91bd5f1e2}{it}} !=search\+\_\+paths.\+end();++\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a325f3c2b297a245575c6f2f91bd5f1e2}{it}})
+\item 
+\mbox{\hyperlink{contact__managers__factory__unit_8cpp_ad8a800d262b1777b18a394bce4613adc}{EXPECT\+\_\+\+EQ}} (sl.\+size(), 2)
+\item 
+\mbox{\hyperlink{contact__managers__factory__unit_8cpp_ab9c6ae432fae942913c5a7500745f9c2}{EXPECT\+\_\+\+EQ}} (discrete\+\_\+plugins.\+size(), 3)
+\item 
+\mbox{\hyperlink{contact__managers__factory__unit_8cpp_aa6067368446c510eef80683bab7c752c}{EXPECT\+\_\+\+EQ}} (continuous\+\_\+plugins.\+size(), 2)
+\item 
+\mbox{\hyperlink{contact__managers__factory__unit_8cpp_aaddf2bce1b27f05a09c279a49fa77d71}{EXPECT\+\_\+\+FALSE}} (factory.\+get\+Search\+Paths().empty())
+\item 
+\mbox{\hyperlink{contact__managers__factory__unit_8cpp_ad582fb7d64bebee1e5978a099a5d59c1}{EXPECT\+\_\+\+EQ}} (factory.\+get\+Search\+Paths().size(), 1)
+\item 
+\mbox{\hyperlink{contact__managers__factory__unit_8cpp_afbc278e79ce1edde81c00e34008b0874}{EXPECT\+\_\+\+EQ}} (factory.\+get\+Search\+Libraries().size(), 2)
+\item 
+\mbox{\hyperlink{contact__managers__factory__unit_8cpp_a5ca94372f119d0216a866ea2b94cd20c}{EXPECT\+\_\+\+EQ}} (factory.\+get\+Discrete\+Contact\+Manager\+Plugins().size(), 0)
+\item 
+\mbox{\hyperlink{contact__managers__factory__unit_8cpp_a661c1538a925c80d6bbd9ba3c7665c19}{EXPECT\+\_\+\+ANY\+\_\+\+THROW}} (factory.\+get\+Default\+Discrete\+Contact\+Manager\+Plugin())
+\item 
+\mbox{\hyperlink{contact__managers__factory__unit_8cpp_afd9f8ad25a3e56ff1ca5ba4b6d8845ec}{EXPECT\+\_\+\+FALSE}} (factory.\+has\+Discrete\+Contact\+Manager\+Plugins())
+\item 
+\mbox{\hyperlink{contact__managers__factory__static__unit_8cpp_a08617937c106907314690deaf7abb4c1}{factory}} \mbox{\hyperlink{contact__managers__factory__unit_8cpp_ac61d3536faa3230340516c5ef6391994}{add\+Search\+Path}} (\char`\"{}/usr/local/lib\char`\"{})
+\item 
+\mbox{\hyperlink{contact__managers__factory__static__unit_8cpp_a08617937c106907314690deaf7abb4c1}{factory}} \mbox{\hyperlink{contact__managers__factory__unit_8cpp_a68e1631993f23d34b38746fba8a589d0}{add\+Search\+Library}} (\char`\"{}tesseract\+\_\+collision\char`\"{})
+\item 
+\mbox{\hyperlink{contact__managers__factory__unit_8cpp_adfad6ee9d176d308e295707f62f7916d}{EXPECT\+\_\+\+EQ}} (factory.\+get\+Search\+Libraries().size(), 3)
+\item 
+\mbox{\hyperlink{contact__managers__factory__unit_8cpp_ae1b849e0344ca986c0a821a1d2e9fa1d}{EXPECT\+\_\+\+TRUE}} (map.\+find(\char`\"{}Not\+Found\char`\"{})==map.\+end())
+\item 
+\mbox{\hyperlink{contact__managers__factory__static__unit_8cpp_a08617937c106907314690deaf7abb4c1}{factory}} \mbox{\hyperlink{contact__managers__factory__unit_8cpp_a4ab610fd3e0316b2b171bce6ff55e78f}{add\+Discrete\+Contact\+Manager\+Plugin}} (\char`\"{}Test\+Discrete\+Manager\char`\"{}, \mbox{\hyperlink{contact__managers__factory__unit_8cpp_ae40c83f984192e54ccc972b090e8f401}{pi}})
+\item 
+\mbox{\hyperlink{contact__managers__factory__unit_8cpp_a21e3080fc524a3bb2aff897b35051837}{EXPECT\+\_\+\+TRUE}} (factory.\+has\+Discrete\+Contact\+Manager\+Plugins())
+\item 
+\mbox{\hyperlink{contact__managers__factory__unit_8cpp_af5e153644d7d20614e276cde971462f0}{EXPECT\+\_\+\+TRUE}} (map.\+find(\char`\"{}Test\+Discrete\+Manager\char`\"{}) !=map.\+end())
+\item 
+\mbox{\hyperlink{contact__managers__factory__unit_8cpp_a6b87b9668d627c62bf7b788faf8c05a8}{EXPECT\+\_\+\+EQ}} (factory.\+get\+Default\+Discrete\+Contact\+Manager\+Plugin(), \char`\"{}Test\+Discrete\+Manager\char`\"{})
+\item 
+\mbox{\hyperlink{contact__managers__factory__static__unit_8cpp_a08617937c106907314690deaf7abb4c1}{factory}} \mbox{\hyperlink{contact__managers__factory__unit_8cpp_ad85f011ee7e742ac38192318869626aa}{add\+Discrete\+Contact\+Manager\+Plugin}} (\char`\"{}Test2\+Discrete\+Manager\char`\"{}, \mbox{\hyperlink{contact__managers__factory__unit_8cpp_a75c8712e5104a3560e539877b5af5ef7}{pi2}})
+\item 
+\mbox{\hyperlink{contact__managers__factory__unit_8cpp_a2ee9ec5823d5ab35b111ffaf0f14f83a}{EXPECT\+\_\+\+TRUE}} (map.\+find(\char`\"{}Test2\+Discrete\+Manager\char`\"{}) !=map.\+end())
+\item 
+\mbox{\hyperlink{contact__managers__factory__unit_8cpp_afdf35c3ef701a077de35fa4620af3e3d}{EXPECT\+\_\+\+EQ}} (factory.\+get\+Default\+Discrete\+Contact\+Manager\+Plugin(), \char`\"{}Test2\+Discrete\+Manager\char`\"{})
+\item 
+\mbox{\hyperlink{contact__managers__factory__static__unit_8cpp_a08617937c106907314690deaf7abb4c1}{factory}} \mbox{\hyperlink{contact__managers__factory__unit_8cpp_ab9724dd18790f07b0dbc3ab961ac6898}{set\+Default\+Discrete\+Contact\+Manager\+Plugin}} (\char`\"{}Test\+Discrete\+Manager\char`\"{})
+\item 
+\mbox{\hyperlink{contact__managers__factory__static__unit_8cpp_a08617937c106907314690deaf7abb4c1}{factory}} \mbox{\hyperlink{contact__managers__factory__unit_8cpp_a06238b1576fb607cb2cfe5d73b9736fd}{remove\+Discrete\+Contact\+Manager\+Plugin}} (\char`\"{}Test\+Discrete\+Manager\char`\"{})
+\item 
+\mbox{\hyperlink{contact__managers__factory__unit_8cpp_a1398d61780d1c71ecb27f804a074c07a}{EXPECT\+\_\+\+ANY\+\_\+\+THROW}} (\mbox{\hyperlink{contact__managers__factory__unit_8cpp_a06238b1576fb607cb2cfe5d73b9736fd}{factory.\+remove\+Discrete\+Contact\+Manager\+Plugin}}(\char`\"{}Does\+Not\+Exist\char`\"{}))
+\item 
+\mbox{\hyperlink{contact__managers__factory__static__unit_8cpp_a08617937c106907314690deaf7abb4c1}{factory}} \mbox{\hyperlink{contact__managers__factory__unit_8cpp_a3023ac5a675959d29521c246f71633b0}{add\+Continuous\+Contact\+Manager\+Plugin}} (\char`\"{}Test\+Continuous\+Manager\char`\"{}, \mbox{\hyperlink{contact__managers__factory__unit_8cpp_ae40c83f984192e54ccc972b090e8f401}{pi}})
+\item 
+\mbox{\hyperlink{contact__managers__factory__unit_8cpp_ad2ed13f05b47a7d5bb9eba13dbdeac5d}{EXPECT\+\_\+\+TRUE}} (map.\+find(\char`\"{}Test\+Continuous\+Manager\char`\"{}) !=map.\+end())
+\item 
+\mbox{\hyperlink{contact__managers__factory__unit_8cpp_a9ac552856dbd489c7a95abc6fab66587}{EXPECT\+\_\+\+EQ}} (factory.\+get\+Default\+Continuous\+Contact\+Manager\+Plugin(), \char`\"{}Test\+Continuous\+Manager\char`\"{})
+\item 
+\mbox{\hyperlink{contact__managers__factory__static__unit_8cpp_a08617937c106907314690deaf7abb4c1}{factory}} \mbox{\hyperlink{contact__managers__factory__unit_8cpp_a967b4d9e69fd525529816d3ce33b158d}{add\+Continuous\+Contact\+Manager\+Plugin}} (\char`\"{}Test2\+Continuous\+Manager\char`\"{}, \mbox{\hyperlink{contact__managers__factory__unit_8cpp_a75c8712e5104a3560e539877b5af5ef7}{pi2}})
+\item 
+\mbox{\hyperlink{contact__managers__factory__unit_8cpp_a39182a05671f0ea64c84545b720fb852}{EXPECT\+\_\+\+TRUE}} (map.\+find(\char`\"{}Test2\+Continuous\+Manager\char`\"{}) !=map.\+end())
+\item 
+\mbox{\hyperlink{contact__managers__factory__unit_8cpp_ae1862bd296c822cc3585a1811b7f2a9e}{EXPECT\+\_\+\+EQ}} (factory.\+get\+Default\+Continuous\+Contact\+Manager\+Plugin(), \char`\"{}Test2\+Continuous\+Manager\char`\"{})
+\item 
+\mbox{\hyperlink{contact__managers__factory__static__unit_8cpp_a08617937c106907314690deaf7abb4c1}{factory}} \mbox{\hyperlink{contact__managers__factory__unit_8cpp_a0c80377b9a5d904c0d53719c85016ad8}{set\+Default\+Continuous\+Contact\+Manager\+Plugin}} (\char`\"{}Test\+Continuous\+Manager\char`\"{})
+\item 
+\mbox{\hyperlink{contact__managers__factory__static__unit_8cpp_a08617937c106907314690deaf7abb4c1}{factory}} \mbox{\hyperlink{contact__managers__factory__unit_8cpp_a57322d59dc6f7a735cc81d2abc9925a1}{remove\+Continuous\+Contact\+Manager\+Plugin}} (\char`\"{}Test\+Continuous\+Manager\char`\"{})
+\item 
+int \mbox{\hyperlink{contact__managers__factory__unit_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+tesseract\+\_\+common\+::fs\+::path \mbox{\hyperlink{contact__managers__factory__unit_8cpp_adab96363548cee960cc8508434b1b4d3}{config\+\_\+path}} = file\+\_\+path.\+parent\+\_\+path() / \char`\"{}contact\+\_\+manager\+\_\+plugins.\+yaml\char`\"{}
+\item 
+tesseract\+\_\+common\+::fs\+::path \mbox{\hyperlink{contact__managers__factory__unit_8cpp_ae173adafdde7b3fc3373a0fbf9f60b4f}{export\+\_\+config\+\_\+path}}
+\item 
+\mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory}{Contact\+Managers\+Plugin\+Factory}} \mbox{\hyperlink{contact__managers__factory__unit_8cpp_a472b5177b77c6b5fbee4b819b81391bf}{factory}} (\mbox{\hyperlink{collision__core__unit_8cpp_a2013c60ebd4a63f15fafe2287736ae37}{config}})
+\item 
+YAML\+::\+Node \mbox{\hyperlink{contact__managers__factory__unit_8cpp_aa72e379a2b942efbbd6ee85db94ae223}{plugin\+\_\+config}} = YAML\+::\+Load(\mbox{\hyperlink{collision__core__unit_8cpp_a2013c60ebd4a63f15fafe2287736ae37}{config}})
+\item 
+const YAML\+::\+Node \& \mbox{\hyperlink{contact__managers__factory__unit_8cpp_aa85411aa79e8b65adf666700a5a44add}{plugin\+\_\+info}} = \mbox{\hyperlink{contact__managers__factory__static__unit_8cpp_aa72e379a2b942efbbd6ee85db94ae223}{plugin\+\_\+config}}\mbox{[}\char`\"{}contact\+\_\+manager\+\_\+plugins\char`\"{}\mbox{]}
+\item 
+const YAML\+::\+Node \& \mbox{\hyperlink{contact__managers__factory__unit_8cpp_a2f3e59daa23f0b486727dd6eff7d7420}{search\+\_\+paths}} = \mbox{\hyperlink{contact__managers__factory__unit_8cpp_aa85411aa79e8b65adf666700a5a44add}{plugin\+\_\+info}}\mbox{[}\char`\"{}search\+\_\+paths\char`\"{}\mbox{]}
+\item 
+const YAML\+::\+Node \& \mbox{\hyperlink{contact__managers__factory__unit_8cpp_a4eb26c3b59ba136eaa63f4139766f564}{search\+\_\+libraries}} = \mbox{\hyperlink{contact__managers__factory__unit_8cpp_aa85411aa79e8b65adf666700a5a44add}{plugin\+\_\+info}}\mbox{[}\char`\"{}search\+\_\+libraries\char`\"{}\mbox{]}
+\item 
+const YAML\+::\+Node \& \mbox{\hyperlink{contact__managers__factory__unit_8cpp_ab64b6e1aa2283727e5a3884ed1d8d139}{discrete\+\_\+plugins}} = \mbox{\hyperlink{contact__managers__factory__unit_8cpp_aa85411aa79e8b65adf666700a5a44add}{plugin\+\_\+info}}\mbox{[}\char`\"{}discrete\+\_\+plugins\char`\"{}\mbox{]}\mbox{[}\char`\"{}plugins\char`\"{}\mbox{]}
+\item 
+const YAML\+::\+Node \& \mbox{\hyperlink{contact__managers__factory__unit_8cpp_a86ff99c640958927d2ad220bcf47b405}{continuous\+\_\+plugins}} = \mbox{\hyperlink{contact__managers__factory__unit_8cpp_aa85411aa79e8b65adf666700a5a44add}{plugin\+\_\+info}}\mbox{[}\char`\"{}continuous\+\_\+plugins\char`\"{}\mbox{]}\mbox{[}\char`\"{}plugins\char`\"{}\mbox{]}
+\item 
+\mbox{\hyperlink{structtesseract__common_1_1PluginInfo}{tesseract\+\_\+common\+::\+Plugin\+Info}} \mbox{\hyperlink{contact__managers__factory__unit_8cpp_ae40c83f984192e54ccc972b090e8f401}{pi}}
+\item 
+\mbox{\hyperlink{contact__managers__factory__unit_8cpp_ae40c83f984192e54ccc972b090e8f401}{pi}} \mbox{\hyperlink{contact__managers__factory__unit_8cpp_a2315948cd202088c6c2dcb883484535f}{class\+\_\+name}} = \char`\"{}Test\+Discrete\+Manager\+Factory\char`\"{}
+\item 
+\mbox{\hyperlink{contact__managers__factory__unit_8cpp_a9ec9dda576db2a36c42c1c3af155d07c}{map}} = factory.\+get\+Discrete\+Contact\+Manager\+Plugins()
+\item 
+\mbox{\hyperlink{structtesseract__common_1_1PluginInfo}{tesseract\+\_\+common\+::\+Plugin\+Info}} \mbox{\hyperlink{contact__managers__factory__unit_8cpp_a75c8712e5104a3560e539877b5af5ef7}{pi2}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Tesseract collision contact managers factory test. 
+
+\begin{DoxyAuthor}{Author}
+Levi Armstrong 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+October 25, 2021 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+TODO 
+\end{DoxyVersion}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000041}{Bug}}]No known bugs\end{DoxyRefDesc}
+
+
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2021, Southwest Research Institute
+\end{DoxyCopyright}
+\begin{DoxyParagraph}{License}
+Software License Agreement (Apache License) 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+Licensed under the Apache License, Version 2.\+0 (the \char`\"{}\+License\char`\"{}); you may not use this file except in compliance with the License. You may obtain a copy of the License at \href{http://www.apache.org/licenses/LICENSE-2.0}{\texttt{ http\+://www.\+apache.\+org/licenses/\+LICENSE-\/2.\+0}} 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \char`\"{}\+AS IS\char`\"{} BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+\end{DoxyParagraph}
+
+
+\begin{DoxyAuthor}{Author}
+Levi Armstrong 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+October 25, 2021 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+TODO 
+\end{DoxyVersion}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000042}{Bug}}]No known bugs\end{DoxyRefDesc}
+
+
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2021, Southwest Research Institute
+\end{DoxyCopyright}
+\begin{DoxyParagraph}{License}
+Software License Agreement (Apache License) 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+Licensed under the Apache License, Version 2.\+0 (the \char`\"{}\+License\char`\"{}); you may not use this file except in compliance with the License. You may obtain a copy of the License at \href{http://www.apache.org/licenses/LICENSE-2.0}{\texttt{ http\+://www.\+apache.\+org/licenses/\+LICENSE-\/2.\+0}} 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \char`\"{}\+AS IS\char`\"{} BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License. 
+\end{DoxyParagraph}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{contact__managers__factory__unit_8cpp_a967b4d9e69fd525529816d3ce33b158d}\label{contact__managers__factory__unit_8cpp_a967b4d9e69fd525529816d3ce33b158d}} 
+\index{contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}!addContinuousContactManagerPlugin@{addContinuousContactManagerPlugin}}
+\index{addContinuousContactManagerPlugin@{addContinuousContactManagerPlugin}!contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{addContinuousContactManagerPlugin()}{addContinuousContactManagerPlugin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{contact__managers__factory__static__unit_8cpp_a08617937c106907314690deaf7abb4c1}{factory}} add\+Continuous\+Contact\+Manager\+Plugin (\begin{DoxyParamCaption}\item[{\char`\"{}Test2\+Continuous\+Manager\char`\"{}}]{,  }\item[{\mbox{\hyperlink{contact__managers__factory__unit_8cpp_a75c8712e5104a3560e539877b5af5ef7}{pi2}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{contact__managers__factory__unit_8cpp_a3023ac5a675959d29521c246f71633b0}\label{contact__managers__factory__unit_8cpp_a3023ac5a675959d29521c246f71633b0}} 
+\index{contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}!addContinuousContactManagerPlugin@{addContinuousContactManagerPlugin}}
+\index{addContinuousContactManagerPlugin@{addContinuousContactManagerPlugin}!contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{addContinuousContactManagerPlugin()}{addContinuousContactManagerPlugin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{contact__managers__factory__static__unit_8cpp_a08617937c106907314690deaf7abb4c1}{factory}} add\+Continuous\+Contact\+Manager\+Plugin (\begin{DoxyParamCaption}\item[{\char`\"{}Test\+Continuous\+Manager\char`\"{}}]{,  }\item[{\mbox{\hyperlink{contact__managers__factory__unit_8cpp_ae40c83f984192e54ccc972b090e8f401}{pi}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{contact__managers__factory__unit_8cpp_ad85f011ee7e742ac38192318869626aa}\label{contact__managers__factory__unit_8cpp_ad85f011ee7e742ac38192318869626aa}} 
+\index{contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}!addDiscreteContactManagerPlugin@{addDiscreteContactManagerPlugin}}
+\index{addDiscreteContactManagerPlugin@{addDiscreteContactManagerPlugin}!contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{addDiscreteContactManagerPlugin()}{addDiscreteContactManagerPlugin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{contact__managers__factory__static__unit_8cpp_a08617937c106907314690deaf7abb4c1}{factory}} add\+Discrete\+Contact\+Manager\+Plugin (\begin{DoxyParamCaption}\item[{\char`\"{}Test2\+Discrete\+Manager\char`\"{}}]{,  }\item[{\mbox{\hyperlink{contact__managers__factory__unit_8cpp_a75c8712e5104a3560e539877b5af5ef7}{pi2}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{contact__managers__factory__unit_8cpp_a4ab610fd3e0316b2b171bce6ff55e78f}\label{contact__managers__factory__unit_8cpp_a4ab610fd3e0316b2b171bce6ff55e78f}} 
+\index{contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}!addDiscreteContactManagerPlugin@{addDiscreteContactManagerPlugin}}
+\index{addDiscreteContactManagerPlugin@{addDiscreteContactManagerPlugin}!contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{addDiscreteContactManagerPlugin()}{addDiscreteContactManagerPlugin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{contact__managers__factory__static__unit_8cpp_a08617937c106907314690deaf7abb4c1}{factory}} add\+Discrete\+Contact\+Manager\+Plugin (\begin{DoxyParamCaption}\item[{\char`\"{}Test\+Discrete\+Manager\char`\"{}}]{,  }\item[{\mbox{\hyperlink{contact__managers__factory__unit_8cpp_ae40c83f984192e54ccc972b090e8f401}{pi}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{contact__managers__factory__unit_8cpp_a68e1631993f23d34b38746fba8a589d0}\label{contact__managers__factory__unit_8cpp_a68e1631993f23d34b38746fba8a589d0}} 
+\index{contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}!addSearchLibrary@{addSearchLibrary}}
+\index{addSearchLibrary@{addSearchLibrary}!contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{addSearchLibrary()}{addSearchLibrary()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{contact__managers__factory__static__unit_8cpp_a08617937c106907314690deaf7abb4c1}{factory}} add\+Search\+Library (\begin{DoxyParamCaption}\item[{\char`\"{}tesseract\+\_\+collision\char`\"{}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{contact__managers__factory__unit_8cpp_ac61d3536faa3230340516c5ef6391994}\label{contact__managers__factory__unit_8cpp_ac61d3536faa3230340516c5ef6391994}} 
+\index{contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}!addSearchPath@{addSearchPath}}
+\index{addSearchPath@{addSearchPath}!contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{addSearchPath()}{addSearchPath()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{contact__managers__factory__static__unit_8cpp_a08617937c106907314690deaf7abb4c1}{factory}} add\+Search\+Path (\begin{DoxyParamCaption}\item[{\char`\"{}/usr/local/lib\char`\"{}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{contact__managers__factory__unit_8cpp_a661c1538a925c80d6bbd9ba3c7665c19}\label{contact__managers__factory__unit_8cpp_a661c1538a925c80d6bbd9ba3c7665c19}} 
+\index{contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}!EXPECT\_ANY\_THROW@{EXPECT\_ANY\_THROW}}
+\index{EXPECT\_ANY\_THROW@{EXPECT\_ANY\_THROW}!contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_ANY\_THROW()}{EXPECT\_ANY\_THROW()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+ANY\+\_\+\+THROW (\begin{DoxyParamCaption}\item[{factory.}]{get\+Default\+Discrete\+Contact\+Manager\+Plugin() }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{contact__managers__factory__unit_8cpp_a1398d61780d1c71ecb27f804a074c07a}\label{contact__managers__factory__unit_8cpp_a1398d61780d1c71ecb27f804a074c07a}} 
+\index{contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}!EXPECT\_ANY\_THROW@{EXPECT\_ANY\_THROW}}
+\index{EXPECT\_ANY\_THROW@{EXPECT\_ANY\_THROW}!contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_ANY\_THROW()}{EXPECT\_ANY\_THROW()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+ANY\+\_\+\+THROW (\begin{DoxyParamCaption}\item[{factory.}]{remove\+Discrete\+Contact\+Manager\+Plugin\char`\"{}\+Does\+Not\+Exist\char`\"{} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{contact__managers__factory__unit_8cpp_aa6067368446c510eef80683bab7c752c}\label{contact__managers__factory__unit_8cpp_aa6067368446c510eef80683bab7c752c}} 
+\index{contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}!EXPECT\_EQ@{EXPECT\_EQ}}
+\index{EXPECT\_EQ@{EXPECT\_EQ}!contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_EQ()}{EXPECT\_EQ()}\hspace{0.1cm}{\footnotesize\ttfamily [1/12]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+EQ (\begin{DoxyParamCaption}\item[{continuous\+\_\+plugins.}]{size(),  }\item[{2}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{contact__managers__factory__unit_8cpp_ab9c6ae432fae942913c5a7500745f9c2}\label{contact__managers__factory__unit_8cpp_ab9c6ae432fae942913c5a7500745f9c2}} 
+\index{contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}!EXPECT\_EQ@{EXPECT\_EQ}}
+\index{EXPECT\_EQ@{EXPECT\_EQ}!contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_EQ()}{EXPECT\_EQ()}\hspace{0.1cm}{\footnotesize\ttfamily [2/12]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+EQ (\begin{DoxyParamCaption}\item[{discrete\+\_\+plugins.}]{size(),  }\item[{3}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{contact__managers__factory__unit_8cpp_ae1862bd296c822cc3585a1811b7f2a9e}\label{contact__managers__factory__unit_8cpp_ae1862bd296c822cc3585a1811b7f2a9e}} 
+\index{contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}!EXPECT\_EQ@{EXPECT\_EQ}}
+\index{EXPECT\_EQ@{EXPECT\_EQ}!contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_EQ()}{EXPECT\_EQ()}\hspace{0.1cm}{\footnotesize\ttfamily [3/12]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+EQ (\begin{DoxyParamCaption}\item[{factory.}]{get\+Default\+Continuous\+Contact\+Manager\+Plugin(),  }\item[{\char`\"{}Test2\+Continuous\+Manager\char`\"{}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{contact__managers__factory__unit_8cpp_a9ac552856dbd489c7a95abc6fab66587}\label{contact__managers__factory__unit_8cpp_a9ac552856dbd489c7a95abc6fab66587}} 
+\index{contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}!EXPECT\_EQ@{EXPECT\_EQ}}
+\index{EXPECT\_EQ@{EXPECT\_EQ}!contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_EQ()}{EXPECT\_EQ()}\hspace{0.1cm}{\footnotesize\ttfamily [4/12]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+EQ (\begin{DoxyParamCaption}\item[{factory.}]{get\+Default\+Continuous\+Contact\+Manager\+Plugin(),  }\item[{\char`\"{}Test\+Continuous\+Manager\char`\"{}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{contact__managers__factory__unit_8cpp_afdf35c3ef701a077de35fa4620af3e3d}\label{contact__managers__factory__unit_8cpp_afdf35c3ef701a077de35fa4620af3e3d}} 
+\index{contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}!EXPECT\_EQ@{EXPECT\_EQ}}
+\index{EXPECT\_EQ@{EXPECT\_EQ}!contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_EQ()}{EXPECT\_EQ()}\hspace{0.1cm}{\footnotesize\ttfamily [5/12]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+EQ (\begin{DoxyParamCaption}\item[{factory.}]{get\+Default\+Discrete\+Contact\+Manager\+Plugin(),  }\item[{\char`\"{}Test2\+Discrete\+Manager\char`\"{}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{contact__managers__factory__unit_8cpp_a6b87b9668d627c62bf7b788faf8c05a8}\label{contact__managers__factory__unit_8cpp_a6b87b9668d627c62bf7b788faf8c05a8}} 
+\index{contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}!EXPECT\_EQ@{EXPECT\_EQ}}
+\index{EXPECT\_EQ@{EXPECT\_EQ}!contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_EQ()}{EXPECT\_EQ()}\hspace{0.1cm}{\footnotesize\ttfamily [6/12]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+EQ (\begin{DoxyParamCaption}\item[{factory.}]{get\+Default\+Discrete\+Contact\+Manager\+Plugin(),  }\item[{\char`\"{}Test\+Discrete\+Manager\char`\"{}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{contact__managers__factory__unit_8cpp_a5ca94372f119d0216a866ea2b94cd20c}\label{contact__managers__factory__unit_8cpp_a5ca94372f119d0216a866ea2b94cd20c}} 
+\index{contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}!EXPECT\_EQ@{EXPECT\_EQ}}
+\index{EXPECT\_EQ@{EXPECT\_EQ}!contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_EQ()}{EXPECT\_EQ()}\hspace{0.1cm}{\footnotesize\ttfamily [7/12]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+EQ (\begin{DoxyParamCaption}\item[{factory.}]{get\+Discrete\+Contact\+Manager\+Plugins).\+size(,  }\item[{0}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{contact__managers__factory__unit_8cpp_afbc278e79ce1edde81c00e34008b0874}\label{contact__managers__factory__unit_8cpp_afbc278e79ce1edde81c00e34008b0874}} 
+\index{contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}!EXPECT\_EQ@{EXPECT\_EQ}}
+\index{EXPECT\_EQ@{EXPECT\_EQ}!contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_EQ()}{EXPECT\_EQ()}\hspace{0.1cm}{\footnotesize\ttfamily [8/12]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+EQ (\begin{DoxyParamCaption}\item[{factory.}]{get\+Search\+Libraries).\+size(,  }\item[{2}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{contact__managers__factory__unit_8cpp_adfad6ee9d176d308e295707f62f7916d}\label{contact__managers__factory__unit_8cpp_adfad6ee9d176d308e295707f62f7916d}} 
+\index{contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}!EXPECT\_EQ@{EXPECT\_EQ}}
+\index{EXPECT\_EQ@{EXPECT\_EQ}!contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_EQ()}{EXPECT\_EQ()}\hspace{0.1cm}{\footnotesize\ttfamily [9/12]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+EQ (\begin{DoxyParamCaption}\item[{factory.}]{get\+Search\+Libraries).\+size(,  }\item[{3}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{contact__managers__factory__unit_8cpp_ad582fb7d64bebee1e5978a099a5d59c1}\label{contact__managers__factory__unit_8cpp_ad582fb7d64bebee1e5978a099a5d59c1}} 
+\index{contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}!EXPECT\_EQ@{EXPECT\_EQ}}
+\index{EXPECT\_EQ@{EXPECT\_EQ}!contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_EQ()}{EXPECT\_EQ()}\hspace{0.1cm}{\footnotesize\ttfamily [10/12]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+EQ (\begin{DoxyParamCaption}\item[{factory.}]{get\+Search\+Paths).\+size(,  }\item[{1}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{contact__managers__factory__unit_8cpp_ad8a800d262b1777b18a394bce4613adc}\label{contact__managers__factory__unit_8cpp_ad8a800d262b1777b18a394bce4613adc}} 
+\index{contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}!EXPECT\_EQ@{EXPECT\_EQ}}
+\index{EXPECT\_EQ@{EXPECT\_EQ}!contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_EQ()}{EXPECT\_EQ()}\hspace{0.1cm}{\footnotesize\ttfamily [11/12]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+EQ (\begin{DoxyParamCaption}\item[{sl.}]{size(),  }\item[{2}]{ }\end{DoxyParamCaption})}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    std::set<std::string> sl = \mbox{\hyperlink{contact__managers__factory__unit_8cpp_a472b5177b77c6b5fbee4b819b81391bf}{factory}}.\mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_ad3d350dd95449f85bbe57c7ddd07d234}{getSearchLibraries}}()}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{contact__managers__factory__unit_8cpp_a878f6480cc511a792c3e8ca3464905c8}\label{contact__managers__factory__unit_8cpp_a878f6480cc511a792c3e8ca3464905c8}} 
+\index{contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}!EXPECT\_EQ@{EXPECT\_EQ}}
+\index{EXPECT\_EQ@{EXPECT\_EQ}!contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_EQ()}{EXPECT\_EQ()}\hspace{0.1cm}{\footnotesize\ttfamily [12/12]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+EQ (\begin{DoxyParamCaption}\item[{sp.}]{size(),  }\item[{2}]{ }\end{DoxyParamCaption})}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    std::set<std::string> sp = \mbox{\hyperlink{contact__managers__factory__unit_8cpp_a472b5177b77c6b5fbee4b819b81391bf}{factory}}.\mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_abba279cdeb75c502c70b6b31af3d993b}{getSearchPaths}}()}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{contact__managers__factory__unit_8cpp_aaddf2bce1b27f05a09c279a49fa77d71}\label{contact__managers__factory__unit_8cpp_aaddf2bce1b27f05a09c279a49fa77d71}} 
+\index{contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}!EXPECT\_FALSE@{EXPECT\_FALSE}}
+\index{EXPECT\_FALSE@{EXPECT\_FALSE}!contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_FALSE()}{EXPECT\_FALSE()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+FALSE (\begin{DoxyParamCaption}\item[{factory.}]{get\+Search\+Paths).\+empty( }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{contact__managers__factory__unit_8cpp_afd9f8ad25a3e56ff1ca5ba4b6d8845ec}\label{contact__managers__factory__unit_8cpp_afd9f8ad25a3e56ff1ca5ba4b6d8845ec}} 
+\index{contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}!EXPECT\_FALSE@{EXPECT\_FALSE}}
+\index{EXPECT\_FALSE@{EXPECT\_FALSE}!contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_FALSE()}{EXPECT\_FALSE()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+FALSE (\begin{DoxyParamCaption}\item[{factory.}]{has\+Discrete\+Contact\+Manager\+Plugins() }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{contact__managers__factory__unit_8cpp_a21e3080fc524a3bb2aff897b35051837}\label{contact__managers__factory__unit_8cpp_a21e3080fc524a3bb2aff897b35051837}} 
+\index{contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{factory.}]{has\+Discrete\+Contact\+Manager\+Plugins() }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{contact__managers__factory__unit_8cpp_ae1b849e0344ca986c0a821a1d2e9fa1d}\label{contact__managers__factory__unit_8cpp_ae1b849e0344ca986c0a821a1d2e9fa1d}} 
+\index{contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{map.}]{find\char`\"{}\+Not\+Found\char`\"{} = {\ttfamily =map.end()} }\end{DoxyParamCaption})}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \mbox{\hyperlink{namespacetesseract__common_a43d1f6e0418164a6db0e1c447150340e}{tesseract\_common::PluginInfoMap}} \mbox{\hyperlink{contact__managers__factory__unit_8cpp_a9ec9dda576db2a36c42c1c3af155d07c}{map}} = \mbox{\hyperlink{contact__managers__factory__unit_8cpp_a472b5177b77c6b5fbee4b819b81391bf}{factory}}.\mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_ac4f2179464877cd56e2b6824731d5afb}{getContinuousContactManagerPlugins}}()}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{contact__managers__factory__unit_8cpp_a39182a05671f0ea64c84545b720fb852}\label{contact__managers__factory__unit_8cpp_a39182a05671f0ea64c84545b720fb852}} 
+\index{contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{map.\+find(\char`\"{}Test2\+Continuous\+Manager\char`\"{}) !}]{ = {\ttfamily map.end()} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{contact__managers__factory__unit_8cpp_a2ee9ec5823d5ab35b111ffaf0f14f83a}\label{contact__managers__factory__unit_8cpp_a2ee9ec5823d5ab35b111ffaf0f14f83a}} 
+\index{contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{map.\+find(\char`\"{}Test2\+Discrete\+Manager\char`\"{}) !}]{ = {\ttfamily map.end()} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{contact__managers__factory__unit_8cpp_ad2ed13f05b47a7d5bb9eba13dbdeac5d}\label{contact__managers__factory__unit_8cpp_ad2ed13f05b47a7d5bb9eba13dbdeac5d}} 
+\index{contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{map.\+find(\char`\"{}Test\+Continuous\+Manager\char`\"{}) !}]{ = {\ttfamily map.end()} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{contact__managers__factory__unit_8cpp_af5e153644d7d20614e276cde971462f0}\label{contact__managers__factory__unit_8cpp_af5e153644d7d20614e276cde971462f0}} 
+\index{contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{map.\+find(\char`\"{}Test\+Discrete\+Manager\char`\"{}) !}]{ = {\ttfamily map.end()} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{contact__managers__factory__unit_8cpp_a416e32dfee4de44330100ba2654f346a}\label{contact__managers__factory__unit_8cpp_a416e32dfee4de44330100ba2654f346a}} 
+\index{contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}!for@{for}}
+\index{for@{for}!contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{for()}{for()}}
+{\footnotesize\ttfamily for (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a395d31593a673a3b0efd30ad8d2bba78}{auto}}}]{it = {\ttfamily search\+\_\+paths.begin();~\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a325f3c2b297a245575c6f2f91bd5f1e2}{it}}~!=~search\+\_\+paths.end();~++\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a325f3c2b297a245575c6f2f91bd5f1e2}{it}}} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{contact__managers__factory__unit_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{contact__managers__factory__unit_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}!main@{main}}
+\index{main@{main}!contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{contact__managers__factory__unit_8cpp_a57322d59dc6f7a735cc81d2abc9925a1}\label{contact__managers__factory__unit_8cpp_a57322d59dc6f7a735cc81d2abc9925a1}} 
+\index{contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}!removeContinuousContactManagerPlugin@{removeContinuousContactManagerPlugin}}
+\index{removeContinuousContactManagerPlugin@{removeContinuousContactManagerPlugin}!contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{removeContinuousContactManagerPlugin()}{removeContinuousContactManagerPlugin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{contact__managers__factory__static__unit_8cpp_a08617937c106907314690deaf7abb4c1}{factory}} remove\+Continuous\+Contact\+Manager\+Plugin (\begin{DoxyParamCaption}\item[{\char`\"{}Test\+Continuous\+Manager\char`\"{}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{contact__managers__factory__unit_8cpp_a06238b1576fb607cb2cfe5d73b9736fd}\label{contact__managers__factory__unit_8cpp_a06238b1576fb607cb2cfe5d73b9736fd}} 
+\index{contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}!removeDiscreteContactManagerPlugin@{removeDiscreteContactManagerPlugin}}
+\index{removeDiscreteContactManagerPlugin@{removeDiscreteContactManagerPlugin}!contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{removeDiscreteContactManagerPlugin()}{removeDiscreteContactManagerPlugin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{contact__managers__factory__static__unit_8cpp_a08617937c106907314690deaf7abb4c1}{factory}} remove\+Discrete\+Contact\+Manager\+Plugin (\begin{DoxyParamCaption}\item[{\char`\"{}Test\+Discrete\+Manager\char`\"{}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{contact__managers__factory__unit_8cpp_a27d2da75ad805fe2bd12649df8445171}\label{contact__managers__factory__unit_8cpp_a27d2da75ad805fe2bd12649df8445171}} 
+\index{contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}!runContactManagersFactoryTest@{runContactManagersFactoryTest}}
+\index{runContactManagersFactoryTest@{runContactManagersFactoryTest}!contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{runContactManagersFactoryTest()}{runContactManagersFactoryTest()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily run\+Contact\+Managers\+Factory\+Test (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{contact__managers__factory__unit_8cpp_adab96363548cee960cc8508434b1b4d3}{config\+\_\+path}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{contact__managers__factory__unit_8cpp_acf5a22d527d13f4382612534c922304e}\label{contact__managers__factory__unit_8cpp_acf5a22d527d13f4382612534c922304e}} 
+\index{contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}!runContactManagersFactoryTest@{runContactManagersFactoryTest}}
+\index{runContactManagersFactoryTest@{runContactManagersFactoryTest}!contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{runContactManagersFactoryTest()}{runContactManagersFactoryTest()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void run\+Contact\+Managers\+Factory\+Test (\begin{DoxyParamCaption}\item[{const tesseract\+\_\+common\+::fs\+::path \&}]{config\+\_\+path }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{contact__managers__factory__unit_8cpp_a4657027b79e5ebbb98ad1dab70e0fe7d}\label{contact__managers__factory__unit_8cpp_a4657027b79e5ebbb98ad1dab70e0fe7d}} 
+\index{contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}!runContactManagersFactoryTest@{runContactManagersFactoryTest}}
+\index{runContactManagersFactoryTest@{runContactManagersFactoryTest}!contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{runContactManagersFactoryTest()}{runContactManagersFactoryTest()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily run\+Contact\+Managers\+Factory\+Test (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{contact__managers__factory__unit_8cpp_ae173adafdde7b3fc3373a0fbf9f60b4f}{export\+\_\+config\+\_\+path}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{contact__managers__factory__unit_8cpp_a0c80377b9a5d904c0d53719c85016ad8}\label{contact__managers__factory__unit_8cpp_a0c80377b9a5d904c0d53719c85016ad8}} 
+\index{contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}!setDefaultContinuousContactManagerPlugin@{setDefaultContinuousContactManagerPlugin}}
+\index{setDefaultContinuousContactManagerPlugin@{setDefaultContinuousContactManagerPlugin}!contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{setDefaultContinuousContactManagerPlugin()}{setDefaultContinuousContactManagerPlugin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{contact__managers__factory__static__unit_8cpp_a08617937c106907314690deaf7abb4c1}{factory}} set\+Default\+Continuous\+Contact\+Manager\+Plugin (\begin{DoxyParamCaption}\item[{\char`\"{}Test\+Continuous\+Manager\char`\"{}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{contact__managers__factory__unit_8cpp_ab9724dd18790f07b0dbc3ab961ac6898}\label{contact__managers__factory__unit_8cpp_ab9724dd18790f07b0dbc3ab961ac6898}} 
+\index{contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}!setDefaultDiscreteContactManagerPlugin@{setDefaultDiscreteContactManagerPlugin}}
+\index{setDefaultDiscreteContactManagerPlugin@{setDefaultDiscreteContactManagerPlugin}!contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{setDefaultDiscreteContactManagerPlugin()}{setDefaultDiscreteContactManagerPlugin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{contact__managers__factory__static__unit_8cpp_a08617937c106907314690deaf7abb4c1}{factory}} set\+Default\+Discrete\+Contact\+Manager\+Plugin (\begin{DoxyParamCaption}\item[{\char`\"{}Test\+Discrete\+Manager\char`\"{}}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{contact__managers__factory__unit_8cpp_a2315948cd202088c6c2dcb883484535f}\label{contact__managers__factory__unit_8cpp_a2315948cd202088c6c2dcb883484535f}} 
+\index{contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}!class\_name@{class\_name}}
+\index{class\_name@{class\_name}!contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{class\_name}{class\_name}}
+{\footnotesize\ttfamily \mbox{\hyperlink{contact__managers__factory__unit_8cpp_a75c8712e5104a3560e539877b5af5ef7}{pi2}} class\+\_\+name = \char`\"{}Test\+Discrete\+Manager\+Factory\char`\"{}}
+
+\mbox{\Hypertarget{contact__managers__factory__unit_8cpp_adab96363548cee960cc8508434b1b4d3}\label{contact__managers__factory__unit_8cpp_adab96363548cee960cc8508434b1b4d3}} 
+\index{contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}!config\_path@{config\_path}}
+\index{config\_path@{config\_path}!contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{config\_path}{config\_path}}
+{\footnotesize\ttfamily tesseract\+\_\+common\+::fs\+::path config\+\_\+path = file\+\_\+path.\+parent\+\_\+path() / \char`\"{}contact\+\_\+manager\+\_\+plugins.\+yaml\char`\"{}}
+
+\mbox{\Hypertarget{contact__managers__factory__unit_8cpp_a86ff99c640958927d2ad220bcf47b405}\label{contact__managers__factory__unit_8cpp_a86ff99c640958927d2ad220bcf47b405}} 
+\index{contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}!continuous\_plugins@{continuous\_plugins}}
+\index{continuous\_plugins@{continuous\_plugins}!contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{continuous\_plugins}{continuous\_plugins}}
+{\footnotesize\ttfamily const YAML\+::\+Node \& continuous\+\_\+plugins = \mbox{\hyperlink{contact__managers__factory__unit_8cpp_aa85411aa79e8b65adf666700a5a44add}{plugin\+\_\+info}}\mbox{[}\char`\"{}continuous\+\_\+plugins\char`\"{}\mbox{]}\mbox{[}\char`\"{}plugins\char`\"{}\mbox{]}}
+
+\mbox{\Hypertarget{contact__managers__factory__unit_8cpp_ab64b6e1aa2283727e5a3884ed1d8d139}\label{contact__managers__factory__unit_8cpp_ab64b6e1aa2283727e5a3884ed1d8d139}} 
+\index{contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}!discrete\_plugins@{discrete\_plugins}}
+\index{discrete\_plugins@{discrete\_plugins}!contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{discrete\_plugins}{discrete\_plugins}}
+{\footnotesize\ttfamily const YAML\+::\+Node \& discrete\+\_\+plugins = \mbox{\hyperlink{contact__managers__factory__unit_8cpp_aa85411aa79e8b65adf666700a5a44add}{plugin\+\_\+info}}\mbox{[}\char`\"{}discrete\+\_\+plugins\char`\"{}\mbox{]}\mbox{[}\char`\"{}plugins\char`\"{}\mbox{]}}
+
+\mbox{\Hypertarget{contact__managers__factory__unit_8cpp_ae173adafdde7b3fc3373a0fbf9f60b4f}\label{contact__managers__factory__unit_8cpp_ae173adafdde7b3fc3373a0fbf9f60b4f}} 
+\index{contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}!export\_config\_path@{export\_config\_path}}
+\index{export\_config\_path@{export\_config\_path}!contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{export\_config\_path}{export\_config\_path}}
+{\footnotesize\ttfamily tesseract\+\_\+common\+::fs\+::path export\+\_\+config\+\_\+path}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= tesseract\_common::fs::path(\mbox{\hyperlink{namespacetesseract__common_a58ecad04db85855fa9e4de21084598ca}{tesseract\_common::getTempPath}}()) / \textcolor{stringliteral}{"{}contac"{}}}
+\DoxyCodeLine{                                                                                                                \textcolor{stringliteral}{"{}t\_"{}}}
+\DoxyCodeLine{                                                                                                                \textcolor{stringliteral}{"{}manage"{}}}
+\DoxyCodeLine{                                                                                                                \textcolor{stringliteral}{"{}r\_"{}}}
+\DoxyCodeLine{                                                                                                                \textcolor{stringliteral}{"{}plugin"{}}}
+\DoxyCodeLine{                                                                                                                \textcolor{stringliteral}{"{}s\_"{}}}
+\DoxyCodeLine{                                                                                                                \textcolor{stringliteral}{"{}export"{}}}
+\DoxyCodeLine{                                                                                                                \textcolor{stringliteral}{"{}.yaml"{}}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{contact__managers__factory__unit_8cpp_a472b5177b77c6b5fbee4b819b81391bf}\label{contact__managers__factory__unit_8cpp_a472b5177b77c6b5fbee4b819b81391bf}} 
+\index{contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}!factory@{factory}}
+\index{factory@{factory}!contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{factory}{factory}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory}{Contact\+Managers\+Plugin\+Factory}} factory(\mbox{\hyperlink{collision__core__unit_8cpp_a2013c60ebd4a63f15fafe2287736ae37}{config}}) (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{collision__core__unit_8cpp_a2013c60ebd4a63f15fafe2287736ae37}{config}}}]{ }\end{DoxyParamCaption})}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  std::string \mbox{\hyperlink{collision__core__unit_8cpp_a2013c60ebd4a63f15fafe2287736ae37}{config}} = R\textcolor{stringliteral}{"{}(contact\_manager\_plugins:}}
+\DoxyCodeLine{\textcolor{stringliteral}{                            search\_paths:}}
+\DoxyCodeLine{\textcolor{stringliteral}{                              -\/ /usr/local/lib}}
+\DoxyCodeLine{\textcolor{stringliteral}{                            search\_libraries:}}
+\DoxyCodeLine{\textcolor{stringliteral}{                              -\/ tesseract\_collision\_bullet\_factories}}
+\DoxyCodeLine{\textcolor{stringliteral}{                              -\/ tesseract\_collision\_fcl\_factories}}
+\DoxyCodeLine{\textcolor{stringliteral}{                            discrete\_plugins:}}
+\DoxyCodeLine{\textcolor{stringliteral}{                              default: BulletDiscreteBVHManager}}
+\DoxyCodeLine{\textcolor{stringliteral}{                              plugins:}}
+\DoxyCodeLine{\textcolor{stringliteral}{                                BulletDiscreteBVHManager:}}
+\DoxyCodeLine{\textcolor{stringliteral}{                                  class: BulletDiscreteBVHManagerFactory}}
+\DoxyCodeLine{\textcolor{stringliteral}{                                BulletDiscreteSimpleManager:}}
+\DoxyCodeLine{\textcolor{stringliteral}{                                  class: BulletDiscreteSimpleManagerFactory}}
+\DoxyCodeLine{\textcolor{stringliteral}{                                FCLDiscreteBVHManager:}}
+\DoxyCodeLine{\textcolor{stringliteral}{                                  class: FCLDiscreteBVHManagerFactory}}
+\DoxyCodeLine{\textcolor{stringliteral}{                            continuous\_plugins:}}
+\DoxyCodeLine{\textcolor{stringliteral}{                              default: BulletCastBVHManager}}
+\DoxyCodeLine{\textcolor{stringliteral}{                              plugins:}}
+\DoxyCodeLine{\textcolor{stringliteral}{                                BulletCastBVHManager:}}
+\DoxyCodeLine{\textcolor{stringliteral}{                                  class: BulletCastBVHManagerFactory}}
+\DoxyCodeLine{\textcolor{stringliteral}{                                BulletCastSimpleManager:}}
+\DoxyCodeLine{\textcolor{stringliteral}{                                  class: BulletCastSimpleManagerFactory)"{}}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{contact__managers__factory__unit_8cpp_a9ec9dda576db2a36c42c1c3af155d07c}\label{contact__managers__factory__unit_8cpp_a9ec9dda576db2a36c42c1c3af155d07c}} 
+\index{contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}!map@{map}}
+\index{map@{map}!contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{map}{map}}
+{\footnotesize\ttfamily map = factory.\+get\+Discrete\+Contact\+Manager\+Plugins()}
+
+\mbox{\Hypertarget{contact__managers__factory__unit_8cpp_ae40c83f984192e54ccc972b090e8f401}\label{contact__managers__factory__unit_8cpp_ae40c83f984192e54ccc972b090e8f401}} 
+\index{contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}!pi@{pi}}
+\index{pi@{pi}!contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{pi}{pi}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtesseract__common_1_1PluginInfo}{tesseract\+\_\+common\+::\+Plugin\+Info}} pi}
+
+\mbox{\Hypertarget{contact__managers__factory__unit_8cpp_a75c8712e5104a3560e539877b5af5ef7}\label{contact__managers__factory__unit_8cpp_a75c8712e5104a3560e539877b5af5ef7}} 
+\index{contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}!pi2@{pi2}}
+\index{pi2@{pi2}!contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{pi2}{pi2}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtesseract__common_1_1PluginInfo}{tesseract\+\_\+common\+::\+Plugin\+Info}} pi2}
+
+\mbox{\Hypertarget{contact__managers__factory__unit_8cpp_aa72e379a2b942efbbd6ee85db94ae223}\label{contact__managers__factory__unit_8cpp_aa72e379a2b942efbbd6ee85db94ae223}} 
+\index{contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}!plugin\_config@{plugin\_config}}
+\index{plugin\_config@{plugin\_config}!contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{plugin\_config}{plugin\_config}}
+{\footnotesize\ttfamily YAML\+::\+Node plugin\+\_\+config = YAML\+::\+Load(\mbox{\hyperlink{collision__core__unit_8cpp_a2013c60ebd4a63f15fafe2287736ae37}{config}})}
+
+\mbox{\Hypertarget{contact__managers__factory__unit_8cpp_aa85411aa79e8b65adf666700a5a44add}\label{contact__managers__factory__unit_8cpp_aa85411aa79e8b65adf666700a5a44add}} 
+\index{contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}!plugin\_info@{plugin\_info}}
+\index{plugin\_info@{plugin\_info}!contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{plugin\_info}{plugin\_info}}
+{\footnotesize\ttfamily const YAML\+::\+Node \& plugin\+\_\+info = \mbox{\hyperlink{contact__managers__factory__static__unit_8cpp_aa72e379a2b942efbbd6ee85db94ae223}{plugin\+\_\+config}}\mbox{[}\char`\"{}contact\+\_\+manager\+\_\+plugins\char`\"{}\mbox{]}}
+
+\mbox{\Hypertarget{contact__managers__factory__unit_8cpp_a4eb26c3b59ba136eaa63f4139766f564}\label{contact__managers__factory__unit_8cpp_a4eb26c3b59ba136eaa63f4139766f564}} 
+\index{contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}!search\_libraries@{search\_libraries}}
+\index{search\_libraries@{search\_libraries}!contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{search\_libraries}{search\_libraries}}
+{\footnotesize\ttfamily const YAML\+::\+Node \& search\+\_\+libraries = \mbox{\hyperlink{contact__managers__factory__unit_8cpp_aa85411aa79e8b65adf666700a5a44add}{plugin\+\_\+info}}\mbox{[}\char`\"{}search\+\_\+libraries\char`\"{}\mbox{]}}
+
+\mbox{\Hypertarget{contact__managers__factory__unit_8cpp_a2f3e59daa23f0b486727dd6eff7d7420}\label{contact__managers__factory__unit_8cpp_a2f3e59daa23f0b486727dd6eff7d7420}} 
+\index{contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}!search\_paths@{search\_paths}}
+\index{search\_paths@{search\_paths}!contact\_managers\_factory\_unit.cpp@{contact\_managers\_factory\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{search\_paths}{search\_paths}}
+{\footnotesize\ttfamily const YAML\+::\+Node \& search\+\_\+paths = \mbox{\hyperlink{contact__managers__factory__unit_8cpp_aa85411aa79e8b65adf666700a5a44add}{plugin\+\_\+info}}\mbox{[}\char`\"{}search\+\_\+paths\char`\"{}\mbox{]}}
+

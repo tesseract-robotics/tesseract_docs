@@ -1,0 +1,165 @@
+\hypertarget{vhacdSArray_8h_source}{}\doxysection{vhacd\+SArray.\+h}
+\label{vhacdSArray_8h_source}\index{tesseract\_collision/vhacd/include/tesseract\_collision/vhacd/inc/vhacdSArray.h@{tesseract\_collision/vhacd/include/tesseract\_collision/vhacd/inc/vhacdSArray.h}}
+\mbox{\hyperlink{vhacdSArray_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* Copyright (c) 2011 Khaled Mamou (kmamou at gmail dot com)}}
+\DoxyCodeLine{2 \textcolor{comment}{ All rights reserved.}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{ Redistribution and use in source and binary forms, with or without modification, are permitted provided that the}}
+\DoxyCodeLine{6 \textcolor{comment}{ following conditions are met:}}
+\DoxyCodeLine{7 \textcolor{comment}{}}
+\DoxyCodeLine{8 \textcolor{comment}{ 1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following}}
+\DoxyCodeLine{9 \textcolor{comment}{ disclaimer.}}
+\DoxyCodeLine{10 \textcolor{comment}{}}
+\DoxyCodeLine{11 \textcolor{comment}{ 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following}}
+\DoxyCodeLine{12 \textcolor{comment}{ disclaimer in the documentation and/or other materials provided with the distribution.}}
+\DoxyCodeLine{13 \textcolor{comment}{}}
+\DoxyCodeLine{14 \textcolor{comment}{ 3. The names of the contributors may not be used to endorse or promote products derived from this software without}}
+\DoxyCodeLine{15 \textcolor{comment}{ specific prior written permission.}}
+\DoxyCodeLine{16 \textcolor{comment}{}}
+\DoxyCodeLine{17 \textcolor{comment}{ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES,}}
+\DoxyCodeLine{18 \textcolor{comment}{ INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE}}
+\DoxyCodeLine{19 \textcolor{comment}{ DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,}}
+\DoxyCodeLine{20 \textcolor{comment}{ SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR}}
+\DoxyCodeLine{21 \textcolor{comment}{ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,}}
+\DoxyCodeLine{22 \textcolor{comment}{ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF}}
+\DoxyCodeLine{23 \textcolor{comment}{ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{24 \textcolor{comment}{ */}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{macros_8h}{tesseract\_common/macros.h}}>}}
+\DoxyCodeLine{28 \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#define SARRAY\_DEFAULT\_MIN\_SIZE 16}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__collision}{tesseract\_collision}}}
+\DoxyCodeLine{36 \{}
+\DoxyCodeLine{37 \textcolor{keyword}{namespace }VHACD}
+\DoxyCodeLine{38 \{}
+\DoxyCodeLine{40 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, \textcolor{keywordtype}{size\_t} N = 64>}
+\DoxyCodeLine{41 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray}{SArray}}}
+\DoxyCodeLine{42 \{}
+\DoxyCodeLine{43 \textcolor{keyword}{public}:}
+\DoxyCodeLine{44   \mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{T}}\& \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_af709354b55570c318c8c66a689cb6903}{operator[]}}(\textcolor{keywordtype}{size\_t} i)}
+\DoxyCodeLine{45   \{}
+\DoxyCodeLine{46     \mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{T}}* \textcolor{keyword}{const} \mbox{\hyperlink{collision__margin__data__unit_8cpp_a0992235f6cab11fba6116193c7f42b8b}{data}} = \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_a1de3ae7a3b348ea58e90ce180d284c4c}{Data}}();}
+\DoxyCodeLine{47     \textcolor{keywordflow}{return} \mbox{\hyperlink{collision__margin__data__unit_8cpp_a0992235f6cab11fba6116193c7f42b8b}{data}}[i];}
+\DoxyCodeLine{48   \}}
+\DoxyCodeLine{49   \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{T}}\& \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_aaf06794cd847c4eff1773087f7f6acbf}{operator[]}}(\textcolor{keywordtype}{size\_t} i)\textcolor{keyword}{ const}}
+\DoxyCodeLine{50 \textcolor{keyword}{  }\{}
+\DoxyCodeLine{51     \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{T}}* \textcolor{keyword}{const} \mbox{\hyperlink{collision__margin__data__unit_8cpp_a0992235f6cab11fba6116193c7f42b8b}{data}} = \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_a1de3ae7a3b348ea58e90ce180d284c4c}{Data}}();}
+\DoxyCodeLine{52     \textcolor{keywordflow}{return} \mbox{\hyperlink{collision__margin__data__unit_8cpp_a0992235f6cab11fba6116193c7f42b8b}{data}}[i];}
+\DoxyCodeLine{53   \}}
+\DoxyCodeLine{54   \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_ae254130323d8026e6c022047c4caf3bb}{Size}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_a049de9fd5927a017d283c4979272d106}{m\_size}}; \}}
+\DoxyCodeLine{55   \mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{T}}* \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_a1de3ae7a3b348ea58e90ce180d284c4c}{Data}}() \{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_af509e7b9c303fe3cdac84fed09a3b1f5}{m\_maxSize}} == N) ? \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_a6791162cbc0c35983f362d963a578d03}{m\_data0}} : \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_a372275dea86bf262a79cc446824784cf}{m\_data}}; \}}
+\DoxyCodeLine{56   \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{T}}* \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_aff9fab7c7fe71ea348f3a7a2c312cf63}{Data}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_af509e7b9c303fe3cdac84fed09a3b1f5}{m\_maxSize}} == N) ? \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_a6791162cbc0c35983f362d963a578d03}{m\_data0}} : \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_a372275dea86bf262a79cc446824784cf}{m\_data}}; \}}
+\DoxyCodeLine{57   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_a32a2ec1dd032da481ea57f0dbf021da8}{Clear}}()}
+\DoxyCodeLine{58   \{}
+\DoxyCodeLine{59     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_a049de9fd5927a017d283c4979272d106}{m\_size}} = 0;}
+\DoxyCodeLine{60     \textcolor{keyword}{delete}[] \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_a372275dea86bf262a79cc446824784cf}{m\_data}};}
+\DoxyCodeLine{61     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_a372275dea86bf262a79cc446824784cf}{m\_data}} = 0;}
+\DoxyCodeLine{62     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_af509e7b9c303fe3cdac84fed09a3b1f5}{m\_maxSize}} = N;}
+\DoxyCodeLine{63   \}}
+\DoxyCodeLine{64   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_a9746e8fc4947d321b3c23cabc42a2b35}{PopBack}}() \{ -\/-\/\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_a049de9fd5927a017d283c4979272d106}{m\_size}}; \}}
+\DoxyCodeLine{65   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_a1b18273c2c0f39df438bf96205b55219}{Allocate}}(\textcolor{keywordtype}{size\_t} size)}
+\DoxyCodeLine{66   \{}
+\DoxyCodeLine{67     \textcolor{keywordflow}{if} (size > \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_af509e7b9c303fe3cdac84fed09a3b1f5}{m\_maxSize}})}
+\DoxyCodeLine{68     \{}
+\DoxyCodeLine{69       \mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{T}}* temp = \textcolor{keyword}{new} \mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{T}}[size];}
+\DoxyCodeLine{70       memcpy(temp, \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_a1de3ae7a3b348ea58e90ce180d284c4c}{Data}}(), \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_a049de9fd5927a017d283c4979272d106}{m\_size}} * \textcolor{keyword}{sizeof}(\mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{T}}));}
+\DoxyCodeLine{71       \textcolor{keyword}{delete}[] \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_a372275dea86bf262a79cc446824784cf}{m\_data}};}
+\DoxyCodeLine{72       \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_a372275dea86bf262a79cc446824784cf}{m\_data}} = temp;}
+\DoxyCodeLine{73       \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_af509e7b9c303fe3cdac84fed09a3b1f5}{m\_maxSize}} = size;}
+\DoxyCodeLine{74     \}}
+\DoxyCodeLine{75   \}}
+\DoxyCodeLine{76   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_a983dcf7fa7b826fcc870c3e1a400ada1}{Resize}}(\textcolor{keywordtype}{size\_t} size)}
+\DoxyCodeLine{77   \{}
+\DoxyCodeLine{78     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_a1b18273c2c0f39df438bf96205b55219}{Allocate}}(size);}
+\DoxyCodeLine{79     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_a049de9fd5927a017d283c4979272d106}{m\_size}} = size;}
+\DoxyCodeLine{80   \}}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_a17220123e04e297702415489b626fe45}{PushBack}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{T}}\& \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a767de28b215ddaceb31188034a0838c0}{value}})}
+\DoxyCodeLine{83   \{}
+\DoxyCodeLine{84     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_a049de9fd5927a017d283c4979272d106}{m\_size}} == \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_af509e7b9c303fe3cdac84fed09a3b1f5}{m\_maxSize}})}
+\DoxyCodeLine{85     \{}
+\DoxyCodeLine{86       \textcolor{keywordtype}{size\_t} maxSize = (\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_af509e7b9c303fe3cdac84fed09a3b1f5}{m\_maxSize}} << 1);}
+\DoxyCodeLine{87       \mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{T}}* temp = \textcolor{keyword}{new} \mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{T}}[maxSize];}
+\DoxyCodeLine{88       memcpy(temp, \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_a1de3ae7a3b348ea58e90ce180d284c4c}{Data}}(), \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_af509e7b9c303fe3cdac84fed09a3b1f5}{m\_maxSize}} * \textcolor{keyword}{sizeof}(\mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{T}}));}
+\DoxyCodeLine{89       \textcolor{keyword}{delete}[] \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_a372275dea86bf262a79cc446824784cf}{m\_data}};}
+\DoxyCodeLine{90       \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_a372275dea86bf262a79cc446824784cf}{m\_data}} = temp;}
+\DoxyCodeLine{91       \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_af509e7b9c303fe3cdac84fed09a3b1f5}{m\_maxSize}} = maxSize;}
+\DoxyCodeLine{92     \}}
+\DoxyCodeLine{93     \mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{T}}* \textcolor{keyword}{const} \mbox{\hyperlink{collision__margin__data__unit_8cpp_a0992235f6cab11fba6116193c7f42b8b}{data}} = \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_a1de3ae7a3b348ea58e90ce180d284c4c}{Data}}();}
+\DoxyCodeLine{94     \mbox{\hyperlink{collision__margin__data__unit_8cpp_a0992235f6cab11fba6116193c7f42b8b}{data}}[\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_a049de9fd5927a017d283c4979272d106}{m\_size}}++] = \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a767de28b215ddaceb31188034a0838c0}{value}};}
+\DoxyCodeLine{95   \}}
+\DoxyCodeLine{96   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_aee6d60437b7da1d57ea95738dd465b20}{Find}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{T}}\& \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a767de28b215ddaceb31188034a0838c0}{value}}, \textcolor{keywordtype}{size\_t}\& pos)}
+\DoxyCodeLine{97   \{}
+\DoxyCodeLine{98     \mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{T}}* \textcolor{keyword}{const} \mbox{\hyperlink{collision__margin__data__unit_8cpp_a0992235f6cab11fba6116193c7f42b8b}{data}} = \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_a1de3ae7a3b348ea58e90ce180d284c4c}{Data}}();}
+\DoxyCodeLine{99     \textcolor{keywordflow}{for} (pos = 0; pos < \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_a049de9fd5927a017d283c4979272d106}{m\_size}}; ++pos)}
+\DoxyCodeLine{100       \textcolor{keywordflow}{if} (\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a767de28b215ddaceb31188034a0838c0}{value}} == \mbox{\hyperlink{collision__margin__data__unit_8cpp_a0992235f6cab11fba6116193c7f42b8b}{data}}[pos])}
+\DoxyCodeLine{101         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{102     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{103   \}}
+\DoxyCodeLine{104   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_ab7137ae5c3e593cf630cb6004590365f}{Insert}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{T}}\& \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a767de28b215ddaceb31188034a0838c0}{value}})}
+\DoxyCodeLine{105   \{}
+\DoxyCodeLine{106     \textcolor{keywordtype}{size\_t} pos;}
+\DoxyCodeLine{107     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_aee6d60437b7da1d57ea95738dd465b20}{Find}}(\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a767de28b215ddaceb31188034a0838c0}{value}}, pos))}
+\DoxyCodeLine{108       \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{109     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_a17220123e04e297702415489b626fe45}{PushBack}}(\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a767de28b215ddaceb31188034a0838c0}{value}});}
+\DoxyCodeLine{110     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{111   \}}
+\DoxyCodeLine{112   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_a859059dee000bc96ca9a9bccc7c883df}{Erase}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{T}}\& \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a767de28b215ddaceb31188034a0838c0}{value}})}
+\DoxyCodeLine{113   \{}
+\DoxyCodeLine{114     \textcolor{keywordtype}{size\_t} pos;}
+\DoxyCodeLine{115     \mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{T}}* \textcolor{keyword}{const} \mbox{\hyperlink{collision__margin__data__unit_8cpp_a0992235f6cab11fba6116193c7f42b8b}{data}} = \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_a1de3ae7a3b348ea58e90ce180d284c4c}{Data}}();}
+\DoxyCodeLine{116     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_aee6d60437b7da1d57ea95738dd465b20}{Find}}(\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a767de28b215ddaceb31188034a0838c0}{value}}, pos))}
+\DoxyCodeLine{117     \{}
+\DoxyCodeLine{118       \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}} = pos + 1; \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}} < \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_a049de9fd5927a017d283c4979272d106}{m\_size}}; ++\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}})}
+\DoxyCodeLine{119         \mbox{\hyperlink{collision__margin__data__unit_8cpp_a0992235f6cab11fba6116193c7f42b8b}{data}}[\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}} -\/ 1] = \mbox{\hyperlink{collision__margin__data__unit_8cpp_a0992235f6cab11fba6116193c7f42b8b}{data}}[\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}];}
+\DoxyCodeLine{120       -\/-\/\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_a049de9fd5927a017d283c4979272d106}{m\_size}};}
+\DoxyCodeLine{121       \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{122     \}}
+\DoxyCodeLine{123     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{124   \}}
+\DoxyCodeLine{125   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_a387b46da1ef37991507447440589a0f0}{operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray}{SArray}}\& rhs)}
+\DoxyCodeLine{126   \{}
+\DoxyCodeLine{127     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_af509e7b9c303fe3cdac84fed09a3b1f5}{m\_maxSize}} < rhs.\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_a049de9fd5927a017d283c4979272d106}{m\_size}})}
+\DoxyCodeLine{128     \{}
+\DoxyCodeLine{129       \textcolor{keyword}{delete}[] \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_a372275dea86bf262a79cc446824784cf}{m\_data}};}
+\DoxyCodeLine{130       \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_af509e7b9c303fe3cdac84fed09a3b1f5}{m\_maxSize}} = rhs.\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_af509e7b9c303fe3cdac84fed09a3b1f5}{m\_maxSize}};}
+\DoxyCodeLine{131       \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_a372275dea86bf262a79cc446824784cf}{m\_data}} = \textcolor{keyword}{new} \mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{T}}[\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_af509e7b9c303fe3cdac84fed09a3b1f5}{m\_maxSize}}];}
+\DoxyCodeLine{132     \}}
+\DoxyCodeLine{133     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_a049de9fd5927a017d283c4979272d106}{m\_size}} = rhs.\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_a049de9fd5927a017d283c4979272d106}{m\_size}};}
+\DoxyCodeLine{134     memcpy(\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_a1de3ae7a3b348ea58e90ce180d284c4c}{Data}}(), rhs.\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_a1de3ae7a3b348ea58e90ce180d284c4c}{Data}}(), \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_a049de9fd5927a017d283c4979272d106}{m\_size}} * \textcolor{keyword}{sizeof}(\mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{T}}));}
+\DoxyCodeLine{135   \}}
+\DoxyCodeLine{136   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_a02bbe18a114d18c109756d959c2fe5f9}{Initialize}}()}
+\DoxyCodeLine{137   \{}
+\DoxyCodeLine{138     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_a372275dea86bf262a79cc446824784cf}{m\_data}} = 0;}
+\DoxyCodeLine{139     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_a049de9fd5927a017d283c4979272d106}{m\_size}} = 0;}
+\DoxyCodeLine{140     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_af509e7b9c303fe3cdac84fed09a3b1f5}{m\_maxSize}} = N;}
+\DoxyCodeLine{141   \}}
+\DoxyCodeLine{142   \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_a077df9293f5bf54f3e0af26b846c1603}{SArray}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray}{SArray}}\& rhs)}
+\DoxyCodeLine{143   \{}
+\DoxyCodeLine{144     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_a372275dea86bf262a79cc446824784cf}{m\_data}} = 0;}
+\DoxyCodeLine{145     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_a049de9fd5927a017d283c4979272d106}{m\_size}} = 0;}
+\DoxyCodeLine{146     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_af509e7b9c303fe3cdac84fed09a3b1f5}{m\_maxSize}} = N;}
+\DoxyCodeLine{147     *\textcolor{keyword}{this} = rhs;}
+\DoxyCodeLine{148   \}}
+\DoxyCodeLine{149   \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_aa5dac305233f4c1036abfeefa929ee61}{SArray}}() \{ \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_a02bbe18a114d18c109756d959c2fe5f9}{Initialize}}(); \}}
+\DoxyCodeLine{150   \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_a440f3f9b47af36811e91c4cfaf6ccb99}{\string~SArray}}() \{ \textcolor{keyword}{delete}[] \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_a372275dea86bf262a79cc446824784cf}{m\_data}}; \}}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{152 \textcolor{keyword}{private}:}
+\DoxyCodeLine{153   \mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{T}} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_a6791162cbc0c35983f362d963a578d03}{m\_data0}}[N];}
+\DoxyCodeLine{154   \mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{T}}* \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_a372275dea86bf262a79cc446824784cf}{m\_data}};}
+\DoxyCodeLine{155   \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_a049de9fd5927a017d283c4979272d106}{m\_size}};}
+\DoxyCodeLine{156   \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray_af509e7b9c303fe3cdac84fed09a3b1f5}{m\_maxSize}};}
+\DoxyCodeLine{157 \};}
+\DoxyCodeLine{158 \}  \textcolor{comment}{// namespace VHACD}}
+\DoxyCodeLine{159 \}  \textcolor{comment}{// namespace tesseract\_collision}}
+\DoxyCodeLine{160 \mbox{\hyperlink{namespaceTESSERACT__COMMON__IGNORE__WARNINGS__POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}}
+
+\end{DoxyCode}

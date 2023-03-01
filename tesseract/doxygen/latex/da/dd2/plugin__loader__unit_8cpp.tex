@@ -1,0 +1,293 @@
+\hypertarget{plugin__loader__unit_8cpp}{}\doxysection{tesseract\+\_\+common/test/plugin\+\_\+loader\+\_\+unit.cpp File Reference}
+\label{plugin__loader__unit_8cpp}\index{tesseract\_common/test/plugin\_loader\_unit.cpp@{tesseract\_common/test/plugin\_loader\_unit.cpp}}
+{\ttfamily \#include $<$tesseract\+\_\+common/macros.\+h$>$}\newline
+{\ttfamily \#include $<$gtest/gtest.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+common/class\+\_\+loader.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+common/plugin\+\_\+loader.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}test\+\_\+plugin\+\_\+base.\+h\char`\"{}}\newline
+Include dependency graph for plugin\+\_\+loader\+\_\+unit.\+cpp\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{plugin__loader__unit_8cpp_ab6a2f3202de6f621d783a429bd906a6c}{putenv}} (\mbox{\hyperlink{collision__margin__data__unit_8cpp_a0992235f6cab11fba6116193c7f42b8b}{env\+\_\+var.\+data}}())
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{plugin__loader__unit_8cpp_a26cb4553900018a2b891c6de3ba5a5ab}{v}} (s.\+begin(), s.\+end())
+\item 
+\mbox{\hyperlink{plugin__loader__unit_8cpp_ac67aeedf23b25dbf77f6f79f49c3edfb}{EXPECT\+\_\+\+EQ}} (\mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}}\mbox{[}0\mbox{]}, \char`\"{}a\char`\"{})
+\item 
+\mbox{\hyperlink{plugin__loader__unit_8cpp_a12aba8c9050a88b4ef8c4a56a0c0f110}{EXPECT\+\_\+\+EQ}} (\mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}}\mbox{[}1\mbox{]}, \char`\"{}b\char`\"{})
+\item 
+\mbox{\hyperlink{plugin__loader__unit_8cpp_a3d35f71207a27df0ee04a2c28c879c46}{EXPECT\+\_\+\+EQ}} (\mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}}\mbox{[}2\mbox{]}, \char`\"{}c\char`\"{})
+\item 
+\mbox{\hyperlink{plugin__loader__unit_8cpp_a2e5d6833703dbb0cdb68d6809743b8ab}{EXPECT\+\_\+\+EQ}} (sections.\+size(), 1)
+\item 
+\mbox{\hyperlink{plugin__loader__unit_8cpp_aeeb86d518ab2fc7d0d52e07607f227c2}{EXPECT\+\_\+\+EQ}} (sections.\+at(0), \char`\"{}Test\+Base\char`\"{})
+\item 
+\mbox{\hyperlink{plugin__loader__unit_8cpp_a024aa0eef9ae66dd8c85724284cfe497}{EXPECT\+\_\+\+TRUE}} (sections.\+size() $>$ 1)
+\item 
+\mbox{\hyperlink{plugin__loader__unit_8cpp_a61506ba4a50bd25492d852a7eb198043}{EXPECT\+\_\+\+EQ}} (symbols.\+size(), 1)
+\item 
+\mbox{\hyperlink{plugin__loader__unit_8cpp_ac038f50f870918e138bd860ea1f61ba2}{EXPECT\+\_\+\+EQ}} (symbols.\+at(0), \mbox{\hyperlink{plugin__loader__unit_8cpp_a0f96facbec34815c2e03d89aac11b2f5}{symbol\+\_\+name}})
+\item 
+\mbox{\hyperlink{plugin__loader__unit_8cpp_a9350d454efcf8d0fc1ea16928c03e6cc}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{plugin__loader__unit_8cpp_af34747f68f9b0963dea6e8f3c659659c}{plugin}} !=nullptr)
+\item 
+\mbox{\hyperlink{plugin__loader__unit_8cpp_a721bcb79a2d49a34fd454a9b72183e7f}{EXPECT\+\_\+\+NEAR}} (\mbox{\hyperlink{plugin__loader__unit_8cpp_af34747f68f9b0963dea6e8f3c659659c}{plugin}}-\/$>$multiply(5, 5), 25, 1e-\/8)
+\item 
+\mbox{\hyperlink{plugin__loader__unit_8cpp_a95a8f337674c876f6235cbe21d97d130}{EXPECT\+\_\+\+FALSE}} (Class\+Loader\+::is\+Class\+Available(\mbox{\hyperlink{plugin__loader__unit_8cpp_a0f96facbec34815c2e03d89aac11b2f5}{symbol\+\_\+name}}, \char`\"{}does\+\_\+not\+\_\+exist\char`\"{}, \mbox{\hyperlink{plugin__loader__unit_8cpp_aa1512ecd4f00d4c9db14a4e496815bf2}{lib\+\_\+dir}}))
+\item 
+\mbox{\hyperlink{plugin__loader__unit_8cpp_aa4781a360e3fc5cfe4b8451f41a4424b}{EXPECT\+\_\+\+FALSE}} (Class\+Loader\+::is\+Class\+Available(\char`\"{}does\+\_\+not\+\_\+exist\char`\"{}, \mbox{\hyperlink{plugin__loader__unit_8cpp_a98fa20d5bfa45e7185fa53531a163024}{lib\+\_\+name}}, \mbox{\hyperlink{plugin__loader__unit_8cpp_aa1512ecd4f00d4c9db14a4e496815bf2}{lib\+\_\+dir}}))
+\item 
+\mbox{\hyperlink{plugin__loader__unit_8cpp_a5ab16d7bf35b445523097d1eac4ff168}{EXPECT\+\_\+\+FALSE}} (Class\+Loader\+::is\+Class\+Available(\char`\"{}does\+\_\+not\+\_\+exist\char`\"{}, \mbox{\hyperlink{plugin__loader__unit_8cpp_a98fa20d5bfa45e7185fa53531a163024}{lib\+\_\+name}}))
+\item 
+\mbox{\hyperlink{plugin__loader__unit_8cpp_a3d2327254e8bdc9024afc779e6526603}{EXPECT\+\_\+\+ANY\+\_\+\+THROW}} (Class\+Loader\+::create\+Shared\+Instance$<$ \mbox{\hyperlink{classtesseract__common_1_1TestPluginBase}{Test\+Plugin\+Base}} $>$(\mbox{\hyperlink{plugin__loader__unit_8cpp_a0f96facbec34815c2e03d89aac11b2f5}{symbol\+\_\+name}}, \char`\"{}does\+\_\+not\+\_\+exist\char`\"{}, \mbox{\hyperlink{plugin__loader__unit_8cpp_aa1512ecd4f00d4c9db14a4e496815bf2}{lib\+\_\+dir}}))
+\item 
+\mbox{\hyperlink{plugin__loader__unit_8cpp_a521548b5d28c54ef61515537b5a685bd}{EXPECT\+\_\+\+ANY\+\_\+\+THROW}} (Class\+Loader\+::create\+Shared\+Instance$<$ \mbox{\hyperlink{classtesseract__common_1_1TestPluginBase}{Test\+Plugin\+Base}} $>$(\char`\"{}does\+\_\+not\+\_\+exist\char`\"{}, \mbox{\hyperlink{plugin__loader__unit_8cpp_a98fa20d5bfa45e7185fa53531a163024}{lib\+\_\+name}}, \mbox{\hyperlink{plugin__loader__unit_8cpp_aa1512ecd4f00d4c9db14a4e496815bf2}{lib\+\_\+dir}}))
+\item 
+\mbox{\hyperlink{plugin__loader__unit_8cpp_a1ad2589d1cf49740292922cd88035aeb}{EXPECT\+\_\+\+ANY\+\_\+\+THROW}} (Class\+Loader\+::create\+Shared\+Instance$<$ \mbox{\hyperlink{classtesseract__common_1_1TestPluginBase}{Test\+Plugin\+Base}} $>$(\char`\"{}does\+\_\+not\+\_\+exist\char`\"{}, \mbox{\hyperlink{plugin__loader__unit_8cpp_a98fa20d5bfa45e7185fa53531a163024}{lib\+\_\+name}}))
+\item 
+plugin\+\_\+loader \mbox{\hyperlink{contact__managers__factory__unit_8cpp_a2f3e59daa23f0b486727dd6eff7d7420}{search\+\_\+paths}} \mbox{\hyperlink{plugin__loader__unit_8cpp_a14c3eb75beb00814b28215efa3ee05ff}{insert}} (std\+::string(TEST\+\_\+\+PLUGIN\+\_\+\+DIR))
+\item 
+plugin\+\_\+loader \mbox{\hyperlink{contact__managers__factory__unit_8cpp_a4eb26c3b59ba136eaa63f4139766f564}{search\+\_\+libraries}} \mbox{\hyperlink{plugin__loader__unit_8cpp_aaf6169add67faa03bf599a5294a741cb}{insert}} (\char`\"{}tesseract\+\_\+common\+\_\+test\+\_\+plugin\+\_\+multiply\char`\"{})
+\item 
+\mbox{\hyperlink{plugin__loader__unit_8cpp_ad18517c9eb6729a8e88a710e40105aa6}{EXPECT\+\_\+\+TRUE}} (plugin\+\_\+loader.\+is\+Plugin\+Available(\char`\"{}plugin\char`\"{}))
+\item 
+\mbox{\hyperlink{plugin__loader__unit_8cpp_ab8435bf861ce6190b84161ca33770518}{EXPECT\+\_\+\+EQ}} (symbols.\+at(0), \char`\"{}plugin\char`\"{})
+\item 
+plugin\+\_\+loader \mbox{\hyperlink{contact__managers__factory__unit_8cpp_a2f3e59daa23f0b486727dd6eff7d7420}{search\+\_\+paths}} \mbox{\hyperlink{plugin__loader__unit_8cpp_a8ce2cb7386073d2e470e0937003159a8}{insert}} (\char`\"{}does\+\_\+not\+\_\+exist\char`\"{})
+\item 
+\mbox{\hyperlink{plugin__loader__unit_8cpp_aa740b6d1b6562031945aa1b3da62b0f1}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{plugin__loader__unit_8cpp_af34747f68f9b0963dea6e8f3c659659c}{plugin}}==nullptr)
+\item 
+\mbox{\hyperlink{plugin__loader__unit_8cpp_abc215c96d6d03135549c1eaffef3d717}{EXPECT\+\_\+\+FALSE}} (plugin\+\_\+loader.\+is\+Plugin\+Available(\char`\"{}plugin\char`\"{}))
+\item 
+int \mbox{\hyperlink{plugin__loader__unit_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+std\+::set$<$ std\+::string $>$ \mbox{\hyperlink{plugin__loader__unit_8cpp_aa0d75bebf90ce49ae839876d1d62e199}{s}} = \mbox{\hyperlink{namespacetesseract__common_af2c2ec207efac0e2080c6488163eb082}{tesseract\+\_\+common\+::parse\+Environment\+Variable\+List}}(\char`\"{}UNITTESTENV\char`\"{})
+\item 
+const std\+::string \mbox{\hyperlink{plugin__loader__unit_8cpp_a98fa20d5bfa45e7185fa53531a163024}{lib\+\_\+name}} = \char`\"{}tesseract\+\_\+common\+\_\+test\+\_\+plugin\+\_\+multiply\char`\"{}
+\item 
+const std\+::string \mbox{\hyperlink{plugin__loader__unit_8cpp_aa1512ecd4f00d4c9db14a4e496815bf2}{lib\+\_\+dir}} = std\+::string(TEST\+\_\+\+PLUGIN\+\_\+\+DIR)
+\item 
+const std\+::string \mbox{\hyperlink{plugin__loader__unit_8cpp_a0f96facbec34815c2e03d89aac11b2f5}{symbol\+\_\+name}} = \char`\"{}plugin\char`\"{}
+\item 
+\mbox{\hyperlink{plugin__loader__unit_8cpp_a6ba7a8d172b555bcf202bdaaae46799c}{sections}} = Class\+Loader\+::get\+Available\+Sections(\mbox{\hyperlink{plugin__loader__unit_8cpp_a98fa20d5bfa45e7185fa53531a163024}{lib\+\_\+name}}, \mbox{\hyperlink{plugin__loader__unit_8cpp_aa1512ecd4f00d4c9db14a4e496815bf2}{lib\+\_\+dir}}, true)
+\item 
+\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a395d31593a673a3b0efd30ad8d2bba78}{auto}} \mbox{\hyperlink{plugin__loader__unit_8cpp_af34747f68f9b0963dea6e8f3c659659c}{plugin}} = Class\+Loader\+::create\+Shared\+Instance$<$\mbox{\hyperlink{classtesseract__common_1_1TestPluginBase}{Test\+Plugin\+Base}}$>$(\mbox{\hyperlink{plugin__loader__unit_8cpp_a0f96facbec34815c2e03d89aac11b2f5}{symbol\+\_\+name}}, \mbox{\hyperlink{plugin__loader__unit_8cpp_a98fa20d5bfa45e7185fa53531a163024}{lib\+\_\+name}}, \mbox{\hyperlink{plugin__loader__unit_8cpp_aa1512ecd4f00d4c9db14a4e496815bf2}{lib\+\_\+dir}})
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{plugin__loader__unit_8cpp_a591fb19f856c8faff2c302734ad80cc0}{symbols}} = plugin\+\_\+loader.\+get\+Available\+Plugins$<$\mbox{\hyperlink{classtesseract__common_1_1TestPluginBase}{Test\+Plugin\+Base}}$>$()
+\item 
+plugin\+\_\+loader \mbox{\hyperlink{plugin__loader__unit_8cpp_a09f47a8fb06d4a99c4099e4dc3d9caf9}{search\+\_\+system\+\_\+folders}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{plugin__loader__unit_8cpp_a1ad2589d1cf49740292922cd88035aeb}\label{plugin__loader__unit_8cpp_a1ad2589d1cf49740292922cd88035aeb}} 
+\index{plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}!EXPECT\_ANY\_THROW@{EXPECT\_ANY\_THROW}}
+\index{EXPECT\_ANY\_THROW@{EXPECT\_ANY\_THROW}!plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_ANY\_THROW()}{EXPECT\_ANY\_THROW()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+ANY\+\_\+\+THROW (\begin{DoxyParamCaption}\item[{Class\+Loader\+::create\+Shared\+Instance$<$ \mbox{\hyperlink{classtesseract__common_1_1TestPluginBase}{Test\+Plugin\+Base}} $>$}]{\char`\"{}does\+\_\+not\+\_\+exist\char`\"{}, lib\+\_\+name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{plugin__loader__unit_8cpp_a521548b5d28c54ef61515537b5a685bd}\label{plugin__loader__unit_8cpp_a521548b5d28c54ef61515537b5a685bd}} 
+\index{plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}!EXPECT\_ANY\_THROW@{EXPECT\_ANY\_THROW}}
+\index{EXPECT\_ANY\_THROW@{EXPECT\_ANY\_THROW}!plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_ANY\_THROW()}{EXPECT\_ANY\_THROW()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+ANY\+\_\+\+THROW (\begin{DoxyParamCaption}\item[{Class\+Loader\+::create\+Shared\+Instance$<$ \mbox{\hyperlink{classtesseract__common_1_1TestPluginBase}{Test\+Plugin\+Base}} $>$}]{\char`\"{}does\+\_\+not\+\_\+exist\char`\"{}, lib\+\_\+name, lib\+\_\+dir }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{plugin__loader__unit_8cpp_a3d2327254e8bdc9024afc779e6526603}\label{plugin__loader__unit_8cpp_a3d2327254e8bdc9024afc779e6526603}} 
+\index{plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}!EXPECT\_ANY\_THROW@{EXPECT\_ANY\_THROW}}
+\index{EXPECT\_ANY\_THROW@{EXPECT\_ANY\_THROW}!plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_ANY\_THROW()}{EXPECT\_ANY\_THROW()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+ANY\+\_\+\+THROW (\begin{DoxyParamCaption}\item[{Class\+Loader\+::create\+Shared\+Instance$<$ \mbox{\hyperlink{classtesseract__common_1_1TestPluginBase}{Test\+Plugin\+Base}} $>$}]{symbol\+\_\+name, \char`\"{}does\+\_\+not\+\_\+exist\char`\"{}, lib\+\_\+dir }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{plugin__loader__unit_8cpp_aeeb86d518ab2fc7d0d52e07607f227c2}\label{plugin__loader__unit_8cpp_aeeb86d518ab2fc7d0d52e07607f227c2}} 
+\index{plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}!EXPECT\_EQ@{EXPECT\_EQ}}
+\index{EXPECT\_EQ@{EXPECT\_EQ}!plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_EQ()}{EXPECT\_EQ()}\hspace{0.1cm}{\footnotesize\ttfamily [1/8]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+EQ (\begin{DoxyParamCaption}\item[{sections.}]{at0,  }\item[{\char`\"{}Test\+Base\char`\"{}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{plugin__loader__unit_8cpp_a2e5d6833703dbb0cdb68d6809743b8ab}\label{plugin__loader__unit_8cpp_a2e5d6833703dbb0cdb68d6809743b8ab}} 
+\index{plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}!EXPECT\_EQ@{EXPECT\_EQ}}
+\index{EXPECT\_EQ@{EXPECT\_EQ}!plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_EQ()}{EXPECT\_EQ()}\hspace{0.1cm}{\footnotesize\ttfamily [2/8]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+EQ (\begin{DoxyParamCaption}\item[{sections.}]{size(),  }\item[{1}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{plugin__loader__unit_8cpp_ab8435bf861ce6190b84161ca33770518}\label{plugin__loader__unit_8cpp_ab8435bf861ce6190b84161ca33770518}} 
+\index{plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}!EXPECT\_EQ@{EXPECT\_EQ}}
+\index{EXPECT\_EQ@{EXPECT\_EQ}!plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_EQ()}{EXPECT\_EQ()}\hspace{0.1cm}{\footnotesize\ttfamily [3/8]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+EQ (\begin{DoxyParamCaption}\item[{symbols.}]{at0,  }\item[{\char`\"{}plugin\char`\"{}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{plugin__loader__unit_8cpp_ac038f50f870918e138bd860ea1f61ba2}\label{plugin__loader__unit_8cpp_ac038f50f870918e138bd860ea1f61ba2}} 
+\index{plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}!EXPECT\_EQ@{EXPECT\_EQ}}
+\index{EXPECT\_EQ@{EXPECT\_EQ}!plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_EQ()}{EXPECT\_EQ()}\hspace{0.1cm}{\footnotesize\ttfamily [4/8]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+EQ (\begin{DoxyParamCaption}\item[{symbols.}]{at0,  }\item[{\mbox{\hyperlink{plugin__loader__unit_8cpp_a0f96facbec34815c2e03d89aac11b2f5}{symbol\+\_\+name}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{plugin__loader__unit_8cpp_a61506ba4a50bd25492d852a7eb198043}\label{plugin__loader__unit_8cpp_a61506ba4a50bd25492d852a7eb198043}} 
+\index{plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}!EXPECT\_EQ@{EXPECT\_EQ}}
+\index{EXPECT\_EQ@{EXPECT\_EQ}!plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_EQ()}{EXPECT\_EQ()}\hspace{0.1cm}{\footnotesize\ttfamily [5/8]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+EQ (\begin{DoxyParamCaption}\item[{symbols.}]{size(),  }\item[{1}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{plugin__loader__unit_8cpp_ac67aeedf23b25dbf77f6f79f49c3edfb}\label{plugin__loader__unit_8cpp_ac67aeedf23b25dbf77f6f79f49c3edfb}} 
+\index{plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}!EXPECT\_EQ@{EXPECT\_EQ}}
+\index{EXPECT\_EQ@{EXPECT\_EQ}!plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_EQ()}{EXPECT\_EQ()}\hspace{0.1cm}{\footnotesize\ttfamily [6/8]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+EQ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}}}]{\mbox{[}0\mbox{]},  }\item[{\char`\"{}a\char`\"{}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{plugin__loader__unit_8cpp_a12aba8c9050a88b4ef8c4a56a0c0f110}\label{plugin__loader__unit_8cpp_a12aba8c9050a88b4ef8c4a56a0c0f110}} 
+\index{plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}!EXPECT\_EQ@{EXPECT\_EQ}}
+\index{EXPECT\_EQ@{EXPECT\_EQ}!plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_EQ()}{EXPECT\_EQ()}\hspace{0.1cm}{\footnotesize\ttfamily [7/8]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+EQ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}}}]{\mbox{[}1\mbox{]},  }\item[{\char`\"{}b\char`\"{}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{plugin__loader__unit_8cpp_a3d35f71207a27df0ee04a2c28c879c46}\label{plugin__loader__unit_8cpp_a3d35f71207a27df0ee04a2c28c879c46}} 
+\index{plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}!EXPECT\_EQ@{EXPECT\_EQ}}
+\index{EXPECT\_EQ@{EXPECT\_EQ}!plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_EQ()}{EXPECT\_EQ()}\hspace{0.1cm}{\footnotesize\ttfamily [8/8]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+EQ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}}}]{\mbox{[}2\mbox{]},  }\item[{\char`\"{}c\char`\"{}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{plugin__loader__unit_8cpp_a5ab16d7bf35b445523097d1eac4ff168}\label{plugin__loader__unit_8cpp_a5ab16d7bf35b445523097d1eac4ff168}} 
+\index{plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}!EXPECT\_FALSE@{EXPECT\_FALSE}}
+\index{EXPECT\_FALSE@{EXPECT\_FALSE}!plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_FALSE()}{EXPECT\_FALSE()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+FALSE (\begin{DoxyParamCaption}\item[{Class\+Loader\+::is\+Class\+Available(\char`\"{}does\+\_\+not\+\_\+exist\char`\"{}, \mbox{\hyperlink{plugin__loader__unit_8cpp_a98fa20d5bfa45e7185fa53531a163024}{lib\+\_\+name}})}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{plugin__loader__unit_8cpp_aa4781a360e3fc5cfe4b8451f41a4424b}\label{plugin__loader__unit_8cpp_aa4781a360e3fc5cfe4b8451f41a4424b}} 
+\index{plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}!EXPECT\_FALSE@{EXPECT\_FALSE}}
+\index{EXPECT\_FALSE@{EXPECT\_FALSE}!plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_FALSE()}{EXPECT\_FALSE()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+FALSE (\begin{DoxyParamCaption}\item[{Class\+Loader\+::is\+Class\+Available(\char`\"{}does\+\_\+not\+\_\+exist\char`\"{}, \mbox{\hyperlink{plugin__loader__unit_8cpp_a98fa20d5bfa45e7185fa53531a163024}{lib\+\_\+name}}, \mbox{\hyperlink{plugin__loader__unit_8cpp_aa1512ecd4f00d4c9db14a4e496815bf2}{lib\+\_\+dir}})}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{plugin__loader__unit_8cpp_a95a8f337674c876f6235cbe21d97d130}\label{plugin__loader__unit_8cpp_a95a8f337674c876f6235cbe21d97d130}} 
+\index{plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}!EXPECT\_FALSE@{EXPECT\_FALSE}}
+\index{EXPECT\_FALSE@{EXPECT\_FALSE}!plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_FALSE()}{EXPECT\_FALSE()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+FALSE (\begin{DoxyParamCaption}\item[{Class\+Loader\+::is\+Class\+Available(\mbox{\hyperlink{plugin__loader__unit_8cpp_a0f96facbec34815c2e03d89aac11b2f5}{symbol\+\_\+name}}, \char`\"{}does\+\_\+not\+\_\+exist\char`\"{}, \mbox{\hyperlink{plugin__loader__unit_8cpp_aa1512ecd4f00d4c9db14a4e496815bf2}{lib\+\_\+dir}})}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{plugin__loader__unit_8cpp_abc215c96d6d03135549c1eaffef3d717}\label{plugin__loader__unit_8cpp_abc215c96d6d03135549c1eaffef3d717}} 
+\index{plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}!EXPECT\_FALSE@{EXPECT\_FALSE}}
+\index{EXPECT\_FALSE@{EXPECT\_FALSE}!plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_FALSE()}{EXPECT\_FALSE()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+FALSE (\begin{DoxyParamCaption}\item[{plugin\+\_\+loader.}]{is\+Plugin\+Available\char`\"{}plugin\char`\"{} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{plugin__loader__unit_8cpp_a721bcb79a2d49a34fd454a9b72183e7f}\label{plugin__loader__unit_8cpp_a721bcb79a2d49a34fd454a9b72183e7f}} 
+\index{plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}!EXPECT\_NEAR@{EXPECT\_NEAR}}
+\index{EXPECT\_NEAR@{EXPECT\_NEAR}!plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_NEAR()}{EXPECT\_NEAR()}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+NEAR (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{plugin__loader__unit_8cpp_af34747f68f9b0963dea6e8f3c659659c}{plugin}}-\/$>$}]{multiply5, 5,  }\item[{25}]{,  }\item[{1e-\/}]{8 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{plugin__loader__unit_8cpp_a9350d454efcf8d0fc1ea16928c03e6cc}\label{plugin__loader__unit_8cpp_a9350d454efcf8d0fc1ea16928c03e6cc}} 
+\index{plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{plugin__loader__unit_8cpp_af34747f68f9b0963dea6e8f3c659659c}{plugin}} !}]{ = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{plugin__loader__unit_8cpp_aa740b6d1b6562031945aa1b3da62b0f1}\label{plugin__loader__unit_8cpp_aa740b6d1b6562031945aa1b3da62b0f1}} 
+\index{plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{plugin__loader__unit_8cpp_af34747f68f9b0963dea6e8f3c659659c}{plugin}}}]{ = {\ttfamily =nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{plugin__loader__unit_8cpp_ad18517c9eb6729a8e88a710e40105aa6}\label{plugin__loader__unit_8cpp_ad18517c9eb6729a8e88a710e40105aa6}} 
+\index{plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{plugin\+\_\+loader.}]{is\+Plugin\+Available\char`\"{}plugin\char`\"{} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{plugin__loader__unit_8cpp_a024aa0eef9ae66dd8c85724284cfe497}\label{plugin__loader__unit_8cpp_a024aa0eef9ae66dd8c85724284cfe497}} 
+\index{plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{sections.}]{size(),  }\item[{1}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{plugin__loader__unit_8cpp_a8ce2cb7386073d2e470e0937003159a8}\label{plugin__loader__unit_8cpp_a8ce2cb7386073d2e470e0937003159a8}} 
+\index{plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}!insert@{insert}}
+\index{insert@{insert}!plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily plugin\+\_\+loader \mbox{\hyperlink{contact__managers__factory__unit_8cpp_a4eb26c3b59ba136eaa63f4139766f564}{search\+\_\+libraries}} insert (\begin{DoxyParamCaption}\item[{\char`\"{}does\+\_\+not\+\_\+exist\char`\"{}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{plugin__loader__unit_8cpp_aaf6169add67faa03bf599a5294a741cb}\label{plugin__loader__unit_8cpp_aaf6169add67faa03bf599a5294a741cb}} 
+\index{plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}!insert@{insert}}
+\index{insert@{insert}!plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily plugin\+\_\+loader \mbox{\hyperlink{contact__managers__factory__unit_8cpp_a4eb26c3b59ba136eaa63f4139766f564}{search\+\_\+libraries}} insert (\begin{DoxyParamCaption}\item[{\char`\"{}tesseract\+\_\+common\+\_\+test\+\_\+plugin\+\_\+multiply\char`\"{}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{plugin__loader__unit_8cpp_a14c3eb75beb00814b28215efa3ee05ff}\label{plugin__loader__unit_8cpp_a14c3eb75beb00814b28215efa3ee05ff}} 
+\index{plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}!insert@{insert}}
+\index{insert@{insert}!plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily plugin\+\_\+loader \mbox{\hyperlink{contact__managers__factory__unit_8cpp_a2f3e59daa23f0b486727dd6eff7d7420}{search\+\_\+paths}} insert (\begin{DoxyParamCaption}\item[{std\+::string(TEST\+\_\+\+PLUGIN\+\_\+\+DIR)}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{plugin__loader__unit_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{plugin__loader__unit_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}!main@{main}}
+\index{main@{main}!plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{plugin__loader__unit_8cpp_ab6a2f3202de6f621d783a429bd906a6c}\label{plugin__loader__unit_8cpp_ab6a2f3202de6f621d783a429bd906a6c}} 
+\index{plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}!putenv@{putenv}}
+\index{putenv@{putenv}!plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{putenv()}{putenv()}}
+{\footnotesize\ttfamily putenv (\begin{DoxyParamCaption}\item[{env\+\_\+var.}]{data() }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{plugin__loader__unit_8cpp_a26cb4553900018a2b891c6de3ba5a5ab}\label{plugin__loader__unit_8cpp_a26cb4553900018a2b891c6de3ba5a5ab}} 
+\index{plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}!v@{v}}
+\index{v@{v}!plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{v()}{v()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ v (\begin{DoxyParamCaption}\item[{s.}]{begin(),  }\item[{s.}]{end() }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{plugin__loader__unit_8cpp_aa1512ecd4f00d4c9db14a4e496815bf2}\label{plugin__loader__unit_8cpp_aa1512ecd4f00d4c9db14a4e496815bf2}} 
+\index{plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}!lib\_dir@{lib\_dir}}
+\index{lib\_dir@{lib\_dir}!plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{lib\_dir}{lib\_dir}}
+{\footnotesize\ttfamily const std\+::string lib\+\_\+dir = std\+::string(TEST\+\_\+\+PLUGIN\+\_\+\+DIR)}
+
+\mbox{\Hypertarget{plugin__loader__unit_8cpp_a98fa20d5bfa45e7185fa53531a163024}\label{plugin__loader__unit_8cpp_a98fa20d5bfa45e7185fa53531a163024}} 
+\index{plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}!lib\_name@{lib\_name}}
+\index{lib\_name@{lib\_name}!plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{lib\_name}{lib\_name}}
+{\footnotesize\ttfamily const std\+::string lib\+\_\+name = \char`\"{}tesseract\+\_\+common\+\_\+test\+\_\+plugin\+\_\+multiply\char`\"{}}
+
+\mbox{\Hypertarget{plugin__loader__unit_8cpp_af34747f68f9b0963dea6e8f3c659659c}\label{plugin__loader__unit_8cpp_af34747f68f9b0963dea6e8f3c659659c}} 
+\index{plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}!plugin@{plugin}}
+\index{plugin@{plugin}!plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{plugin}{plugin}}
+{\footnotesize\ttfamily plugin = Class\+Loader\+::create\+Shared\+Instance$<$\mbox{\hyperlink{classtesseract__common_1_1TestPluginBase}{Test\+Plugin\+Base}}$>$(\mbox{\hyperlink{plugin__loader__unit_8cpp_a0f96facbec34815c2e03d89aac11b2f5}{symbol\+\_\+name}}, \mbox{\hyperlink{plugin__loader__unit_8cpp_a98fa20d5bfa45e7185fa53531a163024}{lib\+\_\+name}}, \mbox{\hyperlink{plugin__loader__unit_8cpp_aa1512ecd4f00d4c9db14a4e496815bf2}{lib\+\_\+dir}})}
+
+\mbox{\Hypertarget{plugin__loader__unit_8cpp_aa0d75bebf90ce49ae839876d1d62e199}\label{plugin__loader__unit_8cpp_aa0d75bebf90ce49ae839876d1d62e199}} 
+\index{plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}!s@{s}}
+\index{s@{s}!plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{s}{s}}
+{\footnotesize\ttfamily std\+::set$<$std\+::string$>$ s = \mbox{\hyperlink{namespacetesseract__common_af2c2ec207efac0e2080c6488163eb082}{tesseract\+\_\+common\+::parse\+Environment\+Variable\+List}}(\char`\"{}UNITTESTENV\char`\"{})}
+
+\mbox{\Hypertarget{plugin__loader__unit_8cpp_a09f47a8fb06d4a99c4099e4dc3d9caf9}\label{plugin__loader__unit_8cpp_a09f47a8fb06d4a99c4099e4dc3d9caf9}} 
+\index{plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}!search\_system\_folders@{search\_system\_folders}}
+\index{search\_system\_folders@{search\_system\_folders}!plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{search\_system\_folders}{search\_system\_folders}}
+{\footnotesize\ttfamily plugin\+\_\+loader search\+\_\+system\+\_\+folders = false}
+
+\mbox{\Hypertarget{plugin__loader__unit_8cpp_a6ba7a8d172b555bcf202bdaaae46799c}\label{plugin__loader__unit_8cpp_a6ba7a8d172b555bcf202bdaaae46799c}} 
+\index{plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}!sections@{sections}}
+\index{sections@{sections}!plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{sections}{sections}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ sections = Class\+Loader\+::get\+Available\+Sections(\mbox{\hyperlink{plugin__loader__unit_8cpp_a98fa20d5bfa45e7185fa53531a163024}{lib\+\_\+name}}, \mbox{\hyperlink{plugin__loader__unit_8cpp_aa1512ecd4f00d4c9db14a4e496815bf2}{lib\+\_\+dir}}, true)}
+
+\mbox{\Hypertarget{plugin__loader__unit_8cpp_a0f96facbec34815c2e03d89aac11b2f5}\label{plugin__loader__unit_8cpp_a0f96facbec34815c2e03d89aac11b2f5}} 
+\index{plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}!symbol\_name@{symbol\_name}}
+\index{symbol\_name@{symbol\_name}!plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{symbol\_name}{symbol\_name}}
+{\footnotesize\ttfamily const std\+::string symbol\+\_\+name = \char`\"{}plugin\char`\"{}}
+
+\mbox{\Hypertarget{plugin__loader__unit_8cpp_a591fb19f856c8faff2c302734ad80cc0}\label{plugin__loader__unit_8cpp_a591fb19f856c8faff2c302734ad80cc0}} 
+\index{plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}!symbols@{symbols}}
+\index{symbols@{symbols}!plugin\_loader\_unit.cpp@{plugin\_loader\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{symbols}{symbols}}
+{\footnotesize\ttfamily symbols = plugin\+\_\+loader.\+get\+Available\+Plugins$<$\mbox{\hyperlink{classtesseract__common_1_1TestPluginBase}{Test\+Plugin\+Base}}$>$()}
+

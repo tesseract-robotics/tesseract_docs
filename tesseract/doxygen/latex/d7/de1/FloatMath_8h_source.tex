@@ -1,0 +1,774 @@
+\hypertarget{FloatMath_8h_source}{}\doxysection{Float\+Math.\+h}
+\label{FloatMath_8h_source}\index{tesseract\_collision/vhacd/include/tesseract\_collision/vhacd/inc/FloatMath.h@{tesseract\_collision/vhacd/include/tesseract\_collision/vhacd/inc/FloatMath.h}}
+\mbox{\hyperlink{FloatMath_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <float.h>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__collision}{tesseract\_collision}}}
+\DoxyCodeLine{7 \{}
+\DoxyCodeLine{8 \textcolor{keyword}{namespace }FLOAT\_MATH}
+\DoxyCodeLine{9 \{}
+\DoxyCodeLine{10 \textcolor{keyword}{enum} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a56bde344b52ec01c9fd3ab4f5411e60e}{FM\_ClipState}}}
+\DoxyCodeLine{11 \{}
+\DoxyCodeLine{12   \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a56bde344b52ec01c9fd3ab4f5411e60ea637e402ff2124e6fa0286026851db5e6}{FMCS\_XMIN}} = (1 << 0),}
+\DoxyCodeLine{13   \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a56bde344b52ec01c9fd3ab4f5411e60ea799fec9fc3011350d0e56a8ee760c32e}{FMCS\_XMAX}} = (1 << 1),}
+\DoxyCodeLine{14   \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a56bde344b52ec01c9fd3ab4f5411e60ea8b62d98a9d3e6ea59b31b54a4858d372}{FMCS\_YMIN}} = (1 << 2),}
+\DoxyCodeLine{15   \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a56bde344b52ec01c9fd3ab4f5411e60eae6e45467a0444974618dc4e154717ecc}{FMCS\_YMAX}} = (1 << 3),}
+\DoxyCodeLine{16   \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a56bde344b52ec01c9fd3ab4f5411e60eafae4c9d1e1f2475a3b53806cd6aadc03}{FMCS\_ZMIN}} = (1 << 4),}
+\DoxyCodeLine{17   \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a56bde344b52ec01c9fd3ab4f5411e60eafaa0d9a4dc7384024665872526f7ba1a}{FMCS\_ZMAX}} = (1 << 5),}
+\DoxyCodeLine{18 \};}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{enum} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a57b1f0f5d17910cddbf894c6cf4f740c}{FM\_Axis}}}
+\DoxyCodeLine{21 \{}
+\DoxyCodeLine{22   \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a57b1f0f5d17910cddbf894c6cf4f740cae6fe6d37fb651c6a99fff7127fbaeedc}{FM\_XAXIS}} = (1 << 0),}
+\DoxyCodeLine{23   \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a57b1f0f5d17910cddbf894c6cf4f740caa54828ada4095bce83b9f350e6fc4a72}{FM\_YAXIS}} = (1 << 1),}
+\DoxyCodeLine{24   \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a57b1f0f5d17910cddbf894c6cf4f740cabf89c72164f14be924c97a71e66b4c81}{FM\_ZAXIS}} = (1 << 2)}
+\DoxyCodeLine{25 \};}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{keyword}{enum} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_af42614d2a8c480acd36886830b2e8627}{LineSegmentType}}}
+\DoxyCodeLine{28 \{}
+\DoxyCodeLine{29   \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_af42614d2a8c480acd36886830b2e8627a4b71c1f394283a3c6a6606f06c0ba97c}{LS\_START}},}
+\DoxyCodeLine{30   \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_af42614d2a8c480acd36886830b2e8627a02911158a79bca96ea5768cf411e1526}{LS\_MIDDLE}},}
+\DoxyCodeLine{31   \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_af42614d2a8c480acd36886830b2e8627ab2c1aa9b30c3f4ba3fbd6c528bf99f86}{LS\_END}}}
+\DoxyCodeLine{32 \};}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{keyword}{const} \textcolor{keywordtype}{float} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a3192caf02a9c9bb331274a257b59e447}{FM\_PI}} = 3.1415926535897932384626433832795028841971693993751f;}
+\DoxyCodeLine{35 \textcolor{keyword}{const} \textcolor{keywordtype}{float} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a4179fcfd6dc7320db838f9bf352755b7}{FM\_DEG\_TO\_RAD}} = ((2.0f * \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a3192caf02a9c9bb331274a257b59e447}{FM\_PI}}) / 360.0f);}
+\DoxyCodeLine{36 \textcolor{keyword}{const} \textcolor{keywordtype}{float} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ad5c319a6607b97b59e2887906207e3be}{FM\_RAD\_TO\_DEG}} = (360.0f / (2.0f * \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a3192caf02a9c9bb331274a257b59e447}{FM\_PI}}));}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{comment}{//***************** Float versions}}
+\DoxyCodeLine{39 \textcolor{comment}{//***}}
+\DoxyCodeLine{40 \textcolor{comment}{//*** vectors are assumed to be 3 floats or 3 doubles representing X, Y, Z}}
+\DoxyCodeLine{41 \textcolor{comment}{//*** quaternions are assumed to be 4 floats or 4 doubles representing X,Y,Z,W}}
+\DoxyCodeLine{42 \textcolor{comment}{//*** matrices are assumed to be 16 floats or 16 doubles representing a standard D3D or OpenGL style 4x4 matrix}}
+\DoxyCodeLine{43 \textcolor{comment}{//*** bounding volumes are expressed as two sets of 3 floats/double representing bmin(x,y,z) and bmax(x,y,z)}}
+\DoxyCodeLine{44 \textcolor{comment}{//*** Plane equations are assumed to be 4 floats or 4 doubles representing Ax,By,Cz,D}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a57b1f0f5d17910cddbf894c6cf4f740c}{FM\_Axis}} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_acca9414e2eee81d555d6360649718b5c}{fm\_getDominantAxis}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} \mbox{\hyperlink{collision__core__unit_8cpp_a7589b8c9c1397d28b5974168ee72f0a8}{normal}}[3]);}
+\DoxyCodeLine{47 \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a57b1f0f5d17910cddbf894c6cf4f740c}{FM\_Axis}} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_acca9414e2eee81d555d6360649718b5c}{fm\_getDominantAxis}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} \mbox{\hyperlink{collision__core__unit_8cpp_a7589b8c9c1397d28b5974168ee72f0a8}{normal}}[3]);}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a20339cfba18f20f32a1b9b0cf914aa06}{fm\_decomposeTransform}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} local\_transform[16], \textcolor{keywordtype}{float} trans[3], \textcolor{keywordtype}{float} rot[4], \textcolor{keywordtype}{float} \mbox{\hyperlink{collision__margin__data__unit_8cpp_a80d402d10e8341004c0caf10133b80ab}{scale}}[3]);}
+\DoxyCodeLine{50 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a20339cfba18f20f32a1b9b0cf914aa06}{fm\_decomposeTransform}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} local\_transform[16], \textcolor{keywordtype}{double} trans[3], \textcolor{keywordtype}{double} rot[4], \textcolor{keywordtype}{double} \mbox{\hyperlink{collision__margin__data__unit_8cpp_a80d402d10e8341004c0caf10133b80ab}{scale}}[3]);}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a43292e98b3bca2ff079793a6c2b9b9ce}{fm\_multiplyTransform}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float}* pA, \textcolor{keyword}{const} \textcolor{keywordtype}{float}* pB, \textcolor{keywordtype}{float}* pM);}
+\DoxyCodeLine{53 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a43292e98b3bca2ff079793a6c2b9b9ce}{fm\_multiplyTransform}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double}* pA, \textcolor{keyword}{const} \textcolor{keywordtype}{double}* pB, \textcolor{keywordtype}{double}* pM);}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a2930e1036d21feaa32072574b52c85cf}{fm\_inverseTransform}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} matrix[16], \textcolor{keywordtype}{float} inverse\_matrix[16]);}
+\DoxyCodeLine{56 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a2930e1036d21feaa32072574b52c85cf}{fm\_inverseTransform}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} matrix[16], \textcolor{keywordtype}{double} inverse\_matrix[16]);}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_abdfd34d01be5cf8d25d4b13ac8047dbc}{fm\_identity}}(\textcolor{keywordtype}{float} matrix[16]);   \textcolor{comment}{// set 4x4 matrix to identity.}}
+\DoxyCodeLine{59 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_abdfd34d01be5cf8d25d4b13ac8047dbc}{fm\_identity}}(\textcolor{keywordtype}{double} matrix[16]);  \textcolor{comment}{// set 4x4 matrix to identity.}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a7a288d3b0ad250d7da5300d5af0c73a3}{fm\_inverseRT}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} matrix[16], \textcolor{keyword}{const} \textcolor{keywordtype}{float} pos[3], \textcolor{keywordtype}{float} t[3]);     \textcolor{comment}{// inverse rotate translate the point.}}
+\DoxyCodeLine{62 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a7a288d3b0ad250d7da5300d5af0c73a3}{fm\_inverseRT}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} matrix[16], \textcolor{keyword}{const} \textcolor{keywordtype}{double} pos[3], \textcolor{keywordtype}{double} t[3]);  \textcolor{comment}{// inverse rotate translate the point.}}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ac23b20a81934bc9938d1f132f73cc2b7}{fm\_transform}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} matrix[16], \textcolor{keyword}{const} \textcolor{keywordtype}{float} pos[3], \textcolor{keywordtype}{float} t[3]);     \textcolor{comment}{// rotate and translate this point.}}
+\DoxyCodeLine{65 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ac23b20a81934bc9938d1f132f73cc2b7}{fm\_transform}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} matrix[16], \textcolor{keyword}{const} \textcolor{keywordtype}{double} pos[3], \textcolor{keywordtype}{double} t[3]);  \textcolor{comment}{// rotate and translate this point.}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{keywordtype}{float} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ade25e1cef74e40893d61095f962d21bc}{fm\_getDeterminant}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} matrix[16]);}
+\DoxyCodeLine{68 \textcolor{keywordtype}{double} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ade25e1cef74e40893d61095f962d21bc}{fm\_getDeterminant}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} matrix[16]);}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a912f7260e26b804296066a4f663b613a}{fm\_getSubMatrix}}(int32\_t ki, int32\_t kj, \textcolor{keywordtype}{float} pDst[16], \textcolor{keyword}{const} \textcolor{keywordtype}{float} matrix[16]);}
+\DoxyCodeLine{71 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a912f7260e26b804296066a4f663b613a}{fm\_getSubMatrix}}(int32\_t ki, int32\_t kj, \textcolor{keywordtype}{double} pDst[16], \textcolor{keyword}{const} \textcolor{keywordtype}{float} matrix[16]);}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a63c5dd64f54c06474941dc6d33b7a7c9}{fm\_rotate}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} matrix[16], \textcolor{keyword}{const} \textcolor{keywordtype}{float} pos[3], \textcolor{keywordtype}{float} t[3]);  \textcolor{comment}{// only rotate the point by a 4x4 matrix, don't}}
+\DoxyCodeLine{74                                                                          \textcolor{comment}{// translate.}}
+\DoxyCodeLine{75 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a63c5dd64f54c06474941dc6d33b7a7c9}{fm\_rotate}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} matri[16], \textcolor{keyword}{const} \textcolor{keywordtype}{double} pos[3], \textcolor{keywordtype}{double} t[3]);  \textcolor{comment}{// only rotate the point by a 4x4 matrix,}}
+\DoxyCodeLine{76                                                                            \textcolor{comment}{// don't translate.}}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a639510718199c69fef576249cc62ab5b}{fm\_eulerToMatrix}}(\textcolor{keywordtype}{float} ax, \textcolor{keywordtype}{float} ay, \textcolor{keywordtype}{float} az, \textcolor{keywordtype}{float} matrix[16]);      \textcolor{comment}{// convert euler (in radians) to a dest 4x4}}
+\DoxyCodeLine{79                                                                             \textcolor{comment}{// matrix (translation set to zero)}}
+\DoxyCodeLine{80 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a639510718199c69fef576249cc62ab5b}{fm\_eulerToMatrix}}(\textcolor{keywordtype}{double} ax, \textcolor{keywordtype}{double} ay, \textcolor{keywordtype}{double} az, \textcolor{keywordtype}{double} matrix[16]);  \textcolor{comment}{// convert euler (in radians) to a dest 4x4}}
+\DoxyCodeLine{81                                                                             \textcolor{comment}{// matrix (translation set to zero)}}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a26462a27e72af6990c121632428ec2fc}{fm\_getAABB}}(uint32\_t vcount, \textcolor{keyword}{const} \textcolor{keywordtype}{float}* points, uint32\_t pstride, \textcolor{keywordtype}{float} bmin[3], \textcolor{keywordtype}{float} bmax[3]);}
+\DoxyCodeLine{84 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a26462a27e72af6990c121632428ec2fc}{fm\_getAABB}}(uint32\_t vcount, \textcolor{keyword}{const} \textcolor{keywordtype}{double}* points, uint32\_t pstride, \textcolor{keywordtype}{double} bmin[3], \textcolor{keywordtype}{double} bmax[3]);}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a26eb44a9dac482873d9708d106074ae7}{fm\_getAABBCenter}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} bmin[3], \textcolor{keyword}{const} \textcolor{keywordtype}{float} bmax[3], \textcolor{keywordtype}{float} center[3]);}
+\DoxyCodeLine{87 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a26eb44a9dac482873d9708d106074ae7}{fm\_getAABBCenter}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} bmin[3], \textcolor{keyword}{const} \textcolor{keywordtype}{double} bmax[3], \textcolor{keywordtype}{double} center[3]);}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_aee2425da19ad647e2e6e07cefab80499}{fm\_transformAABB}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} bmin[3], \textcolor{keyword}{const} \textcolor{keywordtype}{float} bmax[3], \textcolor{keyword}{const} \textcolor{keywordtype}{float} matrix[16], \textcolor{keywordtype}{float} tbmin[3], \textcolor{keywordtype}{float} tbmax[3]);}
+\DoxyCodeLine{90 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_aee2425da19ad647e2e6e07cefab80499}{fm\_transformAABB}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} bmin[3],}
+\DoxyCodeLine{91                       \textcolor{keyword}{const} \textcolor{keywordtype}{double} bmax[3],}
+\DoxyCodeLine{92                       \textcolor{keyword}{const} \textcolor{keywordtype}{double} matrix[16],}
+\DoxyCodeLine{93                       \textcolor{keywordtype}{double} tbmin[3],}
+\DoxyCodeLine{94                       \textcolor{keywordtype}{double} tbmax[3]);}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ac1c511904fd0433cb171ebe3074571a6}{fm\_eulerToQuat}}(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} z, \textcolor{keywordtype}{float} quat[4]);      \textcolor{comment}{// convert euler angles to quaternion.}}
+\DoxyCodeLine{97 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ac1c511904fd0433cb171ebe3074571a6}{fm\_eulerToQuat}}(\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} y, \textcolor{keywordtype}{double} z, \textcolor{keywordtype}{double} quat[4]);  \textcolor{comment}{// convert euler angles to quaternion.}}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a5cd99876556a82c5afc63506f786f147}{fm\_quatToEuler}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} quat[4], \textcolor{keywordtype}{float}\& ax, \textcolor{keywordtype}{float}\& ay, \textcolor{keywordtype}{float}\& az);}
+\DoxyCodeLine{100 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a5cd99876556a82c5afc63506f786f147}{fm\_quatToEuler}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} quat[4], \textcolor{keywordtype}{double}\& ax, \textcolor{keywordtype}{double}\& ay, \textcolor{keywordtype}{double}\& az);}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ac1c511904fd0433cb171ebe3074571a6}{fm\_eulerToQuat}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} euler[3],}
+\DoxyCodeLine{103                     \textcolor{keywordtype}{float} quat[4]);  \textcolor{comment}{// convert euler angles to quaternion. Angles must be radians not degrees!}}
+\DoxyCodeLine{104 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ac1c511904fd0433cb171ebe3074571a6}{fm\_eulerToQuat}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} euler[3], \textcolor{keywordtype}{double} quat[4]);  \textcolor{comment}{// convert euler angles to quaternion.}}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ab22d3c67cc3fca43c5a5b85f58f162c5}{fm\_scale}}(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} z, \textcolor{keywordtype}{float} matrix[16]);      \textcolor{comment}{// apply scale to the matrix.}}
+\DoxyCodeLine{107 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ab22d3c67cc3fca43c5a5b85f58f162c5}{fm\_scale}}(\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} y, \textcolor{keywordtype}{double} z, \textcolor{keywordtype}{double} matrix[16]);  \textcolor{comment}{// apply scale to the matrix.}}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a4c37e0fe41f064bf258f2f586e44addc}{fm\_eulerToQuatDX}}(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} z, \textcolor{keywordtype}{float} quat[4]);  \textcolor{comment}{// convert euler angles to quaternion using the fucked}}
+\DoxyCodeLine{110                                                                   \textcolor{comment}{// up DirectX method}}
+\DoxyCodeLine{111 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a4c37e0fe41f064bf258f2f586e44addc}{fm\_eulerToQuatDX}}(\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} y, \textcolor{keywordtype}{double} z, \textcolor{keywordtype}{double} quat[4]);  \textcolor{comment}{// convert euler angles to quaternion using the}}
+\DoxyCodeLine{112                                                                       \textcolor{comment}{// fucked up DirectX method}}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ad596304cf67a2c552307bafd46dec0c9}{fm\_eulerToMatrixDX}}(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} z, \textcolor{keywordtype}{float} matrix[16]);  \textcolor{comment}{// convert euler angles to quaternion using the}}
+\DoxyCodeLine{115                                                                        \textcolor{comment}{// fucked up DirectX method.}}
+\DoxyCodeLine{116 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ad596304cf67a2c552307bafd46dec0c9}{fm\_eulerToMatrixDX}}(\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} y, \textcolor{keywordtype}{double} z, \textcolor{keywordtype}{double} matrix[16]);  \textcolor{comment}{// convert euler angles to quaternion using}}
+\DoxyCodeLine{117                                                                            \textcolor{comment}{// the fucked up DirectX method.}}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a118b6cce9f33842be45ad85cfe0769b8}{fm\_quatToMatrix}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} quat[4],}
+\DoxyCodeLine{120                      \textcolor{keywordtype}{float} matrix[16]);  \textcolor{comment}{// convert quaterinion rotation to matrix, translation set to zero.}}
+\DoxyCodeLine{121 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a118b6cce9f33842be45ad85cfe0769b8}{fm\_quatToMatrix}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} quat[4],}
+\DoxyCodeLine{122                      \textcolor{keywordtype}{double} matrix[16]);  \textcolor{comment}{// convert quaterinion rotation to matrix, translation set to zero.}}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a3003c85d794447e983e60a563e3dc89f}{fm\_quatRotate}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} quat[4], \textcolor{keyword}{const} \textcolor{keywordtype}{float} \mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}}[3], \textcolor{keywordtype}{float} r[3]);     \textcolor{comment}{// rotate a vector directly by a quaternion.}}
+\DoxyCodeLine{125 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a3003c85d794447e983e60a563e3dc89f}{fm\_quatRotate}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} quat[4], \textcolor{keyword}{const} \textcolor{keywordtype}{double} \mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}}[3], \textcolor{keywordtype}{double} r[3]);  \textcolor{comment}{// rotate a vector directly by a quaternion.}}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_aaf45b7cea3c67c1ea7a9056c8a8a66c2}{fm\_getTranslation}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} matrix[16], \textcolor{keywordtype}{float} t[3]);}
+\DoxyCodeLine{128 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_aaf45b7cea3c67c1ea7a9056c8a8a66c2}{fm\_getTranslation}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} matrix[16], \textcolor{keywordtype}{double} t[3]);}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a2185a6780c25309ae85acaa443d5e1c3}{fm\_setTranslation}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float}* \mbox{\hyperlink{tesseract__environment__collision_8cpp_a444e5981b9daaa9413df8d049b9ad91c}{translation}}, \textcolor{keywordtype}{float} matrix[16]);}
+\DoxyCodeLine{131 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a2185a6780c25309ae85acaa443d5e1c3}{fm\_setTranslation}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double}* \mbox{\hyperlink{tesseract__environment__collision_8cpp_a444e5981b9daaa9413df8d049b9ad91c}{translation}}, \textcolor{keywordtype}{double} matrix[16]);}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ab6c58516f784858ad9cb5309111c4f9d}{fm\_multiplyQuat}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float}* qa, \textcolor{keyword}{const} \textcolor{keywordtype}{float}* qb, \textcolor{keywordtype}{float}* quat);}
+\DoxyCodeLine{134 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ab6c58516f784858ad9cb5309111c4f9d}{fm\_multiplyQuat}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double}* qa, \textcolor{keyword}{const} \textcolor{keywordtype}{double}* qb, \textcolor{keywordtype}{double}* quat);}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a3018506776da4e489026206851075a70}{fm\_matrixToQuat}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} matrix[16],}
+\DoxyCodeLine{137                      \textcolor{keywordtype}{float} quat[4]);  \textcolor{comment}{// convert the 3x3 portion of a 4x4 matrix into a quaterion as x,y,z,w}}
+\DoxyCodeLine{138 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a3018506776da4e489026206851075a70}{fm\_matrixToQuat}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} matrix[16],}
+\DoxyCodeLine{139                      \textcolor{keywordtype}{double} quat[4]);  \textcolor{comment}{// convert the 3x3 portion of a 4x4 matrix into a quaterion as x,y,z,w}}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{141 \textcolor{keywordtype}{float} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a05803dc0d65548b0f9d2356a0e90d058}{fm\_sphereVolume}}(\textcolor{keywordtype}{float} radius);    \textcolor{comment}{// return's the volume of a sphere of this radius (4/3 PI * R cubed )}}
+\DoxyCodeLine{142 \textcolor{keywordtype}{double} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a05803dc0d65548b0f9d2356a0e90d058}{fm\_sphereVolume}}(\textcolor{keywordtype}{double} radius);  \textcolor{comment}{// return's the volume of a sphere of this radius (4/3 PI * R cubed )}}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{144 \textcolor{keywordtype}{float} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a7ad3a288625be116836cd7a4a211bb3a}{fm\_cylinderVolume}}(\textcolor{keywordtype}{float} radius, \textcolor{keywordtype}{float} h);}
+\DoxyCodeLine{145 \textcolor{keywordtype}{double} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a7ad3a288625be116836cd7a4a211bb3a}{fm\_cylinderVolume}}(\textcolor{keywordtype}{double} radius, \textcolor{keywordtype}{double} h);}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147 \textcolor{keywordtype}{float} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a3a44cd55b62d545286078a1f02d6dbd1}{fm\_capsuleVolume}}(\textcolor{keywordtype}{float} radius, \textcolor{keywordtype}{float} h);}
+\DoxyCodeLine{148 \textcolor{keywordtype}{double} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a3a44cd55b62d545286078a1f02d6dbd1}{fm\_capsuleVolume}}(\textcolor{keywordtype}{double} radius, \textcolor{keywordtype}{double} h);}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{150 \textcolor{keywordtype}{float} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_af4f1b387127147d1ebd4c42f44ac243f}{fm\_distance}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} p1[3], \textcolor{keyword}{const} \textcolor{keywordtype}{float} p2[3]);}
+\DoxyCodeLine{151 \textcolor{keywordtype}{double} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_af4f1b387127147d1ebd4c42f44ac243f}{fm\_distance}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} p1[3], \textcolor{keyword}{const} \textcolor{keywordtype}{double} p2[3]);}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153 \textcolor{keywordtype}{float} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ad272ffe55903faab563db83a7b81fbf8}{fm\_distanceSquared}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} p1[3], \textcolor{keyword}{const} \textcolor{keywordtype}{float} p2[3]);}
+\DoxyCodeLine{154 \textcolor{keywordtype}{double} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ad272ffe55903faab563db83a7b81fbf8}{fm\_distanceSquared}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} p1[3], \textcolor{keyword}{const} \textcolor{keywordtype}{double} p2[3]);}
+\DoxyCodeLine{155 }
+\DoxyCodeLine{156 \textcolor{keywordtype}{float} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a1431de771b28b064253d2345fd2b198b}{fm\_distanceSquaredXZ}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} p1[3], \textcolor{keyword}{const} \textcolor{keywordtype}{float} p2[3]);}
+\DoxyCodeLine{157 \textcolor{keywordtype}{double} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a1431de771b28b064253d2345fd2b198b}{fm\_distanceSquaredXZ}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} p1[3], \textcolor{keyword}{const} \textcolor{keywordtype}{double} p2[3]);}
+\DoxyCodeLine{158 }
+\DoxyCodeLine{159 \textcolor{keywordtype}{float} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_abe52bf3681db3e807970a9aca321d09a}{fm\_computePlane}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} p1[3], \textcolor{keyword}{const} \textcolor{keywordtype}{float} p2[3], \textcolor{keyword}{const} \textcolor{keywordtype}{float} p3[3], \textcolor{keywordtype}{float}* n);       \textcolor{comment}{// return D}}
+\DoxyCodeLine{160 \textcolor{keywordtype}{double} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_abe52bf3681db3e807970a9aca321d09a}{fm\_computePlane}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} p1[3], \textcolor{keyword}{const} \textcolor{keywordtype}{double} p2[3], \textcolor{keyword}{const} \textcolor{keywordtype}{double} p3[3], \textcolor{keywordtype}{double}* n);  \textcolor{comment}{// return D}}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{162 \textcolor{keywordtype}{float} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a7e0937990accc4f6c31a0bcfeee7714e}{fm\_distToPlane}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} \mbox{\hyperlink{classtesseract__collision_1_1FLOAT__MATH_1_1plane}{plane}}[4], \textcolor{keyword}{const} \textcolor{keywordtype}{float} pos[3]);  \textcolor{comment}{// computes the distance of this point from the plane.}}
+\DoxyCodeLine{163 \textcolor{keywordtype}{double} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a7e0937990accc4f6c31a0bcfeee7714e}{fm\_distToPlane}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} \mbox{\hyperlink{classtesseract__collision_1_1FLOAT__MATH_1_1plane}{plane}}[4],}
+\DoxyCodeLine{164                       \textcolor{keyword}{const} \textcolor{keywordtype}{double} pos[3]);  \textcolor{comment}{// computes the distance of this point from the plane.}}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{166 \textcolor{keywordtype}{float} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a523efadbf49552c8e2a279f79fcf4ec5}{fm\_dot}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} p1[3], \textcolor{keyword}{const} \textcolor{keywordtype}{float} p2[3]);}
+\DoxyCodeLine{167 \textcolor{keywordtype}{double} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a523efadbf49552c8e2a279f79fcf4ec5}{fm\_dot}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} p1[3], \textcolor{keyword}{const} \textcolor{keywordtype}{double} p2[3]);}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{169 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a654b75169778cad484dbfcfa7338b90b}{fm\_cross}}(\textcolor{keywordtype}{float} cross[3], \textcolor{keyword}{const} \textcolor{keywordtype}{float} a[3], \textcolor{keyword}{const} \textcolor{keywordtype}{float} b[3]);}
+\DoxyCodeLine{170 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a654b75169778cad484dbfcfa7338b90b}{fm\_cross}}(\textcolor{keywordtype}{double} cross[3], \textcolor{keyword}{const} \textcolor{keywordtype}{double} a[3], \textcolor{keyword}{const} \textcolor{keywordtype}{double} b[3]);}
+\DoxyCodeLine{171 }
+\DoxyCodeLine{172 \textcolor{keywordtype}{float} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a44f80cf3be2769070ac93349d98f7c56}{fm\_computeNormalVector}}(\textcolor{keywordtype}{float} n[3], \textcolor{keyword}{const} \textcolor{keywordtype}{float} p1[3], \textcolor{keyword}{const} \textcolor{keywordtype}{float} p2[3]);      \textcolor{comment}{// as P2-\/P1 normalized.}}
+\DoxyCodeLine{173 \textcolor{keywordtype}{double} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a44f80cf3be2769070ac93349d98f7c56}{fm\_computeNormalVector}}(\textcolor{keywordtype}{double} n[3], \textcolor{keyword}{const} \textcolor{keywordtype}{double} p1[3], \textcolor{keyword}{const} \textcolor{keywordtype}{double} p2[3]);  \textcolor{comment}{// as P2-\/P1 normalized.}}
+\DoxyCodeLine{174 }
+\DoxyCodeLine{175 \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a11675f64687ac73efb1d4fddcdde0fdf}{fm\_computeWindingOrder}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} p1[3], \textcolor{keyword}{const} \textcolor{keywordtype}{float} p2[3], \textcolor{keyword}{const} \textcolor{keywordtype}{float} p3[3]);  \textcolor{comment}{// returns true if the triangle}}
+\DoxyCodeLine{176                                                                                        \textcolor{comment}{// is clockwise.}}
+\DoxyCodeLine{177 \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a11675f64687ac73efb1d4fddcdde0fdf}{fm\_computeWindingOrder}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} p1[3], \textcolor{keyword}{const} \textcolor{keywordtype}{double} p2[3], \textcolor{keyword}{const} \textcolor{keywordtype}{double} p3[3]);  \textcolor{comment}{// returns true if the}}
+\DoxyCodeLine{178                                                                                           \textcolor{comment}{// triangle is clockwise.}}
+\DoxyCodeLine{179 }
+\DoxyCodeLine{180 \textcolor{keywordtype}{float} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a5b91def523c08b1ea05c9f98da9d12f6}{fm\_normalize}}(\textcolor{keywordtype}{float} n[3]);    \textcolor{comment}{// normalize this vector and return the distance}}
+\DoxyCodeLine{181 \textcolor{keywordtype}{double} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a5b91def523c08b1ea05c9f98da9d12f6}{fm\_normalize}}(\textcolor{keywordtype}{double} n[3]);  \textcolor{comment}{// normalize this vector and return the distance}}
+\DoxyCodeLine{182 }
+\DoxyCodeLine{183 \textcolor{keywordtype}{float} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a7354390b19c4d83a0c7c09518b369c27}{fm\_normalizeQuat}}(\textcolor{keywordtype}{float} n[4]);    \textcolor{comment}{// normalize this quat}}
+\DoxyCodeLine{184 \textcolor{keywordtype}{double} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a7354390b19c4d83a0c7c09518b369c27}{fm\_normalizeQuat}}(\textcolor{keywordtype}{double} n[4]);  \textcolor{comment}{// normalize this quat}}
+\DoxyCodeLine{185 }
+\DoxyCodeLine{186 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a411db5078229529ffb7c58dcedde7af4}{fm\_matrixMultiply}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} A[16], \textcolor{keyword}{const} \textcolor{keywordtype}{float} B[16], \textcolor{keywordtype}{float} dest[16]);}
+\DoxyCodeLine{187 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a411db5078229529ffb7c58dcedde7af4}{fm\_matrixMultiply}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} A[16], \textcolor{keyword}{const} \textcolor{keywordtype}{double} B[16], \textcolor{keywordtype}{double} dest[16]);}
+\DoxyCodeLine{188 }
+\DoxyCodeLine{189 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a4ae40dd0a03640674d2385b3945bec27}{fm\_composeTransform}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_af0c068d080af3059ecb802c9e338bd98}{position}}[3], \textcolor{keyword}{const} \textcolor{keywordtype}{float} quat[4], \textcolor{keyword}{const} \textcolor{keywordtype}{float} \mbox{\hyperlink{collision__margin__data__unit_8cpp_a80d402d10e8341004c0caf10133b80ab}{scale}}[3], \textcolor{keywordtype}{float} matrix[16]);}
+\DoxyCodeLine{190 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a4ae40dd0a03640674d2385b3945bec27}{fm\_composeTransform}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_af0c068d080af3059ecb802c9e338bd98}{position}}[3], \textcolor{keyword}{const} \textcolor{keywordtype}{double} quat[4], \textcolor{keyword}{const} \textcolor{keywordtype}{double} \mbox{\hyperlink{collision__margin__data__unit_8cpp_a80d402d10e8341004c0caf10133b80ab}{scale}}[3], \textcolor{keywordtype}{double} matrix[16]);}
+\DoxyCodeLine{191 }
+\DoxyCodeLine{192 \textcolor{keywordtype}{float} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_aa18a44432b79c9a0d8591d2a746a24ea}{fm\_computeArea}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} p1[3], \textcolor{keyword}{const} \textcolor{keywordtype}{float} p2[3], \textcolor{keyword}{const} \textcolor{keywordtype}{float} p3[3]);}
+\DoxyCodeLine{193 \textcolor{keywordtype}{double} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_aa18a44432b79c9a0d8591d2a746a24ea}{fm\_computeArea}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} p1[3], \textcolor{keyword}{const} \textcolor{keywordtype}{double} p2[3], \textcolor{keyword}{const} \textcolor{keywordtype}{double} p3[3]);}
+\DoxyCodeLine{194 }
+\DoxyCodeLine{195 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a8cb9e6a6ed2b38e0ce39f1d3020d73d5}{fm\_lerp}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} p1[3], \textcolor{keyword}{const} \textcolor{keywordtype}{float} p2[3], \textcolor{keywordtype}{float} dest[3], \textcolor{keywordtype}{float} lerpValue);}
+\DoxyCodeLine{196 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a8cb9e6a6ed2b38e0ce39f1d3020d73d5}{fm\_lerp}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} p1[3], \textcolor{keyword}{const} \textcolor{keywordtype}{double} p2[3], \textcolor{keywordtype}{double} dest[3], \textcolor{keywordtype}{double} lerpValue);}
+\DoxyCodeLine{197 }
+\DoxyCodeLine{198 \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_af7869088ef074c70504401202befce8e}{fm\_insideTriangleXZ}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} test[3], \textcolor{keyword}{const} \textcolor{keywordtype}{float} p1[3], \textcolor{keyword}{const} \textcolor{keywordtype}{float} p2[3], \textcolor{keyword}{const} \textcolor{keywordtype}{float} p3[3]);}
+\DoxyCodeLine{199 \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_af7869088ef074c70504401202befce8e}{fm\_insideTriangleXZ}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} test[3], \textcolor{keyword}{const} \textcolor{keywordtype}{double} p1[3], \textcolor{keyword}{const} \textcolor{keywordtype}{double} p2[3], \textcolor{keyword}{const} \textcolor{keywordtype}{double} p3[3]);}
+\DoxyCodeLine{200 }
+\DoxyCodeLine{201 \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a6e9812207f1e9d061db2f544fa4bfeee}{fm\_insideAABB}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} pos[3], \textcolor{keyword}{const} \textcolor{keywordtype}{float} bmin[3], \textcolor{keyword}{const} \textcolor{keywordtype}{float} bmax[3]);}
+\DoxyCodeLine{202 \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a6e9812207f1e9d061db2f544fa4bfeee}{fm\_insideAABB}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} pos[3], \textcolor{keyword}{const} \textcolor{keywordtype}{double} bmin[3], \textcolor{keyword}{const} \textcolor{keywordtype}{double} bmax[3]);}
+\DoxyCodeLine{203 }
+\DoxyCodeLine{204 \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a6e9812207f1e9d061db2f544fa4bfeee}{fm\_insideAABB}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} obmin[3],}
+\DoxyCodeLine{205                    \textcolor{keyword}{const} \textcolor{keywordtype}{float} obmax[3],}
+\DoxyCodeLine{206                    \textcolor{keyword}{const} \textcolor{keywordtype}{float} tbmin[3],}
+\DoxyCodeLine{207                    \textcolor{keyword}{const} \textcolor{keywordtype}{float} tbmax[3]);  \textcolor{comment}{// test if bounding box tbmin/tmbax is fully inside obmin/obmax}}
+\DoxyCodeLine{208 \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a6e9812207f1e9d061db2f544fa4bfeee}{fm\_insideAABB}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} obmin[3],}
+\DoxyCodeLine{209                    \textcolor{keyword}{const} \textcolor{keywordtype}{double} obmax[3],}
+\DoxyCodeLine{210                    \textcolor{keyword}{const} \textcolor{keywordtype}{double} tbmin[3],}
+\DoxyCodeLine{211                    \textcolor{keyword}{const} \textcolor{keywordtype}{double} tbmax[3]);  \textcolor{comment}{// test if bounding box tbmin/tmbax is fully inside obmin/obmax}}
+\DoxyCodeLine{212 }
+\DoxyCodeLine{213 uint32\_t \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a061c06eef032983432ea301049120076}{fm\_clipTestPoint}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} bmin[3], \textcolor{keyword}{const} \textcolor{keywordtype}{float} bmax[3], \textcolor{keyword}{const} \textcolor{keywordtype}{float} pos[3]);}
+\DoxyCodeLine{214 uint32\_t \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a061c06eef032983432ea301049120076}{fm\_clipTestPoint}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} bmin[3], \textcolor{keyword}{const} \textcolor{keywordtype}{double} bmax[3], \textcolor{keyword}{const} \textcolor{keywordtype}{double} pos[3]);}
+\DoxyCodeLine{215 }
+\DoxyCodeLine{216 uint32\_t \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a6c23f3e7be112ea36cb26f41427647af}{fm\_clipTestPointXZ}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} bmin[3], \textcolor{keyword}{const} \textcolor{keywordtype}{float} bmax[3], \textcolor{keyword}{const} \textcolor{keywordtype}{float} pos[3]);  \textcolor{comment}{// only tests X and Z, not Y}}
+\DoxyCodeLine{217 uint32\_t \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a6c23f3e7be112ea36cb26f41427647af}{fm\_clipTestPointXZ}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} bmin[3], \textcolor{keyword}{const} \textcolor{keywordtype}{double} bmax[3], \textcolor{keyword}{const} \textcolor{keywordtype}{double} pos[3]);  \textcolor{comment}{// only tests X and Z,}}
+\DoxyCodeLine{218                                                                                                \textcolor{comment}{// not Y}}
+\DoxyCodeLine{219 }
+\DoxyCodeLine{220 uint32\_t \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a4faeeb7586cc8a1b51a6102cc2ff6f12}{fm\_clipTestAABB}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} bmin[3],}
+\DoxyCodeLine{221                          \textcolor{keyword}{const} \textcolor{keywordtype}{float} bmax[3],}
+\DoxyCodeLine{222                          \textcolor{keyword}{const} \textcolor{keywordtype}{float} p1[3],}
+\DoxyCodeLine{223                          \textcolor{keyword}{const} \textcolor{keywordtype}{float} p2[3],}
+\DoxyCodeLine{224                          \textcolor{keyword}{const} \textcolor{keywordtype}{float} p3[3],}
+\DoxyCodeLine{225                          uint32\_t\& andCode);}
+\DoxyCodeLine{226 uint32\_t \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a4faeeb7586cc8a1b51a6102cc2ff6f12}{fm\_clipTestAABB}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} bmin[3],}
+\DoxyCodeLine{227                          \textcolor{keyword}{const} \textcolor{keywordtype}{double} bmax[3],}
+\DoxyCodeLine{228                          \textcolor{keyword}{const} \textcolor{keywordtype}{double} p1[3],}
+\DoxyCodeLine{229                          \textcolor{keyword}{const} \textcolor{keywordtype}{double} p2[3],}
+\DoxyCodeLine{230                          \textcolor{keyword}{const} \textcolor{keywordtype}{double} p3[3],}
+\DoxyCodeLine{231                          uint32\_t\& andCode);}
+\DoxyCodeLine{232 }
+\DoxyCodeLine{233 \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ac505e40a2f78a4f88709ed39657038a0}{fm\_lineTestAABBXZ}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} p1[3], \textcolor{keyword}{const} \textcolor{keywordtype}{float} p2[3], \textcolor{keyword}{const} \textcolor{keywordtype}{float} bmin[3], \textcolor{keyword}{const} \textcolor{keywordtype}{float} bmax[3], \textcolor{keywordtype}{float}\& \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_ad09056a4bcd52540541e635a0fdf5551}{time}});}
+\DoxyCodeLine{234 \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ac505e40a2f78a4f88709ed39657038a0}{fm\_lineTestAABBXZ}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} p1[3],}
+\DoxyCodeLine{235                        \textcolor{keyword}{const} \textcolor{keywordtype}{double} p2[3],}
+\DoxyCodeLine{236                        \textcolor{keyword}{const} \textcolor{keywordtype}{double} bmin[3],}
+\DoxyCodeLine{237                        \textcolor{keyword}{const} \textcolor{keywordtype}{double} bmax[3],}
+\DoxyCodeLine{238                        \textcolor{keywordtype}{double}\& \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_ad09056a4bcd52540541e635a0fdf5551}{time}});}
+\DoxyCodeLine{239 }
+\DoxyCodeLine{240 \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a28305e65a686d484389270fca9b25e3f}{fm\_lineTestAABB}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} p1[3], \textcolor{keyword}{const} \textcolor{keywordtype}{float} p2[3], \textcolor{keyword}{const} \textcolor{keywordtype}{float} bmin[3], \textcolor{keyword}{const} \textcolor{keywordtype}{float} bmax[3], \textcolor{keywordtype}{float}\& \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_ad09056a4bcd52540541e635a0fdf5551}{time}});}
+\DoxyCodeLine{241 \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a28305e65a686d484389270fca9b25e3f}{fm\_lineTestAABB}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} p1[3], \textcolor{keyword}{const} \textcolor{keywordtype}{double} p2[3], \textcolor{keyword}{const} \textcolor{keywordtype}{double} bmin[3], \textcolor{keyword}{const} \textcolor{keywordtype}{double} bmax[3], \textcolor{keywordtype}{double}\& \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_ad09056a4bcd52540541e635a0fdf5551}{time}});}
+\DoxyCodeLine{242 }
+\DoxyCodeLine{243 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ab913dc35ab9f5417c775a33fc6b191c4}{fm\_initMinMax}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} p[3], \textcolor{keywordtype}{float} bmin[3], \textcolor{keywordtype}{float} bmax[3]);}
+\DoxyCodeLine{244 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ab913dc35ab9f5417c775a33fc6b191c4}{fm\_initMinMax}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} p[3], \textcolor{keywordtype}{double} bmin[3], \textcolor{keywordtype}{double} bmax[3]);}
+\DoxyCodeLine{245 }
+\DoxyCodeLine{246 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ab913dc35ab9f5417c775a33fc6b191c4}{fm\_initMinMax}}(\textcolor{keywordtype}{float} bmin[3], \textcolor{keywordtype}{float} bmax[3]);}
+\DoxyCodeLine{247 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ab913dc35ab9f5417c775a33fc6b191c4}{fm\_initMinMax}}(\textcolor{keywordtype}{double} bmin[3], \textcolor{keywordtype}{double} bmax[3]);}
+\DoxyCodeLine{248 }
+\DoxyCodeLine{249 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a9fa69c68cfa4591754dc68d95b429044}{fm\_minmax}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} p[3], \textcolor{keywordtype}{float} bmin[3], \textcolor{keywordtype}{float} bmax[3]);     \textcolor{comment}{// accumulate to a min-\/max value}}
+\DoxyCodeLine{250 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a9fa69c68cfa4591754dc68d95b429044}{fm\_minmax}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} p[3], \textcolor{keywordtype}{double} bmin[3], \textcolor{keywordtype}{double} bmax[3]);  \textcolor{comment}{// accumulate to a min-\/max value}}
+\DoxyCodeLine{251 }
+\DoxyCodeLine{252 \textcolor{comment}{// Computes the diagonal length of the bounding box and then inflates the bounding box on all sides}}
+\DoxyCodeLine{253 \textcolor{comment}{// by the ratio provided.}}
+\DoxyCodeLine{254 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a22ca324a98916a1bff831c3415434d99}{fm\_inflateMinMax}}(\textcolor{keywordtype}{float} bmin[3], \textcolor{keywordtype}{float} bmax[3], \textcolor{keywordtype}{float} ratio);}
+\DoxyCodeLine{255 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a22ca324a98916a1bff831c3415434d99}{fm\_inflateMinMax}}(\textcolor{keywordtype}{double} bmin[3], \textcolor{keywordtype}{double} bmax[3], \textcolor{keywordtype}{double} ratio);}
+\DoxyCodeLine{256 }
+\DoxyCodeLine{257 \textcolor{keywordtype}{float} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_aba158f2cb35cf0f025ac66ba93e30987}{fm\_solveX}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} \mbox{\hyperlink{classtesseract__collision_1_1FLOAT__MATH_1_1plane}{plane}}[4], \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} z);      \textcolor{comment}{// solve for X given this plane equation and the other two}}
+\DoxyCodeLine{258                                                               \textcolor{comment}{// components.}}
+\DoxyCodeLine{259 \textcolor{keywordtype}{double} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_aba158f2cb35cf0f025ac66ba93e30987}{fm\_solveX}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} \mbox{\hyperlink{classtesseract__collision_1_1FLOAT__MATH_1_1plane}{plane}}[4], \textcolor{keywordtype}{double} y, \textcolor{keywordtype}{double} z);  \textcolor{comment}{// solve for X given this plane equation and the other two}}
+\DoxyCodeLine{260                                                               \textcolor{comment}{// components.}}
+\DoxyCodeLine{261 }
+\DoxyCodeLine{262 \textcolor{keywordtype}{float} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a72f066966e7520d677330402cc7cb07c}{fm\_solveY}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} \mbox{\hyperlink{classtesseract__collision_1_1FLOAT__MATH_1_1plane}{plane}}[4], \textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} z);      \textcolor{comment}{// solve for Y given this plane equation and the other two}}
+\DoxyCodeLine{263                                                               \textcolor{comment}{// components.}}
+\DoxyCodeLine{264 \textcolor{keywordtype}{double} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a72f066966e7520d677330402cc7cb07c}{fm\_solveY}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} \mbox{\hyperlink{classtesseract__collision_1_1FLOAT__MATH_1_1plane}{plane}}[4], \textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} z);  \textcolor{comment}{// solve for Y given this plane equation and the other two}}
+\DoxyCodeLine{265                                                               \textcolor{comment}{// components.}}
+\DoxyCodeLine{266 }
+\DoxyCodeLine{267 \textcolor{keywordtype}{float} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a3b6b4eb4cfebc4f40a1b3bf1f4dda8d9}{fm\_solveZ}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} \mbox{\hyperlink{classtesseract__collision_1_1FLOAT__MATH_1_1plane}{plane}}[4], \textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y);      \textcolor{comment}{// solve for Z given this plane equation and the other two}}
+\DoxyCodeLine{268                                                               \textcolor{comment}{// components.}}
+\DoxyCodeLine{269 \textcolor{keywordtype}{double} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a3b6b4eb4cfebc4f40a1b3bf1f4dda8d9}{fm\_solveZ}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} \mbox{\hyperlink{classtesseract__collision_1_1FLOAT__MATH_1_1plane}{plane}}[4], \textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} y);  \textcolor{comment}{// solve for Z given this plane equation and the other two}}
+\DoxyCodeLine{270                                                               \textcolor{comment}{// components.}}
+\DoxyCodeLine{271 }
+\DoxyCodeLine{272 \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_adae42072725a00a07bdcf2fd0060aa6f}{fm\_computeBestFitPlane}}(uint32\_t vcount,       \textcolor{comment}{// number of input data points}}
+\DoxyCodeLine{273                             \textcolor{keyword}{const} \textcolor{keywordtype}{float}* points,   \textcolor{comment}{// starting address of points array.}}
+\DoxyCodeLine{274                             uint32\_t vstride,      \textcolor{comment}{// stride between input points.}}
+\DoxyCodeLine{275                             \textcolor{keyword}{const} \textcolor{keywordtype}{float}* weights,  \textcolor{comment}{// *optional point weighting values.}}
+\DoxyCodeLine{276                             uint32\_t wstride,      \textcolor{comment}{// weight stride for each vertex.}}
+\DoxyCodeLine{277                             \textcolor{keywordtype}{float} \mbox{\hyperlink{classtesseract__collision_1_1FLOAT__MATH_1_1plane}{plane}}[4],        \textcolor{comment}{// Best fit plane equation}}
+\DoxyCodeLine{278                             \textcolor{keywordtype}{float} center[3]);      \textcolor{comment}{// Best fit weighted center of input points}}
+\DoxyCodeLine{279 }
+\DoxyCodeLine{280 \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_adae42072725a00a07bdcf2fd0060aa6f}{fm\_computeBestFitPlane}}(uint32\_t vcount,        \textcolor{comment}{// number of input data points}}
+\DoxyCodeLine{281                             \textcolor{keyword}{const} \textcolor{keywordtype}{double}* points,   \textcolor{comment}{// starting address of points array.}}
+\DoxyCodeLine{282                             uint32\_t vstride,       \textcolor{comment}{// stride between input points.}}
+\DoxyCodeLine{283                             \textcolor{keyword}{const} \textcolor{keywordtype}{double}* weights,  \textcolor{comment}{// *optional point weighting values.}}
+\DoxyCodeLine{284                             uint32\_t wstride,       \textcolor{comment}{// weight stride for each vertex.}}
+\DoxyCodeLine{285                             \textcolor{keywordtype}{double} \mbox{\hyperlink{classtesseract__collision_1_1FLOAT__MATH_1_1plane}{plane}}[4],}
+\DoxyCodeLine{286                             \textcolor{keywordtype}{double} center[3]);}
+\DoxyCodeLine{287 }
+\DoxyCodeLine{288 \textcolor{comment}{// Computes the average center of a set of data points}}
+\DoxyCodeLine{289 \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_af55e0c1ce8b86ff4a4dcfbc5c15188c3}{fm\_computeCentroid}}(uint32\_t vcount,      \textcolor{comment}{// number of input data points}}
+\DoxyCodeLine{290                         \textcolor{keyword}{const} \textcolor{keywordtype}{float}* points,  \textcolor{comment}{// starting address of points array.}}
+\DoxyCodeLine{291                         \textcolor{keywordtype}{float}* center);}
+\DoxyCodeLine{292 }
+\DoxyCodeLine{293 \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_af55e0c1ce8b86ff4a4dcfbc5c15188c3}{fm\_computeCentroid}}(uint32\_t vcount,       \textcolor{comment}{// number of input data points}}
+\DoxyCodeLine{294                         \textcolor{keyword}{const} \textcolor{keywordtype}{double}* points,  \textcolor{comment}{// starting address of points array.}}
+\DoxyCodeLine{295                         \textcolor{keywordtype}{double}* center);}
+\DoxyCodeLine{296 }
+\DoxyCodeLine{297 \textcolor{comment}{// Compute centroid of a triangle mesh; takes area of each triangle into account}}
+\DoxyCodeLine{298 \textcolor{comment}{// weighted average}}
+\DoxyCodeLine{299 \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_af55e0c1ce8b86ff4a4dcfbc5c15188c3}{fm\_computeCentroid}}(uint32\_t vcount,      \textcolor{comment}{// number of input data points}}
+\DoxyCodeLine{300                         \textcolor{keyword}{const} \textcolor{keywordtype}{float}* points,  \textcolor{comment}{// starting address of points array.}}
+\DoxyCodeLine{301                         uint32\_t triangleCount,}
+\DoxyCodeLine{302                         \textcolor{keyword}{const} uint32\_t* indices,}
+\DoxyCodeLine{303                         \textcolor{keywordtype}{float}* center);}
+\DoxyCodeLine{304 }
+\DoxyCodeLine{305 \textcolor{comment}{// Compute centroid of a triangle mesh; takes area of each triangle into account}}
+\DoxyCodeLine{306 \textcolor{comment}{// weighted average}}
+\DoxyCodeLine{307 \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_af55e0c1ce8b86ff4a4dcfbc5c15188c3}{fm\_computeCentroid}}(uint32\_t vcount,       \textcolor{comment}{// number of input data points}}
+\DoxyCodeLine{308                         \textcolor{keyword}{const} \textcolor{keywordtype}{double}* points,  \textcolor{comment}{// starting address of points array.}}
+\DoxyCodeLine{309                         uint32\_t triangleCount,}
+\DoxyCodeLine{310                         \textcolor{keyword}{const} uint32\_t* indices,}
+\DoxyCodeLine{311                         \textcolor{keywordtype}{double}* center);}
+\DoxyCodeLine{312 }
+\DoxyCodeLine{313 \textcolor{keywordtype}{float} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_afedb62c5ede472acb1795d716736f4f8}{fm\_computeBestFitAABB}}(uint32\_t vcount,}
+\DoxyCodeLine{314                             \textcolor{keyword}{const} \textcolor{keywordtype}{float}* points,}
+\DoxyCodeLine{315                             uint32\_t pstride,}
+\DoxyCodeLine{316                             \textcolor{keywordtype}{float} bmin[3],}
+\DoxyCodeLine{317                             \textcolor{keywordtype}{float} bmax[3]);  \textcolor{comment}{// returns the diagonal distance}}
+\DoxyCodeLine{318 \textcolor{keywordtype}{double} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_afedb62c5ede472acb1795d716736f4f8}{fm\_computeBestFitAABB}}(uint32\_t vcount,}
+\DoxyCodeLine{319                              \textcolor{keyword}{const} \textcolor{keywordtype}{double}* points,}
+\DoxyCodeLine{320                              uint32\_t pstride,}
+\DoxyCodeLine{321                              \textcolor{keywordtype}{double} bmin[3],}
+\DoxyCodeLine{322                              \textcolor{keywordtype}{double} bmax[3]);  \textcolor{comment}{// returns the diagonal distance}}
+\DoxyCodeLine{323 }
+\DoxyCodeLine{324 \textcolor{keywordtype}{float} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a66db1edc3aa1c14900ce9486c551fe36}{fm\_computeBestFitSphere}}(uint32\_t vcount, \textcolor{keyword}{const} \textcolor{keywordtype}{float}* points, uint32\_t pstride, \textcolor{keywordtype}{float} center[3]);}
+\DoxyCodeLine{325 \textcolor{keywordtype}{double} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a66db1edc3aa1c14900ce9486c551fe36}{fm\_computeBestFitSphere}}(uint32\_t vcount, \textcolor{keyword}{const} \textcolor{keywordtype}{double}* points, uint32\_t pstride, \textcolor{keywordtype}{double} center[3]);}
+\DoxyCodeLine{326 }
+\DoxyCodeLine{327 \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_aa9caefd621fed7540cbe780a75fbf90d}{fm\_lineSphereIntersect}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} center[3],}
+\DoxyCodeLine{328                             \textcolor{keywordtype}{float} radius,}
+\DoxyCodeLine{329                             \textcolor{keyword}{const} \textcolor{keywordtype}{float} p1[3],}
+\DoxyCodeLine{330                             \textcolor{keyword}{const} \textcolor{keywordtype}{float} p2[3],}
+\DoxyCodeLine{331                             \textcolor{keywordtype}{float} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_af870f9b360f5990eaa9cc29e2e076765}{intersect}}[3]);}
+\DoxyCodeLine{332 \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_aa9caefd621fed7540cbe780a75fbf90d}{fm\_lineSphereIntersect}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} center[3],}
+\DoxyCodeLine{333                             \textcolor{keywordtype}{double} radius,}
+\DoxyCodeLine{334                             \textcolor{keyword}{const} \textcolor{keywordtype}{double} p1[3],}
+\DoxyCodeLine{335                             \textcolor{keyword}{const} \textcolor{keywordtype}{double} p2[3],}
+\DoxyCodeLine{336                             \textcolor{keywordtype}{double} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_af870f9b360f5990eaa9cc29e2e076765}{intersect}}[3]);}
+\DoxyCodeLine{337 }
+\DoxyCodeLine{338 \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a9dd6b0bfd45cd48e6a01b1cd54ad847b}{fm\_intersectRayAABB}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} bmin[3],}
+\DoxyCodeLine{339                          \textcolor{keyword}{const} \textcolor{keywordtype}{float} bmax[3],}
+\DoxyCodeLine{340                          \textcolor{keyword}{const} \textcolor{keywordtype}{float} pos[3],}
+\DoxyCodeLine{341                          \textcolor{keyword}{const} \textcolor{keywordtype}{float} dir[3],}
+\DoxyCodeLine{342                          \textcolor{keywordtype}{float} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_af870f9b360f5990eaa9cc29e2e076765}{intersect}}[3]);}
+\DoxyCodeLine{343 \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ac1e3f5b1b3ad9f32eaa72c990043fa4e}{fm\_intersectLineSegmentAABB}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} bmin[3],}
+\DoxyCodeLine{344                                  \textcolor{keyword}{const} \textcolor{keywordtype}{float} bmax[3],}
+\DoxyCodeLine{345                                  \textcolor{keyword}{const} \textcolor{keywordtype}{float} p1[3],}
+\DoxyCodeLine{346                                  \textcolor{keyword}{const} \textcolor{keywordtype}{float} p2[3],}
+\DoxyCodeLine{347                                  \textcolor{keywordtype}{float} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_af870f9b360f5990eaa9cc29e2e076765}{intersect}}[3]);}
+\DoxyCodeLine{348 }
+\DoxyCodeLine{349 \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ac975a8c7174625060b48b2bf5120ee80}{fm\_lineIntersectsTriangle}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} rayStart[3],}
+\DoxyCodeLine{350                                \textcolor{keyword}{const} \textcolor{keywordtype}{float} rayEnd[3],}
+\DoxyCodeLine{351                                \textcolor{keyword}{const} \textcolor{keywordtype}{float} p1[3],}
+\DoxyCodeLine{352                                \textcolor{keyword}{const} \textcolor{keywordtype}{float} p2[3],}
+\DoxyCodeLine{353                                \textcolor{keyword}{const} \textcolor{keywordtype}{float} p3[3],}
+\DoxyCodeLine{354                                \textcolor{keywordtype}{float} sect[3]);}
+\DoxyCodeLine{355 \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ac975a8c7174625060b48b2bf5120ee80}{fm\_lineIntersectsTriangle}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} rayStart[3],}
+\DoxyCodeLine{356                                \textcolor{keyword}{const} \textcolor{keywordtype}{double} rayEnd[3],}
+\DoxyCodeLine{357                                \textcolor{keyword}{const} \textcolor{keywordtype}{double} p1[3],}
+\DoxyCodeLine{358                                \textcolor{keyword}{const} \textcolor{keywordtype}{double} p2[3],}
+\DoxyCodeLine{359                                \textcolor{keyword}{const} \textcolor{keywordtype}{double} p3[3],}
+\DoxyCodeLine{360                                \textcolor{keywordtype}{double} sect[3]);}
+\DoxyCodeLine{361 }
+\DoxyCodeLine{362 \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a77b72a25d8c7cdbd8b2b74c7d7ac3d71}{fm\_rayIntersectsTriangle}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} origin[3],}
+\DoxyCodeLine{363                               \textcolor{keyword}{const} \textcolor{keywordtype}{float} dir[3],}
+\DoxyCodeLine{364                               \textcolor{keyword}{const} \textcolor{keywordtype}{float} v0[3],}
+\DoxyCodeLine{365                               \textcolor{keyword}{const} \textcolor{keywordtype}{float} \mbox{\hyperlink{tesseract__common__unit_8cpp_a78e1cc09f129a731d55ed82bc47956a7}{v1}}[3],}
+\DoxyCodeLine{366                               \textcolor{keyword}{const} \textcolor{keywordtype}{float} \mbox{\hyperlink{tesseract__common__unit_8cpp_a23dd5e7fffd5f8400cbed32a5071f236}{v2}}[3],}
+\DoxyCodeLine{367                               \textcolor{keywordtype}{float}\& t);}
+\DoxyCodeLine{368 \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a77b72a25d8c7cdbd8b2b74c7d7ac3d71}{fm\_rayIntersectsTriangle}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} origin[3],}
+\DoxyCodeLine{369                               \textcolor{keyword}{const} \textcolor{keywordtype}{double} dir[3],}
+\DoxyCodeLine{370                               \textcolor{keyword}{const} \textcolor{keywordtype}{double} v0[3],}
+\DoxyCodeLine{371                               \textcolor{keyword}{const} \textcolor{keywordtype}{double} \mbox{\hyperlink{tesseract__common__unit_8cpp_a78e1cc09f129a731d55ed82bc47956a7}{v1}}[3],}
+\DoxyCodeLine{372                               \textcolor{keyword}{const} \textcolor{keywordtype}{double} \mbox{\hyperlink{tesseract__common__unit_8cpp_a23dd5e7fffd5f8400cbed32a5071f236}{v2}}[3],}
+\DoxyCodeLine{373                               \textcolor{keywordtype}{double}\& t);}
+\DoxyCodeLine{374 }
+\DoxyCodeLine{375 \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a1a721d3c59fc495c09e3889e939d2a97}{fm\_raySphereIntersect}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} center[3],}
+\DoxyCodeLine{376                            \textcolor{keywordtype}{float} radius,}
+\DoxyCodeLine{377                            \textcolor{keyword}{const} \textcolor{keywordtype}{float} pos[3],}
+\DoxyCodeLine{378                            \textcolor{keyword}{const} \textcolor{keywordtype}{float} dir[3],}
+\DoxyCodeLine{379                            \textcolor{keywordtype}{float} \mbox{\hyperlink{collision__core__unit_8cpp_a1ceb8bb3849a05a320b82729fd3681bb}{distance}},}
+\DoxyCodeLine{380                            \textcolor{keywordtype}{float} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_af870f9b360f5990eaa9cc29e2e076765}{intersect}}[3]);}
+\DoxyCodeLine{381 \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a1a721d3c59fc495c09e3889e939d2a97}{fm\_raySphereIntersect}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} center[3],}
+\DoxyCodeLine{382                            \textcolor{keywordtype}{double} radius,}
+\DoxyCodeLine{383                            \textcolor{keyword}{const} \textcolor{keywordtype}{double} pos[3],}
+\DoxyCodeLine{384                            \textcolor{keyword}{const} \textcolor{keywordtype}{double} dir[3],}
+\DoxyCodeLine{385                            \textcolor{keywordtype}{double} \mbox{\hyperlink{collision__core__unit_8cpp_a1ceb8bb3849a05a320b82729fd3681bb}{distance}},}
+\DoxyCodeLine{386                            \textcolor{keywordtype}{double} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_af870f9b360f5990eaa9cc29e2e076765}{intersect}}[3]);}
+\DoxyCodeLine{387 }
+\DoxyCodeLine{388 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_aa768928b4fdcbe315c26c0c7fb677aa3}{fm\_catmullRom}}(\textcolor{keywordtype}{float} out\_vector[3],}
+\DoxyCodeLine{389                    \textcolor{keyword}{const} \textcolor{keywordtype}{float} p1[3],}
+\DoxyCodeLine{390                    \textcolor{keyword}{const} \textcolor{keywordtype}{float} p2[3],}
+\DoxyCodeLine{391                    \textcolor{keyword}{const} \textcolor{keywordtype}{float} p3[3],}
+\DoxyCodeLine{392                    \textcolor{keyword}{const} \textcolor{keywordtype}{float}* p4,}
+\DoxyCodeLine{393                    \textcolor{keyword}{const} \textcolor{keywordtype}{float} \mbox{\hyperlink{plugin__loader__unit_8cpp_aa0d75bebf90ce49ae839876d1d62e199}{s}});}
+\DoxyCodeLine{394 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_aa768928b4fdcbe315c26c0c7fb677aa3}{fm\_catmullRom}}(\textcolor{keywordtype}{double} out\_vector[3],}
+\DoxyCodeLine{395                    \textcolor{keyword}{const} \textcolor{keywordtype}{double} p1[3],}
+\DoxyCodeLine{396                    \textcolor{keyword}{const} \textcolor{keywordtype}{double} p2[3],}
+\DoxyCodeLine{397                    \textcolor{keyword}{const} \textcolor{keywordtype}{double} p3[3],}
+\DoxyCodeLine{398                    \textcolor{keyword}{const} \textcolor{keywordtype}{double}* p4,}
+\DoxyCodeLine{399                    \textcolor{keyword}{const} \textcolor{keywordtype}{double} \mbox{\hyperlink{plugin__loader__unit_8cpp_aa0d75bebf90ce49ae839876d1d62e199}{s}});}
+\DoxyCodeLine{400 }
+\DoxyCodeLine{401 \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a968b5a794d7179db59d5415e9fca0716}{fm\_intersectAABB}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} bmin1[3], \textcolor{keyword}{const} \textcolor{keywordtype}{float} bmax1[3], \textcolor{keyword}{const} \textcolor{keywordtype}{float} bmin2[3], \textcolor{keyword}{const} \textcolor{keywordtype}{float} bmax2[3]);}
+\DoxyCodeLine{402 \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a968b5a794d7179db59d5415e9fca0716}{fm\_intersectAABB}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} bmin1[3], \textcolor{keyword}{const} \textcolor{keywordtype}{double} bmax1[3], \textcolor{keyword}{const} \textcolor{keywordtype}{double} bmin2[3], \textcolor{keyword}{const} \textcolor{keywordtype}{double} bmax2[3]);}
+\DoxyCodeLine{403 }
+\DoxyCodeLine{404 \textcolor{comment}{// computes the rotation quaternion to go from unit-\/vector v0 to unit-\/vector v1}}
+\DoxyCodeLine{405 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_abcf78d9ae289e256eea184fd40396edf}{fm\_rotationArc}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} v0[3], \textcolor{keyword}{const} \textcolor{keywordtype}{float} \mbox{\hyperlink{tesseract__common__unit_8cpp_a78e1cc09f129a731d55ed82bc47956a7}{v1}}[3], \textcolor{keywordtype}{float} quat[4]);}
+\DoxyCodeLine{406 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_abcf78d9ae289e256eea184fd40396edf}{fm\_rotationArc}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} v0[3], \textcolor{keyword}{const} \textcolor{keywordtype}{double} \mbox{\hyperlink{tesseract__common__unit_8cpp_a78e1cc09f129a731d55ed82bc47956a7}{v1}}[3], \textcolor{keywordtype}{double} quat[4]);}
+\DoxyCodeLine{407 }
+\DoxyCodeLine{408 \textcolor{keywordtype}{float} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ab44659190dbf973f9e9e0c09cb165c3e}{fm\_distancePointLineSegment}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} Point[3],}
+\DoxyCodeLine{409                                   \textcolor{keyword}{const} \textcolor{keywordtype}{float} LineStart[3],}
+\DoxyCodeLine{410                                   \textcolor{keyword}{const} \textcolor{keywordtype}{float} LineEnd[3],}
+\DoxyCodeLine{411                                   \textcolor{keywordtype}{float} intersection[3],}
+\DoxyCodeLine{412                                   \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_af42614d2a8c480acd36886830b2e8627}{LineSegmentType}}\& \mbox{\hyperlink{tesseract__environment__collision_8cpp_a30f93ee2d6b54c870d5c8295071072ac}{type}},}
+\DoxyCodeLine{413                                   \textcolor{keywordtype}{float} epsilon);}
+\DoxyCodeLine{414 \textcolor{keywordtype}{double} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ab44659190dbf973f9e9e0c09cb165c3e}{fm\_distancePointLineSegment}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} Point[3],}
+\DoxyCodeLine{415                                    \textcolor{keyword}{const} \textcolor{keywordtype}{double} LineStart[3],}
+\DoxyCodeLine{416                                    \textcolor{keyword}{const} \textcolor{keywordtype}{double} LineEnd[3],}
+\DoxyCodeLine{417                                    \textcolor{keywordtype}{double} intersection[3],}
+\DoxyCodeLine{418                                    \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_af42614d2a8c480acd36886830b2e8627}{LineSegmentType}}\& \mbox{\hyperlink{tesseract__environment__collision_8cpp_a30f93ee2d6b54c870d5c8295071072ac}{type}},}
+\DoxyCodeLine{419                                    \textcolor{keywordtype}{double} epsilon);}
+\DoxyCodeLine{420 }
+\DoxyCodeLine{421 \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ac6ee4cf37abdcc4897c74e4e474cfadc}{fm\_colinear}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} p1[3], \textcolor{keyword}{const} \textcolor{keywordtype}{double} p2[3], \textcolor{keyword}{const} \textcolor{keywordtype}{double} p3[3], \textcolor{keywordtype}{double} epsilon = 0.999);  \textcolor{comment}{// true if these}}
+\DoxyCodeLine{422                                                                                                        \textcolor{comment}{// three points}}
+\DoxyCodeLine{423                                                                                                        \textcolor{comment}{// in a row are}}
+\DoxyCodeLine{424                                                                                                        \textcolor{comment}{// co-\/linear}}
+\DoxyCodeLine{425 \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ac6ee4cf37abdcc4897c74e4e474cfadc}{fm\_colinear}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} p1[3], \textcolor{keyword}{const} \textcolor{keywordtype}{float} p2[3], \textcolor{keyword}{const} \textcolor{keywordtype}{float} p3[3], \textcolor{keywordtype}{float} epsilon = 0.999f);}
+\DoxyCodeLine{426 }
+\DoxyCodeLine{427 \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ac6ee4cf37abdcc4897c74e4e474cfadc}{fm\_colinear}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} a1[3],}
+\DoxyCodeLine{428                  \textcolor{keyword}{const} \textcolor{keywordtype}{float} a2[3],}
+\DoxyCodeLine{429                  \textcolor{keyword}{const} \textcolor{keywordtype}{float} b1[3],}
+\DoxyCodeLine{430                  \textcolor{keyword}{const} \textcolor{keywordtype}{float} b2[3],}
+\DoxyCodeLine{431                  \textcolor{keywordtype}{float} epsilon = 0.999f);  \textcolor{comment}{// true if these two line segments are co-\/linear.}}
+\DoxyCodeLine{432 \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ac6ee4cf37abdcc4897c74e4e474cfadc}{fm\_colinear}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} a1[3],}
+\DoxyCodeLine{433                  \textcolor{keyword}{const} \textcolor{keywordtype}{double} a2[3],}
+\DoxyCodeLine{434                  \textcolor{keyword}{const} \textcolor{keywordtype}{double} b1[3],}
+\DoxyCodeLine{435                  \textcolor{keyword}{const} \textcolor{keywordtype}{double} b2[3],}
+\DoxyCodeLine{436                  \textcolor{keywordtype}{double} epsilon = 0.999);  \textcolor{comment}{// true if these two line segments are co-\/linear.}}
+\DoxyCodeLine{437 }
+\DoxyCodeLine{438 \textcolor{keyword}{enum} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a19fa38793feab4dd0f29d8b5b9139e5b}{IntersectResult}}}
+\DoxyCodeLine{439 \{}
+\DoxyCodeLine{440   \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a19fa38793feab4dd0f29d8b5b9139e5baa990ae53ea6616c5537ed7595ad60600}{IR\_DONT\_INTERSECT}},}
+\DoxyCodeLine{441   \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a19fa38793feab4dd0f29d8b5b9139e5ba3ae239bad07a491c5a7fce92828e974c}{IR\_DO\_INTERSECT}},}
+\DoxyCodeLine{442   \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a19fa38793feab4dd0f29d8b5b9139e5bade4a9bce49f102a655f5394a23059a83}{IR\_COINCIDENT}},}
+\DoxyCodeLine{443   \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a19fa38793feab4dd0f29d8b5b9139e5baa05e67169a28b598cf6c8a4e60909863}{IR\_PARALLEL}},}
+\DoxyCodeLine{444 \};}
+\DoxyCodeLine{445 }
+\DoxyCodeLine{446 \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a19fa38793feab4dd0f29d8b5b9139e5b}{IntersectResult}} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_aa212b2acb27ba6d216c8e9c3ca8e7248}{fm\_intersectLineSegments2d}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} a1[3],}
+\DoxyCodeLine{447                                            \textcolor{keyword}{const} \textcolor{keywordtype}{float} a2[3],}
+\DoxyCodeLine{448                                            \textcolor{keyword}{const} \textcolor{keywordtype}{float} b1[3],}
+\DoxyCodeLine{449                                            \textcolor{keyword}{const} \textcolor{keywordtype}{float} b2[3],}
+\DoxyCodeLine{450                                            \textcolor{keywordtype}{float} intersectionPoint[3]);}
+\DoxyCodeLine{451 \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a19fa38793feab4dd0f29d8b5b9139e5b}{IntersectResult}} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_aa212b2acb27ba6d216c8e9c3ca8e7248}{fm\_intersectLineSegments2d}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} a1[3],}
+\DoxyCodeLine{452                                            \textcolor{keyword}{const} \textcolor{keywordtype}{double} a2[3],}
+\DoxyCodeLine{453                                            \textcolor{keyword}{const} \textcolor{keywordtype}{double} b1[3],}
+\DoxyCodeLine{454                                            \textcolor{keyword}{const} \textcolor{keywordtype}{double} b2[3],}
+\DoxyCodeLine{455                                            \textcolor{keywordtype}{double} intersectionPoint[3]);}
+\DoxyCodeLine{456 }
+\DoxyCodeLine{457 \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a19fa38793feab4dd0f29d8b5b9139e5b}{IntersectResult}} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_acab1e2272d7b3533e1aef526a25de169}{fm\_intersectLineSegments2dTime}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} a1[3],}
+\DoxyCodeLine{458                                                \textcolor{keyword}{const} \textcolor{keywordtype}{float} a2[3],}
+\DoxyCodeLine{459                                                \textcolor{keyword}{const} \textcolor{keywordtype}{float} b1[3],}
+\DoxyCodeLine{460                                                \textcolor{keyword}{const} \textcolor{keywordtype}{float} b2[3],}
+\DoxyCodeLine{461                                                \textcolor{keywordtype}{float}\& t1,}
+\DoxyCodeLine{462                                                \textcolor{keywordtype}{float}\& t2);}
+\DoxyCodeLine{463 \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a19fa38793feab4dd0f29d8b5b9139e5b}{IntersectResult}} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_acab1e2272d7b3533e1aef526a25de169}{fm\_intersectLineSegments2dTime}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} a1[3],}
+\DoxyCodeLine{464                                                \textcolor{keyword}{const} \textcolor{keywordtype}{double} a2[3],}
+\DoxyCodeLine{465                                                \textcolor{keyword}{const} \textcolor{keywordtype}{double} b1[3],}
+\DoxyCodeLine{466                                                \textcolor{keyword}{const} \textcolor{keywordtype}{double} b2[3],}
+\DoxyCodeLine{467                                                \textcolor{keywordtype}{double}\& t1,}
+\DoxyCodeLine{468                                                \textcolor{keywordtype}{double}\& t2);}
+\DoxyCodeLine{469 }
+\DoxyCodeLine{470 \textcolor{comment}{// Plane-\/Triangle splitting}}
+\DoxyCodeLine{471 }
+\DoxyCodeLine{472 \textcolor{keyword}{enum} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a9dc0f42f1c9368405542eb051348bfdc}{PlaneTriResult}}}
+\DoxyCodeLine{473 \{}
+\DoxyCodeLine{474   \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a9dc0f42f1c9368405542eb051348bfdca1e9392281bdfba368c33c3288aae76bd}{PTR\_ON\_PLANE}},}
+\DoxyCodeLine{475   \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a9dc0f42f1c9368405542eb051348bfdca1a97d69ed501cbfaf314778f425ddbd9}{PTR\_FRONT}},}
+\DoxyCodeLine{476   \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a9dc0f42f1c9368405542eb051348bfdca274ecaba967ab623c4ccff5b17483ece}{PTR\_BACK}},}
+\DoxyCodeLine{477   \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a9dc0f42f1c9368405542eb051348bfdca9347c44aa39e70a4bb10f18b428a835f}{PTR\_SPLIT}},}
+\DoxyCodeLine{478 \};}
+\DoxyCodeLine{479 }
+\DoxyCodeLine{480 \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a9dc0f42f1c9368405542eb051348bfdc}{PlaneTriResult}} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a8ad79f9509b1815438554c70a85fd0a9}{fm\_planeTriIntersection}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} \mbox{\hyperlink{classtesseract__collision_1_1FLOAT__MATH_1_1plane}{plane}}[4],   \textcolor{comment}{// the plane equation in Ax+By+Cz+D format}}
+\DoxyCodeLine{481                                        \textcolor{keyword}{const} \textcolor{keywordtype}{float}* triangle,  \textcolor{comment}{// the source triangle.}}
+\DoxyCodeLine{482                                        uint32\_t tstride,       \textcolor{comment}{// stride in bytes of the input and output *vertices*}}
+\DoxyCodeLine{483                                        \textcolor{keywordtype}{float} epsilon,          \textcolor{comment}{// the co-\/planer epsilon value.}}
+\DoxyCodeLine{484                                        \textcolor{keywordtype}{float}* front,           \textcolor{comment}{// the triangle in front of the}}
+\DoxyCodeLine{485                                        uint32\_t\& fcount,       \textcolor{comment}{// number of vertices in the 'front' triangle}}
+\DoxyCodeLine{486                                        \textcolor{keywordtype}{float}* back,            \textcolor{comment}{// the triangle in back of the plane}}
+\DoxyCodeLine{487                                        uint32\_t\& bcount);      \textcolor{comment}{// the number of vertices in the 'back' triangle.}}
+\DoxyCodeLine{488 }
+\DoxyCodeLine{489 \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a9dc0f42f1c9368405542eb051348bfdc}{PlaneTriResult}} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a8ad79f9509b1815438554c70a85fd0a9}{fm\_planeTriIntersection}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} \mbox{\hyperlink{classtesseract__collision_1_1FLOAT__MATH_1_1plane}{plane}}[4],   \textcolor{comment}{// the plane equation in Ax+By+Cz+D format}}
+\DoxyCodeLine{490                                        \textcolor{keyword}{const} \textcolor{keywordtype}{double}* triangle,  \textcolor{comment}{// the source triangle.}}
+\DoxyCodeLine{491                                        uint32\_t tstride,        \textcolor{comment}{// stride in bytes of the input and output *vertices*}}
+\DoxyCodeLine{492                                        \textcolor{keywordtype}{double} epsilon,          \textcolor{comment}{// the co-\/planer epsilon value.}}
+\DoxyCodeLine{493                                        \textcolor{keywordtype}{double}* front,           \textcolor{comment}{// the triangle in front of the}}
+\DoxyCodeLine{494                                        uint32\_t\& fcount,        \textcolor{comment}{// number of vertices in the 'front' triangle}}
+\DoxyCodeLine{495                                        \textcolor{keywordtype}{double}* back,            \textcolor{comment}{// the triangle in back of the plane}}
+\DoxyCodeLine{496                                        uint32\_t\& bcount);       \textcolor{comment}{// the number of vertices in the 'back' triangle.}}
+\DoxyCodeLine{497 }
+\DoxyCodeLine{498 \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_af8f5334dd541eb37a063972527c82367}{fm\_intersectPointPlane}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} p1[3], \textcolor{keyword}{const} \textcolor{keywordtype}{float} p2[3], \textcolor{keywordtype}{float}* split, \textcolor{keyword}{const} \textcolor{keywordtype}{float} \mbox{\hyperlink{classtesseract__collision_1_1FLOAT__MATH_1_1plane}{plane}}[4]);}
+\DoxyCodeLine{499 \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_af8f5334dd541eb37a063972527c82367}{fm\_intersectPointPlane}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} p1[3], \textcolor{keyword}{const} \textcolor{keywordtype}{double} p2[3], \textcolor{keywordtype}{double}* split, \textcolor{keyword}{const} \textcolor{keywordtype}{double} \mbox{\hyperlink{classtesseract__collision_1_1FLOAT__MATH_1_1plane}{plane}}[4]);}
+\DoxyCodeLine{500 }
+\DoxyCodeLine{501 \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a9dc0f42f1c9368405542eb051348bfdc}{PlaneTriResult}} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_aa0666933aa44e874e489de715c25c9aa}{fm\_getSidePlane}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} p[3], \textcolor{keyword}{const} \textcolor{keywordtype}{float} \mbox{\hyperlink{classtesseract__collision_1_1FLOAT__MATH_1_1plane}{plane}}[4], \textcolor{keywordtype}{float} epsilon);}
+\DoxyCodeLine{502 \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a9dc0f42f1c9368405542eb051348bfdc}{PlaneTriResult}} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_aa0666933aa44e874e489de715c25c9aa}{fm\_getSidePlane}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} p[3], \textcolor{keyword}{const} \textcolor{keywordtype}{double} \mbox{\hyperlink{classtesseract__collision_1_1FLOAT__MATH_1_1plane}{plane}}[4], \textcolor{keywordtype}{double} epsilon);}
+\DoxyCodeLine{503 }
+\DoxyCodeLine{504 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ac8212b94b1786b5e013b00a8fcf11c40}{fm\_computeBestFitOBB}}(uint32\_t vcount,}
+\DoxyCodeLine{505                           \textcolor{keyword}{const} \textcolor{keywordtype}{float}* points,}
+\DoxyCodeLine{506                           uint32\_t pstride,}
+\DoxyCodeLine{507                           \textcolor{keywordtype}{float}* sides,}
+\DoxyCodeLine{508                           \textcolor{keywordtype}{float} matrix[16],}
+\DoxyCodeLine{509                           \textcolor{keywordtype}{bool} bruteForce = \textcolor{keyword}{true});}
+\DoxyCodeLine{510 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ac8212b94b1786b5e013b00a8fcf11c40}{fm\_computeBestFitOBB}}(uint32\_t vcount,}
+\DoxyCodeLine{511                           \textcolor{keyword}{const} \textcolor{keywordtype}{double}* points,}
+\DoxyCodeLine{512                           uint32\_t pstride,}
+\DoxyCodeLine{513                           \textcolor{keywordtype}{double}* sides,}
+\DoxyCodeLine{514                           \textcolor{keywordtype}{double} matrix[16],}
+\DoxyCodeLine{515                           \textcolor{keywordtype}{bool} bruteForce = \textcolor{keyword}{true});}
+\DoxyCodeLine{516 }
+\DoxyCodeLine{517 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ac8212b94b1786b5e013b00a8fcf11c40}{fm\_computeBestFitOBB}}(uint32\_t vcount,}
+\DoxyCodeLine{518                           \textcolor{keyword}{const} \textcolor{keywordtype}{float}* points,}
+\DoxyCodeLine{519                           uint32\_t pstride,}
+\DoxyCodeLine{520                           \textcolor{keywordtype}{float}* sides,}
+\DoxyCodeLine{521                           \textcolor{keywordtype}{float} pos[3],}
+\DoxyCodeLine{522                           \textcolor{keywordtype}{float} quat[4],}
+\DoxyCodeLine{523                           \textcolor{keywordtype}{bool} bruteForce = \textcolor{keyword}{true});}
+\DoxyCodeLine{524 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ac8212b94b1786b5e013b00a8fcf11c40}{fm\_computeBestFitOBB}}(uint32\_t vcount,}
+\DoxyCodeLine{525                           \textcolor{keyword}{const} \textcolor{keywordtype}{double}* points,}
+\DoxyCodeLine{526                           uint32\_t pstride,}
+\DoxyCodeLine{527                           \textcolor{keywordtype}{double}* sides,}
+\DoxyCodeLine{528                           \textcolor{keywordtype}{double} pos[3],}
+\DoxyCodeLine{529                           \textcolor{keywordtype}{double} quat[4],}
+\DoxyCodeLine{530                           \textcolor{keywordtype}{bool} bruteForce = \textcolor{keyword}{true});}
+\DoxyCodeLine{531 }
+\DoxyCodeLine{532 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_aea16a77195668ae15dadf7771deb24dc}{fm\_computeBestFitABB}}(uint32\_t vcount, \textcolor{keyword}{const} \textcolor{keywordtype}{float}* points, uint32\_t pstride, \textcolor{keywordtype}{float}* sides, \textcolor{keywordtype}{float} pos[3]);}
+\DoxyCodeLine{533 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_aea16a77195668ae15dadf7771deb24dc}{fm\_computeBestFitABB}}(uint32\_t vcount, \textcolor{keyword}{const} \textcolor{keywordtype}{double}* points, uint32\_t pstride, \textcolor{keywordtype}{double}* sides, \textcolor{keywordtype}{double} pos[3]);}
+\DoxyCodeLine{534 }
+\DoxyCodeLine{535 \textcolor{comment}{//** Note, if the returned capsule height is less than zero, then you must represent it is a sphere of size radius.}}
+\DoxyCodeLine{536 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_acc33a4b22d3c96865a4a3b5cd0256bf6}{fm\_computeBestFitCapsule}}(uint32\_t vcount,}
+\DoxyCodeLine{537                               \textcolor{keyword}{const} \textcolor{keywordtype}{float}* points,}
+\DoxyCodeLine{538                               uint32\_t pstride,}
+\DoxyCodeLine{539                               \textcolor{keywordtype}{float}\& radius,}
+\DoxyCodeLine{540                               \textcolor{keywordtype}{float}\& height,}
+\DoxyCodeLine{541                               \textcolor{keywordtype}{float} matrix[16],}
+\DoxyCodeLine{542                               \textcolor{keywordtype}{bool} bruteForce = \textcolor{keyword}{true});}
+\DoxyCodeLine{543 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_acc33a4b22d3c96865a4a3b5cd0256bf6}{fm\_computeBestFitCapsule}}(uint32\_t vcount,}
+\DoxyCodeLine{544                               \textcolor{keyword}{const} \textcolor{keywordtype}{double}* points,}
+\DoxyCodeLine{545                               uint32\_t pstride,}
+\DoxyCodeLine{546                               \textcolor{keywordtype}{float}\& radius,}
+\DoxyCodeLine{547                               \textcolor{keywordtype}{float}\& height,}
+\DoxyCodeLine{548                               \textcolor{keywordtype}{double} matrix[16],}
+\DoxyCodeLine{549                               \textcolor{keywordtype}{bool} bruteForce = \textcolor{keyword}{true});}
+\DoxyCodeLine{550 }
+\DoxyCodeLine{551 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a3462d6dffb7b024eb8aad263ebcae1b9}{fm\_planeToMatrix}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} \mbox{\hyperlink{classtesseract__collision_1_1FLOAT__MATH_1_1plane}{plane}}[4], \textcolor{keywordtype}{float} matrix[16]);  \textcolor{comment}{// convert a plane equation to a 4x4 rotation matrix.}}
+\DoxyCodeLine{552                                                                 \textcolor{comment}{// Reference vector is 0,1,0}}
+\DoxyCodeLine{553 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ac66d608df7028937564e83904efb8256}{fm\_planeToQuat}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} \mbox{\hyperlink{classtesseract__collision_1_1FLOAT__MATH_1_1plane}{plane}}[4], \textcolor{keywordtype}{float} quat[4], \textcolor{keywordtype}{float} pos[3]);  \textcolor{comment}{// convert a plane equation to a quaternion and}}
+\DoxyCodeLine{554                                                                          \textcolor{comment}{// translation}}
+\DoxyCodeLine{555 }
+\DoxyCodeLine{556 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a3462d6dffb7b024eb8aad263ebcae1b9}{fm\_planeToMatrix}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} \mbox{\hyperlink{classtesseract__collision_1_1FLOAT__MATH_1_1plane}{plane}}[4], \textcolor{keywordtype}{double} matrix[16]);  \textcolor{comment}{// convert a plane equation to a 4x4 rotation matrix}}
+\DoxyCodeLine{557 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ac66d608df7028937564e83904efb8256}{fm\_planeToQuat}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} \mbox{\hyperlink{classtesseract__collision_1_1FLOAT__MATH_1_1plane}{plane}}[4], \textcolor{keywordtype}{double} quat[4], \textcolor{keywordtype}{double} pos[3]);  \textcolor{comment}{// convert a plane equation to a quaternion}}
+\DoxyCodeLine{558                                                                             \textcolor{comment}{// and translation}}
+\DoxyCodeLine{559 }
+\DoxyCodeLine{560 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a2378d358178470316f60a63ce5e9b88b}{fm\_doubleToFloat3}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} p[3], \textcolor{keywordtype}{float} t[3])}
+\DoxyCodeLine{561 \{}
+\DoxyCodeLine{562   t[0] = (float)p[0];}
+\DoxyCodeLine{563   t[1] = (float)p[1];}
+\DoxyCodeLine{564   t[2] = (float)p[2];}
+\DoxyCodeLine{565 \};}
+\DoxyCodeLine{566 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ab761185f43b4aea249869881b34cb50c}{fm\_floatToDouble3}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} p[3], \textcolor{keywordtype}{double} t[3])}
+\DoxyCodeLine{567 \{}
+\DoxyCodeLine{568   t[0] = (double)p[0];}
+\DoxyCodeLine{569   t[1] = (double)p[1];}
+\DoxyCodeLine{570   t[2] = (double)p[2];}
+\DoxyCodeLine{571 \};}
+\DoxyCodeLine{572 }
+\DoxyCodeLine{573 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a9fe6faaed9295f8806740c004a007751}{fm\_eulerMatrix}}(\textcolor{keywordtype}{float} ax, \textcolor{keywordtype}{float} ay, \textcolor{keywordtype}{float} az, \textcolor{keywordtype}{float} matrix[16]);  \textcolor{comment}{// convert euler (in radians) to a dest 4x4 matrix}}
+\DoxyCodeLine{574                                                                       \textcolor{comment}{// (translation set to zero)}}
+\DoxyCodeLine{575 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a9fe6faaed9295f8806740c004a007751}{fm\_eulerMatrix}}(\textcolor{keywordtype}{double} ax, \textcolor{keywordtype}{double} ay, \textcolor{keywordtype}{double} az, \textcolor{keywordtype}{double} matrix[16]);  \textcolor{comment}{// convert euler (in radians) to a dest 4x4}}
+\DoxyCodeLine{576                                                                           \textcolor{comment}{// matrix (translation set to zero)}}
+\DoxyCodeLine{577 }
+\DoxyCodeLine{578 \textcolor{keywordtype}{float} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a1a8d5e287fbece676ae228e969b2b8eb}{fm\_computeMeshVolume}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float}* vertices, uint32\_t tcount, \textcolor{keyword}{const} uint32\_t* indices);}
+\DoxyCodeLine{579 \textcolor{keywordtype}{double} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a1a8d5e287fbece676ae228e969b2b8eb}{fm\_computeMeshVolume}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double}* vertices, uint32\_t tcount, \textcolor{keyword}{const} uint32\_t* indices);}
+\DoxyCodeLine{580 }
+\DoxyCodeLine{581 \textcolor{preprocessor}{\#define FM\_DEFAULT\_GRANULARITY 0.001f  }\textcolor{comment}{// 1 millimeter is the default granularity}}
+\DoxyCodeLine{582 }
+\DoxyCodeLine{583 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__collision_1_1FLOAT__MATH_1_1fm__VertexIndex}{fm\_VertexIndex}}}
+\DoxyCodeLine{584 \{}
+\DoxyCodeLine{585 \textcolor{keyword}{public}:}
+\DoxyCodeLine{586   \textcolor{keyword}{virtual} \mbox{\hyperlink{classtesseract__collision_1_1FLOAT__MATH_1_1fm__VertexIndex_ac5d5dca52323ef468f82cfd3a72b9482}{\string~fm\_VertexIndex}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{587   \textcolor{keyword}{virtual} uint32\_t \mbox{\hyperlink{classtesseract__collision_1_1FLOAT__MATH_1_1fm__VertexIndex_a6cede1d7f4e2186b8c0e30ffcf9229ea}{getIndex}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} pos[3], \textcolor{keywordtype}{bool}\& newPos) = 0;   \textcolor{comment}{// get welded index for this float vector[3]}}
+\DoxyCodeLine{588   \textcolor{keyword}{virtual} uint32\_t \mbox{\hyperlink{classtesseract__collision_1_1FLOAT__MATH_1_1fm__VertexIndex_ae647bd5e459a71b030b361ee1aca1b00}{getIndex}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} pos[3], \textcolor{keywordtype}{bool}\& newPos) = 0;  \textcolor{comment}{// get welded index for this double vector[3]}}
+\DoxyCodeLine{589   \textcolor{keyword}{virtual} \textcolor{keyword}{const} \textcolor{keywordtype}{float}* \mbox{\hyperlink{classtesseract__collision_1_1FLOAT__MATH_1_1fm__VertexIndex_a931904baf4b25939029febf8a4023635}{getVerticesFloat}}(\textcolor{keywordtype}{void}) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{590   \textcolor{keyword}{virtual} \textcolor{keyword}{const} \textcolor{keywordtype}{double}* \mbox{\hyperlink{classtesseract__collision_1_1FLOAT__MATH_1_1fm__VertexIndex_af21ae2e8328921457a3a6e95bb8a6ec8}{getVerticesDouble}}(\textcolor{keywordtype}{void}) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{591   \textcolor{keyword}{virtual} \textcolor{keyword}{const} \textcolor{keywordtype}{float}* \mbox{\hyperlink{classtesseract__collision_1_1FLOAT__MATH_1_1fm__VertexIndex_ae304cef857084d958a450ab4357ba53f}{getVertexFloat}}(uint32\_t index) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{592   \textcolor{keyword}{virtual} \textcolor{keyword}{const} \textcolor{keywordtype}{double}* \mbox{\hyperlink{classtesseract__collision_1_1FLOAT__MATH_1_1fm__VertexIndex_a5b97a65ac95a6665ec8c0a7d494d3d93}{getVertexDouble}}(uint32\_t index) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{593   \textcolor{keyword}{virtual} uint32\_t \mbox{\hyperlink{classtesseract__collision_1_1FLOAT__MATH_1_1fm__VertexIndex_aaaacbf670fabd617004077766ea4af79}{getVcount}}(\textcolor{keywordtype}{void}) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{594   \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__collision_1_1FLOAT__MATH_1_1fm__VertexIndex_ab4db821f4e945171dc72aa86a10c7c8f}{isDouble}}(\textcolor{keywordtype}{void}) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{595   \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__collision_1_1FLOAT__MATH_1_1fm__VertexIndex_a04c476b2569f6e93af3e97b371a26866}{saveAsObj}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* fname, uint32\_t tcount, uint32\_t* indices) = 0;}
+\DoxyCodeLine{596 \};}
+\DoxyCodeLine{597 }
+\DoxyCodeLine{598 \mbox{\hyperlink{classtesseract__collision_1_1FLOAT__MATH_1_1fm__VertexIndex}{fm\_VertexIndex}}* \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a5990a68117dee11a9f577cd92f47a859}{fm\_createVertexIndex}}(\textcolor{keywordtype}{double} granularity,}
+\DoxyCodeLine{599                                      \textcolor{keywordtype}{bool} snapToGrid);  \textcolor{comment}{// create an indexed vertex system for doubles}}
+\DoxyCodeLine{600 \mbox{\hyperlink{classtesseract__collision_1_1FLOAT__MATH_1_1fm__VertexIndex}{fm\_VertexIndex}}* \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a5990a68117dee11a9f577cd92f47a859}{fm\_createVertexIndex}}(\textcolor{keywordtype}{float} granularity,}
+\DoxyCodeLine{601                                      \textcolor{keywordtype}{bool} snapToGrid);  \textcolor{comment}{// create an indexed vertext system for floats}}
+\DoxyCodeLine{602 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a74fc0d2ecf9a948068424c16e02d693d}{fm\_releaseVertexIndex}}(\mbox{\hyperlink{classtesseract__collision_1_1FLOAT__MATH_1_1fm__VertexIndex}{fm\_VertexIndex}}* vindex);}
+\DoxyCodeLine{603 }
+\DoxyCodeLine{604 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__collision_1_1FLOAT__MATH_1_1fm__Triangulate}{fm\_Triangulate}}}
+\DoxyCodeLine{605 \{}
+\DoxyCodeLine{606 \textcolor{keyword}{public}:}
+\DoxyCodeLine{607   \textcolor{keyword}{virtual} \mbox{\hyperlink{classtesseract__collision_1_1FLOAT__MATH_1_1fm__Triangulate_aaa4892284c36e5b957ba6e374fa8fb32}{\string~fm\_Triangulate}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{608   \textcolor{keyword}{virtual} \textcolor{keyword}{const} \textcolor{keywordtype}{double}* \mbox{\hyperlink{classtesseract__collision_1_1FLOAT__MATH_1_1fm__Triangulate_a4d112526269c8c9f509095d6e1aa7411}{triangulate3d}}(uint32\_t pcount,}
+\DoxyCodeLine{609                                       \textcolor{keyword}{const} \textcolor{keywordtype}{double}* points,}
+\DoxyCodeLine{610                                       uint32\_t vstride,}
+\DoxyCodeLine{611                                       uint32\_t\& tcount,}
+\DoxyCodeLine{612                                       \textcolor{keywordtype}{bool} consolidate,}
+\DoxyCodeLine{613                                       \textcolor{keywordtype}{double} epsilon) = 0;}
+\DoxyCodeLine{614 }
+\DoxyCodeLine{615   \textcolor{keyword}{virtual} \textcolor{keyword}{const} \textcolor{keywordtype}{float}* \mbox{\hyperlink{classtesseract__collision_1_1FLOAT__MATH_1_1fm__Triangulate_a013d94484a045afc2e1e392f529c4366}{triangulate3d}}(uint32\_t pcount,}
+\DoxyCodeLine{616                                      \textcolor{keyword}{const} \textcolor{keywordtype}{float}* points,}
+\DoxyCodeLine{617                                      uint32\_t vstride,}
+\DoxyCodeLine{618                                      uint32\_t\& tcount,}
+\DoxyCodeLine{619                                      \textcolor{keywordtype}{bool} consolidate,}
+\DoxyCodeLine{620                                      \textcolor{keywordtype}{float} epsilon) = 0;}
+\DoxyCodeLine{621 \};}
+\DoxyCodeLine{622 }
+\DoxyCodeLine{623 \mbox{\hyperlink{classtesseract__collision_1_1FLOAT__MATH_1_1fm__Triangulate}{fm\_Triangulate}}* \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a17d9e0d345b2ffbe1c20d6e8990097c9}{fm\_createTriangulate}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{624 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a90b040824ca516f4585c92e9820e2c63}{fm\_releaseTriangulate}}(\mbox{\hyperlink{classtesseract__collision_1_1FLOAT__MATH_1_1fm__Triangulate}{fm\_Triangulate}}* t);}
+\DoxyCodeLine{625 }
+\DoxyCodeLine{626 \textcolor{keyword}{const} \textcolor{keywordtype}{float}* \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_afa52e978320e2a46b68158397d2d631b}{fm\_getPoint}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float}* points, uint32\_t pstride, uint32\_t index);}
+\DoxyCodeLine{627 \textcolor{keyword}{const} \textcolor{keywordtype}{double}* \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_afa52e978320e2a46b68158397d2d631b}{fm\_getPoint}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double}* points, uint32\_t pstride, uint32\_t index);}
+\DoxyCodeLine{628 }
+\DoxyCodeLine{629 \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ac113f50f691df0d385e77aff2162b628}{fm\_insideTriangle}}(\textcolor{keywordtype}{float} Ax, \textcolor{keywordtype}{float} Ay, \textcolor{keywordtype}{float} Bx, \textcolor{keywordtype}{float} By, \textcolor{keywordtype}{float} Cx, \textcolor{keywordtype}{float} Cy, \textcolor{keywordtype}{float} Px, \textcolor{keywordtype}{float} Py);}
+\DoxyCodeLine{630 \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ac113f50f691df0d385e77aff2162b628}{fm\_insideTriangle}}(\textcolor{keywordtype}{double} Ax, \textcolor{keywordtype}{double} Ay, \textcolor{keywordtype}{double} Bx, \textcolor{keywordtype}{double} By, \textcolor{keywordtype}{double} Cx, \textcolor{keywordtype}{double} Cy, \textcolor{keywordtype}{double} Px, \textcolor{keywordtype}{double} Py);}
+\DoxyCodeLine{631 \textcolor{keywordtype}{float} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ac0da77c9d42fa23c106b1f8eaaae51db}{fm\_areaPolygon2d}}(uint32\_t pcount, \textcolor{keyword}{const} \textcolor{keywordtype}{float}* points, uint32\_t pstride);}
+\DoxyCodeLine{632 \textcolor{keywordtype}{double} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ac0da77c9d42fa23c106b1f8eaaae51db}{fm\_areaPolygon2d}}(uint32\_t pcount, \textcolor{keyword}{const} \textcolor{keywordtype}{double}* points, uint32\_t pstride);}
+\DoxyCodeLine{633 }
+\DoxyCodeLine{634 \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_aae0c3bedc50b551297fed08fa99baf79}{fm\_pointInsidePolygon2d}}(uint32\_t pcount,}
+\DoxyCodeLine{635                              \textcolor{keyword}{const} \textcolor{keywordtype}{float}* points,}
+\DoxyCodeLine{636                              uint32\_t pstride,}
+\DoxyCodeLine{637                              \textcolor{keyword}{const} \textcolor{keywordtype}{float}* \mbox{\hyperlink{classtesseract__collision_1_1FLOAT__MATH_1_1point}{point}},}
+\DoxyCodeLine{638                              uint32\_t xindex = 0,}
+\DoxyCodeLine{639                              uint32\_t yindex = 1);}
+\DoxyCodeLine{640 \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_aae0c3bedc50b551297fed08fa99baf79}{fm\_pointInsidePolygon2d}}(uint32\_t pcount,}
+\DoxyCodeLine{641                              \textcolor{keyword}{const} \textcolor{keywordtype}{double}* points,}
+\DoxyCodeLine{642                              uint32\_t pstride,}
+\DoxyCodeLine{643                              \textcolor{keyword}{const} \textcolor{keywordtype}{double}* \mbox{\hyperlink{classtesseract__collision_1_1FLOAT__MATH_1_1point}{point}},}
+\DoxyCodeLine{644                              uint32\_t xindex = 0,}
+\DoxyCodeLine{645                              uint32\_t yindex = 1);}
+\DoxyCodeLine{646 }
+\DoxyCodeLine{647 uint32\_t \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a8ef47ead47011c4dd42d1bfc68785ca3}{fm\_consolidatePolygon}}(uint32\_t pcount,}
+\DoxyCodeLine{648                                \textcolor{keyword}{const} \textcolor{keywordtype}{float}* points,}
+\DoxyCodeLine{649                                uint32\_t pstride,}
+\DoxyCodeLine{650                                \textcolor{keywordtype}{float}* dest,}
+\DoxyCodeLine{651                                \textcolor{keywordtype}{float} epsilon = 0.999999f);  \textcolor{comment}{// collapses co-\/linear edges.}}
+\DoxyCodeLine{652 uint32\_t \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a8ef47ead47011c4dd42d1bfc68785ca3}{fm\_consolidatePolygon}}(uint32\_t pcount,}
+\DoxyCodeLine{653                                \textcolor{keyword}{const} \textcolor{keywordtype}{double}* points,}
+\DoxyCodeLine{654                                uint32\_t pstride,}
+\DoxyCodeLine{655                                \textcolor{keywordtype}{double}* dest,}
+\DoxyCodeLine{656                                \textcolor{keywordtype}{double} epsilon = 0.999999);  \textcolor{comment}{// collapses co-\/linear edges.}}
+\DoxyCodeLine{657 }
+\DoxyCodeLine{658 \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a9ebe05140e0316eeaa04d606b2a40038}{fm\_computeSplitPlane}}(uint32\_t vcount,}
+\DoxyCodeLine{659                           \textcolor{keyword}{const} \textcolor{keywordtype}{double}* vertices,}
+\DoxyCodeLine{660                           uint32\_t tcount,}
+\DoxyCodeLine{661                           \textcolor{keyword}{const} uint32\_t* indices,}
+\DoxyCodeLine{662                           \textcolor{keywordtype}{double}* \mbox{\hyperlink{classtesseract__collision_1_1FLOAT__MATH_1_1plane}{plane}});}
+\DoxyCodeLine{663 \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a9ebe05140e0316eeaa04d606b2a40038}{fm\_computeSplitPlane}}(uint32\_t vcount,}
+\DoxyCodeLine{664                           \textcolor{keyword}{const} \textcolor{keywordtype}{float}* vertices,}
+\DoxyCodeLine{665                           uint32\_t tcount,}
+\DoxyCodeLine{666                           \textcolor{keyword}{const} uint32\_t* indices,}
+\DoxyCodeLine{667                           \textcolor{keywordtype}{float}* \mbox{\hyperlink{classtesseract__collision_1_1FLOAT__MATH_1_1plane}{plane}});}
+\DoxyCodeLine{668 }
+\DoxyCodeLine{669 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a7d719ddc9e7f1c22b3141dd7946dfbc5}{fm\_nearestPointInTriangle}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float}* pos, \textcolor{keyword}{const} \textcolor{keywordtype}{float}* p1, \textcolor{keyword}{const} \textcolor{keywordtype}{float}* p2, \textcolor{keyword}{const} \textcolor{keywordtype}{float}* p3, \textcolor{keywordtype}{float}* nearest);}
+\DoxyCodeLine{670 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a7d719ddc9e7f1c22b3141dd7946dfbc5}{fm\_nearestPointInTriangle}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double}* pos,}
+\DoxyCodeLine{671                                \textcolor{keyword}{const} \textcolor{keywordtype}{double}* p1,}
+\DoxyCodeLine{672                                \textcolor{keyword}{const} \textcolor{keywordtype}{double}* p2,}
+\DoxyCodeLine{673                                \textcolor{keyword}{const} \textcolor{keywordtype}{double}* p3,}
+\DoxyCodeLine{674                                \textcolor{keywordtype}{double}* nearest);}
+\DoxyCodeLine{675 }
+\DoxyCodeLine{676 \textcolor{keywordtype}{float} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a5c09418bc41ddaa2a4b1287fa993523b}{fm\_areaTriangle}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float}* p1, \textcolor{keyword}{const} \textcolor{keywordtype}{float}* p2, \textcolor{keyword}{const} \textcolor{keywordtype}{float}* p3);}
+\DoxyCodeLine{677 \textcolor{keywordtype}{double} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a5c09418bc41ddaa2a4b1287fa993523b}{fm\_areaTriangle}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double}* p1, \textcolor{keyword}{const} \textcolor{keywordtype}{double}* p2, \textcolor{keyword}{const} \textcolor{keywordtype}{double}* p3);}
+\DoxyCodeLine{678 }
+\DoxyCodeLine{679 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a07bb07bc2575c813ba5d035e34ff18e7}{fm\_subtract}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float}* A, \textcolor{keyword}{const} \textcolor{keywordtype}{float}* B, \textcolor{keywordtype}{float}* diff);     \textcolor{comment}{// compute A-\/B and store the result in 'diff'}}
+\DoxyCodeLine{680 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a07bb07bc2575c813ba5d035e34ff18e7}{fm\_subtract}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double}* A, \textcolor{keyword}{const} \textcolor{keywordtype}{double}* B, \textcolor{keywordtype}{double}* diff);  \textcolor{comment}{// compute A-\/B and store the result in 'diff'}}
+\DoxyCodeLine{681 }
+\DoxyCodeLine{682 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a1198574f1065ed69720858fbacc0118a}{fm\_multiply}}(\textcolor{keywordtype}{float}* A, \textcolor{keywordtype}{float} scaler);}
+\DoxyCodeLine{683 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a1198574f1065ed69720858fbacc0118a}{fm\_multiply}}(\textcolor{keywordtype}{double}* A, \textcolor{keywordtype}{double} scaler);}
+\DoxyCodeLine{684 }
+\DoxyCodeLine{685 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a4a83687a649a21c33030d3da58c5acbc}{fm\_add}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float}* A, \textcolor{keyword}{const} \textcolor{keywordtype}{float}* B, \textcolor{keywordtype}{float}* sum);}
+\DoxyCodeLine{686 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a4a83687a649a21c33030d3da58c5acbc}{fm\_add}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double}* A, \textcolor{keyword}{const} \textcolor{keywordtype}{double}* B, \textcolor{keywordtype}{double}* sum);}
+\DoxyCodeLine{687 }
+\DoxyCodeLine{688 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a93174c89776f38bb70542037cfb48bf6}{fm\_copy3}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float}* source, \textcolor{keywordtype}{float}* dest);}
+\DoxyCodeLine{689 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a93174c89776f38bb70542037cfb48bf6}{fm\_copy3}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double}* source, \textcolor{keywordtype}{double}* dest);}
+\DoxyCodeLine{690 }
+\DoxyCodeLine{691 \textcolor{comment}{// re-\/indexes an indexed triangle mesh but drops unused vertices.  The output\_indices can be the same pointer as the}}
+\DoxyCodeLine{692 \textcolor{comment}{// input indices.}}
+\DoxyCodeLine{693 \textcolor{comment}{// the output\_vertices can point to the input vertices if you desire.  The output\_vertices buffer should be at least the}}
+\DoxyCodeLine{694 \textcolor{comment}{// same size}}
+\DoxyCodeLine{695 \textcolor{comment}{// is the input buffer.  The routine returns the new vertex count after re-\/indexing.}}
+\DoxyCodeLine{696 uint32\_t \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_af67718fcb9c75ba61662f1c7d7abab5b}{fm\_copyUniqueVertices}}(uint32\_t vcount,}
+\DoxyCodeLine{697                                \textcolor{keyword}{const} \textcolor{keywordtype}{float}* input\_vertices,}
+\DoxyCodeLine{698                                \textcolor{keywordtype}{float}* output\_vertices,}
+\DoxyCodeLine{699                                uint32\_t tcount,}
+\DoxyCodeLine{700                                \textcolor{keyword}{const} uint32\_t* input\_indices,}
+\DoxyCodeLine{701                                uint32\_t* output\_indices);}
+\DoxyCodeLine{702 uint32\_t \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_af67718fcb9c75ba61662f1c7d7abab5b}{fm\_copyUniqueVertices}}(uint32\_t vcount,}
+\DoxyCodeLine{703                                \textcolor{keyword}{const} \textcolor{keywordtype}{double}* input\_vertices,}
+\DoxyCodeLine{704                                \textcolor{keywordtype}{double}* output\_vertices,}
+\DoxyCodeLine{705                                uint32\_t tcount,}
+\DoxyCodeLine{706                                \textcolor{keyword}{const} uint32\_t* input\_indices,}
+\DoxyCodeLine{707                                uint32\_t* output\_indices);}
+\DoxyCodeLine{708 }
+\DoxyCodeLine{709 \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a63e9deb1010a2761c25297dbbe750457}{fm\_isMeshCoplanar}}(uint32\_t tcount,}
+\DoxyCodeLine{710                        \textcolor{keyword}{const} uint32\_t* indices,}
+\DoxyCodeLine{711                        \textcolor{keyword}{const} \textcolor{keywordtype}{float}* vertices,}
+\DoxyCodeLine{712                        \textcolor{keywordtype}{bool} doubleSided);  \textcolor{comment}{// returns true if this collection of indexed triangles are co-\/planar!}}
+\DoxyCodeLine{713 \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a63e9deb1010a2761c25297dbbe750457}{fm\_isMeshCoplanar}}(uint32\_t tcount,}
+\DoxyCodeLine{714                        \textcolor{keyword}{const} uint32\_t* indices,}
+\DoxyCodeLine{715                        \textcolor{keyword}{const} \textcolor{keywordtype}{double}* vertices,}
+\DoxyCodeLine{716                        \textcolor{keywordtype}{bool} doubleSided);  \textcolor{comment}{// returns true if this collection of indexed triangles are co-\/planar!}}
+\DoxyCodeLine{717 }
+\DoxyCodeLine{718 \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_add2e513a0c408a76dbd233126fda7293}{fm\_samePlane}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} p1[4],}
+\DoxyCodeLine{719                   \textcolor{keyword}{const} \textcolor{keywordtype}{float} p2[4],}
+\DoxyCodeLine{720                   \textcolor{keywordtype}{float} normalEpsilon = 0.01f,}
+\DoxyCodeLine{721                   \textcolor{keywordtype}{float} dEpsilon = 0.001f,}
+\DoxyCodeLine{722                   \textcolor{keywordtype}{bool} doubleSided = \textcolor{keyword}{false});  \textcolor{comment}{// returns true if these two plane equations are identical within an}}
+\DoxyCodeLine{723                                               \textcolor{comment}{// epsilon}}
+\DoxyCodeLine{724 \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_add2e513a0c408a76dbd233126fda7293}{fm\_samePlane}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} p1[4],}
+\DoxyCodeLine{725                   \textcolor{keyword}{const} \textcolor{keywordtype}{double} p2[4],}
+\DoxyCodeLine{726                   \textcolor{keywordtype}{double} normalEpsilon = 0.01,}
+\DoxyCodeLine{727                   \textcolor{keywordtype}{double} dEpsilon = 0.001,}
+\DoxyCodeLine{728                   \textcolor{keywordtype}{bool} doubleSided = \textcolor{keyword}{false});}
+\DoxyCodeLine{729 }
+\DoxyCodeLine{730 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_aa3badc92faec29716b289fc2b4950820}{fm\_OBBtoAABB}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} obmin[3], \textcolor{keyword}{const} \textcolor{keywordtype}{float} obmax[3], \textcolor{keyword}{const} \textcolor{keywordtype}{float} matrix[16], \textcolor{keywordtype}{float} abmin[3], \textcolor{keywordtype}{float} abmax[3]);}
+\DoxyCodeLine{731 }
+\DoxyCodeLine{732 \textcolor{comment}{// a utility class that will tessellate a mesh.}}
+\DoxyCodeLine{733 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__collision_1_1FLOAT__MATH_1_1fm__Tesselate}{fm\_Tesselate}}}
+\DoxyCodeLine{734 \{}
+\DoxyCodeLine{735 \textcolor{keyword}{public}:}
+\DoxyCodeLine{736   \textcolor{keyword}{virtual} \mbox{\hyperlink{classtesseract__collision_1_1FLOAT__MATH_1_1fm__Tesselate_a9bc0c8a26f5bb898ed724c4e19a2e788}{\string~fm\_Tesselate}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{737   \textcolor{keyword}{virtual} \textcolor{keyword}{const} uint32\_t* \mbox{\hyperlink{classtesseract__collision_1_1FLOAT__MATH_1_1fm__Tesselate_a0d969211f3406f2676560f53dbaedab9}{tesselate}}(\mbox{\hyperlink{classtesseract__collision_1_1FLOAT__MATH_1_1fm__VertexIndex}{fm\_VertexIndex}}* vindex,}
+\DoxyCodeLine{738                                     uint32\_t tcount,}
+\DoxyCodeLine{739                                     \textcolor{keyword}{const} uint32\_t* indices,}
+\DoxyCodeLine{740                                     \textcolor{keywordtype}{float} longEdge,}
+\DoxyCodeLine{741                                     uint32\_t maxDepth,}
+\DoxyCodeLine{742                                     uint32\_t\& outcount) = 0;}
+\DoxyCodeLine{743 \};}
+\DoxyCodeLine{744 }
+\DoxyCodeLine{745 \mbox{\hyperlink{classtesseract__collision_1_1FLOAT__MATH_1_1fm__Tesselate}{fm\_Tesselate}}* \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a0ac23adcc9488c89d4a43b5e04ac0404}{fm\_createTesselate}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{746 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a0bce09898d85c4ee7ab742125485f149}{fm\_releaseTesselate}}(\mbox{\hyperlink{classtesseract__collision_1_1FLOAT__MATH_1_1fm__Tesselate}{fm\_Tesselate}}* t);}
+\DoxyCodeLine{747 }
+\DoxyCodeLine{748 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ad91befe23689e76db842c8d9b8eee3c7}{fm\_computeMeanNormals}}(uint32\_t vcount,           \textcolor{comment}{// the number of vertices}}
+\DoxyCodeLine{749                            \textcolor{keyword}{const} \textcolor{keywordtype}{float}* vertices,     \textcolor{comment}{// the base address of the vertex position data.}}
+\DoxyCodeLine{750                            uint32\_t vstride,          \textcolor{comment}{// the stride between position data.}}
+\DoxyCodeLine{751                            \textcolor{keywordtype}{float}* normals,            \textcolor{comment}{// the base address  of the destination for mean vector normals}}
+\DoxyCodeLine{752                            uint32\_t nstride,          \textcolor{comment}{// the stride between normals}}
+\DoxyCodeLine{753                            uint32\_t tcount,           \textcolor{comment}{// the number of triangles}}
+\DoxyCodeLine{754                            \textcolor{keyword}{const} uint32\_t* indices);  \textcolor{comment}{// the triangle indices}}
+\DoxyCodeLine{755 }
+\DoxyCodeLine{756 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ad91befe23689e76db842c8d9b8eee3c7}{fm\_computeMeanNormals}}(uint32\_t vcount,           \textcolor{comment}{// the number of vertices}}
+\DoxyCodeLine{757                            \textcolor{keyword}{const} \textcolor{keywordtype}{double}* vertices,    \textcolor{comment}{// the base address of the vertex position data.}}
+\DoxyCodeLine{758                            uint32\_t vstride,          \textcolor{comment}{// the stride between position data.}}
+\DoxyCodeLine{759                            \textcolor{keywordtype}{double}* normals,           \textcolor{comment}{// the base address  of the destination for mean vector normals}}
+\DoxyCodeLine{760                            uint32\_t nstride,          \textcolor{comment}{// the stride between normals}}
+\DoxyCodeLine{761                            uint32\_t tcount,           \textcolor{comment}{// the number of triangles}}
+\DoxyCodeLine{762                            \textcolor{keyword}{const} uint32\_t* indices);  \textcolor{comment}{// the triangle indices}}
+\DoxyCodeLine{763 }
+\DoxyCodeLine{764 \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a1cf42c81f6353b2edabe1bf6802ef5c2}{fm\_isValidTriangle}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float}* p1, \textcolor{keyword}{const} \textcolor{keywordtype}{float}* p2, \textcolor{keyword}{const} \textcolor{keywordtype}{float}* p3, \textcolor{keywordtype}{float} epsilon = 0.00001f);}
+\DoxyCodeLine{765 \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a1cf42c81f6353b2edabe1bf6802ef5c2}{fm\_isValidTriangle}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double}* p1, \textcolor{keyword}{const} \textcolor{keywordtype}{double}* p2, \textcolor{keyword}{const} \textcolor{keywordtype}{double}* p3, \textcolor{keywordtype}{double} epsilon = 0.00001);}
+\DoxyCodeLine{766 }
+\DoxyCodeLine{767 \}  \textcolor{comment}{// namespace FLOAT\_MATH}}
+\DoxyCodeLine{768 \}  \textcolor{comment}{// namespace tesseract\_collision}}
+
+\end{DoxyCode}

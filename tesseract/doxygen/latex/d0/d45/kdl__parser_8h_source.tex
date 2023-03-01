@@ -1,0 +1,97 @@
+\hypertarget{kdl__parser_8h_source}{}\doxysection{kdl\+\_\+parser.\+h}
+\label{kdl__parser_8h_source}\index{tesseract\_scene\_graph/include/tesseract\_scene\_graph/kdl\_parser.h@{tesseract\_scene\_graph/include/tesseract\_scene\_graph/kdl\_parser.h}}
+\mbox{\hyperlink{kdl__parser_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*********************************************************************}}
+\DoxyCodeLine{2 \textcolor{comment}{ * Software License Agreement (BSD License)}}
+\DoxyCodeLine{3 \textcolor{comment}{ *}}
+\DoxyCodeLine{4 \textcolor{comment}{ *  Copyright (c) 2008, Willow Garage, Inc.}}
+\DoxyCodeLine{5 \textcolor{comment}{ *  All rights reserved.}}
+\DoxyCodeLine{6 \textcolor{comment}{ *}}
+\DoxyCodeLine{7 \textcolor{comment}{ *  Redistribution and use in source and binary forms, with or without}}
+\DoxyCodeLine{8 \textcolor{comment}{ *  modification, are permitted provided that the following conditions}}
+\DoxyCodeLine{9 \textcolor{comment}{ *  are met:}}
+\DoxyCodeLine{10 \textcolor{comment}{ *}}
+\DoxyCodeLine{11 \textcolor{comment}{ *   * Redistributions of source code must retain the above copyright}}
+\DoxyCodeLine{12 \textcolor{comment}{ *     notice, this list of conditions and the following disclaimer.}}
+\DoxyCodeLine{13 \textcolor{comment}{ *   * Redistributions in binary form must reproduce the above}}
+\DoxyCodeLine{14 \textcolor{comment}{ *     copyright notice, this list of conditions and the following}}
+\DoxyCodeLine{15 \textcolor{comment}{ *     disclaimer in the documentation and/or other materials provided}}
+\DoxyCodeLine{16 \textcolor{comment}{ *     with the distribution.}}
+\DoxyCodeLine{17 \textcolor{comment}{ *   * Neither the name of the Willow Garage nor the names of its}}
+\DoxyCodeLine{18 \textcolor{comment}{ *     contributors may be used to endorse or promote products derived}}
+\DoxyCodeLine{19 \textcolor{comment}{ *     from this software without specific prior written permission.}}
+\DoxyCodeLine{20 \textcolor{comment}{ *}}
+\DoxyCodeLine{21 \textcolor{comment}{ *  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
+\DoxyCodeLine{22 \textcolor{comment}{ *  "{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
+\DoxyCodeLine{23 \textcolor{comment}{ *  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS}}
+\DoxyCodeLine{24 \textcolor{comment}{ *  FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE}}
+\DoxyCodeLine{25 \textcolor{comment}{ *  COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,}}
+\DoxyCodeLine{26 \textcolor{comment}{ *  INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,}}
+\DoxyCodeLine{27 \textcolor{comment}{ *  BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;}}
+\DoxyCodeLine{28 \textcolor{comment}{ *  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER}}
+\DoxyCodeLine{29 \textcolor{comment}{ *  CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT}}
+\DoxyCodeLine{30 \textcolor{comment}{ *  LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN}}
+\DoxyCodeLine{31 \textcolor{comment}{ *  ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE}}
+\DoxyCodeLine{32 \textcolor{comment}{ *  POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{33 \textcolor{comment}{ *********************************************************************/}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{comment}{/* Author: Wim Meeussen \& Levi Armstrong */}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#ifndef TESSERACT\_SCENE\_GRAPH\_KDL\_PARSER\_H}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define TESSERACT\_SCENE\_GRAPH\_KDL\_PARSER\_H}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{macros_8h}{tesseract\_common/macros.h}}>}}
+\DoxyCodeLine{41 \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#include <kdl/tree.hpp>}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#include <kdl/jacobian.hpp>}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#include <console\_bridge/console.h>}}
+\DoxyCodeLine{48 \mbox{\hyperlink{namespaceTESSERACT__COMMON__IGNORE__WARNINGS__POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{graph_8h}{tesseract\_scene\_graph/graph.h}}>}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__scene__graph}{tesseract\_scene\_graph}}}
+\DoxyCodeLine{53 \{}
+\DoxyCodeLine{59 KDL::Frame \mbox{\hyperlink{namespacetesseract__scene__graph_a9f0ce2dde1dfc29ac92461d216bb82a8}{convert}}(\textcolor{keyword}{const} Eigen::Isometry3d\& \mbox{\hyperlink{collision__core__unit_8cpp_a0711277889ece6b8e49c8ad05d361167}{transform}});}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{66 Eigen::Isometry3d \mbox{\hyperlink{namespacetesseract__scene__graph_a9f0ce2dde1dfc29ac92461d216bb82a8}{convert}}(\textcolor{keyword}{const} KDL::Frame\& frame);}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{73 KDL::Vector \mbox{\hyperlink{namespacetesseract__scene__graph_a9f0ce2dde1dfc29ac92461d216bb82a8}{convert}}(\textcolor{keyword}{const} Eigen::Vector3d\& \mbox{\hyperlink{FloatMath_8inl_adcf134d50025cc52907d0c8ac798d89d}{vector}});}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{80 Eigen::Vector3d \mbox{\hyperlink{namespacetesseract__scene__graph_a9f0ce2dde1dfc29ac92461d216bb82a8}{convert}}(\textcolor{keyword}{const} KDL::Vector\& \mbox{\hyperlink{FloatMath_8inl_adcf134d50025cc52907d0c8ac798d89d}{vector}});}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{87 Eigen::MatrixXd \mbox{\hyperlink{namespacetesseract__scene__graph_a9f0ce2dde1dfc29ac92461d216bb82a8}{convert}}(\textcolor{keyword}{const} KDL::Jacobian\& \mbox{\hyperlink{kinematics__core__unit_8cpp_afd43241933d01af91643a779b829d7a7}{jacobian}});}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{94 KDL::Jacobian \mbox{\hyperlink{namespacetesseract__scene__graph_a9f0ce2dde1dfc29ac92461d216bb82a8}{convert}}(\textcolor{keyword}{const} Eigen::MatrixXd\& \mbox{\hyperlink{kinematics__core__unit_8cpp_afd43241933d01af91643a779b829d7a7}{jacobian}});}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{102 Eigen::MatrixXd \mbox{\hyperlink{namespacetesseract__scene__graph_a9f0ce2dde1dfc29ac92461d216bb82a8}{convert}}(\textcolor{keyword}{const} KDL::Jacobian\& \mbox{\hyperlink{kinematics__core__unit_8cpp_afd43241933d01af91643a779b829d7a7}{jacobian}}, \textcolor{keyword}{const} std::vector<int>\& q\_nrs);}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{109 KDL::Joint \mbox{\hyperlink{namespacetesseract__scene__graph_a9f0ce2dde1dfc29ac92461d216bb82a8}{convert}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__scene__graph_1_1Joint_a705d1f0a066833444550aa0c7f6d16b9}{Joint::ConstPtr}}\& joint);}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{116 KDL::RigidBodyInertia \mbox{\hyperlink{namespacetesseract__scene__graph_a9f0ce2dde1dfc29ac92461d216bb82a8}{convert}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__scene__graph_1_1Inertial_a460e182afe4ea7ff68c9855afa89f68b}{Inertial::ConstPtr}}\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a765946b02af0c346d889e3b28ba9df74}{inertial}});}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{119 \textcolor{keyword}{struct }\mbox{\hyperlink{structtesseract__scene__graph_1_1KDLTreeData}{KDLTreeData}}}
+\DoxyCodeLine{120 \{}
+\DoxyCodeLine{121   KDL::Tree \mbox{\hyperlink{structtesseract__scene__graph_1_1KDLTreeData_a0969a99281249fc1e58152f32e62af63}{tree}};}
+\DoxyCodeLine{122   std::string \mbox{\hyperlink{structtesseract__scene__graph_1_1KDLTreeData_a553aa8c1082e314e172d67150991210f}{base\_link\_name}};}
+\DoxyCodeLine{123   std::vector<std::string> \mbox{\hyperlink{structtesseract__scene__graph_1_1KDLTreeData_acc3264bc07a6d4c5cf59ec5cd3c3f025}{joint\_names}};}
+\DoxyCodeLine{124   std::vector<std::string> \mbox{\hyperlink{structtesseract__scene__graph_1_1KDLTreeData_a8ef85e6cf267694aea3b48485fa00e74}{active\_joint\_names}};}
+\DoxyCodeLine{125   std::vector<std::string> \mbox{\hyperlink{structtesseract__scene__graph_1_1KDLTreeData_ac1d83b1e639fbd15600e916073566cff}{link\_names}};}
+\DoxyCodeLine{126   std::vector<std::string> \mbox{\hyperlink{structtesseract__scene__graph_1_1KDLTreeData_a4a53e25eaa912dceb87a0d737dc465c3}{active\_link\_names}};}
+\DoxyCodeLine{127   std::vector<std::string> \mbox{\hyperlink{structtesseract__scene__graph_1_1KDLTreeData_adb0b074969d7e6ed42765f8135d667be}{static\_link\_names}};}
+\DoxyCodeLine{128 \};}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{137 \mbox{\hyperlink{structtesseract__scene__graph_1_1KDLTreeData}{KDLTreeData}} \mbox{\hyperlink{namespacetesseract__scene__graph_a439bf1eadaac010f053903e68227ee2e}{parseSceneGraph}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph}{SceneGraph}}\& \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a8d4d0dc3a6b9a7030970bf9ed3764756}{scene\_graph}});}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{150 \mbox{\hyperlink{structtesseract__scene__graph_1_1KDLTreeData}{KDLTreeData}} \mbox{\hyperlink{namespacetesseract__scene__graph_a439bf1eadaac010f053903e68227ee2e}{parseSceneGraph}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph}{SceneGraph}}\& \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a8d4d0dc3a6b9a7030970bf9ed3764756}{scene\_graph}},}
+\DoxyCodeLine{151                             \textcolor{keyword}{const} std::vector<std::string>\& \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_ae55b39adb52b29eeefd7d128c4b56f2a}{joint\_names}},}
+\DoxyCodeLine{152                             \textcolor{keyword}{const} std::unordered\_map<std::string, double>\& joint\_values);}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{154 \}  \textcolor{comment}{// namespace tesseract\_scene\_graph}}
+\DoxyCodeLine{155 }
+\DoxyCodeLine{156 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_SCENE\_GRAPH\_KDL\_PARSER\_H}}
+
+\end{DoxyCode}

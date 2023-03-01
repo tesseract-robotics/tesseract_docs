@@ -1,0 +1,51 @@
+\hypertarget{add__kinematics__information__command_8h_source}{}\doxysection{add\+\_\+kinematics\+\_\+information\+\_\+command.\+h}
+\label{add__kinematics__information__command_8h_source}\index{tesseract\_environment/include/tesseract\_environment/commands/add\_kinematics\_information\_command.h@{tesseract\_environment/include/tesseract\_environment/commands/add\_kinematics\_information\_command.h}}
+\mbox{\hyperlink{add__kinematics__information__command_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#ifndef TESSERACT\_ENVIRONMENT\_ADD\_KINEMATICS\_INFORMATION\_COMMAND\_H}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define TESSERACT\_ENVIRONMENT\_ADD\_KINEMATICS\_INFORMATION\_COMMAND\_H}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{macros_8h}{tesseract\_common/macros.h}}>}}
+\DoxyCodeLine{30 \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include <boost/serialization/access.hpp>}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{33 \mbox{\hyperlink{namespaceTESSERACT__COMMON__IGNORE__WARNINGS__POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{command_8h}{tesseract\_environment/command.h}}>}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{kinematics__information_8h}{tesseract\_srdf/kinematics\_information.h}}>}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__environment}{tesseract\_environment}}}
+\DoxyCodeLine{39 \{}
+\DoxyCodeLine{40 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__environment_1_1AddKinematicsInformationCommand}{AddKinematicsInformationCommand}} : \textcolor{keyword}{public} \mbox{\hyperlink{classtesseract__environment_1_1Command}{Command}}}
+\DoxyCodeLine{41 \{}
+\DoxyCodeLine{42 \textcolor{keyword}{public}:}
+\DoxyCodeLine{43   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__environment_1_1AddKinematicsInformationCommand_a1992795651c4a66ead38946e23845d90}{Ptr}} = std::shared\_ptr<AddKinematicsInformationCommand>;}
+\DoxyCodeLine{44   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__environment_1_1AddKinematicsInformationCommand_a320b2ecd800ca109ae0212594201a83c}{ConstPtr}} = std::shared\_ptr<const AddKinematicsInformationCommand>;}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46   \mbox{\hyperlink{classtesseract__environment_1_1AddKinematicsInformationCommand_aaaed752f507d9a667ffb535b69fdaa34}{AddKinematicsInformationCommand}}() : \mbox{\hyperlink{classtesseract__environment_1_1Command}{Command}}(\mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029}{CommandType}}::\mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029a6f820e76663d877e0103c6aea1616b1b}{ADD\_KINEMATICS\_INFORMATION}})\{\};}
+\DoxyCodeLine{51   \mbox{\hyperlink{classtesseract__environment_1_1AddKinematicsInformationCommand_a94910b3645b2550fe1642ffd54d2607a}{AddKinematicsInformationCommand}}(\mbox{\hyperlink{structtesseract__srdf_1_1KinematicsInformation}{tesseract\_srdf::KinematicsInformation}} kinematics\_information)}
+\DoxyCodeLine{52     : \mbox{\hyperlink{classtesseract__environment_1_1Command}{Command}}(\mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029}{CommandType}}::\mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029a6f820e76663d877e0103c6aea1616b1b}{ADD\_KINEMATICS\_INFORMATION}}), \mbox{\hyperlink{classtesseract__environment_1_1AddKinematicsInformationCommand_a9b09ac06b80966f0c826b3f615b2a27b}{kinematics\_information\_}}(std::move(kinematics\_information))}
+\DoxyCodeLine{53   \{}
+\DoxyCodeLine{54   \}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56   \textcolor{keyword}{const} \mbox{\hyperlink{structtesseract__srdf_1_1KinematicsInformation}{tesseract\_srdf::KinematicsInformation}}\& \mbox{\hyperlink{classtesseract__environment_1_1AddKinematicsInformationCommand_a86f578032f00647c95dc196f37105c7b}{getKinematicsInformation}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classtesseract__environment_1_1AddKinematicsInformationCommand_a9b09ac06b80966f0c826b3f615b2a27b}{kinematics\_information\_}}; \}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1AddKinematicsInformationCommand_ad4d3115f667eb878402d8bf297380d56}{operator==}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__environment_1_1AddKinematicsInformationCommand}{AddKinematicsInformationCommand}}\& rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{59   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1AddKinematicsInformationCommand_a340c02773f89f0958343d6483aa09548}{operator!=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__environment_1_1AddKinematicsInformationCommand}{AddKinematicsInformationCommand}}\& rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{keyword}{private}:}
+\DoxyCodeLine{62   \mbox{\hyperlink{structtesseract__srdf_1_1KinematicsInformation}{tesseract\_srdf::KinematicsInformation}} \mbox{\hyperlink{classtesseract__environment_1_1AddKinematicsInformationCommand_a9b09ac06b80966f0c826b3f615b2a27b}{kinematics\_information\_}};}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64   \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__environment_1_1AddKinematicsInformationCommand_ac98d07dd8f7b70e16ccb9a01abf56b9c}{boost::serialization::access}};}
+\DoxyCodeLine{65   \textcolor{keyword}{template} <\textcolor{keyword}{class} Archive>}
+\DoxyCodeLine{66   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__environment_1_1AddKinematicsInformationCommand_aae149c16c216b608cc232f3f931eade5}{serialize}}(Archive\& ar, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} version);  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{67 \};}
+\DoxyCodeLine{68 \}  \textcolor{comment}{// namespace tesseract\_environment}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#include <boost/serialization/export.hpp>}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#include <boost/serialization/tracking.hpp>}}
+\DoxyCodeLine{72 BOOST\_CLASS\_EXPORT\_KEY2(\mbox{\hyperlink{classtesseract__environment_1_1AddKinematicsInformationCommand}{tesseract\_environment::AddKinematicsInformationCommand}}, \textcolor{stringliteral}{"{}AddKinematicsInformationCommand"{}})}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_ENVIRONMENT\_ADD\_KINEMATICS\_INFORMATION\_COMMAND\_H}}
+
+\end{DoxyCode}

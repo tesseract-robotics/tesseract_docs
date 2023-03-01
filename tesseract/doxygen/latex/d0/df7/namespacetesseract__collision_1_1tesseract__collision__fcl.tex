@@ -1,0 +1,266 @@
+\hypertarget{namespacetesseract__collision_1_1tesseract__collision__fcl}{}\doxysection{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl Namespace Reference}
+\label{namespacetesseract__collision_1_1tesseract__collision__fcl}\index{tesseract\_collision::tesseract\_collision\_fcl@{tesseract\_collision::tesseract\_collision\_fcl}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__fcl_1_1CollisionObjectWrapper}{Collision\+Object\+Wrapper}}
+\begin{DoxyCompactList}\small\item\em This is a Tesseract link collision object wrapper which add items specific to tesseract. It is a wrapper around a tesseract link which may contain several collision objects. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__fcl_1_1FCLCollisionObjectWrapper}{FCLCollision\+Object\+Wrapper}}
+\begin{DoxyCompactList}\small\item\em This is a wrapper around FCL Collision Object Class which allows you to expand the AABB by the contact dist. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__fcl_1_1FCLDiscreteBVHManager}{FCLDiscrete\+BVHManager}}
+\begin{DoxyCompactList}\small\item\em A FCL implementation of the discrete contact manager. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__fcl_1_1FCLDiscreteBVHManagerFactory}{FCLDiscrete\+BVHManager\+Factory}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_add4d4ab248efb2893c1625a9b9f62591}{Collision\+Geometry\+Ptr}} = std\+::shared\+\_\+ptr$<$ fcl\+::\+Collision\+Geometryd $>$
+\item 
+using \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_a1a73bacb5b94c4ac855540cef88a3feb}{Collision\+Object\+Ptr}} = std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__fcl_1_1FCLCollisionObjectWrapper}{FCLCollision\+Object\+Wrapper}} $>$
+\item 
+using \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_a481172c6d9a13f3c02582b2537d89250}{Collision\+Object\+Raw\+Ptr}} = fcl\+::\+Collision\+Objectd $\ast$
+\item 
+using \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_a6a9e0e51eceb9a05260d4ca3db49483d}{Collision\+Object\+Const\+Ptr}} = std\+::shared\+\_\+ptr$<$ const fcl\+::\+Collision\+Objectd $>$
+\item 
+using \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_a03a23e6dbe98eac0cef7313532f60e69}{COW}} = \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__fcl_1_1CollisionObjectWrapper}{Collision\+Object\+Wrapper}}
+\item 
+using \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_a473987211b6c99e0ea58870b593b1106}{Link2\+COW}} = std\+::map$<$ std\+::string, \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__fcl_1_1CollisionObjectWrapper_aaf34b4748fdf60924fdc077aba998788}{COW\+::\+Ptr}} $>$
+\item 
+using \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_a52264feb727010c099cbc7b13a2ec176}{Link2\+Const\+COW}} = std\+::map$<$ std\+::string, \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__fcl_1_1CollisionObjectWrapper_a106cf57fd26a353615db6fa02cd029c2}{COW\+::\+Const\+Ptr}} $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_af7dded074ea546324fb45b909fea527f}{Collision\+Filter\+Groups}} \{ \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_af7dded074ea546324fb45b909fea527fa3fba330eb88f0fd2241324bb74cf3df7}{Default\+Filter}} = 1
+, \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_af7dded074ea546324fb45b909fea527fa343cfc9ddeee1f64bc5a1fe9f2bae260}{Static\+Filter}} = 2
+, \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_af7dded074ea546324fb45b909fea527fa24a83bab934b56f9791d14d8a34f1b21}{Kinematic\+Filter}} = 4
+, \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_af7dded074ea546324fb45b909fea527fa8160cc7c822ac13d1967cc3d7fbad576}{All\+Filter}} = -\/1
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_add4d4ab248efb2893c1625a9b9f62591}{Collision\+Geometry\+Ptr}} \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_a6186814bdb5480c6906b16d59d3baa1b}{create\+Shape\+Primitive}} (const \mbox{\hyperlink{namespacetesseract__collision_a0ba6c3df4805b8c865cb45f6571486c0}{Collision\+Shape\+Const\+Ptr}} \&\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}})
+\item 
+\mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__fcl_1_1CollisionObjectWrapper_aaf34b4748fdf60924fdc077aba998788}{COW\+::\+Ptr}} \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_ac51107420aad60e96d74d9f6565e6b80}{create\+FCLCollision\+Object}} (const std\+::string \&\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}, const int \&\mbox{\hyperlink{collision__core__unit_8cpp_abd5b6e2207f4ef754f27366b9589816e}{type\+\_\+id}}, const \mbox{\hyperlink{namespacetesseract__collision_a2472107aae8174a30873bb0a955c3cb4}{Collision\+Shapes\+Const}} \&shapes, const \mbox{\hyperlink{namespacetesseract__common_a94d9921fc7ed323609ac57d06f939cb6}{tesseract\+\_\+common\+::\+Vector\+Isometry3d}} \&shape\+\_\+poses, bool enabled)
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_a3ee71fcd65b6047f891fad2ccaf33c33}{update\+Collision\+Object\+Filters}} (const std\+::vector$<$ std\+::string $>$ \&active, const \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__fcl_1_1CollisionObjectWrapper_aaf34b4748fdf60924fdc077aba998788}{COW\+::\+Ptr}} \&cow, const std\+::unique\+\_\+ptr$<$ fcl\+::\+Broad\+Phase\+Collision\+Managerd $>$ \&static\+\_\+manager, const std\+::unique\+\_\+ptr$<$ fcl\+::\+Broad\+Phase\+Collision\+Managerd $>$ \&dynamic\+\_\+manager)
+\begin{DoxyCompactList}\small\item\em Update collision objects filters. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_ac8ce443c1dc3dd3345d0a28770b412d4}{collision\+Callback}} (fcl\+::\+Collision\+Objectd $\ast$o1, fcl\+::\+Collision\+Objectd $\ast$o2, void $\ast$\mbox{\hyperlink{collision__margin__data__unit_8cpp_a0992235f6cab11fba6116193c7f42b8b}{data}})
+\item 
+bool \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_adf0adc55ff1fb9cf4ae26fade5ecc530}{distance\+Callback}} (fcl\+::\+Collision\+Objectd $\ast$o1, fcl\+::\+Collision\+Objectd $\ast$o2, void $\ast$\mbox{\hyperlink{collision__margin__data__unit_8cpp_a0992235f6cab11fba6116193c7f42b8b}{data}})
+\item 
+\mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_add4d4ab248efb2893c1625a9b9f62591}{Collision\+Geometry\+Ptr}} \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_a9e12786683f45c1322b586a1b6d9476c}{create\+Shape\+Primitive}} (const \mbox{\hyperlink{classtesseract__geometry_1_1Plane_adf8d58c9a8d3b0cb962e807d8ef2d428}{tesseract\+\_\+geometry\+::\+Plane\+::\+Const\+Ptr}} \&\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}})
+\item 
+\mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_add4d4ab248efb2893c1625a9b9f62591}{Collision\+Geometry\+Ptr}} \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_ad1802f42cc3bdea6490ae9130c545803}{create\+Shape\+Primitive}} (const \mbox{\hyperlink{classtesseract__geometry_1_1Box_aec8152cc23a7ad1b16c135240824d161}{tesseract\+\_\+geometry\+::\+Box\+::\+Const\+Ptr}} \&\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}})
+\item 
+\mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_add4d4ab248efb2893c1625a9b9f62591}{Collision\+Geometry\+Ptr}} \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_ab55186aa831a06715ffb04a30ce816d4}{create\+Shape\+Primitive}} (const \mbox{\hyperlink{classtesseract__geometry_1_1Sphere_ac986cb2217d07320a259ba4277af5b31}{tesseract\+\_\+geometry\+::\+Sphere\+::\+Const\+Ptr}} \&\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}})
+\item 
+\mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_add4d4ab248efb2893c1625a9b9f62591}{Collision\+Geometry\+Ptr}} \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_a9047c3cf437bc6b475ced5b3f7632960}{create\+Shape\+Primitive}} (const \mbox{\hyperlink{classtesseract__geometry_1_1Cylinder_a4249ce200933a1fb9050e76d9fa45d93}{tesseract\+\_\+geometry\+::\+Cylinder\+::\+Const\+Ptr}} \&\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}})
+\item 
+\mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_add4d4ab248efb2893c1625a9b9f62591}{Collision\+Geometry\+Ptr}} \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_a6fb6d035ef4146368730521b1b0e1758}{create\+Shape\+Primitive}} (const \mbox{\hyperlink{classtesseract__geometry_1_1Cone_a776461706bd71882a1cc0d38c56445de}{tesseract\+\_\+geometry\+::\+Cone\+::\+Const\+Ptr}} \&\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}})
+\item 
+\mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_add4d4ab248efb2893c1625a9b9f62591}{Collision\+Geometry\+Ptr}} \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_a50da2d389c38e25f021653efe8aa61e1}{create\+Shape\+Primitive}} (const \mbox{\hyperlink{classtesseract__geometry_1_1Capsule_ad1746418f72f252f0431e059a9ba5411}{tesseract\+\_\+geometry\+::\+Capsule\+::\+Const\+Ptr}} \&\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}})
+\item 
+\mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_add4d4ab248efb2893c1625a9b9f62591}{Collision\+Geometry\+Ptr}} \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_aa7be36827f3dce545cbee9bd1b39d37a}{create\+Shape\+Primitive}} (const \mbox{\hyperlink{classtesseract__geometry_1_1Mesh_af9e7b416df5d635267f64b4604f969e2}{tesseract\+\_\+geometry\+::\+Mesh\+::\+Const\+Ptr}} \&\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}})
+\item 
+\mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_add4d4ab248efb2893c1625a9b9f62591}{Collision\+Geometry\+Ptr}} \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_a245914a6a621d799bb45e5721d1995a7}{create\+Shape\+Primitive}} (const \mbox{\hyperlink{classtesseract__geometry_1_1ConvexMesh_a891ee4bcb9a02f4d57f1400bc32f561a}{tesseract\+\_\+geometry\+::\+Convex\+Mesh\+::\+Const\+Ptr}} \&\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}})
+\item 
+\mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_add4d4ab248efb2893c1625a9b9f62591}{Collision\+Geometry\+Ptr}} \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_a22e2397deac5516d2d0b1aaa0ed99199}{create\+Shape\+Primitive}} (const \mbox{\hyperlink{classtesseract__geometry_1_1Octree_a0c3e8cdfa8826acdca6e727c3097a08c}{tesseract\+\_\+geometry\+::\+Octree\+::\+Const\+Ptr}} \&\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static const \mbox{\hyperlink{namespacetesseract__collision_a2472107aae8174a30873bb0a955c3cb4}{Collision\+Shapes\+Const}} \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_ab0461f8f3c8a6c4c142b2fd38499a1a1}{EMPTY\+\_\+\+COLLISION\+\_\+\+SHAPES\+\_\+\+CONST}}
+\item 
+static const \mbox{\hyperlink{namespacetesseract__common_a94d9921fc7ed323609ac57d06f939cb6}{tesseract\+\_\+common\+::\+Vector\+Isometry3d}} \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_ad5f9cd91208e2aa0e8915e93f2ba0270}{EMPTY\+\_\+\+COLLISION\+\_\+\+SHAPES\+\_\+\+TRANSFORMS}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{namespacetesseract__collision_1_1tesseract__collision__fcl_add4d4ab248efb2893c1625a9b9f62591}\label{namespacetesseract__collision_1_1tesseract__collision__fcl_add4d4ab248efb2893c1625a9b9f62591}} 
+\index{tesseract\_collision::tesseract\_collision\_fcl@{tesseract\_collision::tesseract\_collision\_fcl}!CollisionGeometryPtr@{CollisionGeometryPtr}}
+\index{CollisionGeometryPtr@{CollisionGeometryPtr}!tesseract\_collision::tesseract\_collision\_fcl@{tesseract\_collision::tesseract\_collision\_fcl}}
+\doxysubsubsection{\texorpdfstring{CollisionGeometryPtr}{CollisionGeometryPtr}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_add4d4ab248efb2893c1625a9b9f62591}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::\+Collision\+Geometry\+Ptr}} = typedef std\+::shared\+\_\+ptr$<$fcl\+::\+Collision\+Geometryd$>$}
+
+\mbox{\Hypertarget{namespacetesseract__collision_1_1tesseract__collision__fcl_a6a9e0e51eceb9a05260d4ca3db49483d}\label{namespacetesseract__collision_1_1tesseract__collision__fcl_a6a9e0e51eceb9a05260d4ca3db49483d}} 
+\index{tesseract\_collision::tesseract\_collision\_fcl@{tesseract\_collision::tesseract\_collision\_fcl}!CollisionObjectConstPtr@{CollisionObjectConstPtr}}
+\index{CollisionObjectConstPtr@{CollisionObjectConstPtr}!tesseract\_collision::tesseract\_collision\_fcl@{tesseract\_collision::tesseract\_collision\_fcl}}
+\doxysubsubsection{\texorpdfstring{CollisionObjectConstPtr}{CollisionObjectConstPtr}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_a6a9e0e51eceb9a05260d4ca3db49483d}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::\+Collision\+Object\+Const\+Ptr}} = typedef std\+::shared\+\_\+ptr$<$const fcl\+::\+Collision\+Objectd$>$}
+
+\mbox{\Hypertarget{namespacetesseract__collision_1_1tesseract__collision__fcl_a1a73bacb5b94c4ac855540cef88a3feb}\label{namespacetesseract__collision_1_1tesseract__collision__fcl_a1a73bacb5b94c4ac855540cef88a3feb}} 
+\index{tesseract\_collision::tesseract\_collision\_fcl@{tesseract\_collision::tesseract\_collision\_fcl}!CollisionObjectPtr@{CollisionObjectPtr}}
+\index{CollisionObjectPtr@{CollisionObjectPtr}!tesseract\_collision::tesseract\_collision\_fcl@{tesseract\_collision::tesseract\_collision\_fcl}}
+\doxysubsubsection{\texorpdfstring{CollisionObjectPtr}{CollisionObjectPtr}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_a1a73bacb5b94c4ac855540cef88a3feb}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::\+Collision\+Object\+Ptr}} = typedef std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__fcl_1_1FCLCollisionObjectWrapper}{FCLCollision\+Object\+Wrapper}}$>$}
+
+\mbox{\Hypertarget{namespacetesseract__collision_1_1tesseract__collision__fcl_a481172c6d9a13f3c02582b2537d89250}\label{namespacetesseract__collision_1_1tesseract__collision__fcl_a481172c6d9a13f3c02582b2537d89250}} 
+\index{tesseract\_collision::tesseract\_collision\_fcl@{tesseract\_collision::tesseract\_collision\_fcl}!CollisionObjectRawPtr@{CollisionObjectRawPtr}}
+\index{CollisionObjectRawPtr@{CollisionObjectRawPtr}!tesseract\_collision::tesseract\_collision\_fcl@{tesseract\_collision::tesseract\_collision\_fcl}}
+\doxysubsubsection{\texorpdfstring{CollisionObjectRawPtr}{CollisionObjectRawPtr}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_a481172c6d9a13f3c02582b2537d89250}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::\+Collision\+Object\+Raw\+Ptr}} = typedef fcl\+::\+Collision\+Objectd$\ast$}
+
+\mbox{\Hypertarget{namespacetesseract__collision_1_1tesseract__collision__fcl_a03a23e6dbe98eac0cef7313532f60e69}\label{namespacetesseract__collision_1_1tesseract__collision__fcl_a03a23e6dbe98eac0cef7313532f60e69}} 
+\index{tesseract\_collision::tesseract\_collision\_fcl@{tesseract\_collision::tesseract\_collision\_fcl}!COW@{COW}}
+\index{COW@{COW}!tesseract\_collision::tesseract\_collision\_fcl@{tesseract\_collision::tesseract\_collision\_fcl}}
+\doxysubsubsection{\texorpdfstring{COW}{COW}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_a03a23e6dbe98eac0cef7313532f60e69}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::\+COW}} = typedef \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__fcl_1_1CollisionObjectWrapper}{Collision\+Object\+Wrapper}}}
+
+\mbox{\Hypertarget{namespacetesseract__collision_1_1tesseract__collision__fcl_a52264feb727010c099cbc7b13a2ec176}\label{namespacetesseract__collision_1_1tesseract__collision__fcl_a52264feb727010c099cbc7b13a2ec176}} 
+\index{tesseract\_collision::tesseract\_collision\_fcl@{tesseract\_collision::tesseract\_collision\_fcl}!Link2ConstCOW@{Link2ConstCOW}}
+\index{Link2ConstCOW@{Link2ConstCOW}!tesseract\_collision::tesseract\_collision\_fcl@{tesseract\_collision::tesseract\_collision\_fcl}}
+\doxysubsubsection{\texorpdfstring{Link2ConstCOW}{Link2ConstCOW}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_a52264feb727010c099cbc7b13a2ec176}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::\+Link2\+Const\+COW}} = typedef std\+::map$<$std\+::string, \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__fcl_1_1CollisionObjectWrapper_a106cf57fd26a353615db6fa02cd029c2}{COW\+::\+Const\+Ptr}}$>$}
+
+\mbox{\Hypertarget{namespacetesseract__collision_1_1tesseract__collision__fcl_a473987211b6c99e0ea58870b593b1106}\label{namespacetesseract__collision_1_1tesseract__collision__fcl_a473987211b6c99e0ea58870b593b1106}} 
+\index{tesseract\_collision::tesseract\_collision\_fcl@{tesseract\_collision::tesseract\_collision\_fcl}!Link2COW@{Link2COW}}
+\index{Link2COW@{Link2COW}!tesseract\_collision::tesseract\_collision\_fcl@{tesseract\_collision::tesseract\_collision\_fcl}}
+\doxysubsubsection{\texorpdfstring{Link2COW}{Link2COW}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_a473987211b6c99e0ea58870b593b1106}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::\+Link2\+COW}} = typedef std\+::map$<$std\+::string, \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__fcl_1_1CollisionObjectWrapper_aaf34b4748fdf60924fdc077aba998788}{COW\+::\+Ptr}}$>$}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{namespacetesseract__collision_1_1tesseract__collision__fcl_af7dded074ea546324fb45b909fea527f}\label{namespacetesseract__collision_1_1tesseract__collision__fcl_af7dded074ea546324fb45b909fea527f}} 
+\index{tesseract\_collision::tesseract\_collision\_fcl@{tesseract\_collision::tesseract\_collision\_fcl}!CollisionFilterGroups@{CollisionFilterGroups}}
+\index{CollisionFilterGroups@{CollisionFilterGroups}!tesseract\_collision::tesseract\_collision\_fcl@{tesseract\_collision::tesseract\_collision\_fcl}}
+\doxysubsubsection{\texorpdfstring{CollisionFilterGroups}{CollisionFilterGroups}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_af7dded074ea546324fb45b909fea527f}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::\+Collision\+Filter\+Groups}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DefaultFilter@{DefaultFilter}!tesseract\_collision::tesseract\_collision\_fcl@{tesseract\_collision::tesseract\_collision\_fcl}}\index{tesseract\_collision::tesseract\_collision\_fcl@{tesseract\_collision::tesseract\_collision\_fcl}!DefaultFilter@{DefaultFilter}}}\mbox{\Hypertarget{namespacetesseract__collision_1_1tesseract__collision__fcl_af7dded074ea546324fb45b909fea527fa3fba330eb88f0fd2241324bb74cf3df7}\label{namespacetesseract__collision_1_1tesseract__collision__fcl_af7dded074ea546324fb45b909fea527fa3fba330eb88f0fd2241324bb74cf3df7}} 
+Default\+Filter&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{StaticFilter@{StaticFilter}!tesseract\_collision::tesseract\_collision\_fcl@{tesseract\_collision::tesseract\_collision\_fcl}}\index{tesseract\_collision::tesseract\_collision\_fcl@{tesseract\_collision::tesseract\_collision\_fcl}!StaticFilter@{StaticFilter}}}\mbox{\Hypertarget{namespacetesseract__collision_1_1tesseract__collision__fcl_af7dded074ea546324fb45b909fea527fa343cfc9ddeee1f64bc5a1fe9f2bae260}\label{namespacetesseract__collision_1_1tesseract__collision__fcl_af7dded074ea546324fb45b909fea527fa343cfc9ddeee1f64bc5a1fe9f2bae260}} 
+Static\+Filter&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KinematicFilter@{KinematicFilter}!tesseract\_collision::tesseract\_collision\_fcl@{tesseract\_collision::tesseract\_collision\_fcl}}\index{tesseract\_collision::tesseract\_collision\_fcl@{tesseract\_collision::tesseract\_collision\_fcl}!KinematicFilter@{KinematicFilter}}}\mbox{\Hypertarget{namespacetesseract__collision_1_1tesseract__collision__fcl_af7dded074ea546324fb45b909fea527fa24a83bab934b56f9791d14d8a34f1b21}\label{namespacetesseract__collision_1_1tesseract__collision__fcl_af7dded074ea546324fb45b909fea527fa24a83bab934b56f9791d14d8a34f1b21}} 
+Kinematic\+Filter&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AllFilter@{AllFilter}!tesseract\_collision::tesseract\_collision\_fcl@{tesseract\_collision::tesseract\_collision\_fcl}}\index{tesseract\_collision::tesseract\_collision\_fcl@{tesseract\_collision::tesseract\_collision\_fcl}!AllFilter@{AllFilter}}}\mbox{\Hypertarget{namespacetesseract__collision_1_1tesseract__collision__fcl_af7dded074ea546324fb45b909fea527fa8160cc7c822ac13d1967cc3d7fbad576}\label{namespacetesseract__collision_1_1tesseract__collision__fcl_af7dded074ea546324fb45b909fea527fa8160cc7c822ac13d1967cc3d7fbad576}} 
+All\+Filter&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacetesseract__collision_1_1tesseract__collision__fcl_ac8ce443c1dc3dd3345d0a28770b412d4}\label{namespacetesseract__collision_1_1tesseract__collision__fcl_ac8ce443c1dc3dd3345d0a28770b412d4}} 
+\index{tesseract\_collision::tesseract\_collision\_fcl@{tesseract\_collision::tesseract\_collision\_fcl}!collisionCallback@{collisionCallback}}
+\index{collisionCallback@{collisionCallback}!tesseract\_collision::tesseract\_collision\_fcl@{tesseract\_collision::tesseract\_collision\_fcl}}
+\doxysubsubsection{\texorpdfstring{collisionCallback()}{collisionCallback()}}
+{\footnotesize\ttfamily bool tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::collision\+Callback (\begin{DoxyParamCaption}\item[{fcl\+::\+Collision\+Objectd $\ast$}]{o1,  }\item[{fcl\+::\+Collision\+Objectd $\ast$}]{o2,  }\item[{void $\ast$}]{data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacetesseract__collision_1_1tesseract__collision__fcl_ac51107420aad60e96d74d9f6565e6b80}\label{namespacetesseract__collision_1_1tesseract__collision__fcl_ac51107420aad60e96d74d9f6565e6b80}} 
+\index{tesseract\_collision::tesseract\_collision\_fcl@{tesseract\_collision::tesseract\_collision\_fcl}!createFCLCollisionObject@{createFCLCollisionObject}}
+\index{createFCLCollisionObject@{createFCLCollisionObject}!tesseract\_collision::tesseract\_collision\_fcl@{tesseract\_collision::tesseract\_collision\_fcl}}
+\doxysubsubsection{\texorpdfstring{createFCLCollisionObject()}{createFCLCollisionObject()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__fcl_1_1CollisionObjectWrapper_aaf34b4748fdf60924fdc077aba998788}{COW\+::\+Ptr}} tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::create\+FCLCollision\+Object (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const int \&}]{type\+\_\+id,  }\item[{const \mbox{\hyperlink{namespacetesseract__collision_a2472107aae8174a30873bb0a955c3cb4}{Collision\+Shapes\+Const}} \&}]{shapes,  }\item[{const \mbox{\hyperlink{namespacetesseract__common_a94d9921fc7ed323609ac57d06f939cb6}{tesseract\+\_\+common\+::\+Vector\+Isometry3d}} \&}]{shape\+\_\+poses,  }\item[{bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{namespacetesseract__collision_1_1tesseract__collision__fcl_a6186814bdb5480c6906b16d59d3baa1b}\label{namespacetesseract__collision_1_1tesseract__collision__fcl_a6186814bdb5480c6906b16d59d3baa1b}} 
+\index{tesseract\_collision::tesseract\_collision\_fcl@{tesseract\_collision::tesseract\_collision\_fcl}!createShapePrimitive@{createShapePrimitive}}
+\index{createShapePrimitive@{createShapePrimitive}!tesseract\_collision::tesseract\_collision\_fcl@{tesseract\_collision::tesseract\_collision\_fcl}}
+\doxysubsubsection{\texorpdfstring{createShapePrimitive()}{createShapePrimitive()}\hspace{0.1cm}{\footnotesize\ttfamily [1/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_add4d4ab248efb2893c1625a9b9f62591}{Collision\+Geometry\+Ptr}} tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::create\+Shape\+Primitive (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespacetesseract__collision_a0ba6c3df4805b8c865cb45f6571486c0}{Collision\+Shape\+Const\+Ptr}} \&}]{geom }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacetesseract__collision_1_1tesseract__collision__fcl_ad1802f42cc3bdea6490ae9130c545803}\label{namespacetesseract__collision_1_1tesseract__collision__fcl_ad1802f42cc3bdea6490ae9130c545803}} 
+\index{tesseract\_collision::tesseract\_collision\_fcl@{tesseract\_collision::tesseract\_collision\_fcl}!createShapePrimitive@{createShapePrimitive}}
+\index{createShapePrimitive@{createShapePrimitive}!tesseract\_collision::tesseract\_collision\_fcl@{tesseract\_collision::tesseract\_collision\_fcl}}
+\doxysubsubsection{\texorpdfstring{createShapePrimitive()}{createShapePrimitive()}\hspace{0.1cm}{\footnotesize\ttfamily [2/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_add4d4ab248efb2893c1625a9b9f62591}{Collision\+Geometry\+Ptr}} tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::create\+Shape\+Primitive (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtesseract__geometry_1_1Box_aec8152cc23a7ad1b16c135240824d161}{tesseract\+\_\+geometry\+::\+Box\+::\+Const\+Ptr}} \&}]{geom }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacetesseract__collision_1_1tesseract__collision__fcl_a50da2d389c38e25f021653efe8aa61e1}\label{namespacetesseract__collision_1_1tesseract__collision__fcl_a50da2d389c38e25f021653efe8aa61e1}} 
+\index{tesseract\_collision::tesseract\_collision\_fcl@{tesseract\_collision::tesseract\_collision\_fcl}!createShapePrimitive@{createShapePrimitive}}
+\index{createShapePrimitive@{createShapePrimitive}!tesseract\_collision::tesseract\_collision\_fcl@{tesseract\_collision::tesseract\_collision\_fcl}}
+\doxysubsubsection{\texorpdfstring{createShapePrimitive()}{createShapePrimitive()}\hspace{0.1cm}{\footnotesize\ttfamily [3/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_add4d4ab248efb2893c1625a9b9f62591}{Collision\+Geometry\+Ptr}} tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::create\+Shape\+Primitive (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtesseract__geometry_1_1Capsule_ad1746418f72f252f0431e059a9ba5411}{tesseract\+\_\+geometry\+::\+Capsule\+::\+Const\+Ptr}} \&}]{geom }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacetesseract__collision_1_1tesseract__collision__fcl_a6fb6d035ef4146368730521b1b0e1758}\label{namespacetesseract__collision_1_1tesseract__collision__fcl_a6fb6d035ef4146368730521b1b0e1758}} 
+\index{tesseract\_collision::tesseract\_collision\_fcl@{tesseract\_collision::tesseract\_collision\_fcl}!createShapePrimitive@{createShapePrimitive}}
+\index{createShapePrimitive@{createShapePrimitive}!tesseract\_collision::tesseract\_collision\_fcl@{tesseract\_collision::tesseract\_collision\_fcl}}
+\doxysubsubsection{\texorpdfstring{createShapePrimitive()}{createShapePrimitive()}\hspace{0.1cm}{\footnotesize\ttfamily [4/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_add4d4ab248efb2893c1625a9b9f62591}{Collision\+Geometry\+Ptr}} tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::create\+Shape\+Primitive (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtesseract__geometry_1_1Cone_a776461706bd71882a1cc0d38c56445de}{tesseract\+\_\+geometry\+::\+Cone\+::\+Const\+Ptr}} \&}]{geom }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacetesseract__collision_1_1tesseract__collision__fcl_a245914a6a621d799bb45e5721d1995a7}\label{namespacetesseract__collision_1_1tesseract__collision__fcl_a245914a6a621d799bb45e5721d1995a7}} 
+\index{tesseract\_collision::tesseract\_collision\_fcl@{tesseract\_collision::tesseract\_collision\_fcl}!createShapePrimitive@{createShapePrimitive}}
+\index{createShapePrimitive@{createShapePrimitive}!tesseract\_collision::tesseract\_collision\_fcl@{tesseract\_collision::tesseract\_collision\_fcl}}
+\doxysubsubsection{\texorpdfstring{createShapePrimitive()}{createShapePrimitive()}\hspace{0.1cm}{\footnotesize\ttfamily [5/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_add4d4ab248efb2893c1625a9b9f62591}{Collision\+Geometry\+Ptr}} tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::create\+Shape\+Primitive (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtesseract__geometry_1_1ConvexMesh_a891ee4bcb9a02f4d57f1400bc32f561a}{tesseract\+\_\+geometry\+::\+Convex\+Mesh\+::\+Const\+Ptr}} \&}]{geom }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacetesseract__collision_1_1tesseract__collision__fcl_a9047c3cf437bc6b475ced5b3f7632960}\label{namespacetesseract__collision_1_1tesseract__collision__fcl_a9047c3cf437bc6b475ced5b3f7632960}} 
+\index{tesseract\_collision::tesseract\_collision\_fcl@{tesseract\_collision::tesseract\_collision\_fcl}!createShapePrimitive@{createShapePrimitive}}
+\index{createShapePrimitive@{createShapePrimitive}!tesseract\_collision::tesseract\_collision\_fcl@{tesseract\_collision::tesseract\_collision\_fcl}}
+\doxysubsubsection{\texorpdfstring{createShapePrimitive()}{createShapePrimitive()}\hspace{0.1cm}{\footnotesize\ttfamily [6/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_add4d4ab248efb2893c1625a9b9f62591}{Collision\+Geometry\+Ptr}} tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::create\+Shape\+Primitive (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtesseract__geometry_1_1Cylinder_a4249ce200933a1fb9050e76d9fa45d93}{tesseract\+\_\+geometry\+::\+Cylinder\+::\+Const\+Ptr}} \&}]{geom }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacetesseract__collision_1_1tesseract__collision__fcl_aa7be36827f3dce545cbee9bd1b39d37a}\label{namespacetesseract__collision_1_1tesseract__collision__fcl_aa7be36827f3dce545cbee9bd1b39d37a}} 
+\index{tesseract\_collision::tesseract\_collision\_fcl@{tesseract\_collision::tesseract\_collision\_fcl}!createShapePrimitive@{createShapePrimitive}}
+\index{createShapePrimitive@{createShapePrimitive}!tesseract\_collision::tesseract\_collision\_fcl@{tesseract\_collision::tesseract\_collision\_fcl}}
+\doxysubsubsection{\texorpdfstring{createShapePrimitive()}{createShapePrimitive()}\hspace{0.1cm}{\footnotesize\ttfamily [7/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_add4d4ab248efb2893c1625a9b9f62591}{Collision\+Geometry\+Ptr}} tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::create\+Shape\+Primitive (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtesseract__geometry_1_1Mesh_af9e7b416df5d635267f64b4604f969e2}{tesseract\+\_\+geometry\+::\+Mesh\+::\+Const\+Ptr}} \&}]{geom }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacetesseract__collision_1_1tesseract__collision__fcl_a22e2397deac5516d2d0b1aaa0ed99199}\label{namespacetesseract__collision_1_1tesseract__collision__fcl_a22e2397deac5516d2d0b1aaa0ed99199}} 
+\index{tesseract\_collision::tesseract\_collision\_fcl@{tesseract\_collision::tesseract\_collision\_fcl}!createShapePrimitive@{createShapePrimitive}}
+\index{createShapePrimitive@{createShapePrimitive}!tesseract\_collision::tesseract\_collision\_fcl@{tesseract\_collision::tesseract\_collision\_fcl}}
+\doxysubsubsection{\texorpdfstring{createShapePrimitive()}{createShapePrimitive()}\hspace{0.1cm}{\footnotesize\ttfamily [8/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_add4d4ab248efb2893c1625a9b9f62591}{Collision\+Geometry\+Ptr}} tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::create\+Shape\+Primitive (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtesseract__geometry_1_1Octree_a0c3e8cdfa8826acdca6e727c3097a08c}{tesseract\+\_\+geometry\+::\+Octree\+::\+Const\+Ptr}} \&}]{geom }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacetesseract__collision_1_1tesseract__collision__fcl_a9e12786683f45c1322b586a1b6d9476c}\label{namespacetesseract__collision_1_1tesseract__collision__fcl_a9e12786683f45c1322b586a1b6d9476c}} 
+\index{tesseract\_collision::tesseract\_collision\_fcl@{tesseract\_collision::tesseract\_collision\_fcl}!createShapePrimitive@{createShapePrimitive}}
+\index{createShapePrimitive@{createShapePrimitive}!tesseract\_collision::tesseract\_collision\_fcl@{tesseract\_collision::tesseract\_collision\_fcl}}
+\doxysubsubsection{\texorpdfstring{createShapePrimitive()}{createShapePrimitive()}\hspace{0.1cm}{\footnotesize\ttfamily [9/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_add4d4ab248efb2893c1625a9b9f62591}{Collision\+Geometry\+Ptr}} tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::create\+Shape\+Primitive (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtesseract__geometry_1_1Plane_adf8d58c9a8d3b0cb962e807d8ef2d428}{tesseract\+\_\+geometry\+::\+Plane\+::\+Const\+Ptr}} \&}]{geom }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacetesseract__collision_1_1tesseract__collision__fcl_ab55186aa831a06715ffb04a30ce816d4}\label{namespacetesseract__collision_1_1tesseract__collision__fcl_ab55186aa831a06715ffb04a30ce816d4}} 
+\index{tesseract\_collision::tesseract\_collision\_fcl@{tesseract\_collision::tesseract\_collision\_fcl}!createShapePrimitive@{createShapePrimitive}}
+\index{createShapePrimitive@{createShapePrimitive}!tesseract\_collision::tesseract\_collision\_fcl@{tesseract\_collision::tesseract\_collision\_fcl}}
+\doxysubsubsection{\texorpdfstring{createShapePrimitive()}{createShapePrimitive()}\hspace{0.1cm}{\footnotesize\ttfamily [10/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_add4d4ab248efb2893c1625a9b9f62591}{Collision\+Geometry\+Ptr}} tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::create\+Shape\+Primitive (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtesseract__geometry_1_1Sphere_ac986cb2217d07320a259ba4277af5b31}{tesseract\+\_\+geometry\+::\+Sphere\+::\+Const\+Ptr}} \&}]{geom }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacetesseract__collision_1_1tesseract__collision__fcl_adf0adc55ff1fb9cf4ae26fade5ecc530}\label{namespacetesseract__collision_1_1tesseract__collision__fcl_adf0adc55ff1fb9cf4ae26fade5ecc530}} 
+\index{tesseract\_collision::tesseract\_collision\_fcl@{tesseract\_collision::tesseract\_collision\_fcl}!distanceCallback@{distanceCallback}}
+\index{distanceCallback@{distanceCallback}!tesseract\_collision::tesseract\_collision\_fcl@{tesseract\_collision::tesseract\_collision\_fcl}}
+\doxysubsubsection{\texorpdfstring{distanceCallback()}{distanceCallback()}}
+{\footnotesize\ttfamily bool tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::distance\+Callback (\begin{DoxyParamCaption}\item[{fcl\+::\+Collision\+Objectd $\ast$}]{o1,  }\item[{fcl\+::\+Collision\+Objectd $\ast$}]{o2,  }\item[{void $\ast$}]{data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacetesseract__collision_1_1tesseract__collision__fcl_a3ee71fcd65b6047f891fad2ccaf33c33}\label{namespacetesseract__collision_1_1tesseract__collision__fcl_a3ee71fcd65b6047f891fad2ccaf33c33}} 
+\index{tesseract\_collision::tesseract\_collision\_fcl@{tesseract\_collision::tesseract\_collision\_fcl}!updateCollisionObjectFilters@{updateCollisionObjectFilters}}
+\index{updateCollisionObjectFilters@{updateCollisionObjectFilters}!tesseract\_collision::tesseract\_collision\_fcl@{tesseract\_collision::tesseract\_collision\_fcl}}
+\doxysubsubsection{\texorpdfstring{updateCollisionObjectFilters()}{updateCollisionObjectFilters()}}
+{\footnotesize\ttfamily void tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::update\+Collision\+Object\+Filters (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{active,  }\item[{const \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__fcl_1_1CollisionObjectWrapper_aaf34b4748fdf60924fdc077aba998788}{COW\+::\+Ptr}} \&}]{cow,  }\item[{const std\+::unique\+\_\+ptr$<$ fcl\+::\+Broad\+Phase\+Collision\+Managerd $>$ \&}]{static\+\_\+manager,  }\item[{const std\+::unique\+\_\+ptr$<$ fcl\+::\+Broad\+Phase\+Collision\+Managerd $>$ \&}]{dynamic\+\_\+manager }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Update collision objects filters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em active} & The active collision objects \\
+\hline
+{\em cow} & The collision object to update \\
+\hline
+{\em static\+\_\+manager} & Broadphasse manager for static objects \\
+\hline
+{\em dynamic\+\_\+manager} & Broadphase manager for dynamic objects \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacetesseract__collision_1_1tesseract__collision__fcl_ab0461f8f3c8a6c4c142b2fd38499a1a1}\label{namespacetesseract__collision_1_1tesseract__collision__fcl_ab0461f8f3c8a6c4c142b2fd38499a1a1}} 
+\index{tesseract\_collision::tesseract\_collision\_fcl@{tesseract\_collision::tesseract\_collision\_fcl}!EMPTY\_COLLISION\_SHAPES\_CONST@{EMPTY\_COLLISION\_SHAPES\_CONST}}
+\index{EMPTY\_COLLISION\_SHAPES\_CONST@{EMPTY\_COLLISION\_SHAPES\_CONST}!tesseract\_collision::tesseract\_collision\_fcl@{tesseract\_collision::tesseract\_collision\_fcl}}
+\doxysubsubsection{\texorpdfstring{EMPTY\_COLLISION\_SHAPES\_CONST}{EMPTY\_COLLISION\_SHAPES\_CONST}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{namespacetesseract__collision_a2472107aae8174a30873bb0a955c3cb4}{Collision\+Shapes\+Const}} tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::\+EMPTY\+\_\+\+COLLISION\+\_\+\+SHAPES\+\_\+\+CONST\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{namespacetesseract__collision_1_1tesseract__collision__fcl_ad5f9cd91208e2aa0e8915e93f2ba0270}\label{namespacetesseract__collision_1_1tesseract__collision__fcl_ad5f9cd91208e2aa0e8915e93f2ba0270}} 
+\index{tesseract\_collision::tesseract\_collision\_fcl@{tesseract\_collision::tesseract\_collision\_fcl}!EMPTY\_COLLISION\_SHAPES\_TRANSFORMS@{EMPTY\_COLLISION\_SHAPES\_TRANSFORMS}}
+\index{EMPTY\_COLLISION\_SHAPES\_TRANSFORMS@{EMPTY\_COLLISION\_SHAPES\_TRANSFORMS}!tesseract\_collision::tesseract\_collision\_fcl@{tesseract\_collision::tesseract\_collision\_fcl}}
+\doxysubsubsection{\texorpdfstring{EMPTY\_COLLISION\_SHAPES\_TRANSFORMS}{EMPTY\_COLLISION\_SHAPES\_TRANSFORMS}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{namespacetesseract__common_a94d9921fc7ed323609ac57d06f939cb6}{tesseract\+\_\+common\+::\+Vector\+Isometry3d}} tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::\+EMPTY\+\_\+\+COLLISION\+\_\+\+SHAPES\+\_\+\+TRANSFORMS\hspace{0.3cm}{\ttfamily [static]}}
+

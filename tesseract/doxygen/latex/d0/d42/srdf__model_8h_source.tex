@@ -1,0 +1,89 @@
+\hypertarget{srdf__model_8h_source}{}\doxysection{srdf\+\_\+model.\+h}
+\label{srdf__model_8h_source}\index{tesseract\_srdf/include/tesseract\_srdf/srdf\_model.h@{tesseract\_srdf/include/tesseract\_srdf/srdf\_model.h}}
+\mbox{\hyperlink{srdf__model_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#ifndef TESSERACT\_SRDF\_SRDF\_MODEL\_H}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#define TESSERACT\_SRDF\_SRDF\_MODEL\_H}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{macros_8h}{tesseract\_common/macros.h}}>}}
+\DoxyCodeLine{31 \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include <boost/serialization/access.hpp>}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include <array>}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include <Eigen/Core>}}
+\DoxyCodeLine{37 \mbox{\hyperlink{namespaceTESSERACT__COMMON__IGNORE__WARNINGS__POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{kinematics__information_8h}{tesseract\_srdf/kinematics\_information.h}}>}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{graph_8h}{tesseract\_scene\_graph/graph.h}}>}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{allowed__collision__matrix_8h}{tesseract\_common/allowed\_collision\_matrix.h}}>}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{resource__locator_8h}{tesseract\_common/resource\_locator.h}}>}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{collision__margin__data_8h}{tesseract\_common/collision\_margin\_data.h}}>}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{46 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__srdf}{tesseract\_srdf}}}
+\DoxyCodeLine{47 \{}
+\DoxyCodeLine{48 \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData}{CollisionMarginData}} = \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData}{tesseract\_common::CollisionMarginData}};}
+\DoxyCodeLine{49 \textcolor{keyword}{using }\mbox{\hyperlink{namespacetesseract__srdf_aa970aeb01dbd4da4f4291a20d8510c26}{PairsCollisionMarginData}} = \mbox{\hyperlink{namespacetesseract__common_a84cc21cc4b384291adbbddaa81fe6447}{tesseract\_common::PairsCollisionMarginData}};}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{52 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__srdf_1_1SRDFModel}{SRDFModel}}}
+\DoxyCodeLine{53 \{}
+\DoxyCodeLine{54 \textcolor{keyword}{public}:}
+\DoxyCodeLine{55   \textcolor{comment}{// LCOV\_EXCL\_START}}
+\DoxyCodeLine{56   EIGEN\_MAKE\_ALIGNED\_OPERATOR\_NEW}
+\DoxyCodeLine{57   \textcolor{comment}{// LCOV\_EXCL\_STOP}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__srdf_1_1SRDFModel_aa774b8f688b3521f25ea1a6d4e16839c}{Ptr}} = std::shared\_ptr<SRDFModel>;}
+\DoxyCodeLine{60   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__srdf_1_1SRDFModel_a6e579a73e63af4e2d66448cdcc0998b5}{ConstPtr}} = std::shared\_ptr<const SRDFModel>;}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62   \mbox{\hyperlink{classtesseract__srdf_1_1SRDFModel_a74aa57113d62dbbb62f4a71f13725aa4}{SRDFModel}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{63   \textcolor{keyword}{virtual} \mbox{\hyperlink{classtesseract__srdf_1_1SRDFModel_ad0a31f46d667934834791f28162bc078}{\string~SRDFModel}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{64   \mbox{\hyperlink{classtesseract__srdf_1_1SRDFModel_a147a456aadc69c311364c6a0a9ecacc8}{SRDFModel}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__srdf_1_1SRDFModel}{SRDFModel}}\&) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{65   \mbox{\hyperlink{classtesseract__srdf_1_1SRDFModel}{SRDFModel}}\& \mbox{\hyperlink{classtesseract__srdf_1_1SRDFModel_aaace9b114da723c1f891ff802dd77990}{operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__srdf_1_1SRDFModel}{SRDFModel}}\&) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{66   \mbox{\hyperlink{classtesseract__srdf_1_1SRDFModel_a9f6206f80a48aa5ce6a592491527db83}{SRDFModel}}(\mbox{\hyperlink{classtesseract__srdf_1_1SRDFModel}{SRDFModel}}\&\&) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{67   \mbox{\hyperlink{classtesseract__srdf_1_1SRDFModel}{SRDFModel}}\& \mbox{\hyperlink{classtesseract__srdf_1_1SRDFModel_a00d624f17b9ce730b60984157963d244}{operator=}}(\mbox{\hyperlink{classtesseract__srdf_1_1SRDFModel}{SRDFModel}}\&\&) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{73   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__srdf_1_1SRDFModel_adf0a949b46216d9823a83661781ac1e6}{initFile}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph}{tesseract\_scene\_graph::SceneGraph}}\& \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a8d4d0dc3a6b9a7030970bf9ed3764756}{scene\_graph}},}
+\DoxyCodeLine{74                 \textcolor{keyword}{const} std::string\& filename,}
+\DoxyCodeLine{75                 \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__common_1_1ResourceLocator}{tesseract\_common::ResourceLocator}}\& \mbox{\hyperlink{resource__locator__unit_8cpp_ad889712fa094e762b2a887aec9001270}{locator}});}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{81   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__srdf_1_1SRDFModel_ab557f44132eedcfb16d3cbb545ce9863}{initString}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph}{tesseract\_scene\_graph::SceneGraph}}\& \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a8d4d0dc3a6b9a7030970bf9ed3764756}{scene\_graph}},}
+\DoxyCodeLine{82                   \textcolor{keyword}{const} std::string\& xmlstring,}
+\DoxyCodeLine{83                   \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__common_1_1ResourceLocator}{tesseract\_common::ResourceLocator}}\& \mbox{\hyperlink{resource__locator__unit_8cpp_ad889712fa094e762b2a887aec9001270}{locator}});}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{86   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__srdf_1_1SRDFModel_a029ffab3d81e17c436a8162220776dca}{saveToFile}}(\textcolor{keyword}{const} std::string\& \mbox{\hyperlink{resource__locator__unit_8cpp_a803157d97edf460a9f115ca41b182e73}{file\_path}}) \textcolor{keyword}{const};}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{89   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__srdf_1_1SRDFModel_a2bc61e60773d306eff6f73b85e785f3a}{clear}}();}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{92   std::string \mbox{\hyperlink{classtesseract__srdf_1_1SRDFModel_a3424eb860989d4c2bfe1a0a204cf7925}{name}}\{ \textcolor{stringliteral}{"{}undefined"{}} \};}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{95   std::array<int, 3> \mbox{\hyperlink{classtesseract__srdf_1_1SRDFModel_a43680d09b5966592ada54b63a8849aa6}{version}}\{ \{ 1, 0, 0 \} \};}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{98   \mbox{\hyperlink{structtesseract__srdf_1_1KinematicsInformation}{KinematicsInformation}} \mbox{\hyperlink{classtesseract__srdf_1_1SRDFModel_a3cb7ccb84088f10f83159fe03710ac4c}{kinematics\_information}};}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{101   \mbox{\hyperlink{structtesseract__common_1_1ContactManagersPluginInfo}{tesseract\_common::ContactManagersPluginInfo}} \mbox{\hyperlink{classtesseract__srdf_1_1SRDFModel_a64b6c21f31b7061450d62fd7d57e433b}{contact\_managers\_plugin\_info}};}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{104   \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix}{tesseract\_common::AllowedCollisionMatrix}} \mbox{\hyperlink{classtesseract__srdf_1_1SRDFModel_a8006fedca78e0b15ac5a72786eae29a1}{acm}};}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{107   \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_a9d0116259e8c3b97d61e63a3209ffa7b}{tesseract\_common::CollisionMarginData::Ptr}} \mbox{\hyperlink{classtesseract__srdf_1_1SRDFModel_a24c04018109a2b2c7f7e9fde494b26d1}{collision\_margin\_data}};}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{110   \mbox{\hyperlink{structtesseract__common_1_1CalibrationInfo}{tesseract\_common::CalibrationInfo}} \mbox{\hyperlink{classtesseract__srdf_1_1SRDFModel_a3fbc83643c9ccb211711d2f7d43e6448}{calibration\_info}};}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__srdf_1_1SRDFModel_a54428d22e4a08c5c3c75f81ccdd7b1ab}{operator==}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__srdf_1_1SRDFModel}{SRDFModel}}\& rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{113   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__srdf_1_1SRDFModel_a5b3ae3bab1d0fe05e9ead58fe59cb05d}{operator!=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__srdf_1_1SRDFModel}{SRDFModel}}\& rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115 \textcolor{keyword}{private}:}
+\DoxyCodeLine{116   \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__srdf_1_1SRDFModel_ac98d07dd8f7b70e16ccb9a01abf56b9c}{boost::serialization::access}};}
+\DoxyCodeLine{117   \textcolor{keyword}{template} <\textcolor{keyword}{class} Archive>}
+\DoxyCodeLine{118   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__srdf_1_1SRDFModel_a2b06178e8f7c8c714c2033749c479402}{serialize}}(Archive\& ar, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{classtesseract__srdf_1_1SRDFModel_a43680d09b5966592ada54b63a8849aa6}{version}});  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{119 \};}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121 \}  \textcolor{comment}{// namespace tesseract\_srdf}}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123 \textcolor{preprocessor}{\#include <boost/serialization/export.hpp>}}
+\DoxyCodeLine{124 \textcolor{preprocessor}{\#include <boost/serialization/tracking.hpp>}}
+\DoxyCodeLine{125 BOOST\_CLASS\_EXPORT\_KEY2(\mbox{\hyperlink{classtesseract__srdf_1_1SRDFModel}{tesseract\_srdf::SRDFModel}}, \textcolor{stringliteral}{"{}SRDFModel"{}})}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_SRDF\_SRDF\_MODEL\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,115 @@
+\hypertarget{tesseract__gjk__pair__detector_8cpp}{}\doxysection{tesseract\+\_\+collision/bullet/src/tesseract\+\_\+gjk\+\_\+pair\+\_\+detector.cpp File Reference}
+\label{tesseract__gjk__pair__detector_8cpp}\index{tesseract\_collision/bullet/src/tesseract\_gjk\_pair\_detector.cpp@{tesseract\_collision/bullet/src/tesseract\_gjk\_pair\_detector.cpp}}
+{\ttfamily \#include $<$tesseract\+\_\+collision/bullet/tesseract\+\_\+gjk\+\_\+pair\+\_\+detector.\+h$>$}\newline
+{\ttfamily \#include $<$Bullet\+Collision/\+Collision\+Shapes/bt\+Convex\+Shape.\+h$>$}\newline
+{\ttfamily \#include $<$Bullet\+Collision/\+Narrow\+Phase\+Collision/bt\+Simplex\+Solver\+Interface.\+h$>$}\newline
+{\ttfamily \#include $<$Bullet\+Collision/\+Narrow\+Phase\+Collision/bt\+Convex\+Penetration\+Depth\+Solver.\+h$>$}\newline
+Include dependency graph for tesseract\+\_\+gjk\+\_\+pair\+\_\+detector.\+cpp\+:
+% FIG 0
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1btSupportVector}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::bt\+Support\+Vector}}
+\item 
+struct \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1btSimplex}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::bt\+Simplex}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacetesseract__collision}{tesseract\+\_\+collision}}
+\item 
+namespace \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{tesseract__gjk__pair__detector_8cpp_a33f63d97a8333611fd539f54c72e806b}{REL\+\_\+\+ERROR2}}~bt\+Scalar(1.\+0e-\/6)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_af8e1e3eda9937a6f319e60d0a31198ec}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::bt\+Compute\+Support}} (const bt\+Convex\+Shape $\ast$convexA, const bt\+Transform \&local\+TransA, const bt\+Convex\+Shape $\ast$convexB, const bt\+Transform \&local\+TransB, const bt\+Vector3 \&dir, bool check2d, bt\+Vector3 \&sup\+Aworld, bt\+Vector3 \&sup\+Bworld, bt\+Vector3 \&a\+Minb)
+\item 
+static const bt\+Vector3 \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_a733a92a067ca826f5a20ed95dff1a81a}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::ccd\+\_\+vec3\+\_\+origin}} (0, 0, 0)
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_aeea0100fa98b26c581817125b14af0f5}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::bt\+Simplex\+Init}} (bt\+Simplex $\ast$\mbox{\hyperlink{plugin__loader__unit_8cpp_aa0d75bebf90ce49ae839876d1d62e199}{s}})
+\item 
+int \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_a40b3a70a1bc1d3cb5f519fdc1b1f5333}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::bt\+Simplex\+Size}} (const bt\+Simplex $\ast$\mbox{\hyperlink{plugin__loader__unit_8cpp_aa0d75bebf90ce49ae839876d1d62e199}{s}})
+\item 
+const bt\+Support\+Vector $\ast$ \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_a806f2e968d57594e4cd3155a9a9bba43}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::bt\+Simplex\+Point}} (const bt\+Simplex $\ast$\mbox{\hyperlink{plugin__loader__unit_8cpp_aa0d75bebf90ce49ae839876d1d62e199}{s}}, int idx)
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_a4ba4bc155d0b4dcdecc00aea31b4b16b}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::bt\+Support\+Copy}} (bt\+Support\+Vector $\ast$d, const bt\+Support\+Vector $\ast$\mbox{\hyperlink{plugin__loader__unit_8cpp_aa0d75bebf90ce49ae839876d1d62e199}{s}})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_a414516d36006d032345415dd453cc104}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::bt\+Vec3\+Copy}} (bt\+Vector3 $\ast$\mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}}, const bt\+Vector3 $\ast$w)
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_a47e14c9b4e0c7815c13e840c68af8bc0}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::ccd\+Vec3\+Add}} (bt\+Vector3 $\ast$\mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}}, const bt\+Vector3 $\ast$w)
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_aadebb939a89fb82bfc8c7b2b9b58c613}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::ccd\+Vec3\+Sub}} (bt\+Vector3 $\ast$\mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}}, const bt\+Vector3 $\ast$w)
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_aff3a2802716bc49a1bd8af97aa69a325}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::bt\+Vec3\+Sub2}} (bt\+Vector3 $\ast$d, const bt\+Vector3 $\ast$\mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}}, const bt\+Vector3 $\ast$w)
+\item 
+bt\+Scalar \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_af3a8a2524cc8c08edb00ddd207852a10}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::bt\+Vec3\+Dot}} (const bt\+Vector3 $\ast$a, const bt\+Vector3 $\ast$b)
+\item 
+bt\+Scalar \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_a70a2c892cf653a31970c2a9c7f15dace}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::ccd\+Vec3\+Dist2}} (const bt\+Vector3 $\ast$a, const bt\+Vector3 $\ast$b)
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_af5f6db271e9318210dfb6454c3a4dbf4}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::bt\+Vec3\+Scale}} (bt\+Vector3 $\ast$d, bt\+Scalar k)
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_a8b291c79938427b0eb03106b4d2bfd9c}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::bt\+Vec3\+Cross}} (bt\+Vector3 $\ast$d, const bt\+Vector3 $\ast$a, const bt\+Vector3 $\ast$b)
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_ad50f91e7e992a6c6872ba3149fd63234}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::bt\+Triple\+Cross}} (const bt\+Vector3 $\ast$a, const bt\+Vector3 $\ast$b, const bt\+Vector3 $\ast$\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a53803beb6b02f370f4ff75b865341455}{c}}, bt\+Vector3 $\ast$d)
+\item 
+int \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_abe40d9bde2e2c9558bda045ddab65116}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::ccd\+Eq}} (bt\+Scalar \+\_\+a, bt\+Scalar \+\_\+b)
+\item 
+bt\+Scalar \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_a830cc5851d06b60380ca191d70b1475d}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::ccd\+Vec3X}} (const bt\+Vector3 $\ast$\mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}})
+\item 
+bt\+Scalar \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_ad12b2c429de0d9891789f842dc06594d}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::ccd\+Vec3Y}} (const bt\+Vector3 $\ast$\mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}})
+\item 
+bt\+Scalar \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_ad948070fed1963eb9009afa4d18e7930}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::ccd\+Vec3Z}} (const bt\+Vector3 $\ast$\mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}})
+\item 
+int \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_abdf25ac9e046fafc2307ec4e13a0032e}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::bt\+Vec3\+Eq}} (const bt\+Vector3 $\ast$a, const bt\+Vector3 $\ast$b)
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_a2ff4ccd49af30a589365edd198d1f4f1}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::bt\+Simplex\+Add}} (bt\+Simplex $\ast$\mbox{\hyperlink{plugin__loader__unit_8cpp_aa0d75bebf90ce49ae839876d1d62e199}{s}}, const bt\+Support\+Vector $\ast$\mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_abdb8aca4b36d2f515d5aa11f70a31e2e}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::bt\+Simplex\+Set}} (bt\+Simplex $\ast$\mbox{\hyperlink{plugin__loader__unit_8cpp_aa0d75bebf90ce49ae839876d1d62e199}{s}}, size\+\_\+t pos, const bt\+Support\+Vector $\ast$a)
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_ab6bfe5ad456b2d987ec076a35ed363b0}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::bt\+Simplex\+Set\+Size}} (bt\+Simplex $\ast$\mbox{\hyperlink{plugin__loader__unit_8cpp_aa0d75bebf90ce49ae839876d1d62e199}{s}}, int size)
+\item 
+const bt\+Support\+Vector $\ast$ \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_adf3da4ddc113a1163ba43b781fd11223}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::ccd\+Simplex\+Last}} (const bt\+Simplex $\ast$\mbox{\hyperlink{plugin__loader__unit_8cpp_aa0d75bebf90ce49ae839876d1d62e199}{s}})
+\item 
+int \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_a2e492bf9dcc299b1c28c2a4df53cb866}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::ccd\+Sign}} (bt\+Scalar val)
+\item 
+bt\+Scalar \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_ae1fabf1b036f4b03ba5ca2432380e612}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::bt\+Vec3\+Point\+Segment\+Dist2}} (const bt\+Vector3 $\ast$P, const bt\+Vector3 $\ast$x0, const bt\+Vector3 $\ast$b, bt\+Vector3 $\ast$witness)
+\item 
+bt\+Scalar \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_a3dfaab29c8c57b5b80ce27b84ce72d0d}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::bt\+Vec3\+Point\+Tri\+Dist2}} (const bt\+Vector3 $\ast$P, const bt\+Vector3 $\ast$x0, const bt\+Vector3 $\ast$B, const bt\+Vector3 $\ast$C, bt\+Vector3 $\ast$witness)
+\item 
+static int \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_a227a49525e43895ab08ca7fed9d31063}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::bt\+Do\+Simplex2}} (bt\+Simplex $\ast$simplex, bt\+Vector3 $\ast$dir)
+\item 
+static int \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_ab2b05f7f9db102dc25fb21bab137b578}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::bt\+Do\+Simplex3}} (bt\+Simplex $\ast$simplex, bt\+Vector3 $\ast$dir)
+\item 
+static int \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_ad305940c1c95acdd733ed540496a4389}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::bt\+Do\+Simplex4}} (bt\+Simplex $\ast$simplex, bt\+Vector3 $\ast$dir)
+\item 
+static int \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_abe511f7dce76cbba663103edbe448cd5}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::bt\+Do\+Simplex}} (bt\+Simplex $\ast$simplex, bt\+Vector3 $\ast$dir)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static const bt\+Scalar \mbox{\hyperlink{tesseract__gjk__pair__detector_8cpp_adeb74787844dbbf8945f8e626fca84c1}{g\+Gjk\+Epa\+Penetration\+Tolerance}} = 0.\+001f
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{tesseract__gjk__pair__detector_8cpp_a33f63d97a8333611fd539f54c72e806b}\label{tesseract__gjk__pair__detector_8cpp_a33f63d97a8333611fd539f54c72e806b}} 
+\index{tesseract\_gjk\_pair\_detector.cpp@{tesseract\_gjk\_pair\_detector.cpp}!REL\_ERROR2@{REL\_ERROR2}}
+\index{REL\_ERROR2@{REL\_ERROR2}!tesseract\_gjk\_pair\_detector.cpp@{tesseract\_gjk\_pair\_detector.cpp}}
+\doxysubsubsection{\texorpdfstring{REL\_ERROR2}{REL\_ERROR2}}
+{\footnotesize\ttfamily \#define REL\+\_\+\+ERROR2~bt\+Scalar(1.\+0e-\/6)}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{tesseract__gjk__pair__detector_8cpp_adeb74787844dbbf8945f8e626fca84c1}\label{tesseract__gjk__pair__detector_8cpp_adeb74787844dbbf8945f8e626fca84c1}} 
+\index{tesseract\_gjk\_pair\_detector.cpp@{tesseract\_gjk\_pair\_detector.cpp}!gGjkEpaPenetrationTolerance@{gGjkEpaPenetrationTolerance}}
+\index{gGjkEpaPenetrationTolerance@{gGjkEpaPenetrationTolerance}!tesseract\_gjk\_pair\_detector.cpp@{tesseract\_gjk\_pair\_detector.cpp}}
+\doxysubsubsection{\texorpdfstring{gGjkEpaPenetrationTolerance}{gGjkEpaPenetrationTolerance}}
+{\footnotesize\ttfamily const bt\+Scalar g\+Gjk\+Epa\+Penetration\+Tolerance = 0.\+001f\hspace{0.3cm}{\ttfamily [static]}}
+

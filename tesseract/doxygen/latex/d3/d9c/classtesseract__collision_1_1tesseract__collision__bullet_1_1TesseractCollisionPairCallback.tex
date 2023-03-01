@@ -1,0 +1,125 @@
+\hypertarget{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback}{}\doxysection{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::Tesseract\+Collision\+Pair\+Callback Class Reference}
+\label{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback}\index{tesseract\_collision::tesseract\_collision\_bullet::TesseractCollisionPairCallback@{tesseract\_collision::tesseract\_collision\_bullet::TesseractCollisionPairCallback}}
+
+
+A callback function that is called as part of the broadphase collision checking.  
+
+
+
+
+{\ttfamily \#include $<$bullet\+\_\+utils.\+h$>$}
+
+
+
+Inheritance diagram for tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::Tesseract\+Collision\+Pair\+Callback\+:
+% FIG 0
+
+
+Collaboration diagram for tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::Tesseract\+Collision\+Pair\+Callback\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback_ad409dcd3ef581ab5f8a1528d117fe5be}{Tesseract\+Collision\+Pair\+Callback}} (const bt\+Dispatcher\+Info \&dispatch\+Info, bt\+Collision\+Dispatcher $\ast$dispatcher, \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1BroadphaseContactResultCallback}{Broadphase\+Contact\+Result\+Callback}} \&results\+\_\+callback)
+\item 
+\mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback_affb40cbb305203f1bd3a9249107ad4b6}{$\sim$\+Tesseract\+Collision\+Pair\+Callback}} () override=default
+\item 
+\mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback_a9a56eee1204e37f417dadafa8521a3cc}{Tesseract\+Collision\+Pair\+Callback}} (const \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback}{Tesseract\+Collision\+Pair\+Callback}} \&)=default
+\item 
+\mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback}{Tesseract\+Collision\+Pair\+Callback}} \& \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback_a30f3c4e6d315f1e6e979ee9dffc8c99d}{operator=}} (const \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback}{Tesseract\+Collision\+Pair\+Callback}} \&)=delete
+\item 
+\mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback_a2a5705d98eeab1a6bf3a670716c30810}{Tesseract\+Collision\+Pair\+Callback}} (\mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback}{Tesseract\+Collision\+Pair\+Callback}} \&\&)=default
+\item 
+\mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback}{Tesseract\+Collision\+Pair\+Callback}} \& \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback_a3f27598cefceeb3f8b3275d09170a184}{operator=}} (\mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback}{Tesseract\+Collision\+Pair\+Callback}} \&\&)=delete
+\item 
+bool \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback_a79792b3e80c5e3e156fd797d8049a930}{process\+Overlap}} (bt\+Broadphase\+Pair \&pair) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const bt\+Dispatcher\+Info \& \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback_a93fa8ae4cd3901c188221f96e4522a52}{dispatch\+\_\+info\+\_\+}}
+\item 
+bt\+Collision\+Dispatcher $\ast$ \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback_a1a1b3b9509cd75b5f50d95add730beb5}{dispatcher\+\_\+}}
+\item 
+\mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1BroadphaseContactResultCallback}{Broadphase\+Contact\+Result\+Callback}} \& \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback_a7fc9b170d41c98359851f69eb769e323}{results\+\_\+callback\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A callback function that is called as part of the broadphase collision checking. 
+
+If the AABB of two collision objects are overlapping the process\+Overlap method is called and they are checked for collision/distance and the results are stored in collision\+\_\+. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback_ad409dcd3ef581ab5f8a1528d117fe5be}\label{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback_ad409dcd3ef581ab5f8a1528d117fe5be}} 
+\index{tesseract\_collision::tesseract\_collision\_bullet::TesseractCollisionPairCallback@{tesseract\_collision::tesseract\_collision\_bullet::TesseractCollisionPairCallback}!TesseractCollisionPairCallback@{TesseractCollisionPairCallback}}
+\index{TesseractCollisionPairCallback@{TesseractCollisionPairCallback}!tesseract\_collision::tesseract\_collision\_bullet::TesseractCollisionPairCallback@{tesseract\_collision::tesseract\_collision\_bullet::TesseractCollisionPairCallback}}
+\doxysubsubsection{\texorpdfstring{TesseractCollisionPairCallback()}{TesseractCollisionPairCallback()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Tesseract\+Collision\+Pair\+Callback\+::\+Tesseract\+Collision\+Pair\+Callback (\begin{DoxyParamCaption}\item[{const bt\+Dispatcher\+Info \&}]{dispatch\+Info,  }\item[{bt\+Collision\+Dispatcher $\ast$}]{dispatcher,  }\item[{\mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1BroadphaseContactResultCallback}{Broadphase\+Contact\+Result\+Callback}} \&}]{results\+\_\+callback }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback_affb40cbb305203f1bd3a9249107ad4b6}\label{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback_affb40cbb305203f1bd3a9249107ad4b6}} 
+\index{tesseract\_collision::tesseract\_collision\_bullet::TesseractCollisionPairCallback@{tesseract\_collision::tesseract\_collision\_bullet::TesseractCollisionPairCallback}!````~TesseractCollisionPairCallback@{$\sim$TesseractCollisionPairCallback}}
+\index{````~TesseractCollisionPairCallback@{$\sim$TesseractCollisionPairCallback}!tesseract\_collision::tesseract\_collision\_bullet::TesseractCollisionPairCallback@{tesseract\_collision::tesseract\_collision\_bullet::TesseractCollisionPairCallback}}
+\doxysubsubsection{\texorpdfstring{$\sim$TesseractCollisionPairCallback()}{~TesseractCollisionPairCallback()}}
+{\footnotesize\ttfamily tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Tesseract\+Collision\+Pair\+Callback\+::$\sim$\+Tesseract\+Collision\+Pair\+Callback (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback_a9a56eee1204e37f417dadafa8521a3cc}\label{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback_a9a56eee1204e37f417dadafa8521a3cc}} 
+\index{tesseract\_collision::tesseract\_collision\_bullet::TesseractCollisionPairCallback@{tesseract\_collision::tesseract\_collision\_bullet::TesseractCollisionPairCallback}!TesseractCollisionPairCallback@{TesseractCollisionPairCallback}}
+\index{TesseractCollisionPairCallback@{TesseractCollisionPairCallback}!tesseract\_collision::tesseract\_collision\_bullet::TesseractCollisionPairCallback@{tesseract\_collision::tesseract\_collision\_bullet::TesseractCollisionPairCallback}}
+\doxysubsubsection{\texorpdfstring{TesseractCollisionPairCallback()}{TesseractCollisionPairCallback()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Tesseract\+Collision\+Pair\+Callback\+::\+Tesseract\+Collision\+Pair\+Callback (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback}{Tesseract\+Collision\+Pair\+Callback}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback_a2a5705d98eeab1a6bf3a670716c30810}\label{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback_a2a5705d98eeab1a6bf3a670716c30810}} 
+\index{tesseract\_collision::tesseract\_collision\_bullet::TesseractCollisionPairCallback@{tesseract\_collision::tesseract\_collision\_bullet::TesseractCollisionPairCallback}!TesseractCollisionPairCallback@{TesseractCollisionPairCallback}}
+\index{TesseractCollisionPairCallback@{TesseractCollisionPairCallback}!tesseract\_collision::tesseract\_collision\_bullet::TesseractCollisionPairCallback@{tesseract\_collision::tesseract\_collision\_bullet::TesseractCollisionPairCallback}}
+\doxysubsubsection{\texorpdfstring{TesseractCollisionPairCallback()}{TesseractCollisionPairCallback()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Tesseract\+Collision\+Pair\+Callback\+::\+Tesseract\+Collision\+Pair\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback}{Tesseract\+Collision\+Pair\+Callback}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback_a30f3c4e6d315f1e6e979ee9dffc8c99d}\label{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback_a30f3c4e6d315f1e6e979ee9dffc8c99d}} 
+\index{tesseract\_collision::tesseract\_collision\_bullet::TesseractCollisionPairCallback@{tesseract\_collision::tesseract\_collision\_bullet::TesseractCollisionPairCallback}!operator=@{operator=}}
+\index{operator=@{operator=}!tesseract\_collision::tesseract\_collision\_bullet::TesseractCollisionPairCallback@{tesseract\_collision::tesseract\_collision\_bullet::TesseractCollisionPairCallback}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback}{Tesseract\+Collision\+Pair\+Callback}} \& tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Tesseract\+Collision\+Pair\+Callback\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback}{Tesseract\+Collision\+Pair\+Callback}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback_a3f27598cefceeb3f8b3275d09170a184}\label{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback_a3f27598cefceeb3f8b3275d09170a184}} 
+\index{tesseract\_collision::tesseract\_collision\_bullet::TesseractCollisionPairCallback@{tesseract\_collision::tesseract\_collision\_bullet::TesseractCollisionPairCallback}!operator=@{operator=}}
+\index{operator=@{operator=}!tesseract\_collision::tesseract\_collision\_bullet::TesseractCollisionPairCallback@{tesseract\_collision::tesseract\_collision\_bullet::TesseractCollisionPairCallback}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback}{Tesseract\+Collision\+Pair\+Callback}} \& tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Tesseract\+Collision\+Pair\+Callback\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback}{Tesseract\+Collision\+Pair\+Callback}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback_a79792b3e80c5e3e156fd797d8049a930}\label{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback_a79792b3e80c5e3e156fd797d8049a930}} 
+\index{tesseract\_collision::tesseract\_collision\_bullet::TesseractCollisionPairCallback@{tesseract\_collision::tesseract\_collision\_bullet::TesseractCollisionPairCallback}!processOverlap@{processOverlap}}
+\index{processOverlap@{processOverlap}!tesseract\_collision::tesseract\_collision\_bullet::TesseractCollisionPairCallback@{tesseract\_collision::tesseract\_collision\_bullet::TesseractCollisionPairCallback}}
+\doxysubsubsection{\texorpdfstring{processOverlap()}{processOverlap()}}
+{\footnotesize\ttfamily bool tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Tesseract\+Collision\+Pair\+Callback\+::process\+Overlap (\begin{DoxyParamCaption}\item[{bt\+Broadphase\+Pair \&}]{pair }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback_a93fa8ae4cd3901c188221f96e4522a52}\label{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback_a93fa8ae4cd3901c188221f96e4522a52}} 
+\index{tesseract\_collision::tesseract\_collision\_bullet::TesseractCollisionPairCallback@{tesseract\_collision::tesseract\_collision\_bullet::TesseractCollisionPairCallback}!dispatch\_info\_@{dispatch\_info\_}}
+\index{dispatch\_info\_@{dispatch\_info\_}!tesseract\_collision::tesseract\_collision\_bullet::TesseractCollisionPairCallback@{tesseract\_collision::tesseract\_collision\_bullet::TesseractCollisionPairCallback}}
+\doxysubsubsection{\texorpdfstring{dispatch\_info\_}{dispatch\_info\_}}
+{\footnotesize\ttfamily const bt\+Dispatcher\+Info\& tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Tesseract\+Collision\+Pair\+Callback\+::dispatch\+\_\+info\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback_a1a1b3b9509cd75b5f50d95add730beb5}\label{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback_a1a1b3b9509cd75b5f50d95add730beb5}} 
+\index{tesseract\_collision::tesseract\_collision\_bullet::TesseractCollisionPairCallback@{tesseract\_collision::tesseract\_collision\_bullet::TesseractCollisionPairCallback}!dispatcher\_@{dispatcher\_}}
+\index{dispatcher\_@{dispatcher\_}!tesseract\_collision::tesseract\_collision\_bullet::TesseractCollisionPairCallback@{tesseract\_collision::tesseract\_collision\_bullet::TesseractCollisionPairCallback}}
+\doxysubsubsection{\texorpdfstring{dispatcher\_}{dispatcher\_}}
+{\footnotesize\ttfamily bt\+Collision\+Dispatcher$\ast$ tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Tesseract\+Collision\+Pair\+Callback\+::dispatcher\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback_a7fc9b170d41c98359851f69eb769e323}\label{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback_a7fc9b170d41c98359851f69eb769e323}} 
+\index{tesseract\_collision::tesseract\_collision\_bullet::TesseractCollisionPairCallback@{tesseract\_collision::tesseract\_collision\_bullet::TesseractCollisionPairCallback}!results\_callback\_@{results\_callback\_}}
+\index{results\_callback\_@{results\_callback\_}!tesseract\_collision::tesseract\_collision\_bullet::TesseractCollisionPairCallback@{tesseract\_collision::tesseract\_collision\_bullet::TesseractCollisionPairCallback}}
+\doxysubsubsection{\texorpdfstring{results\_callback\_}{results\_callback\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1BroadphaseContactResultCallback}{Broadphase\+Contact\+Result\+Callback}}\& tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Tesseract\+Collision\+Pair\+Callback\+::results\+\_\+callback\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+tesseract\+\_\+collision/bullet/include/tesseract\+\_\+collision/bullet/\mbox{\hyperlink{bullet__utils_8h}{bullet\+\_\+utils.\+h}}\item 
+tesseract\+\_\+collision/bullet/src/\mbox{\hyperlink{bullet__utils_8cpp}{bullet\+\_\+utils.\+cpp}}\end{DoxyCompactItemize}

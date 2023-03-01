@@ -1,0 +1,98 @@
+\hypertarget{classtesseract__collision_1_1tesseract__collision__fcl_1_1FCLCollisionObjectWrapper}{}\doxysection{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::FCLCollision\+Object\+Wrapper Class Reference}
+\label{classtesseract__collision_1_1tesseract__collision__fcl_1_1FCLCollisionObjectWrapper}\index{tesseract\_collision::tesseract\_collision\_fcl::FCLCollisionObjectWrapper@{tesseract\_collision::tesseract\_collision\_fcl::FCLCollisionObjectWrapper}}
+
+
+This is a wrapper around FCL Collision Object Class which allows you to expand the AABB by the contact dist.  
+
+
+
+
+{\ttfamily \#include $<$fcl\+\_\+collision\+\_\+object\+\_\+wrapper.\+h$>$}
+
+
+
+Inheritance diagram for tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::FCLCollision\+Object\+Wrapper\+:
+% FIG 0
+
+
+Collaboration diagram for tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::FCLCollision\+Object\+Wrapper\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__fcl_1_1FCLCollisionObjectWrapper_a20bc2ae95cddaf4bcefc9e7a31501833}{set\+Contact\+Distance\+Threshold}} (double contact\+\_\+distance)
+\begin{DoxyCompactList}\small\item\em Set the collision objects contact distance threshold. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__fcl_1_1FCLCollisionObjectWrapper_afcb85ace1e52b93047335c11e5d4a4bc}{get\+Contact\+Distance\+Threshold}} () const
+\begin{DoxyCompactList}\small\item\em Get the collision objects contact distance threshold. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__fcl_1_1FCLCollisionObjectWrapper_af606359addeed10e4fe4f6edfd1a444b}{update\+AABB}} ()
+\begin{DoxyCompactList}\small\item\em Update the internal AABB. This must be called instead of the base class compute\+AABB(). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__fcl_1_1FCLCollisionObjectWrapper_ae00b5537297d2c4bfabfd6489648833f}{contact\+\_\+distance\+\_\+}} \{ 0 \}
+\begin{DoxyCompactList}\small\item\em The contact distance threshold. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This is a wrapper around FCL Collision Object Class which allows you to expand the AABB by the contact dist. 
+
+This significantly improves performance when making distance requests if performing a contact tests type FIRST. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtesseract__collision_1_1tesseract__collision__fcl_1_1FCLCollisionObjectWrapper_afcb85ace1e52b93047335c11e5d4a4bc}\label{classtesseract__collision_1_1tesseract__collision__fcl_1_1FCLCollisionObjectWrapper_afcb85ace1e52b93047335c11e5d4a4bc}} 
+\index{tesseract\_collision::tesseract\_collision\_fcl::FCLCollisionObjectWrapper@{tesseract\_collision::tesseract\_collision\_fcl::FCLCollisionObjectWrapper}!getContactDistanceThreshold@{getContactDistanceThreshold}}
+\index{getContactDistanceThreshold@{getContactDistanceThreshold}!tesseract\_collision::tesseract\_collision\_fcl::FCLCollisionObjectWrapper@{tesseract\_collision::tesseract\_collision\_fcl::FCLCollisionObjectWrapper}}
+\doxysubsubsection{\texorpdfstring{getContactDistanceThreshold()}{getContactDistanceThreshold()}}
+{\footnotesize\ttfamily double tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::\+FCLCollision\+Object\+Wrapper\+::get\+Contact\+Distance\+Threshold (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the collision objects contact distance threshold. 
+
+\begin{DoxyReturn}{Returns}
+The contact distance threshold. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__collision_1_1tesseract__collision__fcl_1_1FCLCollisionObjectWrapper_a20bc2ae95cddaf4bcefc9e7a31501833}\label{classtesseract__collision_1_1tesseract__collision__fcl_1_1FCLCollisionObjectWrapper_a20bc2ae95cddaf4bcefc9e7a31501833}} 
+\index{tesseract\_collision::tesseract\_collision\_fcl::FCLCollisionObjectWrapper@{tesseract\_collision::tesseract\_collision\_fcl::FCLCollisionObjectWrapper}!setContactDistanceThreshold@{setContactDistanceThreshold}}
+\index{setContactDistanceThreshold@{setContactDistanceThreshold}!tesseract\_collision::tesseract\_collision\_fcl::FCLCollisionObjectWrapper@{tesseract\_collision::tesseract\_collision\_fcl::FCLCollisionObjectWrapper}}
+\doxysubsubsection{\texorpdfstring{setContactDistanceThreshold()}{setContactDistanceThreshold()}}
+{\footnotesize\ttfamily void tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::\+FCLCollision\+Object\+Wrapper\+::set\+Contact\+Distance\+Threshold (\begin{DoxyParamCaption}\item[{double}]{contact\+\_\+distance }\end{DoxyParamCaption})}
+
+
+
+Set the collision objects contact distance threshold. 
+
+This automatically calls \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__fcl_1_1FCLCollisionObjectWrapper_af606359addeed10e4fe4f6edfd1a444b}{update\+AABB()}} which increases the AABB by the contact distance. 
+\begin{DoxyParams}{Parameters}
+{\em contact\+\_\+distance} & The contact distance threshold. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__collision_1_1tesseract__collision__fcl_1_1FCLCollisionObjectWrapper_af606359addeed10e4fe4f6edfd1a444b}\label{classtesseract__collision_1_1tesseract__collision__fcl_1_1FCLCollisionObjectWrapper_af606359addeed10e4fe4f6edfd1a444b}} 
+\index{tesseract\_collision::tesseract\_collision\_fcl::FCLCollisionObjectWrapper@{tesseract\_collision::tesseract\_collision\_fcl::FCLCollisionObjectWrapper}!updateAABB@{updateAABB}}
+\index{updateAABB@{updateAABB}!tesseract\_collision::tesseract\_collision\_fcl::FCLCollisionObjectWrapper@{tesseract\_collision::tesseract\_collision\_fcl::FCLCollisionObjectWrapper}}
+\doxysubsubsection{\texorpdfstring{updateAABB()}{updateAABB()}}
+{\footnotesize\ttfamily void tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::\+FCLCollision\+Object\+Wrapper\+::update\+AABB (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Update the internal AABB. This must be called instead of the base class compute\+AABB(). 
+
+After setting the collision objects transform this must be called. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classtesseract__collision_1_1tesseract__collision__fcl_1_1FCLCollisionObjectWrapper_ae00b5537297d2c4bfabfd6489648833f}\label{classtesseract__collision_1_1tesseract__collision__fcl_1_1FCLCollisionObjectWrapper_ae00b5537297d2c4bfabfd6489648833f}} 
+\index{tesseract\_collision::tesseract\_collision\_fcl::FCLCollisionObjectWrapper@{tesseract\_collision::tesseract\_collision\_fcl::FCLCollisionObjectWrapper}!contact\_distance\_@{contact\_distance\_}}
+\index{contact\_distance\_@{contact\_distance\_}!tesseract\_collision::tesseract\_collision\_fcl::FCLCollisionObjectWrapper@{tesseract\_collision::tesseract\_collision\_fcl::FCLCollisionObjectWrapper}}
+\doxysubsubsection{\texorpdfstring{contact\_distance\_}{contact\_distance\_}}
+{\footnotesize\ttfamily double tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::\+FCLCollision\+Object\+Wrapper\+::contact\+\_\+distance\+\_\+ \{ 0 \}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The contact distance threshold. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+tesseract\+\_\+collision/fcl/include/tesseract\+\_\+collision/fcl/\mbox{\hyperlink{fcl__collision__object__wrapper_8h}{fcl\+\_\+collision\+\_\+object\+\_\+wrapper.\+h}}\item 
+tesseract\+\_\+collision/fcl/src/\mbox{\hyperlink{fcl__collision__object__wrapper_8cpp}{fcl\+\_\+collision\+\_\+object\+\_\+wrapper.\+cpp}}\end{DoxyCompactItemize}

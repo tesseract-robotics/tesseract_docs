@@ -1,0 +1,62 @@
+\hypertarget{class__loader_8h_source}{}\doxysection{class\+\_\+loader.\+h}
+\label{class__loader_8h_source}\index{tesseract\_common/include/tesseract\_common/class\_loader.h@{tesseract\_common/include/tesseract\_common/class\_loader.h}}
+\mbox{\hyperlink{class__loader_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#ifndef TESSERACT\_COMMON\_CLASS\_LOADER\_H}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define TESSERACT\_COMMON\_CLASS\_LOADER\_H}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{macros_8h}{tesseract\_common/macros.h}}>}}
+\DoxyCodeLine{30 \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{34 \mbox{\hyperlink{namespaceTESSERACT__COMMON__IGNORE__WARNINGS__POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__common}{tesseract\_common}}}
+\DoxyCodeLine{37 \{}
+\DoxyCodeLine{49 \textcolor{keyword}{struct }\mbox{\hyperlink{structtesseract__common_1_1ClassLoader}{ClassLoader}}}
+\DoxyCodeLine{50 \{}
+\DoxyCodeLine{60   \textcolor{keyword}{template} <\textcolor{keyword}{class} ClassBase>}
+\DoxyCodeLine{61   \textcolor{keyword}{static} std::shared\_ptr<ClassBase> \mbox{\hyperlink{structtesseract__common_1_1ClassLoader_ad1933611b2e5247267c29b146fb3054e}{createSharedInstance}}(\textcolor{keyword}{const} std::string\& \mbox{\hyperlink{plugin__loader__unit_8cpp_a0f96facbec34815c2e03d89aac11b2f5}{symbol\_name}},}
+\DoxyCodeLine{62                                                          \textcolor{keyword}{const} std::string\& library\_name,}
+\DoxyCodeLine{63                                                          \textcolor{keyword}{const} std::string\& library\_directory = \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{73   \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{structtesseract__common_1_1ClassLoader_a0bc9e092d94b12566d67e5a5ee0de337}{isClassAvailable}}(\textcolor{keyword}{const} std::string\& \mbox{\hyperlink{plugin__loader__unit_8cpp_a0f96facbec34815c2e03d89aac11b2f5}{symbol\_name}},}
+\DoxyCodeLine{74                                       \textcolor{keyword}{const} std::string\& library\_name,}
+\DoxyCodeLine{75                                       \textcolor{keyword}{const} std::string\& library\_directory = \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{84   \textcolor{keyword}{static} \textcolor{keyword}{inline} std::vector<std::string> \mbox{\hyperlink{structtesseract__common_1_1ClassLoader_a8d2d1f0b2f092748c0b0450955a8d9e0}{getAvailableSymbols}}(\textcolor{keyword}{const} std::string\& section,}
+\DoxyCodeLine{85                                                              \textcolor{keyword}{const} std::string\& library\_name,}
+\DoxyCodeLine{86                                                              \textcolor{keyword}{const} std::string\& library\_directory = \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{94   \textcolor{keyword}{static} \textcolor{keyword}{inline} std::vector<std::string> \mbox{\hyperlink{structtesseract__common_1_1ClassLoader_a816ec5cb50eb1a7011b561dd0d789494}{getAvailableSections}}(\textcolor{keyword}{const} std::string\& library\_name,}
+\DoxyCodeLine{95                                                               \textcolor{keyword}{const} std::string\& library\_directory = \textcolor{stringliteral}{"{}"{}},}
+\DoxyCodeLine{96                                                               \textcolor{keywordtype}{bool} include\_hidden = \textcolor{keyword}{false});}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{111   \textcolor{keyword}{static} \textcolor{keyword}{inline} std::string \mbox{\hyperlink{structtesseract__common_1_1ClassLoader_af2749622fe3be804a464ce5d5ea62ca9}{decorate}}(\textcolor{keyword}{const} std::string\& library\_name, \textcolor{keyword}{const} std::string\& library\_directory = \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{112 \};}
+\DoxyCodeLine{113 \}  \textcolor{comment}{// namespace tesseract\_common}}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115 \textcolor{comment}{// clang-\/format off}}
+\DoxyCodeLine{116 \textcolor{preprocessor}{\#define TESSERACT\_ADD\_PLUGIN\_SECTIONED(DERIVED\_CLASS, ALIAS, SECTION)                                                  \(\backslash\)}}
+\DoxyCodeLine{117 \textcolor{preprocessor}{  extern "{}C"{}} BOOST\_SYMBOL\_EXPORT DERIVED\_CLASS ALIAS;                                                                  \(\backslash\)}
+\DoxyCodeLine{118   BOOST\_DLL\_SECTION(SECTION, read) BOOST\_DLL\_SELECTANY                                                                 \(\backslash\)}
+\DoxyCodeLine{119   DERIVED\_CLASS ALIAS;}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121 \textcolor{preprocessor}{\#define TESSERACT\_ADD\_PLUGIN(DERIVED\_CLASS, ALIAS)                                                                     \(\backslash\)}}
+\DoxyCodeLine{122 \textcolor{preprocessor}{  TESSERACT\_ADD\_PLUGIN\_SECTIONED(DERIVED\_CLASS, ALIAS, boostdll)}}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124 \textcolor{preprocessor}{\#define TESSERACT\_PLUGIN\_ANCHOR\_DECL(ANCHOR\_NAME) \(\backslash\)}}
+\DoxyCodeLine{125 \textcolor{preprocessor}{  const void* ANCHOR\_NAME(); }\textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127 \textcolor{preprocessor}{\#define TESSERACT\_PLUGIN\_ANCHOR\_IMPL(ANCHOR\_NAME) \(\backslash\)}}
+\DoxyCodeLine{128 \textcolor{preprocessor}{  const void* ANCHOR\_NAME() \{ return (const void*)(\&ANCHOR\_NAME); \} }\textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130 \textcolor{comment}{// clang-\/format on}}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{class__loader_8hpp}{tesseract\_common/class\_loader.hpp}}>}}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_COMMON\_CLASS\_LOADER\_H}}
+
+\end{DoxyCode}

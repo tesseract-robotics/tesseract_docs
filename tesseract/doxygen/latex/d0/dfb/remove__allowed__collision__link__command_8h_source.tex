@@ -1,0 +1,51 @@
+\hypertarget{remove__allowed__collision__link__command_8h_source}{}\doxysection{remove\+\_\+allowed\+\_\+collision\+\_\+link\+\_\+command.\+h}
+\label{remove__allowed__collision__link__command_8h_source}\index{tesseract\_environment/include/tesseract\_environment/commands/remove\_allowed\_collision\_link\_command.h@{tesseract\_environment/include/tesseract\_environment/commands/remove\_allowed\_collision\_link\_command.h}}
+\mbox{\hyperlink{remove__allowed__collision__link__command_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#ifndef TESSERACT\_ENVIRONMENT\_REMOVE\_ALLOWED\_COLLISION\_LINK\_COMMAND\_H}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define TESSERACT\_ENVIRONMENT\_REMOVE\_ALLOWED\_COLLISION\_LINK\_COMMAND\_H}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{macros_8h}{tesseract\_common/macros.h}}>}}
+\DoxyCodeLine{30 \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include <boost/serialization/access.hpp>}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{33 \mbox{\hyperlink{namespaceTESSERACT__COMMON__IGNORE__WARNINGS__POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{command_8h}{tesseract\_environment/command.h}}>}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__environment}{tesseract\_environment}}}
+\DoxyCodeLine{38 \{}
+\DoxyCodeLine{39 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__environment_1_1RemoveAllowedCollisionLinkCommand}{RemoveAllowedCollisionLinkCommand}} : \textcolor{keyword}{public} \mbox{\hyperlink{classtesseract__environment_1_1Command}{Command}}}
+\DoxyCodeLine{40 \{}
+\DoxyCodeLine{41 \textcolor{keyword}{public}:}
+\DoxyCodeLine{42   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__environment_1_1RemoveAllowedCollisionLinkCommand_a013ddd7f7e254a5cccdd82aa9454c7c4}{Ptr}} = std::shared\_ptr<RemoveAllowedCollisionLinkCommand>;}
+\DoxyCodeLine{43   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__environment_1_1RemoveAllowedCollisionLinkCommand_a0e9f0d5be3bd60c2b387fd19a463afaa}{ConstPtr}} = std::shared\_ptr<const RemoveAllowedCollisionLinkCommand>;}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45   \mbox{\hyperlink{classtesseract__environment_1_1RemoveAllowedCollisionLinkCommand_a70f90ed4a636d999d3a7c08a000178d9}{RemoveAllowedCollisionLinkCommand}}() : \mbox{\hyperlink{classtesseract__environment_1_1Command}{Command}}(\mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029}{CommandType}}::\mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029ac40ca000ef4f65a27cf7998ef4f020a0}{REMOVE\_ALLOWED\_COLLISION\_LINK}})\{\};}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{51   \mbox{\hyperlink{classtesseract__environment_1_1RemoveAllowedCollisionLinkCommand_a424175c15d438cc23ff5981ace9716dc}{RemoveAllowedCollisionLinkCommand}}(std::string link\_name)}
+\DoxyCodeLine{52     : \mbox{\hyperlink{classtesseract__environment_1_1Command}{Command}}(\mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029}{CommandType}}::\mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029ac40ca000ef4f65a27cf7998ef4f020a0}{REMOVE\_ALLOWED\_COLLISION\_LINK}}), \mbox{\hyperlink{classtesseract__environment_1_1RemoveAllowedCollisionLinkCommand_ad94142879f08ad5cd1b118ae97312b3d}{link\_name\_}}(std::move(link\_name))}
+\DoxyCodeLine{53   \{}
+\DoxyCodeLine{54   \}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56   \textcolor{keyword}{const} std::string\& \mbox{\hyperlink{classtesseract__environment_1_1RemoveAllowedCollisionLinkCommand_acc36a3263fb89c4751e12e5b39534f64}{getLinkName}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classtesseract__environment_1_1RemoveAllowedCollisionLinkCommand_ad94142879f08ad5cd1b118ae97312b3d}{link\_name\_}}; \}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1RemoveAllowedCollisionLinkCommand_a32c63415c929663a4a7b905fd2bdff7b}{operator==}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__environment_1_1RemoveAllowedCollisionLinkCommand}{RemoveAllowedCollisionLinkCommand}}\& rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{59   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1RemoveAllowedCollisionLinkCommand_a45555dd7d47372a12809d18a9d834870}{operator!=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__environment_1_1RemoveAllowedCollisionLinkCommand}{RemoveAllowedCollisionLinkCommand}}\& rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{keyword}{private}:}
+\DoxyCodeLine{62   std::string \mbox{\hyperlink{classtesseract__environment_1_1RemoveAllowedCollisionLinkCommand_ad94142879f08ad5cd1b118ae97312b3d}{link\_name\_}};}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64   \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__environment_1_1RemoveAllowedCollisionLinkCommand_ac98d07dd8f7b70e16ccb9a01abf56b9c}{boost::serialization::access}};}
+\DoxyCodeLine{65   \textcolor{keyword}{template} <\textcolor{keyword}{class} Archive>}
+\DoxyCodeLine{66   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__environment_1_1RemoveAllowedCollisionLinkCommand_a989853e63116e567d92d6df97b393381}{serialize}}(Archive\& ar, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} version);  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{67 \};}
+\DoxyCodeLine{68 \}  \textcolor{comment}{// namespace tesseract\_environment}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#include <boost/serialization/export.hpp>}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#include <boost/serialization/tracking.hpp>}}
+\DoxyCodeLine{72 BOOST\_CLASS\_EXPORT\_KEY2(\mbox{\hyperlink{classtesseract__environment_1_1RemoveAllowedCollisionLinkCommand}{tesseract\_environment::RemoveAllowedCollisionLinkCommand}}, \textcolor{stringliteral}{"{}RemoveAllowedCollisionLinkCommand"{}})}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_ENVIRONMENT\_REMOVE\_ALLOWED\_COLLISION\_LINK\_COMMAND\_H}}
+
+\end{DoxyCode}

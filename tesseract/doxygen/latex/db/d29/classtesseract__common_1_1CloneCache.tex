@@ -1,0 +1,220 @@
+\hypertarget{classtesseract__common_1_1CloneCache}{}\doxysection{tesseract\+\_\+common\+::Clone\+Cache\texorpdfstring{$<$}{<} Cache\+Type \texorpdfstring{$>$}{>} Class Template Reference}
+\label{classtesseract__common_1_1CloneCache}\index{tesseract\_common::CloneCache$<$ CacheType $>$@{tesseract\_common::CloneCache$<$ CacheType $>$}}
+
+
+Used to create a cache of objects.  
+
+
+
+
+{\ttfamily \#include $<$clone\+\_\+cache.\+h$>$}
+
+
+
+Collaboration diagram for tesseract\+\_\+common\+::Clone\+Cache\texorpdfstring{$<$}{<} Cache\+Type \texorpdfstring{$>$}{>}\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtesseract__common_1_1CloneCache_ad744df8743083c4ffe8e654bf73644b4}{Clone\+Cache}} (std\+::shared\+\_\+ptr$<$ Cache\+Type $>$ original, const long \&cache\+\_\+size=5)
+\item 
+const std\+::shared\+\_\+ptr$<$ Cache\+Type $>$ \& \mbox{\hyperlink{classtesseract__common_1_1CloneCache_a3fe183cceae47d4fdf786a6d904e1f55}{operator-\/$>$}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ Cache\+Type $>$ \mbox{\hyperlink{classtesseract__common_1_1CloneCache_a1d2b2e39d266e3864054aaf7c18390e4}{clone}} ()
+\begin{DoxyCompactList}\small\item\em Gets a clone of original\+\_\+. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__common_1_1CloneCache_ac7cb1b261cc840b3674dd2cea6e92887}{set\+Cache\+Size}} (long size)
+\begin{DoxyCompactList}\small\item\em Set the cache size. \end{DoxyCompactList}\item 
+long \mbox{\hyperlink{classtesseract__common_1_1CloneCache_a5185b2c35a8cc058b40209422bedfa35}{get\+Cache\+Size}} () const
+\begin{DoxyCompactList}\small\item\em Get the set cache size. \end{DoxyCompactList}\item 
+long \mbox{\hyperlink{classtesseract__common_1_1CloneCache_a8f7c577704d6655df29ea2244fd52735}{get\+Current\+Cache\+Size}} () const
+\begin{DoxyCompactList}\small\item\em Get the current size of the cache. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__common_1_1CloneCache_a5637528e042ab9beaf6a21ad74b595f8}{update\+Cache}} ()
+\begin{DoxyCompactList}\small\item\em If original\+\_\+ has changed it will update or rebuild the cache of objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const bool \mbox{\hyperlink{classtesseract__common_1_1CloneCache_a88bb74b89e3a432547b7273402caeb17}{supports\+\_\+update}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classtesseract__common_1_1CloneCache_aff32dea42001242cb52343dc9b9afb30}{create\+Clone}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ Cache\+Type $>$ \mbox{\hyperlink{classtesseract__common_1_1CloneCache_aa95eee9c55f1461af8a215d591ff7c32}{get\+Clone}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ Cache\+Type $>$ \mbox{\hyperlink{classtesseract__common_1_1CloneCache_a6f76221f6e493f96e46dd088358070d6}{original\+\_\+}}
+\item 
+std\+::size\+\_\+t \mbox{\hyperlink{classtesseract__common_1_1CloneCache_ae402a65c0828425f28936c1a872f1127}{cache\+\_\+size\+\_\+}} \{ 5 \}
+\begin{DoxyCompactList}\small\item\em The assigned cache size. \end{DoxyCompactList}\item 
+std\+::deque$<$ std\+::shared\+\_\+ptr$<$ Cache\+Type $>$ $>$ \mbox{\hyperlink{classtesseract__common_1_1CloneCache_a3032f7e35dc80f2869b6fe57fcbc582f}{cache\+\_\+}}
+\begin{DoxyCompactList}\small\item\em A vector of cached objects. \end{DoxyCompactList}\item 
+std\+::mutex \mbox{\hyperlink{classtesseract__common_1_1CloneCache_aedc6bafd48f1d915941847fbb33ee1a2}{cache\+\_\+mutex\+\_\+}}
+\begin{DoxyCompactList}\small\item\em The mutex used when reading and writing to cache\+\_\+. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Cache\+Type$>$\newline
+class tesseract\+\_\+common\+::\+Clone\+Cache$<$ Cache\+Type $>$}
+Used to create a cache of objects. 
+
+Cache\+Type needs the following methods Cache\+Type\+::\+Ptr \mbox{\hyperlink{clone__cache__unit_8cpp_a468102a14fab28bb8303ea654a9b891b}{clone() const}}; int get\+Revision() const; bool update(\+Const Cache\+Type\+::\+Const\+Ptr\&); // optional 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtesseract__common_1_1CloneCache_ad744df8743083c4ffe8e654bf73644b4}\label{classtesseract__common_1_1CloneCache_ad744df8743083c4ffe8e654bf73644b4}} 
+\index{tesseract\_common::CloneCache$<$ CacheType $>$@{tesseract\_common::CloneCache$<$ CacheType $>$}!CloneCache@{CloneCache}}
+\index{CloneCache@{CloneCache}!tesseract\_common::CloneCache$<$ CacheType $>$@{tesseract\_common::CloneCache$<$ CacheType $>$}}
+\doxysubsubsection{\texorpdfstring{CloneCache()}{CloneCache()}}
+{\footnotesize\ttfamily template$<$typename Cache\+Type $>$ \\
+\mbox{\hyperlink{classtesseract__common_1_1CloneCache}{tesseract\+\_\+common\+::\+Clone\+Cache}}$<$ Cache\+Type $>$\+::\+Clone\+Cache (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ Cache\+Type $>$}]{original,  }\item[{const long \&}]{cache\+\_\+size = {\ttfamily 5} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtesseract__common_1_1CloneCache_a1d2b2e39d266e3864054aaf7c18390e4}\label{classtesseract__common_1_1CloneCache_a1d2b2e39d266e3864054aaf7c18390e4}} 
+\index{tesseract\_common::CloneCache$<$ CacheType $>$@{tesseract\_common::CloneCache$<$ CacheType $>$}!clone@{clone}}
+\index{clone@{clone}!tesseract\_common::CloneCache$<$ CacheType $>$@{tesseract\_common::CloneCache$<$ CacheType $>$}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily template$<$typename Cache\+Type $>$ \\
+std\+::shared\+\_\+ptr$<$ Cache\+Type $>$ \mbox{\hyperlink{classtesseract__common_1_1CloneCache}{tesseract\+\_\+common\+::\+Clone\+Cache}}$<$ Cache\+Type $>$\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets a clone of original\+\_\+. 
+
+\begin{DoxyReturn}{Returns}
+A shared\+\_\+ptr to a new clone of original\+\_\+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__common_1_1CloneCache_aff32dea42001242cb52343dc9b9afb30}\label{classtesseract__common_1_1CloneCache_aff32dea42001242cb52343dc9b9afb30}} 
+\index{tesseract\_common::CloneCache$<$ CacheType $>$@{tesseract\_common::CloneCache$<$ CacheType $>$}!createClone@{createClone}}
+\index{createClone@{createClone}!tesseract\_common::CloneCache$<$ CacheType $>$@{tesseract\_common::CloneCache$<$ CacheType $>$}}
+\doxysubsubsection{\texorpdfstring{createClone()}{createClone()}}
+{\footnotesize\ttfamily template$<$typename Cache\+Type $>$ \\
+void \mbox{\hyperlink{classtesseract__common_1_1CloneCache}{tesseract\+\_\+common\+::\+Clone\+Cache}}$<$ Cache\+Type $>$\+::create\+Clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classtesseract__common_1_1CloneCache_a5185b2c35a8cc058b40209422bedfa35}\label{classtesseract__common_1_1CloneCache_a5185b2c35a8cc058b40209422bedfa35}} 
+\index{tesseract\_common::CloneCache$<$ CacheType $>$@{tesseract\_common::CloneCache$<$ CacheType $>$}!getCacheSize@{getCacheSize}}
+\index{getCacheSize@{getCacheSize}!tesseract\_common::CloneCache$<$ CacheType $>$@{tesseract\_common::CloneCache$<$ CacheType $>$}}
+\doxysubsubsection{\texorpdfstring{getCacheSize()}{getCacheSize()}}
+{\footnotesize\ttfamily template$<$typename Cache\+Type $>$ \\
+long \mbox{\hyperlink{classtesseract__common_1_1CloneCache}{tesseract\+\_\+common\+::\+Clone\+Cache}}$<$ Cache\+Type $>$\+::get\+Cache\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the set cache size. 
+
+\begin{DoxyReturn}{Returns}
+The set size of the cache. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__common_1_1CloneCache_aa95eee9c55f1461af8a215d591ff7c32}\label{classtesseract__common_1_1CloneCache_aa95eee9c55f1461af8a215d591ff7c32}} 
+\index{tesseract\_common::CloneCache$<$ CacheType $>$@{tesseract\_common::CloneCache$<$ CacheType $>$}!getClone@{getClone}}
+\index{getClone@{getClone}!tesseract\_common::CloneCache$<$ CacheType $>$@{tesseract\_common::CloneCache$<$ CacheType $>$}}
+\doxysubsubsection{\texorpdfstring{getClone()}{getClone()}}
+{\footnotesize\ttfamily template$<$typename Cache\+Type $>$ \\
+std\+::shared\+\_\+ptr$<$ Cache\+Type $>$ \mbox{\hyperlink{classtesseract__common_1_1CloneCache}{tesseract\+\_\+common\+::\+Clone\+Cache}}$<$ Cache\+Type $>$\+::get\+Clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classtesseract__common_1_1CloneCache_a8f7c577704d6655df29ea2244fd52735}\label{classtesseract__common_1_1CloneCache_a8f7c577704d6655df29ea2244fd52735}} 
+\index{tesseract\_common::CloneCache$<$ CacheType $>$@{tesseract\_common::CloneCache$<$ CacheType $>$}!getCurrentCacheSize@{getCurrentCacheSize}}
+\index{getCurrentCacheSize@{getCurrentCacheSize}!tesseract\_common::CloneCache$<$ CacheType $>$@{tesseract\_common::CloneCache$<$ CacheType $>$}}
+\doxysubsubsection{\texorpdfstring{getCurrentCacheSize()}{getCurrentCacheSize()}}
+{\footnotesize\ttfamily template$<$typename Cache\+Type $>$ \\
+long \mbox{\hyperlink{classtesseract__common_1_1CloneCache}{tesseract\+\_\+common\+::\+Clone\+Cache}}$<$ Cache\+Type $>$\+::get\+Current\+Cache\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the current size of the cache. 
+
+\begin{DoxyReturn}{Returns}
+The current size fo the cache 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__common_1_1CloneCache_a3fe183cceae47d4fdf786a6d904e1f55}\label{classtesseract__common_1_1CloneCache_a3fe183cceae47d4fdf786a6d904e1f55}} 
+\index{tesseract\_common::CloneCache$<$ CacheType $>$@{tesseract\_common::CloneCache$<$ CacheType $>$}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!tesseract\_common::CloneCache$<$ CacheType $>$@{tesseract\_common::CloneCache$<$ CacheType $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/$>$()}{operator->()}}
+{\footnotesize\ttfamily template$<$typename Cache\+Type $>$ \\
+const std\+::shared\+\_\+ptr$<$ Cache\+Type $>$ \& \mbox{\hyperlink{classtesseract__common_1_1CloneCache}{tesseract\+\_\+common\+::\+Clone\+Cache}}$<$ Cache\+Type $>$\+::operator-\/$>$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classtesseract__common_1_1CloneCache_ac7cb1b261cc840b3674dd2cea6e92887}\label{classtesseract__common_1_1CloneCache_ac7cb1b261cc840b3674dd2cea6e92887}} 
+\index{tesseract\_common::CloneCache$<$ CacheType $>$@{tesseract\_common::CloneCache$<$ CacheType $>$}!setCacheSize@{setCacheSize}}
+\index{setCacheSize@{setCacheSize}!tesseract\_common::CloneCache$<$ CacheType $>$@{tesseract\_common::CloneCache$<$ CacheType $>$}}
+\doxysubsubsection{\texorpdfstring{setCacheSize()}{setCacheSize()}}
+{\footnotesize\ttfamily template$<$typename Cache\+Type $>$ \\
+void \mbox{\hyperlink{classtesseract__common_1_1CloneCache}{tesseract\+\_\+common\+::\+Clone\+Cache}}$<$ Cache\+Type $>$\+::set\+Cache\+Size (\begin{DoxyParamCaption}\item[{long}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the cache size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & The size of the cache. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__common_1_1CloneCache_a5637528e042ab9beaf6a21ad74b595f8}\label{classtesseract__common_1_1CloneCache_a5637528e042ab9beaf6a21ad74b595f8}} 
+\index{tesseract\_common::CloneCache$<$ CacheType $>$@{tesseract\_common::CloneCache$<$ CacheType $>$}!updateCache@{updateCache}}
+\index{updateCache@{updateCache}!tesseract\_common::CloneCache$<$ CacheType $>$@{tesseract\_common::CloneCache$<$ CacheType $>$}}
+\doxysubsubsection{\texorpdfstring{updateCache()}{updateCache()}}
+{\footnotesize\ttfamily template$<$typename Cache\+Type $>$ \\
+void \mbox{\hyperlink{classtesseract__common_1_1CloneCache}{tesseract\+\_\+common\+::\+Clone\+Cache}}$<$ Cache\+Type $>$\+::update\+Cache (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+If original\+\_\+ has changed it will update or rebuild the cache of objects. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classtesseract__common_1_1CloneCache_a3032f7e35dc80f2869b6fe57fcbc582f}\label{classtesseract__common_1_1CloneCache_a3032f7e35dc80f2869b6fe57fcbc582f}} 
+\index{tesseract\_common::CloneCache$<$ CacheType $>$@{tesseract\_common::CloneCache$<$ CacheType $>$}!cache\_@{cache\_}}
+\index{cache\_@{cache\_}!tesseract\_common::CloneCache$<$ CacheType $>$@{tesseract\_common::CloneCache$<$ CacheType $>$}}
+\doxysubsubsection{\texorpdfstring{cache\_}{cache\_}}
+{\footnotesize\ttfamily template$<$typename Cache\+Type $>$ \\
+std\+::deque$<$std\+::shared\+\_\+ptr$<$Cache\+Type$>$ $>$ \mbox{\hyperlink{classtesseract__common_1_1CloneCache}{tesseract\+\_\+common\+::\+Clone\+Cache}}$<$ Cache\+Type $>$\+::cache\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+A vector of cached objects. 
+
+\mbox{\Hypertarget{classtesseract__common_1_1CloneCache_aedc6bafd48f1d915941847fbb33ee1a2}\label{classtesseract__common_1_1CloneCache_aedc6bafd48f1d915941847fbb33ee1a2}} 
+\index{tesseract\_common::CloneCache$<$ CacheType $>$@{tesseract\_common::CloneCache$<$ CacheType $>$}!cache\_mutex\_@{cache\_mutex\_}}
+\index{cache\_mutex\_@{cache\_mutex\_}!tesseract\_common::CloneCache$<$ CacheType $>$@{tesseract\_common::CloneCache$<$ CacheType $>$}}
+\doxysubsubsection{\texorpdfstring{cache\_mutex\_}{cache\_mutex\_}}
+{\footnotesize\ttfamily template$<$typename Cache\+Type $>$ \\
+std\+::mutex \mbox{\hyperlink{classtesseract__common_1_1CloneCache}{tesseract\+\_\+common\+::\+Clone\+Cache}}$<$ Cache\+Type $>$\+::cache\+\_\+mutex\+\_\+\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [protected]}}
+
+
+
+The mutex used when reading and writing to cache\+\_\+. 
+
+\mbox{\Hypertarget{classtesseract__common_1_1CloneCache_ae402a65c0828425f28936c1a872f1127}\label{classtesseract__common_1_1CloneCache_ae402a65c0828425f28936c1a872f1127}} 
+\index{tesseract\_common::CloneCache$<$ CacheType $>$@{tesseract\_common::CloneCache$<$ CacheType $>$}!cache\_size\_@{cache\_size\_}}
+\index{cache\_size\_@{cache\_size\_}!tesseract\_common::CloneCache$<$ CacheType $>$@{tesseract\_common::CloneCache$<$ CacheType $>$}}
+\doxysubsubsection{\texorpdfstring{cache\_size\_}{cache\_size\_}}
+{\footnotesize\ttfamily template$<$typename Cache\+Type $>$ \\
+std\+::size\+\_\+t \mbox{\hyperlink{classtesseract__common_1_1CloneCache}{tesseract\+\_\+common\+::\+Clone\+Cache}}$<$ Cache\+Type $>$\+::cache\+\_\+size\+\_\+ \{ 5 \}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The assigned cache size. 
+
+\mbox{\Hypertarget{classtesseract__common_1_1CloneCache_a6f76221f6e493f96e46dd088358070d6}\label{classtesseract__common_1_1CloneCache_a6f76221f6e493f96e46dd088358070d6}} 
+\index{tesseract\_common::CloneCache$<$ CacheType $>$@{tesseract\_common::CloneCache$<$ CacheType $>$}!original\_@{original\_}}
+\index{original\_@{original\_}!tesseract\_common::CloneCache$<$ CacheType $>$@{tesseract\_common::CloneCache$<$ CacheType $>$}}
+\doxysubsubsection{\texorpdfstring{original\_}{original\_}}
+{\footnotesize\ttfamily template$<$typename Cache\+Type $>$ \\
+std\+::shared\+\_\+ptr$<$Cache\+Type$>$ \mbox{\hyperlink{classtesseract__common_1_1CloneCache}{tesseract\+\_\+common\+::\+Clone\+Cache}}$<$ Cache\+Type $>$\+::original\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classtesseract__common_1_1CloneCache_a88bb74b89e3a432547b7273402caeb17}\label{classtesseract__common_1_1CloneCache_a88bb74b89e3a432547b7273402caeb17}} 
+\index{tesseract\_common::CloneCache$<$ CacheType $>$@{tesseract\_common::CloneCache$<$ CacheType $>$}!supports\_update@{supports\_update}}
+\index{supports\_update@{supports\_update}!tesseract\_common::CloneCache$<$ CacheType $>$@{tesseract\_common::CloneCache$<$ CacheType $>$}}
+\doxysubsubsection{\texorpdfstring{supports\_update}{supports\_update}}
+{\footnotesize\ttfamily template$<$typename Cache\+Type $>$ \\
+const bool \mbox{\hyperlink{classtesseract__common_1_1CloneCache}{tesseract\+\_\+common\+::\+Clone\+Cache}}$<$ Cache\+Type $>$\+::supports\+\_\+update}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+tesseract\+\_\+common/include/tesseract\+\_\+common/\mbox{\hyperlink{clone__cache_8h}{clone\+\_\+cache.\+h}}\end{DoxyCompactItemize}

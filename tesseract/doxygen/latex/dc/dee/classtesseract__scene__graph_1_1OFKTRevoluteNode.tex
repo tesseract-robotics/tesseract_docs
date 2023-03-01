@@ -1,0 +1,150 @@
+\hypertarget{classtesseract__scene__graph_1_1OFKTRevoluteNode}{}\doxysection{tesseract\+\_\+scene\+\_\+graph\+::OFKTRevolute\+Node Class Reference}
+\label{classtesseract__scene__graph_1_1OFKTRevoluteNode}\index{tesseract\_scene\_graph::OFKTRevoluteNode@{tesseract\_scene\_graph::OFKTRevoluteNode}}
+
+
+{\ttfamily \#include $<$ofkt\+\_\+nodes.\+h$>$}
+
+
+
+Inheritance diagram for tesseract\+\_\+scene\+\_\+graph\+::OFKTRevolute\+Node\+:
+% FIG 0
+
+
+Collaboration diagram for tesseract\+\_\+scene\+\_\+graph\+::OFKTRevolute\+Node\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+EIGEN\+\_\+\+MAKE\+\_\+\+ALIGNED\+\_\+\+OPERATOR\+\_\+\+NEW \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTRevoluteNode_a7f45fe7f00135786c7a9837bc49edc55}{OFKTRevolute\+Node}} (\mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode}{OFKTNode}} $\ast$parent, std\+::string link\+\_\+name, std\+::string \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aad74bf9891b141c288c96b20caff4dfa}{joint\+\_\+name}}, const Eigen\+::\+Isometry3d \&static\+\_\+tf, const Eigen\+::\+Vector3d \&\mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a2a94595a4fd1b33d563dc7921da1bc7d}{axis}})
+\item 
+void \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTRevoluteNode_ab961bda64c57085118dccf0da2491844}{store\+Joint\+Value}} (double joint\+\_\+value) override
+\begin{DoxyCompactList}\small\item\em Set the nodes joint value if it has one. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTRevoluteNode_a2ad8244a3d7af7cbafd1bcee77087af3}{compute\+And\+Store\+Local\+Transformation}} () override
+\begin{DoxyCompactList}\small\item\em Compute and save the local transformation \textquotesingle{}L = S $\ast$ J(\+Joint Value)\textquotesingle{}. \end{DoxyCompactList}\item 
+Eigen\+::\+Isometry3d \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTRevoluteNode_ae3d0b816639407a93cf93ba4ffb04bf9}{compute\+Local\+Transformation}} (double joint\+\_\+value) const override
+\begin{DoxyCompactList}\small\item\em Compute the local tranformation but do not save. \end{DoxyCompactList}\item 
+const Eigen\+::\+Vector3d \& \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTRevoluteNode_af6e6eb2a9981e99c88e959064e134256}{get\+Axis}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTRevoluteNode_ac80a5fd78574a6f2337bbc7264b52343}{compute\+And\+Store\+Local\+Transformation\+Impl}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Eigen\+::\+Vector3d \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTRevoluteNode_ad899718c6752206feafbdaa986f93ca6}{axis\+\_\+}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTRevoluteNode_a04c5cec13fafb90debd7afa7a3c833c4}{OFKTState\+Solver}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTRevoluteNode_a7f45fe7f00135786c7a9837bc49edc55}\label{classtesseract__scene__graph_1_1OFKTRevoluteNode_a7f45fe7f00135786c7a9837bc49edc55}} 
+\index{tesseract\_scene\_graph::OFKTRevoluteNode@{tesseract\_scene\_graph::OFKTRevoluteNode}!OFKTRevoluteNode@{OFKTRevoluteNode}}
+\index{OFKTRevoluteNode@{OFKTRevoluteNode}!tesseract\_scene\_graph::OFKTRevoluteNode@{tesseract\_scene\_graph::OFKTRevoluteNode}}
+\doxysubsubsection{\texorpdfstring{OFKTRevoluteNode()}{OFKTRevoluteNode()}}
+{\footnotesize\ttfamily tesseract\+\_\+scene\+\_\+graph\+::\+OFKTRevolute\+Node\+::\+OFKTRevolute\+Node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode}{OFKTNode}} $\ast$}]{parent,  }\item[{std\+::string}]{link\+\_\+name,  }\item[{std\+::string}]{joint\+\_\+name,  }\item[{const Eigen\+::\+Isometry3d \&}]{static\+\_\+tf,  }\item[{const Eigen\+::\+Vector3d \&}]{axis }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTRevoluteNode_a2ad8244a3d7af7cbafd1bcee77087af3}\label{classtesseract__scene__graph_1_1OFKTRevoluteNode_a2ad8244a3d7af7cbafd1bcee77087af3}} 
+\index{tesseract\_scene\_graph::OFKTRevoluteNode@{tesseract\_scene\_graph::OFKTRevoluteNode}!computeAndStoreLocalTransformation@{computeAndStoreLocalTransformation}}
+\index{computeAndStoreLocalTransformation@{computeAndStoreLocalTransformation}!tesseract\_scene\_graph::OFKTRevoluteNode@{tesseract\_scene\_graph::OFKTRevoluteNode}}
+\doxysubsubsection{\texorpdfstring{computeAndStoreLocalTransformation()}{computeAndStoreLocalTransformation()}}
+{\footnotesize\ttfamily void tesseract\+\_\+scene\+\_\+graph\+::\+OFKTRevolute\+Node\+::compute\+And\+Store\+Local\+Transformation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Compute and save the local transformation \textquotesingle{}L = S $\ast$ J(\+Joint Value)\textquotesingle{}. 
+
+This should reset the flag such that \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a8d9c30e9bb4391e058954a8be9cc01d5}{has\+Joint\+Value\+Changed()}} returns false 
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode_a26d0beee2bcf07592b232993d2e42f5c}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTNode}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTRevoluteNode_ac80a5fd78574a6f2337bbc7264b52343}\label{classtesseract__scene__graph_1_1OFKTRevoluteNode_ac80a5fd78574a6f2337bbc7264b52343}} 
+\index{tesseract\_scene\_graph::OFKTRevoluteNode@{tesseract\_scene\_graph::OFKTRevoluteNode}!computeAndStoreLocalTransformationImpl@{computeAndStoreLocalTransformationImpl}}
+\index{computeAndStoreLocalTransformationImpl@{computeAndStoreLocalTransformationImpl}!tesseract\_scene\_graph::OFKTRevoluteNode@{tesseract\_scene\_graph::OFKTRevoluteNode}}
+\doxysubsubsection{\texorpdfstring{computeAndStoreLocalTransformationImpl()}{computeAndStoreLocalTransformationImpl()}}
+{\footnotesize\ttfamily void tesseract\+\_\+scene\+\_\+graph\+::\+OFKTRevolute\+Node\+::compute\+And\+Store\+Local\+Transformation\+Impl (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTRevoluteNode_ae3d0b816639407a93cf93ba4ffb04bf9}\label{classtesseract__scene__graph_1_1OFKTRevoluteNode_ae3d0b816639407a93cf93ba4ffb04bf9}} 
+\index{tesseract\_scene\_graph::OFKTRevoluteNode@{tesseract\_scene\_graph::OFKTRevoluteNode}!computeLocalTransformation@{computeLocalTransformation}}
+\index{computeLocalTransformation@{computeLocalTransformation}!tesseract\_scene\_graph::OFKTRevoluteNode@{tesseract\_scene\_graph::OFKTRevoluteNode}}
+\doxysubsubsection{\texorpdfstring{computeLocalTransformation()}{computeLocalTransformation()}}
+{\footnotesize\ttfamily Eigen\+::\+Isometry3d tesseract\+\_\+scene\+\_\+graph\+::\+OFKTRevolute\+Node\+::compute\+Local\+Transformation (\begin{DoxyParamCaption}\item[{double}]{joint\+\_\+value }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Compute the local tranformation but do not save. 
+
+This provides a const method for computing the local transform.
+
+
+\begin{DoxyParams}{Parameters}
+{\em joint\+\_\+value} & The joint value for calculating the local transformation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The local transformation for the provided joint value 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a909b4b722c13ea6e85c40adbe120f87b}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTBase\+Node}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTRevoluteNode_af6e6eb2a9981e99c88e959064e134256}\label{classtesseract__scene__graph_1_1OFKTRevoluteNode_af6e6eb2a9981e99c88e959064e134256}} 
+\index{tesseract\_scene\_graph::OFKTRevoluteNode@{tesseract\_scene\_graph::OFKTRevoluteNode}!getAxis@{getAxis}}
+\index{getAxis@{getAxis}!tesseract\_scene\_graph::OFKTRevoluteNode@{tesseract\_scene\_graph::OFKTRevoluteNode}}
+\doxysubsubsection{\texorpdfstring{getAxis()}{getAxis()}}
+{\footnotesize\ttfamily const Eigen\+::\+Vector3d \& tesseract\+\_\+scene\+\_\+graph\+::\+OFKTRevolute\+Node\+::get\+Axis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTRevoluteNode_ab961bda64c57085118dccf0da2491844}\label{classtesseract__scene__graph_1_1OFKTRevoluteNode_ab961bda64c57085118dccf0da2491844}} 
+\index{tesseract\_scene\_graph::OFKTRevoluteNode@{tesseract\_scene\_graph::OFKTRevoluteNode}!storeJointValue@{storeJointValue}}
+\index{storeJointValue@{storeJointValue}!tesseract\_scene\_graph::OFKTRevoluteNode@{tesseract\_scene\_graph::OFKTRevoluteNode}}
+\doxysubsubsection{\texorpdfstring{storeJointValue()}{storeJointValue()}}
+{\footnotesize\ttfamily void tesseract\+\_\+scene\+\_\+graph\+::\+OFKTRevolute\+Node\+::store\+Joint\+Value (\begin{DoxyParamCaption}\item[{double}]{joint\+\_\+value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Set the nodes joint value if it has one. 
+
+This should indicate \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a8d9c30e9bb4391e058954a8be9cc01d5}{has\+Joint\+Value\+Changed()}} = true
+
+
+\begin{DoxyParams}{Parameters}
+{\em joint\+\_\+value} & The joint value \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a09bf85c903c7b06af846a994860990f0}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTBase\+Node}}.
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTRevoluteNode_a04c5cec13fafb90debd7afa7a3c833c4}\label{classtesseract__scene__graph_1_1OFKTRevoluteNode_a04c5cec13fafb90debd7afa7a3c833c4}} 
+\index{tesseract\_scene\_graph::OFKTRevoluteNode@{tesseract\_scene\_graph::OFKTRevoluteNode}!OFKTStateSolver@{OFKTStateSolver}}
+\index{OFKTStateSolver@{OFKTStateSolver}!tesseract\_scene\_graph::OFKTRevoluteNode@{tesseract\_scene\_graph::OFKTRevoluteNode}}
+\doxysubsubsection{\texorpdfstring{OFKTStateSolver}{OFKTStateSolver}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver}{OFKTState\+Solver}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTRevoluteNode_ad899718c6752206feafbdaa986f93ca6}\label{classtesseract__scene__graph_1_1OFKTRevoluteNode_ad899718c6752206feafbdaa986f93ca6}} 
+\index{tesseract\_scene\_graph::OFKTRevoluteNode@{tesseract\_scene\_graph::OFKTRevoluteNode}!axis\_@{axis\_}}
+\index{axis\_@{axis\_}!tesseract\_scene\_graph::OFKTRevoluteNode@{tesseract\_scene\_graph::OFKTRevoluteNode}}
+\doxysubsubsection{\texorpdfstring{axis\_}{axis\_}}
+{\footnotesize\ttfamily Eigen\+::\+Vector3d tesseract\+\_\+scene\+\_\+graph\+::\+OFKTRevolute\+Node\+::axis\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+tesseract\+\_\+state\+\_\+solver/include/tesseract\+\_\+state\+\_\+solver/ofkt/\mbox{\hyperlink{ofkt__nodes_8h}{ofkt\+\_\+nodes.\+h}}\item 
+tesseract\+\_\+state\+\_\+solver/src/\mbox{\hyperlink{ofkt__nodes_8cpp}{ofkt\+\_\+nodes.\+cpp}}\end{DoxyCompactItemize}

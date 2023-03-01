@@ -1,0 +1,347 @@
+\hypertarget{classtesseract__environment_1_1EnvironmentMonitorInterface}{}\doxysection{tesseract\+\_\+environment\+::Environment\+Monitor\+Interface Class Reference}
+\label{classtesseract__environment_1_1EnvironmentMonitorInterface}\index{tesseract\_environment::EnvironmentMonitorInterface@{tesseract\_environment::EnvironmentMonitorInterface}}
+
+
+{\ttfamily \#include $<$environment\+\_\+monitor\+\_\+interface.\+h$>$}
+
+
+
+Collaboration diagram for tesseract\+\_\+environment\+::Environment\+Monitor\+Interface\+:
+% FIG 0
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface_a3361308ff67ea22774e0a2d00808b086}{Ptr}} = std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface}{Environment\+Monitor\+Interface}} $>$
+\item 
+using \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface_a8499e009abcd62b39e6088c7ab1926e8}{Const\+Ptr}} = std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface}{Environment\+Monitor\+Interface}} $>$
+\item 
+using \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface_a853cebc14fe94adc401bc9171b325875}{UPtr}} = std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface}{Environment\+Monitor\+Interface}} $>$
+\item 
+using \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface_ab67b5d59bb572c4a6cef2e9d09df3c0a}{Const\+UPtr}} = std\+::unique\+\_\+ptr$<$ const \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface}{Environment\+Monitor\+Interface}} $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface_a2285ecf17afb4d0dd07da66f75f70b7a}{Environment\+Monitor\+Interface}} (std\+::string env\+\_\+name)
+\item 
+virtual \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface_ab2e427a5ddec13a7509d2998275fb3bb}{$\sim$\+Environment\+Monitor\+Interface}} ()=default
+\item 
+virtual bool \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface_aa84d97076821fee410854bd6e6900f88}{wait}} (std\+::chrono\+::duration$<$ double $>$ duration=std\+::chrono\+::seconds(0)) const =0
+\begin{DoxyCompactList}\small\item\em This will wait for all namespaces to begin publishing. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface_a66102791074b3a3ea06459d9a13b785b}{wait\+For\+Namespace}} (const std\+::string \&monitor\+\_\+namespace, std\+::chrono\+::duration$<$ double $>$ duration=std\+::chrono\+::seconds(0)) const =0
+\begin{DoxyCompactList}\small\item\em This will wait for a given namespace to begin publishing. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface_ac5a65561ec8766fd8798183c56655a0f}{add\+Namespace}} (std\+::string monitor\+\_\+namespace)=0
+\begin{DoxyCompactList}\small\item\em Add monitor namespace to interface. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface_a1d7bd6c2f057414787e5e17d1601f3ab}{remove\+Namespace}} (const std\+::string \&monitor\+\_\+namespace)=0
+\begin{DoxyCompactList}\small\item\em Remove monitor namespace from interface. \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface_acd131f299fb1fe46a525c3d01cbfc89a}{apply\+Command}} (const \mbox{\hyperlink{classtesseract__environment_1_1Command}{tesseract\+\_\+environment\+::\+Command}} \&command) const =0
+\begin{DoxyCompactList}\small\item\em Apply provided command to all monitor namespaces. \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface_a31f86c3af034de72735b40b2367a80a7}{apply\+Commands}} (const \mbox{\hyperlink{namespacetesseract__environment_acb95740502ec41d80a94a7631d4b7a3c}{tesseract\+\_\+environment\+::\+Commands}} \&commands) const =0
+\item 
+virtual std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface_ac1d1832bf4e1dcccddfcbcae512af4d0}{apply\+Commands}} (const std\+::vector$<$ \mbox{\hyperlink{classtesseract__environment_1_1Command}{tesseract\+\_\+environment\+::\+Command}} $>$ \&commands) const =0
+\item 
+virtual bool \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface_aacadc7f4d0c2b07725968ddbc7a6eecb}{apply\+Command}} (const std\+::string \&monitor\+\_\+namespace, const \mbox{\hyperlink{classtesseract__environment_1_1Command}{tesseract\+\_\+environment\+::\+Command}} \&command) const =0
+\begin{DoxyCompactList}\small\item\em Apply provided command to only the provided namespace. The namespace does not have to be one that is currently stored in this class. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface_a5fba3bda558a8a3d3aaed7e1e98d56b8}{apply\+Commands}} (const std\+::string \&monitor\+\_\+namespace, const \mbox{\hyperlink{namespacetesseract__environment_acb95740502ec41d80a94a7631d4b7a3c}{tesseract\+\_\+environment\+::\+Commands}} \&commands) const =0
+\item 
+virtual bool \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface_a3f35ed01d67a3b85d10b31d74c68c70d}{apply\+Commands}} (const std\+::string \&monitor\+\_\+namespace, const std\+::vector$<$ \mbox{\hyperlink{classtesseract__environment_1_1Command}{tesseract\+\_\+environment\+::\+Command}} $>$ \&commands) const =0
+\item 
+virtual \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+State}} \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface_a42fac8fabd2638146b630889e4b4cea9}{get\+Environment\+State}} (const std\+::string \&monitor\+\_\+namespace) const =0
+\begin{DoxyCompactList}\small\item\em Pull current environment state from the environment in the provided namespace. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface_a8c8eb6b844936c67d4fa0e8cf3a28979}{set\+Environment\+State}} (const std\+::string \&monitor\+\_\+namespace, const std\+::unordered\+\_\+map$<$ std\+::string, double $>$ \&\mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_ae41993a59637cf36532d3620b8203555}{joints}}) const =0
+\begin{DoxyCompactList}\small\item\em Set environments state in the provided namespace. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface_a8b1f2c0bb603ed92eac991c062a4c226}{set\+Environment\+State}} (const std\+::string \&monitor\+\_\+namespace, const std\+::vector$<$ std\+::string $>$ \&\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_ae55b39adb52b29eeefd7d128c4b56f2a}{joint\+\_\+names}}, const std\+::vector$<$ double $>$ \&joint\+\_\+values) const =0
+\item 
+virtual bool \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface_a3d1e9962d6c3153d7c19503890e80ca4}{set\+Environment\+State}} (const std\+::string \&monitor\+\_\+namespace, const std\+::vector$<$ std\+::string $>$ \&\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_ae55b39adb52b29eeefd7d128c4b56f2a}{joint\+\_\+names}}, const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xd $>$ \&joint\+\_\+values) const =0
+\item 
+virtual std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface_ac3f378b7b4ce5eb6cf280c41be95a5b5}{set\+Environment\+State}} (const std\+::unordered\+\_\+map$<$ std\+::string, double $>$ \&\mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_ae41993a59637cf36532d3620b8203555}{joints}}) const =0
+\begin{DoxyCompactList}\small\item\em Set environment state for all monitor namespaces. \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface_a8b5ee7df49b9317be7fa997d44838c5b}{set\+Environment\+State}} (const std\+::vector$<$ std\+::string $>$ \&\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_ae55b39adb52b29eeefd7d128c4b56f2a}{joint\+\_\+names}}, const std\+::vector$<$ double $>$ \&joint\+\_\+values) const =0
+\item 
+virtual std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface_a0e1fc4c2662cecb87b7b2929134e0bf2}{set\+Environment\+State}} (const std\+::vector$<$ std\+::string $>$ \&\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_ae55b39adb52b29eeefd7d128c4b56f2a}{joint\+\_\+names}}, const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xd $>$ \&joint\+\_\+values) const =0
+\item 
+virtual \mbox{\hyperlink{classtesseract__environment_1_1Environment_a182513d107a55c729afb5e6482e2ac87}{tesseract\+\_\+environment\+::\+Environment\+::\+UPtr}} \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface_ad398704d853675b2b0037580fa5424eb}{get\+Environment}} (const std\+::string \&monitor\+\_\+namespace) const =0
+\begin{DoxyCompactList}\small\item\em Pull information from the environment in the provided namespace and create a \mbox{\hyperlink{classtesseract__environment_1_1Environment}{Environment}} Object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface_a535df3286eeb4edaa6f495bfc27c5061}{env\+\_\+name\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classtesseract__environment_1_1EnvironmentMonitorInterface_a8499e009abcd62b39e6088c7ab1926e8}\label{classtesseract__environment_1_1EnvironmentMonitorInterface_a8499e009abcd62b39e6088c7ab1926e8}} 
+\index{tesseract\_environment::EnvironmentMonitorInterface@{tesseract\_environment::EnvironmentMonitorInterface}!ConstPtr@{ConstPtr}}
+\index{ConstPtr@{ConstPtr}!tesseract\_environment::EnvironmentMonitorInterface@{tesseract\_environment::EnvironmentMonitorInterface}}
+\doxysubsubsection{\texorpdfstring{ConstPtr}{ConstPtr}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface_a8499e009abcd62b39e6088c7ab1926e8}{tesseract\+\_\+environment\+::\+Environment\+Monitor\+Interface\+::\+Const\+Ptr}} =  std\+::shared\+\_\+ptr$<$const \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface}{Environment\+Monitor\+Interface}}$>$}
+
+\mbox{\Hypertarget{classtesseract__environment_1_1EnvironmentMonitorInterface_ab67b5d59bb572c4a6cef2e9d09df3c0a}\label{classtesseract__environment_1_1EnvironmentMonitorInterface_ab67b5d59bb572c4a6cef2e9d09df3c0a}} 
+\index{tesseract\_environment::EnvironmentMonitorInterface@{tesseract\_environment::EnvironmentMonitorInterface}!ConstUPtr@{ConstUPtr}}
+\index{ConstUPtr@{ConstUPtr}!tesseract\_environment::EnvironmentMonitorInterface@{tesseract\_environment::EnvironmentMonitorInterface}}
+\doxysubsubsection{\texorpdfstring{ConstUPtr}{ConstUPtr}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface_ab67b5d59bb572c4a6cef2e9d09df3c0a}{tesseract\+\_\+environment\+::\+Environment\+Monitor\+Interface\+::\+Const\+UPtr}} =  std\+::unique\+\_\+ptr$<$const \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface}{Environment\+Monitor\+Interface}}$>$}
+
+\mbox{\Hypertarget{classtesseract__environment_1_1EnvironmentMonitorInterface_a3361308ff67ea22774e0a2d00808b086}\label{classtesseract__environment_1_1EnvironmentMonitorInterface_a3361308ff67ea22774e0a2d00808b086}} 
+\index{tesseract\_environment::EnvironmentMonitorInterface@{tesseract\_environment::EnvironmentMonitorInterface}!Ptr@{Ptr}}
+\index{Ptr@{Ptr}!tesseract\_environment::EnvironmentMonitorInterface@{tesseract\_environment::EnvironmentMonitorInterface}}
+\doxysubsubsection{\texorpdfstring{Ptr}{Ptr}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface_a3361308ff67ea22774e0a2d00808b086}{tesseract\+\_\+environment\+::\+Environment\+Monitor\+Interface\+::\+Ptr}} =  std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface}{Environment\+Monitor\+Interface}}$>$}
+
+\mbox{\Hypertarget{classtesseract__environment_1_1EnvironmentMonitorInterface_a853cebc14fe94adc401bc9171b325875}\label{classtesseract__environment_1_1EnvironmentMonitorInterface_a853cebc14fe94adc401bc9171b325875}} 
+\index{tesseract\_environment::EnvironmentMonitorInterface@{tesseract\_environment::EnvironmentMonitorInterface}!UPtr@{UPtr}}
+\index{UPtr@{UPtr}!tesseract\_environment::EnvironmentMonitorInterface@{tesseract\_environment::EnvironmentMonitorInterface}}
+\doxysubsubsection{\texorpdfstring{UPtr}{UPtr}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface_a853cebc14fe94adc401bc9171b325875}{tesseract\+\_\+environment\+::\+Environment\+Monitor\+Interface\+::\+UPtr}} =  std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface}{Environment\+Monitor\+Interface}}$>$}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtesseract__environment_1_1EnvironmentMonitorInterface_a2285ecf17afb4d0dd07da66f75f70b7a}\label{classtesseract__environment_1_1EnvironmentMonitorInterface_a2285ecf17afb4d0dd07da66f75f70b7a}} 
+\index{tesseract\_environment::EnvironmentMonitorInterface@{tesseract\_environment::EnvironmentMonitorInterface}!EnvironmentMonitorInterface@{EnvironmentMonitorInterface}}
+\index{EnvironmentMonitorInterface@{EnvironmentMonitorInterface}!tesseract\_environment::EnvironmentMonitorInterface@{tesseract\_environment::EnvironmentMonitorInterface}}
+\doxysubsubsection{\texorpdfstring{EnvironmentMonitorInterface()}{EnvironmentMonitorInterface()}}
+{\footnotesize\ttfamily tesseract\+\_\+environment\+::\+Environment\+Monitor\+Interface\+::\+Environment\+Monitor\+Interface (\begin{DoxyParamCaption}\item[{std\+::string}]{env\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classtesseract__environment_1_1EnvironmentMonitorInterface_ab2e427a5ddec13a7509d2998275fb3bb}\label{classtesseract__environment_1_1EnvironmentMonitorInterface_ab2e427a5ddec13a7509d2998275fb3bb}} 
+\index{tesseract\_environment::EnvironmentMonitorInterface@{tesseract\_environment::EnvironmentMonitorInterface}!````~EnvironmentMonitorInterface@{$\sim$EnvironmentMonitorInterface}}
+\index{````~EnvironmentMonitorInterface@{$\sim$EnvironmentMonitorInterface}!tesseract\_environment::EnvironmentMonitorInterface@{tesseract\_environment::EnvironmentMonitorInterface}}
+\doxysubsubsection{\texorpdfstring{$\sim$EnvironmentMonitorInterface()}{~EnvironmentMonitorInterface()}}
+{\footnotesize\ttfamily virtual tesseract\+\_\+environment\+::\+Environment\+Monitor\+Interface\+::$\sim$\+Environment\+Monitor\+Interface (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtesseract__environment_1_1EnvironmentMonitorInterface_ac5a65561ec8766fd8798183c56655a0f}\label{classtesseract__environment_1_1EnvironmentMonitorInterface_ac5a65561ec8766fd8798183c56655a0f}} 
+\index{tesseract\_environment::EnvironmentMonitorInterface@{tesseract\_environment::EnvironmentMonitorInterface}!addNamespace@{addNamespace}}
+\index{addNamespace@{addNamespace}!tesseract\_environment::EnvironmentMonitorInterface@{tesseract\_environment::EnvironmentMonitorInterface}}
+\doxysubsubsection{\texorpdfstring{addNamespace()}{addNamespace()}}
+{\footnotesize\ttfamily virtual void tesseract\+\_\+environment\+::\+Environment\+Monitor\+Interface\+::add\+Namespace (\begin{DoxyParamCaption}\item[{std\+::string}]{monitor\+\_\+namespace }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Add monitor namespace to interface. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em monitor\+\_\+namespace} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__environment_1_1EnvironmentMonitorInterface_aacadc7f4d0c2b07725968ddbc7a6eecb}\label{classtesseract__environment_1_1EnvironmentMonitorInterface_aacadc7f4d0c2b07725968ddbc7a6eecb}} 
+\index{tesseract\_environment::EnvironmentMonitorInterface@{tesseract\_environment::EnvironmentMonitorInterface}!applyCommand@{applyCommand}}
+\index{applyCommand@{applyCommand}!tesseract\_environment::EnvironmentMonitorInterface@{tesseract\_environment::EnvironmentMonitorInterface}}
+\doxysubsubsection{\texorpdfstring{applyCommand()}{applyCommand()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual bool tesseract\+\_\+environment\+::\+Environment\+Monitor\+Interface\+::apply\+Command (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{monitor\+\_\+namespace,  }\item[{const \mbox{\hyperlink{classtesseract__environment_1_1Command}{tesseract\+\_\+environment\+::\+Command}} \&}]{command }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Apply provided command to only the provided namespace. The namespace does not have to be one that is currently stored in this class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & The command to apply \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if successful, otherwise false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__environment_1_1EnvironmentMonitorInterface_acd131f299fb1fe46a525c3d01cbfc89a}\label{classtesseract__environment_1_1EnvironmentMonitorInterface_acd131f299fb1fe46a525c3d01cbfc89a}} 
+\index{tesseract\_environment::EnvironmentMonitorInterface@{tesseract\_environment::EnvironmentMonitorInterface}!applyCommand@{applyCommand}}
+\index{applyCommand@{applyCommand}!tesseract\_environment::EnvironmentMonitorInterface@{tesseract\_environment::EnvironmentMonitorInterface}}
+\doxysubsubsection{\texorpdfstring{applyCommand()}{applyCommand()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual std\+::vector$<$ std\+::string $>$ tesseract\+\_\+environment\+::\+Environment\+Monitor\+Interface\+::apply\+Command (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtesseract__environment_1_1Command}{tesseract\+\_\+environment\+::\+Command}} \&}]{command }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Apply provided command to all monitor namespaces. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & The command to apply \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of failed namespace, if empty all namespace were updated successfully. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__environment_1_1EnvironmentMonitorInterface_a3f35ed01d67a3b85d10b31d74c68c70d}\label{classtesseract__environment_1_1EnvironmentMonitorInterface_a3f35ed01d67a3b85d10b31d74c68c70d}} 
+\index{tesseract\_environment::EnvironmentMonitorInterface@{tesseract\_environment::EnvironmentMonitorInterface}!applyCommands@{applyCommands}}
+\index{applyCommands@{applyCommands}!tesseract\_environment::EnvironmentMonitorInterface@{tesseract\_environment::EnvironmentMonitorInterface}}
+\doxysubsubsection{\texorpdfstring{applyCommands()}{applyCommands()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily virtual bool tesseract\+\_\+environment\+::\+Environment\+Monitor\+Interface\+::apply\+Commands (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{monitor\+\_\+namespace,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{classtesseract__environment_1_1Command}{tesseract\+\_\+environment\+::\+Command}} $>$ \&}]{commands }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\mbox{\Hypertarget{classtesseract__environment_1_1EnvironmentMonitorInterface_a5fba3bda558a8a3d3aaed7e1e98d56b8}\label{classtesseract__environment_1_1EnvironmentMonitorInterface_a5fba3bda558a8a3d3aaed7e1e98d56b8}} 
+\index{tesseract\_environment::EnvironmentMonitorInterface@{tesseract\_environment::EnvironmentMonitorInterface}!applyCommands@{applyCommands}}
+\index{applyCommands@{applyCommands}!tesseract\_environment::EnvironmentMonitorInterface@{tesseract\_environment::EnvironmentMonitorInterface}}
+\doxysubsubsection{\texorpdfstring{applyCommands()}{applyCommands()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily virtual bool tesseract\+\_\+environment\+::\+Environment\+Monitor\+Interface\+::apply\+Commands (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{monitor\+\_\+namespace,  }\item[{const \mbox{\hyperlink{namespacetesseract__environment_acb95740502ec41d80a94a7631d4b7a3c}{tesseract\+\_\+environment\+::\+Commands}} \&}]{commands }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\mbox{\Hypertarget{classtesseract__environment_1_1EnvironmentMonitorInterface_ac1d1832bf4e1dcccddfcbcae512af4d0}\label{classtesseract__environment_1_1EnvironmentMonitorInterface_ac1d1832bf4e1dcccddfcbcae512af4d0}} 
+\index{tesseract\_environment::EnvironmentMonitorInterface@{tesseract\_environment::EnvironmentMonitorInterface}!applyCommands@{applyCommands}}
+\index{applyCommands@{applyCommands}!tesseract\_environment::EnvironmentMonitorInterface@{tesseract\_environment::EnvironmentMonitorInterface}}
+\doxysubsubsection{\texorpdfstring{applyCommands()}{applyCommands()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily virtual std\+::vector$<$ std\+::string $>$ tesseract\+\_\+environment\+::\+Environment\+Monitor\+Interface\+::apply\+Commands (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classtesseract__environment_1_1Command}{tesseract\+\_\+environment\+::\+Command}} $>$ \&}]{commands }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\mbox{\Hypertarget{classtesseract__environment_1_1EnvironmentMonitorInterface_a31f86c3af034de72735b40b2367a80a7}\label{classtesseract__environment_1_1EnvironmentMonitorInterface_a31f86c3af034de72735b40b2367a80a7}} 
+\index{tesseract\_environment::EnvironmentMonitorInterface@{tesseract\_environment::EnvironmentMonitorInterface}!applyCommands@{applyCommands}}
+\index{applyCommands@{applyCommands}!tesseract\_environment::EnvironmentMonitorInterface@{tesseract\_environment::EnvironmentMonitorInterface}}
+\doxysubsubsection{\texorpdfstring{applyCommands()}{applyCommands()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily virtual std\+::vector$<$ std\+::string $>$ tesseract\+\_\+environment\+::\+Environment\+Monitor\+Interface\+::apply\+Commands (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespacetesseract__environment_acb95740502ec41d80a94a7631d4b7a3c}{tesseract\+\_\+environment\+::\+Commands}} \&}]{commands }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\mbox{\Hypertarget{classtesseract__environment_1_1EnvironmentMonitorInterface_ad398704d853675b2b0037580fa5424eb}\label{classtesseract__environment_1_1EnvironmentMonitorInterface_ad398704d853675b2b0037580fa5424eb}} 
+\index{tesseract\_environment::EnvironmentMonitorInterface@{tesseract\_environment::EnvironmentMonitorInterface}!getEnvironment@{getEnvironment}}
+\index{getEnvironment@{getEnvironment}!tesseract\_environment::EnvironmentMonitorInterface@{tesseract\_environment::EnvironmentMonitorInterface}}
+\doxysubsubsection{\texorpdfstring{getEnvironment()}{getEnvironment()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classtesseract__environment_1_1Environment_a182513d107a55c729afb5e6482e2ac87}{tesseract\+\_\+environment\+::\+Environment\+::\+UPtr}} tesseract\+\_\+environment\+::\+Environment\+Monitor\+Interface\+::get\+Environment (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{monitor\+\_\+namespace }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pull information from the environment in the provided namespace and create a \mbox{\hyperlink{classtesseract__environment_1_1Environment}{Environment}} Object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em monitor\+\_\+namespace} & The namespace to extract the environment from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classtesseract__environment_1_1Environment}{Environment}} Shared Pointer, if nullptr it failed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__environment_1_1EnvironmentMonitorInterface_a42fac8fabd2638146b630889e4b4cea9}\label{classtesseract__environment_1_1EnvironmentMonitorInterface_a42fac8fabd2638146b630889e4b4cea9}} 
+\index{tesseract\_environment::EnvironmentMonitorInterface@{tesseract\_environment::EnvironmentMonitorInterface}!getEnvironmentState@{getEnvironmentState}}
+\index{getEnvironmentState@{getEnvironmentState}!tesseract\_environment::EnvironmentMonitorInterface@{tesseract\_environment::EnvironmentMonitorInterface}}
+\doxysubsubsection{\texorpdfstring{getEnvironmentState()}{getEnvironmentState()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+State}} tesseract\+\_\+environment\+::\+Environment\+Monitor\+Interface\+::get\+Environment\+State (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{monitor\+\_\+namespace }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pull current environment state from the environment in the provided namespace. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em monitor\+\_\+namespace} & The namespace to extract the environment from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classtesseract__environment_1_1Environment}{Environment}} Shared Pointer, if nullptr it failed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__environment_1_1EnvironmentMonitorInterface_a1d7bd6c2f057414787e5e17d1601f3ab}\label{classtesseract__environment_1_1EnvironmentMonitorInterface_a1d7bd6c2f057414787e5e17d1601f3ab}} 
+\index{tesseract\_environment::EnvironmentMonitorInterface@{tesseract\_environment::EnvironmentMonitorInterface}!removeNamespace@{removeNamespace}}
+\index{removeNamespace@{removeNamespace}!tesseract\_environment::EnvironmentMonitorInterface@{tesseract\_environment::EnvironmentMonitorInterface}}
+\doxysubsubsection{\texorpdfstring{removeNamespace()}{removeNamespace()}}
+{\footnotesize\ttfamily virtual void tesseract\+\_\+environment\+::\+Environment\+Monitor\+Interface\+::remove\+Namespace (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{monitor\+\_\+namespace }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Remove monitor namespace from interface. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em monitor\+\_\+namespace} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__environment_1_1EnvironmentMonitorInterface_a8c8eb6b844936c67d4fa0e8cf3a28979}\label{classtesseract__environment_1_1EnvironmentMonitorInterface_a8c8eb6b844936c67d4fa0e8cf3a28979}} 
+\index{tesseract\_environment::EnvironmentMonitorInterface@{tesseract\_environment::EnvironmentMonitorInterface}!setEnvironmentState@{setEnvironmentState}}
+\index{setEnvironmentState@{setEnvironmentState}!tesseract\_environment::EnvironmentMonitorInterface@{tesseract\_environment::EnvironmentMonitorInterface}}
+\doxysubsubsection{\texorpdfstring{setEnvironmentState()}{setEnvironmentState()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily virtual bool tesseract\+\_\+environment\+::\+Environment\+Monitor\+Interface\+::set\+Environment\+State (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{monitor\+\_\+namespace,  }\item[{const std\+::unordered\+\_\+map$<$ std\+::string, double $>$ \&}]{joints }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Set environments state in the provided namespace. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em monitor\+\_\+namespace} & The monitored namespace to set the state \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if successful, otherwise false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__environment_1_1EnvironmentMonitorInterface_a3d1e9962d6c3153d7c19503890e80ca4}\label{classtesseract__environment_1_1EnvironmentMonitorInterface_a3d1e9962d6c3153d7c19503890e80ca4}} 
+\index{tesseract\_environment::EnvironmentMonitorInterface@{tesseract\_environment::EnvironmentMonitorInterface}!setEnvironmentState@{setEnvironmentState}}
+\index{setEnvironmentState@{setEnvironmentState}!tesseract\_environment::EnvironmentMonitorInterface@{tesseract\_environment::EnvironmentMonitorInterface}}
+\doxysubsubsection{\texorpdfstring{setEnvironmentState()}{setEnvironmentState()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily virtual bool tesseract\+\_\+environment\+::\+Environment\+Monitor\+Interface\+::set\+Environment\+State (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{monitor\+\_\+namespace,  }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{joint\+\_\+names,  }\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xd $>$ \&}]{joint\+\_\+values }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\mbox{\Hypertarget{classtesseract__environment_1_1EnvironmentMonitorInterface_a8b1f2c0bb603ed92eac991c062a4c226}\label{classtesseract__environment_1_1EnvironmentMonitorInterface_a8b1f2c0bb603ed92eac991c062a4c226}} 
+\index{tesseract\_environment::EnvironmentMonitorInterface@{tesseract\_environment::EnvironmentMonitorInterface}!setEnvironmentState@{setEnvironmentState}}
+\index{setEnvironmentState@{setEnvironmentState}!tesseract\_environment::EnvironmentMonitorInterface@{tesseract\_environment::EnvironmentMonitorInterface}}
+\doxysubsubsection{\texorpdfstring{setEnvironmentState()}{setEnvironmentState()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily virtual bool tesseract\+\_\+environment\+::\+Environment\+Monitor\+Interface\+::set\+Environment\+State (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{monitor\+\_\+namespace,  }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{joint\+\_\+names,  }\item[{const std\+::vector$<$ double $>$ \&}]{joint\+\_\+values }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\mbox{\Hypertarget{classtesseract__environment_1_1EnvironmentMonitorInterface_ac3f378b7b4ce5eb6cf280c41be95a5b5}\label{classtesseract__environment_1_1EnvironmentMonitorInterface_ac3f378b7b4ce5eb6cf280c41be95a5b5}} 
+\index{tesseract\_environment::EnvironmentMonitorInterface@{tesseract\_environment::EnvironmentMonitorInterface}!setEnvironmentState@{setEnvironmentState}}
+\index{setEnvironmentState@{setEnvironmentState}!tesseract\_environment::EnvironmentMonitorInterface@{tesseract\_environment::EnvironmentMonitorInterface}}
+\doxysubsubsection{\texorpdfstring{setEnvironmentState()}{setEnvironmentState()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily virtual std\+::vector$<$ std\+::string $>$ tesseract\+\_\+environment\+::\+Environment\+Monitor\+Interface\+::set\+Environment\+State (\begin{DoxyParamCaption}\item[{const std\+::unordered\+\_\+map$<$ std\+::string, double $>$ \&}]{joints }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Set environment state for all monitor namespaces. 
+
+\begin{DoxyReturn}{Returns}
+A vector of failed namespace, if empty all namespace were updated successfully. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__environment_1_1EnvironmentMonitorInterface_a0e1fc4c2662cecb87b7b2929134e0bf2}\label{classtesseract__environment_1_1EnvironmentMonitorInterface_a0e1fc4c2662cecb87b7b2929134e0bf2}} 
+\index{tesseract\_environment::EnvironmentMonitorInterface@{tesseract\_environment::EnvironmentMonitorInterface}!setEnvironmentState@{setEnvironmentState}}
+\index{setEnvironmentState@{setEnvironmentState}!tesseract\_environment::EnvironmentMonitorInterface@{tesseract\_environment::EnvironmentMonitorInterface}}
+\doxysubsubsection{\texorpdfstring{setEnvironmentState()}{setEnvironmentState()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily virtual std\+::vector$<$ std\+::string $>$ tesseract\+\_\+environment\+::\+Environment\+Monitor\+Interface\+::set\+Environment\+State (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{joint\+\_\+names,  }\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xd $>$ \&}]{joint\+\_\+values }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\mbox{\Hypertarget{classtesseract__environment_1_1EnvironmentMonitorInterface_a8b5ee7df49b9317be7fa997d44838c5b}\label{classtesseract__environment_1_1EnvironmentMonitorInterface_a8b5ee7df49b9317be7fa997d44838c5b}} 
+\index{tesseract\_environment::EnvironmentMonitorInterface@{tesseract\_environment::EnvironmentMonitorInterface}!setEnvironmentState@{setEnvironmentState}}
+\index{setEnvironmentState@{setEnvironmentState}!tesseract\_environment::EnvironmentMonitorInterface@{tesseract\_environment::EnvironmentMonitorInterface}}
+\doxysubsubsection{\texorpdfstring{setEnvironmentState()}{setEnvironmentState()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily virtual std\+::vector$<$ std\+::string $>$ tesseract\+\_\+environment\+::\+Environment\+Monitor\+Interface\+::set\+Environment\+State (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{joint\+\_\+names,  }\item[{const std\+::vector$<$ double $>$ \&}]{joint\+\_\+values }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\mbox{\Hypertarget{classtesseract__environment_1_1EnvironmentMonitorInterface_aa84d97076821fee410854bd6e6900f88}\label{classtesseract__environment_1_1EnvironmentMonitorInterface_aa84d97076821fee410854bd6e6900f88}} 
+\index{tesseract\_environment::EnvironmentMonitorInterface@{tesseract\_environment::EnvironmentMonitorInterface}!wait@{wait}}
+\index{wait@{wait}!tesseract\_environment::EnvironmentMonitorInterface@{tesseract\_environment::EnvironmentMonitorInterface}}
+\doxysubsubsection{\texorpdfstring{wait()}{wait()}}
+{\footnotesize\ttfamily virtual bool tesseract\+\_\+environment\+::\+Environment\+Monitor\+Interface\+::wait (\begin{DoxyParamCaption}\item[{std\+::chrono\+::duration$<$ double $>$}]{duration = {\ttfamily std\+:\+:chrono\+:\+:seconds(0)} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+This will wait for all namespaces to begin publishing. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em duration} & The number of seconds to wait before returning, if zero it waits indefinitely \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if namespace is available, otherwise false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__environment_1_1EnvironmentMonitorInterface_a66102791074b3a3ea06459d9a13b785b}\label{classtesseract__environment_1_1EnvironmentMonitorInterface_a66102791074b3a3ea06459d9a13b785b}} 
+\index{tesseract\_environment::EnvironmentMonitorInterface@{tesseract\_environment::EnvironmentMonitorInterface}!waitForNamespace@{waitForNamespace}}
+\index{waitForNamespace@{waitForNamespace}!tesseract\_environment::EnvironmentMonitorInterface@{tesseract\_environment::EnvironmentMonitorInterface}}
+\doxysubsubsection{\texorpdfstring{waitForNamespace()}{waitForNamespace()}}
+{\footnotesize\ttfamily virtual bool tesseract\+\_\+environment\+::\+Environment\+Monitor\+Interface\+::wait\+For\+Namespace (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{monitor\+\_\+namespace,  }\item[{std\+::chrono\+::duration$<$ double $>$}]{duration = {\ttfamily std\+:\+:chrono\+:\+:seconds(0)} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+This will wait for a given namespace to begin publishing. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em monitor\+\_\+namespace} & The namespace to wait for \\
+\hline
+{\em duration} & The number of seconds to wait before returning, if zero it waits indefinitely \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if namespace is available, otherwise false 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classtesseract__environment_1_1EnvironmentMonitorInterface_a535df3286eeb4edaa6f495bfc27c5061}\label{classtesseract__environment_1_1EnvironmentMonitorInterface_a535df3286eeb4edaa6f495bfc27c5061}} 
+\index{tesseract\_environment::EnvironmentMonitorInterface@{tesseract\_environment::EnvironmentMonitorInterface}!env\_name\_@{env\_name\_}}
+\index{env\_name\_@{env\_name\_}!tesseract\_environment::EnvironmentMonitorInterface@{tesseract\_environment::EnvironmentMonitorInterface}}
+\doxysubsubsection{\texorpdfstring{env\_name\_}{env\_name\_}}
+{\footnotesize\ttfamily std\+::string tesseract\+\_\+environment\+::\+Environment\+Monitor\+Interface\+::env\+\_\+name\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+tesseract\+\_\+environment/include/tesseract\+\_\+environment/\mbox{\hyperlink{environment__monitor__interface_8h}{environment\+\_\+monitor\+\_\+interface.\+h}}\end{DoxyCompactItemize}

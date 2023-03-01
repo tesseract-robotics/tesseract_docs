@@ -1,0 +1,81 @@
+\hypertarget{structtesseract__kinematics_1_1ManipulabilityEllipsoid}{}\doxysection{tesseract\+\_\+kinematics\+::Manipulability\+Ellipsoid Struct Reference}
+\label{structtesseract__kinematics_1_1ManipulabilityEllipsoid}\index{tesseract\_kinematics::ManipulabilityEllipsoid@{tesseract\_kinematics::ManipulabilityEllipsoid}}
+
+
+Used to store \mbox{\hyperlink{structtesseract__kinematics_1_1Manipulability}{Manipulability}} and Force Ellipsoid data.  
+
+
+
+
+{\ttfamily \#include $<$utils.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+EIGEN\+\_\+\+MAKE\+\_\+\+ALIGNED\+\_\+\+OPERATOR\+\_\+\+NEW Eigen\+::\+Vector\+Xd \mbox{\hyperlink{structtesseract__kinematics_1_1ManipulabilityEllipsoid_a435d10bf8202bacf9cb472b0ac2c0c36}{eigen\+\_\+values}}
+\begin{DoxyCompactList}\small\item\em The manipulability ellipsoid eigen values. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{structtesseract__kinematics_1_1ManipulabilityEllipsoid_abc54d1240b184a6dc0eaf16bf6461fbe}{measure}} \{ 0 \}
+\begin{DoxyCompactList}\small\item\em The ratio of longest and shortes axes of the manipulability ellipsoid. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{structtesseract__kinematics_1_1ManipulabilityEllipsoid_a85fa8d934966c5522aad3d405fb1296b}{condition}} \{ 0 \}
+\begin{DoxyCompactList}\small\item\em The condition number of A. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{structtesseract__kinematics_1_1ManipulabilityEllipsoid_a3fb9e5490649a2f08866ddf2135e6662}{volume}} \{ 0 \}
+\begin{DoxyCompactList}\small\item\em This is propotial to the volume. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Used to store \mbox{\hyperlink{structtesseract__kinematics_1_1Manipulability}{Manipulability}} and Force Ellipsoid data. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structtesseract__kinematics_1_1ManipulabilityEllipsoid_a85fa8d934966c5522aad3d405fb1296b}\label{structtesseract__kinematics_1_1ManipulabilityEllipsoid_a85fa8d934966c5522aad3d405fb1296b}} 
+\index{tesseract\_kinematics::ManipulabilityEllipsoid@{tesseract\_kinematics::ManipulabilityEllipsoid}!condition@{condition}}
+\index{condition@{condition}!tesseract\_kinematics::ManipulabilityEllipsoid@{tesseract\_kinematics::ManipulabilityEllipsoid}}
+\doxysubsubsection{\texorpdfstring{condition}{condition}}
+{\footnotesize\ttfamily double tesseract\+\_\+kinematics\+::\+Manipulability\+Ellipsoid\+::condition \{ 0 \}}
+
+
+
+The condition number of A. 
+
+
+\begin{DoxyItemize}
+\item condition = (max eigen value) / (min eigen value) 
+\end{DoxyItemize}\mbox{\Hypertarget{structtesseract__kinematics_1_1ManipulabilityEllipsoid_a435d10bf8202bacf9cb472b0ac2c0c36}\label{structtesseract__kinematics_1_1ManipulabilityEllipsoid_a435d10bf8202bacf9cb472b0ac2c0c36}} 
+\index{tesseract\_kinematics::ManipulabilityEllipsoid@{tesseract\_kinematics::ManipulabilityEllipsoid}!eigen\_values@{eigen\_values}}
+\index{eigen\_values@{eigen\_values}!tesseract\_kinematics::ManipulabilityEllipsoid@{tesseract\_kinematics::ManipulabilityEllipsoid}}
+\doxysubsubsection{\texorpdfstring{eigen\_values}{eigen\_values}}
+{\footnotesize\ttfamily EIGEN\+\_\+\+MAKE\+\_\+\+ALIGNED\+\_\+\+OPERATOR\+\_\+\+NEW Eigen\+::\+Vector\+Xd tesseract\+\_\+kinematics\+::\+Manipulability\+Ellipsoid\+::eigen\+\_\+values}
+
+
+
+The manipulability ellipsoid eigen values. 
+
+\mbox{\Hypertarget{structtesseract__kinematics_1_1ManipulabilityEllipsoid_abc54d1240b184a6dc0eaf16bf6461fbe}\label{structtesseract__kinematics_1_1ManipulabilityEllipsoid_abc54d1240b184a6dc0eaf16bf6461fbe}} 
+\index{tesseract\_kinematics::ManipulabilityEllipsoid@{tesseract\_kinematics::ManipulabilityEllipsoid}!measure@{measure}}
+\index{measure@{measure}!tesseract\_kinematics::ManipulabilityEllipsoid@{tesseract\_kinematics::ManipulabilityEllipsoid}}
+\doxysubsubsection{\texorpdfstring{measure}{measure}}
+{\footnotesize\ttfamily double tesseract\+\_\+kinematics\+::\+Manipulability\+Ellipsoid\+::measure \{ 0 \}}
+
+
+
+The ratio of longest and shortes axes of the manipulability ellipsoid. 
+
+As this grows large it is approaching a singularity
+\begin{DoxyItemize}
+\item measure = sqrt(max eigen value) / sqrt(min eigen value)
+\item This should be greater than or equal to 1
+\item If equal to 1 it is isotropic 
+\end{DoxyItemize}\mbox{\Hypertarget{structtesseract__kinematics_1_1ManipulabilityEllipsoid_a3fb9e5490649a2f08866ddf2135e6662}\label{structtesseract__kinematics_1_1ManipulabilityEllipsoid_a3fb9e5490649a2f08866ddf2135e6662}} 
+\index{tesseract\_kinematics::ManipulabilityEllipsoid@{tesseract\_kinematics::ManipulabilityEllipsoid}!volume@{volume}}
+\index{volume@{volume}!tesseract\_kinematics::ManipulabilityEllipsoid@{tesseract\_kinematics::ManipulabilityEllipsoid}}
+\doxysubsubsection{\texorpdfstring{volume}{volume}}
+{\footnotesize\ttfamily double tesseract\+\_\+kinematics\+::\+Manipulability\+Ellipsoid\+::volume \{ 0 \}}
+
+
+
+This is propotial to the volume. 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+tesseract\+\_\+kinematics/core/include/tesseract\+\_\+kinematics/core/\mbox{\hyperlink{tesseract__kinematics_2core_2include_2tesseract__kinematics_2core_2utils_8h}{utils.\+h}}\end{DoxyCompactItemize}

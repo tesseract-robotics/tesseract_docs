@@ -1,0 +1,50 @@
+\hypertarget{contact__results__marker_8h_source}{}\doxysection{contact\+\_\+results\+\_\+marker.\+h}
+\label{contact__results__marker_8h_source}\index{tesseract\_visualization/include/tesseract\_visualization/markers/contact\_results\_marker.h@{tesseract\_visualization/include/tesseract\_visualization/markers/contact\_results\_marker.h}}
+\mbox{\hyperlink{contact__results__marker_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef TESSERACT\_VISUALIZATION\_MARKERS\_CONTACT\_RESULTS\_MARKER\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define TESSERACT\_VISUALIZATION\_MARKERS\_CONTACT\_RESULTS\_MARKER\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{macros_8h}{tesseract\_common/macros.h}}>}}
+\DoxyCodeLine{5 \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{7 \mbox{\hyperlink{namespaceTESSERACT__COMMON__IGNORE__WARNINGS__POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{marker_8h}{tesseract\_visualization/markers/marker.h}}>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{tesseract__collision_2core_2include_2tesseract__collision_2core_2types_8h}{tesseract\_collision/core/types.h}}>}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__visualization}{tesseract\_visualization}}}
+\DoxyCodeLine{13 \{}
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__visualization_1_1ContactResultsMarker}{ContactResultsMarker}} : \textcolor{keyword}{public} \mbox{\hyperlink{classtesseract__visualization_1_1Marker}{Marker}}}
+\DoxyCodeLine{20 \{}
+\DoxyCodeLine{21 \textcolor{keyword}{public}:}
+\DoxyCodeLine{22   EIGEN\_MAKE\_ALIGNED\_OPERATOR\_NEW}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24   \mbox{\hyperlink{classtesseract__visualization_1_1ContactResultsMarker_a42f620c586b75cb01890f3c74b273fa7}{ContactResultsMarker}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{25   \mbox{\hyperlink{classtesseract__visualization_1_1ContactResultsMarker_a7d6bef7be9bdd019ed391f10be4e089e}{ContactResultsMarker}}(std::vector<std::string> \mbox{\hyperlink{classtesseract__visualization_1_1ContactResultsMarker_a02ba07bc0cdda1ab66e0e030b8a7cb3e}{link\_names}},}
+\DoxyCodeLine{26                        \mbox{\hyperlink{namespacetesseract__collision_a96d77f62b7c26962d1090f0a2f00419b}{tesseract\_collision::ContactResultVector}} \mbox{\hyperlink{classtesseract__visualization_1_1ContactResultsMarker_ab13ebfbd8c1f142ca90e779247dd0cee}{dist\_results}},}
+\DoxyCodeLine{27                        \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData}{tesseract\_collision::CollisionMarginData}} \mbox{\hyperlink{classtesseract__visualization_1_1ContactResultsMarker_a9614ec874ab7803c3391751bcfd60455}{margin\_data}})}
+\DoxyCodeLine{28     : \mbox{\hyperlink{classtesseract__visualization_1_1ContactResultsMarker_a02ba07bc0cdda1ab66e0e030b8a7cb3e}{link\_names}}(std::move(\mbox{\hyperlink{classtesseract__visualization_1_1ContactResultsMarker_a02ba07bc0cdda1ab66e0e030b8a7cb3e}{link\_names}})), \mbox{\hyperlink{classtesseract__visualization_1_1ContactResultsMarker_ab13ebfbd8c1f142ca90e779247dd0cee}{dist\_results}}(std::move(\mbox{\hyperlink{classtesseract__visualization_1_1ContactResultsMarker_ab13ebfbd8c1f142ca90e779247dd0cee}{dist\_results}})), \mbox{\hyperlink{classtesseract__visualization_1_1ContactResultsMarker_a9614ec874ab7803c3391751bcfd60455}{margin\_data}}(std::move(\mbox{\hyperlink{classtesseract__visualization_1_1ContactResultsMarker_a9614ec874ab7803c3391751bcfd60455}{margin\_data}}))}
+\DoxyCodeLine{29   \{}
+\DoxyCodeLine{30   \}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32   \mbox{\hyperlink{classtesseract__visualization_1_1ContactResultsMarker_af0a2260ccfe3ff4a8538043006a0cb24}{ContactResultsMarker}}(std::vector<std::string> \mbox{\hyperlink{classtesseract__visualization_1_1ContactResultsMarker_a02ba07bc0cdda1ab66e0e030b8a7cb3e}{link\_names}},}
+\DoxyCodeLine{33                        \mbox{\hyperlink{namespacetesseract__collision_a96d77f62b7c26962d1090f0a2f00419b}{tesseract\_collision::ContactResultVector}} \mbox{\hyperlink{classtesseract__visualization_1_1ContactResultsMarker_ab13ebfbd8c1f142ca90e779247dd0cee}{dist\_results}},}
+\DoxyCodeLine{34                        std::function<\textcolor{keywordtype}{double}(\textcolor{keyword}{const} std::string\&, \textcolor{keyword}{const} std::string\&)> \mbox{\hyperlink{classtesseract__visualization_1_1ContactResultsMarker_aedca93e73f9eafab9b7e84fb39ff0355}{margin\_fn}})}
+\DoxyCodeLine{35     : \mbox{\hyperlink{classtesseract__visualization_1_1ContactResultsMarker_a02ba07bc0cdda1ab66e0e030b8a7cb3e}{link\_names}}(std::move(\mbox{\hyperlink{classtesseract__visualization_1_1ContactResultsMarker_a02ba07bc0cdda1ab66e0e030b8a7cb3e}{link\_names}})), \mbox{\hyperlink{classtesseract__visualization_1_1ContactResultsMarker_ab13ebfbd8c1f142ca90e779247dd0cee}{dist\_results}}(std::move(\mbox{\hyperlink{classtesseract__visualization_1_1ContactResultsMarker_ab13ebfbd8c1f142ca90e779247dd0cee}{dist\_results}})), \mbox{\hyperlink{classtesseract__visualization_1_1ContactResultsMarker_aedca93e73f9eafab9b7e84fb39ff0355}{margin\_fn}}(std::move(\mbox{\hyperlink{classtesseract__visualization_1_1ContactResultsMarker_aedca93e73f9eafab9b7e84fb39ff0355}{margin\_fn}}))}
+\DoxyCodeLine{36   \{}
+\DoxyCodeLine{37   \}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39   \textcolor{keywordtype}{int} \mbox{\hyperlink{classtesseract__visualization_1_1ContactResultsMarker_a9f4302c29e39d331f66133ef039b7d1d}{getType}}()\textcolor{keyword}{ const override }\{ \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{namespacetesseract__visualization_ac8e02d8f51fc302b5ea1fb8c3b1abc01ae8c9f70bfc69a0ac89c3c32c2b91c90f}{MarkerType::CONTACT\_RESULTS}}); \}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41   std::vector<std::string> \mbox{\hyperlink{classtesseract__visualization_1_1ContactResultsMarker_a02ba07bc0cdda1ab66e0e030b8a7cb3e}{link\_names}};}
+\DoxyCodeLine{42   \mbox{\hyperlink{namespacetesseract__collision_a96d77f62b7c26962d1090f0a2f00419b}{tesseract\_collision::ContactResultVector}} \mbox{\hyperlink{classtesseract__visualization_1_1ContactResultsMarker_ab13ebfbd8c1f142ca90e779247dd0cee}{dist\_results}};}
+\DoxyCodeLine{43   \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData}{tesseract\_collision::CollisionMarginData}} \mbox{\hyperlink{classtesseract__visualization_1_1ContactResultsMarker_a9614ec874ab7803c3391751bcfd60455}{margin\_data}};}
+\DoxyCodeLine{44   std::function<double(\textcolor{keyword}{const} std::string\&, \textcolor{keyword}{const} std::string\&)> \mbox{\hyperlink{classtesseract__visualization_1_1ContactResultsMarker_aedca93e73f9eafab9b7e84fb39ff0355}{margin\_fn}};}
+\DoxyCodeLine{45 \};}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \}  \textcolor{comment}{// namespace tesseract\_visualization}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_VISUALIZATION\_MARKERS\_CONTACT\_RESULTS\_MARKER\_H}}
+
+\end{DoxyCode}

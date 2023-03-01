@@ -1,0 +1,339 @@
+\hypertarget{classtesseract__common_1_1CollisionMarginData}{}\doxysection{tesseract\+\_\+common\+::Collision\+Margin\+Data Class Reference}
+\label{classtesseract__common_1_1CollisionMarginData}\index{tesseract\_common::CollisionMarginData@{tesseract\_common::CollisionMarginData}}
+
+
+Stores information about how the margins allowed between collision objects.  
+
+
+
+
+{\ttfamily \#include $<$collision\+\_\+margin\+\_\+data.\+h$>$}
+
+
+
+Collaboration diagram for tesseract\+\_\+common\+::Collision\+Margin\+Data\+:
+% FIG 0
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_a9d0116259e8c3b97d61e63a3209ffa7b}{Ptr}} = std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData}{Collision\+Margin\+Data}} $>$
+\item 
+using \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_af2235acd6d95c1c1336f4147d20270aa}{Const\+Ptr}} = std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData}{Collision\+Margin\+Data}} $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_a9a97127553eec26276c39d0b5be9867e}{Collision\+Margin\+Data}} (double default\+\_\+collision\+\_\+margin=0)
+\item 
+\mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_ab410d7f334d82cf661b76d423b193422}{Collision\+Margin\+Data}} (double default\+\_\+collision\+\_\+margin, \mbox{\hyperlink{namespacetesseract__common_a84cc21cc4b384291adbbddaa81fe6447}{Pairs\+Collision\+Margin\+Data}} pair\+\_\+collision\+\_\+margins)
+\item 
+\mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_ae43f99c1195e63cafe2c0b8ed458807b}{Collision\+Margin\+Data}} (\mbox{\hyperlink{namespacetesseract__common_a84cc21cc4b384291adbbddaa81fe6447}{Pairs\+Collision\+Margin\+Data}} pair\+\_\+collision\+\_\+margins)
+\item 
+void \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_ade4c1f40716db202cf87c37c4f39d95b}{set\+Default\+Collision\+Margin}} (double default\+\_\+collision\+\_\+margin)
+\begin{DoxyCompactList}\small\item\em Set the default collision margin. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_a63a01d2569c7aeebb892b075b6c3530d}{get\+Default\+Collision\+Margin}} () const
+\begin{DoxyCompactList}\small\item\em Get the default collision margin. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_a04b719610e2542a120bfbcd3e123a8c6}{set\+Pair\+Collision\+Margin}} (const std\+::string \&obj1, const std\+::string \&obj2, double collision\+\_\+margin)
+\begin{DoxyCompactList}\small\item\em Set the margin for a given contact pair. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_ac94cf7cce62f76b96a8d9aaab324d981}{get\+Pair\+Collision\+Margin}} (const std\+::string \&obj1, const std\+::string \&obj2) const
+\begin{DoxyCompactList}\small\item\em Get the pairs collision margin data. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{namespacetesseract__common_a84cc21cc4b384291adbbddaa81fe6447}{Pairs\+Collision\+Margin\+Data}} \& \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_aac04b62d79cd47a290dc95670bf1570f}{get\+Pair\+Collision\+Margins}} () const
+\begin{DoxyCompactList}\small\item\em Get Collision Margin Data for stored pairs. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_a8b73bd2450f2c9215e67bba3c048fe4b}{get\+Max\+Collision\+Margin}} () const
+\begin{DoxyCompactList}\small\item\em Get the largest collision margin. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_ac2b27e6a2b4b58e8b7f65cab33da00e4}{increment\+Margins}} (const double \&\mbox{\hyperlink{collision__margin__data__unit_8cpp_ac504dff76b24ab9f15536c51aec9fbbb}{increment}})
+\begin{DoxyCompactList}\small\item\em Increment all margins by input amount. Useful for inflating or reducing margins. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_aac09c8460a5e71148967b9f36248aa36}{scale\+Margins}} (const double \&\mbox{\hyperlink{collision__margin__data__unit_8cpp_a80d402d10e8341004c0caf10133b80ab}{scale}})
+\begin{DoxyCompactList}\small\item\em Scale all margins by input value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_a3a33394139ee1d8963e111a2e0e0c294}{apply}} (const \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData}{Collision\+Margin\+Data}} \&collision\+\_\+margin\+\_\+data, \mbox{\hyperlink{namespacetesseract__common_af06d85d024a36d63b58a6031556af8a1}{Collision\+Margin\+Override\+Type}} override\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Apply the contents of the provide \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData}{Collision\+Margin\+Data}} based on the override type. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_a9883fd58a6c185d00f41e61571f44590}{operator==}} (const \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData}{Collision\+Margin\+Data}} \&rhs) const
+\item 
+bool \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_a80fd9466c9ede844b31b3453708a61a7}{operator!=}} (const \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData}{Collision\+Margin\+Data}} \&rhs) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_a18885b5cf57a1ae952b4b517b2ce7933}{update\+Max\+Collision\+Margin}} ()
+\begin{DoxyCompactList}\small\item\em Update the max collision margin. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Archive $>$ }\\void \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_a5b8eb311ba3a70b140ee561910193de0}{serialize}} (Archive \&ar, const unsigned int version)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_afe835b8ece629843894446a9df56c494}{default\+\_\+collision\+\_\+margin\+\_\+}} \{ 0 \}
+\begin{DoxyCompactList}\small\item\em Stores the collision margin used if no pair-\/specific one is set. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_a6fec4a902fb625048da5611a857cd306}{max\+\_\+collision\+\_\+margin\+\_\+}} \{ 0 \}
+\begin{DoxyCompactList}\small\item\em Stores the largest collision margin. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacetesseract__common_a84cc21cc4b384291adbbddaa81fe6447}{Pairs\+Collision\+Margin\+Data}} \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_ac10b4d26f9e79bb0f41b01167efec0cc}{lookup\+\_\+table\+\_\+}}
+\begin{DoxyCompactList}\small\item\em A map of link pair names to contact distance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_ac98d07dd8f7b70e16ccb9a01abf56b9c}{boost\+::serialization\+::access}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Stores information about how the margins allowed between collision objects. 
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classtesseract__common_1_1CollisionMarginData_af2235acd6d95c1c1336f4147d20270aa}\label{classtesseract__common_1_1CollisionMarginData_af2235acd6d95c1c1336f4147d20270aa}} 
+\index{tesseract\_common::CollisionMarginData@{tesseract\_common::CollisionMarginData}!ConstPtr@{ConstPtr}}
+\index{ConstPtr@{ConstPtr}!tesseract\_common::CollisionMarginData@{tesseract\_common::CollisionMarginData}}
+\doxysubsubsection{\texorpdfstring{ConstPtr}{ConstPtr}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_af2235acd6d95c1c1336f4147d20270aa}{tesseract\+\_\+common\+::\+Collision\+Margin\+Data\+::\+Const\+Ptr}} =  std\+::shared\+\_\+ptr$<$const \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData}{Collision\+Margin\+Data}}$>$}
+
+\mbox{\Hypertarget{classtesseract__common_1_1CollisionMarginData_a9d0116259e8c3b97d61e63a3209ffa7b}\label{classtesseract__common_1_1CollisionMarginData_a9d0116259e8c3b97d61e63a3209ffa7b}} 
+\index{tesseract\_common::CollisionMarginData@{tesseract\_common::CollisionMarginData}!Ptr@{Ptr}}
+\index{Ptr@{Ptr}!tesseract\_common::CollisionMarginData@{tesseract\_common::CollisionMarginData}}
+\doxysubsubsection{\texorpdfstring{Ptr}{Ptr}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_a9d0116259e8c3b97d61e63a3209ffa7b}{tesseract\+\_\+common\+::\+Collision\+Margin\+Data\+::\+Ptr}} =  std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData}{Collision\+Margin\+Data}}$>$}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtesseract__common_1_1CollisionMarginData_a9a97127553eec26276c39d0b5be9867e}\label{classtesseract__common_1_1CollisionMarginData_a9a97127553eec26276c39d0b5be9867e}} 
+\index{tesseract\_common::CollisionMarginData@{tesseract\_common::CollisionMarginData}!CollisionMarginData@{CollisionMarginData}}
+\index{CollisionMarginData@{CollisionMarginData}!tesseract\_common::CollisionMarginData@{tesseract\_common::CollisionMarginData}}
+\doxysubsubsection{\texorpdfstring{CollisionMarginData()}{CollisionMarginData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily tesseract\+\_\+common\+::\+Collision\+Margin\+Data\+::\+Collision\+Margin\+Data (\begin{DoxyParamCaption}\item[{double}]{default\+\_\+collision\+\_\+margin = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classtesseract__common_1_1CollisionMarginData_ab410d7f334d82cf661b76d423b193422}\label{classtesseract__common_1_1CollisionMarginData_ab410d7f334d82cf661b76d423b193422}} 
+\index{tesseract\_common::CollisionMarginData@{tesseract\_common::CollisionMarginData}!CollisionMarginData@{CollisionMarginData}}
+\index{CollisionMarginData@{CollisionMarginData}!tesseract\_common::CollisionMarginData@{tesseract\_common::CollisionMarginData}}
+\doxysubsubsection{\texorpdfstring{CollisionMarginData()}{CollisionMarginData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily tesseract\+\_\+common\+::\+Collision\+Margin\+Data\+::\+Collision\+Margin\+Data (\begin{DoxyParamCaption}\item[{double}]{default\+\_\+collision\+\_\+margin,  }\item[{\mbox{\hyperlink{namespacetesseract__common_a84cc21cc4b384291adbbddaa81fe6447}{Pairs\+Collision\+Margin\+Data}}}]{pair\+\_\+collision\+\_\+margins }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classtesseract__common_1_1CollisionMarginData_ae43f99c1195e63cafe2c0b8ed458807b}\label{classtesseract__common_1_1CollisionMarginData_ae43f99c1195e63cafe2c0b8ed458807b}} 
+\index{tesseract\_common::CollisionMarginData@{tesseract\_common::CollisionMarginData}!CollisionMarginData@{CollisionMarginData}}
+\index{CollisionMarginData@{CollisionMarginData}!tesseract\_common::CollisionMarginData@{tesseract\_common::CollisionMarginData}}
+\doxysubsubsection{\texorpdfstring{CollisionMarginData()}{CollisionMarginData()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily tesseract\+\_\+common\+::\+Collision\+Margin\+Data\+::\+Collision\+Margin\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacetesseract__common_a84cc21cc4b384291adbbddaa81fe6447}{Pairs\+Collision\+Margin\+Data}}}]{pair\+\_\+collision\+\_\+margins }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtesseract__common_1_1CollisionMarginData_a3a33394139ee1d8963e111a2e0e0c294}\label{classtesseract__common_1_1CollisionMarginData_a3a33394139ee1d8963e111a2e0e0c294}} 
+\index{tesseract\_common::CollisionMarginData@{tesseract\_common::CollisionMarginData}!apply@{apply}}
+\index{apply@{apply}!tesseract\_common::CollisionMarginData@{tesseract\_common::CollisionMarginData}}
+\doxysubsubsection{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily void tesseract\+\_\+common\+::\+Collision\+Margin\+Data\+::apply (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData}{Collision\+Margin\+Data}} \&}]{collision\+\_\+margin\+\_\+data,  }\item[{\mbox{\hyperlink{namespacetesseract__common_af06d85d024a36d63b58a6031556af8a1}{Collision\+Margin\+Override\+Type}}}]{override\+\_\+type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Apply the contents of the provide \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData}{Collision\+Margin\+Data}} based on the override type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em collision\+\_\+margin\+\_\+data} & The collision margin data to apply \\
+\hline
+{\em override\+\_\+type} & The type indicating how the provided data should be applied. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__common_1_1CollisionMarginData_a63a01d2569c7aeebb892b075b6c3530d}\label{classtesseract__common_1_1CollisionMarginData_a63a01d2569c7aeebb892b075b6c3530d}} 
+\index{tesseract\_common::CollisionMarginData@{tesseract\_common::CollisionMarginData}!getDefaultCollisionMargin@{getDefaultCollisionMargin}}
+\index{getDefaultCollisionMargin@{getDefaultCollisionMargin}!tesseract\_common::CollisionMarginData@{tesseract\_common::CollisionMarginData}}
+\doxysubsubsection{\texorpdfstring{getDefaultCollisionMargin()}{getDefaultCollisionMargin()}}
+{\footnotesize\ttfamily double tesseract\+\_\+common\+::\+Collision\+Margin\+Data\+::get\+Default\+Collision\+Margin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the default collision margin. 
+
+\begin{DoxyReturn}{Returns}
+default collision margin 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__common_1_1CollisionMarginData_a8b73bd2450f2c9215e67bba3c048fe4b}\label{classtesseract__common_1_1CollisionMarginData_a8b73bd2450f2c9215e67bba3c048fe4b}} 
+\index{tesseract\_common::CollisionMarginData@{tesseract\_common::CollisionMarginData}!getMaxCollisionMargin@{getMaxCollisionMargin}}
+\index{getMaxCollisionMargin@{getMaxCollisionMargin}!tesseract\_common::CollisionMarginData@{tesseract\_common::CollisionMarginData}}
+\doxysubsubsection{\texorpdfstring{getMaxCollisionMargin()}{getMaxCollisionMargin()}}
+{\footnotesize\ttfamily double tesseract\+\_\+common\+::\+Collision\+Margin\+Data\+::get\+Max\+Collision\+Margin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the largest collision margin. 
+
+This used when setting the contact distance in the contact manager.
+
+\begin{DoxyReturn}{Returns}
+Max contact distance threshold 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__common_1_1CollisionMarginData_ac94cf7cce62f76b96a8d9aaab324d981}\label{classtesseract__common_1_1CollisionMarginData_ac94cf7cce62f76b96a8d9aaab324d981}} 
+\index{tesseract\_common::CollisionMarginData@{tesseract\_common::CollisionMarginData}!getPairCollisionMargin@{getPairCollisionMargin}}
+\index{getPairCollisionMargin@{getPairCollisionMargin}!tesseract\_common::CollisionMarginData@{tesseract\_common::CollisionMarginData}}
+\doxysubsubsection{\texorpdfstring{getPairCollisionMargin()}{getPairCollisionMargin()}}
+{\footnotesize\ttfamily double tesseract\+\_\+common\+::\+Collision\+Margin\+Data\+::get\+Pair\+Collision\+Margin (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{obj1,  }\item[{const std\+::string \&}]{obj2 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the pairs collision margin data. 
+
+If a collision margin for the request pair does not exist it returns the default collision margin data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj1} & The first object name \\
+\hline
+{\em obj2} & The second object name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A Vector2d\mbox{[}Contact Distance Threshold, Coefficient\mbox{]} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__common_1_1CollisionMarginData_aac04b62d79cd47a290dc95670bf1570f}\label{classtesseract__common_1_1CollisionMarginData_aac04b62d79cd47a290dc95670bf1570f}} 
+\index{tesseract\_common::CollisionMarginData@{tesseract\_common::CollisionMarginData}!getPairCollisionMargins@{getPairCollisionMargins}}
+\index{getPairCollisionMargins@{getPairCollisionMargins}!tesseract\_common::CollisionMarginData@{tesseract\_common::CollisionMarginData}}
+\doxysubsubsection{\texorpdfstring{getPairCollisionMargins()}{getPairCollisionMargins()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{namespacetesseract__common_a84cc21cc4b384291adbbddaa81fe6447}{Pairs\+Collision\+Margin\+Data}} \& tesseract\+\_\+common\+::\+Collision\+Margin\+Data\+::get\+Pair\+Collision\+Margins (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get Collision Margin Data for stored pairs. 
+
+\begin{DoxyReturn}{Returns}
+A map of link pairs collision margin data 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__common_1_1CollisionMarginData_ac2b27e6a2b4b58e8b7f65cab33da00e4}\label{classtesseract__common_1_1CollisionMarginData_ac2b27e6a2b4b58e8b7f65cab33da00e4}} 
+\index{tesseract\_common::CollisionMarginData@{tesseract\_common::CollisionMarginData}!incrementMargins@{incrementMargins}}
+\index{incrementMargins@{incrementMargins}!tesseract\_common::CollisionMarginData@{tesseract\_common::CollisionMarginData}}
+\doxysubsubsection{\texorpdfstring{incrementMargins()}{incrementMargins()}}
+{\footnotesize\ttfamily void tesseract\+\_\+common\+::\+Collision\+Margin\+Data\+::increment\+Margins (\begin{DoxyParamCaption}\item[{const double \&}]{increment }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Increment all margins by input amount. Useful for inflating or reducing margins. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em increment} & Amount to increment margins \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__common_1_1CollisionMarginData_a80fd9466c9ede844b31b3453708a61a7}\label{classtesseract__common_1_1CollisionMarginData_a80fd9466c9ede844b31b3453708a61a7}} 
+\index{tesseract\_common::CollisionMarginData@{tesseract\_common::CollisionMarginData}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!tesseract\_common::CollisionMarginData@{tesseract\_common::CollisionMarginData}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool tesseract\+\_\+common\+::\+Collision\+Margin\+Data\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData}{Collision\+Margin\+Data}} \&}]{rhs }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classtesseract__common_1_1CollisionMarginData_a9883fd58a6c185d00f41e61571f44590}\label{classtesseract__common_1_1CollisionMarginData_a9883fd58a6c185d00f41e61571f44590}} 
+\index{tesseract\_common::CollisionMarginData@{tesseract\_common::CollisionMarginData}!operator==@{operator==}}
+\index{operator==@{operator==}!tesseract\_common::CollisionMarginData@{tesseract\_common::CollisionMarginData}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool tesseract\+\_\+common\+::\+Collision\+Margin\+Data\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData}{Collision\+Margin\+Data}} \&}]{rhs }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classtesseract__common_1_1CollisionMarginData_aac09c8460a5e71148967b9f36248aa36}\label{classtesseract__common_1_1CollisionMarginData_aac09c8460a5e71148967b9f36248aa36}} 
+\index{tesseract\_common::CollisionMarginData@{tesseract\_common::CollisionMarginData}!scaleMargins@{scaleMargins}}
+\index{scaleMargins@{scaleMargins}!tesseract\_common::CollisionMarginData@{tesseract\_common::CollisionMarginData}}
+\doxysubsubsection{\texorpdfstring{scaleMargins()}{scaleMargins()}}
+{\footnotesize\ttfamily void tesseract\+\_\+common\+::\+Collision\+Margin\+Data\+::scale\+Margins (\begin{DoxyParamCaption}\item[{const double \&}]{scale }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Scale all margins by input value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scale} & Value by which all margins are multiplied \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__common_1_1CollisionMarginData_a5b8eb311ba3a70b140ee561910193de0}\label{classtesseract__common_1_1CollisionMarginData_a5b8eb311ba3a70b140ee561910193de0}} 
+\index{tesseract\_common::CollisionMarginData@{tesseract\_common::CollisionMarginData}!serialize@{serialize}}
+\index{serialize@{serialize}!tesseract\_common::CollisionMarginData@{tesseract\_common::CollisionMarginData}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily template$<$class Archive $>$ \\
+void tesseract\+\_\+common\+::\+Collision\+Margin\+Data\+::serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{ar,  }\item[{const unsigned int}]{version }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__common_1_1CollisionMarginData_ade4c1f40716db202cf87c37c4f39d95b}\label{classtesseract__common_1_1CollisionMarginData_ade4c1f40716db202cf87c37c4f39d95b}} 
+\index{tesseract\_common::CollisionMarginData@{tesseract\_common::CollisionMarginData}!setDefaultCollisionMargin@{setDefaultCollisionMargin}}
+\index{setDefaultCollisionMargin@{setDefaultCollisionMargin}!tesseract\_common::CollisionMarginData@{tesseract\_common::CollisionMarginData}}
+\doxysubsubsection{\texorpdfstring{setDefaultCollisionMargin()}{setDefaultCollisionMargin()}}
+{\footnotesize\ttfamily void tesseract\+\_\+common\+::\+Collision\+Margin\+Data\+::set\+Default\+Collision\+Margin (\begin{DoxyParamCaption}\item[{double}]{default\+\_\+collision\+\_\+margin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the default collision margin. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em default\+\_\+collision\+\_\+margin} & New default collision margin \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__common_1_1CollisionMarginData_a04b719610e2542a120bfbcd3e123a8c6}\label{classtesseract__common_1_1CollisionMarginData_a04b719610e2542a120bfbcd3e123a8c6}} 
+\index{tesseract\_common::CollisionMarginData@{tesseract\_common::CollisionMarginData}!setPairCollisionMargin@{setPairCollisionMargin}}
+\index{setPairCollisionMargin@{setPairCollisionMargin}!tesseract\_common::CollisionMarginData@{tesseract\_common::CollisionMarginData}}
+\doxysubsubsection{\texorpdfstring{setPairCollisionMargin()}{setPairCollisionMargin()}}
+{\footnotesize\ttfamily void tesseract\+\_\+common\+::\+Collision\+Margin\+Data\+::set\+Pair\+Collision\+Margin (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{obj1,  }\item[{const std\+::string \&}]{obj2,  }\item[{double}]{collision\+\_\+margin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the margin for a given contact pair. 
+
+The order of the object names does not matter, that is handled internal to the class.
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj1} & The first object name. Order doesn\textquotesingle{}t matter \\
+\hline
+{\em obj2} & The Second object name. Order doesn\textquotesingle{}t matter \\
+\hline
+{\em collision\+\_\+margin} & contacts with distance \texorpdfstring{$<$}{<} collision\+\_\+margin are considered in collision \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__common_1_1CollisionMarginData_a18885b5cf57a1ae952b4b517b2ce7933}\label{classtesseract__common_1_1CollisionMarginData_a18885b5cf57a1ae952b4b517b2ce7933}} 
+\index{tesseract\_common::CollisionMarginData@{tesseract\_common::CollisionMarginData}!updateMaxCollisionMargin@{updateMaxCollisionMargin}}
+\index{updateMaxCollisionMargin@{updateMaxCollisionMargin}!tesseract\_common::CollisionMarginData@{tesseract\_common::CollisionMarginData}}
+\doxysubsubsection{\texorpdfstring{updateMaxCollisionMargin()}{updateMaxCollisionMargin()}}
+{\footnotesize\ttfamily void tesseract\+\_\+common\+::\+Collision\+Margin\+Data\+::update\+Max\+Collision\+Margin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Update the max collision margin. 
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classtesseract__common_1_1CollisionMarginData_ac98d07dd8f7b70e16ccb9a01abf56b9c}\label{classtesseract__common_1_1CollisionMarginData_ac98d07dd8f7b70e16ccb9a01abf56b9c}} 
+\index{tesseract\_common::CollisionMarginData@{tesseract\_common::CollisionMarginData}!boost::serialization::access@{boost::serialization::access}}
+\index{boost::serialization::access@{boost::serialization::access}!tesseract\_common::CollisionMarginData@{tesseract\_common::CollisionMarginData}}
+\doxysubsubsection{\texorpdfstring{boost::serialization::access}{boost::serialization::access}}
+{\footnotesize\ttfamily friend class boost\+::serialization\+::access\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classtesseract__common_1_1CollisionMarginData_afe835b8ece629843894446a9df56c494}\label{classtesseract__common_1_1CollisionMarginData_afe835b8ece629843894446a9df56c494}} 
+\index{tesseract\_common::CollisionMarginData@{tesseract\_common::CollisionMarginData}!default\_collision\_margin\_@{default\_collision\_margin\_}}
+\index{default\_collision\_margin\_@{default\_collision\_margin\_}!tesseract\_common::CollisionMarginData@{tesseract\_common::CollisionMarginData}}
+\doxysubsubsection{\texorpdfstring{default\_collision\_margin\_}{default\_collision\_margin\_}}
+{\footnotesize\ttfamily double tesseract\+\_\+common\+::\+Collision\+Margin\+Data\+::default\+\_\+collision\+\_\+margin\+\_\+ \{ 0 \}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Stores the collision margin used if no pair-\/specific one is set. 
+
+\mbox{\Hypertarget{classtesseract__common_1_1CollisionMarginData_ac10b4d26f9e79bb0f41b01167efec0cc}\label{classtesseract__common_1_1CollisionMarginData_ac10b4d26f9e79bb0f41b01167efec0cc}} 
+\index{tesseract\_common::CollisionMarginData@{tesseract\_common::CollisionMarginData}!lookup\_table\_@{lookup\_table\_}}
+\index{lookup\_table\_@{lookup\_table\_}!tesseract\_common::CollisionMarginData@{tesseract\_common::CollisionMarginData}}
+\doxysubsubsection{\texorpdfstring{lookup\_table\_}{lookup\_table\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacetesseract__common_a84cc21cc4b384291adbbddaa81fe6447}{Pairs\+Collision\+Margin\+Data}} tesseract\+\_\+common\+::\+Collision\+Margin\+Data\+::lookup\+\_\+table\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+A map of link pair names to contact distance. 
+
+\mbox{\Hypertarget{classtesseract__common_1_1CollisionMarginData_a6fec4a902fb625048da5611a857cd306}\label{classtesseract__common_1_1CollisionMarginData_a6fec4a902fb625048da5611a857cd306}} 
+\index{tesseract\_common::CollisionMarginData@{tesseract\_common::CollisionMarginData}!max\_collision\_margin\_@{max\_collision\_margin\_}}
+\index{max\_collision\_margin\_@{max\_collision\_margin\_}!tesseract\_common::CollisionMarginData@{tesseract\_common::CollisionMarginData}}
+\doxysubsubsection{\texorpdfstring{max\_collision\_margin\_}{max\_collision\_margin\_}}
+{\footnotesize\ttfamily double tesseract\+\_\+common\+::\+Collision\+Margin\+Data\+::max\+\_\+collision\+\_\+margin\+\_\+ \{ 0 \}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Stores the largest collision margin. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+tesseract\+\_\+common/include/tesseract\+\_\+common/\mbox{\hyperlink{collision__margin__data_8h}{collision\+\_\+margin\+\_\+data.\+h}}\item 
+tesseract\+\_\+common/src/\mbox{\hyperlink{collision__margin__data_8cpp}{collision\+\_\+margin\+\_\+data.\+cpp}}\end{DoxyCompactItemize}

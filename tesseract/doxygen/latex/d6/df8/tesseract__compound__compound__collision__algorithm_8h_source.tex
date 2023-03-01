@@ -1,0 +1,107 @@
+\hypertarget{tesseract__compound__compound__collision__algorithm_8h_source}{}\doxysection{tesseract\+\_\+compound\+\_\+compound\+\_\+collision\+\_\+algorithm.\+h}
+\label{tesseract__compound__compound__collision__algorithm_8h_source}\index{tesseract\_collision/bullet/include/tesseract\_collision/bullet/tesseract\_compound\_compound\_collision\_algorithm.h@{tesseract\_collision/bullet/include/tesseract\_collision/bullet/tesseract\_compound\_compound\_collision\_algorithm.h}}
+\mbox{\hyperlink{tesseract__compound__compound__collision__algorithm_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{Bullet Continuous Collision Detection and Physics Library}}
+\DoxyCodeLine{3 \textcolor{comment}{Copyright (c) 2003-\/2006 Erwin Coumans  http://continuousphysics.com/Bullet/}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{This software is provided 'as-\/is', without any express or implied warranty.}}
+\DoxyCodeLine{6 \textcolor{comment}{In no event will the authors be held liable for any damages arising from the use of this software.}}
+\DoxyCodeLine{7 \textcolor{comment}{Permission is granted to anyone to use this software for any purpose,}}
+\DoxyCodeLine{8 \textcolor{comment}{including commercial applications, and to alter it and redistribute it freely,}}
+\DoxyCodeLine{9 \textcolor{comment}{subject to the following restrictions:}}
+\DoxyCodeLine{10 \textcolor{comment}{}}
+\DoxyCodeLine{11 \textcolor{comment}{1. The origin of this software must not be misrepresented; you must not claim that you wrote the original software. If}}
+\DoxyCodeLine{12 \textcolor{comment}{you use this software in a product, an acknowledgment in the product documentation would be appreciated but is not}}
+\DoxyCodeLine{13 \textcolor{comment}{required.}}
+\DoxyCodeLine{14 \textcolor{comment}{2. Altered source versions must be plainly marked as such, and must not be misrepresented as being the original}}
+\DoxyCodeLine{15 \textcolor{comment}{software.}}
+\DoxyCodeLine{16 \textcolor{comment}{3. This notice may not be removed or altered from any source distribution.}}
+\DoxyCodeLine{17 \textcolor{comment}{}}
+\DoxyCodeLine{18 \textcolor{comment}{*/}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#ifndef TESSERACT\_COLLISION\_TESSERACT\_COMPOUND\_COMPOUND\_COLLISION\_ALGORITHM\_H}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#define TESSERACT\_COLLISION\_TESSERACT\_COMPOUND\_COMPOUND\_COLLISION\_ALGORITHM\_H}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{macros_8h}{tesseract\_common/macros.h}}>}}
+\DoxyCodeLine{23 \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include <BulletCollision/BroadphaseCollision/btDispatcher.h>}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include <BulletCollision/BroadphaseCollision/btBroadphaseInterface.h>}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include <BulletCollision/CollisionDispatch/btActivatingCollisionAlgorithm.h>}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include <BulletCollision/NarrowPhaseCollision/btPersistentManifold.h>}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include <BulletCollision/BroadphaseCollision/btBroadphaseProxy.h>}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include <BulletCollision/CollisionDispatch/btCollisionCreateFunc.h>}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include <LinearMath/btAlignedObjectArray.h>}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include <BulletCollision/BroadphaseCollision/btDbvt.h>}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include <BulletCollision/CollisionDispatch/btHashedSimplePairCache.h>}}
+\DoxyCodeLine{33 \mbox{\hyperlink{namespaceTESSERACT__COMMON__IGNORE__WARNINGS__POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{tesseract__compound__collision__algorithm_8h}{tesseract\_collision/bullet/tesseract\_compound\_collision\_algorithm.h}}>}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{keyword}{class }btCollisionObject;}
+\DoxyCodeLine{38 \textcolor{keyword}{class }btCollisionShape;}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{comment}{// LCOV\_EXCL\_START}}
+\DoxyCodeLine{41 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet}{tesseract\_collision::tesseract\_collision\_bullet}}}
+\DoxyCodeLine{42 \{}
+\DoxyCodeLine{55 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCompoundCompoundCollisionAlgorithm}{TesseractCompoundCompoundCollisionAlgorithm}} : \textcolor{keyword}{public} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCompoundCollisionAlgorithm}{TesseractCompoundCollisionAlgorithm}}  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{56 \{}
+\DoxyCodeLine{57   \textcolor{keyword}{class }btHashedSimplePairCache* \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCompoundCompoundCollisionAlgorithm_a95fac404f8b6b265ec3985456636125f}{m\_childCollisionAlgorithmCache}};}
+\DoxyCodeLine{58   btSimplePairArray \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCompoundCompoundCollisionAlgorithm_a013d6b0b77986b6403671af96b77f160}{m\_removePairs}};}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60   \textcolor{keywordtype}{int} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCompoundCompoundCollisionAlgorithm_a875020707e8194dff1db690a32e7405c}{m\_compoundShapeRevision0}};  \textcolor{comment}{// to keep track of changes, so that childAlgorithm array can be updated}}
+\DoxyCodeLine{61   \textcolor{keywordtype}{int} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCompoundCompoundCollisionAlgorithm_a3c17d127c5d84e226a204a896970c955}{m\_compoundShapeRevision1}};}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCompoundCompoundCollisionAlgorithm_ac96c14c17939223fd225bb7a2b73a9e5}{removeChildAlgorithms}}();}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \textcolor{keyword}{public}:}
+\DoxyCodeLine{66   \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCompoundCompoundCollisionAlgorithm}{TesseractCompoundCompoundCollisionAlgorithm}}(\textcolor{keyword}{const} btCollisionAlgorithmConstructionInfo\& ci,}
+\DoxyCodeLine{67                                               \textcolor{keyword}{const} btCollisionObjectWrapper* body0Wrap,}
+\DoxyCodeLine{68                                               \textcolor{keyword}{const} btCollisionObjectWrapper* body1Wrap,}
+\DoxyCodeLine{69                                               \textcolor{keywordtype}{bool} isSwapped);}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71   \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCompoundCompoundCollisionAlgorithm_a4fa8a1258fc4e77ae1f17effc4808e87}{\string~TesseractCompoundCompoundCollisionAlgorithm}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{72   \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCompoundCompoundCollisionAlgorithm_a9066d245900a715972767b347b6fe9ce}{TesseractCompoundCompoundCollisionAlgorithm}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCompoundCompoundCollisionAlgorithm}{TesseractCompoundCompoundCollisionAlgorithm}}\&) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{73   \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCompoundCompoundCollisionAlgorithm}{TesseractCompoundCompoundCollisionAlgorithm}}\& \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCompoundCompoundCollisionAlgorithm_a622ade3ccdceffb40756058f2b8b1947}{operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCompoundCompoundCollisionAlgorithm}{TesseractCompoundCompoundCollisionAlgorithm}}\&) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{74   \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCompoundCompoundCollisionAlgorithm_a46f227f658057b5b6165324d1ee05867}{TesseractCompoundCompoundCollisionAlgorithm}}(\mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCompoundCompoundCollisionAlgorithm}{TesseractCompoundCompoundCollisionAlgorithm}}\&\&) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{75   \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCompoundCompoundCollisionAlgorithm}{TesseractCompoundCompoundCollisionAlgorithm}}\& \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCompoundCompoundCollisionAlgorithm_ab236dcbd0deb56ee6c9708748a9ee53c}{operator=}}(\mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCompoundCompoundCollisionAlgorithm}{TesseractCompoundCompoundCollisionAlgorithm}}\&\&) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCompoundCompoundCollisionAlgorithm_a6198d1e1d3547695effbab4566be684c}{processCollision}}(\textcolor{keyword}{const} btCollisionObjectWrapper* body0Wrap,}
+\DoxyCodeLine{78                         \textcolor{keyword}{const} btCollisionObjectWrapper* body1Wrap,}
+\DoxyCodeLine{79                         \textcolor{keyword}{const} btDispatcherInfo\& dispatchInfo,}
+\DoxyCodeLine{80                         btManifoldResult* resultOut) \textcolor{keyword}{override};}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82   btScalar \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCompoundCompoundCollisionAlgorithm_ae023bf22119f812e1d1383c5b419bd40}{calculateTimeOfImpact}}(btCollisionObject* body0,}
+\DoxyCodeLine{83                                  btCollisionObject* body1,}
+\DoxyCodeLine{84                                  \textcolor{keyword}{const} btDispatcherInfo\& dispatchInfo,}
+\DoxyCodeLine{85                                  btManifoldResult* resultOut) \textcolor{keyword}{override};}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCompoundCompoundCollisionAlgorithm_accbaf837981866077b5f6825ab4c6796}{getAllContactManifolds}}(btManifoldArray\& \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCompoundCollisionAlgorithm_a6562aa95c044590a91a601b807d7c1ea}{manifoldArray}}) \textcolor{keyword}{override};}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89   \textcolor{keyword}{struct }\mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCompoundCompoundCollisionAlgorithm_1_1CreateFunc}{CreateFunc}} : \textcolor{keyword}{public} btCollisionAlgorithmCreateFunc}
+\DoxyCodeLine{90   \{}
+\DoxyCodeLine{91     btCollisionAlgorithm* \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCompoundCompoundCollisionAlgorithm_1_1CreateFunc_ae2c42cb7a13a373d6784246680bed4d2}{CreateCollisionAlgorithm}}(btCollisionAlgorithmConstructionInfo\& ci,}
+\DoxyCodeLine{92                                                    \textcolor{keyword}{const} btCollisionObjectWrapper* body0Wrap,}
+\DoxyCodeLine{93                                                    \textcolor{keyword}{const} btCollisionObjectWrapper* body1Wrap)\textcolor{keyword}{ override}}
+\DoxyCodeLine{94 \textcolor{keyword}{    }\{}
+\DoxyCodeLine{95       \textcolor{keywordtype}{void}* mem = ci.m\_dispatcher1-\/>allocateCollisionAlgorithm(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCompoundCompoundCollisionAlgorithm}{TesseractCompoundCompoundCollisionAlgorithm}}));}
+\DoxyCodeLine{96       \textcolor{keywordflow}{return} \textcolor{keyword}{new} (mem) \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCompoundCompoundCollisionAlgorithm}{TesseractCompoundCompoundCollisionAlgorithm}}(ci, body0Wrap, body1Wrap, \textcolor{keyword}{false});}
+\DoxyCodeLine{97     \}}
+\DoxyCodeLine{98   \};}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100   \textcolor{keyword}{struct }\mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCompoundCompoundCollisionAlgorithm_1_1SwappedCreateFunc}{SwappedCreateFunc}} : \textcolor{keyword}{public} btCollisionAlgorithmCreateFunc}
+\DoxyCodeLine{101   \{}
+\DoxyCodeLine{102     btCollisionAlgorithm* \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCompoundCompoundCollisionAlgorithm_1_1SwappedCreateFunc_a22e116de4df7d2f2df210642d4206db9}{CreateCollisionAlgorithm}}(btCollisionAlgorithmConstructionInfo\& ci,}
+\DoxyCodeLine{103                                                    \textcolor{keyword}{const} btCollisionObjectWrapper* body0Wrap,}
+\DoxyCodeLine{104                                                    \textcolor{keyword}{const} btCollisionObjectWrapper* body1Wrap)\textcolor{keyword}{ override}}
+\DoxyCodeLine{105 \textcolor{keyword}{    }\{}
+\DoxyCodeLine{106       \textcolor{keywordtype}{void}* mem = ci.m\_dispatcher1-\/>allocateCollisionAlgorithm(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCompoundCompoundCollisionAlgorithm}{TesseractCompoundCompoundCollisionAlgorithm}}));}
+\DoxyCodeLine{107       \textcolor{keywordflow}{return} \textcolor{keyword}{new} (mem) \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCompoundCompoundCollisionAlgorithm}{TesseractCompoundCompoundCollisionAlgorithm}}(ci, body0Wrap, body1Wrap, \textcolor{keyword}{true});}
+\DoxyCodeLine{108     \}}
+\DoxyCodeLine{109   \};}
+\DoxyCodeLine{110 \};}
+\DoxyCodeLine{111 \}  \textcolor{comment}{// namespace tesseract\_collision::tesseract\_collision\_bullet}}
+\DoxyCodeLine{112 \textcolor{comment}{// LCOV\_EXCL\_STOP}}
+\DoxyCodeLine{113 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_COLLISION\_TESSERACT\_COMPOUND\_COMPOUND\_COLLISION\_ALGORITHM\_H}}
+
+\end{DoxyCode}

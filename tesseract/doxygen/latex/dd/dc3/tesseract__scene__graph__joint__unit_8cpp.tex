@@ -1,0 +1,451 @@
+\hypertarget{tesseract__scene__graph__joint__unit_8cpp}{}\doxysection{tesseract\+\_\+scene\+\_\+graph/test/tesseract\+\_\+scene\+\_\+graph\+\_\+joint\+\_\+unit.cpp File Reference}
+\label{tesseract__scene__graph__joint__unit_8cpp}\index{tesseract\_scene\_graph/test/tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph/test/tesseract\_scene\_graph\_joint\_unit.cpp}}
+{\ttfamily \#include $<$tesseract\+\_\+common/macros.\+h$>$}\newline
+{\ttfamily \#include $<$gtest/gtest.\+h$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+geometry/geometries.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+common/utils.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+scene\+\_\+graph/graph.\+h$>$}\newline
+Include dependency graph for tesseract\+\_\+scene\+\_\+graph\+\_\+joint\+\_\+unit.\+cpp\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_af3ba7b6e7a88b3ff10cc7b1e79d28e94}{EXPECT\+\_\+\+NEAR}} (\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a8299b6d103b7c1e0892c62ef3aeb1fbc}{j.\+damping}}, 0, 1e-\/6)
+\item 
+\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a4fe490496cf5d46a66e27a98b3016ef6}{clear}} ()
+\item 
+\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a3d95d0b6a6e67d83e209b81f5cfc8aa7}{s$<$$<$ j;\+EXPECT\+\_\+\+FALSE(s.\+str().\+empty());\} \{ using namespace tesseract\+\_\+scene\+\_\+graph;\+Joint\+Safety j;\+EXPECT\+\_\+\+NEAR(j.\+soft\+\_\+upper\+\_\+limit, 0, 1e-\/6);\+EXPECT\+\_\+\+NEAR(j.\+soft\+\_\+lower\+\_\+limit, 0, 1e-\/6);\+EXPECT\+\_\+\+NEAR(j.\+k\+\_\+position, 0, 1e-\/6);\+EXPECT\+\_\+\+NEAR(j.\+k\+\_\+velocity, 0, 1e-\/6);j.\+soft\+\_\+upper\+\_\+limit=1;j.\+soft\+\_\+lower\+\_\+limit=2;j.\+k\+\_\+position=3;j.\+k\+\_\+velocity=4;j.\+clear();\+EXPECT\+\_\+\+NEAR(j.\+soft\+\_\+upper\+\_\+limit, 0, 1e-\/6);\+EXPECT\+\_\+\+NEAR(j.\+soft\+\_\+lower\+\_\+limit, 0, 1e-\/6);\+EXPECT\+\_\+\+NEAR(j.\+k\+\_\+position, 0, 1e-\/6);\+EXPECT\+\_\+\+NEAR(j.\+k\+\_\+velocity, 0, 1e-\/6);std\+::ostringstream s;s$<$$<$ j;\+EXPECT\+\_\+\+FALSE(s.\+str().\+empty());\} \{ using namespace tesseract\+\_\+scene\+\_\+graph;\+Joint\+Calibration j;\+EXPECT\+\_\+\+NEAR(j.\+reference\+\_\+position, 0, 1e-\/6);\+EXPECT\+\_\+\+NEAR(j.\+rising, 0, 1e-\/6);\+EXPECT\+\_\+\+NEAR(j.\+falling, 0, 1e-\/6);j.\+reference\+\_\+position=1;j.\+rising=2;j.\+falling=3;j.\+clear();\+EXPECT\+\_\+\+NEAR(j.\+reference\+\_\+position, 0, 1e-\/6);\+EXPECT\+\_\+\+NEAR(j.\+rising, 0, 1e-\/6);\+EXPECT\+\_\+\+NEAR(j.\+falling, 0, 1e-\/6);std\+::ostringstream s;s$<$$<$ j;\+EXPECT\+\_\+\+FALSE(s.\+str().\+empty());\} \{ using namespace tesseract\+\_\+scene\+\_\+graph;\+Joint\+Mimic j;\+EXPECT\+\_\+\+NEAR(j.\+offset, 0, 1e-\/6);\+EXPECT\+\_\+\+NEAR(j.\+multiplier, 1, 1e-\/6);\+EXPECT\+\_\+\+TRUE(j.\+joint\+\_\+name.\+empty());j.\+offset=1;j.\+multiplier=2;j.\+joint\+\_\+name=\char`\"{}joint\+\_\+name\char`\"{};j.\+clear();\+EXPECT\+\_\+\+NEAR(j.\+offset, 0, 1e-\/6);\+EXPECT\+\_\+\+NEAR(j.\+multiplier, 1, 1e-\/6);\+EXPECT\+\_\+\+TRUE(j.\+joint\+\_\+name.\+empty());std\+::ostringstream s;s$<$$<$ j;\+EXPECT\+\_\+\+FALSE(s.\+str().\+empty());\} \{ using namespace tesseract\+\_\+scene\+\_\+graph;\+Joint joint\+\_\+1(\char`\"{}joint\+\_\+n1\char`\"{});\+EXPECT\+\_\+\+TRUE(joint\+\_\+1.\+parent\+\_\+to\+\_\+joint\+\_\+origin\+\_\+transform.\+is\+Approx(\+Eigen\+::\+Isometry3d\+::\+Identity()));\+EXPECT\+\_\+\+TRUE(joint\+\_\+1.\+child\+\_\+link\+\_\+name.\+empty());\+EXPECT\+\_\+\+TRUE(joint\+\_\+1.\+parent\+\_\+link\+\_\+name.\+empty());\+EXPECT\+\_\+\+TRUE(joint\+\_\+1.\+child\+\_\+link\+\_\+name.\+empty());\+EXPECT\+\_\+\+TRUE(joint\+\_\+1.\+dynamics==nullptr);\+EXPECT\+\_\+\+TRUE(joint\+\_\+1.\+limits==nullptr);\+EXPECT\+\_\+\+TRUE(joint\+\_\+1.\+safety==nullptr);\+EXPECT\+\_\+\+TRUE(joint\+\_\+1.\+calibration==nullptr);\+EXPECT\+\_\+\+TRUE(joint\+\_\+1.\+mimic==nullptr);\+EXPECT\+\_\+\+TRUE(joint\+\_\+1.\+type==\+Joint\+Type\+::\+UNKNOWN);joint\+\_\+1.\+parent\+\_\+to\+\_\+joint\+\_\+origin\+\_\+transform.\+translation()=\+Eigen\+::\+Vector3d(1, 2, 3);joint\+\_\+1.\+parent\+\_\+link\+\_\+name=\char`\"{}link\+\_\+n1\char`\"{};joint\+\_\+1.\+child\+\_\+link\+\_\+name=\char`\"{}link\+\_\+n2\char`\"{};joint\+\_\+1.\+axis=\+Eigen\+::\+Vector3d\+::\+Unit\+Z();joint\+\_\+1.\+type=\+Joint\+Type\+::\+PRISMATIC;joint\+\_\+1.\+dynamics=std\+::make\+\_\+shared$<$ Joint\+Dynamics $>$}} ()
+\item 
+\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a5443fc36dd69b7d25856f943f2b19614}{EXPECT\+\_\+\+EQ}} (joint\+\_\+1.\+get\+Name(), \char`\"{}joint\+\_\+n1\char`\"{})
+\item 
+\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a4834b6a8fafbe44f05bd84bfc0fce885}{EXPECT\+\_\+\+EQ}} (joint\+\_\+1\+\_\+clone.\+get\+Name(), \char`\"{}joint\+\_\+n1\char`\"{})
+\item 
+\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a469a6dd06711a19b2dc106f75281e68a}{EXPECT\+\_\+\+EQ}} (\mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a1c8a54acf8831080b86833add3e01e16}{joint\+\_\+1\+\_\+clone.\+parent\+\_\+link\+\_\+name}}, \char`\"{}link\+\_\+n1\char`\"{})
+\item 
+\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a502a2a9a78a7846fa6bdc82e2f7dc226}{EXPECT\+\_\+\+EQ}} (\mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a0ee2553dcc3b0f52bcf8c8e552ef733d}{joint\+\_\+1\+\_\+clone.\+child\+\_\+link\+\_\+name}}, \char`\"{}link\+\_\+n2\char`\"{})
+\item 
+\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a4d58bdb14e0f1fd714ba8252d3150f65}{EXPECT\+\_\+\+TRUE}} (joint\+\_\+1\+\_\+clone.\+parent\+\_\+to\+\_\+joint\+\_\+origin\+\_\+transform.\+is\+Approx(joint\+\_\+1.\+parent\+\_\+to\+\_\+joint\+\_\+origin\+\_\+transform))
+\item 
+\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a6e4e7176302493bd1649c83d9ef2139b}{EXPECT\+\_\+\+TRUE}} (joint\+\_\+1\+\_\+clone.\+axis.\+is\+Approx(Eigen\+::\+Vector3d\+::\+UnitZ()))
+\item 
+\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a037e8eadeb38bee00752dbbeaf402e83}{EXPECT\+\_\+\+EQ}} (\mbox{\hyperlink{tesseract__environment__collision_8cpp_a30f93ee2d6b54c870d5c8295071072ac}{joint\+\_\+1\+\_\+clone.\+type}}, Joint\+Type\+::\+PRISMATIC)
+\item 
+\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a4f03e676fa67909244cefe0c0b1354a1}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a68c10fa070763f88c082f3e3c711928d}{joint\+\_\+1\+\_\+clone.\+dynamics}} !=\mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a68c10fa070763f88c082f3e3c711928d}{joint\+\_\+1.\+dynamics}})
+\item 
+\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_acf89be463161b00cd31985e66b88c0e3}{EXPECT\+\_\+\+NEAR}} (\mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a68c10fa070763f88c082f3e3c711928d}{joint\+\_\+1\+\_\+clone.\+dynamics}}-\/$>$\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a8299b6d103b7c1e0892c62ef3aeb1fbc}{damping}}, 0.\+1, 1e-\/6)
+\item 
+\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a085f5ee5c748e453650da992d61fb9f6}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{joint\+\_\+1\+\_\+clone.\+limits}} !=\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{joint\+\_\+1.\+limits}})
+\item 
+\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a10a26235300e8496df7ec639f8be9dc2}{EXPECT\+\_\+\+NEAR}} (\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{joint\+\_\+1\+\_\+clone.\+limits}}-\/$>$\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a3c7c02ff5e570ea0344de12f1daa68a2}{lower}}, -\/5, 1e-\/6)
+\item 
+\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0566133aa99e647b92c8ae741e5ddb4b}{EXPECT\+\_\+\+NEAR}} (\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{joint\+\_\+1\+\_\+clone.\+limits}}-\/$>$\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_ab274f3e38b9588f2022dee7928e6e2dd}{upper}}, 5, 1e-\/6)
+\item 
+\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a9a80cac588b6465dcfafbe36feb9e644}{EXPECT\+\_\+\+NEAR}} (\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{joint\+\_\+1\+\_\+clone.\+limits}}-\/$>$\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a731078e9d4bc633101dd437a9ce00429}{effort}}, 0.\+5, 1e-\/6)
+\item 
+\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a3cd75a1d6761e7355f5f06bd9872dccc}{EXPECT\+\_\+\+NEAR}} (\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{joint\+\_\+1\+\_\+clone.\+limits}}-\/$>$\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a3db7f21cf101907d9343fe3be354041e}{velocity}}, 2, 1e-\/6)
+\item 
+\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a9997829af00f650453cc0e6eb8c04055}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a55a66440d9e8ec3a35e141f9eceaef38}{joint\+\_\+1\+\_\+clone.\+calibration}} !=\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a55a66440d9e8ec3a35e141f9eceaef38}{joint\+\_\+1.\+calibration}})
+\item 
+\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a134b686eb7d9957e9094dcd56a564a2b}{EXPECT\+\_\+\+NEAR}} (\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a55a66440d9e8ec3a35e141f9eceaef38}{joint\+\_\+1\+\_\+clone.\+calibration}}-\/$>$\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a7e7c3086a3368c31d5267e76ec0ce85b}{rising}}, 0.\+1, 1e-\/6)
+\item 
+\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a957bd382e1952d2aa8ab9a00b38ee2ab}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_ae241487f5a9c2916bb25efc6c3dbb1ec}{joint\+\_\+1\+\_\+clone.\+mimic}} !=\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_ae241487f5a9c2916bb25efc6c3dbb1ec}{joint\+\_\+1.\+mimic}})
+\item 
+\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_acc8eba2474cfd94f8c3018cb73573f12}{EXPECT\+\_\+\+NEAR}} (\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_ae241487f5a9c2916bb25efc6c3dbb1ec}{joint\+\_\+1\+\_\+clone.\+mimic}}-\/$>$\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a4b86264ab791a5f83c4b6fd003ade08f}{offset}}, 0.\+5, 1e-\/6)
+\item 
+\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a2a2f7845918310fb067b2ba9832d8fc8}{EXPECT\+\_\+\+EQ}} (\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_ae241487f5a9c2916bb25efc6c3dbb1ec}{joint\+\_\+1\+\_\+clone.\+mimic}}-\/$>$\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aad74bf9891b141c288c96b20caff4dfa}{joint\+\_\+name}}, \char`\"{}joint\+\_\+0\char`\"{})
+\item 
+\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a90047962c79e349b606b3a9885e91678}{EXPECT\+\_\+\+NEAR}} (\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_ae241487f5a9c2916bb25efc6c3dbb1ec}{joint\+\_\+1\+\_\+clone.\+mimic}}-\/$>$\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_ae13f174a9030149ca46a1421748699fd}{multiplier}}, 1.\+5, 1e-\/6)
+\item 
+\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a401506fe4f76238644e28b0db529660e}{EXPECT\+\_\+\+NEAR}} (\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_ad086f976cd50cd075491870a062cbebc}{joint\+\_\+1\+\_\+clone.\+safety}}-\/$>$\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a7c6506344b8c47b4453975ab5e1ebd48}{soft\+\_\+lower\+\_\+limit}}, -\/0.\+5, 1e-\/6)
+\item 
+\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a06ff71adab9bfddb43797c26eb341267}{EXPECT\+\_\+\+NEAR}} (\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_ad086f976cd50cd075491870a062cbebc}{joint\+\_\+1\+\_\+clone.\+safety}}-\/$>$\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa5817cb1810076501201d1bac24dde98}{soft\+\_\+upper\+\_\+limit}}, 0.\+5, 1e-\/6)
+\item 
+\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_acfba9adcc308bc4afacff176086a56f5}{EXPECT\+\_\+\+NEAR}} (\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_ad086f976cd50cd075491870a062cbebc}{joint\+\_\+1\+\_\+clone.\+safety}}-\/$>$\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a502db1cb485fef450b4b8fc2a6e77dab}{k\+\_\+position}}, 1.\+1, 1e-\/6)
+\item 
+\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a4b28c8fbba5bf4fe5cf757b05e4c6e86}{EXPECT\+\_\+\+NEAR}} (\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_ad086f976cd50cd075491870a062cbebc}{joint\+\_\+1\+\_\+clone.\+safety}}-\/$>$\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa6ffcd5b483db5a22c6873242e3b7f93}{k\+\_\+velocity}}, 2.\+5, 1e-\/6)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\+\_\+\+COMMON\+\_\+\+IGNORE\+\_\+\+WARNINGS\+\_\+\+PUSH}} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a2733ace18b4e650b36b176083d0f9c42}{TESSERACT\+\_\+\+COMMON\+\_\+\+IGNORE\+\_\+\+WARNINGS\+\_\+\+POP}}
+\item 
+Joint\+Dynamics \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}
+\item 
+\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a8299b6d103b7c1e0892c62ef3aeb1fbc}{damping}} = 10
+\item 
+\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a7d50d2daa61d0d52edee48514434d0f5}{friction}} = 5
+\item 
+\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a3c7c02ff5e570ea0344de12f1daa68a2}{lower}} = 1
+\item 
+\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_ab274f3e38b9588f2022dee7928e6e2dd}{upper}} = 2
+\item 
+\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a731078e9d4bc633101dd437a9ce00429}{effort}} = 3
+\item 
+\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a3db7f21cf101907d9343fe3be354041e}{velocity}} = 4
+\item 
+\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a05dc056c16872dbf02795511b090e7d6}{acceleration}} = 5
+\item 
+std\+::ostringstream \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_abed0f341955c53c40c3aa36c2c8f3b57}{s}}
+\item 
+\mbox{\hyperlink{tesseract__srdf__unit_8cpp_aa6fa183d7e9fca1cd923d5959338499a}{joint\+\_\+1}} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{limits}} = std\+::make\+\_\+shared$<$Joint\+Limits$>$()
+\item 
+\mbox{\hyperlink{tesseract__srdf__unit_8cpp_aa6fa183d7e9fca1cd923d5959338499a}{joint\+\_\+1}} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a55a66440d9e8ec3a35e141f9eceaef38}{calibration}} = std\+::make\+\_\+shared$<$Joint\+Calibration$>$()
+\item 
+\mbox{\hyperlink{tesseract__srdf__unit_8cpp_aa6fa183d7e9fca1cd923d5959338499a}{joint\+\_\+1}} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a55a66440d9e8ec3a35e141f9eceaef38}{calibration}} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a7e7c3086a3368c31d5267e76ec0ce85b}{rising}} = 0.\+1
+\item 
+\mbox{\hyperlink{tesseract__srdf__unit_8cpp_aa6fa183d7e9fca1cd923d5959338499a}{joint\+\_\+1}} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a55a66440d9e8ec3a35e141f9eceaef38}{calibration}} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_ace35116a0c55eb1d512202f6f36803f9}{falling}} = 0.\+1
+\item 
+\mbox{\hyperlink{tesseract__srdf__unit_8cpp_aa6fa183d7e9fca1cd923d5959338499a}{joint\+\_\+1}} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_ae241487f5a9c2916bb25efc6c3dbb1ec}{mimic}} = std\+::make\+\_\+shared$<$Joint\+Mimic$>$()
+\item 
+\mbox{\hyperlink{tesseract__srdf__unit_8cpp_aa6fa183d7e9fca1cd923d5959338499a}{joint\+\_\+1}} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_ae241487f5a9c2916bb25efc6c3dbb1ec}{mimic}} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a4b86264ab791a5f83c4b6fd003ade08f}{offset}} = 0.\+5
+\item 
+\mbox{\hyperlink{tesseract__srdf__unit_8cpp_aa6fa183d7e9fca1cd923d5959338499a}{joint\+\_\+1}} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_ae241487f5a9c2916bb25efc6c3dbb1ec}{mimic}} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aad74bf9891b141c288c96b20caff4dfa}{joint\+\_\+name}} = \char`\"{}joint\+\_\+0\char`\"{}
+\item 
+\mbox{\hyperlink{tesseract__srdf__unit_8cpp_aa6fa183d7e9fca1cd923d5959338499a}{joint\+\_\+1}} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_ae241487f5a9c2916bb25efc6c3dbb1ec}{mimic}} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_ae13f174a9030149ca46a1421748699fd}{multiplier}} = 1.\+5
+\item 
+\mbox{\hyperlink{tesseract__srdf__unit_8cpp_aa6fa183d7e9fca1cd923d5959338499a}{joint\+\_\+1}} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_ad086f976cd50cd075491870a062cbebc}{safety}} = std\+::make\+\_\+shared$<$Joint\+Safety$>$()
+\item 
+\mbox{\hyperlink{tesseract__srdf__unit_8cpp_aa6fa183d7e9fca1cd923d5959338499a}{joint\+\_\+1}} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_ad086f976cd50cd075491870a062cbebc}{safety}} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a7c6506344b8c47b4453975ab5e1ebd48}{soft\+\_\+lower\+\_\+limit}} = -\/0.\+5
+\item 
+\mbox{\hyperlink{tesseract__srdf__unit_8cpp_aa6fa183d7e9fca1cd923d5959338499a}{joint\+\_\+1}} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_ad086f976cd50cd075491870a062cbebc}{safety}} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa5817cb1810076501201d1bac24dde98}{soft\+\_\+upper\+\_\+limit}} = 0.\+5
+\item 
+\mbox{\hyperlink{tesseract__srdf__unit_8cpp_aa6fa183d7e9fca1cd923d5959338499a}{joint\+\_\+1}} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_ad086f976cd50cd075491870a062cbebc}{safety}} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a502db1cb485fef450b4b8fc2a6e77dab}{k\+\_\+position}} = 1.\+1
+\item 
+\mbox{\hyperlink{tesseract__srdf__unit_8cpp_aa6fa183d7e9fca1cd923d5959338499a}{joint\+\_\+1}} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_ad086f976cd50cd075491870a062cbebc}{safety}} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa6ffcd5b483db5a22c6873242e3b7f93}{k\+\_\+velocity}} = 2.\+5
+\item 
+Joint \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a046e20b9be98b1827a4febae7ce88728}{joint\+\_\+1\+\_\+clone}} = \mbox{\hyperlink{clone__cache__unit_8cpp_a468102a14fab28bb8303ea654a9b891b}{joint\+\_\+1.\+clone}}()
+\item 
+std\+::ostringstream \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_ab9634b1786a9b4b6051c685518ee5b15}{s1}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{tesseract__scene__graph__joint__unit_8cpp_a4fe490496cf5d46a66e27a98b3016ef6}\label{tesseract__scene__graph__joint__unit_8cpp_a4fe490496cf5d46a66e27a98b3016ef6}} 
+\index{tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}!clear@{clear}}
+\index{clear@{clear}!tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}} clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__scene__graph__joint__unit_8cpp_a5443fc36dd69b7d25856f943f2b19614}\label{tesseract__scene__graph__joint__unit_8cpp_a5443fc36dd69b7d25856f943f2b19614}} 
+\index{tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}!EXPECT\_EQ@{EXPECT\_EQ}}
+\index{EXPECT\_EQ@{EXPECT\_EQ}!tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_EQ()}{EXPECT\_EQ()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+EQ (\begin{DoxyParamCaption}\item[{joint\+\_\+1.}]{get\+Name(),  }\item[{\char`\"{}joint\+\_\+n1\char`\"{}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__scene__graph__joint__unit_8cpp_a502a2a9a78a7846fa6bdc82e2f7dc226}\label{tesseract__scene__graph__joint__unit_8cpp_a502a2a9a78a7846fa6bdc82e2f7dc226}} 
+\index{tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}!EXPECT\_EQ@{EXPECT\_EQ}}
+\index{EXPECT\_EQ@{EXPECT\_EQ}!tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_EQ()}{EXPECT\_EQ()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+EQ (\begin{DoxyParamCaption}\item[{joint\+\_\+1\+\_\+clone.}]{child\+\_\+link\+\_\+name,  }\item[{\char`\"{}link\+\_\+n2\char`\"{}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__scene__graph__joint__unit_8cpp_a4834b6a8fafbe44f05bd84bfc0fce885}\label{tesseract__scene__graph__joint__unit_8cpp_a4834b6a8fafbe44f05bd84bfc0fce885}} 
+\index{tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}!EXPECT\_EQ@{EXPECT\_EQ}}
+\index{EXPECT\_EQ@{EXPECT\_EQ}!tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_EQ()}{EXPECT\_EQ()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+EQ (\begin{DoxyParamCaption}\item[{joint\+\_\+1\+\_\+clone.}]{get\+Name(),  }\item[{\char`\"{}joint\+\_\+n1\char`\"{}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__scene__graph__joint__unit_8cpp_a2a2f7845918310fb067b2ba9832d8fc8}\label{tesseract__scene__graph__joint__unit_8cpp_a2a2f7845918310fb067b2ba9832d8fc8}} 
+\index{tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}!EXPECT\_EQ@{EXPECT\_EQ}}
+\index{EXPECT\_EQ@{EXPECT\_EQ}!tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_EQ()}{EXPECT\_EQ()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+EQ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_ae241487f5a9c2916bb25efc6c3dbb1ec}{joint\+\_\+1\+\_\+clone.\+mimic}}-\/$>$}]{joint\+\_\+name,  }\item[{\char`\"{}joint\+\_\+0\char`\"{}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__scene__graph__joint__unit_8cpp_a469a6dd06711a19b2dc106f75281e68a}\label{tesseract__scene__graph__joint__unit_8cpp_a469a6dd06711a19b2dc106f75281e68a}} 
+\index{tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}!EXPECT\_EQ@{EXPECT\_EQ}}
+\index{EXPECT\_EQ@{EXPECT\_EQ}!tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_EQ()}{EXPECT\_EQ()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+EQ (\begin{DoxyParamCaption}\item[{joint\+\_\+1\+\_\+clone.}]{parent\+\_\+link\+\_\+name,  }\item[{\char`\"{}link\+\_\+n1\char`\"{}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__scene__graph__joint__unit_8cpp_a037e8eadeb38bee00752dbbeaf402e83}\label{tesseract__scene__graph__joint__unit_8cpp_a037e8eadeb38bee00752dbbeaf402e83}} 
+\index{tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}!EXPECT\_EQ@{EXPECT\_EQ}}
+\index{EXPECT\_EQ@{EXPECT\_EQ}!tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_EQ()}{EXPECT\_EQ()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+EQ (\begin{DoxyParamCaption}\item[{joint\+\_\+1\+\_\+clone.}]{type,  }\item[{Joint\+Type\+::\+PRISMATIC}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__scene__graph__joint__unit_8cpp_af3ba7b6e7a88b3ff10cc7b1e79d28e94}\label{tesseract__scene__graph__joint__unit_8cpp_af3ba7b6e7a88b3ff10cc7b1e79d28e94}} 
+\index{tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}!EXPECT\_NEAR@{EXPECT\_NEAR}}
+\index{EXPECT\_NEAR@{EXPECT\_NEAR}!tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_NEAR()}{EXPECT\_NEAR()}\hspace{0.1cm}{\footnotesize\ttfamily [1/13]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+NEAR (\begin{DoxyParamCaption}\item[{j.}]{damping,  }\item[{0}]{,  }\item[{1e-\/}]{6 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__scene__graph__joint__unit_8cpp_a134b686eb7d9957e9094dcd56a564a2b}\label{tesseract__scene__graph__joint__unit_8cpp_a134b686eb7d9957e9094dcd56a564a2b}} 
+\index{tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}!EXPECT\_NEAR@{EXPECT\_NEAR}}
+\index{EXPECT\_NEAR@{EXPECT\_NEAR}!tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_NEAR()}{EXPECT\_NEAR()}\hspace{0.1cm}{\footnotesize\ttfamily [2/13]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+NEAR (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a55a66440d9e8ec3a35e141f9eceaef38}{joint\+\_\+1\+\_\+clone.\+calibration}}-\/$>$}]{rising,  }\item[{0.}]{1,  }\item[{1e-\/}]{6 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__scene__graph__joint__unit_8cpp_acf89be463161b00cd31985e66b88c0e3}\label{tesseract__scene__graph__joint__unit_8cpp_acf89be463161b00cd31985e66b88c0e3}} 
+\index{tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}!EXPECT\_NEAR@{EXPECT\_NEAR}}
+\index{EXPECT\_NEAR@{EXPECT\_NEAR}!tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_NEAR()}{EXPECT\_NEAR()}\hspace{0.1cm}{\footnotesize\ttfamily [3/13]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+NEAR (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a68c10fa070763f88c082f3e3c711928d}{joint\+\_\+1\+\_\+clone.\+dynamics}}-\/$>$}]{damping,  }\item[{0.}]{1,  }\item[{1e-\/}]{6 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__scene__graph__joint__unit_8cpp_a9a80cac588b6465dcfafbe36feb9e644}\label{tesseract__scene__graph__joint__unit_8cpp_a9a80cac588b6465dcfafbe36feb9e644}} 
+\index{tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}!EXPECT\_NEAR@{EXPECT\_NEAR}}
+\index{EXPECT\_NEAR@{EXPECT\_NEAR}!tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_NEAR()}{EXPECT\_NEAR()}\hspace{0.1cm}{\footnotesize\ttfamily [4/13]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+NEAR (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{joint\+\_\+1\+\_\+clone.\+limits}}-\/$>$}]{effort,  }\item[{0.}]{5,  }\item[{1e-\/}]{6 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__scene__graph__joint__unit_8cpp_a10a26235300e8496df7ec639f8be9dc2}\label{tesseract__scene__graph__joint__unit_8cpp_a10a26235300e8496df7ec639f8be9dc2}} 
+\index{tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}!EXPECT\_NEAR@{EXPECT\_NEAR}}
+\index{EXPECT\_NEAR@{EXPECT\_NEAR}!tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_NEAR()}{EXPECT\_NEAR()}\hspace{0.1cm}{\footnotesize\ttfamily [5/13]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+NEAR (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{joint\+\_\+1\+\_\+clone.\+limits}}-\/$>$}]{lower,  }\item[{-\/}]{5,  }\item[{1e-\/}]{6 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__scene__graph__joint__unit_8cpp_a0566133aa99e647b92c8ae741e5ddb4b}\label{tesseract__scene__graph__joint__unit_8cpp_a0566133aa99e647b92c8ae741e5ddb4b}} 
+\index{tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}!EXPECT\_NEAR@{EXPECT\_NEAR}}
+\index{EXPECT\_NEAR@{EXPECT\_NEAR}!tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_NEAR()}{EXPECT\_NEAR()}\hspace{0.1cm}{\footnotesize\ttfamily [6/13]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+NEAR (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{joint\+\_\+1\+\_\+clone.\+limits}}-\/$>$}]{upper,  }\item[{5}]{,  }\item[{1e-\/}]{6 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__scene__graph__joint__unit_8cpp_a3cd75a1d6761e7355f5f06bd9872dccc}\label{tesseract__scene__graph__joint__unit_8cpp_a3cd75a1d6761e7355f5f06bd9872dccc}} 
+\index{tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}!EXPECT\_NEAR@{EXPECT\_NEAR}}
+\index{EXPECT\_NEAR@{EXPECT\_NEAR}!tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_NEAR()}{EXPECT\_NEAR()}\hspace{0.1cm}{\footnotesize\ttfamily [7/13]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+NEAR (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{joint\+\_\+1\+\_\+clone.\+limits}}-\/$>$}]{velocity,  }\item[{2}]{,  }\item[{1e-\/}]{6 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__scene__graph__joint__unit_8cpp_a90047962c79e349b606b3a9885e91678}\label{tesseract__scene__graph__joint__unit_8cpp_a90047962c79e349b606b3a9885e91678}} 
+\index{tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}!EXPECT\_NEAR@{EXPECT\_NEAR}}
+\index{EXPECT\_NEAR@{EXPECT\_NEAR}!tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_NEAR()}{EXPECT\_NEAR()}\hspace{0.1cm}{\footnotesize\ttfamily [8/13]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+NEAR (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_ae241487f5a9c2916bb25efc6c3dbb1ec}{joint\+\_\+1\+\_\+clone.\+mimic}}-\/$>$}]{multiplier,  }\item[{1.}]{5,  }\item[{1e-\/}]{6 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__scene__graph__joint__unit_8cpp_acc8eba2474cfd94f8c3018cb73573f12}\label{tesseract__scene__graph__joint__unit_8cpp_acc8eba2474cfd94f8c3018cb73573f12}} 
+\index{tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}!EXPECT\_NEAR@{EXPECT\_NEAR}}
+\index{EXPECT\_NEAR@{EXPECT\_NEAR}!tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_NEAR()}{EXPECT\_NEAR()}\hspace{0.1cm}{\footnotesize\ttfamily [9/13]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+NEAR (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_ae241487f5a9c2916bb25efc6c3dbb1ec}{joint\+\_\+1\+\_\+clone.\+mimic}}-\/$>$}]{offset,  }\item[{0.}]{5,  }\item[{1e-\/}]{6 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__scene__graph__joint__unit_8cpp_acfba9adcc308bc4afacff176086a56f5}\label{tesseract__scene__graph__joint__unit_8cpp_acfba9adcc308bc4afacff176086a56f5}} 
+\index{tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}!EXPECT\_NEAR@{EXPECT\_NEAR}}
+\index{EXPECT\_NEAR@{EXPECT\_NEAR}!tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_NEAR()}{EXPECT\_NEAR()}\hspace{0.1cm}{\footnotesize\ttfamily [10/13]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+NEAR (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_ad086f976cd50cd075491870a062cbebc}{joint\+\_\+1\+\_\+clone.\+safety}}-\/$>$}]{k\+\_\+position,  }\item[{1.}]{1,  }\item[{1e-\/}]{6 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__scene__graph__joint__unit_8cpp_a4b28c8fbba5bf4fe5cf757b05e4c6e86}\label{tesseract__scene__graph__joint__unit_8cpp_a4b28c8fbba5bf4fe5cf757b05e4c6e86}} 
+\index{tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}!EXPECT\_NEAR@{EXPECT\_NEAR}}
+\index{EXPECT\_NEAR@{EXPECT\_NEAR}!tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_NEAR()}{EXPECT\_NEAR()}\hspace{0.1cm}{\footnotesize\ttfamily [11/13]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+NEAR (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_ad086f976cd50cd075491870a062cbebc}{joint\+\_\+1\+\_\+clone.\+safety}}-\/$>$}]{k\+\_\+velocity,  }\item[{2.}]{5,  }\item[{1e-\/}]{6 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__scene__graph__joint__unit_8cpp_a401506fe4f76238644e28b0db529660e}\label{tesseract__scene__graph__joint__unit_8cpp_a401506fe4f76238644e28b0db529660e}} 
+\index{tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}!EXPECT\_NEAR@{EXPECT\_NEAR}}
+\index{EXPECT\_NEAR@{EXPECT\_NEAR}!tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_NEAR()}{EXPECT\_NEAR()}\hspace{0.1cm}{\footnotesize\ttfamily [12/13]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+NEAR (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_ad086f976cd50cd075491870a062cbebc}{joint\+\_\+1\+\_\+clone.\+safety}}-\/$>$}]{soft\+\_\+lower\+\_\+limit,  }\item[{-\/0.}]{5,  }\item[{1e-\/}]{6 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__scene__graph__joint__unit_8cpp_a06ff71adab9bfddb43797c26eb341267}\label{tesseract__scene__graph__joint__unit_8cpp_a06ff71adab9bfddb43797c26eb341267}} 
+\index{tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}!EXPECT\_NEAR@{EXPECT\_NEAR}}
+\index{EXPECT\_NEAR@{EXPECT\_NEAR}!tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_NEAR()}{EXPECT\_NEAR()}\hspace{0.1cm}{\footnotesize\ttfamily [13/13]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+NEAR (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_ad086f976cd50cd075491870a062cbebc}{joint\+\_\+1\+\_\+clone.\+safety}}-\/$>$}]{soft\+\_\+upper\+\_\+limit,  }\item[{0.}]{5,  }\item[{1e-\/}]{6 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__scene__graph__joint__unit_8cpp_a6e4e7176302493bd1649c83d9ef2139b}\label{tesseract__scene__graph__joint__unit_8cpp_a6e4e7176302493bd1649c83d9ef2139b}} 
+\index{tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{joint\+\_\+1\+\_\+clone.\+axis.}]{is\+ApproxEigen\+::\+Vector3d\+::\+Unit\+Z() }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__scene__graph__joint__unit_8cpp_a9997829af00f650453cc0e6eb8c04055}\label{tesseract__scene__graph__joint__unit_8cpp_a9997829af00f650453cc0e6eb8c04055}} 
+\index{tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a55a66440d9e8ec3a35e141f9eceaef38}{joint\+\_\+1\+\_\+clone.\+calibration}} !}]{ = {\ttfamily \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a55a66440d9e8ec3a35e141f9eceaef38}{joint\+\_\+1.\+calibration}}} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__scene__graph__joint__unit_8cpp_a4f03e676fa67909244cefe0c0b1354a1}\label{tesseract__scene__graph__joint__unit_8cpp_a4f03e676fa67909244cefe0c0b1354a1}} 
+\index{tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a68c10fa070763f88c082f3e3c711928d}{joint\+\_\+1\+\_\+clone.\+dynamics}} !}]{ = {\ttfamily \mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a68c10fa070763f88c082f3e3c711928d}{joint\+\_\+1.\+dynamics}}} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__scene__graph__joint__unit_8cpp_a085f5ee5c748e453650da992d61fb9f6}\label{tesseract__scene__graph__joint__unit_8cpp_a085f5ee5c748e453650da992d61fb9f6}} 
+\index{tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{joint\+\_\+1\+\_\+clone.\+limits}} !}]{ = {\ttfamily \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{joint\+\_\+1.\+limits}}} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__scene__graph__joint__unit_8cpp_a957bd382e1952d2aa8ab9a00b38ee2ab}\label{tesseract__scene__graph__joint__unit_8cpp_a957bd382e1952d2aa8ab9a00b38ee2ab}} 
+\index{tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_ae241487f5a9c2916bb25efc6c3dbb1ec}{joint\+\_\+1\+\_\+clone.\+mimic}} !}]{ = {\ttfamily \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_ae241487f5a9c2916bb25efc6c3dbb1ec}{joint\+\_\+1.\+mimic}}} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__scene__graph__joint__unit_8cpp_a4d58bdb14e0f1fd714ba8252d3150f65}\label{tesseract__scene__graph__joint__unit_8cpp_a4d58bdb14e0f1fd714ba8252d3150f65}} 
+\index{tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{joint\+\_\+1\+\_\+clone.\+parent\+\_\+to\+\_\+joint\+\_\+origin\+\_\+transform.}]{is\+Approxjoint\+\_\+1.\+parent\+\_\+to\+\_\+joint\+\_\+origin\+\_\+transform }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__scene__graph__joint__unit_8cpp_a3d95d0b6a6e67d83e209b81f5cfc8aa7}\label{tesseract__scene__graph__joint__unit_8cpp_a3d95d0b6a6e67d83e209b81f5cfc8aa7}} 
+\index{tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}!s$<$$<$ j;EXPECT\_FALSE(s.str().empty());\rcurly{} \lcurly{} using namespace tesseract\_scene\_graph;JointSafety j;EXPECT\_NEAR(j.soft\_upper\_limit, 0, 1e-\/6);EXPECT\_NEAR(j.soft\_lower\_limit, 0, 1e-\/6);EXPECT\_NEAR(j.k\_position, 0, 1e-\/6);EXPECT\_NEAR(j.k\_velocity, 0, 1e-\/6);j.soft\_upper\_limit=1;j.soft\_lower\_limit=2;j.k\_position=3;j.k\_velocity=4;j.clear();EXPECT\_NEAR(j.soft\_upper\_limit, 0, 1e-\/6);EXPECT\_NEAR(j.soft\_lower\_limit, 0, 1e-\/6);EXPECT\_NEAR(j.k\_position, 0, 1e-\/6);EXPECT\_NEAR(j.k\_velocity, 0, 1e-\/6);std::ostringstream s;s$<$$<$ j;EXPECT\_FALSE(s.str().empty());\rcurly{} \lcurly{} using namespace tesseract\_scene\_graph;JointCalibration j;EXPECT\_NEAR(j.reference\_position, 0, 1e-\/6);EXPECT\_NEAR(j.rising, 0, 1e-\/6);EXPECT\_NEAR(j.falling, 0, 1e-\/6);j.reference\_position=1;j.rising=2;j.falling=3;j.clear();EXPECT\_NEAR(j.reference\_position, 0, 1e-\/6);EXPECT\_NEAR(j.rising, 0, 1e-\/6);EXPECT\_NEAR(j.falling, 0, 1e-\/6);std::ostringstream s;s$<$$<$ j;EXPECT\_FALSE(s.str().empty());\rcurly{} \lcurly{} using namespace tesseract\_scene\_graph;JointMimic j;EXPECT\_NEAR(j.offset, 0, 1e-\/6);EXPECT\_NEAR(j.multiplier, 1, 1e-\/6);EXPECT\_TRUE(j.joint\_name.empty());j.offset=1;j.multiplier=2;j.joint\_name=\char`\"{}joint\_name\char`\"{};j.clear();EXPECT\_NEAR(j.offset, 0, 1e-\/6);EXPECT\_NEAR(j.multiplier, 1, 1e-\/6);EXPECT\_TRUE(j.joint\_name.empty());std::ostringstream s;s$<$$<$ j;EXPECT\_FALSE(s.str().empty());\rcurly{} \lcurly{} using namespace tesseract\_scene\_graph;Joint joint\_1(\char`\"{}joint\_n1\char`\"{});EXPECT\_TRUE(joint\_1.parent\_to\_joint\_origin\_transform.isApprox(Eigen::Isometry3d::Identity()));EXPECT\_TRUE(joint\_1.child\_link\_name.empty());EXPECT\_TRUE(joint\_1.parent\_link\_name.empty());EXPECT\_TRUE(joint\_1.child\_link\_name.empty());EXPECT\_TRUE(joint\_1.dynamics==nullptr);EXPECT\_TRUE(joint\_1.limits==nullptr);EXPECT\_TRUE(joint\_1.safety==nullptr);EXPECT\_TRUE(joint\_1.calibration==nullptr);EXPECT\_TRUE(joint\_1.mimic==nullptr);EXPECT\_TRUE(joint\_1.type==JointType::UNKNOWN);joint\_1.parent\_to\_joint\_origin\_transform.translation()=Eigen::Vector3d(1, 2, 3);joint\_1.parent\_link\_name=\char`\"{}link\_n1\char`\"{};joint\_1.child\_link\_name=\char`\"{}link\_n2\char`\"{};joint\_1.axis=Eigen::Vector3d::UnitZ();joint\_1.type=JointType::PRISMATIC;joint\_1.dynamics=std::make\_shared$<$ JointDynamics $>$@{s$<$$<$ j;EXPECT\_FALSE(s.str().empty());\rcurly{} \lcurly{} using namespace tesseract\_scene\_graph;JointSafety j;EXPECT\_NEAR(j.soft\_upper\_limit, 0, 1e-\/6);EXPECT\_NEAR(j.soft\_lower\_limit, 0, 1e-\/6);EXPECT\_NEAR(j.k\_position, 0, 1e-\/6);EXPECT\_NEAR(j.k\_velocity, 0, 1e-\/6);j.soft\_upper\_limit=1;j.soft\_lower\_limit=2;j.k\_position=3;j.k\_velocity=4;j.clear();EXPECT\_NEAR(j.soft\_upper\_limit, 0, 1e-\/6);EXPECT\_NEAR(j.soft\_lower\_limit, 0, 1e-\/6);EXPECT\_NEAR(j.k\_position, 0, 1e-\/6);EXPECT\_NEAR(j.k\_velocity, 0, 1e-\/6);std::ostringstream s;s$<$$<$ j;EXPECT\_FALSE(s.str().empty());\rcurly{} \lcurly{} using namespace tesseract\_scene\_graph;JointCalibration j;EXPECT\_NEAR(j.reference\_position, 0, 1e-\/6);EXPECT\_NEAR(j.rising, 0, 1e-\/6);EXPECT\_NEAR(j.falling, 0, 1e-\/6);j.reference\_position=1;j.rising=2;j.falling=3;j.clear();EXPECT\_NEAR(j.reference\_position, 0, 1e-\/6);EXPECT\_NEAR(j.rising, 0, 1e-\/6);EXPECT\_NEAR(j.falling, 0, 1e-\/6);std::ostringstream s;s$<$$<$ j;EXPECT\_FALSE(s.str().empty());\rcurly{} \lcurly{} using namespace tesseract\_scene\_graph;JointMimic j;EXPECT\_NEAR(j.offset, 0, 1e-\/6);EXPECT\_NEAR(j.multiplier, 1, 1e-\/6);EXPECT\_TRUE(j.joint\_name.empty());j.offset=1;j.multiplier=2;j.joint\_name=""joint\_name"";j.clear();EXPECT\_NEAR(j.offset, 0, 1e-\/6);EXPECT\_NEAR(j.multiplier, 1, 1e-\/6);EXPECT\_TRUE(j.joint\_name.empty());std::ostringstream s;s$<$$<$ j;EXPECT\_FALSE(s.str().empty());\rcurly{} \lcurly{} using namespace tesseract\_scene\_graph;Joint joint\_1(""joint\_n1"");EXPECT\_TRUE(joint\_1.parent\_to\_joint\_origin\_transform.isApprox(Eigen::Isometry3d::Identity()));EXPECT\_TRUE(joint\_1.child\_link\_name.empty());EXPECT\_TRUE(joint\_1.parent\_link\_name.empty());EXPECT\_TRUE(joint\_1.child\_link\_name.empty());EXPECT\_TRUE(joint\_1.dynamics==nullptr);EXPECT\_TRUE(joint\_1.limits==nullptr);EXPECT\_TRUE(joint\_1.safety==nullptr);EXPECT\_TRUE(joint\_1.calibration==nullptr);EXPECT\_TRUE(joint\_1.mimic==nullptr);EXPECT\_TRUE(joint\_1.type==JointType::UNKNOWN);joint\_1.parent\_to\_joint\_origin\_transform.translation()=Eigen::Vector3d(1, 2, 3);joint\_1.parent\_link\_name=""link\_n1"";joint\_1.child\_link\_name=""link\_n2"";joint\_1.axis=Eigen::Vector3d::UnitZ();joint\_1.type=JointType::PRISMATIC;joint\_1.dynamics=std::make\_shared$<$ JointDynamics $>$}}
+\index{s$<$$<$ j;EXPECT\_FALSE(s.str().empty());\rcurly{} \lcurly{} using namespace tesseract\_scene\_graph;JointSafety j;EXPECT\_NEAR(j.soft\_upper\_limit, 0, 1e-\/6);EXPECT\_NEAR(j.soft\_lower\_limit, 0, 1e-\/6);EXPECT\_NEAR(j.k\_position, 0, 1e-\/6);EXPECT\_NEAR(j.k\_velocity, 0, 1e-\/6);j.soft\_upper\_limit=1;j.soft\_lower\_limit=2;j.k\_position=3;j.k\_velocity=4;j.clear();EXPECT\_NEAR(j.soft\_upper\_limit, 0, 1e-\/6);EXPECT\_NEAR(j.soft\_lower\_limit, 0, 1e-\/6);EXPECT\_NEAR(j.k\_position, 0, 1e-\/6);EXPECT\_NEAR(j.k\_velocity, 0, 1e-\/6);std::ostringstream s;s$<$$<$ j;EXPECT\_FALSE(s.str().empty());\rcurly{} \lcurly{} using namespace tesseract\_scene\_graph;JointCalibration j;EXPECT\_NEAR(j.reference\_position, 0, 1e-\/6);EXPECT\_NEAR(j.rising, 0, 1e-\/6);EXPECT\_NEAR(j.falling, 0, 1e-\/6);j.reference\_position=1;j.rising=2;j.falling=3;j.clear();EXPECT\_NEAR(j.reference\_position, 0, 1e-\/6);EXPECT\_NEAR(j.rising, 0, 1e-\/6);EXPECT\_NEAR(j.falling, 0, 1e-\/6);std::ostringstream s;s$<$$<$ j;EXPECT\_FALSE(s.str().empty());\rcurly{} \lcurly{} using namespace tesseract\_scene\_graph;JointMimic j;EXPECT\_NEAR(j.offset, 0, 1e-\/6);EXPECT\_NEAR(j.multiplier, 1, 1e-\/6);EXPECT\_TRUE(j.joint\_name.empty());j.offset=1;j.multiplier=2;j.joint\_name=\char`\"{}joint\_name\char`\"{};j.clear();EXPECT\_NEAR(j.offset, 0, 1e-\/6);EXPECT\_NEAR(j.multiplier, 1, 1e-\/6);EXPECT\_TRUE(j.joint\_name.empty());std::ostringstream s;s$<$$<$ j;EXPECT\_FALSE(s.str().empty());\rcurly{} \lcurly{} using namespace tesseract\_scene\_graph;Joint joint\_1(\char`\"{}joint\_n1\char`\"{});EXPECT\_TRUE(joint\_1.parent\_to\_joint\_origin\_transform.isApprox(Eigen::Isometry3d::Identity()));EXPECT\_TRUE(joint\_1.child\_link\_name.empty());EXPECT\_TRUE(joint\_1.parent\_link\_name.empty());EXPECT\_TRUE(joint\_1.child\_link\_name.empty());EXPECT\_TRUE(joint\_1.dynamics==nullptr);EXPECT\_TRUE(joint\_1.limits==nullptr);EXPECT\_TRUE(joint\_1.safety==nullptr);EXPECT\_TRUE(joint\_1.calibration==nullptr);EXPECT\_TRUE(joint\_1.mimic==nullptr);EXPECT\_TRUE(joint\_1.type==JointType::UNKNOWN);joint\_1.parent\_to\_joint\_origin\_transform.translation()=Eigen::Vector3d(1, 2, 3);joint\_1.parent\_link\_name=\char`\"{}link\_n1\char`\"{};joint\_1.child\_link\_name=\char`\"{}link\_n2\char`\"{};joint\_1.axis=Eigen::Vector3d::UnitZ();joint\_1.type=JointType::PRISMATIC;joint\_1.dynamics=std::make\_shared$<$ JointDynamics $>$@{s$<$$<$ j;EXPECT\_FALSE(s.str().empty());\rcurly{} \lcurly{} using namespace tesseract\_scene\_graph;JointSafety j;EXPECT\_NEAR(j.soft\_upper\_limit, 0, 1e-\/6);EXPECT\_NEAR(j.soft\_lower\_limit, 0, 1e-\/6);EXPECT\_NEAR(j.k\_position, 0, 1e-\/6);EXPECT\_NEAR(j.k\_velocity, 0, 1e-\/6);j.soft\_upper\_limit=1;j.soft\_lower\_limit=2;j.k\_position=3;j.k\_velocity=4;j.clear();EXPECT\_NEAR(j.soft\_upper\_limit, 0, 1e-\/6);EXPECT\_NEAR(j.soft\_lower\_limit, 0, 1e-\/6);EXPECT\_NEAR(j.k\_position, 0, 1e-\/6);EXPECT\_NEAR(j.k\_velocity, 0, 1e-\/6);std::ostringstream s;s$<$$<$ j;EXPECT\_FALSE(s.str().empty());\rcurly{} \lcurly{} using namespace tesseract\_scene\_graph;JointCalibration j;EXPECT\_NEAR(j.reference\_position, 0, 1e-\/6);EXPECT\_NEAR(j.rising, 0, 1e-\/6);EXPECT\_NEAR(j.falling, 0, 1e-\/6);j.reference\_position=1;j.rising=2;j.falling=3;j.clear();EXPECT\_NEAR(j.reference\_position, 0, 1e-\/6);EXPECT\_NEAR(j.rising, 0, 1e-\/6);EXPECT\_NEAR(j.falling, 0, 1e-\/6);std::ostringstream s;s$<$$<$ j;EXPECT\_FALSE(s.str().empty());\rcurly{} \lcurly{} using namespace tesseract\_scene\_graph;JointMimic j;EXPECT\_NEAR(j.offset, 0, 1e-\/6);EXPECT\_NEAR(j.multiplier, 1, 1e-\/6);EXPECT\_TRUE(j.joint\_name.empty());j.offset=1;j.multiplier=2;j.joint\_name=""joint\_name"";j.clear();EXPECT\_NEAR(j.offset, 0, 1e-\/6);EXPECT\_NEAR(j.multiplier, 1, 1e-\/6);EXPECT\_TRUE(j.joint\_name.empty());std::ostringstream s;s$<$$<$ j;EXPECT\_FALSE(s.str().empty());\rcurly{} \lcurly{} using namespace tesseract\_scene\_graph;Joint joint\_1(""joint\_n1"");EXPECT\_TRUE(joint\_1.parent\_to\_joint\_origin\_transform.isApprox(Eigen::Isometry3d::Identity()));EXPECT\_TRUE(joint\_1.child\_link\_name.empty());EXPECT\_TRUE(joint\_1.parent\_link\_name.empty());EXPECT\_TRUE(joint\_1.child\_link\_name.empty());EXPECT\_TRUE(joint\_1.dynamics==nullptr);EXPECT\_TRUE(joint\_1.limits==nullptr);EXPECT\_TRUE(joint\_1.safety==nullptr);EXPECT\_TRUE(joint\_1.calibration==nullptr);EXPECT\_TRUE(joint\_1.mimic==nullptr);EXPECT\_TRUE(joint\_1.type==JointType::UNKNOWN);joint\_1.parent\_to\_joint\_origin\_transform.translation()=Eigen::Vector3d(1, 2, 3);joint\_1.parent\_link\_name=""link\_n1"";joint\_1.child\_link\_name=""link\_n2"";joint\_1.axis=Eigen::Vector3d::UnitZ();joint\_1.type=JointType::PRISMATIC;joint\_1.dynamics=std::make\_shared$<$ JointDynamics $>$}!tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{s$<$$<$ j;EXPECT\_FALSE(s.str().empty());\rcurly{} \lcurly{} using namespace tesseract\_scene\_graph;JointSafety j;EXPECT\_NEAR(j.soft\_upper\_limit, 0, 1e-\/6);EXPECT\_NEAR(j.soft\_lower\_limit, 0, 1e-\/6);EXPECT\_NEAR(j.k\_position, 0, 1e-\/6);EXPECT\_NEAR(j.k\_velocity, 0, 1e-\/6);j.soft\_upper\_limit=1;j.soft\_lower\_limit=2;j.k\_position=3;j.k\_velocity=4;j.clear();EXPECT\_NEAR(j.soft\_upper\_limit, 0, 1e-\/6);EXPECT\_NEAR(j.soft\_lower\_limit, 0, 1e-\/6);EXPECT\_NEAR(j.k\_position, 0, 1e-\/6);EXPECT\_NEAR(j.k\_velocity, 0, 1e-\/6);std::ostringstream s;s$<$$<$ j;EXPECT\_FALSE(s.str().empty());\rcurly{} \lcurly{} using namespace tesseract\_scene\_graph;JointCalibration j;EXPECT\_NEAR(j.reference\_position, 0, 1e-\/6);EXPECT\_NEAR(j.rising, 0, 1e-\/6);EXPECT\_NEAR(j.falling, 0, 1e-\/6);j.reference\_position=1;j.rising=2;j.falling=3;j.clear();EXPECT\_NEAR(j.reference\_position, 0, 1e-\/6);EXPECT\_NEAR(j.rising, 0, 1e-\/6);EXPECT\_NEAR(j.falling, 0, 1e-\/6);std::ostringstream s;s$<$$<$ j;EXPECT\_FALSE(s.str().empty());\rcurly{} \lcurly{} using namespace tesseract\_scene\_graph;JointMimic j;EXPECT\_NEAR(j.offset, 0, 1e-\/6);EXPECT\_NEAR(j.multiplier, 1, 1e-\/6);EXPECT\_TRUE(j.joint\_name.empty());j.offset=1;j.multiplier=2;j.joint\_name=""joint\_name"";j.clear();EXPECT\_NEAR(j.offset, 0, 1e-\/6);EXPECT\_NEAR(j.multiplier, 1, 1e-\/6);EXPECT\_TRUE(j.joint\_name.empty());std::ostringstream s;s$<$$<$ j;EXPECT\_FALSE(s.str().empty());\rcurly{} \lcurly{} using namespace tesseract\_scene\_graph;Joint joint\_1(""joint\_n1"");EXPECT\_TRUE(joint\_1.parent\_to\_joint\_origin\_transform.isApprox(Eigen::Isometry3d::Identity()));EXPECT\_TRUE(joint\_1.child\_link\_name.empty());EXPECT\_TRUE(joint\_1.parent\_link\_name.empty());EXPECT\_TRUE(joint\_1.child\_link\_name.empty());EXPECT\_TRUE(joint\_1.dynamics==nullptr);EXPECT\_TRUE(joint\_1.limits==nullptr);EXPECT\_TRUE(joint\_1.safety==nullptr);EXPECT\_TRUE(joint\_1.calibration==nullptr);EXPECT\_TRUE(joint\_1.mimic==nullptr);EXPECT\_TRUE(joint\_1.type==JointType::UNKNOWN);joint\_1.parent\_to\_joint\_origin\_transform.translation()=Eigen::Vector3d(1, 2, 3);joint\_1.parent\_link\_name=""link\_n1"";joint\_1.child\_link\_name=""link\_n2"";joint\_1.axis=Eigen::Vector3d::UnitZ();joint\_1.type=JointType::PRISMATIC;joint\_1.dynamics=std::make\_shared$<$ JointDynamics $>$()}{s<< j;EXPECT\_FALSE(s.str().empty());\} \{ using namespace tesseract\_scene\_graph;JointSafety j;EXPECT\_NEAR(j.soft\_upper\_limit, 0, 1e-6);EXPECT\_NEAR(j.soft\_lower\_limit, 0, 1e-6);EXPECT\_NEAR(j.k\_position, 0, 1e-6);EXPECT\_NEAR(j.k\_velocity, 0, 1e-6);j.soft\_upper\_limit=1;j.soft\_lower\_limit=2;j.k\_position=3;j.k\_velocity=4;j.clear();EXPECT\_NEAR(j.soft\_upper\_limit, 0, 1e-6);EXPECT\_NEAR(j.soft\_lower\_limit, 0, 1e-6);EXPECT\_NEAR(j.k\_position, 0, 1e-6);EXPECT\_NEAR(j.k\_velocity, 0, 1e-6);std::ostringstream s;s<< j;EXPECT\_FALSE(s.str().empty());\} \{ using namespace tesseract\_scene\_graph;JointCalibration j;EXPECT\_NEAR(j.reference\_position, 0, 1e-6);EXPECT\_NEAR(j.rising, 0, 1e-6);EXPECT\_NEAR(j.falling, 0, 1e-6);j.reference\_position=1;j.rising=2;j.falling=3;j.clear();EXPECT\_NEAR(j.reference\_position, 0, 1e-6);EXPECT\_NEAR(j.rising, 0, 1e-6);EXPECT\_NEAR(j.falling, 0, 1e-6);std::ostringstream s;s<< j;EXPECT\_FALSE(s.str().empty());\} \{ using namespace tesseract\_scene\_graph;JointMimic j;EXPECT\_NEAR(j.offset, 0, 1e-6);EXPECT\_NEAR(j.multiplier, 1, 1e-6);EXPECT\_TRUE(j.joint\_name.empty());j.offset=1;j.multiplier=2;j.joint\_name="joint\_name";j.clear();EXPECT\_NEAR(j.offset, 0, 1e-6);EXPECT\_NEAR(j.multiplier, 1, 1e-6);EXPECT\_TRUE(j.joint\_name.empty());std::ostringstream s;s<< j;EXPECT\_FALSE(s.str().empty());\} \{ using namespace tesseract\_scene\_graph;Joint joint\_1("joint\_n1");EXPECT\_TRUE(joint\_1.parent\_to\_joint\_origin\_transform.isApprox(Eigen::Isometry3d::Identity()));EXPECT\_TRUE(joint\_1.child\_link\_name.empty());EXPECT\_TRUE(joint\_1.parent\_link\_name.empty());EXPECT\_TRUE(joint\_1.child\_link\_name.empty());EXPECT\_TRUE(joint\_1.dynamics==nullptr);EXPECT\_TRUE(joint\_1.limits==nullptr);EXPECT\_TRUE(joint\_1.safety==nullptr);EXPECT\_TRUE(joint\_1.calibration==nullptr);EXPECT\_TRUE(joint\_1.mimic==nullptr);EXPECT\_TRUE(joint\_1.type==JointType::UNKNOWN);joint\_1.parent\_to\_joint\_origin\_transform.translation()=Eigen::Vector3d(1, 2, 3);joint\_1.parent\_link\_name="link\_n1";joint\_1.child\_link\_name="link\_n2";joint\_1.axis=Eigen::Vector3d::UnitZ();joint\_1.type=JointType::PRISMATIC;joint\_1.dynamics=std::make\_shared< JointDynamics >()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{plugin__loader__unit_8cpp_aa0d75bebf90ce49ae839876d1d62e199}{s}}$<$$<$ \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}};\mbox{\hyperlink{collision__core__unit_8cpp_aa784f8de129e0ce90854ab7b6a043468}{EXPECT\+\_\+\+FALSE}}(\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a5d55e2558544e2ad2ea0b54f8e3d41fc}{s.\+str}}().empty());\} \{ using namespace tesseract\+\_\+scene\+\_\+graph;Joint\+Safety \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}};\mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\+\_\+\+NEAR}}(\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa5817cb1810076501201d1bac24dde98}{j.\+soft\+\_\+upper\+\_\+limit}}, 0, 1e-\/6);\mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\+\_\+\+NEAR}}(\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a7c6506344b8c47b4453975ab5e1ebd48}{j.\+soft\+\_\+lower\+\_\+limit}}, 0, 1e-\/6);\mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\+\_\+\+NEAR}}(\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a502db1cb485fef450b4b8fc2a6e77dab}{j.\+k\+\_\+position}}, 0, 1e-\/6);\mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\+\_\+\+NEAR}}(\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa6ffcd5b483db5a22c6873242e3b7f93}{j.\+k\+\_\+velocity}}, 0, 1e-\/6);\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa5817cb1810076501201d1bac24dde98}{j.\+soft\+\_\+upper\+\_\+limit}}=1;\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a7c6506344b8c47b4453975ab5e1ebd48}{j.\+soft\+\_\+lower\+\_\+limit}}=2;\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a502db1cb485fef450b4b8fc2a6e77dab}{j.\+k\+\_\+position}}=3;\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa6ffcd5b483db5a22c6873242e3b7f93}{j.\+k\+\_\+velocity}}=4;\mbox{\hyperlink{collision__core__unit_8cpp_a25cfe818c9392cc6e2e552e5b8d44e02}{j.\+clear}}();\mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\+\_\+\+NEAR}}(\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa5817cb1810076501201d1bac24dde98}{j.\+soft\+\_\+upper\+\_\+limit}}, 0, 1e-\/6);\mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\+\_\+\+NEAR}}(\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a7c6506344b8c47b4453975ab5e1ebd48}{j.\+soft\+\_\+lower\+\_\+limit}}, 0, 1e-\/6);\mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\+\_\+\+NEAR}}(\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a502db1cb485fef450b4b8fc2a6e77dab}{j.\+k\+\_\+position}}, 0, 1e-\/6);\mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\+\_\+\+NEAR}}(\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa6ffcd5b483db5a22c6873242e3b7f93}{j.\+k\+\_\+velocity}}, 0, 1e-\/6);std\+::ostringstream \mbox{\hyperlink{plugin__loader__unit_8cpp_aa0d75bebf90ce49ae839876d1d62e199}{s}};\mbox{\hyperlink{plugin__loader__unit_8cpp_aa0d75bebf90ce49ae839876d1d62e199}{s}}$<$$<$ \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}};\mbox{\hyperlink{collision__core__unit_8cpp_aa784f8de129e0ce90854ab7b6a043468}{EXPECT\+\_\+\+FALSE}}(\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a5d55e2558544e2ad2ea0b54f8e3d41fc}{s.\+str}}().empty());\} \{ using namespace tesseract\+\_\+scene\+\_\+graph;Joint\+Calibration \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}};\mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\+\_\+\+NEAR}}(j.\+reference\+\_\+position, 0, 1e-\/6);\mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\+\_\+\+NEAR}}(\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a7e7c3086a3368c31d5267e76ec0ce85b}{j.\+rising}}, 0, 1e-\/6);\mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\+\_\+\+NEAR}}(\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_ace35116a0c55eb1d512202f6f36803f9}{j.\+falling}}, 0, 1e-\/6);j.\+reference\+\_\+position=1;\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a7e7c3086a3368c31d5267e76ec0ce85b}{j.\+rising}}=2;\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_ace35116a0c55eb1d512202f6f36803f9}{j.\+falling}}=3;\mbox{\hyperlink{collision__core__unit_8cpp_a25cfe818c9392cc6e2e552e5b8d44e02}{j.\+clear}}();\mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\+\_\+\+NEAR}}(j.\+reference\+\_\+position, 0, 1e-\/6);\mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\+\_\+\+NEAR}}(\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a7e7c3086a3368c31d5267e76ec0ce85b}{j.\+rising}}, 0, 1e-\/6);\mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\+\_\+\+NEAR}}(\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_ace35116a0c55eb1d512202f6f36803f9}{j.\+falling}}, 0, 1e-\/6);std\+::ostringstream \mbox{\hyperlink{plugin__loader__unit_8cpp_aa0d75bebf90ce49ae839876d1d62e199}{s}};\mbox{\hyperlink{plugin__loader__unit_8cpp_aa0d75bebf90ce49ae839876d1d62e199}{s}}$<$$<$ \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}};\mbox{\hyperlink{collision__core__unit_8cpp_aa784f8de129e0ce90854ab7b6a043468}{EXPECT\+\_\+\+FALSE}}(\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a5d55e2558544e2ad2ea0b54f8e3d41fc}{s.\+str}}().empty());\} \{ using namespace tesseract\+\_\+scene\+\_\+graph;Joint\+Mimic \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}};\mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\+\_\+\+NEAR}}(\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a4b86264ab791a5f83c4b6fd003ade08f}{j.\+offset}}, 0, 1e-\/6);\mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\+\_\+\+NEAR}}(\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_ae13f174a9030149ca46a1421748699fd}{j.\+multiplier}}, 1, 1e-\/6);\mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\+\_\+\+TRUE}}(j.\+joint\+\_\+name.\+empty());\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a4b86264ab791a5f83c4b6fd003ade08f}{j.\+offset}}=1;\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_ae13f174a9030149ca46a1421748699fd}{j.\+multiplier}}=2;\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aad74bf9891b141c288c96b20caff4dfa}{j.\+joint\+\_\+name}}=\char`\"{}joint\+\_\+name\char`\"{};\mbox{\hyperlink{collision__core__unit_8cpp_a25cfe818c9392cc6e2e552e5b8d44e02}{j.\+clear}}();\mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\+\_\+\+NEAR}}(\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a4b86264ab791a5f83c4b6fd003ade08f}{j.\+offset}}, 0, 1e-\/6);\mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\+\_\+\+NEAR}}(\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_ae13f174a9030149ca46a1421748699fd}{j.\+multiplier}}, 1, 1e-\/6);\mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\+\_\+\+TRUE}}(j.\+joint\+\_\+name.\+empty());std\+::ostringstream \mbox{\hyperlink{plugin__loader__unit_8cpp_aa0d75bebf90ce49ae839876d1d62e199}{s}};\mbox{\hyperlink{plugin__loader__unit_8cpp_aa0d75bebf90ce49ae839876d1d62e199}{s}}$<$$<$ \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}};\mbox{\hyperlink{collision__core__unit_8cpp_aa784f8de129e0ce90854ab7b6a043468}{EXPECT\+\_\+\+FALSE}}(\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a5d55e2558544e2ad2ea0b54f8e3d41fc}{s.\+str}}().empty());\} \{ using namespace tesseract\+\_\+scene\+\_\+graph;Joint \mbox{\hyperlink{tesseract__srdf__unit_8cpp_aa6fa183d7e9fca1cd923d5959338499a}{joint\+\_\+1}}(\char`\"{}joint\+\_\+n1\char`\"{});\mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\+\_\+\+TRUE}}(joint\+\_\+1.\+parent\+\_\+to\+\_\+joint\+\_\+origin\+\_\+transform.\+is\+Approx(Eigen\+::\+Isometry3d\+::\+Identity()));\mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\+\_\+\+TRUE}}(joint\+\_\+1.\+child\+\_\+link\+\_\+name.\+empty());\mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\+\_\+\+TRUE}}(joint\+\_\+1.\+parent\+\_\+link\+\_\+name.\+empty());\mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\+\_\+\+TRUE}}(joint\+\_\+1.\+child\+\_\+link\+\_\+name.\+empty());\mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\+\_\+\+TRUE}}(\mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a68c10fa070763f88c082f3e3c711928d}{joint\+\_\+1.\+dynamics}}==nullptr);\mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\+\_\+\+TRUE}}(\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{joint\+\_\+1.\+limits}}==nullptr);\mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\+\_\+\+TRUE}}(\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_ad086f976cd50cd075491870a062cbebc}{joint\+\_\+1.\+safety}}==nullptr);\mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\+\_\+\+TRUE}}(\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a55a66440d9e8ec3a35e141f9eceaef38}{joint\+\_\+1.\+calibration}}==nullptr);\mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\+\_\+\+TRUE}}(\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_ae241487f5a9c2916bb25efc6c3dbb1ec}{joint\+\_\+1.\+mimic}}==nullptr);\mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\+\_\+\+TRUE}}(\mbox{\hyperlink{tesseract__environment__collision_8cpp_a30f93ee2d6b54c870d5c8295071072ac}{joint\+\_\+1.\+type}}==Joint\+Type\+::\+UNKNOWN);\mbox{\hyperlink{tesseract__environment__collision_8cpp_a444e5981b9daaa9413df8d049b9ad91c}{joint\+\_\+1.\+parent\+\_\+to\+\_\+joint\+\_\+origin\+\_\+transform.\+translation}}()=Eigen\+::\+Vector3d(1, 2, 3);\mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a1c8a54acf8831080b86833add3e01e16}{joint\+\_\+1.\+parent\+\_\+link\+\_\+name}}=\char`\"{}link\+\_\+n1\char`\"{};\mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a0ee2553dcc3b0f52bcf8c8e552ef733d}{joint\+\_\+1.\+child\+\_\+link\+\_\+name}}=\char`\"{}link\+\_\+n2\char`\"{};\mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a2a94595a4fd1b33d563dc7921da1bc7d}{joint\+\_\+1.\+axis}}=Eigen\+::\+Vector3d\+::\+UnitZ();\mbox{\hyperlink{tesseract__environment__collision_8cpp_a30f93ee2d6b54c870d5c8295071072ac}{joint\+\_\+1.\+type}}=Joint\+Type\+::\+PRISMATIC;\mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a68c10fa070763f88c082f3e3c711928d}{joint\+\_\+1.\+dynamics}}=std\+::make\+\_\+shared$<$ Joint\+Dynamics $>$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{tesseract__scene__graph__joint__unit_8cpp_a05dc056c16872dbf02795511b090e7d6}\label{tesseract__scene__graph__joint__unit_8cpp_a05dc056c16872dbf02795511b090e7d6}} 
+\index{tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}!acceleration@{acceleration}}
+\index{acceleration@{acceleration}!tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{acceleration}{acceleration}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}} acceleration = 5}
+
+\mbox{\Hypertarget{tesseract__scene__graph__joint__unit_8cpp_a55a66440d9e8ec3a35e141f9eceaef38}\label{tesseract__scene__graph__joint__unit_8cpp_a55a66440d9e8ec3a35e141f9eceaef38}} 
+\index{tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}!calibration@{calibration}}
+\index{calibration@{calibration}!tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{calibration}{calibration}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__srdf__unit_8cpp_aa6fa183d7e9fca1cd923d5959338499a}{joint\+\_\+1}} calibration = std\+::make\+\_\+shared$<$Joint\+Calibration$>$()}
+
+\mbox{\Hypertarget{tesseract__scene__graph__joint__unit_8cpp_a8299b6d103b7c1e0892c62ef3aeb1fbc}\label{tesseract__scene__graph__joint__unit_8cpp_a8299b6d103b7c1e0892c62ef3aeb1fbc}} 
+\index{tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}!damping@{damping}}
+\index{damping@{damping}!tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{damping}{damping}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__srdf__unit_8cpp_aa6fa183d7e9fca1cd923d5959338499a}{joint\+\_\+1}} \mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a68c10fa070763f88c082f3e3c711928d}{dynamics}} damping = 10}
+
+\mbox{\Hypertarget{tesseract__scene__graph__joint__unit_8cpp_a731078e9d4bc633101dd437a9ce00429}\label{tesseract__scene__graph__joint__unit_8cpp_a731078e9d4bc633101dd437a9ce00429}} 
+\index{tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}!effort@{effort}}
+\index{effort@{effort}!tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{effort}{effort}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__srdf__unit_8cpp_aa6fa183d7e9fca1cd923d5959338499a}{joint\+\_\+1}} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{limits}} effort = 3}
+
+\mbox{\Hypertarget{tesseract__scene__graph__joint__unit_8cpp_ace35116a0c55eb1d512202f6f36803f9}\label{tesseract__scene__graph__joint__unit_8cpp_ace35116a0c55eb1d512202f6f36803f9}} 
+\index{tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}!falling@{falling}}
+\index{falling@{falling}!tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{falling}{falling}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__srdf__unit_8cpp_aa6fa183d7e9fca1cd923d5959338499a}{joint\+\_\+1}} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a55a66440d9e8ec3a35e141f9eceaef38}{calibration}} falling = 0.\+1}
+
+\mbox{\Hypertarget{tesseract__scene__graph__joint__unit_8cpp_a7d50d2daa61d0d52edee48514434d0f5}\label{tesseract__scene__graph__joint__unit_8cpp_a7d50d2daa61d0d52edee48514434d0f5}} 
+\index{tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}!friction@{friction}}
+\index{friction@{friction}!tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{friction}{friction}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__srdf__unit_8cpp_aa6fa183d7e9fca1cd923d5959338499a}{joint\+\_\+1}} \mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a68c10fa070763f88c082f3e3c711928d}{dynamics}} friction = 5}
+
+\mbox{\Hypertarget{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}\label{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}} 
+\index{tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}!j@{j}}
+\index{j@{j}!tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{j}{j}}
+{\footnotesize\ttfamily Joint\+Limits j}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  \textcolor{keyword}{using namespace }\mbox{\hyperlink{namespacetesseract__scene__graph}{tesseract\_scene\_graph}}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{tesseract__scene__graph__joint__unit_8cpp_a046e20b9be98b1827a4febae7ce88728}\label{tesseract__scene__graph__joint__unit_8cpp_a046e20b9be98b1827a4febae7ce88728}} 
+\index{tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}!joint\_1\_clone@{joint\_1\_clone}}
+\index{joint\_1\_clone@{joint\_1\_clone}!tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{joint\_1\_clone}{joint\_1\_clone}}
+{\footnotesize\ttfamily Joint joint\+\_\+1\+\_\+clone = \mbox{\hyperlink{clone__cache__unit_8cpp_a468102a14fab28bb8303ea654a9b891b}{joint\+\_\+1.\+clone}}()}
+
+\mbox{\Hypertarget{tesseract__scene__graph__joint__unit_8cpp_aad74bf9891b141c288c96b20caff4dfa}\label{tesseract__scene__graph__joint__unit_8cpp_aad74bf9891b141c288c96b20caff4dfa}} 
+\index{tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}!joint\_name@{joint\_name}}
+\index{joint\_name@{joint\_name}!tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{joint\_name}{joint\_name}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__srdf__unit_8cpp_aa6fa183d7e9fca1cd923d5959338499a}{joint\+\_\+1}} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_ae241487f5a9c2916bb25efc6c3dbb1ec}{mimic}} joint\+\_\+name = \char`\"{}joint\+\_\+0\char`\"{}}
+
+\mbox{\Hypertarget{tesseract__scene__graph__joint__unit_8cpp_a502db1cb485fef450b4b8fc2a6e77dab}\label{tesseract__scene__graph__joint__unit_8cpp_a502db1cb485fef450b4b8fc2a6e77dab}} 
+\index{tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}!k\_position@{k\_position}}
+\index{k\_position@{k\_position}!tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{k\_position}{k\_position}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__srdf__unit_8cpp_aa6fa183d7e9fca1cd923d5959338499a}{joint\+\_\+1}} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_ad086f976cd50cd075491870a062cbebc}{safety}} k\+\_\+position = 1.\+1}
+
+\mbox{\Hypertarget{tesseract__scene__graph__joint__unit_8cpp_aa6ffcd5b483db5a22c6873242e3b7f93}\label{tesseract__scene__graph__joint__unit_8cpp_aa6ffcd5b483db5a22c6873242e3b7f93}} 
+\index{tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}!k\_velocity@{k\_velocity}}
+\index{k\_velocity@{k\_velocity}!tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{k\_velocity}{k\_velocity}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__srdf__unit_8cpp_aa6fa183d7e9fca1cd923d5959338499a}{joint\+\_\+1}} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_ad086f976cd50cd075491870a062cbebc}{safety}} k\+\_\+velocity = 2.\+5}
+
+\mbox{\Hypertarget{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}\label{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}} 
+\index{tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}!limits@{limits}}
+\index{limits@{limits}!tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{limits}{limits}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a6b2a02f5aa47991e72807310184ab156}{joint\+\_\+7}} limits = std\+::make\+\_\+shared$<$Joint\+Limits$>$()}
+
+\mbox{\Hypertarget{tesseract__scene__graph__joint__unit_8cpp_a3c7c02ff5e570ea0344de12f1daa68a2}\label{tesseract__scene__graph__joint__unit_8cpp_a3c7c02ff5e570ea0344de12f1daa68a2}} 
+\index{tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}!lower@{lower}}
+\index{lower@{lower}!tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{lower}{lower}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__srdf__unit_8cpp_aa6fa183d7e9fca1cd923d5959338499a}{joint\+\_\+1}} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{limits}} lower = 1}
+
+\mbox{\Hypertarget{tesseract__scene__graph__joint__unit_8cpp_ae241487f5a9c2916bb25efc6c3dbb1ec}\label{tesseract__scene__graph__joint__unit_8cpp_ae241487f5a9c2916bb25efc6c3dbb1ec}} 
+\index{tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}!mimic@{mimic}}
+\index{mimic@{mimic}!tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{mimic}{mimic}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__srdf__unit_8cpp_aa6fa183d7e9fca1cd923d5959338499a}{joint\+\_\+1}} mimic = std\+::make\+\_\+shared$<$Joint\+Mimic$>$()}
+
+\mbox{\Hypertarget{tesseract__scene__graph__joint__unit_8cpp_ae13f174a9030149ca46a1421748699fd}\label{tesseract__scene__graph__joint__unit_8cpp_ae13f174a9030149ca46a1421748699fd}} 
+\index{tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}!multiplier@{multiplier}}
+\index{multiplier@{multiplier}!tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{multiplier}{multiplier}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__srdf__unit_8cpp_aa6fa183d7e9fca1cd923d5959338499a}{joint\+\_\+1}} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_ae241487f5a9c2916bb25efc6c3dbb1ec}{mimic}} multiplier = 1.\+5}
+
+\mbox{\Hypertarget{tesseract__scene__graph__joint__unit_8cpp_a4b86264ab791a5f83c4b6fd003ade08f}\label{tesseract__scene__graph__joint__unit_8cpp_a4b86264ab791a5f83c4b6fd003ade08f}} 
+\index{tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}!offset@{offset}}
+\index{offset@{offset}!tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{offset}{offset}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__srdf__unit_8cpp_aa6fa183d7e9fca1cd923d5959338499a}{joint\+\_\+1}} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_ae241487f5a9c2916bb25efc6c3dbb1ec}{mimic}} offset = 0.\+5}
+
+\mbox{\Hypertarget{tesseract__scene__graph__joint__unit_8cpp_a7e7c3086a3368c31d5267e76ec0ce85b}\label{tesseract__scene__graph__joint__unit_8cpp_a7e7c3086a3368c31d5267e76ec0ce85b}} 
+\index{tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}!rising@{rising}}
+\index{rising@{rising}!tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{rising}{rising}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__srdf__unit_8cpp_aa6fa183d7e9fca1cd923d5959338499a}{joint\+\_\+1}} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a55a66440d9e8ec3a35e141f9eceaef38}{calibration}} rising = 0.\+1}
+
+\mbox{\Hypertarget{tesseract__scene__graph__joint__unit_8cpp_abed0f341955c53c40c3aa36c2c8f3b57}\label{tesseract__scene__graph__joint__unit_8cpp_abed0f341955c53c40c3aa36c2c8f3b57}} 
+\index{tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}!s@{s}}
+\index{s@{s}!tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{s}{s}}
+{\footnotesize\ttfamily std\+::ostringstream s}
+
+\mbox{\Hypertarget{tesseract__scene__graph__joint__unit_8cpp_ab9634b1786a9b4b6051c685518ee5b15}\label{tesseract__scene__graph__joint__unit_8cpp_ab9634b1786a9b4b6051c685518ee5b15}} 
+\index{tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}!s1@{s1}}
+\index{s1@{s1}!tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{s1}{s1}}
+{\footnotesize\ttfamily std\+::ostringstream s1}
+
+\mbox{\Hypertarget{tesseract__scene__graph__joint__unit_8cpp_ad086f976cd50cd075491870a062cbebc}\label{tesseract__scene__graph__joint__unit_8cpp_ad086f976cd50cd075491870a062cbebc}} 
+\index{tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}!safety@{safety}}
+\index{safety@{safety}!tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{safety}{safety}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__srdf__unit_8cpp_aa6fa183d7e9fca1cd923d5959338499a}{joint\+\_\+1}} safety = std\+::make\+\_\+shared$<$Joint\+Safety$>$()}
+
+\mbox{\Hypertarget{tesseract__scene__graph__joint__unit_8cpp_a7c6506344b8c47b4453975ab5e1ebd48}\label{tesseract__scene__graph__joint__unit_8cpp_a7c6506344b8c47b4453975ab5e1ebd48}} 
+\index{tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}!soft\_lower\_limit@{soft\_lower\_limit}}
+\index{soft\_lower\_limit@{soft\_lower\_limit}!tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{soft\_lower\_limit}{soft\_lower\_limit}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__srdf__unit_8cpp_aa6fa183d7e9fca1cd923d5959338499a}{joint\+\_\+1}} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_ad086f976cd50cd075491870a062cbebc}{safety}} soft\+\_\+lower\+\_\+limit = -\/0.\+5}
+
+\mbox{\Hypertarget{tesseract__scene__graph__joint__unit_8cpp_aa5817cb1810076501201d1bac24dde98}\label{tesseract__scene__graph__joint__unit_8cpp_aa5817cb1810076501201d1bac24dde98}} 
+\index{tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}!soft\_upper\_limit@{soft\_upper\_limit}}
+\index{soft\_upper\_limit@{soft\_upper\_limit}!tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{soft\_upper\_limit}{soft\_upper\_limit}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__srdf__unit_8cpp_aa6fa183d7e9fca1cd923d5959338499a}{joint\+\_\+1}} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_ad086f976cd50cd075491870a062cbebc}{safety}} soft\+\_\+upper\+\_\+limit = 0.\+5}
+
+\mbox{\Hypertarget{tesseract__scene__graph__joint__unit_8cpp_a2733ace18b4e650b36b176083d0f9c42}\label{tesseract__scene__graph__joint__unit_8cpp_a2733ace18b4e650b36b176083d0f9c42}} 
+\index{tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}!TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP@{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}
+\index{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP@{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}!tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}
+{\footnotesize\ttfamily \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\+\_\+\+COMMON\+\_\+\+IGNORE\+\_\+\+WARNINGS\+\_\+\+PUSH}} TESSERACT\+\_\+\+COMMON\+\_\+\+IGNORE\+\_\+\+WARNINGS\+\_\+\+POP}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  \textcolor{keyword}{using namespace }\mbox{\hyperlink{namespacetesseract__scene__graph}{tesseract\_scene\_graph}}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{tesseract__scene__graph__joint__unit_8cpp_ab274f3e38b9588f2022dee7928e6e2dd}\label{tesseract__scene__graph__joint__unit_8cpp_ab274f3e38b9588f2022dee7928e6e2dd}} 
+\index{tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}!upper@{upper}}
+\index{upper@{upper}!tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{upper}{upper}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__srdf__unit_8cpp_aa6fa183d7e9fca1cd923d5959338499a}{joint\+\_\+1}} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{limits}} upper = 2}
+
+\mbox{\Hypertarget{tesseract__scene__graph__joint__unit_8cpp_a3db7f21cf101907d9343fe3be354041e}\label{tesseract__scene__graph__joint__unit_8cpp_a3db7f21cf101907d9343fe3be354041e}} 
+\index{tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}!velocity@{velocity}}
+\index{velocity@{velocity}!tesseract\_scene\_graph\_joint\_unit.cpp@{tesseract\_scene\_graph\_joint\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{velocity}{velocity}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__srdf__unit_8cpp_aa6fa183d7e9fca1cd923d5959338499a}{joint\+\_\+1}} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{limits}} velocity = 4}
+

@@ -1,0 +1,137 @@
+\hypertarget{VHACD_8cpp}{}\doxysection{tesseract\+\_\+collision/vhacd/src/vhacd/\+VHACD.cpp File Reference}
+\label{VHACD_8cpp}\index{tesseract\_collision/vhacd/src/vhacd/VHACD.cpp@{tesseract\_collision/vhacd/src/vhacd/VHACD.cpp}}
+{\ttfamily \#include $<$tesseract\+\_\+common/macros.\+h$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$limits$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+collision/vhacd/\+VHACD.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+collision/vhacd/inc/vhacd\+ICHull.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+collision/vhacd/inc/vhacd\+Mesh.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+collision/vhacd/inc/vhacd\+SArray.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+collision/vhacd/inc/vhacd\+Timer.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+collision/vhacd/inc/vhacd\+VHACD.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+collision/vhacd/inc/vhacd\+Vector.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+collision/vhacd/inc/vhacd\+Volume.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+collision/vhacd/inc/\+Float\+Math.\+h$>$}\newline
+{\ttfamily \#include $<$bullet/\+Linear\+Math/bt\+Convex\+Hull\+Computer.\+h$>$}\newline
+Include dependency graph for VHACD.\+cpp\+:
+% FIG 0
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacetesseract__collision}{tesseract\+\_\+collision}}
+\item 
+namespace \mbox{\hyperlink{namespacetesseract__collision_1_1VHACD}{tesseract\+\_\+collision\+::\+VHACD}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{VHACD_8cpp_af08ec37a8c99d747fb60fa15bc28678b}{\+\_\+\+CRT\+\_\+\+SECURE\+\_\+\+NO\+\_\+\+WARNINGS}}
+\item 
+\#define \mbox{\hyperlink{VHACD_8cpp_afa99ec4acc4ecb2dc3c2d05da15d0e3f}{MAX}}(a,  b)~(((a) $>$ (b)) ? (a) \+: (b))
+\item 
+\#define \mbox{\hyperlink{VHACD_8cpp_a3acffbd305ee72dcd4593c0d8af64a4f}{MIN}}(a,  b)~(((a) $<$ (b)) ? (a) \+: (b))
+\item 
+\#define \mbox{\hyperlink{VHACD_8cpp_ae2f08dc603ae93c402abd918ba4e23e1}{ABS}}(a)~(((a) $<$ 0) ? -\/(a) \+: (a))
+\item 
+\#define \mbox{\hyperlink{VHACD_8cpp_ab8ce551e78b0d2eb769b18b8c3575064}{ZSGN}}(a)~(((a) $<$ 0) ? -\/1 \+: (a) $>$ 0 ? 1 \+: 0)
+\item 
+\#define \mbox{\hyperlink{VHACD_8cpp_a6b65f4b50d2d129e2fe16f8febc172c4}{MAX\+\_\+\+DOUBLE}}~(1.\+79769e+308)
+\item 
+\#define \mbox{\hyperlink{VHACD_8cpp_a86d500a34c624c2cae56bc25a31b12f3}{UNUSED}}(x)~(void)(x)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int32\+\_\+t \mbox{\hyperlink{VHACD_8cpp_a773ee3b2275e100fccf9f2c59069986d}{Find\+Minimum\+Element}} (const float $\ast$const d, float $\ast$const \mbox{\hyperlink{kinematics__core__unit_8cpp_a9d4c159548a3d787ff62c64175409328}{m}}, const int32\+\_\+t begin, const int32\+\_\+t end)
+\item 
+IVHACD $\ast$ \mbox{\hyperlink{namespacetesseract__collision_1_1VHACD_aaa154281c2d796f42ad3bf422e3cd71c}{tesseract\+\_\+collision\+::\+VHACD\+::\+Create\+VHACD}} ()
+\item 
+double \mbox{\hyperlink{namespacetesseract__collision_1_1VHACD_a6fec418cc65dc8beed6c02ec1710d7ac}{tesseract\+\_\+collision\+::\+VHACD\+::\+Compute\+Preferred\+Cutting\+Direction}} (const Primitive\+Set $\ast$const tset, Vec3$<$ double $>$ \&dir)
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1VHACD_a77fd9707db308da10214662285c28fd0}{tesseract\+\_\+collision\+::\+VHACD\+::\+Compute\+Axes\+Aligned\+Clipping\+Planes}} (const Voxel\+Set \&vset, const short downsampling, SArray$<$ Plane $>$ \&planes)
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1VHACD_afe20a9da6ab1edcbeadb2931fe200cf6}{tesseract\+\_\+collision\+::\+VHACD\+::\+Compute\+Axes\+Aligned\+Clipping\+Planes}} (const Tetrahedron\+Set \&tset, const short downsampling, SArray$<$ Plane $>$ \&planes)
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1VHACD_a8e59db7db13b3abcb2381f9d11e0ff2e}{tesseract\+\_\+collision\+::\+VHACD\+::\+Refine\+Axes\+Aligned\+Clipping\+Planes}} (const Voxel\+Set \&vset, const Plane \&best\+Plane, const short downsampling, SArray$<$ Plane $>$ \&planes)
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1VHACD_a5b3a1af6c0c068f75565b9d81c4555e7}{tesseract\+\_\+collision\+::\+VHACD\+::\+Refine\+Axes\+Aligned\+Clipping\+Planes}} (const Tetrahedron\+Set \&tset, const Plane \&best\+Plane, const short downsampling, SArray$<$ Plane $>$ \&planes)
+\item 
+double \mbox{\hyperlink{namespacetesseract__collision_1_1VHACD_ae421fc1a8dc998361555bf997a4eef07}{tesseract\+\_\+collision\+::\+VHACD\+::\+Compute\+Local\+Concavity}} (const double volume, const double volume\+CH)
+\item 
+double \mbox{\hyperlink{namespacetesseract__collision_1_1VHACD_ac08ed496c609b38aa53355494977975b}{tesseract\+\_\+collision\+::\+VHACD\+::\+Compute\+Concavity}} (const double volume, const double volume\+CH, const double volume0)
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1VHACD_a24f0130ae1428b97a3ed0d9624a5b6e2}{tesseract\+\_\+collision\+::\+VHACD\+::\+Add\+Points}} (const Mesh $\ast$const \mbox{\hyperlink{tesseract__geometry__unit_8cpp_ae8d539a4d41d4864a6a5452e33eebc31}{mesh}}, SArray$<$ Vec3$<$ double $>$ $>$ \&pts)
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1VHACD_ad17a0e2fe30a8492aa7c01c2019ff874}{tesseract\+\_\+collision\+::\+VHACD\+::\+Compute\+Convex\+Hull}} (const Mesh $\ast$const ch1, const Mesh $\ast$const ch2, SArray$<$ Vec3$<$ double $>$ $>$ \&pts, Mesh $\ast$const combined\+CH)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \mbox{\hyperlink{VHACD_8cpp_a42282668712132b2d087b077245bdbd6}{ocl\+Program\+Source}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{VHACD_8cpp_af08ec37a8c99d747fb60fa15bc28678b}\label{VHACD_8cpp_af08ec37a8c99d747fb60fa15bc28678b}} 
+\index{VHACD.cpp@{VHACD.cpp}!\_CRT\_SECURE\_NO\_WARNINGS@{\_CRT\_SECURE\_NO\_WARNINGS}}
+\index{\_CRT\_SECURE\_NO\_WARNINGS@{\_CRT\_SECURE\_NO\_WARNINGS}!VHACD.cpp@{VHACD.cpp}}
+\doxysubsubsection{\texorpdfstring{\_CRT\_SECURE\_NO\_WARNINGS}{\_CRT\_SECURE\_NO\_WARNINGS}}
+{\footnotesize\ttfamily \#define \+\_\+\+CRT\+\_\+\+SECURE\+\_\+\+NO\+\_\+\+WARNINGS}
+
+\mbox{\Hypertarget{VHACD_8cpp_ae2f08dc603ae93c402abd918ba4e23e1}\label{VHACD_8cpp_ae2f08dc603ae93c402abd918ba4e23e1}} 
+\index{VHACD.cpp@{VHACD.cpp}!ABS@{ABS}}
+\index{ABS@{ABS}!VHACD.cpp@{VHACD.cpp}}
+\doxysubsubsection{\texorpdfstring{ABS}{ABS}}
+{\footnotesize\ttfamily \#define ABS(\begin{DoxyParamCaption}\item[{}]{a }\end{DoxyParamCaption})~(((a) $<$ 0) ? -\/(a) \+: (a))}
+
+\mbox{\Hypertarget{VHACD_8cpp_afa99ec4acc4ecb2dc3c2d05da15d0e3f}\label{VHACD_8cpp_afa99ec4acc4ecb2dc3c2d05da15d0e3f}} 
+\index{VHACD.cpp@{VHACD.cpp}!MAX@{MAX}}
+\index{MAX@{MAX}!VHACD.cpp@{VHACD.cpp}}
+\doxysubsubsection{\texorpdfstring{MAX}{MAX}}
+{\footnotesize\ttfamily \#define MAX(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b }\end{DoxyParamCaption})~(((a) $>$ (b)) ? (a) \+: (b))}
+
+\mbox{\Hypertarget{VHACD_8cpp_a6b65f4b50d2d129e2fe16f8febc172c4}\label{VHACD_8cpp_a6b65f4b50d2d129e2fe16f8febc172c4}} 
+\index{VHACD.cpp@{VHACD.cpp}!MAX\_DOUBLE@{MAX\_DOUBLE}}
+\index{MAX\_DOUBLE@{MAX\_DOUBLE}!VHACD.cpp@{VHACD.cpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_DOUBLE}{MAX\_DOUBLE}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+DOUBLE~(1.\+79769e+308)}
+
+\mbox{\Hypertarget{VHACD_8cpp_a3acffbd305ee72dcd4593c0d8af64a4f}\label{VHACD_8cpp_a3acffbd305ee72dcd4593c0d8af64a4f}} 
+\index{VHACD.cpp@{VHACD.cpp}!MIN@{MIN}}
+\index{MIN@{MIN}!VHACD.cpp@{VHACD.cpp}}
+\doxysubsubsection{\texorpdfstring{MIN}{MIN}}
+{\footnotesize\ttfamily \#define MIN(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b }\end{DoxyParamCaption})~(((a) $<$ (b)) ? (a) \+: (b))}
+
+\mbox{\Hypertarget{VHACD_8cpp_a86d500a34c624c2cae56bc25a31b12f3}\label{VHACD_8cpp_a86d500a34c624c2cae56bc25a31b12f3}} 
+\index{VHACD.cpp@{VHACD.cpp}!UNUSED@{UNUSED}}
+\index{UNUSED@{UNUSED}!VHACD.cpp@{VHACD.cpp}}
+\doxysubsubsection{\texorpdfstring{UNUSED}{UNUSED}}
+{\footnotesize\ttfamily \#define UNUSED(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~(void)(x)}
+
+\mbox{\Hypertarget{VHACD_8cpp_ab8ce551e78b0d2eb769b18b8c3575064}\label{VHACD_8cpp_ab8ce551e78b0d2eb769b18b8c3575064}} 
+\index{VHACD.cpp@{VHACD.cpp}!ZSGN@{ZSGN}}
+\index{ZSGN@{ZSGN}!VHACD.cpp@{VHACD.cpp}}
+\doxysubsubsection{\texorpdfstring{ZSGN}{ZSGN}}
+{\footnotesize\ttfamily \#define ZSGN(\begin{DoxyParamCaption}\item[{}]{a }\end{DoxyParamCaption})~(((a) $<$ 0) ? -\/1 \+: (a) $>$ 0 ? 1 \+: 0)}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{VHACD_8cpp_a773ee3b2275e100fccf9f2c59069986d}\label{VHACD_8cpp_a773ee3b2275e100fccf9f2c59069986d}} 
+\index{VHACD.cpp@{VHACD.cpp}!FindMinimumElement@{FindMinimumElement}}
+\index{FindMinimumElement@{FindMinimumElement}!VHACD.cpp@{VHACD.cpp}}
+\doxysubsubsection{\texorpdfstring{FindMinimumElement()}{FindMinimumElement()}}
+{\footnotesize\ttfamily int32\+\_\+t Find\+Minimum\+Element (\begin{DoxyParamCaption}\item[{const float $\ast$const}]{d,  }\item[{float $\ast$const}]{m,  }\item[{const int32\+\_\+t}]{begin,  }\item[{const int32\+\_\+t}]{end }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{VHACD_8cpp_a42282668712132b2d087b077245bdbd6}\label{VHACD_8cpp_a42282668712132b2d087b077245bdbd6}} 
+\index{VHACD.cpp@{VHACD.cpp}!oclProgramSource@{oclProgramSource}}
+\index{oclProgramSource@{oclProgramSource}!VHACD.cpp@{VHACD.cpp}}
+\doxysubsubsection{\texorpdfstring{oclProgramSource}{oclProgramSource}}
+{\footnotesize\ttfamily const char$\ast$ ocl\+Program\+Source}
+

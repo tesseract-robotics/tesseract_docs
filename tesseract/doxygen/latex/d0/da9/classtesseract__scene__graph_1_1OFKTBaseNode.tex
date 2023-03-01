@@ -1,0 +1,631 @@
+\hypertarget{classtesseract__scene__graph_1_1OFKTBaseNode}{}\doxysection{tesseract\+\_\+scene\+\_\+graph\+::OFKTBase\+Node Class Reference}
+\label{classtesseract__scene__graph_1_1OFKTBaseNode}\index{tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}}
+
+
+{\ttfamily \#include $<$ofkt\+\_\+nodes.\+h$>$}
+
+
+
+Inheritance diagram for tesseract\+\_\+scene\+\_\+graph\+::OFKTBase\+Node\+:
+% FIG 0
+
+
+Collaboration diagram for tesseract\+\_\+scene\+\_\+graph\+::OFKTBase\+Node\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+EIGEN\+\_\+\+MAKE\+\_\+\+ALIGNED\+\_\+\+OPERATOR\+\_\+\+NEW \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_acc18d1a6a93af952a200e5f340cae9c3}{OFKTBase\+Node}} (\mbox{\hyperlink{namespacetesseract__scene__graph_ade43fa945a554b6e0c703e38e6a8cf16}{tesseract\+\_\+scene\+\_\+graph\+::\+Joint\+Type}} \mbox{\hyperlink{tesseract__environment__collision_8cpp_a30f93ee2d6b54c870d5c8295071072ac}{type}}, \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode}{OFKTNode}} $\ast$parent, std\+::string link\+\_\+name)
+\item 
+\mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a9c9c9113cec9ff447842fe3f427364d7}{OFKTBase\+Node}} (\mbox{\hyperlink{namespacetesseract__scene__graph_ade43fa945a554b6e0c703e38e6a8cf16}{tesseract\+\_\+scene\+\_\+graph\+::\+Joint\+Type}} \mbox{\hyperlink{tesseract__environment__collision_8cpp_a30f93ee2d6b54c870d5c8295071072ac}{type}}, \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode}{OFKTNode}} $\ast$parent, std\+::string link\+\_\+name, std\+::string \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aad74bf9891b141c288c96b20caff4dfa}{joint\+\_\+name}}, const Eigen\+::\+Isometry3d \&static\+\_\+tf)
+\item 
+\mbox{\hyperlink{namespacetesseract__scene__graph_ade43fa945a554b6e0c703e38e6a8cf16}{Joint\+Type}} \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a4e1d94d93e5fe12e2b7fad64efb7fc23}{get\+Type}} () const override
+\begin{DoxyCompactList}\small\item\em Get the type of joint associated with the node. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a28a0b85fb901f1caf4f4927ebc3c7b15}{set\+Parent}} (\mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode}{OFKTNode}} $\ast$parent) override
+\begin{DoxyCompactList}\small\item\em Set the parent node. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode}{OFKTNode}} $\ast$ \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_aba9ecfa017433b0bf196e5f58ebc59d2}{get\+Parent}} () override
+\begin{DoxyCompactList}\small\item\em Get the parent node. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode}{OFKTNode}} $\ast$ \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_aeda5c1247d30164ab0c418b802763e36}{get\+Parent}} () const override
+\begin{DoxyCompactList}\small\item\em Get the parent node (const) \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a886f74bbd8f88166679b9083554f3edf}{get\+Link\+Name}} () const override
+\begin{DoxyCompactList}\small\item\em Get the link name associated with the node. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a93e53901b651bdad3789401869a8a69d}{get\+Joint\+Name}} () const override
+\begin{DoxyCompactList}\small\item\em Get the joint name associated with the node. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a09bf85c903c7b06af846a994860990f0}{store\+Joint\+Value}} (double joint\+\_\+value) override
+\begin{DoxyCompactList}\small\item\em Set the nodes joint value if it has one. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a8efa646a89820e0ab8330c2ea5d9e112}{get\+Joint\+Value}} () const override
+\begin{DoxyCompactList}\small\item\em Get the current joint value. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a8d9c30e9bb4391e058954a8be9cc01d5}{has\+Joint\+Value\+Changed}} () const override
+\begin{DoxyCompactList}\small\item\em Indicates that the joint value has changed and that local and world transformation need to be recomputed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a13009fa15aba352ad70fbf7d6f2882c2}{set\+Static\+Transformation}} (Eigen\+::\+Isometry3d static\+\_\+tf) override
+\begin{DoxyCompactList}\small\item\em Set the static transformation. \end{DoxyCompactList}\item 
+const Eigen\+::\+Isometry3d \& \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_ae190b707426a8ec338ae1a42a884ad8c}{get\+Static\+Transformation}} () const override
+\begin{DoxyCompactList}\small\item\em Get the nodes static transformation. \end{DoxyCompactList}\item 
+const Eigen\+::\+Isometry3d \& \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a5eef1a04fed2e524bb6e8b18b4cb6c93}{get\+Local\+Transformation}} () const override
+\begin{DoxyCompactList}\small\item\em Get the local transformation\+: \textquotesingle{}L = S $\ast$ J\textquotesingle{}. \end{DoxyCompactList}\item 
+Eigen\+::\+Isometry3d \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a909b4b722c13ea6e85c40adbe120f87b}{compute\+Local\+Transformation}} (double joint\+\_\+value) const override
+\begin{DoxyCompactList}\small\item\em Compute the local tranformation but do not save. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a19a8ae88ecef3d63f5874321147494bd}{compute\+And\+Store\+World\+Transformation}} () override
+\begin{DoxyCompactList}\small\item\em Compute and store the nodes world transformation. \end{DoxyCompactList}\item 
+const Eigen\+::\+Isometry3d \& \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a8d95a06315d6f98edb15cc178e811573}{get\+World\+Transformation}} () const override
+\begin{DoxyCompactList}\small\item\em Get the nodes world transformation. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_ad0ab4f405a66c8a311e597a3ddc57b82}{update\+World\+Transformation\+Required}} () const override
+\begin{DoxyCompactList}\small\item\em Indicates if an update of the world transformation is required. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix$<$ double, 6, 1 $>$ \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_ae4a18dc308b859d8b9ee1133bfc970ad}{get\+Local\+Twist}} () const override
+\begin{DoxyCompactList}\small\item\em Return the twist of the node in its local frame. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a57fe11209457a2d00c11af8bdbe0a7c9}{add\+Child}} (\mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode}{OFKTNode}} $\ast$node) override
+\begin{DoxyCompactList}\small\item\em Add a child node. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_aac5ba3c73d256e6c092b60865371beba}{remove\+Child}} (const \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode}{OFKTNode}} $\ast$node) override
+\begin{DoxyCompactList}\small\item\em Remove a child node assiciated with this node. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode}{OFKTNode}} $\ast$ $>$ \& \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a1f9015d398cc13a07652debe2cb943b6}{get\+Children}} () override
+\begin{DoxyCompactList}\small\item\em Get a vector of child nodes associated with this node. \end{DoxyCompactList}\item 
+const std\+::vector$<$ const \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode}{OFKTNode}} $\ast$ $>$ \& \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_ad1bac3d7cf759dc273d7f973b598cce6}{get\+Children}} () const override
+\begin{DoxyCompactList}\small\item\em Get a vector of child nodes associated with this node (Const) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacetesseract__scene__graph_ade43fa945a554b6e0c703e38e6a8cf16}{tesseract\+\_\+scene\+\_\+graph\+::\+Joint\+Type}} \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a600186b55fa3147f5f1b69a2acbc75ac}{type\+\_\+}}
+\item 
+\mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode}{OFKTNode}} $\ast$ \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a40d4bb94219b9608af74275510f6d156}{parent\+\_\+}} \{ nullptr \}
+\item 
+std\+::string \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_ac394544c98b9899adbdf1ea42cc1d47d}{link\+\_\+name\+\_\+}}
+\item 
+std\+::string \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_ae6625c16deb61434476008f1b2e3a8ff}{joint\+\_\+name\+\_\+}}
+\item 
+Eigen\+::\+Isometry3d \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a3c2ea555e6208b6682f55c5ecc41d31d}{static\+\_\+tf\+\_\+}} \{ Eigen\+::\+Isometry3d\+::\+Identity() \}
+\item 
+Eigen\+::\+Isometry3d \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_ae6de6e56adea5f5087ae12cb8edfdddd}{joint\+\_\+tf\+\_\+}} \{ Eigen\+::\+Isometry3d\+::\+Identity() \}
+\item 
+Eigen\+::\+Isometry3d \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_aa061b1d1614d750b2ee4531439138e01}{local\+\_\+tf\+\_\+}} \{ Eigen\+::\+Isometry3d\+::\+Identity() \}
+\item 
+Eigen\+::\+Isometry3d \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_acb6a6b6a00a51ee18ca1c4b4344e71f5}{world\+\_\+tf\+\_\+}} \{ Eigen\+::\+Isometry3d\+::\+Identity() \}
+\item 
+Eigen\+::\+Matrix$<$ double, 6, 1 $>$ \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a512325a7eda963e3002c84a88adee5d7}{local\+\_\+twist\+\_\+}} \{ Eigen\+::\+Vector\+Xd\+::\+Zero(6) \}
+\item 
+double \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a162ea163c8c0033e51a6546bbcc14036}{joint\+\_\+value\+\_\+}} \{ 0 \}
+\item 
+bool \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_ad92627c415427322208a904b9d48607d}{joint\+\_\+value\+\_\+changed\+\_\+}} \{ false \}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode}{OFKTNode}} $\ast$ $>$ \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_aeaf5173e7f2fab4735ba37ac4931e920}{children\+\_\+}}
+\item 
+std\+::vector$<$ const \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode}{OFKTNode}} $\ast$ $>$ \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a824383ae35d7cca9da5b9d7eb59eacea}{children\+\_\+const\+\_\+}}
+\item 
+bool \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a26fef0612bc1459b213f197c2e1e193a}{update\+\_\+world\+\_\+required\+\_\+}} \{ true \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a04c5cec13fafb90debd7afa7a3c833c4}{OFKTState\+Solver}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTBaseNode_acc18d1a6a93af952a200e5f340cae9c3}\label{classtesseract__scene__graph_1_1OFKTBaseNode_acc18d1a6a93af952a200e5f340cae9c3}} 
+\index{tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}!OFKTBaseNode@{OFKTBaseNode}}
+\index{OFKTBaseNode@{OFKTBaseNode}!tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}}
+\doxysubsubsection{\texorpdfstring{OFKTBaseNode()}{OFKTBaseNode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily tesseract\+\_\+scene\+\_\+graph\+::\+OFKTBase\+Node\+::\+OFKTBase\+Node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacetesseract__scene__graph_ade43fa945a554b6e0c703e38e6a8cf16}{tesseract\+\_\+scene\+\_\+graph\+::\+Joint\+Type}}}]{type,  }\item[{\mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode}{OFKTNode}} $\ast$}]{parent,  }\item[{std\+::string}]{link\+\_\+name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTBaseNode_a9c9c9113cec9ff447842fe3f427364d7}\label{classtesseract__scene__graph_1_1OFKTBaseNode_a9c9c9113cec9ff447842fe3f427364d7}} 
+\index{tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}!OFKTBaseNode@{OFKTBaseNode}}
+\index{OFKTBaseNode@{OFKTBaseNode}!tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}}
+\doxysubsubsection{\texorpdfstring{OFKTBaseNode()}{OFKTBaseNode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily tesseract\+\_\+scene\+\_\+graph\+::\+OFKTBase\+Node\+::\+OFKTBase\+Node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacetesseract__scene__graph_ade43fa945a554b6e0c703e38e6a8cf16}{tesseract\+\_\+scene\+\_\+graph\+::\+Joint\+Type}}}]{type,  }\item[{\mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode}{OFKTNode}} $\ast$}]{parent,  }\item[{std\+::string}]{link\+\_\+name,  }\item[{std\+::string}]{joint\+\_\+name,  }\item[{const Eigen\+::\+Isometry3d \&}]{static\+\_\+tf }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTBaseNode_a57fe11209457a2d00c11af8bdbe0a7c9}\label{classtesseract__scene__graph_1_1OFKTBaseNode_a57fe11209457a2d00c11af8bdbe0a7c9}} 
+\index{tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}!addChild@{addChild}}
+\index{addChild@{addChild}!tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}}
+\doxysubsubsection{\texorpdfstring{addChild()}{addChild()}}
+{\footnotesize\ttfamily void tesseract\+\_\+scene\+\_\+graph\+::\+OFKTBase\+Node\+::add\+Child (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode}{OFKTNode}} $\ast$}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Add a child node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & The node which is a child of this node \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode_a876849040d8c2571a673f93238df9755}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTNode}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTBaseNode_a19a8ae88ecef3d63f5874321147494bd}\label{classtesseract__scene__graph_1_1OFKTBaseNode_a19a8ae88ecef3d63f5874321147494bd}} 
+\index{tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}!computeAndStoreWorldTransformation@{computeAndStoreWorldTransformation}}
+\index{computeAndStoreWorldTransformation@{computeAndStoreWorldTransformation}!tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}}
+\doxysubsubsection{\texorpdfstring{computeAndStoreWorldTransformation()}{computeAndStoreWorldTransformation()}}
+{\footnotesize\ttfamily void tesseract\+\_\+scene\+\_\+graph\+::\+OFKTBase\+Node\+::compute\+And\+Store\+World\+Transformation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Compute and store the nodes world transformation. 
+
+This should reset the flag such that \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_ad0ab4f405a66c8a311e597a3ddc57b82}{update\+World\+Transformation\+Required()}} returns false 
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode_a31b40282c61973e152dfdc52d6cc25c9}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTNode}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTRootNode_add569faf12e6707c4859aee4b3671989}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTRoot\+Node}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTBaseNode_a909b4b722c13ea6e85c40adbe120f87b}\label{classtesseract__scene__graph_1_1OFKTBaseNode_a909b4b722c13ea6e85c40adbe120f87b}} 
+\index{tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}!computeLocalTransformation@{computeLocalTransformation}}
+\index{computeLocalTransformation@{computeLocalTransformation}!tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}}
+\doxysubsubsection{\texorpdfstring{computeLocalTransformation()}{computeLocalTransformation()}}
+{\footnotesize\ttfamily Eigen\+::\+Isometry3d tesseract\+\_\+scene\+\_\+graph\+::\+OFKTBase\+Node\+::compute\+Local\+Transformation (\begin{DoxyParamCaption}\item[{double}]{joint\+\_\+value }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Compute the local tranformation but do not save. 
+
+This provides a const method for computing the local transform.
+
+
+\begin{DoxyParams}{Parameters}
+{\em joint\+\_\+value} & The joint value for calculating the local transformation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The local transformation for the provided joint value 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode_a754f7383025e5859a302758635830917}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTNode}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTRootNode_a0c71bbb5f19427580753c14b6e8d01fe}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTRoot\+Node}}, \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTFixedNode_acd17d4ffea29bbe33dd79ec53a45d04f}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTFixed\+Node}}, \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTRevoluteNode_ae3d0b816639407a93cf93ba4ffb04bf9}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTRevolute\+Node}}, \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTContinuousNode_a52c5a037f9bbfc139a6a830f2a396ce6}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTContinuous\+Node}}, and \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTPrismaticNode_a09b9a20956733db191d0607ccebd7372}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTPrismatic\+Node}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTBaseNode_ad1bac3d7cf759dc273d7f973b598cce6}\label{classtesseract__scene__graph_1_1OFKTBaseNode_ad1bac3d7cf759dc273d7f973b598cce6}} 
+\index{tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}!getChildren@{getChildren}}
+\index{getChildren@{getChildren}!tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}}
+\doxysubsubsection{\texorpdfstring{getChildren()}{getChildren()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const std\+::vector$<$ const \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode}{OFKTNode}} $\ast$ $>$ \& tesseract\+\_\+scene\+\_\+graph\+::\+OFKTBase\+Node\+::get\+Children (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get a vector of child nodes associated with this node (Const) 
+
+\begin{DoxyReturn}{Returns}
+A vector of child nodes 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode_a4261f31ebf59045e357a056efe4015ad}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTNode}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTBaseNode_a1f9015d398cc13a07652debe2cb943b6}\label{classtesseract__scene__graph_1_1OFKTBaseNode_a1f9015d398cc13a07652debe2cb943b6}} 
+\index{tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}!getChildren@{getChildren}}
+\index{getChildren@{getChildren}!tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}}
+\doxysubsubsection{\texorpdfstring{getChildren()}{getChildren()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode}{OFKTNode}} $\ast$ $>$ \& tesseract\+\_\+scene\+\_\+graph\+::\+OFKTBase\+Node\+::get\+Children (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get a vector of child nodes associated with this node. 
+
+\begin{DoxyReturn}{Returns}
+A vector of child nodes 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode_ab14d2d754a67e5ecdb24a4b56c1f0528}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTNode}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTBaseNode_a93e53901b651bdad3789401869a8a69d}\label{classtesseract__scene__graph_1_1OFKTBaseNode_a93e53901b651bdad3789401869a8a69d}} 
+\index{tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}!getJointName@{getJointName}}
+\index{getJointName@{getJointName}!tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}}
+\doxysubsubsection{\texorpdfstring{getJointName()}{getJointName()}}
+{\footnotesize\ttfamily const std\+::string \& tesseract\+\_\+scene\+\_\+graph\+::\+OFKTBase\+Node\+::get\+Joint\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the joint name associated with the node. 
+
+\begin{DoxyReturn}{Returns}
+The link name 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode_aaca371dbe6e8b01db95bab1ec48a69ad}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTNode}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTBaseNode_a8efa646a89820e0ab8330c2ea5d9e112}\label{classtesseract__scene__graph_1_1OFKTBaseNode_a8efa646a89820e0ab8330c2ea5d9e112}} 
+\index{tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}!getJointValue@{getJointValue}}
+\index{getJointValue@{getJointValue}!tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}}
+\doxysubsubsection{\texorpdfstring{getJointValue()}{getJointValue()}}
+{\footnotesize\ttfamily double tesseract\+\_\+scene\+\_\+graph\+::\+OFKTBase\+Node\+::get\+Joint\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the current joint value. 
+
+\begin{DoxyReturn}{Returns}
+The current joint value 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode_ad13cd9608d44da9acaf90f230252dd1b}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTNode}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTFixedNode_a8263084b728064f55a19b19c7bcd72bd}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTFixed\+Node}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTBaseNode_a886f74bbd8f88166679b9083554f3edf}\label{classtesseract__scene__graph_1_1OFKTBaseNode_a886f74bbd8f88166679b9083554f3edf}} 
+\index{tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}!getLinkName@{getLinkName}}
+\index{getLinkName@{getLinkName}!tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}}
+\doxysubsubsection{\texorpdfstring{getLinkName()}{getLinkName()}}
+{\footnotesize\ttfamily const std\+::string \& tesseract\+\_\+scene\+\_\+graph\+::\+OFKTBase\+Node\+::get\+Link\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the link name associated with the node. 
+
+\begin{DoxyReturn}{Returns}
+The link name 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode_a18ac198b07fef183f3598198772369ab}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTNode}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTBaseNode_a5eef1a04fed2e524bb6e8b18b4cb6c93}\label{classtesseract__scene__graph_1_1OFKTBaseNode_a5eef1a04fed2e524bb6e8b18b4cb6c93}} 
+\index{tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}!getLocalTransformation@{getLocalTransformation}}
+\index{getLocalTransformation@{getLocalTransformation}!tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}}
+\doxysubsubsection{\texorpdfstring{getLocalTransformation()}{getLocalTransformation()}}
+{\footnotesize\ttfamily const Eigen\+::\+Isometry3d \& tesseract\+\_\+scene\+\_\+graph\+::\+OFKTBase\+Node\+::get\+Local\+Transformation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the local transformation\+: \textquotesingle{}L = S $\ast$ J\textquotesingle{}. 
+
+\begin{DoxyReturn}{Returns}
+The nodes local transformation 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode_a0e989084ade3c0f0ece1ddc6b6271519}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTNode}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTBaseNode_ae4a18dc308b859d8b9ee1133bfc970ad}\label{classtesseract__scene__graph_1_1OFKTBaseNode_ae4a18dc308b859d8b9ee1133bfc970ad}} 
+\index{tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}!getLocalTwist@{getLocalTwist}}
+\index{getLocalTwist@{getLocalTwist}!tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}}
+\doxysubsubsection{\texorpdfstring{getLocalTwist()}{getLocalTwist()}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix$<$ double, 6, 1 $>$ tesseract\+\_\+scene\+\_\+graph\+::\+OFKTBase\+Node\+::get\+Local\+Twist (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Return the twist of the node in its local frame. 
+
+\begin{DoxyReturn}{Returns}
+The node twist 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode_a91eba880a57ba01a77f6135b86b0e967}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTNode}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTBaseNode_aeda5c1247d30164ab0c418b802763e36}\label{classtesseract__scene__graph_1_1OFKTBaseNode_aeda5c1247d30164ab0c418b802763e36}} 
+\index{tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}!getParent@{getParent}}
+\index{getParent@{getParent}!tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}}
+\doxysubsubsection{\texorpdfstring{getParent()}{getParent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode}{OFKTNode}} $\ast$ tesseract\+\_\+scene\+\_\+graph\+::\+OFKTBase\+Node\+::get\+Parent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the parent node (const) 
+
+\begin{DoxyReturn}{Returns}
+The parent node 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode_a326215df877b1aaa1f82e8af02ec58a4}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTNode}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTBaseNode_aba9ecfa017433b0bf196e5f58ebc59d2}\label{classtesseract__scene__graph_1_1OFKTBaseNode_aba9ecfa017433b0bf196e5f58ebc59d2}} 
+\index{tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}!getParent@{getParent}}
+\index{getParent@{getParent}!tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}}
+\doxysubsubsection{\texorpdfstring{getParent()}{getParent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode}{OFKTNode}} $\ast$ tesseract\+\_\+scene\+\_\+graph\+::\+OFKTBase\+Node\+::get\+Parent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the parent node. 
+
+\begin{DoxyReturn}{Returns}
+The parent node 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode_a02b930dc1f070585db61fa45a9bbaae9}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTNode}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTBaseNode_ae190b707426a8ec338ae1a42a884ad8c}\label{classtesseract__scene__graph_1_1OFKTBaseNode_ae190b707426a8ec338ae1a42a884ad8c}} 
+\index{tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}!getStaticTransformation@{getStaticTransformation}}
+\index{getStaticTransformation@{getStaticTransformation}!tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}}
+\doxysubsubsection{\texorpdfstring{getStaticTransformation()}{getStaticTransformation()}}
+{\footnotesize\ttfamily const Eigen\+::\+Isometry3d \& tesseract\+\_\+scene\+\_\+graph\+::\+OFKTBase\+Node\+::get\+Static\+Transformation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the nodes static transformation. 
+
+\begin{DoxyReturn}{Returns}
+The static transformation 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode_a40dafba8e8beccf9448edc4a35c16482}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTNode}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTBaseNode_a4e1d94d93e5fe12e2b7fad64efb7fc23}\label{classtesseract__scene__graph_1_1OFKTBaseNode_a4e1d94d93e5fe12e2b7fad64efb7fc23}} 
+\index{tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}!getType@{getType}}
+\index{getType@{getType}!tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacetesseract__scene__graph_ade43fa945a554b6e0c703e38e6a8cf16}{tesseract\+\_\+scene\+\_\+graph\+::\+Joint\+Type}} tesseract\+\_\+scene\+\_\+graph\+::\+OFKTBase\+Node\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the type of joint associated with the node. 
+
+\begin{DoxyReturn}{Returns}
+The \mbox{\hyperlink{classtesseract__scene__graph_1_1Joint}{Joint}} Type 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode_a3a16773af2561bd3f7ad0e15db93d235}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTNode}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTBaseNode_a8d95a06315d6f98edb15cc178e811573}\label{classtesseract__scene__graph_1_1OFKTBaseNode_a8d95a06315d6f98edb15cc178e811573}} 
+\index{tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}!getWorldTransformation@{getWorldTransformation}}
+\index{getWorldTransformation@{getWorldTransformation}!tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}}
+\doxysubsubsection{\texorpdfstring{getWorldTransformation()}{getWorldTransformation()}}
+{\footnotesize\ttfamily const Eigen\+::\+Isometry3d \& tesseract\+\_\+scene\+\_\+graph\+::\+OFKTBase\+Node\+::get\+World\+Transformation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the nodes world transformation. 
+
+\begin{DoxyReturn}{Returns}
+The nodes world transformation 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode_aa0c330d70acfa51751b1321d7ccc9a07}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTNode}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTBaseNode_a8d9c30e9bb4391e058954a8be9cc01d5}\label{classtesseract__scene__graph_1_1OFKTBaseNode_a8d9c30e9bb4391e058954a8be9cc01d5}} 
+\index{tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}!hasJointValueChanged@{hasJointValueChanged}}
+\index{hasJointValueChanged@{hasJointValueChanged}!tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}}
+\doxysubsubsection{\texorpdfstring{hasJointValueChanged()}{hasJointValueChanged()}}
+{\footnotesize\ttfamily bool tesseract\+\_\+scene\+\_\+graph\+::\+OFKTBase\+Node\+::has\+Joint\+Value\+Changed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Indicates that the joint value has changed and that local and world transformation need to be recomputed. 
+
+\begin{DoxyReturn}{Returns}
+If true, local and world transformation need to be recompute 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode_a7b9383b73548e6b93ed055858012710b}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTNode}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTBaseNode_aac5ba3c73d256e6c092b60865371beba}\label{classtesseract__scene__graph_1_1OFKTBaseNode_aac5ba3c73d256e6c092b60865371beba}} 
+\index{tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}!removeChild@{removeChild}}
+\index{removeChild@{removeChild}!tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}}
+\doxysubsubsection{\texorpdfstring{removeChild()}{removeChild()}}
+{\footnotesize\ttfamily void tesseract\+\_\+scene\+\_\+graph\+::\+OFKTBase\+Node\+::remove\+Child (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode}{OFKTNode}} $\ast$}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Remove a child node assiciated with this node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & The child node to be removed \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode_ace41ff8d92cd9f0af510db31c7f40df3}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTNode}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTBaseNode_a28a0b85fb901f1caf4f4927ebc3c7b15}\label{classtesseract__scene__graph_1_1OFKTBaseNode_a28a0b85fb901f1caf4f4927ebc3c7b15}} 
+\index{tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}!setParent@{setParent}}
+\index{setParent@{setParent}!tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}}
+\doxysubsubsection{\texorpdfstring{setParent()}{setParent()}}
+{\footnotesize\ttfamily void tesseract\+\_\+scene\+\_\+graph\+::\+OFKTBase\+Node\+::set\+Parent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode}{OFKTNode}} $\ast$}]{parent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Set the parent node. 
+
+This should indicate that \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_ad0ab4f405a66c8a311e597a3ddc57b82}{update\+World\+Transformation\+Required()}} = true
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & The parent node \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode_a36cad59a0958106437e79b9a224b9614}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTNode}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTRootNode_a66cc3950d2bb88ddb2179a3eac67b60e}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTRoot\+Node}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTBaseNode_a13009fa15aba352ad70fbf7d6f2882c2}\label{classtesseract__scene__graph_1_1OFKTBaseNode_a13009fa15aba352ad70fbf7d6f2882c2}} 
+\index{tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}!setStaticTransformation@{setStaticTransformation}}
+\index{setStaticTransformation@{setStaticTransformation}!tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}}
+\doxysubsubsection{\texorpdfstring{setStaticTransformation()}{setStaticTransformation()}}
+{\footnotesize\ttfamily void tesseract\+\_\+scene\+\_\+graph\+::\+OFKTBase\+Node\+::set\+Static\+Transformation (\begin{DoxyParamCaption}\item[{Eigen\+::\+Isometry3d}]{static\+\_\+tf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Set the static transformation. 
+
+This should recompute the local transformation and \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_ad0ab4f405a66c8a311e597a3ddc57b82}{update\+World\+Transformation\+Required()}} = true.
+
+
+\begin{DoxyParams}{Parameters}
+{\em static\+\_\+tf} & The new static transformation \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode_a28749998a9c8f0319be88d36a1060fe4}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTNode}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTRootNode_a1569c01a71ab2e46a7df946a17c8d67f}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTRoot\+Node}}, and \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTFixedNode_a18bdb53223fad4b6185a66eb7630e7f7}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTFixed\+Node}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTBaseNode_a09bf85c903c7b06af846a994860990f0}\label{classtesseract__scene__graph_1_1OFKTBaseNode_a09bf85c903c7b06af846a994860990f0}} 
+\index{tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}!storeJointValue@{storeJointValue}}
+\index{storeJointValue@{storeJointValue}!tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}}
+\doxysubsubsection{\texorpdfstring{storeJointValue()}{storeJointValue()}}
+{\footnotesize\ttfamily void tesseract\+\_\+scene\+\_\+graph\+::\+OFKTBase\+Node\+::store\+Joint\+Value (\begin{DoxyParamCaption}\item[{double}]{joint\+\_\+value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Set the nodes joint value if it has one. 
+
+This should indicate \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a8d9c30e9bb4391e058954a8be9cc01d5}{has\+Joint\+Value\+Changed()}} = true
+
+
+\begin{DoxyParams}{Parameters}
+{\em joint\+\_\+value} & The joint value \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode_aeb748863024cf4f27b0ffb4153c27727}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTNode}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTRootNode_ac30baad43c45c6ea02a864b5c4de8ecd}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTRoot\+Node}}, \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTFixedNode_a734b18b3bfd566e59bf82bdcaf1f0019}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTFixed\+Node}}, and \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTRevoluteNode_ab961bda64c57085118dccf0da2491844}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTRevolute\+Node}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTBaseNode_ad0ab4f405a66c8a311e597a3ddc57b82}\label{classtesseract__scene__graph_1_1OFKTBaseNode_ad0ab4f405a66c8a311e597a3ddc57b82}} 
+\index{tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}!updateWorldTransformationRequired@{updateWorldTransformationRequired}}
+\index{updateWorldTransformationRequired@{updateWorldTransformationRequired}!tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}}
+\doxysubsubsection{\texorpdfstring{updateWorldTransformationRequired()}{updateWorldTransformationRequired()}}
+{\footnotesize\ttfamily bool tesseract\+\_\+scene\+\_\+graph\+::\+OFKTBase\+Node\+::update\+World\+Transformation\+Required (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Indicates if an update of the world transformation is required. 
+
+This should get set to true when either of the following happen.
+\begin{DoxyItemize}
+\item If \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a28a0b85fb901f1caf4f4927ebc3c7b15}{set\+Parent()}} was called
+\item If \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a13009fa15aba352ad70fbf7d6f2882c2}{set\+Static\+Transformation()}} was called
+\end{DoxyItemize}
+
+Note\+: set\+Joint\+Value() is not handle here because that is captured by \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a8d9c30e9bb4391e058954a8be9cc01d5}{has\+Joint\+Value\+Changed()}} \begin{DoxyReturn}{Returns}
+If true, the world transformation need to be recalculated. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode_a0d4dd96ef7cd93ddf915d95e12e61e3b}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTNode}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTRootNode_a8d6eb376df18a0dbf488bae3629472c2}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTRoot\+Node}}.
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTBaseNode_a04c5cec13fafb90debd7afa7a3c833c4}\label{classtesseract__scene__graph_1_1OFKTBaseNode_a04c5cec13fafb90debd7afa7a3c833c4}} 
+\index{tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}!OFKTStateSolver@{OFKTStateSolver}}
+\index{OFKTStateSolver@{OFKTStateSolver}!tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}}
+\doxysubsubsection{\texorpdfstring{OFKTStateSolver}{OFKTStateSolver}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver}{OFKTState\+Solver}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTBaseNode_aeaf5173e7f2fab4735ba37ac4931e920}\label{classtesseract__scene__graph_1_1OFKTBaseNode_aeaf5173e7f2fab4735ba37ac4931e920}} 
+\index{tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}!children\_@{children\_}}
+\index{children\_@{children\_}!tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}}
+\doxysubsubsection{\texorpdfstring{children\_}{children\_}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode}{OFKTNode}}$\ast$$>$ tesseract\+\_\+scene\+\_\+graph\+::\+OFKTBase\+Node\+::children\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTBaseNode_a824383ae35d7cca9da5b9d7eb59eacea}\label{classtesseract__scene__graph_1_1OFKTBaseNode_a824383ae35d7cca9da5b9d7eb59eacea}} 
+\index{tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}!children\_const\_@{children\_const\_}}
+\index{children\_const\_@{children\_const\_}!tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}}
+\doxysubsubsection{\texorpdfstring{children\_const\_}{children\_const\_}}
+{\footnotesize\ttfamily std\+::vector$<$const \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode}{OFKTNode}}$\ast$$>$ tesseract\+\_\+scene\+\_\+graph\+::\+OFKTBase\+Node\+::children\+\_\+const\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTBaseNode_ae6625c16deb61434476008f1b2e3a8ff}\label{classtesseract__scene__graph_1_1OFKTBaseNode_ae6625c16deb61434476008f1b2e3a8ff}} 
+\index{tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}!joint\_name\_@{joint\_name\_}}
+\index{joint\_name\_@{joint\_name\_}!tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}}
+\doxysubsubsection{\texorpdfstring{joint\_name\_}{joint\_name\_}}
+{\footnotesize\ttfamily std\+::string tesseract\+\_\+scene\+\_\+graph\+::\+OFKTBase\+Node\+::joint\+\_\+name\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTBaseNode_ae6de6e56adea5f5087ae12cb8edfdddd}\label{classtesseract__scene__graph_1_1OFKTBaseNode_ae6de6e56adea5f5087ae12cb8edfdddd}} 
+\index{tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}!joint\_tf\_@{joint\_tf\_}}
+\index{joint\_tf\_@{joint\_tf\_}!tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}}
+\doxysubsubsection{\texorpdfstring{joint\_tf\_}{joint\_tf\_}}
+{\footnotesize\ttfamily Eigen\+::\+Isometry3d tesseract\+\_\+scene\+\_\+graph\+::\+OFKTBase\+Node\+::joint\+\_\+tf\+\_\+ \{ Eigen\+::\+Isometry3d\+::\+Identity() \}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTBaseNode_a162ea163c8c0033e51a6546bbcc14036}\label{classtesseract__scene__graph_1_1OFKTBaseNode_a162ea163c8c0033e51a6546bbcc14036}} 
+\index{tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}!joint\_value\_@{joint\_value\_}}
+\index{joint\_value\_@{joint\_value\_}!tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}}
+\doxysubsubsection{\texorpdfstring{joint\_value\_}{joint\_value\_}}
+{\footnotesize\ttfamily double tesseract\+\_\+scene\+\_\+graph\+::\+OFKTBase\+Node\+::joint\+\_\+value\+\_\+ \{ 0 \}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTBaseNode_ad92627c415427322208a904b9d48607d}\label{classtesseract__scene__graph_1_1OFKTBaseNode_ad92627c415427322208a904b9d48607d}} 
+\index{tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}!joint\_value\_changed\_@{joint\_value\_changed\_}}
+\index{joint\_value\_changed\_@{joint\_value\_changed\_}!tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}}
+\doxysubsubsection{\texorpdfstring{joint\_value\_changed\_}{joint\_value\_changed\_}}
+{\footnotesize\ttfamily bool tesseract\+\_\+scene\+\_\+graph\+::\+OFKTBase\+Node\+::joint\+\_\+value\+\_\+changed\+\_\+ \{ false \}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTBaseNode_ac394544c98b9899adbdf1ea42cc1d47d}\label{classtesseract__scene__graph_1_1OFKTBaseNode_ac394544c98b9899adbdf1ea42cc1d47d}} 
+\index{tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}!link\_name\_@{link\_name\_}}
+\index{link\_name\_@{link\_name\_}!tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}}
+\doxysubsubsection{\texorpdfstring{link\_name\_}{link\_name\_}}
+{\footnotesize\ttfamily std\+::string tesseract\+\_\+scene\+\_\+graph\+::\+OFKTBase\+Node\+::link\+\_\+name\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTBaseNode_aa061b1d1614d750b2ee4531439138e01}\label{classtesseract__scene__graph_1_1OFKTBaseNode_aa061b1d1614d750b2ee4531439138e01}} 
+\index{tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}!local\_tf\_@{local\_tf\_}}
+\index{local\_tf\_@{local\_tf\_}!tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}}
+\doxysubsubsection{\texorpdfstring{local\_tf\_}{local\_tf\_}}
+{\footnotesize\ttfamily Eigen\+::\+Isometry3d tesseract\+\_\+scene\+\_\+graph\+::\+OFKTBase\+Node\+::local\+\_\+tf\+\_\+ \{ Eigen\+::\+Isometry3d\+::\+Identity() \}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTBaseNode_a512325a7eda963e3002c84a88adee5d7}\label{classtesseract__scene__graph_1_1OFKTBaseNode_a512325a7eda963e3002c84a88adee5d7}} 
+\index{tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}!local\_twist\_@{local\_twist\_}}
+\index{local\_twist\_@{local\_twist\_}!tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}}
+\doxysubsubsection{\texorpdfstring{local\_twist\_}{local\_twist\_}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix$<$double, 6, 1$>$ tesseract\+\_\+scene\+\_\+graph\+::\+OFKTBase\+Node\+::local\+\_\+twist\+\_\+ \{ Eigen\+::\+Vector\+Xd\+::\+Zero(6) \}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTBaseNode_a40d4bb94219b9608af74275510f6d156}\label{classtesseract__scene__graph_1_1OFKTBaseNode_a40d4bb94219b9608af74275510f6d156}} 
+\index{tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}!parent\_@{parent\_}}
+\index{parent\_@{parent\_}!tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}}
+\doxysubsubsection{\texorpdfstring{parent\_}{parent\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode}{OFKTNode}}$\ast$ tesseract\+\_\+scene\+\_\+graph\+::\+OFKTBase\+Node\+::parent\+\_\+ \{ nullptr \}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTBaseNode_a3c2ea555e6208b6682f55c5ecc41d31d}\label{classtesseract__scene__graph_1_1OFKTBaseNode_a3c2ea555e6208b6682f55c5ecc41d31d}} 
+\index{tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}!static\_tf\_@{static\_tf\_}}
+\index{static\_tf\_@{static\_tf\_}!tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}}
+\doxysubsubsection{\texorpdfstring{static\_tf\_}{static\_tf\_}}
+{\footnotesize\ttfamily Eigen\+::\+Isometry3d tesseract\+\_\+scene\+\_\+graph\+::\+OFKTBase\+Node\+::static\+\_\+tf\+\_\+ \{ Eigen\+::\+Isometry3d\+::\+Identity() \}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTBaseNode_a600186b55fa3147f5f1b69a2acbc75ac}\label{classtesseract__scene__graph_1_1OFKTBaseNode_a600186b55fa3147f5f1b69a2acbc75ac}} 
+\index{tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}!type\_@{type\_}}
+\index{type\_@{type\_}!tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}}
+\doxysubsubsection{\texorpdfstring{type\_}{type\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacetesseract__scene__graph_ade43fa945a554b6e0c703e38e6a8cf16}{tesseract\+\_\+scene\+\_\+graph\+::\+Joint\+Type}} tesseract\+\_\+scene\+\_\+graph\+::\+OFKTBase\+Node\+::type\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTBaseNode_a26fef0612bc1459b213f197c2e1e193a}\label{classtesseract__scene__graph_1_1OFKTBaseNode_a26fef0612bc1459b213f197c2e1e193a}} 
+\index{tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}!update\_world\_required\_@{update\_world\_required\_}}
+\index{update\_world\_required\_@{update\_world\_required\_}!tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}}
+\doxysubsubsection{\texorpdfstring{update\_world\_required\_}{update\_world\_required\_}}
+{\footnotesize\ttfamily bool tesseract\+\_\+scene\+\_\+graph\+::\+OFKTBase\+Node\+::update\+\_\+world\+\_\+required\+\_\+ \{ true \}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTBaseNode_acb6a6b6a00a51ee18ca1c4b4344e71f5}\label{classtesseract__scene__graph_1_1OFKTBaseNode_acb6a6b6a00a51ee18ca1c4b4344e71f5}} 
+\index{tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}!world\_tf\_@{world\_tf\_}}
+\index{world\_tf\_@{world\_tf\_}!tesseract\_scene\_graph::OFKTBaseNode@{tesseract\_scene\_graph::OFKTBaseNode}}
+\doxysubsubsection{\texorpdfstring{world\_tf\_}{world\_tf\_}}
+{\footnotesize\ttfamily Eigen\+::\+Isometry3d tesseract\+\_\+scene\+\_\+graph\+::\+OFKTBase\+Node\+::world\+\_\+tf\+\_\+ \{ Eigen\+::\+Isometry3d\+::\+Identity() \}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+tesseract\+\_\+state\+\_\+solver/include/tesseract\+\_\+state\+\_\+solver/ofkt/\mbox{\hyperlink{ofkt__nodes_8h}{ofkt\+\_\+nodes.\+h}}\item 
+tesseract\+\_\+state\+\_\+solver/src/\mbox{\hyperlink{ofkt__nodes_8cpp}{ofkt\+\_\+nodes.\+cpp}}\end{DoxyCompactItemize}

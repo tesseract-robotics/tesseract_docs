@@ -1,0 +1,107 @@
+\hypertarget{bullet__discrete__bvh__manager_8h_source}{}\doxysection{bullet\+\_\+discrete\+\_\+bvh\+\_\+manager.\+h}
+\label{bullet__discrete__bvh__manager_8h_source}\index{tesseract\_collision/bullet/include/tesseract\_collision/bullet/bullet\_discrete\_bvh\_manager.h@{tesseract\_collision/bullet/include/tesseract\_collision/bullet/bullet\_discrete\_bvh\_manager.h}}
+\mbox{\hyperlink{bullet__discrete__bvh__manager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#ifndef TESSERACT\_COLLISION\_BULLET\_DISCRETE\_BVH\_MANAGERS\_H}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#define TESSERACT\_COLLISION\_BULLET\_DISCRETE\_BVH\_MANAGERS\_H}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{bullet__utils_8h}{tesseract\_collision/bullet/bullet\_utils.h}}>}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{discrete__contact__manager_8h}{tesseract\_collision/core/discrete\_contact\_manager.h}}>}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{tesseract__collision__configuration_8h}{tesseract\_collision/bullet/tesseract\_collision\_configuration.h}}>}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet}{tesseract\_collision::tesseract\_collision\_bullet}}}
+\DoxyCodeLine{49 \{}
+\DoxyCodeLine{51 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager}{BulletDiscreteBVHManager}} : \textcolor{keyword}{public} \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager}{DiscreteContactManager}}}
+\DoxyCodeLine{52 \{}
+\DoxyCodeLine{53 \textcolor{keyword}{public}:}
+\DoxyCodeLine{54   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_af8bdfeedd922bd160cd5b57d4146dcb0}{Ptr}} = std::shared\_ptr<BulletDiscreteBVHManager>;}
+\DoxyCodeLine{55   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_a62492682408c7da0261c7b9545f03c36}{ConstPtr}} = std::shared\_ptr<const BulletDiscreteBVHManager>;}
+\DoxyCodeLine{56   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_a72c0c0163cd1a88df5c9e2ba930af6bf}{UPtr}} = std::unique\_ptr<BulletDiscreteBVHManager>;}
+\DoxyCodeLine{57   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_a656c742603d6c50585c0544cd670ad1c}{ConstUPtr}} = std::unique\_ptr<const BulletDiscreteBVHManager>;}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59   \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager}{BulletDiscreteBVHManager}}(std::string \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}} = \textcolor{stringliteral}{"{}BulletDiscreteBVHManager"{}});}
+\DoxyCodeLine{60   \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_a005bb56f54bd32756bb1294a9bacffff}{\string~BulletDiscreteBVHManager}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{61   \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_ae93543b0934d82ab33e59dec41fa80c1}{BulletDiscreteBVHManager}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager}{BulletDiscreteBVHManager}}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{62   \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager}{BulletDiscreteBVHManager}}\& \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_a5e7b95a204cf2814ebc6bcd2ca360edb}{operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager}{BulletDiscreteBVHManager}}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{63   \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_aceac85a9c0eb2f456dcfbcbd295d4240}{BulletDiscreteBVHManager}}(\mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager}{BulletDiscreteBVHManager}}\&\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{64   \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager}{BulletDiscreteBVHManager}}\& \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_a9c182b1020987e5af3c8e8312513e09a}{operator=}}(\mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager}{BulletDiscreteBVHManager}}\&\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66   std::string \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_a7560b93875d27076cb56099c9ec25163}{getName}}() const override final;}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68   \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager}{DiscreteContactManager}}::\mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_a72c0c0163cd1a88df5c9e2ba930af6bf}{UPtr}} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_aae074f70250a0bd805205f020b7228ee}{clone}}() const override final;}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_afe3d61110c6a4f2a1c8bee5a2d39ebc1}{addCollisionObject}}(const std::\textcolor{keywordtype}{string}\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}},}
+\DoxyCodeLine{71                           const \textcolor{keywordtype}{int}\& mask\_id,}
+\DoxyCodeLine{72                           const \mbox{\hyperlink{namespacetesseract__collision_a2472107aae8174a30873bb0a955c3cb4}{CollisionShapesConst}}\& shapes,}
+\DoxyCodeLine{73                           const \mbox{\hyperlink{namespacetesseract__common}{tesseract\_common}}::VectorIsometry3d\& shape\_poses,}
+\DoxyCodeLine{74                           \textcolor{keywordtype}{bool} enabled = true) override final;}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76   const \mbox{\hyperlink{namespacetesseract__collision_a2472107aae8174a30873bb0a955c3cb4}{CollisionShapesConst}}\& \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_a8ccb0e832dec30fe3d9e887497ba7d3e}{getCollisionObjectGeometries}}(const std::\textcolor{keywordtype}{string}\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}) const override final;}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78   const \mbox{\hyperlink{namespacetesseract__common}{tesseract\_common}}::VectorIsometry3d\&}
+\DoxyCodeLine{79   \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_abef85564988d35c4035e452176f5ad47}{getCollisionObjectGeometriesTransforms}}(const std::\textcolor{keywordtype}{string}\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}) const override final;}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_a2f7ebbdc2d165f49d283c148cbe952b5}{hasCollisionObject}}(const std::\textcolor{keywordtype}{string}\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}) const override final;}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_a394964b5c51b9a8ac9d74f1b7536aac7}{removeCollisionObject}}(const std::\textcolor{keywordtype}{string}\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}) override final;}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_a0c5a3114ae651b2ad1bf3b220d37b9c9}{enableCollisionObject}}(const std::\textcolor{keywordtype}{string}\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}) override final;}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_aac6f22ec8ec609649ef37b2b5ae205fd}{disableCollisionObject}}(const std::\textcolor{keywordtype}{string}\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}) override final;}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_aa170196d73ba39e35a5336b11cb44bf6}{isCollisionObjectEnabled}}(const std::\textcolor{keywordtype}{string}\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}) const override final;}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_ad96a1858717d0b28cf6cf2de4fb1a118}{setCollisionObjectsTransform}}(const std::\textcolor{keywordtype}{string}\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}, const Eigen::Isometry3d\& \mbox{\hyperlink{tesseract__environment__collision_8cpp_a7272862bfe9e301a87918b3d560aebc3}{pose}}) override final;}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_ad96a1858717d0b28cf6cf2de4fb1a118}{setCollisionObjectsTransform}}(const std::\mbox{\hyperlink{FloatMath_8inl_adcf134d50025cc52907d0c8ac798d89d}{vector}}<std::\textcolor{keywordtype}{string}>\& names,}
+\DoxyCodeLine{94                                     const \mbox{\hyperlink{namespacetesseract__common}{tesseract\_common}}::VectorIsometry3d\& poses) override final;}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_ad96a1858717d0b28cf6cf2de4fb1a118}{setCollisionObjectsTransform}}(const \mbox{\hyperlink{namespacetesseract__common}{tesseract\_common}}::TransformMap\& transforms) override final;}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98   const std::\mbox{\hyperlink{FloatMath_8inl_adcf134d50025cc52907d0c8ac798d89d}{vector}}<std::\textcolor{keywordtype}{string}>\& \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_a6743ef86cfca50d1bd7403224edf267b}{getCollisionObjects}}() const override final;}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_a6f7aea377737cce66148d30d1a8c17fc}{setActiveCollisionObjects}}(const std::\mbox{\hyperlink{FloatMath_8inl_adcf134d50025cc52907d0c8ac798d89d}{vector}}<std::\textcolor{keywordtype}{string}>\& names) override final;}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102   const std::\mbox{\hyperlink{FloatMath_8inl_adcf134d50025cc52907d0c8ac798d89d}{vector}}<std::\textcolor{keywordtype}{string}>\& \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_a518e70e18060945753c870e2c8e6abd1}{getActiveCollisionObjects}}() const override final;}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_a4ea8088f291559368dd00f4734ae7881}{setCollisionMarginData}}(}
+\DoxyCodeLine{105       \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData}{CollisionMarginData}} collision\_margin\_data,}
+\DoxyCodeLine{106       \mbox{\hyperlink{namespacetesseract__common_af06d85d024a36d63b58a6031556af8a1}{CollisionMarginOverrideType}} override\_type = \mbox{\hyperlink{namespacetesseract__common_af06d85d024a36d63b58a6031556af8a1}{CollisionMarginOverrideType}}::REPLACE) override final;}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_a6b259b638648ff71ee4cfabde5a3a6ac}{setDefaultCollisionMarginData}}(\textcolor{keywordtype}{double} default\_collision\_margin) override final;}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_aaf1847f37bd440769ad06f6b252d3c7f}{setPairCollisionMarginData}}(const std::\textcolor{keywordtype}{string}\& name1,}
+\DoxyCodeLine{111                                   const std::\textcolor{keywordtype}{string}\& name2,}
+\DoxyCodeLine{112                                   \textcolor{keywordtype}{double} collision\_margin) override final;}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114   const \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData}{CollisionMarginData}}\& \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_ad303f306826d9f9b45c370aec963d8db}{getCollisionMarginData}}() const override final;}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_a2924a576c9f8c0eee646906983bc5f9f}{setIsContactAllowedFn}}(\mbox{\hyperlink{namespacetesseract__collision_abe7752ce161fbd1139533ac566fec1cb}{IsContactAllowedFn}} fn) override final;}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118   \mbox{\hyperlink{namespacetesseract__collision_abe7752ce161fbd1139533ac566fec1cb}{IsContactAllowedFn}} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_a30b7902d4ac1dcab032e8fbadf2b0e24}{getIsContactAllowedFn}}() const override final;}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_a095d60a60c4e6fea38d53062a581cc43}{contactTest}}(\mbox{\hyperlink{namespacetesseract__collision_a1eeace4cc41027dbde8e7dbeb77ca7cf}{ContactResultMap}}\& collisions, const \mbox{\hyperlink{structtesseract__collision_1_1ContactRequest}{ContactRequest}}\& request) override final;}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{126   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_afe3d61110c6a4f2a1c8bee5a2d39ebc1}{addCollisionObject}}(const \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1CollisionObjectWrapper}{COW}}::\mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_af8bdfeedd922bd160cd5b57d4146dcb0}{Ptr}}\& cow);}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128 private:}
+\DoxyCodeLine{129   std::\textcolor{keywordtype}{string} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_aab3260c02a94accb5dab1571948d16fe}{name\_}};}
+\DoxyCodeLine{130   std::\mbox{\hyperlink{FloatMath_8inl_adcf134d50025cc52907d0c8ac798d89d}{vector}}<std::\textcolor{keywordtype}{string}> \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_a789475f7e9cb58298f286d5f7cb31fa2}{active\_}};            }
+\DoxyCodeLine{131   std::\mbox{\hyperlink{FloatMath_8inl_adcf134d50025cc52907d0c8ac798d89d}{vector}}<std::\textcolor{keywordtype}{string}> \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_a075a9a4be2cd4e4a995213016ae29d13}{collision\_objects\_}}; }
+\DoxyCodeLine{133   std::unique\_ptr<btCollisionDispatcher> \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_abb2497b4e12d123111e764a2dbf6bfff}{dispatcher\_}}; }
+\DoxyCodeLine{135   btDispatcherInfo \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_a18af032ea29678d0eedd5243ffb3c4c7}{dispatch\_info\_}};              }
+\DoxyCodeLine{136   \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionConfiguration}{TesseractCollisionConfiguration}} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_a21f3cf3c3f8849f879597e00a16c50cb}{coll\_config\_}}; }
+\DoxyCodeLine{137   std::unique\_ptr<btBroadphaseInterface> \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_acd0a255b1ee3684cc8182736de4af752}{broadphase\_}}; }
+\DoxyCodeLine{138   \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_a6bdaed18a18bda60c2af7da1a2202bef}{Link2Cow}} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_afdf04003bc51b0ac4e3e63fc690b7b16}{link2cow\_}}; }
+\DoxyCodeLine{144   \mbox{\hyperlink{structtesseract__collision_1_1ContactTestData}{ContactTestData}} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_adcc4d0a1595f2360afa124557e5e7ed5}{contact\_test\_data\_}};}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{147   \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractOverlapFilterCallback}{TesseractOverlapFilterCallback}} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_a386a2e83aace3a4d91e55bf98ee26ca0}{broadphase\_overlap\_cb\_}};}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{150   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_a521b27865e94240fdea7ba8569f972d4}{onCollisionMarginDataChanged}}();}
+\DoxyCodeLine{151 \};}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153 \}  \textcolor{comment}{// namespace tesseract\_collision::tesseract\_collision\_bullet}}
+\DoxyCodeLine{154 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_COLLISION\_BULLET\_DISCRETE\_BVH\_MANAGERS\_H}}
+
+\end{DoxyCode}

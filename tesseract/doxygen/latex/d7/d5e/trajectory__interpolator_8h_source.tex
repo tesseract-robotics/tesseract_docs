@@ -1,0 +1,54 @@
+\hypertarget{trajectory__interpolator_8h_source}{}\doxysection{trajectory\+\_\+interpolator.\+h}
+\label{trajectory__interpolator_8h_source}\index{tesseract\_visualization/include/tesseract\_visualization/trajectory\_interpolator.h@{tesseract\_visualization/include/tesseract\_visualization/trajectory\_interpolator.h}}
+\mbox{\hyperlink{trajectory__interpolator_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{27 \textcolor{comment}{/* Based on MoveIt code authored by: Ioan Sucan, Adam Leeper */}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#ifndef TESSERACT\_VISUALIZATION\_TRAJECTORY\_INTERPOLATOR\_H}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#define TESSERACT\_VISUALIZATION\_TRAJECTORY\_INTERPOLATOR\_H}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{macros_8h}{tesseract\_common/macros.h}}>}}
+\DoxyCodeLine{33 \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{36 \mbox{\hyperlink{namespaceTESSERACT__COMMON__IGNORE__WARNINGS__POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{joint__state_8h}{tesseract\_common/joint\_state.h}}>}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__visualization}{tesseract\_visualization}}}
+\DoxyCodeLine{41 \{}
+\DoxyCodeLine{42 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryInterpolator}{TrajectoryInterpolator}}}
+\DoxyCodeLine{43 \{}
+\DoxyCodeLine{44 \textcolor{keyword}{public}:}
+\DoxyCodeLine{45   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryInterpolator_a85929854568e018c309906476e64b103}{UPtr}} = std::unique\_ptr<TrajectoryInterpolator>;}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47   \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryInterpolator}{TrajectoryInterpolator}}(\mbox{\hyperlink{classtesseract__common_1_1JointTrajectory}{tesseract\_common::JointTrajectory}} \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a2eb4f502ad97d43c60111b5ffd01a1e6}{trajectory}});}
+\DoxyCodeLine{48   \textcolor{keyword}{virtual} \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryInterpolator_ab621d8c7f7a3ed97541d15d0e97f7326}{\string~TrajectoryInterpolator}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{49   \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryInterpolator_a8deb4edc680539f7978676b6ee9a4fb7}{TrajectoryInterpolator}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryInterpolator}{TrajectoryInterpolator}}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{50   \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryInterpolator}{TrajectoryInterpolator}}\& \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryInterpolator_ad7ca5c7c27747f790b2ba73b54ef1c7c}{operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryInterpolator}{TrajectoryInterpolator}}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{51   \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryInterpolator_ac67fcf9f682b1bb4e61e408775899eea}{TrajectoryInterpolator}}(\mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryInterpolator}{TrajectoryInterpolator}}\&\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{52   \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryInterpolator}{TrajectoryInterpolator}}\& \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryInterpolator_ac55d9841ed049ed3800f9beaa1ac6e04}{operator=}}(\mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryInterpolator}{TrajectoryInterpolator}}\&\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54   \mbox{\hyperlink{classtesseract__common_1_1JointState}{tesseract\_common::JointState}} \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryInterpolator_a36fdc54028e4df163079000fe4edfd5d}{getState}}(\textcolor{keywordtype}{double} request\_duration) \textcolor{keyword}{const};}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56   \textcolor{keywordtype}{double} \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryInterpolator_a488baa18c9bc18289a433d03c943f022}{getStateDuration}}(\textcolor{keywordtype}{long} index) \textcolor{keyword}{const};}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58   \textcolor{keywordtype}{long} \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryInterpolator_a1730ca4670cf3a76d978bf7343f1662d}{getStateCount}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryInterpolator_a860ca6753f14bb4f794a7e10e3c7fbab}{empty}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \textcolor{keyword}{private}:}
+\DoxyCodeLine{63   \mbox{\hyperlink{classtesseract__common_1_1JointTrajectory}{tesseract\_common::JointTrajectory}} \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryInterpolator_a4156a375b510808891533920af62c7ef}{trajectory\_}};}
+\DoxyCodeLine{64   std::vector<double> \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryInterpolator_a9d16e40a7e52a7b1005e5ce1de9008f1}{duration\_from\_previous\_}};}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryInterpolator_adfa78e2b228665f7255f738e6de1ee72}{findStateIndices}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double}\& duration, \textcolor{keywordtype}{long}\& before, \textcolor{keywordtype}{long}\& after, \textcolor{keywordtype}{double}\& blend) \textcolor{keyword}{const};}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68   \textcolor{keyword}{static} \mbox{\hyperlink{classtesseract__common_1_1JointState}{tesseract\_common::JointState}} \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryInterpolator_aa217fb5695916f4e4fbbb645510bbf0d}{interpolate}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__common_1_1JointState}{tesseract\_common::JointState}}\& start,}
+\DoxyCodeLine{69                                                   \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__common_1_1JointState}{tesseract\_common::JointState}}\& end,}
+\DoxyCodeLine{70                                                   \textcolor{keywordtype}{double} t);}
+\DoxyCodeLine{71 \};}
+\DoxyCodeLine{72 \}  \textcolor{comment}{// namespace tesseract\_visualization}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_VISUALIZATION\_TRAJECTORY\_INTERPOLATOR\_H}}
+
+\end{DoxyCode}

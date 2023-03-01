@@ -1,0 +1,110 @@
+\hypertarget{any__poly_8h_source}{}\doxysection{any\+\_\+poly.\+h}
+\label{any__poly_8h_source}\index{tesseract\_common/include/tesseract\_common/any\_poly.h@{tesseract\_common/include/tesseract\_common/any\_poly.h}}
+\mbox{\hyperlink{any__poly_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#ifndef TESSERACT\_COMMON\_ANY\_POLY\_H}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define TESSERACT\_COMMON\_ANY\_POLY\_H}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{macros_8h}{tesseract\_common/macros.h}}>}}
+\DoxyCodeLine{29 \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include <boost/serialization/base\_object.hpp>}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include <boost/serialization/export.hpp>}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include <boost/concept\_check.hpp>}}
+\DoxyCodeLine{33 \mbox{\hyperlink{namespaceTESSERACT__COMMON__IGNORE__WARNINGS__POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{serialization_8h}{tesseract\_common/serialization.h}}>}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{type__erasure_8h}{tesseract\_common/type\_erasure.h}}>}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#define TESSERACT\_ANY\_EXPORT\_KEY(N, C)                                                                                 \(\backslash\)}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{  namespace N                                                                                                          \(\backslash\)}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{  \{                                                                                                                    \(\backslash\)}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{  using C\#\#AnyInstanceBase = tesseract\_common::TypeErasureInstance<C, tesseract\_common::TypeErasureInterface>;         \(\backslash\)}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{  using C\#\#AnyInstance = tesseract\_common::detail\_any::AnyInstance<C>;                                                 \(\backslash\)}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{  using C\#\#AnyInstanceWrapper = tesseract\_common::TypeErasureInstanceWrapper<C\#\#AnyInstance>;                          \(\backslash\)}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{  \}                                                                                                                    \(\backslash\)}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{  BOOST\_CLASS\_EXPORT\_KEY(N::C\#\#AnyInstanceBase)                                                                        \(\backslash\)}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{  BOOST\_CLASS\_EXPORT\_KEY(N::C\#\#AnyInstance)                                                                            \(\backslash\)}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{  BOOST\_CLASS\_EXPORT\_KEY(N::C\#\#AnyInstanceWrapper)                                                                     \(\backslash\)}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{  BOOST\_CLASS\_TRACKING(N::C\#\#AnyInstanceBase, boost::serialization::track\_never)                                       \(\backslash\)}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{  BOOST\_CLASS\_TRACKING(N::C\#\#AnyInstance, boost::serialization::track\_never)                                           \(\backslash\)}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{  BOOST\_CLASS\_TRACKING(N::C\#\#AnyInstanceWrapper, boost::serialization::track\_never)}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#define TESSERACT\_ANY\_EXPORT\_IMPLEMENT(inst)                                                                           \(\backslash\)}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{  BOOST\_CLASS\_EXPORT\_IMPLEMENT(inst\#\#AnyInstanceBase)                                                                  \(\backslash\)}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{  BOOST\_CLASS\_EXPORT\_IMPLEMENT(inst\#\#AnyInstance)                                                                      \(\backslash\)}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{  BOOST\_CLASS\_EXPORT\_IMPLEMENT(inst\#\#AnyInstanceWrapper)}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#define TESSERACT\_ANY\_EXPORT(N, C)                                                                                     \(\backslash\)}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{  TESSERACT\_ANY\_EXPORT\_KEY(N, C)                                                                                       \(\backslash\)}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{  TESSERACT\_ANY\_EXPORT\_IMPLEMENT(N::C)}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__common_1_1detail__any}{tesseract\_common::detail\_any}}}
+\DoxyCodeLine{68 \{}
+\DoxyCodeLine{69 \textcolor{keyword}{template} <\textcolor{keyword}{typename} A>}
+\DoxyCodeLine{70 \textcolor{keyword}{struct }\mbox{\hyperlink{structtesseract__common_1_1detail__any_1_1AnyConcept}{AnyConcept}}  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{71   : boost::Assignable<A>,}
+\DoxyCodeLine{72     boost::CopyConstructible<A>,}
+\DoxyCodeLine{73     boost::EqualityComparable<A>}
+\DoxyCodeLine{74 \{}
+\DoxyCodeLine{75   \mbox{\hyperlink{structtesseract__common_1_1detail__any_1_1AnyConcept_a3ff78b23fd6f99449dce03cc31d55923}{BOOST\_CONCEPT\_USAGE}}(\mbox{\hyperlink{structtesseract__common_1_1detail__any_1_1AnyConcept}{AnyConcept}})}
+\DoxyCodeLine{76   \{}
+\DoxyCodeLine{77     A cp(\mbox{\hyperlink{structtesseract__common_1_1detail__any_1_1AnyConcept_acad9c4d107a6b08b73f771606e3e6f06}{c}});}
+\DoxyCodeLine{78     A assign = \mbox{\hyperlink{structtesseract__common_1_1detail__any_1_1AnyConcept_acad9c4d107a6b08b73f771606e3e6f06}{c}};}
+\DoxyCodeLine{79     \textcolor{keywordtype}{bool} eq = (\mbox{\hyperlink{structtesseract__common_1_1detail__any_1_1AnyConcept_acad9c4d107a6b08b73f771606e3e6f06}{c}} == cp);}
+\DoxyCodeLine{80     \textcolor{keywordtype}{bool} neq = (\mbox{\hyperlink{structtesseract__common_1_1detail__any_1_1AnyConcept_acad9c4d107a6b08b73f771606e3e6f06}{c}} != cp);}
+\DoxyCodeLine{81     \mbox{\hyperlink{VHACD_8cpp_a86d500a34c624c2cae56bc25a31b12f3}{UNUSED}}(eq);}
+\DoxyCodeLine{82     \mbox{\hyperlink{VHACD_8cpp_a86d500a34c624c2cae56bc25a31b12f3}{UNUSED}}(neq);}
+\DoxyCodeLine{83   \}}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 \textcolor{keyword}{private}:}
+\DoxyCodeLine{86   A \mbox{\hyperlink{structtesseract__common_1_1detail__any_1_1AnyConcept_acad9c4d107a6b08b73f771606e3e6f06}{c}};}
+\DoxyCodeLine{87 \};}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{90 \textcolor{keyword}{struct }\mbox{\hyperlink{structtesseract__common_1_1detail__any_1_1AnyInstance}{AnyInstance}} : \mbox{\hyperlink{structtesseract__common_1_1TypeErasureInstance}{tesseract\_common::TypeErasureInstance}}<T, tesseract\_common::TypeErasureInterface>  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{91 \{}
+\DoxyCodeLine{92   \textcolor{keyword}{using }\mbox{\hyperlink{structtesseract__common_1_1TypeErasureInstance}{BaseType}} = \mbox{\hyperlink{structtesseract__common_1_1TypeErasureInstance}{tesseract\_common::TypeErasureInstance<T, tesseract\_common::TypeErasureInterface>}};}
+\DoxyCodeLine{93   \mbox{\hyperlink{structtesseract__common_1_1detail__any_1_1AnyInstance_abd5f31839d2a23f183dc90f35efccb14}{AnyInstance}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{94   \mbox{\hyperlink{structtesseract__common_1_1detail__any_1_1AnyInstance_ac0422b42ffe289b0aeb607584e76d2cd}{AnyInstance}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{T}}\& x) : \mbox{\hyperlink{structtesseract__common_1_1TypeErasureInstance}{BaseType}}(x) \{\}}
+\DoxyCodeLine{95   \mbox{\hyperlink{structtesseract__common_1_1detail__any_1_1AnyInstance_a7ccac0797978a4bd353efcee0a422e17}{AnyInstance}}(\mbox{\hyperlink{structtesseract__common_1_1detail__any_1_1AnyInstance}{AnyInstance}}\&\& x) noexcept : \mbox{\hyperlink{structtesseract__common_1_1detail__any_1_1AnyInstance_abe080546c7b8a717cb407d0087566dbe}{BaseType}}(std::move(x)) \{\}}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97   \mbox{\hyperlink{structtesseract__common_1_1detail__any_1_1AnyInstance_aa27c85183d46ccf978fd586ee7478fda}{BOOST\_CONCEPT\_ASSERT}}((\mbox{\hyperlink{structtesseract__common_1_1detail__any_1_1AnyConcept}{AnyConcept<T>}}));}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99 \textcolor{keyword}{private}:}
+\DoxyCodeLine{100   \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{structtesseract__common_1_1detail__any_1_1AnyInstance_ac98d07dd8f7b70e16ccb9a01abf56b9c}{boost::serialization::access}};}
+\DoxyCodeLine{101   \textcolor{keyword}{friend} \textcolor{keyword}{struct }\mbox{\hyperlink{structtesseract__common_1_1Serialization}{tesseract\_common::Serialization}};}
+\DoxyCodeLine{102   \textcolor{keyword}{template} <\textcolor{keyword}{class} Archive>}
+\DoxyCodeLine{103   \textcolor{keywordtype}{void} \mbox{\hyperlink{structtesseract__common_1_1detail__any_1_1AnyInstance_a3ca228a0e1eb2a27909e6fd62b848ea4}{serialize}}(Archive\& ar, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \textcolor{comment}{/*version*/})  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{104   \{}
+\DoxyCodeLine{105     ar\& boost::serialization::make\_nvp(\textcolor{stringliteral}{"{}base"{}}, boost::serialization::base\_object<BaseType>(*\textcolor{keyword}{this}));}
+\DoxyCodeLine{106   \}}
+\DoxyCodeLine{107 \};}
+\DoxyCodeLine{108 \}  \textcolor{comment}{// namespace tesseract\_common::detail\_any}}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__common}{tesseract\_common}}}
+\DoxyCodeLine{111 \{}
+\DoxyCodeLine{112 \textcolor{keyword}{using }\mbox{\hyperlink{structtesseract__common_1_1TypeErasureBase}{AnyPolyBase}} = \mbox{\hyperlink{structtesseract__common_1_1TypeErasureBase}{tesseract\_common::TypeErasureBase<TypeErasureInterface, detail\_any::AnyInstance>}};}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114 \textcolor{keyword}{struct }\mbox{\hyperlink{structtesseract__common_1_1AnyPoly}{AnyPoly}} : \mbox{\hyperlink{structtesseract__common_1_1TypeErasureBase}{AnyPolyBase}}}
+\DoxyCodeLine{115 \{}
+\DoxyCodeLine{116   \textcolor{keyword}{using }AnyPolyBase::AnyPolyBase;}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118 \textcolor{keyword}{private}:}
+\DoxyCodeLine{119   \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{structtesseract__common_1_1AnyPoly_ac98d07dd8f7b70e16ccb9a01abf56b9c}{boost::serialization::access}};}
+\DoxyCodeLine{120   \textcolor{keyword}{friend} \textcolor{keyword}{struct }\mbox{\hyperlink{structtesseract__common_1_1Serialization}{tesseract\_common::Serialization}};}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122   \textcolor{keyword}{template} <\textcolor{keyword}{class} Archive>}
+\DoxyCodeLine{123   \textcolor{keywordtype}{void} \mbox{\hyperlink{structtesseract__common_1_1AnyPoly_ac7fd29c3b760caeb108587ffae75512b}{serialize}}(Archive\& ar, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \textcolor{comment}{/*version*/});  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{124 \};}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126 \}  \textcolor{comment}{// namespace tesseract\_common}}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128 BOOST\_CLASS\_EXPORT\_KEY(\mbox{\hyperlink{structtesseract__common_1_1TypeErasureBase}{tesseract\_common::AnyPolyBase}})}
+\DoxyCodeLine{129 \mbox{\hyperlink{eigen__serialization_8h_a6ce327d54a408162d753adb9cc40e1cd}{BOOST\_CLASS\_TRACKING}}(\mbox{\hyperlink{structtesseract__common_1_1TypeErasureBase}{tesseract\_common::AnyPolyBase}}, boost::serialization::track\_never)}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{131 BOOST\_CLASS\_EXPORT\_KEY(\mbox{\hyperlink{structtesseract__common_1_1AnyPoly}{tesseract\_common::AnyPoly}})}
+\DoxyCodeLine{132 \mbox{\hyperlink{eigen__serialization_8h_a6ce327d54a408162d753adb9cc40e1cd}{BOOST\_CLASS\_TRACKING}}(\mbox{\hyperlink{structtesseract__common_1_1AnyPoly}{tesseract\_common::AnyPoly}}, boost::serialization::track\_never)}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_COMMON\_ANY\_POLY\_H}}
+
+\end{DoxyCode}

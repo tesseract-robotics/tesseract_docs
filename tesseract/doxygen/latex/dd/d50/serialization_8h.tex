@@ -1,0 +1,175 @@
+\hypertarget{serialization_8h}{}\doxysection{tesseract\+\_\+common/include/tesseract\+\_\+common/serialization.h File Reference}
+\label{serialization_8h}\index{tesseract\_common/include/tesseract\_common/serialization.h@{tesseract\_common/include/tesseract\_common/serialization.h}}
+
+
+Additional Boost serialization wrappers.  
+
+
+{\ttfamily \#include $<$tesseract\+\_\+common/macros.\+h$>$}\newline
+{\ttfamily \#include $<$variant$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$boost/archive/xml\+\_\+oarchive.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/archive/xml\+\_\+iarchive.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/archive/binary\+\_\+oarchive.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/archive/binary\+\_\+iarchive.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/serialization/tracking.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/serialization/tracking\+\_\+enum.\+hpp$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+common/types.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+common/serialization\+\_\+extensions.\+h$>$}\newline
+Include dependency graph for serialization.\+h\+:
+% FIG 0
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structtesseract__common_1_1Serialization}{tesseract\+\_\+common\+::\+Serialization}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacetesseract__common}{tesseract\+\_\+common}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{serialization_8h_aa2f49001be13949a16a57e6c99ab00ad}{COMMA}}~,
+\item 
+\#define \mbox{\hyperlink{serialization_8h_a82e190f8926bbd5cc3f311dbd5006e6d}{TESSERACT\+\_\+\+SERIALIZE\+\_\+\+ARCHIVES\+\_\+\+INSTANTIATE}}(Type)
+\item 
+\#define \mbox{\hyperlink{serialization_8h_a1138b8614dca46f7b349cfeae70f096a}{TESSERACT\+\_\+\+SERIALIZE\+\_\+\+SAVE\+\_\+\+LOAD\+\_\+\+ARCHIVES\+\_\+\+INSTANTIATE}}(Type)
+\item 
+\#define \mbox{\hyperlink{serialization_8h_af2d3433371cad961e0f59b642f78e877}{TESSERACT\+\_\+\+SERIALIZE\+\_\+\+SAVE\+\_\+\+LOAD\+\_\+\+FREE\+\_\+\+ARCHIVES\+\_\+\+INSTANTIATE}}(Type)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Additional Boost serialization wrappers. 
+
+Boost serialization macros and helpers.
+
+Supports the following
+\begin{DoxyItemize}
+\item Eigen\+::\+Vector\+Xd
+\item Eigen\+::\+Isometry3d
+\item Eigen\+::\+Matrix\+X2d
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+Levi Armstrong 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+February 21, 2021 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+TODO 
+\end{DoxyVersion}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000050}{Bug}}]No known bugs\end{DoxyRefDesc}
+
+
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2021, Southwest Research Institute
+\end{DoxyCopyright}
+\begin{DoxyParagraph}{License}
+Software License Agreement (Apache License) 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+Licensed under the Apache License, Version 2.\+0 (the \char`\"{}\+License\char`\"{}); you may not use this file except in compliance with the License. You may obtain a copy of the License at \href{http://www.apache.org/licenses/LICENSE-2.0}{\texttt{ http\+://www.\+apache.\+org/licenses/\+LICENSE-\/2.\+0}} 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \char`\"{}\+AS IS\char`\"{} BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+\end{DoxyParagraph}
+
+
+\begin{DoxyAuthor}{Author}
+Levi Armstrong 
+
+Matthew Powelson 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+March 16, 2022 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+TODO 
+\end{DoxyVersion}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000058}{Bug}}]No known bugs\end{DoxyRefDesc}
+
+
+\begin{DoxyParagraph}{License}
+Software License Agreement (Apache License) 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+Licensed under the Apache License, Version 2.\+0 (the \char`\"{}\+License\char`\"{}); you may not use this file except in compliance with the License. You may obtain a copy of the License at \href{http://www.apache.org/licenses/LICENSE-2.0}{\texttt{ http\+://www.\+apache.\+org/licenses/\+LICENSE-\/2.\+0}} 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \char`\"{}\+AS IS\char`\"{} BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License. 
+\end{DoxyParagraph}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{serialization_8h_aa2f49001be13949a16a57e6c99ab00ad}\label{serialization_8h_aa2f49001be13949a16a57e6c99ab00ad}} 
+\index{serialization.h@{serialization.h}!COMMA@{COMMA}}
+\index{COMMA@{COMMA}!serialization.h@{serialization.h}}
+\doxysubsubsection{\texorpdfstring{COMMA}{COMMA}}
+{\footnotesize\ttfamily \#define COMMA~,}
+
+\mbox{\Hypertarget{serialization_8h_a82e190f8926bbd5cc3f311dbd5006e6d}\label{serialization_8h_a82e190f8926bbd5cc3f311dbd5006e6d}} 
+\index{serialization.h@{serialization.h}!TESSERACT\_SERIALIZE\_ARCHIVES\_INSTANTIATE@{TESSERACT\_SERIALIZE\_ARCHIVES\_INSTANTIATE}}
+\index{TESSERACT\_SERIALIZE\_ARCHIVES\_INSTANTIATE@{TESSERACT\_SERIALIZE\_ARCHIVES\_INSTANTIATE}!serialization.h@{serialization.h}}
+\doxysubsubsection{\texorpdfstring{TESSERACT\_SERIALIZE\_ARCHIVES\_INSTANTIATE}{TESSERACT\_SERIALIZE\_ARCHIVES\_INSTANTIATE}}
+{\footnotesize\ttfamily \#define TESSERACT\+\_\+\+SERIALIZE\+\_\+\+ARCHIVES\+\_\+\+INSTANTIATE(\begin{DoxyParamCaption}\item[{}]{Type }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  \textcolor{keyword}{template} \textcolor{keywordtype}{void} Type::serialize(boost::archive::xml\_oarchive\& ar, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} version);                         \(\backslash\)}
+\DoxyCodeLine{  \textcolor{keyword}{template} \textcolor{keywordtype}{void} Type::serialize(boost::archive::xml\_iarchive\& ar, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} version);                         \(\backslash\)}
+\DoxyCodeLine{  \textcolor{keyword}{template} \textcolor{keywordtype}{void} Type::serialize(boost::archive::binary\_oarchive\& ar, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} version);                      \(\backslash\)}
+\DoxyCodeLine{  \textcolor{keyword}{template} \textcolor{keywordtype}{void} Type::serialize(boost::archive::binary\_iarchive\& ar, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} version);}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{serialization_8h_a1138b8614dca46f7b349cfeae70f096a}\label{serialization_8h_a1138b8614dca46f7b349cfeae70f096a}} 
+\index{serialization.h@{serialization.h}!TESSERACT\_SERIALIZE\_SAVE\_LOAD\_ARCHIVES\_INSTANTIATE@{TESSERACT\_SERIALIZE\_SAVE\_LOAD\_ARCHIVES\_INSTANTIATE}}
+\index{TESSERACT\_SERIALIZE\_SAVE\_LOAD\_ARCHIVES\_INSTANTIATE@{TESSERACT\_SERIALIZE\_SAVE\_LOAD\_ARCHIVES\_INSTANTIATE}!serialization.h@{serialization.h}}
+\doxysubsubsection{\texorpdfstring{TESSERACT\_SERIALIZE\_SAVE\_LOAD\_ARCHIVES\_INSTANTIATE}{TESSERACT\_SERIALIZE\_SAVE\_LOAD\_ARCHIVES\_INSTANTIATE}}
+{\footnotesize\ttfamily \#define TESSERACT\+\_\+\+SERIALIZE\+\_\+\+SAVE\+\_\+\+LOAD\+\_\+\+ARCHIVES\+\_\+\+INSTANTIATE(\begin{DoxyParamCaption}\item[{}]{Type }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  \textcolor{keyword}{template} \textcolor{keywordtype}{void} Type::serialize(boost::archive::xml\_oarchive\& ar, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} version);                         \(\backslash\)}
+\DoxyCodeLine{  \textcolor{keyword}{template} \textcolor{keywordtype}{void} Type::serialize(boost::archive::xml\_iarchive\& ar, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} version);                         \(\backslash\)}
+\DoxyCodeLine{  \textcolor{keyword}{template} \textcolor{keywordtype}{void} Type::serialize(boost::archive::binary\_oarchive\& ar, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} version);                      \(\backslash\)}
+\DoxyCodeLine{  \textcolor{keyword}{template} \textcolor{keywordtype}{void} Type::serialize(boost::archive::binary\_iarchive\& ar, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} version);                      \(\backslash\)}
+\DoxyCodeLine{  \textcolor{keyword}{template} \textcolor{keywordtype}{void} Type::save(boost::archive::xml\_oarchive\&, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} version) \textcolor{keyword}{const};                           \(\backslash\)}
+\DoxyCodeLine{  \textcolor{keyword}{template} \textcolor{keywordtype}{void} Type::load(boost::archive::xml\_iarchive\& ar, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} version);                              \(\backslash\)}
+\DoxyCodeLine{  \textcolor{keyword}{template} \textcolor{keywordtype}{void} Type::save(boost::archive::binary\_oarchive\&, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} version) \textcolor{keyword}{const};                        \(\backslash\)}
+\DoxyCodeLine{  \textcolor{keyword}{template} \textcolor{keywordtype}{void} Type::load(boost::archive::binary\_iarchive\& ar, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} version);}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{serialization_8h_af2d3433371cad961e0f59b642f78e877}\label{serialization_8h_af2d3433371cad961e0f59b642f78e877}} 
+\index{serialization.h@{serialization.h}!TESSERACT\_SERIALIZE\_SAVE\_LOAD\_FREE\_ARCHIVES\_INSTANTIATE@{TESSERACT\_SERIALIZE\_SAVE\_LOAD\_FREE\_ARCHIVES\_INSTANTIATE}}
+\index{TESSERACT\_SERIALIZE\_SAVE\_LOAD\_FREE\_ARCHIVES\_INSTANTIATE@{TESSERACT\_SERIALIZE\_SAVE\_LOAD\_FREE\_ARCHIVES\_INSTANTIATE}!serialization.h@{serialization.h}}
+\doxysubsubsection{\texorpdfstring{TESSERACT\_SERIALIZE\_SAVE\_LOAD\_FREE\_ARCHIVES\_INSTANTIATE}{TESSERACT\_SERIALIZE\_SAVE\_LOAD\_FREE\_ARCHIVES\_INSTANTIATE}}
+{\footnotesize\ttfamily \#define TESSERACT\+\_\+\+SERIALIZE\+\_\+\+SAVE\+\_\+\+LOAD\+\_\+\+FREE\+\_\+\+ARCHIVES\+\_\+\+INSTANTIATE(\begin{DoxyParamCaption}\item[{}]{Type }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  \textcolor{keyword}{template} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespaceboost_1_1serialization_aa09e7bc4ef1e47e77fdac84474259e71}{boost::serialization::serialize}}(                                                                       \(\backslash\)}
+\DoxyCodeLine{      boost::archive::xml\_oarchive\& ar, Type\& \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a41309b4c659a8ee4246e23a5c741c8e8}{g}}, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} version); \textcolor{comment}{/* NOLINT */}                             \(\backslash\)}
+\DoxyCodeLine{  \textcolor{keyword}{template} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespaceboost_1_1serialization_aa09e7bc4ef1e47e77fdac84474259e71}{boost::serialization::serialize}}(                                                                       \(\backslash\)}
+\DoxyCodeLine{      boost::archive::xml\_iarchive\& ar, Type\& \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a41309b4c659a8ee4246e23a5c741c8e8}{g}}, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} version); \textcolor{comment}{/* NOLINT */}                             \(\backslash\)}
+\DoxyCodeLine{  \textcolor{keyword}{template} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespaceboost_1_1serialization_aa09e7bc4ef1e47e77fdac84474259e71}{boost::serialization::serialize}}(                                                                       \(\backslash\)}
+\DoxyCodeLine{      boost::archive::binary\_oarchive\& ar, Type\& \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a41309b4c659a8ee4246e23a5c741c8e8}{g}}, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} version); \textcolor{comment}{/* NOLINT */}                          \(\backslash\)}
+\DoxyCodeLine{  \textcolor{keyword}{template} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespaceboost_1_1serialization_aa09e7bc4ef1e47e77fdac84474259e71}{boost::serialization::serialize}}(                                                                       \(\backslash\)}
+\DoxyCodeLine{      boost::archive::binary\_iarchive\& ar, Type\& \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a41309b4c659a8ee4246e23a5c741c8e8}{g}}, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} version); \textcolor{comment}{/* NOLINT */}                          \(\backslash\)}
+\DoxyCodeLine{  \textcolor{keyword}{template} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespaceboost_1_1serialization_ac2d28988061f3431a765d4256c8ebb16}{boost::serialization::save}}(                                                                            \(\backslash\)}
+\DoxyCodeLine{      boost::archive::xml\_oarchive\&, \textcolor{keyword}{const} Type\& \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a41309b4c659a8ee4246e23a5c741c8e8}{g}}, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} version); \textcolor{comment}{/* NOLINT */}                          \(\backslash\)}
+\DoxyCodeLine{  \textcolor{keyword}{template} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespaceboost_1_1serialization_a74575a96c829776955839ceea11a5145}{boost::serialization::load}}(                                                                            \(\backslash\)}
+\DoxyCodeLine{      boost::archive::xml\_iarchive\& ar, Type\& \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a41309b4c659a8ee4246e23a5c741c8e8}{g}}, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} version); \textcolor{comment}{/* NOLINT */}                             \(\backslash\)}
+\DoxyCodeLine{  \textcolor{keyword}{template} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespaceboost_1_1serialization_ac2d28988061f3431a765d4256c8ebb16}{boost::serialization::save}}(                                                                            \(\backslash\)}
+\DoxyCodeLine{      boost::archive::binary\_oarchive\&, \textcolor{keyword}{const} Type\& \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a41309b4c659a8ee4246e23a5c741c8e8}{g}}, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} version); \textcolor{comment}{/* NOLINT */}                       \(\backslash\)}
+\DoxyCodeLine{  \textcolor{keyword}{template} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespaceboost_1_1serialization_a74575a96c829776955839ceea11a5145}{boost::serialization::load}}(                                                                            \(\backslash\)}
+\DoxyCodeLine{      boost::archive::binary\_iarchive\& ar, Type\& \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a41309b4c659a8ee4246e23a5c741c8e8}{g}}, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} version); \textcolor{comment}{/* NOLINT */}}
+
+\end{DoxyCode}

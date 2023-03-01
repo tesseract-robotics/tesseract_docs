@@ -1,0 +1,98 @@
+\hypertarget{ur__inv__kin_8h_source}{}\doxysection{ur\+\_\+inv\+\_\+kin.\+h}
+\label{ur__inv__kin_8h_source}\index{tesseract\_kinematics/ur/include/tesseract\_kinematics/ur/ur\_inv\_kin.h@{tesseract\_kinematics/ur/include/tesseract\_kinematics/ur/ur\_inv\_kin.h}}
+\mbox{\hyperlink{ur__inv__kin_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*********************************************************************}}
+\DoxyCodeLine{2 \textcolor{comment}{ *}}
+\DoxyCodeLine{3 \textcolor{comment}{ * Provides forward and inverse kinematics for Univeral robot designs}}
+\DoxyCodeLine{4 \textcolor{comment}{ * Author: Kelsey Hawkins (kphawkins@gatech.edu)}}
+\DoxyCodeLine{5 \textcolor{comment}{ *}}
+\DoxyCodeLine{6 \textcolor{comment}{ * Software License Agreement (BSD License)}}
+\DoxyCodeLine{7 \textcolor{comment}{ *}}
+\DoxyCodeLine{8 \textcolor{comment}{ *  Copyright (c) 2013, Georgia Institute of Technology}}
+\DoxyCodeLine{9 \textcolor{comment}{ *  All rights reserved.}}
+\DoxyCodeLine{10 \textcolor{comment}{ *}}
+\DoxyCodeLine{11 \textcolor{comment}{ *  Redistribution and use in source and binary forms, with or without}}
+\DoxyCodeLine{12 \textcolor{comment}{ *  modification, are permitted provided that the following conditions}}
+\DoxyCodeLine{13 \textcolor{comment}{ *  are met:}}
+\DoxyCodeLine{14 \textcolor{comment}{ *}}
+\DoxyCodeLine{15 \textcolor{comment}{ *   * Redistributions of source code must retain the above copyright}}
+\DoxyCodeLine{16 \textcolor{comment}{ *     notice, this list of conditions and the following disclaimer.}}
+\DoxyCodeLine{17 \textcolor{comment}{ *   * Redistributions in binary form must reproduce the above}}
+\DoxyCodeLine{18 \textcolor{comment}{ *     copyright notice, this list of conditions and the following}}
+\DoxyCodeLine{19 \textcolor{comment}{ *     disclaimer in the documentation and/or other materials provided}}
+\DoxyCodeLine{20 \textcolor{comment}{ *     with the distribution.}}
+\DoxyCodeLine{21 \textcolor{comment}{ *   * Neither the name of the Georgia Institute of Technology nor the names of}}
+\DoxyCodeLine{22 \textcolor{comment}{ *     its contributors may be used to endorse or promote products derived}}
+\DoxyCodeLine{23 \textcolor{comment}{ *     from this software without specific prior written permission.}}
+\DoxyCodeLine{24 \textcolor{comment}{ *}}
+\DoxyCodeLine{25 \textcolor{comment}{ *  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
+\DoxyCodeLine{26 \textcolor{comment}{ *  "{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
+\DoxyCodeLine{27 \textcolor{comment}{ *  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS}}
+\DoxyCodeLine{28 \textcolor{comment}{ *  FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE}}
+\DoxyCodeLine{29 \textcolor{comment}{ *  COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,}}
+\DoxyCodeLine{30 \textcolor{comment}{ *  INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,}}
+\DoxyCodeLine{31 \textcolor{comment}{ *  BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;}}
+\DoxyCodeLine{32 \textcolor{comment}{ *  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER}}
+\DoxyCodeLine{33 \textcolor{comment}{ *  CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT}}
+\DoxyCodeLine{34 \textcolor{comment}{ *  LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN}}
+\DoxyCodeLine{35 \textcolor{comment}{ *  ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE}}
+\DoxyCodeLine{36 \textcolor{comment}{ *  POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{37 \textcolor{comment}{ *********************************************************************/}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#ifndef TESSERACT\_KINEMATICS\_UR\_INV\_KIN\_H}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#define TESSERACT\_KINEMATICS\_UR\_INV\_KIN\_H}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{inverse__kinematics_8h}{tesseract\_kinematics/core/inverse\_kinematics.h}}>}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{tesseract__kinematics_2core_2include_2tesseract__kinematics_2core_2types_8h}{tesseract\_kinematics/core/types.h}}>}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__kinematics}{tesseract\_kinematics}}}
+\DoxyCodeLine{45 \{}
+\DoxyCodeLine{46 \textcolor{keyword}{static} \textcolor{keyword}{const} std::string \mbox{\hyperlink{namespacetesseract__kinematics_aef3ad2cb6195d36c886f0343518d9e01}{UR\_INV\_KIN\_CHAIN\_SOLVER\_NAME}} = \textcolor{stringliteral}{"{}URInvKin"{}};}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{49 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__kinematics_1_1URInvKin}{URInvKin}} : \textcolor{keyword}{public} \mbox{\hyperlink{classtesseract__kinematics_1_1InverseKinematics}{tesseract\_kinematics::InverseKinematics}}}
+\DoxyCodeLine{50 \{}
+\DoxyCodeLine{51 \textcolor{keyword}{public}:}
+\DoxyCodeLine{52   \textcolor{comment}{// LCOV\_EXCL\_START}}
+\DoxyCodeLine{53   EIGEN\_MAKE\_ALIGNED\_OPERATOR\_NEW}
+\DoxyCodeLine{54   \textcolor{comment}{// LCOV\_EXCL\_STOP}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__kinematics_1_1URInvKin_a3e1e3ee3e61f524b27cfecc5c1e976ad}{Ptr}} = std::shared\_ptr<URInvKin>;}
+\DoxyCodeLine{57   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__kinematics_1_1URInvKin_a20e3e7f26ab8a7db5d4f842f16da4b99}{ConstPtr}} = std::shared\_ptr<const URInvKin>;}
+\DoxyCodeLine{58   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__kinematics_1_1URInvKin_a25470fdcbe53e05c6b8a674a5e296b6b}{UPtr}} = std::unique\_ptr<URInvKin>;}
+\DoxyCodeLine{59   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__kinematics_1_1URInvKin_ac0f7607ac6fd5b4a491fa6991d798bab}{ConstUPtr}} = std::unique\_ptr<const URInvKin>;}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61   \mbox{\hyperlink{classtesseract__kinematics_1_1URInvKin_accad2a42f9f72d836c5f68237fdbf4cc}{\string~URInvKin}}() \textcolor{keyword}{override} = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{62   \mbox{\hyperlink{classtesseract__kinematics_1_1URInvKin}{URInvKin}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__kinematics_1_1URInvKin}{URInvKin}}\& other);}
+\DoxyCodeLine{63   \mbox{\hyperlink{classtesseract__kinematics_1_1URInvKin}{URInvKin}}\& \mbox{\hyperlink{classtesseract__kinematics_1_1URInvKin_ad93705281eecf074fb971f210237d283}{operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__kinematics_1_1URInvKin}{URInvKin}}\& other);}
+\DoxyCodeLine{64   \mbox{\hyperlink{classtesseract__kinematics_1_1URInvKin_adde416348ac39563a13b6e4771a18cf8}{URInvKin}}(\mbox{\hyperlink{classtesseract__kinematics_1_1URInvKin}{URInvKin}}\&\&) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{65   \mbox{\hyperlink{classtesseract__kinematics_1_1URInvKin}{URInvKin}}\& \mbox{\hyperlink{classtesseract__kinematics_1_1URInvKin_a1216903a0f26596e4bbefda8b0fe5719}{operator=}}(\mbox{\hyperlink{classtesseract__kinematics_1_1URInvKin}{URInvKin}}\&\&) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{75   \mbox{\hyperlink{classtesseract__kinematics_1_1URInvKin}{URInvKin}}(\mbox{\hyperlink{structtesseract__kinematics_1_1URParameters}{URParameters}} params,}
+\DoxyCodeLine{76            std::string \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a7e2549355d7bca95ea407c633fe469c4}{base\_link\_name}},}
+\DoxyCodeLine{77            std::string \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a84ec666153aae97620f98bc6b719bb37}{tip\_link\_name}},}
+\DoxyCodeLine{78            std::vector<std::string> \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_ae55b39adb52b29eeefd7d128c4b56f2a}{joint\_names}},}
+\DoxyCodeLine{79            std::string solver\_name = \mbox{\hyperlink{namespacetesseract__kinematics_aef3ad2cb6195d36c886f0343518d9e01}{UR\_INV\_KIN\_CHAIN\_SOLVER\_NAME}});}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81   \mbox{\hyperlink{namespacetesseract__kinematics_af12a01d2264e3371dc9bc7db2a7b59ac}{tesseract\_kinematics::IKSolutions}} \mbox{\hyperlink{classtesseract__kinematics_1_1URInvKin_aee9de946b45240e51e828a981b418dcf}{calcInvKin}}(\textcolor{keyword}{const} \mbox{\hyperlink{namespacetesseract__common_a67bde3cb7bb235f0f61c370ef8bc74d8}{tesseract\_common::TransformMap}}\& tip\_link\_poses,}
+\DoxyCodeLine{82                                                \textcolor{keyword}{const} Eigen::Ref<const Eigen::VectorXd>\& \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a113a9f110b7848f55fd8f5367a019304}{seed}}) \textcolor{keyword}{const} \textcolor{keyword}{override} \textcolor{keyword}{final};}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84   Eigen::Index \mbox{\hyperlink{classtesseract__kinematics_1_1URInvKin_a7d0ebf4c2135560633878297384c54d6}{numJoints}}() const override final;}
+\DoxyCodeLine{85   std::\mbox{\hyperlink{FloatMath_8inl_adcf134d50025cc52907d0c8ac798d89d}{vector}}<std::\textcolor{keywordtype}{string}> \mbox{\hyperlink{classtesseract__kinematics_1_1URInvKin_a62fe9d24f5b2d315f19d81df2eb7fedc}{getJointNames}}() const override final;}
+\DoxyCodeLine{86   std::\textcolor{keywordtype}{string} \mbox{\hyperlink{classtesseract__kinematics_1_1URInvKin_aa6994b7202c3c38df8b1b069a4d7276a}{getBaseLinkName}}() const override final;}
+\DoxyCodeLine{87   std::\textcolor{keywordtype}{string} \mbox{\hyperlink{classtesseract__kinematics_1_1URInvKin_ab491f0265fe05f8825dacb8176a85621}{getWorkingFrame}}() const override final;}
+\DoxyCodeLine{88   std::\mbox{\hyperlink{FloatMath_8inl_adcf134d50025cc52907d0c8ac798d89d}{vector}}<std::\textcolor{keywordtype}{string}> \mbox{\hyperlink{classtesseract__kinematics_1_1URInvKin_a871c3f83e7ef0b4a06166f8ef9eb8a41}{getTipLinkNames}}() const override final;}
+\DoxyCodeLine{89   std::\textcolor{keywordtype}{string} \mbox{\hyperlink{classtesseract__kinematics_1_1URInvKin_aa85fc595c2e20b48c5481b65eb79f948}{getSolverName}}() const override final;}
+\DoxyCodeLine{90   \mbox{\hyperlink{classtesseract__kinematics_1_1InverseKinematics}{InverseKinematics}}::\mbox{\hyperlink{classtesseract__kinematics_1_1URInvKin_a25470fdcbe53e05c6b8a674a5e296b6b}{UPtr}} \mbox{\hyperlink{classtesseract__kinematics_1_1URInvKin_a9893c790a8217e25881cf381a01641e3}{clone}}() const override final;}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92 protected:}
+\DoxyCodeLine{93   \mbox{\hyperlink{structtesseract__kinematics_1_1URParameters}{URParameters}} \mbox{\hyperlink{classtesseract__kinematics_1_1URInvKin_a6b4eda4f7746ed325b07745407562c88}{params\_}};                  }
+\DoxyCodeLine{94   std::\textcolor{keywordtype}{string} \mbox{\hyperlink{classtesseract__kinematics_1_1URInvKin_aa359ddb62cc5d4e15135115e01b4e1ee}{base\_link\_name\_}};           }
+\DoxyCodeLine{95   std::\textcolor{keywordtype}{string} \mbox{\hyperlink{classtesseract__kinematics_1_1URInvKin_a716feca0385a16a90db787c26128ba0b}{tip\_link\_name\_}};            }
+\DoxyCodeLine{96   std::\mbox{\hyperlink{FloatMath_8inl_adcf134d50025cc52907d0c8ac798d89d}{vector}}<std::\textcolor{keywordtype}{string}> \mbox{\hyperlink{classtesseract__kinematics_1_1URInvKin_aec5943f03df3bd80324273333e3be5bc}{joint\_names\_}}; }
+\DoxyCodeLine{97   std::\textcolor{keywordtype}{string} \mbox{\hyperlink{classtesseract__kinematics_1_1URInvKin_af639092e615b62f8faa27bad1ad86065}{solver\_name\_}}\{ \mbox{\hyperlink{namespacetesseract__kinematics_aef3ad2cb6195d36c886f0343518d9e01}{UR\_INV\_KIN\_CHAIN\_SOLVER\_NAME}} \}; }
+\DoxyCodeLine{98 \};}
+\DoxyCodeLine{99 \}  \textcolor{comment}{// namespace tesseract\_kinematics}}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_KINEMATICS\_UR\_INV\_KIN\_H}}
+
+\end{DoxyCode}

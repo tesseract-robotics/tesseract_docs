@@ -1,0 +1,162 @@
+\hypertarget{structtesseract__scene__graph_1_1SceneState}{}\doxysection{tesseract\+\_\+scene\+\_\+graph\+::Scene\+State Struct Reference}
+\label{structtesseract__scene__graph_1_1SceneState}\index{tesseract\_scene\_graph::SceneState@{tesseract\_scene\_graph::SceneState}}
+
+
+This holds a state of the scene.  
+
+
+
+
+{\ttfamily \#include $<$scene\+\_\+state.\+h$>$}
+
+
+
+Collaboration diagram for tesseract\+\_\+scene\+\_\+graph\+::Scene\+State\+:
+% FIG 0
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState_af3793fa857fb39b579d59fa670fb8555}{Ptr}} = std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{Scene\+State}} $>$
+\item 
+using \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState_a9d3f7b2ff642506643281d15581bf136}{Const\+Ptr}} = std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{Scene\+State}} $>$
+\item 
+using \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState_afc925ce3a6bcb101aff683df3af26c6b}{UPtr}} = std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{Scene\+State}} $>$
+\item 
+using \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState_a1282cbbf6aea782a5e931bb4deb9e575}{Const\+UPtr}} = std\+::unique\+\_\+ptr$<$ const \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{Scene\+State}} $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState_a94222597d59b4efab8e693e49bb49b9d}{get\+Joint\+Values}} (const std\+::vector$<$ std\+::string $>$ \&\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_ae55b39adb52b29eeefd7d128c4b56f2a}{joint\+\_\+names}}) const
+\item 
+bool \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState_aa172a1cd7377d539725a07bee19caf75}{operator==}} (const \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{Scene\+State}} \&rhs) const
+\item 
+bool \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState_af0e879954ccfa1fbe8b1a7bd5c60bec3}{operator!=}} (const \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{Scene\+State}} \&rhs) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unordered\+\_\+map$<$ std\+::string, double $>$ \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState_ad1218286967403d66726653bfb00dea8}{joints}}
+\begin{DoxyCompactList}\small\item\em The joint values used for calculating the joint and link transforms. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacetesseract__common_a67bde3cb7bb235f0f61c370ef8bc74d8}{tesseract\+\_\+common\+::\+Transform\+Map}} \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState_a65525289756c29897a86bc6ea3451264}{link\+\_\+transforms}}
+\begin{DoxyCompactList}\small\item\em The link transforms in world coordinate system. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacetesseract__common_a67bde3cb7bb235f0f61c370ef8bc74d8}{tesseract\+\_\+common\+::\+Transform\+Map}} \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState_af28a4f8515dd7435cdb59d3dc2ed7714}{joint\+\_\+transforms}}
+\begin{DoxyCompactList}\small\item\em The joint transforms in world coordinate system. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class Archive $>$ }\\void \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState_a38719c4e177327994e6ed217cff7a1e2}{serialize}} (Archive \&ar, const unsigned int version)
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState_ac98d07dd8f7b70e16ccb9a01abf56b9c}{boost\+::serialization\+::access}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This holds a state of the scene. 
+
+It provides a way to look up the location of a link/joint in world coordinates system by link/joint name. It is possible to get the joint transform using the child link transform of the joint, but they are both provided for convenience. Also the joint values used to calculated the link/joint transforms is provided. 
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{structtesseract__scene__graph_1_1SceneState_a9d3f7b2ff642506643281d15581bf136}\label{structtesseract__scene__graph_1_1SceneState_a9d3f7b2ff642506643281d15581bf136}} 
+\index{tesseract\_scene\_graph::SceneState@{tesseract\_scene\_graph::SceneState}!ConstPtr@{ConstPtr}}
+\index{ConstPtr@{ConstPtr}!tesseract\_scene\_graph::SceneState@{tesseract\_scene\_graph::SceneState}}
+\doxysubsubsection{\texorpdfstring{ConstPtr}{ConstPtr}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState_a9d3f7b2ff642506643281d15581bf136}{tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+State\+::\+Const\+Ptr}} =  std\+::shared\+\_\+ptr$<$const \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{Scene\+State}}$>$}
+
+\mbox{\Hypertarget{structtesseract__scene__graph_1_1SceneState_a1282cbbf6aea782a5e931bb4deb9e575}\label{structtesseract__scene__graph_1_1SceneState_a1282cbbf6aea782a5e931bb4deb9e575}} 
+\index{tesseract\_scene\_graph::SceneState@{tesseract\_scene\_graph::SceneState}!ConstUPtr@{ConstUPtr}}
+\index{ConstUPtr@{ConstUPtr}!tesseract\_scene\_graph::SceneState@{tesseract\_scene\_graph::SceneState}}
+\doxysubsubsection{\texorpdfstring{ConstUPtr}{ConstUPtr}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState_a1282cbbf6aea782a5e931bb4deb9e575}{tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+State\+::\+Const\+UPtr}} =  std\+::unique\+\_\+ptr$<$const \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{Scene\+State}}$>$}
+
+\mbox{\Hypertarget{structtesseract__scene__graph_1_1SceneState_af3793fa857fb39b579d59fa670fb8555}\label{structtesseract__scene__graph_1_1SceneState_af3793fa857fb39b579d59fa670fb8555}} 
+\index{tesseract\_scene\_graph::SceneState@{tesseract\_scene\_graph::SceneState}!Ptr@{Ptr}}
+\index{Ptr@{Ptr}!tesseract\_scene\_graph::SceneState@{tesseract\_scene\_graph::SceneState}}
+\doxysubsubsection{\texorpdfstring{Ptr}{Ptr}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState_af3793fa857fb39b579d59fa670fb8555}{tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+State\+::\+Ptr}} =  std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{Scene\+State}}$>$}
+
+\mbox{\Hypertarget{structtesseract__scene__graph_1_1SceneState_afc925ce3a6bcb101aff683df3af26c6b}\label{structtesseract__scene__graph_1_1SceneState_afc925ce3a6bcb101aff683df3af26c6b}} 
+\index{tesseract\_scene\_graph::SceneState@{tesseract\_scene\_graph::SceneState}!UPtr@{UPtr}}
+\index{UPtr@{UPtr}!tesseract\_scene\_graph::SceneState@{tesseract\_scene\_graph::SceneState}}
+\doxysubsubsection{\texorpdfstring{UPtr}{UPtr}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState_afc925ce3a6bcb101aff683df3af26c6b}{tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+State\+::\+UPtr}} =  std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{Scene\+State}}$>$}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtesseract__scene__graph_1_1SceneState_a94222597d59b4efab8e693e49bb49b9d}\label{structtesseract__scene__graph_1_1SceneState_a94222597d59b4efab8e693e49bb49b9d}} 
+\index{tesseract\_scene\_graph::SceneState@{tesseract\_scene\_graph::SceneState}!getJointValues@{getJointValues}}
+\index{getJointValues@{getJointValues}!tesseract\_scene\_graph::SceneState@{tesseract\_scene\_graph::SceneState}}
+\doxysubsubsection{\texorpdfstring{getJointValues()}{getJointValues()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+State\+::get\+Joint\+Values (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{joint\+\_\+names }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{structtesseract__scene__graph_1_1SceneState_af0e879954ccfa1fbe8b1a7bd5c60bec3}\label{structtesseract__scene__graph_1_1SceneState_af0e879954ccfa1fbe8b1a7bd5c60bec3}} 
+\index{tesseract\_scene\_graph::SceneState@{tesseract\_scene\_graph::SceneState}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!tesseract\_scene\_graph::SceneState@{tesseract\_scene\_graph::SceneState}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+State\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{Scene\+State}} \&}]{rhs }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{structtesseract__scene__graph_1_1SceneState_aa172a1cd7377d539725a07bee19caf75}\label{structtesseract__scene__graph_1_1SceneState_aa172a1cd7377d539725a07bee19caf75}} 
+\index{tesseract\_scene\_graph::SceneState@{tesseract\_scene\_graph::SceneState}!operator==@{operator==}}
+\index{operator==@{operator==}!tesseract\_scene\_graph::SceneState@{tesseract\_scene\_graph::SceneState}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+State\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{Scene\+State}} \&}]{rhs }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{structtesseract__scene__graph_1_1SceneState_a38719c4e177327994e6ed217cff7a1e2}\label{structtesseract__scene__graph_1_1SceneState_a38719c4e177327994e6ed217cff7a1e2}} 
+\index{tesseract\_scene\_graph::SceneState@{tesseract\_scene\_graph::SceneState}!serialize@{serialize}}
+\index{serialize@{serialize}!tesseract\_scene\_graph::SceneState@{tesseract\_scene\_graph::SceneState}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily template$<$class Archive $>$ \\
+void tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+State\+::serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{ar,  }\item[{const unsigned int}]{version }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{structtesseract__scene__graph_1_1SceneState_ac98d07dd8f7b70e16ccb9a01abf56b9c}\label{structtesseract__scene__graph_1_1SceneState_ac98d07dd8f7b70e16ccb9a01abf56b9c}} 
+\index{tesseract\_scene\_graph::SceneState@{tesseract\_scene\_graph::SceneState}!boost::serialization::access@{boost::serialization::access}}
+\index{boost::serialization::access@{boost::serialization::access}!tesseract\_scene\_graph::SceneState@{tesseract\_scene\_graph::SceneState}}
+\doxysubsubsection{\texorpdfstring{boost::serialization::access}{boost::serialization::access}}
+{\footnotesize\ttfamily friend class boost\+::serialization\+::access\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structtesseract__scene__graph_1_1SceneState_af28a4f8515dd7435cdb59d3dc2ed7714}\label{structtesseract__scene__graph_1_1SceneState_af28a4f8515dd7435cdb59d3dc2ed7714}} 
+\index{tesseract\_scene\_graph::SceneState@{tesseract\_scene\_graph::SceneState}!joint\_transforms@{joint\_transforms}}
+\index{joint\_transforms@{joint\_transforms}!tesseract\_scene\_graph::SceneState@{tesseract\_scene\_graph::SceneState}}
+\doxysubsubsection{\texorpdfstring{joint\_transforms}{joint\_transforms}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacetesseract__common_a67bde3cb7bb235f0f61c370ef8bc74d8}{tesseract\+\_\+common\+::\+Transform\+Map}} tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+State\+::joint\+\_\+transforms}
+
+
+
+The joint transforms in world coordinate system. 
+
+\mbox{\Hypertarget{structtesseract__scene__graph_1_1SceneState_ad1218286967403d66726653bfb00dea8}\label{structtesseract__scene__graph_1_1SceneState_ad1218286967403d66726653bfb00dea8}} 
+\index{tesseract\_scene\_graph::SceneState@{tesseract\_scene\_graph::SceneState}!joints@{joints}}
+\index{joints@{joints}!tesseract\_scene\_graph::SceneState@{tesseract\_scene\_graph::SceneState}}
+\doxysubsubsection{\texorpdfstring{joints}{joints}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$std\+::string, double$>$ tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+State\+::joints}
+
+
+
+The joint values used for calculating the joint and link transforms. 
+
+\mbox{\Hypertarget{structtesseract__scene__graph_1_1SceneState_a65525289756c29897a86bc6ea3451264}\label{structtesseract__scene__graph_1_1SceneState_a65525289756c29897a86bc6ea3451264}} 
+\index{tesseract\_scene\_graph::SceneState@{tesseract\_scene\_graph::SceneState}!link\_transforms@{link\_transforms}}
+\index{link\_transforms@{link\_transforms}!tesseract\_scene\_graph::SceneState@{tesseract\_scene\_graph::SceneState}}
+\doxysubsubsection{\texorpdfstring{link\_transforms}{link\_transforms}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacetesseract__common_a67bde3cb7bb235f0f61c370ef8bc74d8}{tesseract\+\_\+common\+::\+Transform\+Map}} tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+State\+::link\+\_\+transforms}
+
+
+
+The link transforms in world coordinate system. 
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+tesseract\+\_\+scene\+\_\+graph/include/tesseract\+\_\+scene\+\_\+graph/\mbox{\hyperlink{scene__state_8h}{scene\+\_\+state.\+h}}\item 
+tesseract\+\_\+scene\+\_\+graph/src/\mbox{\hyperlink{scene__state_8cpp}{scene\+\_\+state.\+cpp}}\end{DoxyCompactItemize}

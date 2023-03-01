@@ -1,0 +1,112 @@
+\hypertarget{fcl__utils_8h}{}\doxysection{tesseract\+\_\+collision/fcl/include/tesseract\+\_\+collision/fcl/fcl\+\_\+utils.h File Reference}
+\label{fcl__utils_8h}\index{tesseract\_collision/fcl/include/tesseract\_collision/fcl/fcl\_utils.h@{tesseract\_collision/fcl/include/tesseract\_collision/fcl/fcl\_utils.h}}
+
+
+Tesseract ROS FCL Utility Functions.  
+
+
+{\ttfamily \#include $<$tesseract\+\_\+common/macros.\+h$>$}\newline
+{\ttfamily \#include $<$fcl/broadphase/broadphase\+\_\+dynamic\+\_\+\+AABB\+\_\+tree-\/inl.\+h$>$}\newline
+{\ttfamily \#include $<$fcl/narrowphase/collision-\/inl.\+h$>$}\newline
+{\ttfamily \#include $<$fcl/narrowphase/distance-\/inl.\+h$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$set$>$}\newline
+{\ttfamily \#include $<$console\+\_\+bridge/console.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+collision/core/types.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+collision/core/common.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+collision/fcl/fcl\+\_\+collision\+\_\+object\+\_\+wrapper.\+h$>$}\newline
+Include dependency graph for fcl\+\_\+utils.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__fcl_1_1CollisionObjectWrapper}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::\+Collision\+Object\+Wrapper}}
+\begin{DoxyCompactList}\small\item\em This is a Tesseract link collision object wrapper which add items specific to tesseract. It is a wrapper around a tesseract link which may contain several collision objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacetesseract__collision}{tesseract\+\_\+collision}}
+\item 
+namespace \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_add4d4ab248efb2893c1625a9b9f62591}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::\+Collision\+Geometry\+Ptr}} = std\+::shared\+\_\+ptr$<$ fcl\+::\+Collision\+Geometryd $>$
+\item 
+using \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_a1a73bacb5b94c4ac855540cef88a3feb}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::\+Collision\+Object\+Ptr}} = std\+::shared\+\_\+ptr$<$ FCLCollision\+Object\+Wrapper $>$
+\item 
+using \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_a481172c6d9a13f3c02582b2537d89250}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::\+Collision\+Object\+Raw\+Ptr}} = fcl\+::\+Collision\+Objectd $\ast$
+\item 
+using \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_a6a9e0e51eceb9a05260d4ca3db49483d}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::\+Collision\+Object\+Const\+Ptr}} = std\+::shared\+\_\+ptr$<$ const fcl\+::\+Collision\+Objectd $>$
+\item 
+using \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_a03a23e6dbe98eac0cef7313532f60e69}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::\+COW}} = Collision\+Object\+Wrapper
+\item 
+using \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_a473987211b6c99e0ea58870b593b1106}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::\+Link2\+COW}} = std\+::map$<$ std\+::string, COW\+::\+Ptr $>$
+\item 
+using \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_a52264feb727010c099cbc7b13a2ec176}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::\+Link2\+Const\+COW}} = std\+::map$<$ std\+::string, COW\+::\+Const\+Ptr $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_af7dded074ea546324fb45b909fea527f}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::\+Collision\+Filter\+Groups}} \{ \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_af7dded074ea546324fb45b909fea527fa3fba330eb88f0fd2241324bb74cf3df7}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::\+Default\+Filter}} = 1
+, \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_af7dded074ea546324fb45b909fea527fa343cfc9ddeee1f64bc5a1fe9f2bae260}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::\+Static\+Filter}} = 2
+, \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_af7dded074ea546324fb45b909fea527fa24a83bab934b56f9791d14d8a34f1b21}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::\+Kinematic\+Filter}} = 4
+, \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_af7dded074ea546324fb45b909fea527fa8160cc7c822ac13d1967cc3d7fbad576}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::\+All\+Filter}} = -\/1
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Collision\+Geometry\+Ptr \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_a6186814bdb5480c6906b16d59d3baa1b}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::create\+Shape\+Primitive}} (const Collision\+Shape\+Const\+Ptr \&\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}})
+\item 
+COW\+::\+Ptr \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_ac51107420aad60e96d74d9f6565e6b80}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::create\+FCLCollision\+Object}} (const std\+::string \&\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}, const int \&\mbox{\hyperlink{collision__core__unit_8cpp_abd5b6e2207f4ef754f27366b9589816e}{type\+\_\+id}}, const Collision\+Shapes\+Const \&shapes, const \mbox{\hyperlink{namespacetesseract__common_a94d9921fc7ed323609ac57d06f939cb6}{tesseract\+\_\+common\+::\+Vector\+Isometry3d}} \&shape\+\_\+poses, bool enabled)
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_a3ee71fcd65b6047f891fad2ccaf33c33}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::update\+Collision\+Object\+Filters}} (const std\+::vector$<$ std\+::string $>$ \&active, const COW\+::\+Ptr \&cow, const std\+::unique\+\_\+ptr$<$ fcl\+::\+Broad\+Phase\+Collision\+Managerd $>$ \&static\+\_\+manager, const std\+::unique\+\_\+ptr$<$ fcl\+::\+Broad\+Phase\+Collision\+Managerd $>$ \&dynamic\+\_\+manager)
+\begin{DoxyCompactList}\small\item\em Update collision objects filters. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_ac8ce443c1dc3dd3345d0a28770b412d4}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::collision\+Callback}} (fcl\+::\+Collision\+Objectd $\ast$o1, fcl\+::\+Collision\+Objectd $\ast$o2, void $\ast$\mbox{\hyperlink{collision__margin__data__unit_8cpp_a0992235f6cab11fba6116193c7f42b8b}{data}})
+\item 
+bool \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__fcl_adf0adc55ff1fb9cf4ae26fade5ecc530}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::distance\+Callback}} (fcl\+::\+Collision\+Objectd $\ast$o1, fcl\+::\+Collision\+Objectd $\ast$o2, void $\ast$\mbox{\hyperlink{collision__margin__data__unit_8cpp_a0992235f6cab11fba6116193c7f42b8b}{data}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Tesseract ROS FCL Utility Functions. 
+
+\begin{DoxyAuthor}{Author}
+Levi Armstrong 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Dec 18, 2017 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+TODO 
+\end{DoxyVersion}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000035}{Bug}}]No known bugs\end{DoxyRefDesc}
+
+
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2017, Southwest Research Institute
+\end{DoxyCopyright}
+\begin{DoxyParagraph}{License}
+Software License Agreement (BSD) 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+All rights reserved. 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met\+: 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+
+\begin{DoxyItemize}
+\item Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+\item Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution. 
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \char`\"{}\+AS IS\char`\"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
+\end{DoxyParagraph}

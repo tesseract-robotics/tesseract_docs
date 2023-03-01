@@ -1,0 +1,56 @@
+\hypertarget{add__contact__managers__plugin__info__command_8h_source}{}\doxysection{add\+\_\+contact\+\_\+managers\+\_\+plugin\+\_\+info\+\_\+command.\+h}
+\label{add__contact__managers__plugin__info__command_8h_source}\index{tesseract\_environment/include/tesseract\_environment/commands/add\_contact\_managers\_plugin\_info\_command.h@{tesseract\_environment/include/tesseract\_environment/commands/add\_contact\_managers\_plugin\_info\_command.h}}
+\mbox{\hyperlink{add__contact__managers__plugin__info__command_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#ifndef TESSERACT\_ENVIRONMENT\_ADD\_CONTACT\_MANAGERS\_PLUGIN\_INFO\_COMMAND\_H}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define TESSERACT\_ENVIRONMENT\_ADD\_CONTACT\_MANAGERS\_PLUGIN\_INFO\_COMMAND\_H}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{macros_8h}{tesseract\_common/macros.h}}>}}
+\DoxyCodeLine{30 \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include <boost/serialization/access.hpp>}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{33 \mbox{\hyperlink{namespaceTESSERACT__COMMON__IGNORE__WARNINGS__POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{command_8h}{tesseract\_environment/command.h}}>}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{tesseract__common_2include_2tesseract__common_2types_8h}{tesseract\_common/types.h}}>}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__environment}{tesseract\_environment}}}
+\DoxyCodeLine{39 \{}
+\DoxyCodeLine{40 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__environment_1_1AddContactManagersPluginInfoCommand}{AddContactManagersPluginInfoCommand}} : \textcolor{keyword}{public} \mbox{\hyperlink{classtesseract__environment_1_1Command}{Command}}}
+\DoxyCodeLine{41 \{}
+\DoxyCodeLine{42 \textcolor{keyword}{public}:}
+\DoxyCodeLine{43   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__environment_1_1AddContactManagersPluginInfoCommand_ab6febc4600317b9fea9da427404ca7ed}{Ptr}} = std::shared\_ptr<AddContactManagersPluginInfoCommand>;}
+\DoxyCodeLine{44   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__environment_1_1AddContactManagersPluginInfoCommand_a6fecc4cb5a6d95d0638d83820884ff4b}{ConstPtr}} = std::shared\_ptr<const AddContactManagersPluginInfoCommand>;}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46   \mbox{\hyperlink{classtesseract__environment_1_1AddContactManagersPluginInfoCommand_a05f55f8846ed06acc8809148507ddc6f}{AddContactManagersPluginInfoCommand}}() : \mbox{\hyperlink{classtesseract__environment_1_1Command}{Command}}(\mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029}{CommandType}}::\mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029a888e6375965550fe9f245043026d8490}{ADD\_CONTACT\_MANAGERS\_PLUGIN\_INFO}})\{\};}
+\DoxyCodeLine{51   \mbox{\hyperlink{classtesseract__environment_1_1AddContactManagersPluginInfoCommand_ad555ee4de1b61ec82311b38631224d7d}{AddContactManagersPluginInfoCommand}}(\mbox{\hyperlink{structtesseract__common_1_1ContactManagersPluginInfo}{tesseract\_common::ContactManagersPluginInfo}} \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a62186dc40b65f78839dc4f9bfaf068e4}{contact\_managers\_plugin\_info}})}
+\DoxyCodeLine{52     : \mbox{\hyperlink{classtesseract__environment_1_1Command}{Command}}(\mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029}{CommandType}}::\mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029a888e6375965550fe9f245043026d8490}{ADD\_CONTACT\_MANAGERS\_PLUGIN\_INFO}})}
+\DoxyCodeLine{53     , \mbox{\hyperlink{classtesseract__environment_1_1AddContactManagersPluginInfoCommand_a2385b43af6e9b321ccf499b1bcde5df1}{contact\_managers\_plugin\_info\_}}(std::move(\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a62186dc40b65f78839dc4f9bfaf068e4}{contact\_managers\_plugin\_info}}))}
+\DoxyCodeLine{54   \{}
+\DoxyCodeLine{55   \}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57   \textcolor{keyword}{const} \mbox{\hyperlink{structtesseract__common_1_1ContactManagersPluginInfo}{tesseract\_common::ContactManagersPluginInfo}}\& \mbox{\hyperlink{classtesseract__environment_1_1AddContactManagersPluginInfoCommand_a22ade255d7672bf5d02a494d33fe8dcb}{getContactManagersPluginInfo}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{58 \textcolor{keyword}{  }\{}
+\DoxyCodeLine{59     \textcolor{keywordflow}{return} \mbox{\hyperlink{classtesseract__environment_1_1AddContactManagersPluginInfoCommand_a2385b43af6e9b321ccf499b1bcde5df1}{contact\_managers\_plugin\_info\_}};}
+\DoxyCodeLine{60   \}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1AddContactManagersPluginInfoCommand_aa0378e38767546431de8aaf82ab96384}{operator==}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__environment_1_1AddContactManagersPluginInfoCommand}{AddContactManagersPluginInfoCommand}}\& rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{63   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1AddContactManagersPluginInfoCommand_a188dd776a38e842e9e8194b04def58ce}{operator!=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__environment_1_1AddContactManagersPluginInfoCommand}{AddContactManagersPluginInfoCommand}}\& rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \textcolor{keyword}{private}:}
+\DoxyCodeLine{66   \mbox{\hyperlink{structtesseract__common_1_1ContactManagersPluginInfo}{tesseract\_common::ContactManagersPluginInfo}} \mbox{\hyperlink{classtesseract__environment_1_1AddContactManagersPluginInfoCommand_a2385b43af6e9b321ccf499b1bcde5df1}{contact\_managers\_plugin\_info\_}};}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68   \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__environment_1_1AddContactManagersPluginInfoCommand_ac98d07dd8f7b70e16ccb9a01abf56b9c}{boost::serialization::access}};}
+\DoxyCodeLine{69   \textcolor{keyword}{template} <\textcolor{keyword}{class} Archive>}
+\DoxyCodeLine{70   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__environment_1_1AddContactManagersPluginInfoCommand_ab70e97f8facabaa40d94cdea17575f63}{serialize}}(Archive\& ar, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} version);  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{71 \};}
+\DoxyCodeLine{72 \}  \textcolor{comment}{// namespace tesseract\_environment}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#include <boost/serialization/export.hpp>}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#include <boost/serialization/tracking.hpp>}}
+\DoxyCodeLine{75 BOOST\_CLASS\_EXPORT\_KEY2(\mbox{\hyperlink{classtesseract__environment_1_1AddContactManagersPluginInfoCommand}{tesseract\_environment::AddContactManagersPluginInfoCommand}},}
+\DoxyCodeLine{76                         \textcolor{stringliteral}{"{}AddContactManagersPluginInfoCommand"{}})}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_ENVIRONMENT\_ADD\_CONTACT\_MANAGERS\_PLUGIN\_INFO\_COMMAND\_H}}
+
+\end{DoxyCode}

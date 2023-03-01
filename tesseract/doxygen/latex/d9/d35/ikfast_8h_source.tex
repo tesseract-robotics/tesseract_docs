@@ -1,0 +1,296 @@
+\hypertarget{ikfast_8h_source}{}\doxysection{ikfast.\+h}
+\label{ikfast_8h_source}\index{tesseract\_kinematics/ikfast/include/tesseract\_kinematics/ikfast/external/ikfast.h@{tesseract\_kinematics/ikfast/include/tesseract\_kinematics/ikfast/external/ikfast.h}}
+\mbox{\hyperlink{ikfast_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{// -\/*-\/ coding: utf-\/8 -\/*-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{// Copyright (C) 2012 Rosen Diankov <rosen.diankov@gmail.com>}}
+\DoxyCodeLine{3 \textcolor{comment}{//}}
+\DoxyCodeLine{4 \textcolor{comment}{// Licensed under the Apache License, Version 2.0 (the "{}License"{});}}
+\DoxyCodeLine{5 \textcolor{comment}{// you may not use this file except in compliance with the License.}}
+\DoxyCodeLine{6 \textcolor{comment}{// You may obtain a copy of the License at}}
+\DoxyCodeLine{7 \textcolor{comment}{//     http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{8 \textcolor{comment}{//}}
+\DoxyCodeLine{9 \textcolor{comment}{// Unless required by applicable law or agreed to in writing, software}}
+\DoxyCodeLine{10 \textcolor{comment}{// distributed under the License is distributed on an "{}AS IS"{} BASIS,}}
+\DoxyCodeLine{11 \textcolor{comment}{// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.}}
+\DoxyCodeLine{12 \textcolor{comment}{// See the License for the specific language governing permissions and}}
+\DoxyCodeLine{13 \textcolor{comment}{// limitations under the License.}}
+\DoxyCodeLine{35 \textcolor{comment}{}\textcolor{comment}{// LCOV\_EXCL\_START}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#include <list>}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#include <stdexcept>}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#include <cassert>}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#ifndef IKFAST\_HEADER\_COMMON}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#define IKFAST\_HEADER\_COMMON}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define IKFAST\_VERSION 61}}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceikfast}{ikfast}}}
+\DoxyCodeLine{48 \{}
+\DoxyCodeLine{50 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{51 \textcolor{keyword}{class }\mbox{\hyperlink{classikfast_1_1IkSingleDOFSolutionBase}{IkSingleDOFSolutionBase}}}
+\DoxyCodeLine{52 \{}
+\DoxyCodeLine{53 \textcolor{keyword}{public}:}
+\DoxyCodeLine{54   \mbox{\hyperlink{classikfast_1_1IkSingleDOFSolutionBase_aa3c37c6e9a4903f1303893e966260789}{IkSingleDOFSolutionBase}}() \{ \mbox{\hyperlink{classikfast_1_1IkSingleDOFSolutionBase_a50d8439b7f735a474f6dfe42e91de455}{indices}}[0] = \mbox{\hyperlink{classikfast_1_1IkSingleDOFSolutionBase_a50d8439b7f735a474f6dfe42e91de455}{indices}}[1] = \mbox{\hyperlink{classikfast_1_1IkSingleDOFSolutionBase_a50d8439b7f735a474f6dfe42e91de455}{indices}}[2] = \mbox{\hyperlink{classikfast_1_1IkSingleDOFSolutionBase_a50d8439b7f735a474f6dfe42e91de455}{indices}}[3] = \mbox{\hyperlink{classikfast_1_1IkSingleDOFSolutionBase_a50d8439b7f735a474f6dfe42e91de455}{indices}}[4] = -\/1; \}  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{55   \mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{T}} \mbox{\hyperlink{classikfast_1_1IkSingleDOFSolutionBase_adb64a33a2ce7357684c9c89d75cacd0c}{fmul}}\{ 0 \};                      }
+\DoxyCodeLine{56   \mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{T}} \mbox{\hyperlink{classikfast_1_1IkSingleDOFSolutionBase_a1d5900ae9cb2d55c396b995b976fdcef}{foffset}}\{ 0 \};                   }
+\DoxyCodeLine{57   \textcolor{keywordtype}{signed} \textcolor{keywordtype}{char} \mbox{\hyperlink{classikfast_1_1IkSingleDOFSolutionBase_adca245b0afa4133dddbd10803053bc2a}{freeind}}\{ -\/1 \};        }
+\DoxyCodeLine{58   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \mbox{\hyperlink{classikfast_1_1IkSingleDOFSolutionBase_a3c458c4a2b06b4a2ccffc265cf34c6fe}{jointtype}}\{ 1 \};     }
+\DoxyCodeLine{59   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \mbox{\hyperlink{classikfast_1_1IkSingleDOFSolutionBase_a45404bf30c7b90131b7ce2b8045c6f6a}{maxsolutions}}\{ 1 \};  }
+\DoxyCodeLine{60   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \mbox{\hyperlink{classikfast_1_1IkSingleDOFSolutionBase_a50d8439b7f735a474f6dfe42e91de455}{indices}}[5];  \textcolor{comment}{// NOLINT  ///< unique index of the solution used to keep track on what part it came from.}}
+\DoxyCodeLine{61                              \textcolor{comment}{// sometimes a}}
+\DoxyCodeLine{63 \textcolor{comment}{}\};}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{70 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{71 \textcolor{keyword}{class }\mbox{\hyperlink{classikfast_1_1IkSolutionBase}{IkSolutionBase}}  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{72 \{}
+\DoxyCodeLine{73 \textcolor{keyword}{public}:}
+\DoxyCodeLine{74   \textcolor{keyword}{virtual} \mbox{\hyperlink{classikfast_1_1IkSolutionBase_aaf2244322c7463d52039a122bf1160f3}{\string~IkSolutionBase}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{79   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classikfast_1_1IkSolutionBase_a9405530feb49f12f56c3175e7150c66f}{GetSolution}}(\mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{T}}* solution, \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{T}}* freevalues) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{82   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classikfast_1_1IkSolutionBase_a4e8afdc564a90aeed598d276d4f1bd3f}{GetSolution}}(std::vector<T>\& solution, \textcolor{keyword}{const} std::vector<T>\& freevalues)\textcolor{keyword}{ const}}
+\DoxyCodeLine{83 \textcolor{keyword}{  }\{}
+\DoxyCodeLine{84     solution.resize(\mbox{\hyperlink{classikfast_1_1IkSolutionBase_a94ac1496405343f4c7ad2a3c07b375cc}{GetDOF}}());}
+\DoxyCodeLine{85     \textcolor{keywordflow}{if} (freevalues.empty())}
+\DoxyCodeLine{86       \mbox{\hyperlink{classikfast_1_1IkSolutionBase_a9405530feb49f12f56c3175e7150c66f}{GetSolution}}(\&solution.at(0), \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{87     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{88       \mbox{\hyperlink{classikfast_1_1IkSolutionBase_a9405530feb49f12f56c3175e7150c66f}{GetSolution}}(\&solution.at(0), \&freevalues.at(0));}
+\DoxyCodeLine{89   \}}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{94   \textcolor{keyword}{virtual} \textcolor{keyword}{const} std::vector<int>\& \mbox{\hyperlink{classikfast_1_1IkSolutionBase_a4d3af9accc64ad638a1c7175881ba931}{GetFree}}() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{97   \textcolor{keyword}{virtual} \textcolor{keywordtype}{int} \mbox{\hyperlink{classikfast_1_1IkSolutionBase_a94ac1496405343f4c7ad2a3c07b375cc}{GetDOF}}() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{98 \};}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{101 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{102 \textcolor{keyword}{class }\mbox{\hyperlink{classikfast_1_1IkSolutionListBase}{IkSolutionListBase}}  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{103 \{}
+\DoxyCodeLine{104 \textcolor{keyword}{public}:}
+\DoxyCodeLine{105   \textcolor{keyword}{virtual} \mbox{\hyperlink{classikfast_1_1IkSolutionListBase_acbbfc505d498bd68369dd2bfe95271fd}{\string~IkSolutionListBase}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{112   \textcolor{keyword}{virtual} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classikfast_1_1IkSolutionListBase_a9d862f550472c2fa15189946b12222bf}{AddSolution}}(\textcolor{keyword}{const} std::vector<\mbox{\hyperlink{classikfast_1_1IkSingleDOFSolutionBase}{IkSingleDOFSolutionBase<T>}} >\& vinfos, \textcolor{keyword}{const} std::vector<int>\& vfree) = 0;}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{115   \textcolor{keyword}{virtual} \textcolor{keyword}{const} \mbox{\hyperlink{classikfast_1_1IkSolutionBase}{IkSolutionBase<T>}}\& \mbox{\hyperlink{classikfast_1_1IkSolutionListBase_a8c5ec75affbb13c68b409eca2d977e09}{GetSolution}}(\textcolor{keywordtype}{size\_t} index) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{118   \textcolor{keyword}{virtual} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classikfast_1_1IkSolutionListBase_a5f4a2191825f1d2aad3468daf94d575f}{GetNumSolutions}}() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{122   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classikfast_1_1IkSolutionListBase_a9940fe21cfa0a67c1a21a672696c5cb5}{Clear}}() = 0;}
+\DoxyCodeLine{123 \};}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{126 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{127 \textcolor{keyword}{class }\mbox{\hyperlink{classikfast_1_1IkFastFunctions}{IkFastFunctions}}  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{128 \{}
+\DoxyCodeLine{129 \textcolor{keyword}{public}:}
+\DoxyCodeLine{130   \mbox{\hyperlink{classikfast_1_1IkFastFunctions_a70dfc50cd66644122b9561d9f6ac4dcb}{IkFastFunctions}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{131   \textcolor{keyword}{virtual} \mbox{\hyperlink{classikfast_1_1IkFastFunctions_a22c191bf525536e2e6becc4003308f66}{\string~IkFastFunctions}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{132   \textcolor{keyword}{using }\mbox{\hyperlink{classikfast_1_1IkFastFunctions_af628d7367baf4609a3812bd7afa4fb23}{ComputeIkFn}} = bool (*)(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{T}}*, \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{T}}*, \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{T}}*, \mbox{\hyperlink{classikfast_1_1IkSolutionListBase}{IkSolutionListBase<T>}}\&);}
+\DoxyCodeLine{133   \mbox{\hyperlink{classikfast_1_1IkFastFunctions_af628d7367baf4609a3812bd7afa4fb23}{ComputeIkFn}} \mbox{\hyperlink{classikfast_1_1IkFastFunctions_a75775a9a8c284f52cb6cc473c434163c}{\_ComputeIk}}\{ \textcolor{keyword}{nullptr} \};}
+\DoxyCodeLine{134   \textcolor{keyword}{using }\mbox{\hyperlink{classikfast_1_1IkFastFunctions_a8fa84f6b0630e4f07e5283a15069fa5c}{ComputeFkFn}} = void (*)(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{T}}*, \mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{T}}*, \mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{T}}*);}
+\DoxyCodeLine{135   \mbox{\hyperlink{classikfast_1_1IkFastFunctions_a8fa84f6b0630e4f07e5283a15069fa5c}{ComputeFkFn}} \mbox{\hyperlink{classikfast_1_1IkFastFunctions_a5a30a89afe6314eb86a05c3bd5a1a303}{\_ComputeFk}}\{ \textcolor{keyword}{nullptr} \};}
+\DoxyCodeLine{136   \textcolor{keyword}{using }\mbox{\hyperlink{classikfast_1_1IkFastFunctions_a36ad64e8cc377fa881bf62938e2cd1a9}{GetNumFreeParametersFn}} = int (*)();}
+\DoxyCodeLine{137   \mbox{\hyperlink{classikfast_1_1IkFastFunctions_a36ad64e8cc377fa881bf62938e2cd1a9}{GetNumFreeParametersFn}} \mbox{\hyperlink{classikfast_1_1IkFastFunctions_ac78c6f4a428df5b34944510af3abd68f}{\_GetNumFreeParameters}}\{ \textcolor{keyword}{nullptr} \};}
+\DoxyCodeLine{138   \textcolor{keyword}{using }\mbox{\hyperlink{classikfast_1_1IkFastFunctions_ac2d34790ffb7d017aca7a43a9f8473f1}{GetFreeParametersFn}} = \textcolor{keywordtype}{int}* (*)();}
+\DoxyCodeLine{139   \mbox{\hyperlink{classikfast_1_1IkFastFunctions_ac2d34790ffb7d017aca7a43a9f8473f1}{GetFreeParametersFn}} \mbox{\hyperlink{classikfast_1_1IkFastFunctions_a2c57255d31921839afb1ed5c5f86c7cc}{\_GetFreeParameters}}\{ \textcolor{keyword}{nullptr} \};}
+\DoxyCodeLine{140   \textcolor{keyword}{using }\mbox{\hyperlink{classikfast_1_1IkFastFunctions_a2b040e93ad54a7871ff9ce79fffd6339}{GetNumJointsFn}} = int (*)();}
+\DoxyCodeLine{141   \mbox{\hyperlink{classikfast_1_1IkFastFunctions_a2b040e93ad54a7871ff9ce79fffd6339}{GetNumJointsFn}} \mbox{\hyperlink{classikfast_1_1IkFastFunctions_aa7aadc4d797b2ecc3811a7887b0b0dfc}{\_GetNumJoints}}\{ \textcolor{keyword}{nullptr} \};}
+\DoxyCodeLine{142   \textcolor{keyword}{using }\mbox{\hyperlink{classikfast_1_1IkFastFunctions_a9d0d03aca13dd3fd93e6ed6bf488fa84}{GetIkRealSizeFn}} = int (*)();}
+\DoxyCodeLine{143   \mbox{\hyperlink{classikfast_1_1IkFastFunctions_a9d0d03aca13dd3fd93e6ed6bf488fa84}{GetIkRealSizeFn}} \mbox{\hyperlink{classikfast_1_1IkFastFunctions_a6e0b57e5123af02f5d27c894eac23181}{\_GetIkRealSize}}\{ \textcolor{keyword}{nullptr} \};}
+\DoxyCodeLine{144   \textcolor{keyword}{using }\mbox{\hyperlink{classikfast_1_1IkFastFunctions_a5863ecd571a2410f8506df10f97edc11}{GetIkFastVersionFn}} = \textcolor{keyword}{const} \textcolor{keywordtype}{char}* (*)();}
+\DoxyCodeLine{145   \mbox{\hyperlink{classikfast_1_1IkFastFunctions_a5863ecd571a2410f8506df10f97edc11}{GetIkFastVersionFn}} \mbox{\hyperlink{classikfast_1_1IkFastFunctions_a1deac46b905d3d6fa2186e4fb52a75a4}{\_GetIkFastVersion}}\{ \textcolor{keyword}{nullptr} \};}
+\DoxyCodeLine{146   \textcolor{keyword}{using }\mbox{\hyperlink{classikfast_1_1IkFastFunctions_aab6baff72e418790a92839f1b210ba26}{GetIkTypeFn}} = int (*)();}
+\DoxyCodeLine{147   \mbox{\hyperlink{classikfast_1_1IkFastFunctions_aab6baff72e418790a92839f1b210ba26}{GetIkTypeFn}} \mbox{\hyperlink{classikfast_1_1IkFastFunctions_a22b3424efa52b1c611ad6ec426259aca}{\_GetIkType}}\{ \textcolor{keyword}{nullptr} \};}
+\DoxyCodeLine{148   \textcolor{keyword}{using }\mbox{\hyperlink{classikfast_1_1IkFastFunctions_a8826403845ac62a2e6964a04022ee38f}{GetKinematicsHashFn}} = \textcolor{keyword}{const} \textcolor{keywordtype}{char}* (*)();}
+\DoxyCodeLine{149   \mbox{\hyperlink{classikfast_1_1IkFastFunctions_a8826403845ac62a2e6964a04022ee38f}{GetKinematicsHashFn}} \mbox{\hyperlink{classikfast_1_1IkFastFunctions_a838b34f459abceb7b0f537ad3d4f834b}{\_GetKinematicsHash}}\{ \textcolor{keyword}{nullptr} \};}
+\DoxyCodeLine{150 \};}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{152 \textcolor{comment}{// Implementations of the abstract classes, user doesn't need to use them}}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{155 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{156 \textcolor{keyword}{class }\mbox{\hyperlink{classikfast_1_1IkSolution}{IkSolution}} : \textcolor{keyword}{public} \mbox{\hyperlink{classikfast_1_1IkSolutionBase}{IkSolutionBase}}<T>}
+\DoxyCodeLine{157 \{}
+\DoxyCodeLine{158 \textcolor{keyword}{public}:}
+\DoxyCodeLine{159   \mbox{\hyperlink{classikfast_1_1IkSolution_a6b76af506a24ba4b78b1c9d3dc110a72}{IkSolution}}(\textcolor{keyword}{const} std::vector<\mbox{\hyperlink{classikfast_1_1IkSingleDOFSolutionBase}{IkSingleDOFSolutionBase<T>}} >\& vinfos, \textcolor{keyword}{const} std::vector<int>\& vfree)}
+\DoxyCodeLine{160   \{}
+\DoxyCodeLine{161     \mbox{\hyperlink{classikfast_1_1IkSolution_a823a44ea0a199929967ce1646792a50c}{\_vbasesol}} = vinfos;}
+\DoxyCodeLine{162     \mbox{\hyperlink{classikfast_1_1IkSolution_a3c552543a66e39e127bed5a5c085b1bb}{\_vfree}} = vfree;}
+\DoxyCodeLine{163   \}}
+\DoxyCodeLine{164 }
+\DoxyCodeLine{165   \textcolor{keywordtype}{void} \mbox{\hyperlink{classikfast_1_1IkSolution_afa05dd08f29e8ca4713df8e0b2a07d0c}{GetSolution}}(\mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{T}}* solution, \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{T}}* freevalues)\textcolor{keyword}{ const override}}
+\DoxyCodeLine{166 \textcolor{keyword}{  }\{}
+\DoxyCodeLine{167     \textcolor{keywordflow}{for} (std::size\_t i = 0; i < \mbox{\hyperlink{classikfast_1_1IkSolution_a823a44ea0a199929967ce1646792a50c}{\_vbasesol}}.size(); ++i)}
+\DoxyCodeLine{168     \{}
+\DoxyCodeLine{169       \textcolor{keywordflow}{if} (\mbox{\hyperlink{classikfast_1_1IkSolution_a823a44ea0a199929967ce1646792a50c}{\_vbasesol}}[i].freeind < 0)}
+\DoxyCodeLine{170         solution[i] = \mbox{\hyperlink{classikfast_1_1IkSolution_a823a44ea0a199929967ce1646792a50c}{\_vbasesol}}[i].foffset;}
+\DoxyCodeLine{171       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{172       \{}
+\DoxyCodeLine{173         assert(freevalues != \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{174         solution[i] = freevalues[\mbox{\hyperlink{classikfast_1_1IkSolution_a823a44ea0a199929967ce1646792a50c}{\_vbasesol}}[i].freeind] * \mbox{\hyperlink{classikfast_1_1IkSolution_a823a44ea0a199929967ce1646792a50c}{\_vbasesol}}[i].fmul + \mbox{\hyperlink{classikfast_1_1IkSolution_a823a44ea0a199929967ce1646792a50c}{\_vbasesol}}[i].foffset;  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{175         \textcolor{keywordflow}{if} (solution[i] > \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}}(3.14159265358979))}
+\DoxyCodeLine{176         \{}
+\DoxyCodeLine{177           solution[i] -\/= \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}}(6.28318530717959);}
+\DoxyCodeLine{178         \}}
+\DoxyCodeLine{179         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (solution[i] < \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}}(-\/3.14159265358979))}
+\DoxyCodeLine{180         \{}
+\DoxyCodeLine{181           solution[i] += \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}}(6.28318530717959);}
+\DoxyCodeLine{182         \}}
+\DoxyCodeLine{183       \}}
+\DoxyCodeLine{184     \}}
+\DoxyCodeLine{185   \}}
+\DoxyCodeLine{186 }
+\DoxyCodeLine{187   \textcolor{keywordtype}{void} \mbox{\hyperlink{classikfast_1_1IkSolution_a3a326a9fb5b55108e5f8e5192f0a1318}{GetSolution}}(std::vector<T>\& solution, \textcolor{keyword}{const} std::vector<T>\& freevalues)\textcolor{keyword}{ const override}}
+\DoxyCodeLine{188 \textcolor{keyword}{  }\{}
+\DoxyCodeLine{189     solution.resize(\mbox{\hyperlink{classikfast_1_1IkSolution_a7cca4d33349888047513cc374c01e5f4}{GetDOF}}());}
+\DoxyCodeLine{190     \textcolor{keywordflow}{if} (freevalues.empty())}
+\DoxyCodeLine{191       \mbox{\hyperlink{classikfast_1_1IkSolution_afa05dd08f29e8ca4713df8e0b2a07d0c}{GetSolution}}(\&solution.at(0), \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{192     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{193       \mbox{\hyperlink{classikfast_1_1IkSolution_afa05dd08f29e8ca4713df8e0b2a07d0c}{GetSolution}}(\&solution.at(0), \&freevalues.at(0));}
+\DoxyCodeLine{194   \}}
+\DoxyCodeLine{195 }
+\DoxyCodeLine{196   \textcolor{keyword}{const} std::vector<int>\& \mbox{\hyperlink{classikfast_1_1IkSolution_ad3151e14764a655ccc82496a27bf6e51}{GetFree}}()\textcolor{keyword}{ const override }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classikfast_1_1IkSolution_a3c552543a66e39e127bed5a5c085b1bb}{\_vfree}}; \}}
+\DoxyCodeLine{197   \textcolor{keywordtype}{int} \mbox{\hyperlink{classikfast_1_1IkSolution_a7cca4d33349888047513cc374c01e5f4}{GetDOF}}()\textcolor{keyword}{ const override }\{ \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{classikfast_1_1IkSolution_a823a44ea0a199929967ce1646792a50c}{\_vbasesol}}.size()); \}}
+\DoxyCodeLine{198 }
+\DoxyCodeLine{199   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classikfast_1_1IkSolution_a138ee9ab2e290a1ae2ee4c7aa23dab41}{Validate}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{200 \textcolor{keyword}{  }\{}
+\DoxyCodeLine{201     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < \mbox{\hyperlink{classikfast_1_1IkSolution_a823a44ea0a199929967ce1646792a50c}{\_vbasesol}}.size(); ++i)}
+\DoxyCodeLine{202     \{}
+\DoxyCodeLine{203       \textcolor{keywordflow}{if} (\mbox{\hyperlink{classikfast_1_1IkSolution_a823a44ea0a199929967ce1646792a50c}{\_vbasesol}}[i].maxsolutions == (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char})-\/1)}
+\DoxyCodeLine{204       \{}
+\DoxyCodeLine{205         \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}max solutions for joint not initialized"{}});}
+\DoxyCodeLine{206       \}}
+\DoxyCodeLine{207       \textcolor{keywordflow}{if} (\mbox{\hyperlink{classikfast_1_1IkSolution_a823a44ea0a199929967ce1646792a50c}{\_vbasesol}}[i].maxsolutions > 0)}
+\DoxyCodeLine{208       \{}
+\DoxyCodeLine{209         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classikfast_1_1IkSolution_a823a44ea0a199929967ce1646792a50c}{\_vbasesol}}[i].indices[0] >= \mbox{\hyperlink{classikfast_1_1IkSolution_a823a44ea0a199929967ce1646792a50c}{\_vbasesol}}[i].maxsolutions)}
+\DoxyCodeLine{210         \{}
+\DoxyCodeLine{211           \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}index >= max solutions for joint"{}});}
+\DoxyCodeLine{212         \}}
+\DoxyCodeLine{213         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classikfast_1_1IkSolution_a823a44ea0a199929967ce1646792a50c}{\_vbasesol}}[i].indices[1] != (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char})-\/1 \&\& \mbox{\hyperlink{classikfast_1_1IkSolution_a823a44ea0a199929967ce1646792a50c}{\_vbasesol}}[i].indices[1] >= \mbox{\hyperlink{classikfast_1_1IkSolution_a823a44ea0a199929967ce1646792a50c}{\_vbasesol}}[i].maxsolutions)}
+\DoxyCodeLine{214         \{}
+\DoxyCodeLine{215           \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}2nd index >= max solutions for joint"{}});}
+\DoxyCodeLine{216         \}}
+\DoxyCodeLine{217       \}}
+\DoxyCodeLine{218     \}}
+\DoxyCodeLine{219   \}}
+\DoxyCodeLine{220 }
+\DoxyCodeLine{221   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classikfast_1_1IkSolution_a62c0808de0ffde44a96539dd58a616e4}{GetSolutionIndices}}(std::vector<unsigned int>\& \mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}})\textcolor{keyword}{ const}}
+\DoxyCodeLine{222 \textcolor{keyword}{  }\{}
+\DoxyCodeLine{223     \mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}}.resize(0);}
+\DoxyCodeLine{224     \mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}}.push\_back(0);}
+\DoxyCodeLine{225     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = (\textcolor{keywordtype}{int})\mbox{\hyperlink{classikfast_1_1IkSolution_a823a44ea0a199929967ce1646792a50c}{\_vbasesol}}.size() -\/ 1; i >= 0; -\/-\/i)}
+\DoxyCodeLine{226     \{}
+\DoxyCodeLine{227       \textcolor{keywordflow}{if} (\mbox{\hyperlink{classikfast_1_1IkSolution_a823a44ea0a199929967ce1646792a50c}{\_vbasesol}}[i].maxsolutions != (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char})-\/1 \&\& \mbox{\hyperlink{classikfast_1_1IkSolution_a823a44ea0a199929967ce1646792a50c}{\_vbasesol}}[i].maxsolutions > 1)}
+\DoxyCodeLine{228       \{}
+\DoxyCodeLine{229         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}} = 0; \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}} < \mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}}.size(); ++\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}})  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{230         \{}
+\DoxyCodeLine{231           \mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}}[\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}] *= \mbox{\hyperlink{classikfast_1_1IkSolution_a823a44ea0a199929967ce1646792a50c}{\_vbasesol}}[i].maxsolutions;}
+\DoxyCodeLine{232         \}}
+\DoxyCodeLine{233         \textcolor{keywordtype}{size\_t} orgsize = \mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}}.size();}
+\DoxyCodeLine{234         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classikfast_1_1IkSolution_a823a44ea0a199929967ce1646792a50c}{\_vbasesol}}[i].indices[1] != (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char})-\/1)}
+\DoxyCodeLine{235         \{}
+\DoxyCodeLine{236           \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}} = 0; \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}} < orgsize; ++\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}})}
+\DoxyCodeLine{237           \{}
+\DoxyCodeLine{238             \mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}}.push\_back(\mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}}[\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}] + \mbox{\hyperlink{classikfast_1_1IkSolution_a823a44ea0a199929967ce1646792a50c}{\_vbasesol}}[i].indices[1]);}
+\DoxyCodeLine{239           \}}
+\DoxyCodeLine{240         \}}
+\DoxyCodeLine{241         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classikfast_1_1IkSolution_a823a44ea0a199929967ce1646792a50c}{\_vbasesol}}[i].indices[0] != (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char})-\/1)}
+\DoxyCodeLine{242         \{}
+\DoxyCodeLine{243           \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}} = 0; \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}} < orgsize; ++\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}})}
+\DoxyCodeLine{244           \{}
+\DoxyCodeLine{245             \mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}}[\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}] += \mbox{\hyperlink{classikfast_1_1IkSolution_a823a44ea0a199929967ce1646792a50c}{\_vbasesol}}[i].indices[0];}
+\DoxyCodeLine{246           \}}
+\DoxyCodeLine{247         \}}
+\DoxyCodeLine{248       \}}
+\DoxyCodeLine{249     \}}
+\DoxyCodeLine{250   \}}
+\DoxyCodeLine{251 }
+\DoxyCodeLine{252   std::vector<IkSingleDOFSolutionBase<T> > \mbox{\hyperlink{classikfast_1_1IkSolution_a823a44ea0a199929967ce1646792a50c}{\_vbasesol}};  }
+\DoxyCodeLine{253   std::vector<int> \mbox{\hyperlink{classikfast_1_1IkSolution_a3c552543a66e39e127bed5a5c085b1bb}{\_vfree}};}
+\DoxyCodeLine{254 \};}
+\DoxyCodeLine{255 }
+\DoxyCodeLine{257 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{258 \textcolor{keyword}{class }\mbox{\hyperlink{classikfast_1_1IkSolutionList}{IkSolutionList}} : \textcolor{keyword}{public} \mbox{\hyperlink{classikfast_1_1IkSolutionListBase}{IkSolutionListBase}}<T>}
+\DoxyCodeLine{259 \{}
+\DoxyCodeLine{260 \textcolor{keyword}{public}:}
+\DoxyCodeLine{261   \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classikfast_1_1IkSolutionList_a47b1a5ab468dfa318190441550d981fb}{AddSolution}}(\textcolor{keyword}{const} std::vector<\mbox{\hyperlink{classikfast_1_1IkSingleDOFSolutionBase}{IkSingleDOFSolutionBase<T>}} >\& vinfos, \textcolor{keyword}{const} std::vector<int>\& vfree)\textcolor{keyword}{ override}}
+\DoxyCodeLine{262 \textcolor{keyword}{  }\{}
+\DoxyCodeLine{263     \textcolor{keywordtype}{size\_t} index = \mbox{\hyperlink{classikfast_1_1IkSolutionList_a141004e6be454a5b9ab537d102c7f405}{\_listsolutions}}.size();}
+\DoxyCodeLine{264     \mbox{\hyperlink{classikfast_1_1IkSolutionList_a141004e6be454a5b9ab537d102c7f405}{\_listsolutions}}.push\_back(\mbox{\hyperlink{classikfast_1_1IkSolution}{IkSolution<T>}}(vinfos, vfree));}
+\DoxyCodeLine{265     \textcolor{keywordflow}{return} index;}
+\DoxyCodeLine{266   \}}
+\DoxyCodeLine{267 }
+\DoxyCodeLine{268   \textcolor{keyword}{const} \mbox{\hyperlink{classikfast_1_1IkSolutionBase}{IkSolutionBase<T>}}\& \mbox{\hyperlink{classikfast_1_1IkSolutionList_aec5e9608e19d30eb219add2712b8b7e9}{GetSolution}}(\textcolor{keywordtype}{size\_t} index)\textcolor{keyword}{ const override}}
+\DoxyCodeLine{269 \textcolor{keyword}{  }\{}
+\DoxyCodeLine{270     \textcolor{keywordflow}{if} (index >= \mbox{\hyperlink{classikfast_1_1IkSolutionList_a141004e6be454a5b9ab537d102c7f405}{\_listsolutions}}.size())}
+\DoxyCodeLine{271     \{}
+\DoxyCodeLine{272       \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}GetSolution index is invalid"{}});}
+\DoxyCodeLine{273     \}}
+\DoxyCodeLine{274     \textcolor{keyword}{auto} \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a325f3c2b297a245575c6f2f91bd5f1e2}{it}} = \mbox{\hyperlink{classikfast_1_1IkSolutionList_a141004e6be454a5b9ab537d102c7f405}{\_listsolutions}}.begin();}
+\DoxyCodeLine{275     std::advance(\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a325f3c2b297a245575c6f2f91bd5f1e2}{it}}, index);}
+\DoxyCodeLine{276     \textcolor{keywordflow}{return} *\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a325f3c2b297a245575c6f2f91bd5f1e2}{it}};}
+\DoxyCodeLine{277   \}}
+\DoxyCodeLine{278 }
+\DoxyCodeLine{279   \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classikfast_1_1IkSolutionList_afa82c22a17d32c79d7b95dcfd9ff64ef}{GetNumSolutions}}()\textcolor{keyword}{ const override }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classikfast_1_1IkSolutionList_a141004e6be454a5b9ab537d102c7f405}{\_listsolutions}}.size(); \}}
+\DoxyCodeLine{280 }
+\DoxyCodeLine{281   \textcolor{keywordtype}{void} \mbox{\hyperlink{classikfast_1_1IkSolutionList_a1ad81165c3283bc1514ecf23d3efb496}{Clear}}()\textcolor{keyword}{ override }\{ \mbox{\hyperlink{classikfast_1_1IkSolutionList_a141004e6be454a5b9ab537d102c7f405}{\_listsolutions}}.clear(); \}}
+\DoxyCodeLine{282 }
+\DoxyCodeLine{283 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{284   std::list<IkSolution<T> > \mbox{\hyperlink{classikfast_1_1IkSolutionList_a141004e6be454a5b9ab537d102c7f405}{\_listsolutions}};}
+\DoxyCodeLine{285 \};}
+\DoxyCodeLine{286 \}  \textcolor{comment}{// namespace ikfast}}
+\DoxyCodeLine{287 }
+\DoxyCodeLine{288 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// OPENRAVE\_IKFAST\_HEADER}}
+\DoxyCodeLine{289 }
+\DoxyCodeLine{290 \textcolor{comment}{// The following code is dependent on the C++ library linking with.}}
+\DoxyCodeLine{291 \textcolor{preprocessor}{\#ifdef IKFAST\_HAS\_LIBRARY}}
+\DoxyCodeLine{292 }
+\DoxyCodeLine{293 \textcolor{comment}{// defined when creating a shared object/dll}}
+\DoxyCodeLine{294 \textcolor{preprocessor}{\#ifdef IKFAST\_CLIBRARY}}
+\DoxyCodeLine{295 \textcolor{preprocessor}{\#ifdef \_MSC\_VER}}
+\DoxyCodeLine{296 \textcolor{preprocessor}{\#define IKFAST\_API extern "{}C"{}} \_\_declspec(dllexport)}
+\DoxyCodeLine{297 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{298 \textcolor{preprocessor}{\#define IKFAST\_API extern "{}C"{}} \_\_attribute\_\_((visibility("{}default"{})))}
+\DoxyCodeLine{299 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{300 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{301 \textcolor{preprocessor}{\#define IKFAST\_API}}
+\DoxyCodeLine{302 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{303 }
+\DoxyCodeLine{304 \textcolor{preprocessor}{\#ifdef IKFAST\_NAMESPACE}}
+\DoxyCodeLine{305 \textcolor{keyword}{namespace }IKFAST\_NAMESPACE}
+\DoxyCodeLine{306 \{}
+\DoxyCodeLine{307 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{308 }
+\DoxyCodeLine{309 \textcolor{preprocessor}{\#ifdef IKFAST\_REAL}}
+\DoxyCodeLine{310 \textcolor{keyword}{typedef} IKFAST\_REAL IkReal;}
+\DoxyCodeLine{311 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{312 \textcolor{keyword}{using }IkReal = double;}
+\DoxyCodeLine{313 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{314 }
+\DoxyCodeLine{326 IKFAST\_API \textcolor{keywordtype}{bool} \mbox{\hyperlink{abb__irb2400__ikfast__solver_8hpp_ad6e97fc303efda1a956b9a044f8424fc}{ComputeIk}}(\textcolor{keyword}{const} IkReal* eetrans,}
+\DoxyCodeLine{327                           \textcolor{keyword}{const} IkReal* eerot,}
+\DoxyCodeLine{328                           \textcolor{keyword}{const} IkReal* pfree,}
+\DoxyCodeLine{329                           \mbox{\hyperlink{classikfast_1_1IkSolutionListBase}{ikfast::IkSolutionListBase<IkReal>}}\& solutions);}
+\DoxyCodeLine{330 }
+\DoxyCodeLine{332 IKFAST\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{abb__irb2400__ikfast__solver_8hpp_ac5b257dc48deeb1c904d40b5dbf4a5a4}{ComputeFk}}(\textcolor{keyword}{const} IkReal* \mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_ae41993a59637cf36532d3620b8203555}{joints}}, IkReal* eetrans, IkReal* eerot);}
+\DoxyCodeLine{333 }
+\DoxyCodeLine{335 IKFAST\_API \textcolor{keywordtype}{int} \mbox{\hyperlink{abb__irb2400__ikfast__solver_8hpp_af0cf03d3ad69d099a9a2eb6db5e5b352}{GetNumFreeParameters}}();}
+\DoxyCodeLine{336 }
+\DoxyCodeLine{338 IKFAST\_API \textcolor{keywordtype}{int}* \mbox{\hyperlink{abb__irb2400__ikfast__solver_8hpp_a1b412cff74e968ac44ade3643dce7468}{GetFreeParameters}}();}
+\DoxyCodeLine{339 }
+\DoxyCodeLine{341 IKFAST\_API \textcolor{keywordtype}{int} \mbox{\hyperlink{abb__irb2400__ikfast__solver_8hpp_a3e9541dde410904e043fe18701061b62}{GetNumJoints}}();}
+\DoxyCodeLine{342 }
+\DoxyCodeLine{344 IKFAST\_API \textcolor{keywordtype}{int} \mbox{\hyperlink{abb__irb2400__ikfast__solver_8hpp_a6709f20b26f0903f0aa58a26934c853c}{GetIkRealSize}}();}
+\DoxyCodeLine{345 }
+\DoxyCodeLine{347 IKFAST\_API \textcolor{keyword}{const} \textcolor{keywordtype}{char}* \mbox{\hyperlink{abb__irb2400__ikfast__solver_8hpp_a4dc4cea86dab954c3d0d67c75b1cec60}{GetIkFastVersion}}();}
+\DoxyCodeLine{348 }
+\DoxyCodeLine{350 IKFAST\_API \textcolor{keywordtype}{int} \mbox{\hyperlink{abb__irb2400__ikfast__solver_8hpp_abc401850b948d5a0402e9dbb77d3846f}{GetIkType}}();}
+\DoxyCodeLine{351 }
+\DoxyCodeLine{353 IKFAST\_API \textcolor{keyword}{const} \textcolor{keywordtype}{char}* \mbox{\hyperlink{abb__irb2400__ikfast__solver_8hpp_a6aaaf2b8161411dad90e79c1c62f7ef5}{GetKinematicsHash}}();}
+\DoxyCodeLine{354 }
+\DoxyCodeLine{355 \textcolor{preprocessor}{\#ifdef IKFAST\_NAMESPACE}}
+\DoxyCodeLine{356 \}}
+\DoxyCodeLine{357 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{358 }
+\DoxyCodeLine{359 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// IKFAST\_HAS\_LIBRARY}}
+\DoxyCodeLine{360 \textcolor{comment}{// LCOV\_EXCL\_STOP}}
+
+\end{DoxyCode}

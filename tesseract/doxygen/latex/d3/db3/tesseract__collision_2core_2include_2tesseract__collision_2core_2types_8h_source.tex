@@ -1,0 +1,181 @@
+\hypertarget{tesseract__collision_2core_2include_2tesseract__collision_2core_2types_8h_source}{}\doxysection{types.\+h}
+\label{tesseract__collision_2core_2include_2tesseract__collision_2core_2types_8h_source}\index{tesseract\_collision/core/include/tesseract\_collision/core/types.h@{tesseract\_collision/core/include/tesseract\_collision/core/types.h}}
+\mbox{\hyperlink{tesseract__collision_2core_2include_2tesseract__collision_2core_2types_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#ifndef TESSERACT\_COLLISION\_TYPES\_H}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define TESSERACT\_COLLISION\_TYPES\_H}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{macros_8h}{tesseract\_common/macros.h}}>}}
+\DoxyCodeLine{30 \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include <Eigen/Core>}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include <Eigen/Geometry>}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include <array>}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#include <unordered\_map>}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#include <functional>}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{geometries_8h}{tesseract\_geometry/geometries.h}}>}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{tesseract__common_2include_2tesseract__common_2types_8h}{tesseract\_common/types.h}}>}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{collision__margin__data_8h}{tesseract\_common/collision\_margin\_data.h}}>}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{allowed__collision__matrix_8h}{tesseract\_common/allowed\_collision\_matrix.h}}>}}
+\DoxyCodeLine{43 \mbox{\hyperlink{namespaceTESSERACT__COMMON__IGNORE__WARNINGS__POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__collision}{tesseract\_collision}}}
+\DoxyCodeLine{46 \{}
+\DoxyCodeLine{47 \textcolor{keyword}{using }\mbox{\hyperlink{namespacetesseract__collision_a2472107aae8174a30873bb0a955c3cb4}{CollisionShapesConst}} = std::vector<tesseract\_geometry::Geometry::ConstPtr>;}
+\DoxyCodeLine{48 \textcolor{keyword}{using }\mbox{\hyperlink{namespacetesseract__collision_a0ba6c3df4805b8c865cb45f6571486c0}{CollisionShapeConstPtr}} = \mbox{\hyperlink{classtesseract__geometry_1_1Geometry_a755a973394d2ccb45ad53a5e11ff03c7}{tesseract\_geometry::Geometry::ConstPtr}};}
+\DoxyCodeLine{49 \textcolor{keyword}{using }\mbox{\hyperlink{namespacetesseract__collision_a0aa5b9a264467e92cd1b9f0cd0c38ee8}{CollisionShapePtr}} = \mbox{\hyperlink{classtesseract__geometry_1_1Geometry_acd91c55fb9604ed374446c029b6f2d08}{tesseract\_geometry::Geometry::Ptr}};}
+\DoxyCodeLine{50 \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData}{CollisionMarginData}} = \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData}{tesseract\_common::CollisionMarginData}};}
+\DoxyCodeLine{51 \textcolor{keyword}{using }\mbox{\hyperlink{namespacetesseract__common_af06d85d024a36d63b58a6031556af8a1}{CollisionMarginOverrideType}} = \mbox{\hyperlink{namespacetesseract__common_af06d85d024a36d63b58a6031556af8a1}{tesseract\_common::CollisionMarginOverrideType}};}
+\DoxyCodeLine{52 \textcolor{keyword}{using }\mbox{\hyperlink{namespacetesseract__collision_af335a7f19e2820b8185b48aafae6d6c1}{PairsCollisionMarginData}} = \mbox{\hyperlink{namespacetesseract__common_a84cc21cc4b384291adbbddaa81fe6447}{tesseract\_common::PairsCollisionMarginData}};}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{59 \textcolor{keyword}{using }\mbox{\hyperlink{namespacetesseract__collision_abe7752ce161fbd1139533ac566fec1cb}{IsContactAllowedFn}} = std::function<bool(\textcolor{keyword}{const} std::string\&, \textcolor{keyword}{const} std::string\&)>;}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{keyword}{enum class} \mbox{\hyperlink{namespacetesseract__collision_a267c740fd3b446222ba19cbaa56dab5e}{ContinuousCollisionType}}}
+\DoxyCodeLine{62 \{}
+\DoxyCodeLine{63   \mbox{\hyperlink{namespacetesseract__collision_a267c740fd3b446222ba19cbaa56dab5ea79e497b3f5d3d8b23ea29c9370354bb6}{CCType\_None}},}
+\DoxyCodeLine{64   \mbox{\hyperlink{namespacetesseract__collision_a267c740fd3b446222ba19cbaa56dab5eaf8c51e6d7c61aa31897c3dd7b0719093}{CCType\_Time0}},}
+\DoxyCodeLine{65   \mbox{\hyperlink{namespacetesseract__collision_a267c740fd3b446222ba19cbaa56dab5ea333ec902092c850b7f23cf437d0fac01}{CCType\_Time1}},}
+\DoxyCodeLine{66   \mbox{\hyperlink{namespacetesseract__collision_a267c740fd3b446222ba19cbaa56dab5ea1101988a82b0cd8a2e2c5ee5fda455eb}{CCType\_Between}}}
+\DoxyCodeLine{67 \};}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \textcolor{keyword}{enum class} \mbox{\hyperlink{namespacetesseract__collision_ac3da4f46ae16e86ba4f1dfd2935eb80c}{ContactTestType}}}
+\DoxyCodeLine{70 \{}
+\DoxyCodeLine{71   \mbox{\hyperlink{namespacetesseract__collision_ac3da4f46ae16e86ba4f1dfd2935eb80ca2c2624a5059934a947d6e25fe8332ade}{FIRST}} = 0,   }
+\DoxyCodeLine{72   \mbox{\hyperlink{namespacetesseract__collision_ac3da4f46ae16e86ba4f1dfd2935eb80cae9c32f09a44ae1ae34e42d53502fab77}{CLOSEST}} = 1, }
+\DoxyCodeLine{73   \mbox{\hyperlink{namespacetesseract__collision_ac3da4f46ae16e86ba4f1dfd2935eb80ca5fb1f955b45e38e31789286a1790398d}{ALL}} = 2,     }
+\DoxyCodeLine{74   \mbox{\hyperlink{namespacetesseract__collision_ac3da4f46ae16e86ba4f1dfd2935eb80cad9e0d83abd8b9bb4c1998be68831922c}{LIMITED}} = 3  }
+\DoxyCodeLine{75 \};}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 \textcolor{keyword}{static} \textcolor{keyword}{const} std::vector<std::string> \mbox{\hyperlink{namespacetesseract__collision_a7b23767d95cb11ee74a0001502f930a5}{ContactTestTypeStrings}} = \{}
+\DoxyCodeLine{78   \textcolor{stringliteral}{"{}FIRST"{}},}
+\DoxyCodeLine{79   \textcolor{stringliteral}{"{}CLOSEST"{}},}
+\DoxyCodeLine{80   \textcolor{stringliteral}{"{}ALL"{}},}
+\DoxyCodeLine{81   \textcolor{stringliteral}{"{}LIMITED"{}},}
+\DoxyCodeLine{82 \};}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 \textcolor{keyword}{struct }\mbox{\hyperlink{structtesseract__collision_1_1ContactResult}{ContactResult}}}
+\DoxyCodeLine{85 \{}
+\DoxyCodeLine{86   EIGEN\_MAKE\_ALIGNED\_OPERATOR\_NEW}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{89   \textcolor{keywordtype}{double} \mbox{\hyperlink{structtesseract__collision_1_1ContactResult_a8c773b96dd8883536ed5b55d0633cc16}{distance}}\{ std::numeric\_limits<double>::max() \};}
+\DoxyCodeLine{91   std::array<int, 2> \mbox{\hyperlink{structtesseract__collision_1_1ContactResult_afc74246ec6e2322ec6c40b6b785c05fa}{type\_id}}\{ 0, 0 \};}
+\DoxyCodeLine{93   std::array<std::string, 2> \mbox{\hyperlink{structtesseract__collision_1_1ContactResult_a74d51f58d9ed6a64a50ba1c09da16b8a}{link\_names}};}
+\DoxyCodeLine{95   std::array<int, 2> \mbox{\hyperlink{structtesseract__collision_1_1ContactResult_aeb033efd4c805de85130a3b4fa9057ef}{shape\_id}}\{ -\/1, -\/1 \};}
+\DoxyCodeLine{97   std::array<int, 2> \mbox{\hyperlink{structtesseract__collision_1_1ContactResult_a97b98b12ec2d284e03b7e29b91f90ac5}{subshape\_id}}\{ -\/1, -\/1 \};}
+\DoxyCodeLine{99   std::array<Eigen::Vector3d, 2> \mbox{\hyperlink{structtesseract__collision_1_1ContactResult_a94258fa13fe82619f38635a89f255d79}{nearest\_points}}\{ Eigen::Vector3d::Zero(), Eigen::Vector3d::Zero() \};}
+\DoxyCodeLine{101   std::array<Eigen::Vector3d, 2> \mbox{\hyperlink{structtesseract__collision_1_1ContactResult_ac1b348ce75229f4c4abf8bff16a8f2fc}{nearest\_points\_local}}\{ Eigen::Vector3d::Zero(), Eigen::Vector3d::Zero() \};}
+\DoxyCodeLine{103   std::array<Eigen::Isometry3d, 2> \mbox{\hyperlink{structtesseract__collision_1_1ContactResult_a8e6635a73aa5e102d1b1ed93c7e6bb02}{transform}}\{ Eigen::Isometry3d::Identity(), Eigen::Isometry3d::Identity() \};}
+\DoxyCodeLine{110   Eigen::Vector3d \mbox{\hyperlink{structtesseract__collision_1_1ContactResult_a5601eaa7ac60c9c7d4515976e6eb0a76}{normal}}\{ Eigen::Vector3d::Zero() \};}
+\DoxyCodeLine{112   std::array<double, 2> \mbox{\hyperlink{structtesseract__collision_1_1ContactResult_ab9c739029a29b7655eb32e15b9cc3482}{cc\_time}}\{ -\/1, -\/1 \};}
+\DoxyCodeLine{114   std::array<ContinuousCollisionType, 2> \mbox{\hyperlink{structtesseract__collision_1_1ContactResult_aeb4f5be24b1796ca5ed4fef9290112b6}{cc\_type}}\{ \mbox{\hyperlink{namespacetesseract__collision_a267c740fd3b446222ba19cbaa56dab5ea79e497b3f5d3d8b23ea29c9370354bb6}{ContinuousCollisionType::CCType\_None}},}
+\DoxyCodeLine{115                                                   \mbox{\hyperlink{namespacetesseract__collision_a267c740fd3b446222ba19cbaa56dab5ea79e497b3f5d3d8b23ea29c9370354bb6}{ContinuousCollisionType::CCType\_None}} \};}
+\DoxyCodeLine{121   std::array<Eigen::Isometry3d, 2> \mbox{\hyperlink{structtesseract__collision_1_1ContactResult_aa2447eb6d6186c1862620025516df60d}{cc\_transform}}\{ Eigen::Isometry3d::Identity(), Eigen::Isometry3d::Identity() \};}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{126   \textcolor{keywordtype}{bool} \mbox{\hyperlink{structtesseract__collision_1_1ContactResult_a7ac9dac97afab192b7e05bde26f3796f}{single\_contact\_point}}\{ \textcolor{keyword}{false} \};}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128   \mbox{\hyperlink{structtesseract__collision_1_1ContactResult_ae53147fa92be093d09744e137c1b7006}{ContactResult}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{131   \textcolor{keywordtype}{void} \mbox{\hyperlink{structtesseract__collision_1_1ContactResult_a67e11db1a278aeb6fc0e3da3e174d246}{clear}}();}
+\DoxyCodeLine{132 \};}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134 \textcolor{keyword}{using }\mbox{\hyperlink{namespacetesseract__collision_a96d77f62b7c26962d1090f0a2f00419b}{ContactResultVector}} = \mbox{\hyperlink{namespacetesseract__common_a000d15c3ab8d8ba4ebdaae64153b053a}{tesseract\_common::AlignedVector<ContactResult>}};}
+\DoxyCodeLine{135 \textcolor{keyword}{using }\mbox{\hyperlink{namespacetesseract__collision_a1eeace4cc41027dbde8e7dbeb77ca7cf}{ContactResultMap}} = \mbox{\hyperlink{namespacetesseract__common_a2c5a4b6149060671cf8c3f9d15ef58c4}{tesseract\_common::AlignedMap<std::pair<std::string, std::string>}}, \mbox{\hyperlink{namespacetesseract__collision_a96d77f62b7c26962d1090f0a2f00419b}{ContactResultVector}}>;}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{142 \textcolor{keyword}{using }\mbox{\hyperlink{namespacetesseract__collision_a66fd355f5026f0f64424a756a3788c38}{IsContactResultValidFn}} = std::function<bool(\textcolor{keyword}{const} \mbox{\hyperlink{structtesseract__collision_1_1ContactResult}{ContactResult}}\&)>;}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{145 \textcolor{keyword}{struct }\mbox{\hyperlink{structtesseract__collision_1_1ContactRequest}{ContactRequest}}}
+\DoxyCodeLine{146 \{}
+\DoxyCodeLine{148   \mbox{\hyperlink{namespacetesseract__collision_ac3da4f46ae16e86ba4f1dfd2935eb80c}{ContactTestType}} \mbox{\hyperlink{structtesseract__collision_1_1ContactRequest_a5b39fc3ee402e6db58eaa604e1d69144}{type}} = \mbox{\hyperlink{namespacetesseract__collision_ac3da4f46ae16e86ba4f1dfd2935eb80ca5fb1f955b45e38e31789286a1790398d}{ContactTestType::ALL}};}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{151   \textcolor{keywordtype}{bool} \mbox{\hyperlink{structtesseract__collision_1_1ContactRequest_af353774b0ec15e5638bd9f635ad59abd}{calculate\_penetration}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{154   \textcolor{keywordtype}{bool} \mbox{\hyperlink{structtesseract__collision_1_1ContactRequest_a25fc56c1af683d584f5a06e7539115fd}{calculate\_distance}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{155 }
+\DoxyCodeLine{158   \textcolor{keywordtype}{long} \mbox{\hyperlink{structtesseract__collision_1_1ContactRequest_aa20c4f2ae5642dc90aed00d6c776c171}{contact\_limit}} = 0;}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{161   \mbox{\hyperlink{namespacetesseract__collision_a66fd355f5026f0f64424a756a3788c38}{IsContactResultValidFn}} \mbox{\hyperlink{structtesseract__collision_1_1ContactRequest_a8d17cce5d9dcadd2f34dbfd97181c9e6}{is\_valid}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{163   \mbox{\hyperlink{structtesseract__collision_1_1ContactRequest}{ContactRequest}}(\mbox{\hyperlink{namespacetesseract__collision_ac3da4f46ae16e86ba4f1dfd2935eb80c}{ContactTestType}} \mbox{\hyperlink{structtesseract__collision_1_1ContactRequest_a5b39fc3ee402e6db58eaa604e1d69144}{type}} = \mbox{\hyperlink{namespacetesseract__collision_ac3da4f46ae16e86ba4f1dfd2935eb80ca5fb1f955b45e38e31789286a1790398d}{ContactTestType::ALL}});}
+\DoxyCodeLine{164 \};}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{166 std::size\_t \mbox{\hyperlink{namespacetesseract__collision_a1e54919ee87e54445b7926d0b2880882}{flattenMoveResults}}(\mbox{\hyperlink{namespacetesseract__collision_a1eeace4cc41027dbde8e7dbeb77ca7cf}{ContactResultMap}}\&\& \mbox{\hyperlink{kinematics__core__unit_8cpp_a9d4c159548a3d787ff62c64175409328}{m}}, \mbox{\hyperlink{namespacetesseract__collision_a96d77f62b7c26962d1090f0a2f00419b}{ContactResultVector}}\& \mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}});}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{168 std::size\_t \mbox{\hyperlink{namespacetesseract__collision_a0249bb2994ca5e8258ea55309467ae4a}{flattenCopyResults}}(\textcolor{keyword}{const} \mbox{\hyperlink{namespacetesseract__collision_a1eeace4cc41027dbde8e7dbeb77ca7cf}{ContactResultMap}}\& \mbox{\hyperlink{kinematics__core__unit_8cpp_a9d4c159548a3d787ff62c64175409328}{m}}, \mbox{\hyperlink{namespacetesseract__collision_a96d77f62b7c26962d1090f0a2f00419b}{ContactResultVector}}\& \mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}});}
+\DoxyCodeLine{169 }
+\DoxyCodeLine{174 \textcolor{keyword}{struct }\mbox{\hyperlink{structtesseract__collision_1_1ContactTestData}{ContactTestData}}}
+\DoxyCodeLine{175 \{}
+\DoxyCodeLine{176   EIGEN\_MAKE\_ALIGNED\_OPERATOR\_NEW}
+\DoxyCodeLine{177 }
+\DoxyCodeLine{178   \mbox{\hyperlink{structtesseract__collision_1_1ContactTestData_ad9fbfd4604a971cd4b3348b1e97eda27}{ContactTestData}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{179   \mbox{\hyperlink{structtesseract__collision_1_1ContactTestData_ad9fbfd4604a971cd4b3348b1e97eda27}{ContactTestData}}(\textcolor{keyword}{const} std::vector<std::string>\& \mbox{\hyperlink{structtesseract__collision_1_1ContactTestData_aba830e8db4eaf18c10cf9d33d39c887e}{active}},}
+\DoxyCodeLine{180                   \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData}{CollisionMarginData}} \mbox{\hyperlink{structtesseract__collision_1_1ContactTestData_a2d7fa517ec03bebb0ac863cdd9d00105}{collision\_margin\_data}},}
+\DoxyCodeLine{181                   \mbox{\hyperlink{namespacetesseract__collision_abe7752ce161fbd1139533ac566fec1cb}{IsContactAllowedFn}} \mbox{\hyperlink{structtesseract__collision_1_1ContactTestData_ac5d7267ce7a61655cc00b472c5900546}{fn}},}
+\DoxyCodeLine{182                   \mbox{\hyperlink{structtesseract__collision_1_1ContactRequest}{ContactRequest}} \mbox{\hyperlink{structtesseract__collision_1_1ContactTestData_a4ce38355a8864e83ffc9dd03992d1ca4}{req}},}
+\DoxyCodeLine{183                   \mbox{\hyperlink{namespacetesseract__collision_a1eeace4cc41027dbde8e7dbeb77ca7cf}{ContactResultMap}}\& \mbox{\hyperlink{structtesseract__collision_1_1ContactTestData_ab1f4df903d99975e900e916eaa356ce0}{res}});}
+\DoxyCodeLine{184 }
+\DoxyCodeLine{186   \textcolor{keyword}{const} std::vector<std::string>* \mbox{\hyperlink{structtesseract__collision_1_1ContactTestData_aba830e8db4eaf18c10cf9d33d39c887e}{active}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{187 }
+\DoxyCodeLine{189   \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData}{CollisionMarginData}} \mbox{\hyperlink{structtesseract__collision_1_1ContactTestData_a2d7fa517ec03bebb0ac863cdd9d00105}{collision\_margin\_data}}\{ 0 \};}
+\DoxyCodeLine{190 }
+\DoxyCodeLine{192   \mbox{\hyperlink{namespacetesseract__collision_abe7752ce161fbd1139533ac566fec1cb}{IsContactAllowedFn}} \mbox{\hyperlink{structtesseract__collision_1_1ContactTestData_ac5d7267ce7a61655cc00b472c5900546}{fn}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{193 }
+\DoxyCodeLine{195   \mbox{\hyperlink{structtesseract__collision_1_1ContactRequest}{ContactRequest}} \mbox{\hyperlink{structtesseract__collision_1_1ContactTestData_a4ce38355a8864e83ffc9dd03992d1ca4}{req}};}
+\DoxyCodeLine{196 }
+\DoxyCodeLine{198   \mbox{\hyperlink{namespacetesseract__collision_a1eeace4cc41027dbde8e7dbeb77ca7cf}{ContactResultMap}}* \mbox{\hyperlink{structtesseract__collision_1_1ContactTestData_ab1f4df903d99975e900e916eaa356ce0}{res}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{199 }
+\DoxyCodeLine{201   \textcolor{keywordtype}{bool} \mbox{\hyperlink{structtesseract__collision_1_1ContactTestData_a9a87806afb0e55ad7279fca2d985bf79}{done}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{202 \};}
+\DoxyCodeLine{203 }
+\DoxyCodeLine{212 \textcolor{keyword}{enum class} \mbox{\hyperlink{namespacetesseract__collision_af17e8ee8632a40cf4b6ed1ba1aec41ac}{CollisionEvaluatorType}}}
+\DoxyCodeLine{213 \{}
+\DoxyCodeLine{215   \mbox{\hyperlink{namespacetesseract__collision_af17e8ee8632a40cf4b6ed1ba1aec41acab50339a10e1de285ac99d4c3990b8693}{NONE}},}
+\DoxyCodeLine{217   \mbox{\hyperlink{namespacetesseract__collision_af17e8ee8632a40cf4b6ed1ba1aec41aca947436f2927405d3b5997a9ffbaee5c1}{DISCRETE}},}
+\DoxyCodeLine{219   \mbox{\hyperlink{namespacetesseract__collision_af17e8ee8632a40cf4b6ed1ba1aec41aca4afe53b9adb97f1374fa3e05dd7a1be1}{LVS\_DISCRETE}},}
+\DoxyCodeLine{221   \mbox{\hyperlink{namespacetesseract__collision_af17e8ee8632a40cf4b6ed1ba1aec41acab1fa9dd3af034b3ef4291579aa673c07}{CONTINUOUS}},}
+\DoxyCodeLine{223   \mbox{\hyperlink{namespacetesseract__collision_af17e8ee8632a40cf4b6ed1ba1aec41acab8bde735baca78a8b98c00e1a0a50239}{LVS\_CONTINUOUS}}}
+\DoxyCodeLine{224 \};}
+\DoxyCodeLine{225 }
+\DoxyCodeLine{228 \textcolor{keyword}{enum class} \mbox{\hyperlink{namespacetesseract__collision_ab4aafe369f7930ea6a356f0b578c16af}{ACMOverrideType}}}
+\DoxyCodeLine{229 \{}
+\DoxyCodeLine{231   \mbox{\hyperlink{namespacetesseract__collision_af17e8ee8632a40cf4b6ed1ba1aec41acab50339a10e1de285ac99d4c3990b8693}{NONE}},}
+\DoxyCodeLine{233   \mbox{\hyperlink{namespacetesseract__collision_ab4aafe369f7930ea6a356f0b578c16afaffd6976a2b4f6934eb075d0013316ff1}{ASSIGN}},}
+\DoxyCodeLine{235   \mbox{\hyperlink{namespacetesseract__collision_ab4aafe369f7930ea6a356f0b578c16afa558ffc8f5770d8e4f95f51d822685532}{AND}},}
+\DoxyCodeLine{237   \mbox{\hyperlink{namespacetesseract__collision_ab4aafe369f7930ea6a356f0b578c16afa1d00e7dce692e8dc3f6877f035e3a616}{OR}},}
+\DoxyCodeLine{238 \};}
+\DoxyCodeLine{239 }
+\DoxyCodeLine{249 \textcolor{keyword}{struct }\mbox{\hyperlink{structtesseract__collision_1_1ContactManagerConfig}{ContactManagerConfig}}}
+\DoxyCodeLine{250 \{}
+\DoxyCodeLine{251   \mbox{\hyperlink{structtesseract__collision_1_1ContactManagerConfig_a7e3ac3b3098999827ee460327a6fd11b}{ContactManagerConfig}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{252   \mbox{\hyperlink{structtesseract__collision_1_1ContactManagerConfig_a7e3ac3b3098999827ee460327a6fd11b}{ContactManagerConfig}}(\textcolor{keywordtype}{double} \mbox{\hyperlink{collision__margin__data__unit_8cpp_ac3e3eb13e7a925c10e6739934db3c425}{default\_margin}});}
+\DoxyCodeLine{253 }
+\DoxyCodeLine{255   \mbox{\hyperlink{namespacetesseract__common_af06d85d024a36d63b58a6031556af8a1}{CollisionMarginOverrideType}} \mbox{\hyperlink{structtesseract__collision_1_1ContactManagerConfig_afdcd674e72f3b9c102202c5d65e1d712}{margin\_data\_override\_type}}\{ CollisionMarginOverrideType::NONE \};}
+\DoxyCodeLine{257   \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData}{CollisionMarginData}} \mbox{\hyperlink{structtesseract__collision_1_1ContactManagerConfig_ae99431ef41da3d990072355fad366a7d}{margin\_data}};}
+\DoxyCodeLine{258 }
+\DoxyCodeLine{260   \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix}{tesseract\_common::AllowedCollisionMatrix}} \mbox{\hyperlink{structtesseract__collision_1_1ContactManagerConfig_a22f49cad96d8de0cce15e07cab12f0e3}{acm}};}
+\DoxyCodeLine{262   \mbox{\hyperlink{namespacetesseract__collision_ab4aafe369f7930ea6a356f0b578c16af}{ACMOverrideType}} \mbox{\hyperlink{structtesseract__collision_1_1ContactManagerConfig_a1e26a636ac0d2f0868ed4063a9838bf9}{acm\_override\_type}}\{ \mbox{\hyperlink{namespacetesseract__collision_ab4aafe369f7930ea6a356f0b578c16afa1d00e7dce692e8dc3f6877f035e3a616}{ACMOverrideType::OR}} \};}
+\DoxyCodeLine{263 }
+\DoxyCodeLine{266   std::unordered\_map<std::string, bool> \mbox{\hyperlink{structtesseract__collision_1_1ContactManagerConfig_a7e54e61c7eb4d580a10dfc2bc3dc0e74}{modify\_object\_enabled}};}
+\DoxyCodeLine{267 \};}
+\DoxyCodeLine{268 }
+\DoxyCodeLine{273 \textcolor{keyword}{struct }\mbox{\hyperlink{structtesseract__collision_1_1CollisionCheckConfig}{CollisionCheckConfig}}}
+\DoxyCodeLine{274 \{}
+\DoxyCodeLine{275   \mbox{\hyperlink{structtesseract__collision_1_1CollisionCheckConfig_ae1d68a8e35800dd51073fa15082bbc8a}{CollisionCheckConfig}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{276   \mbox{\hyperlink{structtesseract__collision_1_1CollisionCheckConfig_ae1d68a8e35800dd51073fa15082bbc8a}{CollisionCheckConfig}}(\textcolor{keywordtype}{double} \mbox{\hyperlink{collision__margin__data__unit_8cpp_ac3e3eb13e7a925c10e6739934db3c425}{default\_margin}},}
+\DoxyCodeLine{277                        \mbox{\hyperlink{structtesseract__collision_1_1ContactRequest}{ContactRequest}} request = \mbox{\hyperlink{structtesseract__collision_1_1ContactRequest}{ContactRequest}}(),}
+\DoxyCodeLine{278                        \mbox{\hyperlink{namespacetesseract__collision_af17e8ee8632a40cf4b6ed1ba1aec41ac}{CollisionEvaluatorType}} \mbox{\hyperlink{structtesseract__collision_1_1CollisionCheckConfig_a8302b712dd4f9f4daa469f0d1e8badcb}{type}} = \mbox{\hyperlink{namespacetesseract__collision_af17e8ee8632a40cf4b6ed1ba1aec41aca947436f2927405d3b5997a9ffbaee5c1}{CollisionEvaluatorType::DISCRETE}},}
+\DoxyCodeLine{279                        \textcolor{keywordtype}{double} \mbox{\hyperlink{structtesseract__collision_1_1CollisionCheckConfig_a72a070a64802f499869bb995242f9065}{longest\_valid\_segment\_length}} = 0.005);}
+\DoxyCodeLine{280 }
+\DoxyCodeLine{282   \mbox{\hyperlink{structtesseract__collision_1_1ContactManagerConfig}{ContactManagerConfig}} \mbox{\hyperlink{structtesseract__collision_1_1CollisionCheckConfig_a091fc4e0368bfad1faf4a946b660b2cc}{contact\_manager\_config}};}
+\DoxyCodeLine{283 }
+\DoxyCodeLine{285   \mbox{\hyperlink{structtesseract__collision_1_1ContactRequest}{ContactRequest}} \mbox{\hyperlink{structtesseract__collision_1_1CollisionCheckConfig_a4a97e5373546778882e201190c0367ae}{contact\_request}};}
+\DoxyCodeLine{287   \mbox{\hyperlink{namespacetesseract__collision_af17e8ee8632a40cf4b6ed1ba1aec41ac}{CollisionEvaluatorType}} \mbox{\hyperlink{structtesseract__collision_1_1CollisionCheckConfig_a8302b712dd4f9f4daa469f0d1e8badcb}{type}}\{ \mbox{\hyperlink{namespacetesseract__collision_af17e8ee8632a40cf4b6ed1ba1aec41aca947436f2927405d3b5997a9ffbaee5c1}{CollisionEvaluatorType::DISCRETE}} \};}
+\DoxyCodeLine{289   \textcolor{keywordtype}{double} \mbox{\hyperlink{structtesseract__collision_1_1CollisionCheckConfig_a72a070a64802f499869bb995242f9065}{longest\_valid\_segment\_length}}\{ 0.005 \};}
+\DoxyCodeLine{290 \};}
+\DoxyCodeLine{291 \}  \textcolor{comment}{// namespace tesseract\_collision}}
+\DoxyCodeLine{292 }
+\DoxyCodeLine{293 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_COLLISION\_TYPES\_H}}
+
+\end{DoxyCode}

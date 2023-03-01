@@ -1,0 +1,118 @@
+\hypertarget{tesseract__urdf__sdf__mesh__unit_8cpp}{}\doxysection{tesseract\+\_\+urdf/test/tesseract\+\_\+urdf\+\_\+sdf\+\_\+mesh\+\_\+unit.cpp File Reference}
+\label{tesseract__urdf__sdf__mesh__unit_8cpp}\index{tesseract\_urdf/test/tesseract\_urdf\_sdf\_mesh\_unit.cpp@{tesseract\_urdf/test/tesseract\_urdf\_sdf\_mesh\_unit.cpp}}
+{\ttfamily \#include $<$tesseract\+\_\+common/macros.\+h$>$}\newline
+{\ttfamily \#include $<$gtest/gtest.\+h$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Geometry$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+urdf/sdf\+\_\+mesh.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+geometry/impl/sdf\+\_\+mesh.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+support/tesseract\+\_\+support\+\_\+resource\+\_\+locator.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}tesseract\+\_\+urdf\+\_\+common\+\_\+unit.\+h\char`\"{}}\newline
+Include dependency graph for tesseract\+\_\+urdf\+\_\+sdf\+\_\+mesh\+\_\+unit.\+cpp\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\+\_\+\+COMMON\+\_\+\+IGNORE\+\_\+\+WARNINGS\+\_\+\+PUSH}} static \mbox{\hyperlink{macros_8h_a7af8561cf52519e9896b0697095c1b8b}{TESSERACT\+\_\+\+COMMON\+\_\+\+IGNORE\+\_\+\+WARNINGS\+\_\+\+POP}} std\+::string \mbox{\hyperlink{tesseract__urdf__sdf__mesh__unit_8cpp_a93f7c553c3d02fac327fad3816cb574f}{get\+Temp\+Pkg\+Path}} ()
+\item 
+\mbox{\hyperlink{tesseract__urdf__sdf__mesh__unit_8cpp_a883344a7aa25bfab8e1ab4067a05886b}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{tesseract__scene__graph__unit_8cpp_a1bac1e3d1c1e3ed408685192447453ea}{run\+Test}}$<$ std\+::vector$<$ \mbox{\hyperlink{classtesseract__geometry_1_1SDFMesh_a3a25630031ffb011ac7c2c35cd89d688}{tesseract\+\_\+geometry\+::\+SDFMesh\+::\+Ptr}} $>$ $>$(\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}}, \&\mbox{\hyperlink{namespacetesseract__urdf_ab663268036ba1de6e864cdefdc39f58a}{tesseract\+\_\+urdf\+::parse\+SDFMesh}}, \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a5d55e2558544e2ad2ea0b54f8e3d41fc}{str}}, \char`\"{}sdf\+\_\+mesh\char`\"{}, resource\+\_\+locator, 2, true))
+\item 
+\mbox{\hyperlink{tesseract__urdf__sdf__mesh__unit_8cpp_afeb90b0059821693435f41bb35f51e7e}{EXPECT\+\_\+\+TRUE}} (geom.\+size()==1)
+\item 
+\mbox{\hyperlink{tesseract__urdf__sdf__mesh__unit_8cpp_a864eaeb3a5afbca7ff898dcec1042d18}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}}\mbox{[}0\mbox{]}-\/$>$get\+Face\+Count()==80)
+\item 
+\mbox{\hyperlink{tesseract__urdf__sdf__mesh__unit_8cpp_ac73aa094c2124d18719107dc01006789}{EXPECT\+\_\+\+NEAR}} (\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}}\mbox{[}0\mbox{]}-\/$>$get\+Scale()\mbox{[}0\mbox{]}, 1, 1e-\/5)
+\item 
+\mbox{\hyperlink{tesseract__urdf__sdf__mesh__unit_8cpp_a547fda62cc9b32faaef37220872423ae}{EXPECT\+\_\+\+NEAR}} (\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}}\mbox{[}0\mbox{]}-\/$>$get\+Scale()\mbox{[}1\mbox{]}, 2, 1e-\/5)
+\item 
+\mbox{\hyperlink{tesseract__urdf__sdf__mesh__unit_8cpp_a582903033dfc0bd1e75e974a8643ce39}{EXPECT\+\_\+\+NEAR}} (\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}}\mbox{[}0\mbox{]}-\/$>$get\+Scale()\mbox{[}2\mbox{]}, 1, 1e-\/5)
+\item 
+\mbox{\hyperlink{tesseract__urdf__sdf__mesh__unit_8cpp_ade27f32cca286373fe44a401494532ca}{EXPECT\+\_\+\+NEAR}} (\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}}\mbox{[}0\mbox{]}-\/$>$get\+Scale()\mbox{[}1\mbox{]}, 1, 1e-\/5)
+\item 
+\mbox{\hyperlink{tesseract__urdf__sdf__mesh__unit_8cpp_a49064fe36ba53d6a49216a986277a9fe}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{tesseract__scene__graph__unit_8cpp_a1bac1e3d1c1e3ed408685192447453ea}{run\+Test}}$<$ std\+::vector$<$ \mbox{\hyperlink{classtesseract__geometry_1_1SDFMesh_a3a25630031ffb011ac7c2c35cd89d688}{tesseract\+\_\+geometry\+::\+SDFMesh\+::\+Ptr}} $>$ $>$(\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}}, \&\mbox{\hyperlink{namespacetesseract__urdf_ab663268036ba1de6e864cdefdc39f58a}{tesseract\+\_\+urdf\+::parse\+SDFMesh}}, \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a5d55e2558544e2ad2ea0b54f8e3d41fc}{str}}, \char`\"{}sdf\+\_\+mesh\char`\"{}, resource\+\_\+locator, 2, false))
+\item 
+\mbox{\hyperlink{tesseract__urdf__sdf__mesh__unit_8cpp_add51bba7c885b2058facc333d667419d}{EXPECT\+\_\+\+FALSE}} (\mbox{\hyperlink{tesseract__scene__graph__unit_8cpp_a1bac1e3d1c1e3ed408685192447453ea}{run\+Test}}$<$ std\+::vector$<$ \mbox{\hyperlink{classtesseract__geometry_1_1SDFMesh_a3a25630031ffb011ac7c2c35cd89d688}{tesseract\+\_\+geometry\+::\+SDFMesh\+::\+Ptr}} $>$ $>$(\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}}, \&\mbox{\hyperlink{namespacetesseract__urdf_ab663268036ba1de6e864cdefdc39f58a}{tesseract\+\_\+urdf\+::parse\+SDFMesh}}, \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a5d55e2558544e2ad2ea0b54f8e3d41fc}{str}}, \char`\"{}sdf\+\_\+mesh\char`\"{}, resource\+\_\+locator, 2, true))
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classtesseract__geometry_1_1SDFMesh_a3a25630031ffb011ac7c2c35cd89d688}{tesseract\+\_\+geometry\+::\+SDFMesh\+::\+Ptr}} $>$ \mbox{\hyperlink{tesseract__urdf__sdf__mesh__unit_8cpp_a03ac1c9832f50fe5f4ed692e3326542c}{geom}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{tesseract__urdf__sdf__mesh__unit_8cpp_add51bba7c885b2058facc333d667419d}\label{tesseract__urdf__sdf__mesh__unit_8cpp_add51bba7c885b2058facc333d667419d}} 
+\index{tesseract\_urdf\_sdf\_mesh\_unit.cpp@{tesseract\_urdf\_sdf\_mesh\_unit.cpp}!EXPECT\_FALSE@{EXPECT\_FALSE}}
+\index{EXPECT\_FALSE@{EXPECT\_FALSE}!tesseract\_urdf\_sdf\_mesh\_unit.cpp@{tesseract\_urdf\_sdf\_mesh\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_FALSE()}{EXPECT\_FALSE()}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+FALSE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tesseract__scene__graph__unit_8cpp_a1bac1e3d1c1e3ed408685192447453ea}{run\+Test}}$<$ std\+::vector$<$ \mbox{\hyperlink{classtesseract__geometry_1_1SDFMesh_a3a25630031ffb011ac7c2c35cd89d688}{tesseract\+\_\+geometry\+::\+SDFMesh\+::\+Ptr}} $>$ $>$}]{geom, \&tesseract\+\_\+urdf\+::parse\+SDFMesh, str, \char`\"{}sdf\+\_\+mesh\char`\"{}, resource\+\_\+locator, 2, true }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__urdf__sdf__mesh__unit_8cpp_ac73aa094c2124d18719107dc01006789}\label{tesseract__urdf__sdf__mesh__unit_8cpp_ac73aa094c2124d18719107dc01006789}} 
+\index{tesseract\_urdf\_sdf\_mesh\_unit.cpp@{tesseract\_urdf\_sdf\_mesh\_unit.cpp}!EXPECT\_NEAR@{EXPECT\_NEAR}}
+\index{EXPECT\_NEAR@{EXPECT\_NEAR}!tesseract\_urdf\_sdf\_mesh\_unit.cpp@{tesseract\_urdf\_sdf\_mesh\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_NEAR()}{EXPECT\_NEAR()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+NEAR (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}}-\/$>$}]{get\+Scale()\mbox{[}0\mbox{]}\mbox{[}0\mbox{]},  }\item[{1}]{,  }\item[{1e-\/}]{5 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__urdf__sdf__mesh__unit_8cpp_ade27f32cca286373fe44a401494532ca}\label{tesseract__urdf__sdf__mesh__unit_8cpp_ade27f32cca286373fe44a401494532ca}} 
+\index{tesseract\_urdf\_sdf\_mesh\_unit.cpp@{tesseract\_urdf\_sdf\_mesh\_unit.cpp}!EXPECT\_NEAR@{EXPECT\_NEAR}}
+\index{EXPECT\_NEAR@{EXPECT\_NEAR}!tesseract\_urdf\_sdf\_mesh\_unit.cpp@{tesseract\_urdf\_sdf\_mesh\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_NEAR()}{EXPECT\_NEAR()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+NEAR (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}}-\/$>$}]{get\+Scale()\mbox{[}0\mbox{]}\mbox{[}1\mbox{]},  }\item[{1}]{,  }\item[{1e-\/}]{5 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__urdf__sdf__mesh__unit_8cpp_a547fda62cc9b32faaef37220872423ae}\label{tesseract__urdf__sdf__mesh__unit_8cpp_a547fda62cc9b32faaef37220872423ae}} 
+\index{tesseract\_urdf\_sdf\_mesh\_unit.cpp@{tesseract\_urdf\_sdf\_mesh\_unit.cpp}!EXPECT\_NEAR@{EXPECT\_NEAR}}
+\index{EXPECT\_NEAR@{EXPECT\_NEAR}!tesseract\_urdf\_sdf\_mesh\_unit.cpp@{tesseract\_urdf\_sdf\_mesh\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_NEAR()}{EXPECT\_NEAR()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+NEAR (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}}-\/$>$}]{get\+Scale()\mbox{[}0\mbox{]}\mbox{[}1\mbox{]},  }\item[{2}]{,  }\item[{1e-\/}]{5 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__urdf__sdf__mesh__unit_8cpp_a582903033dfc0bd1e75e974a8643ce39}\label{tesseract__urdf__sdf__mesh__unit_8cpp_a582903033dfc0bd1e75e974a8643ce39}} 
+\index{tesseract\_urdf\_sdf\_mesh\_unit.cpp@{tesseract\_urdf\_sdf\_mesh\_unit.cpp}!EXPECT\_NEAR@{EXPECT\_NEAR}}
+\index{EXPECT\_NEAR@{EXPECT\_NEAR}!tesseract\_urdf\_sdf\_mesh\_unit.cpp@{tesseract\_urdf\_sdf\_mesh\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_NEAR()}{EXPECT\_NEAR()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+NEAR (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}}-\/$>$}]{get\+Scale()\mbox{[}0\mbox{]}\mbox{[}2\mbox{]},  }\item[{1}]{,  }\item[{1e-\/}]{5 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__urdf__sdf__mesh__unit_8cpp_afeb90b0059821693435f41bb35f51e7e}\label{tesseract__urdf__sdf__mesh__unit_8cpp_afeb90b0059821693435f41bb35f51e7e}} 
+\index{tesseract\_urdf\_sdf\_mesh\_unit.cpp@{tesseract\_urdf\_sdf\_mesh\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!tesseract\_urdf\_sdf\_mesh\_unit.cpp@{tesseract\_urdf\_sdf\_mesh\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{geom.}]{size() = {\ttfamily =1} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__urdf__sdf__mesh__unit_8cpp_a864eaeb3a5afbca7ff898dcec1042d18}\label{tesseract__urdf__sdf__mesh__unit_8cpp_a864eaeb3a5afbca7ff898dcec1042d18}} 
+\index{tesseract\_urdf\_sdf\_mesh\_unit.cpp@{tesseract\_urdf\_sdf\_mesh\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!tesseract\_urdf\_sdf\_mesh\_unit.cpp@{tesseract\_urdf\_sdf\_mesh\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}}-\/$>$}]{get\+Face\+Count()\mbox{[}0\mbox{]} = {\ttfamily =80} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__urdf__sdf__mesh__unit_8cpp_a49064fe36ba53d6a49216a986277a9fe}\label{tesseract__urdf__sdf__mesh__unit_8cpp_a49064fe36ba53d6a49216a986277a9fe}} 
+\index{tesseract\_urdf\_sdf\_mesh\_unit.cpp@{tesseract\_urdf\_sdf\_mesh\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!tesseract\_urdf\_sdf\_mesh\_unit.cpp@{tesseract\_urdf\_sdf\_mesh\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tesseract__scene__graph__unit_8cpp_a1bac1e3d1c1e3ed408685192447453ea}{run\+Test}}$<$ std\+::vector$<$ \mbox{\hyperlink{classtesseract__geometry_1_1SDFMesh_a3a25630031ffb011ac7c2c35cd89d688}{tesseract\+\_\+geometry\+::\+SDFMesh\+::\+Ptr}} $>$ $>$}]{geom, \&tesseract\+\_\+urdf\+::parse\+SDFMesh, str, \char`\"{}sdf\+\_\+mesh\char`\"{}, resource\+\_\+locator, 2, false }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__urdf__sdf__mesh__unit_8cpp_a883344a7aa25bfab8e1ab4067a05886b}\label{tesseract__urdf__sdf__mesh__unit_8cpp_a883344a7aa25bfab8e1ab4067a05886b}} 
+\index{tesseract\_urdf\_sdf\_mesh\_unit.cpp@{tesseract\_urdf\_sdf\_mesh\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!tesseract\_urdf\_sdf\_mesh\_unit.cpp@{tesseract\_urdf\_sdf\_mesh\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tesseract__scene__graph__unit_8cpp_a1bac1e3d1c1e3ed408685192447453ea}{run\+Test}}$<$ std\+::vector$<$ \mbox{\hyperlink{classtesseract__geometry_1_1SDFMesh_a3a25630031ffb011ac7c2c35cd89d688}{tesseract\+\_\+geometry\+::\+SDFMesh\+::\+Ptr}} $>$ $>$}]{geom, \&tesseract\+\_\+urdf\+::parse\+SDFMesh, str, \char`\"{}sdf\+\_\+mesh\char`\"{}, resource\+\_\+locator, 2, true }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__urdf__sdf__mesh__unit_8cpp_a93f7c553c3d02fac327fad3816cb574f}\label{tesseract__urdf__sdf__mesh__unit_8cpp_a93f7c553c3d02fac327fad3816cb574f}} 
+\index{tesseract\_urdf\_sdf\_mesh\_unit.cpp@{tesseract\_urdf\_sdf\_mesh\_unit.cpp}!getTempPkgPath@{getTempPkgPath}}
+\index{getTempPkgPath@{getTempPkgPath}!tesseract\_urdf\_sdf\_mesh\_unit.cpp@{tesseract\_urdf\_sdf\_mesh\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{getTempPkgPath()}{getTempPkgPath()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\+\_\+\+COMMON\+\_\+\+IGNORE\+\_\+\+WARNINGS\+\_\+\+PUSH}} static \mbox{\hyperlink{macros_8h_a7af8561cf52519e9896b0697095c1b8b}{TESSERACT\+\_\+\+COMMON\+\_\+\+IGNORE\+\_\+\+WARNINGS\+\_\+\+POP}} std\+::string get\+Temp\+Pkg\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{tesseract__urdf__sdf__mesh__unit_8cpp_a03ac1c9832f50fe5f4ed692e3326542c}\label{tesseract__urdf__sdf__mesh__unit_8cpp_a03ac1c9832f50fe5f4ed692e3326542c}} 
+\index{tesseract\_urdf\_sdf\_mesh\_unit.cpp@{tesseract\_urdf\_sdf\_mesh\_unit.cpp}!geom@{geom}}
+\index{geom@{geom}!tesseract\_urdf\_sdf\_mesh\_unit.cpp@{tesseract\_urdf\_sdf\_mesh\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{geom}{geom}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classtesseract__geometry_1_1SDFMesh_a3a25630031ffb011ac7c2c35cd89d688}{tesseract\+\_\+geometry\+::\+SDFMesh\+::\+Ptr}}$>$ geom}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    std::string \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a5d55e2558544e2ad2ea0b54f8e3d41fc}{str}} =}
+\DoxyCodeLine{        R\textcolor{stringliteral}{"{}(<sdf\_mesh filename="{}package://tesseract\_support/meshes/sphere\_p25m.stl"{} scale="{}1 2 1"{} extra="{}0 0 0"{}/>)"{}}}
+
+\end{DoxyCode}

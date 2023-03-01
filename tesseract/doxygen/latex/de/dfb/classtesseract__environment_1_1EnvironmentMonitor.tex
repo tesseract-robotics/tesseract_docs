@@ -1,0 +1,414 @@
+\hypertarget{classtesseract__environment_1_1EnvironmentMonitor}{}\doxysection{tesseract\+\_\+environment\+::Environment\+Monitor Class Reference}
+\label{classtesseract__environment_1_1EnvironmentMonitor}\index{tesseract\_environment::EnvironmentMonitor@{tesseract\_environment::EnvironmentMonitor}}
+
+
+Tesseract \mbox{\hyperlink{classtesseract__environment_1_1Environment}{Environment}} Monitor Interface Class.  
+
+
+
+
+{\ttfamily \#include $<$environment\+\_\+monitor.\+h$>$}
+
+
+
+Collaboration diagram for tesseract\+\_\+environment\+::Environment\+Monitor\+:
+% FIG 0
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitor_aa1eae28ed447fa92e06b7fe715767ceb}{Ptr}} = std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitor}{Environment\+Monitor}} $>$
+\item 
+using \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitor_a84b592cf9d17a2887901daf6ecf95a03}{Const\+Ptr}} = std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitor}{Environment\+Monitor}} $>$
+\item 
+using \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitor_abea26b666ca03359c6da08d188a8c5fb}{UPtr}} = std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitor}{Environment\+Monitor}} $>$
+\item 
+using \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitor_a4c94dfcd4eadf9185eecdd5b39bdf6e3}{Const\+UPtr}} = std\+::unique\+\_\+ptr$<$ const \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitor}{Environment\+Monitor}} $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitor_a96c2d6a5e29ecf262606bfa370362b78}{Environment\+Monitor}} (std\+::string monitor\+\_\+namespace)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitor_a09bcb569777689a696540175c295aa12}{Environment\+Monitor}} (\mbox{\hyperlink{classtesseract__environment_1_1Environment_a7f9f24116120df888e99fe015803ffc0}{tesseract\+\_\+environment\+::\+Environment\+::\+Ptr}} \mbox{\hyperlink{tesseract__environment__cache__unit_8cpp_ad0ad93681569be4051e16dec148973e3}{env}}, std\+::string monitor\+\_\+namespace)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitor_ad9dba0ec9cb456accf7755c6bb2b3840}{$\sim$\+Environment\+Monitor}} ()=default
+\item 
+virtual const std\+::string \& \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitor_a56bf97cdc33feaf9c9b6f160a0531231}{get\+Namespace}} () const
+\begin{DoxyCompactList}\small\item\em Get the namespace of this monitor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classtesseract__environment_1_1Environment}{tesseract\+\_\+environment\+::\+Environment}} \& \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitor_a267c80a5901a952931b8f740602e795a}{environment}} ()
+\begin{DoxyCompactList}\small\item\em Returns an {\bfseries{threadsafe}} reference to the current environment. \end{DoxyCompactList}\item 
+virtual const \mbox{\hyperlink{classtesseract__environment_1_1Environment}{tesseract\+\_\+environment\+::\+Environment}} \& \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitor_a471154c47b7768360543a2acd78ee545}{environment}} () const
+\begin{DoxyCompactList}\small\item\em Returns an {\bfseries{threadsafe}} const reference to the current environment. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classtesseract__environment_1_1Environment_a7f9f24116120df888e99fe015803ffc0}{tesseract\+\_\+environment\+::\+Environment\+::\+Ptr}} \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitor_abe90b77a4154f58ee376a5bb14213990}{get\+Environment}} ()
+\begin{DoxyCompactList}\small\item\em Returns an {\bfseries{threadsafe}} shared pointer to the current environment. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classtesseract__environment_1_1Environment_a9d9ecedaebeea1d7ba45be7670fbcd77}{tesseract\+\_\+environment\+::\+Environment\+::\+Const\+Ptr}} \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitor_a8ef2b95986b27798218fc0e2a69e242d}{get\+Environment}} () const
+\begin{DoxyCompactList}\small\item\em Returns an {\bfseries{threadsafe}} const shared point to the current environment. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitor_a9bcde079455438f1a279bd0dea836a51}{wait\+For\+Connection}} (std\+::chrono\+::duration$<$ double $>$ duration=std\+::chrono\+::seconds(0)) const =0
+\begin{DoxyCompactList}\small\item\em Wait for connection to upstream environment. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitor_acc81d4d180dadcdc9a547833f89e22b8}{start\+Publishing\+Environment}} ()=0
+\begin{DoxyCompactList}\small\item\em Start publishing the maintained environment. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitor_a549a9e8f6da8f7955d75ed6706f82741}{stop\+Publishing\+Environment}} ()=0
+\begin{DoxyCompactList}\small\item\em Stop publishing the maintained environment. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitor_a9e7fe496d8683fb2e6052b5e08c6b453}{set\+Environment\+Publishing\+Frequency}} (double hz)=0
+\begin{DoxyCompactList}\small\item\em Set the maximum frequency at which environment are being published. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitor_ad4760a75f836dfc05f1067bf9058db2c}{get\+Environment\+Publishing\+Frequency}} () const =0
+\begin{DoxyCompactList}\small\item\em Get the maximum frequency at which environment are published (Hz) \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitor_a4aadb3040a68afc2c7160ef1c1c5caa6}{start\+State\+Monitor}} (const std\+::string \&joint\+\_\+states\+\_\+topic, bool publish\+\_\+tf=true)=0
+\begin{DoxyCompactList}\small\item\em Start the current state monitor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitor_a06574c4e048d15f1dbc23cb608d04fae}{stop\+State\+Monitor}} ()=0
+\begin{DoxyCompactList}\small\item\em Stop the state monitor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitor_a1ef34bb7832e38b45bda9ba7dcacc8f9}{set\+State\+Update\+Frequency}} (double hz=10)=0
+\begin{DoxyCompactList}\small\item\em Update the scene using the monitored state at a specified frequency, in Hz. This function has an effect only when updates from the Current\+State\+Monitor are received at a higher frequency. In that case, the updates are throttled down, so that they do not exceed a maximum update frequency specified here. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitor_ac501fec169bc4153f91dfb9620cc9bd4}{get\+State\+Update\+Frequency}} () const =0
+\begin{DoxyCompactList}\small\item\em Get the maximum frequency (Hz) at which the current state of the planning scene is updated. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitor_ab19ce50d0ca2f435bfc55f249b698c85}{update\+Environment\+With\+Current\+State}} ()=0
+\begin{DoxyCompactList}\small\item\em Update the scene using the monitored state. This function is automatically called when an update to the current state is received (if \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitor_a4aadb3040a68afc2c7160ef1c1c5caa6}{start\+State\+Monitor()}} has been called). The updates are throttled to a maximum update frequency however, which is set by \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitor_a1ef34bb7832e38b45bda9ba7dcacc8f9}{set\+State\+Update\+Frequency()}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitor_a828cac81614cd5a6cf521d8843462582}{start\+Monitoring\+Environment}} (const std\+::string \&monitored\+\_\+namespace, \mbox{\hyperlink{namespacetesseract__environment_ad69281c5429c1e008229dbe5c5c4769d}{Monitored\+Environment\+Mode}} mode=\mbox{\hyperlink{namespacetesseract__environment_ad69281c5429c1e008229dbe5c5c4769da5b39c8b553c821e7cddc6da64b5bd2ee}{Monitored\+Environment\+Mode\+::\+DEFAULT}})=0
+\begin{DoxyCompactList}\small\item\em Start the monitoring of an environment topic. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitor_a3a30da916b5d17e61ac89157a6ddddd7}{stop\+Monitoring\+Environment}} ()=0
+\begin{DoxyCompactList}\small\item\em Stop monitoring the external environment. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitor_a9cb1cb1f6cc387099a5f2a53ebb52f13}{wait\+For\+Current\+State}} (std\+::chrono\+::duration$<$ double $>$ duration=std\+::chrono\+::seconds(1))=0
+\begin{DoxyCompactList}\small\item\em Wait for robot state to become more recent than time t. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitor_af212fab727b105f134018a0f94f0345e}{shutdown}} ()=0
+\begin{DoxyCompactList}\small\item\em Shutdown advertised services. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtesseract__environment_1_1Environment_a7f9f24116120df888e99fe015803ffc0}{tesseract\+\_\+environment\+::\+Environment\+::\+Ptr}} \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitor_a980eca2faeb32bf74fc077f8b3154116}{env\+\_\+}}
+\item 
+std\+::string \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitor_a18a6eb19229abe72d519ca3597269aec}{monitor\+\_\+namespace\+\_\+}}
+\item 
+\mbox{\hyperlink{namespacetesseract__environment_ad69281c5429c1e008229dbe5c5c4769d}{Monitored\+Environment\+Mode}} \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitor_a47d784e004b690d67ace597f741fb772}{mode\+\_\+}} \{ \mbox{\hyperlink{namespacetesseract__environment_ad69281c5429c1e008229dbe5c5c4769da5b39c8b553c821e7cddc6da64b5bd2ee}{Monitored\+Environment\+Mode\+::\+DEFAULT}} \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Tesseract \mbox{\hyperlink{classtesseract__environment_1_1Environment}{Environment}} Monitor Interface Class. 
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classtesseract__environment_1_1EnvironmentMonitor_a84b592cf9d17a2887901daf6ecf95a03}\label{classtesseract__environment_1_1EnvironmentMonitor_a84b592cf9d17a2887901daf6ecf95a03}} 
+\index{tesseract\_environment::EnvironmentMonitor@{tesseract\_environment::EnvironmentMonitor}!ConstPtr@{ConstPtr}}
+\index{ConstPtr@{ConstPtr}!tesseract\_environment::EnvironmentMonitor@{tesseract\_environment::EnvironmentMonitor}}
+\doxysubsubsection{\texorpdfstring{ConstPtr}{ConstPtr}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitor_a84b592cf9d17a2887901daf6ecf95a03}{tesseract\+\_\+environment\+::\+Environment\+Monitor\+::\+Const\+Ptr}} =  std\+::shared\+\_\+ptr$<$const \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitor}{Environment\+Monitor}}$>$}
+
+\mbox{\Hypertarget{classtesseract__environment_1_1EnvironmentMonitor_a4c94dfcd4eadf9185eecdd5b39bdf6e3}\label{classtesseract__environment_1_1EnvironmentMonitor_a4c94dfcd4eadf9185eecdd5b39bdf6e3}} 
+\index{tesseract\_environment::EnvironmentMonitor@{tesseract\_environment::EnvironmentMonitor}!ConstUPtr@{ConstUPtr}}
+\index{ConstUPtr@{ConstUPtr}!tesseract\_environment::EnvironmentMonitor@{tesseract\_environment::EnvironmentMonitor}}
+\doxysubsubsection{\texorpdfstring{ConstUPtr}{ConstUPtr}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitor_a4c94dfcd4eadf9185eecdd5b39bdf6e3}{tesseract\+\_\+environment\+::\+Environment\+Monitor\+::\+Const\+UPtr}} =  std\+::unique\+\_\+ptr$<$const \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitor}{Environment\+Monitor}}$>$}
+
+\mbox{\Hypertarget{classtesseract__environment_1_1EnvironmentMonitor_aa1eae28ed447fa92e06b7fe715767ceb}\label{classtesseract__environment_1_1EnvironmentMonitor_aa1eae28ed447fa92e06b7fe715767ceb}} 
+\index{tesseract\_environment::EnvironmentMonitor@{tesseract\_environment::EnvironmentMonitor}!Ptr@{Ptr}}
+\index{Ptr@{Ptr}!tesseract\_environment::EnvironmentMonitor@{tesseract\_environment::EnvironmentMonitor}}
+\doxysubsubsection{\texorpdfstring{Ptr}{Ptr}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitor_aa1eae28ed447fa92e06b7fe715767ceb}{tesseract\+\_\+environment\+::\+Environment\+Monitor\+::\+Ptr}} =  std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitor}{Environment\+Monitor}}$>$}
+
+\mbox{\Hypertarget{classtesseract__environment_1_1EnvironmentMonitor_abea26b666ca03359c6da08d188a8c5fb}\label{classtesseract__environment_1_1EnvironmentMonitor_abea26b666ca03359c6da08d188a8c5fb}} 
+\index{tesseract\_environment::EnvironmentMonitor@{tesseract\_environment::EnvironmentMonitor}!UPtr@{UPtr}}
+\index{UPtr@{UPtr}!tesseract\_environment::EnvironmentMonitor@{tesseract\_environment::EnvironmentMonitor}}
+\doxysubsubsection{\texorpdfstring{UPtr}{UPtr}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitor_abea26b666ca03359c6da08d188a8c5fb}{tesseract\+\_\+environment\+::\+Environment\+Monitor\+::\+UPtr}} =  std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitor}{Environment\+Monitor}}$>$}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtesseract__environment_1_1EnvironmentMonitor_a96c2d6a5e29ecf262606bfa370362b78}\label{classtesseract__environment_1_1EnvironmentMonitor_a96c2d6a5e29ecf262606bfa370362b78}} 
+\index{tesseract\_environment::EnvironmentMonitor@{tesseract\_environment::EnvironmentMonitor}!EnvironmentMonitor@{EnvironmentMonitor}}
+\index{EnvironmentMonitor@{EnvironmentMonitor}!tesseract\_environment::EnvironmentMonitor@{tesseract\_environment::EnvironmentMonitor}}
+\doxysubsubsection{\texorpdfstring{EnvironmentMonitor()}{EnvironmentMonitor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily tesseract\+\_\+environment\+::\+Environment\+Monitor\+::\+Environment\+Monitor (\begin{DoxyParamCaption}\item[{std\+::string}]{monitor\+\_\+namespace }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em monitor\+\_\+namespace} & A name identifying this monitor, must be unique \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__environment_1_1EnvironmentMonitor_a09bcb569777689a696540175c295aa12}\label{classtesseract__environment_1_1EnvironmentMonitor_a09bcb569777689a696540175c295aa12}} 
+\index{tesseract\_environment::EnvironmentMonitor@{tesseract\_environment::EnvironmentMonitor}!EnvironmentMonitor@{EnvironmentMonitor}}
+\index{EnvironmentMonitor@{EnvironmentMonitor}!tesseract\_environment::EnvironmentMonitor@{tesseract\_environment::EnvironmentMonitor}}
+\doxysubsubsection{\texorpdfstring{EnvironmentMonitor()}{EnvironmentMonitor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily tesseract\+\_\+environment\+::\+Environment\+Monitor\+::\+Environment\+Monitor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtesseract__environment_1_1Environment_a7f9f24116120df888e99fe015803ffc0}{tesseract\+\_\+environment\+::\+Environment\+::\+Ptr}}}]{env,  }\item[{std\+::string}]{monitor\+\_\+namespace }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em env} & The environment to use internal to the monitor \\
+\hline
+{\em monitor\+\_\+namespace} & A name identifying this monitor, must be unique \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__environment_1_1EnvironmentMonitor_ad9dba0ec9cb456accf7755c6bb2b3840}\label{classtesseract__environment_1_1EnvironmentMonitor_ad9dba0ec9cb456accf7755c6bb2b3840}} 
+\index{tesseract\_environment::EnvironmentMonitor@{tesseract\_environment::EnvironmentMonitor}!````~EnvironmentMonitor@{$\sim$EnvironmentMonitor}}
+\index{````~EnvironmentMonitor@{$\sim$EnvironmentMonitor}!tesseract\_environment::EnvironmentMonitor@{tesseract\_environment::EnvironmentMonitor}}
+\doxysubsubsection{\texorpdfstring{$\sim$EnvironmentMonitor()}{~EnvironmentMonitor()}}
+{\footnotesize\ttfamily virtual tesseract\+\_\+environment\+::\+Environment\+Monitor\+::$\sim$\+Environment\+Monitor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtesseract__environment_1_1EnvironmentMonitor_a267c80a5901a952931b8f740602e795a}\label{classtesseract__environment_1_1EnvironmentMonitor_a267c80a5901a952931b8f740602e795a}} 
+\index{tesseract\_environment::EnvironmentMonitor@{tesseract\_environment::EnvironmentMonitor}!environment@{environment}}
+\index{environment@{environment}!tesseract\_environment::EnvironmentMonitor@{tesseract\_environment::EnvironmentMonitor}}
+\doxysubsubsection{\texorpdfstring{environment()}{environment()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classtesseract__environment_1_1Environment}{tesseract\+\_\+environment\+::\+Environment}} \& tesseract\+\_\+environment\+::\+Environment\+Monitor\+::environment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Returns an {\bfseries{threadsafe}} reference to the current environment. 
+
+Modification should only be made if this monitor is the master. If this is monitoring another environment the local changes will get removed on the next update cycle. Recommend using the Tesseract\+Monitor\+Interface to apply commands to the monitored environment until the todo below is implemented. \begin{DoxyReturn}{Returns}
+The current environment. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__environment_1_1EnvironmentMonitor_a471154c47b7768360543a2acd78ee545}\label{classtesseract__environment_1_1EnvironmentMonitor_a471154c47b7768360543a2acd78ee545}} 
+\index{tesseract\_environment::EnvironmentMonitor@{tesseract\_environment::EnvironmentMonitor}!environment@{environment}}
+\index{environment@{environment}!tesseract\_environment::EnvironmentMonitor@{tesseract\_environment::EnvironmentMonitor}}
+\doxysubsubsection{\texorpdfstring{environment()}{environment()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual const \mbox{\hyperlink{classtesseract__environment_1_1Environment}{tesseract\+\_\+environment\+::\+Environment}} \& tesseract\+\_\+environment\+::\+Environment\+Monitor\+::environment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Returns an {\bfseries{threadsafe}} const reference to the current environment. 
+
+\begin{DoxyReturn}{Returns}
+The current environment. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__environment_1_1EnvironmentMonitor_abe90b77a4154f58ee376a5bb14213990}\label{classtesseract__environment_1_1EnvironmentMonitor_abe90b77a4154f58ee376a5bb14213990}} 
+\index{tesseract\_environment::EnvironmentMonitor@{tesseract\_environment::EnvironmentMonitor}!getEnvironment@{getEnvironment}}
+\index{getEnvironment@{getEnvironment}!tesseract\_environment::EnvironmentMonitor@{tesseract\_environment::EnvironmentMonitor}}
+\doxysubsubsection{\texorpdfstring{getEnvironment()}{getEnvironment()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classtesseract__environment_1_1Environment_a7f9f24116120df888e99fe015803ffc0}{tesseract\+\_\+environment\+::\+Environment\+::\+Ptr}} tesseract\+\_\+environment\+::\+Environment\+Monitor\+::get\+Environment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Returns an {\bfseries{threadsafe}} shared pointer to the current environment. 
+
+Modification should only be made if this monitor is the master. If this is monitoring another environment the local changes will get removed on the next update cycle. Recommend using the Tesseract\+Monitor\+Interface to apply commands to the monitored environment until the todo below is implemented. \begin{DoxyReturn}{Returns}
+The current environment. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__environment_1_1EnvironmentMonitor_a8ef2b95986b27798218fc0e2a69e242d}\label{classtesseract__environment_1_1EnvironmentMonitor_a8ef2b95986b27798218fc0e2a69e242d}} 
+\index{tesseract\_environment::EnvironmentMonitor@{tesseract\_environment::EnvironmentMonitor}!getEnvironment@{getEnvironment}}
+\index{getEnvironment@{getEnvironment}!tesseract\_environment::EnvironmentMonitor@{tesseract\_environment::EnvironmentMonitor}}
+\doxysubsubsection{\texorpdfstring{getEnvironment()}{getEnvironment()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classtesseract__environment_1_1Environment_a9d9ecedaebeea1d7ba45be7670fbcd77}{tesseract\+\_\+environment\+::\+Environment\+::\+Const\+Ptr}} tesseract\+\_\+environment\+::\+Environment\+Monitor\+::get\+Environment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Returns an {\bfseries{threadsafe}} const shared point to the current environment. 
+
+\begin{DoxyReturn}{Returns}
+The current environment. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__environment_1_1EnvironmentMonitor_ad4760a75f836dfc05f1067bf9058db2c}\label{classtesseract__environment_1_1EnvironmentMonitor_ad4760a75f836dfc05f1067bf9058db2c}} 
+\index{tesseract\_environment::EnvironmentMonitor@{tesseract\_environment::EnvironmentMonitor}!getEnvironmentPublishingFrequency@{getEnvironmentPublishingFrequency}}
+\index{getEnvironmentPublishingFrequency@{getEnvironmentPublishingFrequency}!tesseract\_environment::EnvironmentMonitor@{tesseract\_environment::EnvironmentMonitor}}
+\doxysubsubsection{\texorpdfstring{getEnvironmentPublishingFrequency()}{getEnvironmentPublishingFrequency()}}
+{\footnotesize\ttfamily virtual double tesseract\+\_\+environment\+::\+Environment\+Monitor\+::get\+Environment\+Publishing\+Frequency (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the maximum frequency at which environment are published (Hz) 
+
+\mbox{\Hypertarget{classtesseract__environment_1_1EnvironmentMonitor_a56bf97cdc33feaf9c9b6f160a0531231}\label{classtesseract__environment_1_1EnvironmentMonitor_a56bf97cdc33feaf9c9b6f160a0531231}} 
+\index{tesseract\_environment::EnvironmentMonitor@{tesseract\_environment::EnvironmentMonitor}!getNamespace@{getNamespace}}
+\index{getNamespace@{getNamespace}!tesseract\_environment::EnvironmentMonitor@{tesseract\_environment::EnvironmentMonitor}}
+\doxysubsubsection{\texorpdfstring{getNamespace()}{getNamespace()}}
+{\footnotesize\ttfamily virtual const std\+::string \& tesseract\+\_\+environment\+::\+Environment\+Monitor\+::get\+Namespace (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get the namespace of this monitor. 
+
+\mbox{\Hypertarget{classtesseract__environment_1_1EnvironmentMonitor_ac501fec169bc4153f91dfb9620cc9bd4}\label{classtesseract__environment_1_1EnvironmentMonitor_ac501fec169bc4153f91dfb9620cc9bd4}} 
+\index{tesseract\_environment::EnvironmentMonitor@{tesseract\_environment::EnvironmentMonitor}!getStateUpdateFrequency@{getStateUpdateFrequency}}
+\index{getStateUpdateFrequency@{getStateUpdateFrequency}!tesseract\_environment::EnvironmentMonitor@{tesseract\_environment::EnvironmentMonitor}}
+\doxysubsubsection{\texorpdfstring{getStateUpdateFrequency()}{getStateUpdateFrequency()}}
+{\footnotesize\ttfamily virtual double tesseract\+\_\+environment\+::\+Environment\+Monitor\+::get\+State\+Update\+Frequency (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the maximum frequency (Hz) at which the current state of the planning scene is updated. 
+
+\mbox{\Hypertarget{classtesseract__environment_1_1EnvironmentMonitor_a9e7fe496d8683fb2e6052b5e08c6b453}\label{classtesseract__environment_1_1EnvironmentMonitor_a9e7fe496d8683fb2e6052b5e08c6b453}} 
+\index{tesseract\_environment::EnvironmentMonitor@{tesseract\_environment::EnvironmentMonitor}!setEnvironmentPublishingFrequency@{setEnvironmentPublishingFrequency}}
+\index{setEnvironmentPublishingFrequency@{setEnvironmentPublishingFrequency}!tesseract\_environment::EnvironmentMonitor@{tesseract\_environment::EnvironmentMonitor}}
+\doxysubsubsection{\texorpdfstring{setEnvironmentPublishingFrequency()}{setEnvironmentPublishingFrequency()}}
+{\footnotesize\ttfamily virtual void tesseract\+\_\+environment\+::\+Environment\+Monitor\+::set\+Environment\+Publishing\+Frequency (\begin{DoxyParamCaption}\item[{double}]{hz }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Set the maximum frequency at which environment are being published. 
+
+\mbox{\Hypertarget{classtesseract__environment_1_1EnvironmentMonitor_a1ef34bb7832e38b45bda9ba7dcacc8f9}\label{classtesseract__environment_1_1EnvironmentMonitor_a1ef34bb7832e38b45bda9ba7dcacc8f9}} 
+\index{tesseract\_environment::EnvironmentMonitor@{tesseract\_environment::EnvironmentMonitor}!setStateUpdateFrequency@{setStateUpdateFrequency}}
+\index{setStateUpdateFrequency@{setStateUpdateFrequency}!tesseract\_environment::EnvironmentMonitor@{tesseract\_environment::EnvironmentMonitor}}
+\doxysubsubsection{\texorpdfstring{setStateUpdateFrequency()}{setStateUpdateFrequency()}}
+{\footnotesize\ttfamily virtual void tesseract\+\_\+environment\+::\+Environment\+Monitor\+::set\+State\+Update\+Frequency (\begin{DoxyParamCaption}\item[{double}]{hz = {\ttfamily 10} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Update the scene using the monitored state at a specified frequency, in Hz. This function has an effect only when updates from the Current\+State\+Monitor are received at a higher frequency. In that case, the updates are throttled down, so that they do not exceed a maximum update frequency specified here. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hz} & the update frequency. By default this is 10Hz. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__environment_1_1EnvironmentMonitor_af212fab727b105f134018a0f94f0345e}\label{classtesseract__environment_1_1EnvironmentMonitor_af212fab727b105f134018a0f94f0345e}} 
+\index{tesseract\_environment::EnvironmentMonitor@{tesseract\_environment::EnvironmentMonitor}!shutdown@{shutdown}}
+\index{shutdown@{shutdown}!tesseract\_environment::EnvironmentMonitor@{tesseract\_environment::EnvironmentMonitor}}
+\doxysubsubsection{\texorpdfstring{shutdown()}{shutdown()}}
+{\footnotesize\ttfamily virtual void tesseract\+\_\+environment\+::\+Environment\+Monitor\+::shutdown (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Shutdown advertised services. 
+
+\mbox{\Hypertarget{classtesseract__environment_1_1EnvironmentMonitor_a828cac81614cd5a6cf521d8843462582}\label{classtesseract__environment_1_1EnvironmentMonitor_a828cac81614cd5a6cf521d8843462582}} 
+\index{tesseract\_environment::EnvironmentMonitor@{tesseract\_environment::EnvironmentMonitor}!startMonitoringEnvironment@{startMonitoringEnvironment}}
+\index{startMonitoringEnvironment@{startMonitoringEnvironment}!tesseract\_environment::EnvironmentMonitor@{tesseract\_environment::EnvironmentMonitor}}
+\doxysubsubsection{\texorpdfstring{startMonitoringEnvironment()}{startMonitoringEnvironment()}}
+{\footnotesize\ttfamily virtual void tesseract\+\_\+environment\+::\+Environment\+Monitor\+::start\+Monitoring\+Environment (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{monitored\+\_\+namespace,  }\item[{\mbox{\hyperlink{namespacetesseract__environment_ad69281c5429c1e008229dbe5c5c4769d}{Monitored\+Environment\+Mode}}}]{mode = {\ttfamily \mbox{\hyperlink{namespacetesseract__environment_ad69281c5429c1e008229dbe5c5c4769da5b39c8b553c821e7cddc6da64b5bd2ee}{Monitored\+Environment\+Mode\+::\+DEFAULT}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Start the monitoring of an environment topic. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em monitored\+\_\+namespace} & The namespace of the environment to monitor \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__environment_1_1EnvironmentMonitor_acc81d4d180dadcdc9a547833f89e22b8}\label{classtesseract__environment_1_1EnvironmentMonitor_acc81d4d180dadcdc9a547833f89e22b8}} 
+\index{tesseract\_environment::EnvironmentMonitor@{tesseract\_environment::EnvironmentMonitor}!startPublishingEnvironment@{startPublishingEnvironment}}
+\index{startPublishingEnvironment@{startPublishingEnvironment}!tesseract\_environment::EnvironmentMonitor@{tesseract\_environment::EnvironmentMonitor}}
+\doxysubsubsection{\texorpdfstring{startPublishingEnvironment()}{startPublishingEnvironment()}}
+{\footnotesize\ttfamily virtual void tesseract\+\_\+environment\+::\+Environment\+Monitor\+::start\+Publishing\+Environment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Start publishing the maintained environment. 
+
+\mbox{\Hypertarget{classtesseract__environment_1_1EnvironmentMonitor_a4aadb3040a68afc2c7160ef1c1c5caa6}\label{classtesseract__environment_1_1EnvironmentMonitor_a4aadb3040a68afc2c7160ef1c1c5caa6}} 
+\index{tesseract\_environment::EnvironmentMonitor@{tesseract\_environment::EnvironmentMonitor}!startStateMonitor@{startStateMonitor}}
+\index{startStateMonitor@{startStateMonitor}!tesseract\_environment::EnvironmentMonitor@{tesseract\_environment::EnvironmentMonitor}}
+\doxysubsubsection{\texorpdfstring{startStateMonitor()}{startStateMonitor()}}
+{\footnotesize\ttfamily virtual void tesseract\+\_\+environment\+::\+Environment\+Monitor\+::start\+State\+Monitor (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{joint\+\_\+states\+\_\+topic,  }\item[{bool}]{publish\+\_\+tf = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Start the current state monitor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em joint\+\_\+states\+\_\+topic} & the topic to listen to for joint states \\
+\hline
+{\em publish\+\_\+tf} & If true, TFs will be published for each joint. Default\+: true \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__environment_1_1EnvironmentMonitor_a3a30da916b5d17e61ac89157a6ddddd7}\label{classtesseract__environment_1_1EnvironmentMonitor_a3a30da916b5d17e61ac89157a6ddddd7}} 
+\index{tesseract\_environment::EnvironmentMonitor@{tesseract\_environment::EnvironmentMonitor}!stopMonitoringEnvironment@{stopMonitoringEnvironment}}
+\index{stopMonitoringEnvironment@{stopMonitoringEnvironment}!tesseract\_environment::EnvironmentMonitor@{tesseract\_environment::EnvironmentMonitor}}
+\doxysubsubsection{\texorpdfstring{stopMonitoringEnvironment()}{stopMonitoringEnvironment()}}
+{\footnotesize\ttfamily virtual void tesseract\+\_\+environment\+::\+Environment\+Monitor\+::stop\+Monitoring\+Environment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Stop monitoring the external environment. 
+
+\mbox{\Hypertarget{classtesseract__environment_1_1EnvironmentMonitor_a549a9e8f6da8f7955d75ed6706f82741}\label{classtesseract__environment_1_1EnvironmentMonitor_a549a9e8f6da8f7955d75ed6706f82741}} 
+\index{tesseract\_environment::EnvironmentMonitor@{tesseract\_environment::EnvironmentMonitor}!stopPublishingEnvironment@{stopPublishingEnvironment}}
+\index{stopPublishingEnvironment@{stopPublishingEnvironment}!tesseract\_environment::EnvironmentMonitor@{tesseract\_environment::EnvironmentMonitor}}
+\doxysubsubsection{\texorpdfstring{stopPublishingEnvironment()}{stopPublishingEnvironment()}}
+{\footnotesize\ttfamily virtual void tesseract\+\_\+environment\+::\+Environment\+Monitor\+::stop\+Publishing\+Environment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Stop publishing the maintained environment. 
+
+\mbox{\Hypertarget{classtesseract__environment_1_1EnvironmentMonitor_a06574c4e048d15f1dbc23cb608d04fae}\label{classtesseract__environment_1_1EnvironmentMonitor_a06574c4e048d15f1dbc23cb608d04fae}} 
+\index{tesseract\_environment::EnvironmentMonitor@{tesseract\_environment::EnvironmentMonitor}!stopStateMonitor@{stopStateMonitor}}
+\index{stopStateMonitor@{stopStateMonitor}!tesseract\_environment::EnvironmentMonitor@{tesseract\_environment::EnvironmentMonitor}}
+\doxysubsubsection{\texorpdfstring{stopStateMonitor()}{stopStateMonitor()}}
+{\footnotesize\ttfamily virtual void tesseract\+\_\+environment\+::\+Environment\+Monitor\+::stop\+State\+Monitor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Stop the state monitor. 
+
+\mbox{\Hypertarget{classtesseract__environment_1_1EnvironmentMonitor_ab19ce50d0ca2f435bfc55f249b698c85}\label{classtesseract__environment_1_1EnvironmentMonitor_ab19ce50d0ca2f435bfc55f249b698c85}} 
+\index{tesseract\_environment::EnvironmentMonitor@{tesseract\_environment::EnvironmentMonitor}!updateEnvironmentWithCurrentState@{updateEnvironmentWithCurrentState}}
+\index{updateEnvironmentWithCurrentState@{updateEnvironmentWithCurrentState}!tesseract\_environment::EnvironmentMonitor@{tesseract\_environment::EnvironmentMonitor}}
+\doxysubsubsection{\texorpdfstring{updateEnvironmentWithCurrentState()}{updateEnvironmentWithCurrentState()}}
+{\footnotesize\ttfamily virtual void tesseract\+\_\+environment\+::\+Environment\+Monitor\+::update\+Environment\+With\+Current\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Update the scene using the monitored state. This function is automatically called when an update to the current state is received (if \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitor_a4aadb3040a68afc2c7160ef1c1c5caa6}{start\+State\+Monitor()}} has been called). The updates are throttled to a maximum update frequency however, which is set by \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitor_a1ef34bb7832e38b45bda9ba7dcacc8f9}{set\+State\+Update\+Frequency()}}. 
+
+\mbox{\Hypertarget{classtesseract__environment_1_1EnvironmentMonitor_a9bcde079455438f1a279bd0dea836a51}\label{classtesseract__environment_1_1EnvironmentMonitor_a9bcde079455438f1a279bd0dea836a51}} 
+\index{tesseract\_environment::EnvironmentMonitor@{tesseract\_environment::EnvironmentMonitor}!waitForConnection@{waitForConnection}}
+\index{waitForConnection@{waitForConnection}!tesseract\_environment::EnvironmentMonitor@{tesseract\_environment::EnvironmentMonitor}}
+\doxysubsubsection{\texorpdfstring{waitForConnection()}{waitForConnection()}}
+{\footnotesize\ttfamily virtual bool tesseract\+\_\+environment\+::\+Environment\+Monitor\+::wait\+For\+Connection (\begin{DoxyParamCaption}\item[{std\+::chrono\+::duration$<$ double $>$}]{duration = {\ttfamily std\+:\+:chrono\+:\+:seconds(0)} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Wait for connection to upstream environment. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em duration} & The time to wait in seconds before returning, if zero it waits indefinitely \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if it has connected to upstream environment, otherwise false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__environment_1_1EnvironmentMonitor_a9cb1cb1f6cc387099a5f2a53ebb52f13}\label{classtesseract__environment_1_1EnvironmentMonitor_a9cb1cb1f6cc387099a5f2a53ebb52f13}} 
+\index{tesseract\_environment::EnvironmentMonitor@{tesseract\_environment::EnvironmentMonitor}!waitForCurrentState@{waitForCurrentState}}
+\index{waitForCurrentState@{waitForCurrentState}!tesseract\_environment::EnvironmentMonitor@{tesseract\_environment::EnvironmentMonitor}}
+\doxysubsubsection{\texorpdfstring{waitForCurrentState()}{waitForCurrentState()}}
+{\footnotesize\ttfamily virtual bool tesseract\+\_\+environment\+::\+Environment\+Monitor\+::wait\+For\+Current\+State (\begin{DoxyParamCaption}\item[{std\+::chrono\+::duration$<$ double $>$}]{duration = {\ttfamily std\+:\+:chrono\+:\+:seconds(1)} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Wait for robot state to become more recent than time t. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em duration} & The time to wait in seconds\\
+\hline
+\end{DoxyParams}
+If there is no state monitor active, there will be no scene updates. Hence, you can specify a timeout to wait for those updates. Default is 1s. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classtesseract__environment_1_1EnvironmentMonitor_a980eca2faeb32bf74fc077f8b3154116}\label{classtesseract__environment_1_1EnvironmentMonitor_a980eca2faeb32bf74fc077f8b3154116}} 
+\index{tesseract\_environment::EnvironmentMonitor@{tesseract\_environment::EnvironmentMonitor}!env\_@{env\_}}
+\index{env\_@{env\_}!tesseract\_environment::EnvironmentMonitor@{tesseract\_environment::EnvironmentMonitor}}
+\doxysubsubsection{\texorpdfstring{env\_}{env\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__environment_1_1Environment_a7f9f24116120df888e99fe015803ffc0}{tesseract\+\_\+environment\+::\+Environment\+::\+Ptr}} tesseract\+\_\+environment\+::\+Environment\+Monitor\+::env\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classtesseract__environment_1_1EnvironmentMonitor_a47d784e004b690d67ace597f741fb772}\label{classtesseract__environment_1_1EnvironmentMonitor_a47d784e004b690d67ace597f741fb772}} 
+\index{tesseract\_environment::EnvironmentMonitor@{tesseract\_environment::EnvironmentMonitor}!mode\_@{mode\_}}
+\index{mode\_@{mode\_}!tesseract\_environment::EnvironmentMonitor@{tesseract\_environment::EnvironmentMonitor}}
+\doxysubsubsection{\texorpdfstring{mode\_}{mode\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacetesseract__environment_ad69281c5429c1e008229dbe5c5c4769d}{Monitored\+Environment\+Mode}} tesseract\+\_\+environment\+::\+Environment\+Monitor\+::mode\+\_\+ \{ \mbox{\hyperlink{namespacetesseract__environment_ad69281c5429c1e008229dbe5c5c4769da5b39c8b553c821e7cddc6da64b5bd2ee}{Monitored\+Environment\+Mode\+::\+DEFAULT}} \}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classtesseract__environment_1_1EnvironmentMonitor_a18a6eb19229abe72d519ca3597269aec}\label{classtesseract__environment_1_1EnvironmentMonitor_a18a6eb19229abe72d519ca3597269aec}} 
+\index{tesseract\_environment::EnvironmentMonitor@{tesseract\_environment::EnvironmentMonitor}!monitor\_namespace\_@{monitor\_namespace\_}}
+\index{monitor\_namespace\_@{monitor\_namespace\_}!tesseract\_environment::EnvironmentMonitor@{tesseract\_environment::EnvironmentMonitor}}
+\doxysubsubsection{\texorpdfstring{monitor\_namespace\_}{monitor\_namespace\_}}
+{\footnotesize\ttfamily std\+::string tesseract\+\_\+environment\+::\+Environment\+Monitor\+::monitor\+\_\+namespace\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+tesseract\+\_\+environment/include/tesseract\+\_\+environment/\mbox{\hyperlink{environment__monitor_8h}{environment\+\_\+monitor.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,264 @@
+\hypertarget{tesseract__scene__graph_2include_2tesseract__scene__graph_2link_8h_source}{}\doxysection{link.\+h}
+\label{tesseract__scene__graph_2include_2tesseract__scene__graph_2link_8h_source}\index{tesseract\_scene\_graph/include/tesseract\_scene\_graph/link.h@{tesseract\_scene\_graph/include/tesseract\_scene\_graph/link.h}}
+\mbox{\hyperlink{tesseract__scene__graph_2include_2tesseract__scene__graph_2link_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*********************************************************************}}
+\DoxyCodeLine{2 \textcolor{comment}{ * Software License Agreement (BSD License)}}
+\DoxyCodeLine{3 \textcolor{comment}{ *}}
+\DoxyCodeLine{4 \textcolor{comment}{ *  Copyright (c) 2008, Willow Garage, Inc.}}
+\DoxyCodeLine{5 \textcolor{comment}{ *  All rights reserved.}}
+\DoxyCodeLine{6 \textcolor{comment}{ *}}
+\DoxyCodeLine{7 \textcolor{comment}{ *  Redistribution and use in source and binary forms, with or without}}
+\DoxyCodeLine{8 \textcolor{comment}{ *  modification, are permitted provided that the following conditions}}
+\DoxyCodeLine{9 \textcolor{comment}{ *  are met:}}
+\DoxyCodeLine{10 \textcolor{comment}{ *}}
+\DoxyCodeLine{11 \textcolor{comment}{ *   * Redistributions of source code must retain the above copyright}}
+\DoxyCodeLine{12 \textcolor{comment}{ *     notice, this list of conditions and the following disclaimer.}}
+\DoxyCodeLine{13 \textcolor{comment}{ *   * Redistributions in binary form must reproduce the above}}
+\DoxyCodeLine{14 \textcolor{comment}{ *     copyright notice, this list of conditions and the following}}
+\DoxyCodeLine{15 \textcolor{comment}{ *     disclaimer in the documentation and/or other materials provided}}
+\DoxyCodeLine{16 \textcolor{comment}{ *     with the distribution.}}
+\DoxyCodeLine{17 \textcolor{comment}{ *   * Neither the name of the Willow Garage nor the names of its}}
+\DoxyCodeLine{18 \textcolor{comment}{ *     contributors may be used to endorse or promote products derived}}
+\DoxyCodeLine{19 \textcolor{comment}{ *     from this software without specific prior written permission.}}
+\DoxyCodeLine{20 \textcolor{comment}{ *}}
+\DoxyCodeLine{21 \textcolor{comment}{ *  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
+\DoxyCodeLine{22 \textcolor{comment}{ *  "{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
+\DoxyCodeLine{23 \textcolor{comment}{ *  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS}}
+\DoxyCodeLine{24 \textcolor{comment}{ *  FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE}}
+\DoxyCodeLine{25 \textcolor{comment}{ *  COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,}}
+\DoxyCodeLine{26 \textcolor{comment}{ *  INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,}}
+\DoxyCodeLine{27 \textcolor{comment}{ *  BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;}}
+\DoxyCodeLine{28 \textcolor{comment}{ *  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER}}
+\DoxyCodeLine{29 \textcolor{comment}{ *  CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT}}
+\DoxyCodeLine{30 \textcolor{comment}{ *  LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN}}
+\DoxyCodeLine{31 \textcolor{comment}{ *  ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE}}
+\DoxyCodeLine{32 \textcolor{comment}{ *  POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{33 \textcolor{comment}{ *********************************************************************/}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{comment}{/* Author: Wim Meeussen */}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#ifndef TESSERACT\_SCENE\_GRAPH\_LINK\_H}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define TESSERACT\_SCENE\_GRAPH\_LINK\_H}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{macros_8h}{tesseract\_common/macros.h}}>}}
+\DoxyCodeLine{41 \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#include <boost/serialization/access.hpp>}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#include <Eigen/Eigen>}}
+\DoxyCodeLine{48 \mbox{\hyperlink{namespaceTESSERACT__COMMON__IGNORE__WARNINGS__POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{tesseract__scene__graph_2include_2tesseract__scene__graph_2joint_8h}{tesseract\_scene\_graph/joint.h}}>}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{tesseract__geometry_2include_2tesseract__geometry_2geometry_8h}{tesseract\_geometry/geometry.h}}>}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__scene__graph}{tesseract\_scene\_graph}}}
+\DoxyCodeLine{54 \{}
+\DoxyCodeLine{55 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__scene__graph_1_1Material}{Material}}}
+\DoxyCodeLine{56 \{}
+\DoxyCodeLine{57 \textcolor{keyword}{public}:}
+\DoxyCodeLine{58   EIGEN\_MAKE\_ALIGNED\_OPERATOR\_NEW}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__scene__graph_1_1Material_a9d68bd33aa85035e3b291c13d6ae7a98}{Ptr}} = std::shared\_ptr<Material>;}
+\DoxyCodeLine{61   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__scene__graph_1_1Material_a3b3cb9a0ce138d92c623a75cfc1ca6dd}{ConstPtr}} = std::shared\_ptr<const Material>;}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63   \mbox{\hyperlink{classtesseract__scene__graph_1_1Material_a27ecaf1c8429ccda69561c7523b59970}{Material}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{64   \mbox{\hyperlink{classtesseract__scene__graph_1_1Material_af8ecfbd76b9d8c3a66dee7d2b0ebc01f}{Material}}(std::string \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}) : \mbox{\hyperlink{classtesseract__scene__graph_1_1Material_acc7477c6b2c083548da4e615a60b5211}{name\_}}(std::move(\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}})) \{ this-\/>\mbox{\hyperlink{classtesseract__scene__graph_1_1Material_aa4479a9143c3c19686b6a07f6272b502}{clear}}(); \}}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66   \textcolor{keyword}{const} std::string\& \mbox{\hyperlink{classtesseract__scene__graph_1_1Material_a5a46ed3f86d36030e48ca646c5ec1536}{getName}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classtesseract__scene__graph_1_1Material_acc7477c6b2c083548da4e615a60b5211}{name\_}}; \}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68   std::string \mbox{\hyperlink{classtesseract__scene__graph_1_1Material_a61b54b527c481edb07de7067730fb663}{texture\_filename}};}
+\DoxyCodeLine{69   Eigen::Vector4d \mbox{\hyperlink{classtesseract__scene__graph_1_1Material_a4fe6674b1762692f2ae3834c3b524f85}{color}};}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__scene__graph_1_1Material_aa4479a9143c3c19686b6a07f6272b502}{clear}}()}
+\DoxyCodeLine{72   \{}
+\DoxyCodeLine{73     \mbox{\hyperlink{classtesseract__scene__graph_1_1Material_a4fe6674b1762692f2ae3834c3b524f85}{color}} = Eigen::Vector4d(0.5, 0.5, 0.5, 1.0);}
+\DoxyCodeLine{74     \mbox{\hyperlink{classtesseract__scene__graph_1_1Material_a61b54b527c481edb07de7067730fb663}{texture\_filename}}.clear();}
+\DoxyCodeLine{75   \}}
+\DoxyCodeLine{76   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__scene__graph_1_1Material_a9217ec63736242255f1c31e6fbf20350}{operator==}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__scene__graph_1_1Material}{Material}}\& rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{77   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__scene__graph_1_1Material_a2c9c49f139a2e7df3421816ab4ff1478}{operator!=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__scene__graph_1_1Material}{Material}}\& rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 \textcolor{keyword}{private}:}
+\DoxyCodeLine{80   std::string \mbox{\hyperlink{classtesseract__scene__graph_1_1Material_acc7477c6b2c083548da4e615a60b5211}{name\_}};}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82   \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__scene__graph_1_1Material_ac98d07dd8f7b70e16ccb9a01abf56b9c}{boost::serialization::access}};}
+\DoxyCodeLine{83   \textcolor{keyword}{template} <\textcolor{keyword}{class} Archive>}
+\DoxyCodeLine{84   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__scene__graph_1_1Material_ae3898fdc458a49e64a9dd2713ed90f11}{serialize}}(Archive\& ar, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} version);  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{85 \};}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#ifndef SWIG}}
+\DoxyCodeLine{88 \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keyword}{auto} \mbox{\hyperlink{namespacetesseract__scene__graph_a7cc4d6d52cec84a34e4dad908a65c88f}{DEFAULT\_TESSERACT\_MATERIAL}} = std::make\_shared<Material>(\textcolor{stringliteral}{"{}default\_tesseract\_material"{}});}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// SWIG}}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__scene__graph_1_1Inertial}{Inertial}}}
+\DoxyCodeLine{92 \{}
+\DoxyCodeLine{93 \textcolor{keyword}{public}:}
+\DoxyCodeLine{94   EIGEN\_MAKE\_ALIGNED\_OPERATOR\_NEW}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__scene__graph_1_1Inertial_ab6bb54cb76a7a31768d2db41b43b5b63}{Ptr}} = std::shared\_ptr<Inertial>;}
+\DoxyCodeLine{97   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__scene__graph_1_1Inertial_a460e182afe4ea7ff68c9855afa89f68b}{ConstPtr}} = std::shared\_ptr<const Inertial>;}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99   \mbox{\hyperlink{classtesseract__scene__graph_1_1Inertial_aa72414ea4b05755fc3866efaeb4702fe}{Inertial}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{100   Eigen::Isometry3d \mbox{\hyperlink{classtesseract__scene__graph_1_1Inertial_a3da0c8988ccb3170af63d134c8642115}{origin}}\{ Eigen::Isometry3d::Identity() \};}
+\DoxyCodeLine{101   \textcolor{keywordtype}{double} \mbox{\hyperlink{classtesseract__scene__graph_1_1Inertial_ae6edaef55a94a68056be6164fccaa44f}{mass}}\{ 0 \};}
+\DoxyCodeLine{102   \textcolor{keywordtype}{double} \mbox{\hyperlink{classtesseract__scene__graph_1_1Inertial_a5c68d5f745cad3e46e3d99d7ad3d48ce}{ixx}}\{ 0 \};}
+\DoxyCodeLine{103   \textcolor{keywordtype}{double} \mbox{\hyperlink{classtesseract__scene__graph_1_1Inertial_a594cab54d0d5acae231156a60f771d4c}{ixy}}\{ 0 \};}
+\DoxyCodeLine{104   \textcolor{keywordtype}{double} \mbox{\hyperlink{classtesseract__scene__graph_1_1Inertial_acbdd276a0e83943dfa102d4085a7f4d4}{ixz}}\{ 0 \};}
+\DoxyCodeLine{105   \textcolor{keywordtype}{double} \mbox{\hyperlink{classtesseract__scene__graph_1_1Inertial_a3d65fa24dbd4738aa8c57ce0b36ac180}{iyy}}\{ 0 \};}
+\DoxyCodeLine{106   \textcolor{keywordtype}{double} \mbox{\hyperlink{classtesseract__scene__graph_1_1Inertial_a23c5f2a228de5abe9dd773debf6c1556}{iyz}}\{ 0 \};}
+\DoxyCodeLine{107   \textcolor{keywordtype}{double} \mbox{\hyperlink{classtesseract__scene__graph_1_1Inertial_aec0b3afb164dbb79ae36718ab87ee445}{izz}}\{ 0 \};}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__scene__graph_1_1Inertial_a9653f0cd49d11df0ccd02f563f0a0990}{clear}}()}
+\DoxyCodeLine{110   \{}
+\DoxyCodeLine{111     \mbox{\hyperlink{classtesseract__scene__graph_1_1Inertial_a3da0c8988ccb3170af63d134c8642115}{origin}}.setIdentity();}
+\DoxyCodeLine{112     \mbox{\hyperlink{classtesseract__scene__graph_1_1Inertial_ae6edaef55a94a68056be6164fccaa44f}{mass}} = 0;}
+\DoxyCodeLine{113     \mbox{\hyperlink{classtesseract__scene__graph_1_1Inertial_a5c68d5f745cad3e46e3d99d7ad3d48ce}{ixx}} = \mbox{\hyperlink{classtesseract__scene__graph_1_1Inertial_a594cab54d0d5acae231156a60f771d4c}{ixy}} = \mbox{\hyperlink{classtesseract__scene__graph_1_1Inertial_acbdd276a0e83943dfa102d4085a7f4d4}{ixz}} = \mbox{\hyperlink{classtesseract__scene__graph_1_1Inertial_a3d65fa24dbd4738aa8c57ce0b36ac180}{iyy}} = \mbox{\hyperlink{classtesseract__scene__graph_1_1Inertial_a23c5f2a228de5abe9dd773debf6c1556}{iyz}} = \mbox{\hyperlink{classtesseract__scene__graph_1_1Inertial_aec0b3afb164dbb79ae36718ab87ee445}{izz}} = 0;}
+\DoxyCodeLine{114   \}}
+\DoxyCodeLine{115   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__scene__graph_1_1Inertial_a5381591738b9e6b3498e1a84a4362d31}{operator==}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__scene__graph_1_1Inertial}{Inertial}}\& rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{116   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__scene__graph_1_1Inertial_af3fcad537de93de54c3cba3b4687c54a}{operator!=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__scene__graph_1_1Inertial}{Inertial}}\& rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118 \textcolor{keyword}{private}:}
+\DoxyCodeLine{119   \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__scene__graph_1_1Inertial_ac98d07dd8f7b70e16ccb9a01abf56b9c}{boost::serialization::access}};}
+\DoxyCodeLine{120   \textcolor{keyword}{template} <\textcolor{keyword}{class} Archive>}
+\DoxyCodeLine{121   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__scene__graph_1_1Inertial_a62a2d249fd59780e986800bed5c7b053}{serialize}}(Archive\& ar, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} version);  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{122 \};}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__scene__graph_1_1Visual}{Visual}}}
+\DoxyCodeLine{125 \{}
+\DoxyCodeLine{126 \textcolor{keyword}{public}:}
+\DoxyCodeLine{127   EIGEN\_MAKE\_ALIGNED\_OPERATOR\_NEW}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__scene__graph_1_1Visual_aabcb8106e59f659ad53243dfb51916e4}{Ptr}} = std::shared\_ptr<Visual>;}
+\DoxyCodeLine{130   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__scene__graph_1_1Visual_a604735ea917512a19b65124a71c923ec}{ConstPtr}} = std::shared\_ptr<const Visual>;}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132   \mbox{\hyperlink{classtesseract__scene__graph_1_1Visual_a5dd88e7c06e2e33545690b822eb21fda}{Visual}}() \{ this-\/>\mbox{\hyperlink{classtesseract__scene__graph_1_1Visual_aebd604677b78a4b661b729d60d87f208}{clear}}(); \}}
+\DoxyCodeLine{133   Eigen::Isometry3d \mbox{\hyperlink{classtesseract__scene__graph_1_1Visual_aed1effc0354a3cf1a7a8c25c88233dc9}{origin}};}
+\DoxyCodeLine{134   \mbox{\hyperlink{classtesseract__geometry_1_1Geometry_acd91c55fb9604ed374446c029b6f2d08}{tesseract\_geometry::Geometry::Ptr}} \mbox{\hyperlink{classtesseract__scene__graph_1_1Visual_a1ba85dfe3c1ac2e6cb87716f4f622092}{geometry}};}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136   \mbox{\hyperlink{classtesseract__scene__graph_1_1Material_a9d68bd33aa85035e3b291c13d6ae7a98}{Material::Ptr}} \mbox{\hyperlink{classtesseract__scene__graph_1_1Visual_a3dc28dcf8a139ebe598c33c63b3263c3}{material}};}
+\DoxyCodeLine{137 }
+\DoxyCodeLine{138   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__scene__graph_1_1Visual_aebd604677b78a4b661b729d60d87f208}{clear}}()}
+\DoxyCodeLine{139   \{}
+\DoxyCodeLine{140     \mbox{\hyperlink{classtesseract__scene__graph_1_1Visual_aed1effc0354a3cf1a7a8c25c88233dc9}{origin}}.setIdentity();}
+\DoxyCodeLine{141     \mbox{\hyperlink{classtesseract__scene__graph_1_1Visual_a3dc28dcf8a139ebe598c33c63b3263c3}{material}} = \mbox{\hyperlink{namespacetesseract__scene__graph_a7cc4d6d52cec84a34e4dad908a65c88f}{DEFAULT\_TESSERACT\_MATERIAL}};}
+\DoxyCodeLine{142     \mbox{\hyperlink{classtesseract__scene__graph_1_1Visual_a1ba85dfe3c1ac2e6cb87716f4f622092}{geometry}}.reset();}
+\DoxyCodeLine{143     \mbox{\hyperlink{classtesseract__scene__graph_1_1Visual_a1b0d14b4594db8d4a7c382860d9c7f49}{name}}.clear();}
+\DoxyCodeLine{144   \}}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{146   std::string \mbox{\hyperlink{classtesseract__scene__graph_1_1Visual_a1b0d14b4594db8d4a7c382860d9c7f49}{name}};}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__scene__graph_1_1Visual_ac9b3249b7ae6c988bbd89bada10bff6a}{operator==}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__scene__graph_1_1Visual}{Visual}}\& rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{149   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__scene__graph_1_1Visual_a25de688144a81a606feee07e1da6a586}{operator!=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__scene__graph_1_1Visual}{Visual}}\& rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151 \textcolor{keyword}{private}:}
+\DoxyCodeLine{152   \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__scene__graph_1_1Visual_ac98d07dd8f7b70e16ccb9a01abf56b9c}{boost::serialization::access}};}
+\DoxyCodeLine{153   \textcolor{keyword}{template} <\textcolor{keyword}{class} Archive>}
+\DoxyCodeLine{154   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__scene__graph_1_1Visual_a789b3447ae7f38ced1d4eafdb143184d}{serialize}}(Archive\& ar, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} version);  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{155 \};}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{157 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__scene__graph_1_1Collision}{Collision}}}
+\DoxyCodeLine{158 \{}
+\DoxyCodeLine{159 \textcolor{keyword}{public}:}
+\DoxyCodeLine{160   EIGEN\_MAKE\_ALIGNED\_OPERATOR\_NEW}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{162   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__scene__graph_1_1Collision_a8125bc208e0da8bf1530b98828cc7321}{Ptr}} = std::shared\_ptr<Collision>;}
+\DoxyCodeLine{163   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__scene__graph_1_1Collision_ab5b0f3978f5b03224d9865b90fcce519}{ConstPtr}} = std::shared\_ptr<const Collision>;}
+\DoxyCodeLine{164 }
+\DoxyCodeLine{165   \mbox{\hyperlink{classtesseract__scene__graph_1_1Collision_abf1873cc7c9061d09de273cf26b9b0f5}{Collision}}() \{ this-\/>\mbox{\hyperlink{classtesseract__scene__graph_1_1Collision_ac8e728c7cc0bcf07400ce0b6ee9bb61d}{clear}}(); \}}
+\DoxyCodeLine{166   Eigen::Isometry3d \mbox{\hyperlink{classtesseract__scene__graph_1_1Collision_a854351aaaf7e1116e308fa66b3beae53}{origin}};}
+\DoxyCodeLine{167   \mbox{\hyperlink{classtesseract__geometry_1_1Geometry_acd91c55fb9604ed374446c029b6f2d08}{tesseract\_geometry::Geometry::Ptr}} \mbox{\hyperlink{classtesseract__scene__graph_1_1Collision_a865329a9538ca32cde1322e397f34634}{geometry}};}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{169   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__scene__graph_1_1Collision_ac8e728c7cc0bcf07400ce0b6ee9bb61d}{clear}}()}
+\DoxyCodeLine{170   \{}
+\DoxyCodeLine{171     \mbox{\hyperlink{classtesseract__scene__graph_1_1Collision_a854351aaaf7e1116e308fa66b3beae53}{origin}}.setIdentity();}
+\DoxyCodeLine{172     \mbox{\hyperlink{classtesseract__scene__graph_1_1Collision_a865329a9538ca32cde1322e397f34634}{geometry}}.reset();}
+\DoxyCodeLine{173     \mbox{\hyperlink{classtesseract__scene__graph_1_1Collision_afcf8a0079332b755ae3a2a933d32d6af}{name}}.clear();}
+\DoxyCodeLine{174   \}}
+\DoxyCodeLine{175 }
+\DoxyCodeLine{176   std::string \mbox{\hyperlink{classtesseract__scene__graph_1_1Collision_afcf8a0079332b755ae3a2a933d32d6af}{name}};}
+\DoxyCodeLine{177 }
+\DoxyCodeLine{178   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__scene__graph_1_1Collision_a2d871e4fd436b5fcffc187c026a0198b}{operator==}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__scene__graph_1_1Collision}{Collision}}\& rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{179   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__scene__graph_1_1Collision_a1b8a94f141a3978530e30d1112130de3}{operator!=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__scene__graph_1_1Collision}{Collision}}\& rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{180 }
+\DoxyCodeLine{181 \textcolor{keyword}{private}:}
+\DoxyCodeLine{182   \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__scene__graph_1_1Collision_ac98d07dd8f7b70e16ccb9a01abf56b9c}{boost::serialization::access}};}
+\DoxyCodeLine{183   \textcolor{keyword}{template} <\textcolor{keyword}{class} Archive>}
+\DoxyCodeLine{184   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__scene__graph_1_1Collision_ab17fb8849889e96a23fe54ff057411ed}{serialize}}(Archive\& ar, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} version);  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{185 \};}
+\DoxyCodeLine{186 }
+\DoxyCodeLine{187 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__scene__graph_1_1Link}{Link}}}
+\DoxyCodeLine{188 \{}
+\DoxyCodeLine{189 \textcolor{keyword}{public}:}
+\DoxyCodeLine{190   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__scene__graph_1_1Link_a424c06b5c02fe0b92fee449ef1190bf0}{Ptr}} = std::shared\_ptr<Link>;}
+\DoxyCodeLine{191   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__scene__graph_1_1Link_afad1873344245e2223664b6b7f846f1c}{ConstPtr}} = std::shared\_ptr<const Link>;}
+\DoxyCodeLine{192 }
+\DoxyCodeLine{193   \mbox{\hyperlink{classtesseract__scene__graph_1_1Link_a0024ffd73a4d4c1680e29678d99c5395}{Link}}(std::string \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}) : \mbox{\hyperlink{classtesseract__scene__graph_1_1Link_aa0f887a98e35fc977b46d79d56a2a7fd}{name\_}}(std::move(\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}})) \{ this-\/>\mbox{\hyperlink{classtesseract__scene__graph_1_1Link_a591eae7457042a675bd7a79f536a4adc}{clear}}(); \}}
+\DoxyCodeLine{194   \mbox{\hyperlink{classtesseract__scene__graph_1_1Link_a7a4e9aa3652ad94a1244ef0e8a8cded2}{Link}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{195   \mbox{\hyperlink{classtesseract__scene__graph_1_1Link_a64c153234e6b6e2321ecabaf83f66d6d}{\string~Link}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{196   \textcolor{comment}{// Links are non-\/copyable as their name must be unique}}
+\DoxyCodeLine{197   \mbox{\hyperlink{classtesseract__scene__graph_1_1Link_a66b8dfd04b656d67b6d076f99e0c3394}{Link}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__scene__graph_1_1Link}{Link}}\& other) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{198   \mbox{\hyperlink{classtesseract__scene__graph_1_1Link}{Link}}\& \mbox{\hyperlink{classtesseract__scene__graph_1_1Link_af4c82cd2b51aa011c70ad34ef3d0ded5}{operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__scene__graph_1_1Link}{Link}}\& other) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{199 }
+\DoxyCodeLine{200   \mbox{\hyperlink{classtesseract__scene__graph_1_1Link_ad6980f15508ba452f7b3ac1528ba6de7}{Link}}(\mbox{\hyperlink{classtesseract__scene__graph_1_1Link}{Link}}\&\& other) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{201   \mbox{\hyperlink{classtesseract__scene__graph_1_1Link}{Link}}\& \mbox{\hyperlink{classtesseract__scene__graph_1_1Link_a138105347f4f2769d760d71139afd648}{operator=}}(\mbox{\hyperlink{classtesseract__scene__graph_1_1Link}{Link}}\&\& other) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{202 }
+\DoxyCodeLine{203   \textcolor{keyword}{const} std::string\& \mbox{\hyperlink{classtesseract__scene__graph_1_1Link_a20c8e01c19e00d01b058dec9410ddd94}{getName}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classtesseract__scene__graph_1_1Link_aa0f887a98e35fc977b46d79d56a2a7fd}{name\_}}; \}}
+\DoxyCodeLine{204 }
+\DoxyCodeLine{206   \mbox{\hyperlink{classtesseract__scene__graph_1_1Inertial_ab6bb54cb76a7a31768d2db41b43b5b63}{Inertial::Ptr}} \mbox{\hyperlink{classtesseract__scene__graph_1_1Link_afc0d758d2f7fd3cce4ad6cefc3246475}{inertial}};}
+\DoxyCodeLine{207 }
+\DoxyCodeLine{209   std::vector<Visual::Ptr> \mbox{\hyperlink{classtesseract__scene__graph_1_1Link_aa4d41b44549649a9795409c33707a45b}{visual}};}
+\DoxyCodeLine{210 }
+\DoxyCodeLine{212   std::vector<Collision::Ptr> \mbox{\hyperlink{classtesseract__scene__graph_1_1Link_ad62424fd624abb65bd4b6bc1c33eb5a2}{collision}};}
+\DoxyCodeLine{213 }
+\DoxyCodeLine{214   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__scene__graph_1_1Link_a591eae7457042a675bd7a79f536a4adc}{clear}}()}
+\DoxyCodeLine{215   \{}
+\DoxyCodeLine{216     this-\/>inertial.reset();}
+\DoxyCodeLine{217     this-\/>collision.clear();}
+\DoxyCodeLine{218     this-\/>visual.clear();}
+\DoxyCodeLine{219   \}}
+\DoxyCodeLine{220 }
+\DoxyCodeLine{221   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__scene__graph_1_1Link_a7aab2d4d67302302730152521d682661}{operator==}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__scene__graph_1_1Link}{Link}}\& rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{222   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__scene__graph_1_1Link_a96571c75f8d9826e343b7bf1ce2abd18}{operator!=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__scene__graph_1_1Link}{Link}}\& rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{223 }
+\DoxyCodeLine{228   \mbox{\hyperlink{classtesseract__scene__graph_1_1Link}{Link}} \mbox{\hyperlink{classtesseract__scene__graph_1_1Link_a2d49103d7f3c3555a62c7feb7b4e6c38}{clone}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classtesseract__scene__graph_1_1Link_a2d49103d7f3c3555a62c7feb7b4e6c38}{clone}}(\mbox{\hyperlink{classtesseract__scene__graph_1_1Link_aa0f887a98e35fc977b46d79d56a2a7fd}{name\_}}); \}}
+\DoxyCodeLine{229 }
+\DoxyCodeLine{231   \mbox{\hyperlink{classtesseract__scene__graph_1_1Link}{Link}} \mbox{\hyperlink{classtesseract__scene__graph_1_1Link_a6989771df3e0f5de6bc50a4298eb9086}{clone}}(\textcolor{keyword}{const} std::string\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}})\textcolor{keyword}{ const}}
+\DoxyCodeLine{232 \textcolor{keyword}{  }\{}
+\DoxyCodeLine{233     \mbox{\hyperlink{classtesseract__scene__graph_1_1Link}{Link}} ret(\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}});}
+\DoxyCodeLine{234     \textcolor{keywordflow}{if} (this-\/>inertial)}
+\DoxyCodeLine{235     \{}
+\DoxyCodeLine{236       ret.\mbox{\hyperlink{classtesseract__scene__graph_1_1Link_afc0d758d2f7fd3cce4ad6cefc3246475}{inertial}} = std::make\_shared<Inertial>(*(this-\/>inertial));}
+\DoxyCodeLine{237     \}}
+\DoxyCodeLine{238     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a53803beb6b02f370f4ff75b865341455}{c}} : this-\/>collision)}
+\DoxyCodeLine{239     \{}
+\DoxyCodeLine{240       ret.\mbox{\hyperlink{classtesseract__scene__graph_1_1Link_ad62424fd624abb65bd4b6bc1c33eb5a2}{collision}}.push\_back(std::make\_shared<Collision>(*\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a53803beb6b02f370f4ff75b865341455}{c}}));}
+\DoxyCodeLine{241     \}}
+\DoxyCodeLine{242     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& \mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}} : this-\/>visual)}
+\DoxyCodeLine{243     \{}
+\DoxyCodeLine{244       ret.\mbox{\hyperlink{classtesseract__scene__graph_1_1Link_aa4d41b44549649a9795409c33707a45b}{visual}}.push\_back(std::make\_shared<Visual>(*\mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}}));}
+\DoxyCodeLine{245     \}}
+\DoxyCodeLine{246     \textcolor{keywordflow}{return} ret;}
+\DoxyCodeLine{247   \}}
+\DoxyCodeLine{248 }
+\DoxyCodeLine{249 \textcolor{keyword}{private}:}
+\DoxyCodeLine{250   std::string \mbox{\hyperlink{classtesseract__scene__graph_1_1Link_aa0f887a98e35fc977b46d79d56a2a7fd}{name\_}};}
+\DoxyCodeLine{251   \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__scene__graph_1_1Link_ac98d07dd8f7b70e16ccb9a01abf56b9c}{boost::serialization::access}};}
+\DoxyCodeLine{252   \textcolor{keyword}{template} <\textcolor{keyword}{class} Archive>}
+\DoxyCodeLine{253   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__scene__graph_1_1Link_ae8dfcccc35c4f052c24f9770d989dc8c}{serialize}}(Archive\& ar, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} version);  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{254 \};}
+\DoxyCodeLine{255 }
+\DoxyCodeLine{256 \}  \textcolor{comment}{// namespace tesseract\_scene\_graph}}
+\DoxyCodeLine{257 }
+\DoxyCodeLine{258 \textcolor{preprocessor}{\#include <boost/serialization/export.hpp>}}
+\DoxyCodeLine{259 \textcolor{preprocessor}{\#include <boost/serialization/tracking.hpp>}}
+\DoxyCodeLine{260 BOOST\_CLASS\_EXPORT\_KEY2(\mbox{\hyperlink{classtesseract__scene__graph_1_1Material}{tesseract\_scene\_graph::Material}}, \textcolor{stringliteral}{"{}Material"{}})}
+\DoxyCodeLine{261 BOOST\_CLASS\_EXPORT\_KEY2(\mbox{\hyperlink{namespacetesseract__scene__graph}{tesseract\_scene\_graph}}::Inertial, "{}Inertial"{})}
+\DoxyCodeLine{262 BOOST\_CLASS\_EXPORT\_KEY2(\mbox{\hyperlink{namespacetesseract__scene__graph}{tesseract\_scene\_graph}}::Visual, "{}Visual"{})}
+\DoxyCodeLine{263 BOOST\_CLASS\_EXPORT\_KEY2(\mbox{\hyperlink{namespacetesseract__scene__graph}{tesseract\_scene\_graph}}::Collision, "{}Collision"{})}
+\DoxyCodeLine{264 BOOST\_CLASS\_EXPORT\_KEY2(\mbox{\hyperlink{namespacetesseract__scene__graph}{tesseract\_scene\_graph}}::Link, "{}Link"{})}
+\DoxyCodeLine{265 }
+\DoxyCodeLine{266 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_SCENE\_GRAPH\_LINK\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,59 @@
+\hypertarget{kdl__utils_8h_source}{}\doxysection{kdl\+\_\+utils.\+h}
+\label{kdl__utils_8h_source}\index{tesseract\_kinematics/kdl/include/tesseract\_kinematics/kdl/kdl\_utils.h@{tesseract\_kinematics/kdl/include/tesseract\_kinematics/kdl/kdl\_utils.h}}
+\mbox{\hyperlink{kdl__utils_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#ifndef TESSERACT\_KINEMATICS\_KDL\_UTILS\_H}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define TESSERACT\_KINEMATICS\_KDL\_UTILS\_H}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{macros_8h}{tesseract\_common/macros.h}}>}}
+\DoxyCodeLine{30 \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include <kdl/frames.hpp>}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include <kdl/jntarray.hpp>}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include <Eigen/Eigen>}}
+\DoxyCodeLine{34 \mbox{\hyperlink{namespaceTESSERACT__COMMON__IGNORE__WARNINGS__POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{tesseract__common_2include_2tesseract__common_2types_8h}{tesseract\_common/types.h}}>}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{tesseract__common_2include_2tesseract__common_2utils_8h}{tesseract\_common/utils.h}}>}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{graph_8h}{tesseract\_scene\_graph/graph.h}}>}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{kdl__parser_8h}{tesseract\_scene\_graph/kdl\_parser.h}}>}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{tesseract__kinematics_2core_2include_2tesseract__kinematics_2core_2utils_8h}{tesseract\_kinematics/core/utils.h}}>}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{tesseract__kinematics_2core_2include_2tesseract__kinematics_2core_2types_8h}{tesseract\_kinematics/core/types.h}}>}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__kinematics}{tesseract\_kinematics}}}
+\DoxyCodeLine{44 \{}
+\DoxyCodeLine{50 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__kinematics_a31f7f29dd370fc43ca385827cdc44947}{KDLToEigen}}(\textcolor{keyword}{const} KDL::Frame\& frame, Eigen::Isometry3d\& \mbox{\hyperlink{collision__core__unit_8cpp_a0711277889ece6b8e49c8ad05d361167}{transform}});}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{57 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__kinematics_a3f809ae73e283a469271cb69460079e3}{EigenToKDL}}(\textcolor{keyword}{const} Eigen::Isometry3d\& \mbox{\hyperlink{collision__core__unit_8cpp_a0711277889ece6b8e49c8ad05d361167}{transform}}, KDL::Frame\& frame);}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{64 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__kinematics_a31f7f29dd370fc43ca385827cdc44947}{KDLToEigen}}(\textcolor{keyword}{const} KDL::Jacobian\& \mbox{\hyperlink{kinematics__core__unit_8cpp_afd43241933d01af91643a779b829d7a7}{jacobian}}, Eigen::Ref<Eigen::MatrixXd> matrix);}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{72 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__kinematics_a31f7f29dd370fc43ca385827cdc44947}{KDLToEigen}}(\textcolor{keyword}{const} KDL::Jacobian\& \mbox{\hyperlink{kinematics__core__unit_8cpp_afd43241933d01af91643a779b829d7a7}{jacobian}}, \textcolor{keyword}{const} std::vector<int>\& q\_nrs, Eigen::Ref<Eigen::MatrixXd> matrix);}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{79 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__kinematics_a3f809ae73e283a469271cb69460079e3}{EigenToKDL}}(\textcolor{keyword}{const} Eigen::Ref<const Eigen::VectorXd>\& vec, KDL::JntArray\& \mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_ae41993a59637cf36532d3620b8203555}{joints}});}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{86 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__kinematics_a31f7f29dd370fc43ca385827cdc44947}{KDLToEigen}}(\textcolor{keyword}{const} KDL::JntArray\& \mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_ae41993a59637cf36532d3620b8203555}{joints}}, Eigen::Ref<Eigen::VectorXd> vec);}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{94 \textcolor{keyword}{struct }\mbox{\hyperlink{structtesseract__kinematics_1_1KDLChainData}{KDLChainData}}}
+\DoxyCodeLine{95 \{}
+\DoxyCodeLine{96   KDL::Chain \mbox{\hyperlink{structtesseract__kinematics_1_1KDLChainData_a33f8aa6387d9ac8769d098752e21821c}{robot\_chain}};                   }
+\DoxyCodeLine{97   KDL::Tree \mbox{\hyperlink{structtesseract__kinematics_1_1KDLChainData_a29524a06ef9a86b84be189362f472335}{kdl\_tree}};                       }
+\DoxyCodeLine{98   std::vector<std::string> \mbox{\hyperlink{structtesseract__kinematics_1_1KDLChainData_a26248ca5b92f3e7dce3949b27cfec69c}{joint\_names}};     }
+\DoxyCodeLine{99   std::string \mbox{\hyperlink{structtesseract__kinematics_1_1KDLChainData_a5f89315b49dd8db28ac82d7d9c8da980}{base\_link\_name}};               }
+\DoxyCodeLine{100   std::string \mbox{\hyperlink{structtesseract__kinematics_1_1KDLChainData_a45750950dd1ba89020507fc61ce4be41}{tip\_link\_name}};                }
+\DoxyCodeLine{101   std::map<std::string, int> \mbox{\hyperlink{structtesseract__kinematics_1_1KDLChainData_a7f54eb0a5b65c26ed684c5bf9d9173c7}{segment\_index}}; }
+\DoxyCodeLine{102   std::vector<std::pair<std::string, std::string>> \mbox{\hyperlink{structtesseract__kinematics_1_1KDLChainData_a51f4e72eef74eef26ad5d56480fc39f7}{chains}}; }
+\DoxyCodeLine{103 \};}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{113 \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacetesseract__kinematics_a306a7754f21af1cbb624c86feed433d0}{parseSceneGraph}}(\mbox{\hyperlink{structtesseract__kinematics_1_1KDLChainData}{KDLChainData}}\& results,}
+\DoxyCodeLine{114                      \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph}{tesseract\_scene\_graph::SceneGraph}}\& \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a8d4d0dc3a6b9a7030970bf9ed3764756}{scene\_graph}},}
+\DoxyCodeLine{115                      \textcolor{keyword}{const} std::vector<std::pair<std::string, std::string>>\& chains);}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{125 \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacetesseract__kinematics_a306a7754f21af1cbb624c86feed433d0}{parseSceneGraph}}(\mbox{\hyperlink{structtesseract__kinematics_1_1KDLChainData}{KDLChainData}}\& results,}
+\DoxyCodeLine{126                      \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph}{tesseract\_scene\_graph::SceneGraph}}\& \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a8d4d0dc3a6b9a7030970bf9ed3764756}{scene\_graph}},}
+\DoxyCodeLine{127                      \textcolor{keyword}{const} std::string\& base\_name,}
+\DoxyCodeLine{128                      \textcolor{keyword}{const} std::string\& tip\_name);}
+\DoxyCodeLine{129 \}  \textcolor{comment}{// namespace tesseract\_kinematics}}
+\DoxyCodeLine{130 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_KINEMATICS\_KDL\_UTILS\_H}}
+
+\end{DoxyCode}

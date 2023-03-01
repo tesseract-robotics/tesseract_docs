@@ -1,0 +1,123 @@
+\hypertarget{classtesseract__common_1_1Timer}{}\doxysection{tesseract\+\_\+common\+::Timer Class Reference}
+\label{classtesseract__common_1_1Timer}\index{tesseract\_common::Timer@{tesseract\_common::Timer}}
+
+
+A simple timer class leveraging chrono high resolution clock.  
+
+
+
+
+{\ttfamily \#include $<$timer.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classtesseract__common_1_1Timer_a7cdd88b06037fa766104653fb08448ac}{start}} ()
+\begin{DoxyCompactList}\small\item\em Start the timer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__common_1_1Timer_a290e1a9d727725f877269785aa7155a9}{stop}} ()
+\begin{DoxyCompactList}\small\item\em Stop the timer. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classtesseract__common_1_1Timer_a67ff4fdf17553c1be2e9d5f8c0fe067d}{elapsed\+Milliseconds}} () const
+\begin{DoxyCompactList}\small\item\em Get the elapsed time in milliseconds. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classtesseract__common_1_1Timer_ae9ac9689c7024b16c6f80fa0f0548222}{elapsed\+Seconds}} () const
+\begin{DoxyCompactList}\small\item\em Get the elapsed time in seconds. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{classtesseract__common_1_1Timer_a469fe850e541503b71b32ad7fb223ac8}{Clock}} = std\+::chrono\+::high\+\_\+resolution\+\_\+clock
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::chrono\+::time\+\_\+point$<$ \mbox{\hyperlink{classtesseract__common_1_1Timer_a469fe850e541503b71b32ad7fb223ac8}{Clock}} $>$ \mbox{\hyperlink{classtesseract__common_1_1Timer_a82fabf6e8f3fc1d83de91c0441bce110}{start\+\_\+time\+\_\+}}
+\item 
+std\+::chrono\+::time\+\_\+point$<$ \mbox{\hyperlink{classtesseract__common_1_1Timer_a469fe850e541503b71b32ad7fb223ac8}{Clock}} $>$ \mbox{\hyperlink{classtesseract__common_1_1Timer_a3ce5e71a5cfca3e4be8e1bfd43b5e31d}{end\+\_\+time\+\_\+}}
+\item 
+bool \mbox{\hyperlink{classtesseract__common_1_1Timer_affa35df66b64ec03c9088dd3ef15d5aa}{running\+\_\+}} \{ false \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A simple timer class leveraging chrono high resolution clock. 
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classtesseract__common_1_1Timer_a469fe850e541503b71b32ad7fb223ac8}\label{classtesseract__common_1_1Timer_a469fe850e541503b71b32ad7fb223ac8}} 
+\index{tesseract\_common::Timer@{tesseract\_common::Timer}!Clock@{Clock}}
+\index{Clock@{Clock}!tesseract\_common::Timer@{tesseract\_common::Timer}}
+\doxysubsubsection{\texorpdfstring{Clock}{Clock}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classtesseract__common_1_1Timer_a469fe850e541503b71b32ad7fb223ac8}{tesseract\+\_\+common\+::\+Timer\+::\+Clock}} =  std\+::chrono\+::high\+\_\+resolution\+\_\+clock\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtesseract__common_1_1Timer_a67ff4fdf17553c1be2e9d5f8c0fe067d}\label{classtesseract__common_1_1Timer_a67ff4fdf17553c1be2e9d5f8c0fe067d}} 
+\index{tesseract\_common::Timer@{tesseract\_common::Timer}!elapsedMilliseconds@{elapsedMilliseconds}}
+\index{elapsedMilliseconds@{elapsedMilliseconds}!tesseract\_common::Timer@{tesseract\_common::Timer}}
+\doxysubsubsection{\texorpdfstring{elapsedMilliseconds()}{elapsedMilliseconds()}}
+{\footnotesize\ttfamily double tesseract\+\_\+common\+::\+Timer\+::elapsed\+Milliseconds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the elapsed time in milliseconds. 
+
+If timer is actively running it will use Clock\+::now() as the end time \begin{DoxyReturn}{Returns}
+The elapsed time in milliseconds 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__common_1_1Timer_ae9ac9689c7024b16c6f80fa0f0548222}\label{classtesseract__common_1_1Timer_ae9ac9689c7024b16c6f80fa0f0548222}} 
+\index{tesseract\_common::Timer@{tesseract\_common::Timer}!elapsedSeconds@{elapsedSeconds}}
+\index{elapsedSeconds@{elapsedSeconds}!tesseract\_common::Timer@{tesseract\_common::Timer}}
+\doxysubsubsection{\texorpdfstring{elapsedSeconds()}{elapsedSeconds()}}
+{\footnotesize\ttfamily double tesseract\+\_\+common\+::\+Timer\+::elapsed\+Seconds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the elapsed time in seconds. 
+
+If timer is actively running it will use Clock\+::now() as the end time \begin{DoxyReturn}{Returns}
+The elapsed time in seconds 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__common_1_1Timer_a7cdd88b06037fa766104653fb08448ac}\label{classtesseract__common_1_1Timer_a7cdd88b06037fa766104653fb08448ac}} 
+\index{tesseract\_common::Timer@{tesseract\_common::Timer}!start@{start}}
+\index{start@{start}!tesseract\_common::Timer@{tesseract\_common::Timer}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void tesseract\+\_\+common\+::\+Timer\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Start the timer. 
+
+\mbox{\Hypertarget{classtesseract__common_1_1Timer_a290e1a9d727725f877269785aa7155a9}\label{classtesseract__common_1_1Timer_a290e1a9d727725f877269785aa7155a9}} 
+\index{tesseract\_common::Timer@{tesseract\_common::Timer}!stop@{stop}}
+\index{stop@{stop}!tesseract\_common::Timer@{tesseract\_common::Timer}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void tesseract\+\_\+common\+::\+Timer\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Stop the timer. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classtesseract__common_1_1Timer_a3ce5e71a5cfca3e4be8e1bfd43b5e31d}\label{classtesseract__common_1_1Timer_a3ce5e71a5cfca3e4be8e1bfd43b5e31d}} 
+\index{tesseract\_common::Timer@{tesseract\_common::Timer}!end\_time\_@{end\_time\_}}
+\index{end\_time\_@{end\_time\_}!tesseract\_common::Timer@{tesseract\_common::Timer}}
+\doxysubsubsection{\texorpdfstring{end\_time\_}{end\_time\_}}
+{\footnotesize\ttfamily std\+::chrono\+::time\+\_\+point$<$\mbox{\hyperlink{classtesseract__common_1_1Timer_a469fe850e541503b71b32ad7fb223ac8}{Clock}}$>$ tesseract\+\_\+common\+::\+Timer\+::end\+\_\+time\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__common_1_1Timer_affa35df66b64ec03c9088dd3ef15d5aa}\label{classtesseract__common_1_1Timer_affa35df66b64ec03c9088dd3ef15d5aa}} 
+\index{tesseract\_common::Timer@{tesseract\_common::Timer}!running\_@{running\_}}
+\index{running\_@{running\_}!tesseract\_common::Timer@{tesseract\_common::Timer}}
+\doxysubsubsection{\texorpdfstring{running\_}{running\_}}
+{\footnotesize\ttfamily bool tesseract\+\_\+common\+::\+Timer\+::running\+\_\+ \{ false \}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__common_1_1Timer_a82fabf6e8f3fc1d83de91c0441bce110}\label{classtesseract__common_1_1Timer_a82fabf6e8f3fc1d83de91c0441bce110}} 
+\index{tesseract\_common::Timer@{tesseract\_common::Timer}!start\_time\_@{start\_time\_}}
+\index{start\_time\_@{start\_time\_}!tesseract\_common::Timer@{tesseract\_common::Timer}}
+\doxysubsubsection{\texorpdfstring{start\_time\_}{start\_time\_}}
+{\footnotesize\ttfamily std\+::chrono\+::time\+\_\+point$<$\mbox{\hyperlink{classtesseract__common_1_1Timer_a469fe850e541503b71b32ad7fb223ac8}{Clock}}$>$ tesseract\+\_\+common\+::\+Timer\+::start\+\_\+time\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+tesseract\+\_\+common/include/tesseract\+\_\+common/\mbox{\hyperlink{timer_8h}{timer.\+h}}\end{DoxyCompactItemize}

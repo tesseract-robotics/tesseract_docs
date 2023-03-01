@@ -1,0 +1,108 @@
+\hypertarget{tesseract__common_2include_2tesseract__common_2types_8h}{}\doxysection{tesseract\+\_\+common/include/tesseract\+\_\+common/types.h File Reference}
+\label{tesseract__common_2include_2tesseract__common_2types_8h}\index{tesseract\_common/include/tesseract\_common/types.h@{tesseract\_common/include/tesseract\_common/types.h}}
+
+
+Common Tesseract Types.  
+
+
+{\ttfamily \#include $<$tesseract\+\_\+common/macros.\+h$>$}\newline
+{\ttfamily \#include $<$boost/serialization/access.\+hpp$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Geometry$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
+{\ttfamily \#include $<$boost/filesystem.\+hpp$>$}\newline
+{\ttfamily \#include $<$yaml-\/cpp/yaml.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+common/kinematic\+\_\+limits.\+h$>$}\newline
+{\ttfamily \#include $<$boost/serialization/export.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/serialization/tracking.\+hpp$>$}\newline
+Include dependency graph for types.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structtesseract__common_1_1PairHash}{tesseract\+\_\+common\+::\+Pair\+Hash}}
+\item 
+struct \mbox{\hyperlink{structtesseract__common_1_1PluginInfo}{tesseract\+\_\+common\+::\+Plugin\+Info}}
+\begin{DoxyCompactList}\small\item\em The Plugin Information struct. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structtesseract__common_1_1PluginInfoContainer}{tesseract\+\_\+common\+::\+Plugin\+Info\+Container}}
+\item 
+struct \mbox{\hyperlink{structtesseract__common_1_1KinematicsPluginInfo}{tesseract\+\_\+common\+::\+Kinematics\+Plugin\+Info}}
+\begin{DoxyCompactList}\small\item\em The kinematics plugin information structure. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structtesseract__common_1_1ContactManagersPluginInfo}{tesseract\+\_\+common\+::\+Contact\+Managers\+Plugin\+Info}}
+\begin{DoxyCompactList}\small\item\em The contact managers plugin information structure. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structtesseract__common_1_1TaskComposerPluginInfo}{tesseract\+\_\+common\+::\+Task\+Composer\+Plugin\+Info}}
+\begin{DoxyCompactList}\small\item\em The task composer plugin information structure. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structtesseract__common_1_1CalibrationInfo}{tesseract\+\_\+common\+::\+Calibration\+Info}}
+\begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{structtesseract__common_1_1CalibrationInfo}{Calibration\+Info}} struct. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacetesseract__common}{tesseract\+\_\+common}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$ }\\using \mbox{\hyperlink{namespacetesseract__common_a000d15c3ab8d8ba4ebdaae64153b053a}{tesseract\+\_\+common\+::\+Aligned\+Vector}} = std\+::vector$<$ \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}}, Eigen\+::aligned\+\_\+allocator$<$ \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$ $>$
+\begin{DoxyCompactList}\small\item\em Enable easy switching to std\+::filesystem when available. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Key , typename Value $>$ }\\using \mbox{\hyperlink{namespacetesseract__common_a2c5a4b6149060671cf8c3f9d15ef58c4}{tesseract\+\_\+common\+::\+Aligned\+Map}} = std\+::map$<$ Key, Value, std\+::less$<$ Key $>$, Eigen\+::aligned\+\_\+allocator$<$ std\+::pair$<$ const Key, Value $>$ $>$ $>$
+\item 
+{\footnotesize template$<$typename Key , typename Value $>$ }\\using \mbox{\hyperlink{namespacetesseract__common_a85a5c73ede3e67335c3e09f9f3bc33a3}{tesseract\+\_\+common\+::\+Aligned\+Unordered\+Map}} = std\+::unordered\+\_\+map$<$ Key, Value, std\+::hash$<$ Key $>$, std\+::equal\+\_\+to$<$ Key $>$, Eigen\+::aligned\+\_\+allocator$<$ std\+::pair$<$ const Key, Value $>$ $>$ $>$
+\item 
+using \mbox{\hyperlink{namespacetesseract__common_a94d9921fc7ed323609ac57d06f939cb6}{tesseract\+\_\+common\+::\+Vector\+Isometry3d}} = Aligned\+Vector$<$ Eigen\+::\+Isometry3d $>$
+\item 
+using \mbox{\hyperlink{namespacetesseract__common_a7f208ea8b9c62f41c593647319d56f37}{tesseract\+\_\+common\+::\+Vector\+Vector4d}} = Aligned\+Vector$<$ Eigen\+::\+Vector4d $>$
+\item 
+using \mbox{\hyperlink{namespacetesseract__common_af89ed6517f4c84bdb2b037bb40f7d9d9}{tesseract\+\_\+common\+::\+Vector\+Vector3d}} = std\+::vector$<$ Eigen\+::\+Vector3d $>$
+\item 
+using \mbox{\hyperlink{namespacetesseract__common_ac60e1af30f961fc086b69e330c6434d4}{tesseract\+\_\+common\+::\+Vector\+Vector2d}} = Aligned\+Vector$<$ Eigen\+::\+Vector2d $>$
+\item 
+using \mbox{\hyperlink{namespacetesseract__common_a67bde3cb7bb235f0f61c370ef8bc74d8}{tesseract\+\_\+common\+::\+Transform\+Map}} = Aligned\+Map$<$ std\+::string, Eigen\+::\+Isometry3d $>$
+\item 
+using \mbox{\hyperlink{namespacetesseract__common_a917718f518f98714fce17e831ec1ea11}{tesseract\+\_\+common\+::\+Toolpath}} = Aligned\+Vector$<$ Vector\+Isometry3d $>$
+\item 
+using \mbox{\hyperlink{namespacetesseract__common_a431ff65777ee0bed71e7671390638244}{tesseract\+\_\+common\+::\+Traj\+Array}} = Eigen\+::\+Matrix$<$ double, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic, Eigen\+::\+Row\+Major $>$
+\item 
+using \mbox{\hyperlink{namespacetesseract__common_a5b28b7ae665b374a7ca166d496f648ce}{tesseract\+\_\+common\+::\+Link\+Names\+Pair}} = std\+::pair$<$ std\+::string, std\+::string $>$
+\item 
+using \mbox{\hyperlink{namespacetesseract__common_a43d1f6e0418164a6db0e1c447150340e}{tesseract\+\_\+common\+::\+Plugin\+Info\+Map}} = std\+::map$<$ std\+::string, Plugin\+Info $>$
+\begin{DoxyCompactList}\small\item\em A map of \mbox{\hyperlink{structtesseract__common_1_1PluginInfo}{Plugin\+Info}} to user defined name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Link\+Names\+Pair \mbox{\hyperlink{namespacetesseract__common_a11bc9620a27eede3300420410e0b4a7a}{tesseract\+\_\+common\+::make\+Ordered\+Link\+Pair}} (const std\+::string \&link\+\_\+name1, const std\+::string \&link\+\_\+name2)
+\begin{DoxyCompactList}\small\item\em Create a pair of strings, where the pair.\+first is always \texorpdfstring{$<$}{<}= pair.\+second. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Common Tesseract Types. 
+
+\begin{DoxyAuthor}{Author}
+Levi Armstrong 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+January 18, 2018 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+TODO 
+\end{DoxyVersion}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000062}{Bug}}]No known bugs\end{DoxyRefDesc}
+
+
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2017, Southwest Research Institute
+\end{DoxyCopyright}
+\begin{DoxyParagraph}{License}
+Software License Agreement (Apache License) 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+Licensed under the Apache License, Version 2.\+0 (the \char`\"{}\+License\char`\"{}); you may not use this file except in compliance with the License. You may obtain a copy of the License at \href{http://www.apache.org/licenses/LICENSE-2.0}{\texttt{ http\+://www.\+apache.\+org/licenses/\+LICENSE-\/2.\+0}} 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \char`\"{}\+AS IS\char`\"{} BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License. 
+\end{DoxyParagraph}

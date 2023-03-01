@@ -1,0 +1,123 @@
+\hypertarget{classikfast_1_1IkSolutionBase}{}\doxysection{ikfast\+::Ik\+Solution\+Base\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\label{classikfast_1_1IkSolutionBase}\index{ikfast::IkSolutionBase$<$ T $>$@{ikfast::IkSolutionBase$<$ T $>$}}
+
+
+The discrete solutions are returned in this structure.  
+
+
+
+
+{\ttfamily \#include $<$ikfast.\+h$>$}
+
+
+
+Inheritance diagram for ikfast\+::Ik\+Solution\+Base\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classikfast_1_1IkSolutionBase_aaf2244322c7463d52039a122bf1160f3}{$\sim$\+Ik\+Solution\+Base}} ()=default
+\item 
+virtual void \mbox{\hyperlink{classikfast_1_1IkSolutionBase_a9405530feb49f12f56c3175e7150c66f}{Get\+Solution}} (\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $\ast$solution, const \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $\ast$freevalues) const =0
+\begin{DoxyCompactList}\small\item\em gets a concrete solution \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classikfast_1_1IkSolutionBase_a4e8afdc564a90aeed598d276d4f1bd3f}{Get\+Solution}} (std\+::vector$<$ \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$ \&solution, const std\+::vector$<$ \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$ \&freevalues) const
+\begin{DoxyCompactList}\small\item\em std\+::vector version of \mbox{\hyperlink{classikfast_1_1IkSolutionBase_a9405530feb49f12f56c3175e7150c66f}{Get\+Solution}} \end{DoxyCompactList}\item 
+virtual const std\+::vector$<$ int $>$ \& \mbox{\hyperlink{classikfast_1_1IkSolutionBase_a4d3af9accc64ad638a1c7175881ba931}{Get\+Free}} () const =0
+\begin{DoxyCompactList}\small\item\em Gets the indices of the configuration space that have to be preset before a full solution can be returned. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classikfast_1_1IkSolutionBase_a94ac1496405343f4c7ad2a3c07b375cc}{Get\+DOF}} () const =0
+\begin{DoxyCompactList}\small\item\em the dof of the solution \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}}$>$\newline
+class ikfast\+::\+Ik\+Solution\+Base$<$ T $>$}
+The discrete solutions are returned in this structure. 
+
+Sometimes the joint axes of the robot can align allowing an infinite number of solutions. Stores all these solutions in the form of free variables that the user has to set when querying the solution. Its prototype is\+: 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classikfast_1_1IkSolutionBase_aaf2244322c7463d52039a122bf1160f3}\label{classikfast_1_1IkSolutionBase_aaf2244322c7463d52039a122bf1160f3}} 
+\index{ikfast::IkSolutionBase$<$ T $>$@{ikfast::IkSolutionBase$<$ T $>$}!````~IkSolutionBase@{$\sim$IkSolutionBase}}
+\index{````~IkSolutionBase@{$\sim$IkSolutionBase}!ikfast::IkSolutionBase$<$ T $>$@{ikfast::IkSolutionBase$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$IkSolutionBase()}{~IkSolutionBase()}}
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$ \\
+virtual \mbox{\hyperlink{classikfast_1_1IkSolutionBase}{ikfast\+::\+Ik\+Solution\+Base}}$<$ \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$\+::$\sim$\mbox{\hyperlink{classikfast_1_1IkSolutionBase}{Ik\+Solution\+Base}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classikfast_1_1IkSolutionBase_a94ac1496405343f4c7ad2a3c07b375cc}\label{classikfast_1_1IkSolutionBase_a94ac1496405343f4c7ad2a3c07b375cc}} 
+\index{ikfast::IkSolutionBase$<$ T $>$@{ikfast::IkSolutionBase$<$ T $>$}!GetDOF@{GetDOF}}
+\index{GetDOF@{GetDOF}!ikfast::IkSolutionBase$<$ T $>$@{ikfast::IkSolutionBase$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{GetDOF()}{GetDOF()}}
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$ \\
+virtual int \mbox{\hyperlink{classikfast_1_1IkSolutionBase}{ikfast\+::\+Ik\+Solution\+Base}}$<$ \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$\+::\+Get\+DOF (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+the dof of the solution 
+
+
+
+Implemented in \mbox{\hyperlink{classikfast_1_1IkSolution_a7cca4d33349888047513cc374c01e5f4}{ikfast\+::\+Ik\+Solution$<$ T $>$}}.
+
+\mbox{\Hypertarget{classikfast_1_1IkSolutionBase_a4d3af9accc64ad638a1c7175881ba931}\label{classikfast_1_1IkSolutionBase_a4d3af9accc64ad638a1c7175881ba931}} 
+\index{ikfast::IkSolutionBase$<$ T $>$@{ikfast::IkSolutionBase$<$ T $>$}!GetFree@{GetFree}}
+\index{GetFree@{GetFree}!ikfast::IkSolutionBase$<$ T $>$@{ikfast::IkSolutionBase$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{GetFree()}{GetFree()}}
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$ \\
+virtual const std\+::vector$<$ int $>$ \& \mbox{\hyperlink{classikfast_1_1IkSolutionBase}{ikfast\+::\+Ik\+Solution\+Base}}$<$ \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$\+::\+Get\+Free (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets the indices of the configuration space that have to be preset before a full solution can be returned. 
+
+\begin{DoxyReturn}{Returns}
+vector of indices indicating the free parameters 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classikfast_1_1IkSolution_ad3151e14764a655ccc82496a27bf6e51}{ikfast\+::\+Ik\+Solution$<$ T $>$}}.
+
+\mbox{\Hypertarget{classikfast_1_1IkSolutionBase_a4e8afdc564a90aeed598d276d4f1bd3f}\label{classikfast_1_1IkSolutionBase_a4e8afdc564a90aeed598d276d4f1bd3f}} 
+\index{ikfast::IkSolutionBase$<$ T $>$@{ikfast::IkSolutionBase$<$ T $>$}!GetSolution@{GetSolution}}
+\index{GetSolution@{GetSolution}!ikfast::IkSolutionBase$<$ T $>$@{ikfast::IkSolutionBase$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{GetSolution()}{GetSolution()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$ \\
+virtual void \mbox{\hyperlink{classikfast_1_1IkSolutionBase}{ikfast\+::\+Ik\+Solution\+Base}}$<$ \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$\+::\+Get\+Solution (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$ \&}]{solution,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$ \&}]{freevalues }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+std\+::vector version of \mbox{\hyperlink{classikfast_1_1IkSolutionBase_a9405530feb49f12f56c3175e7150c66f}{Get\+Solution}} 
+
+
+
+Reimplemented in \mbox{\hyperlink{classikfast_1_1IkSolution_a3a326a9fb5b55108e5f8e5192f0a1318}{ikfast\+::\+Ik\+Solution$<$ T $>$}}.
+
+\mbox{\Hypertarget{classikfast_1_1IkSolutionBase_a9405530feb49f12f56c3175e7150c66f}\label{classikfast_1_1IkSolutionBase_a9405530feb49f12f56c3175e7150c66f}} 
+\index{ikfast::IkSolutionBase$<$ T $>$@{ikfast::IkSolutionBase$<$ T $>$}!GetSolution@{GetSolution}}
+\index{GetSolution@{GetSolution}!ikfast::IkSolutionBase$<$ T $>$@{ikfast::IkSolutionBase$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{GetSolution()}{GetSolution()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$ \\
+virtual void \mbox{\hyperlink{classikfast_1_1IkSolutionBase}{ikfast\+::\+Ik\+Solution\+Base}}$<$ \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$\+::\+Get\+Solution (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $\ast$}]{solution,  }\item[{const \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $\ast$}]{freevalues }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+gets a concrete solution 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em solution} & the result \\
+\hline
+\mbox{\texttt{ in}}  & {\em freevalues} & values for the free parameters \textbackslash{}se Get\+Free \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classikfast_1_1IkSolution_afa05dd08f29e8ca4713df8e0b2a07d0c}{ikfast\+::\+Ik\+Solution$<$ T $>$}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+tesseract\+\_\+kinematics/ikfast/include/tesseract\+\_\+kinematics/ikfast/external/\mbox{\hyperlink{ikfast_8h}{ikfast.\+h}}\end{DoxyCompactItemize}

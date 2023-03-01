@@ -1,0 +1,342 @@
+\hypertarget{resource__locator__unit_8cpp}{}\doxysection{tesseract\+\_\+common/test/resource\+\_\+locator\+\_\+unit.cpp File Reference}
+\label{resource__locator__unit_8cpp}\index{tesseract\_common/test/resource\_locator\_unit.cpp@{tesseract\_common/test/resource\_locator\_unit.cpp}}
+{\ttfamily \#include $<$tesseract\+\_\+common/macros.\+h$>$}\newline
+{\ttfamily \#include $<$gtest/gtest.\+h$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+common/resource\+\_\+locator.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+common/types.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+common/unit\+\_\+test\+\_\+utils.\+h$>$}\newline
+Include dependency graph for resource\+\_\+locator\+\_\+unit.\+cpp\+:
+% FIG 0
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classTestResourceLocator}{Test\+Resource\+Locator}}
+\begin{DoxyCompactList}\small\item\em Resource locator implementation using a provided function to locate file resources. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+tesseract\+\_\+common\+::fs\+::path \mbox{\hyperlink{resource__locator__unit_8cpp_a803157d97edf460a9f115ca41b182e73}{file\+\_\+path}} (\+\_\+\+\_\+\+FILE\+\_\+\+\_\+)
+\item 
+\mbox{\hyperlink{resource__locator__unit_8cpp_aa29faa3ea34a6a91c4095e628cd50f22}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{resource__locator__unit_8cpp_acf8f69b40e998bd8f5330be6b90ab7dc}{resource}} !=nullptr)
+\item 
+\mbox{\hyperlink{resource__locator__unit_8cpp_a471cb40a8800a1a37b6de72eadb11707}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{resource__locator__unit_8cpp_acf8f69b40e998bd8f5330be6b90ab7dc}{resource}}-\/$>$is\+File())
+\item 
+\mbox{\hyperlink{resource__locator__unit_8cpp_a8c9c4f574ed7f4822e89fe9836417200}{EXPECT\+\_\+\+EQ}} (\mbox{\hyperlink{resource__locator__unit_8cpp_acf8f69b40e998bd8f5330be6b90ab7dc}{resource}}-\/$>$get\+Url(), \char`\"{}package\+://tesseract\+\_\+common/package.\+xml\char`\"{})
+\item 
+\mbox{\hyperlink{resource__locator__unit_8cpp_a3698b0caf7c4d4fc14e4c80b5f43814c}{EXPECT\+\_\+\+EQ}} (tesseract\+\_\+common\+::fs\+::path(\mbox{\hyperlink{resource__locator__unit_8cpp_acf8f69b40e998bd8f5330be6b90ab7dc}{resource}}-\/$>$get\+File\+Path()),(\mbox{\hyperlink{resource__locator__unit_8cpp_a314de485e4a4b5454ffba827efda6480}{package\+\_\+path}}/\char`\"{}package.\+xml\char`\"{}))
+\item 
+\mbox{\hyperlink{resource__locator__unit_8cpp_a3bfed5e45a66c0cb4ed9bd4ee600abbb}{EXPECT\+\_\+\+FALSE}} (\mbox{\hyperlink{resource__locator__unit_8cpp_acf8f69b40e998bd8f5330be6b90ab7dc}{resource}}-\/$>$get\+Resource\+Contents().empty())
+\item 
+\mbox{\hyperlink{resource__locator__unit_8cpp_a5496ffffe260973b7fe55388e767b06d}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{resource__locator__unit_8cpp_acf8f69b40e998bd8f5330be6b90ab7dc}{resource}}-\/$>$get\+Resource\+Content\+Stream() !=nullptr)
+\item 
+\mbox{\hyperlink{resource__locator__unit_8cpp_a4feed1c9f68936417bc7668651cc56fa}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{resource__locator__unit_8cpp_ab74140b9018cd427d0b685f2cd27777d}{sub\+\_\+resource}} !=nullptr)
+\item 
+\mbox{\hyperlink{resource__locator__unit_8cpp_a90b2d63ee2bf16d656dc3f798ec09ac7}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{resource__locator__unit_8cpp_ab74140b9018cd427d0b685f2cd27777d}{sub\+\_\+resource}}-\/$>$is\+File())
+\item 
+\mbox{\hyperlink{resource__locator__unit_8cpp_a860ed92f1320639409049d250196db8f}{EXPECT\+\_\+\+EQ}} (\mbox{\hyperlink{resource__locator__unit_8cpp_ab74140b9018cd427d0b685f2cd27777d}{sub\+\_\+resource}}-\/$>$get\+Url(), \char`\"{}package\+://tesseract\+\_\+common/colcon.\+pkg\char`\"{})
+\item 
+\mbox{\hyperlink{resource__locator__unit_8cpp_ae739d0d797856d6e01d8315101648430}{EXPECT\+\_\+\+EQ}} (tesseract\+\_\+common\+::fs\+::path(\mbox{\hyperlink{resource__locator__unit_8cpp_ab74140b9018cd427d0b685f2cd27777d}{sub\+\_\+resource}}-\/$>$get\+File\+Path()),(\mbox{\hyperlink{resource__locator__unit_8cpp_a314de485e4a4b5454ffba827efda6480}{package\+\_\+path}}/\char`\"{}colcon.\+pkg\char`\"{}))
+\item 
+\mbox{\hyperlink{resource__locator__unit_8cpp_a11f2b165af6255093b77b2f4cb8693af}{EXPECT\+\_\+\+FALSE}} (\mbox{\hyperlink{resource__locator__unit_8cpp_ab74140b9018cd427d0b685f2cd27777d}{sub\+\_\+resource}}-\/$>$get\+Resource\+Contents().empty())
+\item 
+\mbox{\hyperlink{resource__locator__unit_8cpp_af09359e2719c34f5d333a89d02552ea3}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{resource__locator__unit_8cpp_ab74140b9018cd427d0b685f2cd27777d}{sub\+\_\+resource}}-\/$>$get\+Resource\+Content\+Stream() !=nullptr)
+\item 
+\mbox{\hyperlink{resource__locator__unit_8cpp_a4b6bfacaa27b65a82bbb93b85576d7ee}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{resource__locator__unit_8cpp_a4cd33f8b0cd4bb9fd084288f8c6a399a}{sub\+\_\+resource\+\_\+empty}}==nullptr)
+\item 
+\mbox{\hyperlink{resource__locator__unit_8cpp_adfbc48c23139a6783236e46cb6a78f2e}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{resource__locator__unit_8cpp_a8bc7d15922e66c545a7c6ebf4f573239}{resource\+\_\+empty}}==nullptr)
+\item 
+\mbox{\hyperlink{resource__locator__unit_8cpp_aa15dec59b2ba58ef7206bb7e4b64599f}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{resource__locator__unit_8cpp_acab2e5f8809d7aebe38882be300e0c00}{resource\+\_\+does\+\_\+not\+\_\+exist}} !=nullptr)
+\item 
+\mbox{\hyperlink{resource__locator__unit_8cpp_a37a7e57776ab1486ac388874ca984763}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{resource__locator__unit_8cpp_acab2e5f8809d7aebe38882be300e0c00}{resource\+\_\+does\+\_\+not\+\_\+exist}}-\/$>$get\+Resource\+Contents().empty())
+\item 
+\mbox{\hyperlink{resource__locator__unit_8cpp_a13e60f8c1400544bc2953e5eb6390471}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{resource__locator__unit_8cpp_acab2e5f8809d7aebe38882be300e0c00}{resource\+\_\+does\+\_\+not\+\_\+exist}}-\/$>$get\+Resource\+Content\+Stream()==nullptr)
+\item 
+\mbox{\hyperlink{resource__locator__unit_8cpp_ab6a2f3202de6f621d783a429bd906a6c}{putenv}} (\mbox{\hyperlink{collision__margin__data__unit_8cpp_a0992235f6cab11fba6116193c7f42b8b}{env\+\_\+var.\+data}}())
+\item 
+\mbox{\hyperlink{resource__locator__unit_8cpp_ad334d4cfb728de502300cc1337b66c4d}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{resource__locator__unit_8cpp_ac6c064d21fc49a8b154ddd3509b46b5e}{byte\+\_\+resource}} !=nullptr)
+\item 
+\mbox{\hyperlink{resource__locator__unit_8cpp_a3d15f0e67252ce33f65b6ce1e44c9ed5}{EXPECT\+\_\+\+FALSE}} (\mbox{\hyperlink{resource__locator__unit_8cpp_ac6c064d21fc49a8b154ddd3509b46b5e}{byte\+\_\+resource}}-\/$>$is\+File())
+\item 
+\mbox{\hyperlink{resource__locator__unit_8cpp_ad0ece47d9b43465367d2c846d2d48e6c}{EXPECT\+\_\+\+EQ}} (\mbox{\hyperlink{resource__locator__unit_8cpp_ac6c064d21fc49a8b154ddd3509b46b5e}{byte\+\_\+resource}}-\/$>$get\+Url(), \char`\"{}package\+://tesseract\+\_\+common/package.\+xml\char`\"{})
+\item 
+\mbox{\hyperlink{resource__locator__unit_8cpp_a1f2c49eff9a2c57a5816654d14948c66}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{resource__locator__unit_8cpp_ac6c064d21fc49a8b154ddd3509b46b5e}{byte\+\_\+resource}}-\/$>$get\+File\+Path().empty())
+\item 
+\mbox{\hyperlink{resource__locator__unit_8cpp_a84929574bfae8e42b28804a232570483}{EXPECT\+\_\+\+FALSE}} (\mbox{\hyperlink{resource__locator__unit_8cpp_ac6c064d21fc49a8b154ddd3509b46b5e}{byte\+\_\+resource}}-\/$>$get\+Resource\+Contents().empty())
+\item 
+\mbox{\hyperlink{resource__locator__unit_8cpp_ad28015acfb3180f0971cf390fda7b490}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{resource__locator__unit_8cpp_ac6c064d21fc49a8b154ddd3509b46b5e}{byte\+\_\+resource}}-\/$>$get\+Resource\+Content\+Stream() !=nullptr)
+\item 
+Simple\+Located\+Resource \mbox{\hyperlink{resource__locator__unit_8cpp_a1c74603550ad79c822b4bf55819a9092}{resource}} (\char`\"{}url\char`\"{}, \char`\"{}file\+\_\+path\char`\"{})
+\item 
+Bytes\+Resource \mbox{\hyperlink{resource__locator__unit_8cpp_abf7cc486d35ccfde1679b34fb83dbe07}{resource}} (\char`\"{}url\char`\"{}, \{ 1, 2, 3, 4, 5 \})
+\item 
+int \mbox{\hyperlink{resource__locator__unit_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+tesseract\+\_\+common\+::fs\+::path \mbox{\hyperlink{resource__locator__unit_8cpp_a314de485e4a4b5454ffba827efda6480}{package\+\_\+path}} = file\+\_\+path.\+parent\+\_\+path().parent\+\_\+path()
+\item 
+Resource\+Locator\+::\+Ptr \mbox{\hyperlink{resource__locator__unit_8cpp_ad889712fa094e762b2a887aec9001270}{locator}} = std\+::make\+\_\+shared$<$\mbox{\hyperlink{classTestResourceLocator}{Test\+Resource\+Locator}}$>$()
+\item 
+Resource\+::\+Ptr \mbox{\hyperlink{resource__locator__unit_8cpp_acf8f69b40e998bd8f5330be6b90ab7dc}{resource}} = \mbox{\hyperlink{resource__locator__unit_8cpp_ad889712fa094e762b2a887aec9001270}{locator}}-\/$>$locate\+Resource(\char`\"{}package\+://tesseract\+\_\+common/package.\+xml\char`\"{})
+\item 
+Resource\+::\+Ptr \mbox{\hyperlink{resource__locator__unit_8cpp_ab74140b9018cd427d0b685f2cd27777d}{sub\+\_\+resource}} = \mbox{\hyperlink{resource__locator__unit_8cpp_acf8f69b40e998bd8f5330be6b90ab7dc}{resource}}-\/$>$locate\+Resource(\char`\"{}colcon.\+pkg\char`\"{})
+\item 
+\mbox{\hyperlink{classtesseract__common_1_1Resource_acdba916fa227bef4391c469581844dc6}{tesseract\+\_\+common\+::\+Resource\+::\+Ptr}} \mbox{\hyperlink{resource__locator__unit_8cpp_a4cd33f8b0cd4bb9fd084288f8c6a399a}{sub\+\_\+resource\+\_\+empty}} = \mbox{\hyperlink{resource__locator__unit_8cpp_ab74140b9018cd427d0b685f2cd27777d}{sub\+\_\+resource}}-\/$>$locate\+Resource(\char`\"{}\char`\"{})
+\item 
+\mbox{\hyperlink{classtesseract__common_1_1Resource_acdba916fa227bef4391c469581844dc6}{tesseract\+\_\+common\+::\+Resource\+::\+Ptr}} \mbox{\hyperlink{resource__locator__unit_8cpp_a8bc7d15922e66c545a7c6ebf4f573239}{resource\+\_\+empty}} = \mbox{\hyperlink{resource__locator__unit_8cpp_ad889712fa094e762b2a887aec9001270}{locator}}-\/$>$locate\+Resource(\char`\"{}\char`\"{})
+\item 
+\mbox{\hyperlink{classtesseract__common_1_1Resource_acdba916fa227bef4391c469581844dc6}{tesseract\+\_\+common\+::\+Resource\+::\+Ptr}} \mbox{\hyperlink{resource__locator__unit_8cpp_acab2e5f8809d7aebe38882be300e0c00}{resource\+\_\+does\+\_\+not\+\_\+exist}}
+\item 
+std\+::string \mbox{\hyperlink{resource__locator__unit_8cpp_ae5984a8f66b65da1eaf281e91a554a65}{env\+\_\+var}} = \char`\"{}TESSERACT\+\_\+\+RESOURCE\+\_\+\+PATH=\char`\"{} + package\+\_\+path.\+string()
+\item 
+\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a395d31593a673a3b0efd30ad8d2bba78}{auto}} \mbox{\hyperlink{resource__locator__unit_8cpp_ac6c064d21fc49a8b154ddd3509b46b5e}{byte\+\_\+resource}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{resource__locator__unit_8cpp_ad0ece47d9b43465367d2c846d2d48e6c}\label{resource__locator__unit_8cpp_ad0ece47d9b43465367d2c846d2d48e6c}} 
+\index{resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}!EXPECT\_EQ@{EXPECT\_EQ}}
+\index{EXPECT\_EQ@{EXPECT\_EQ}!resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_EQ()}{EXPECT\_EQ()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+EQ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{resource__locator__unit_8cpp_ac6c064d21fc49a8b154ddd3509b46b5e}{byte\+\_\+resource}}-\/$>$}]{get\+Url(),  }\item[{\char`\"{}package\+://tesseract\+\_\+common/package.\+xml\char`\"{}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{resource__locator__unit_8cpp_a8c9c4f574ed7f4822e89fe9836417200}\label{resource__locator__unit_8cpp_a8c9c4f574ed7f4822e89fe9836417200}} 
+\index{resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}!EXPECT\_EQ@{EXPECT\_EQ}}
+\index{EXPECT\_EQ@{EXPECT\_EQ}!resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_EQ()}{EXPECT\_EQ()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+EQ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{resource__locator__unit_8cpp_acf8f69b40e998bd8f5330be6b90ab7dc}{resource}}-\/$>$}]{get\+Url(),  }\item[{\char`\"{}package\+://tesseract\+\_\+common/package.\+xml\char`\"{}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{resource__locator__unit_8cpp_a860ed92f1320639409049d250196db8f}\label{resource__locator__unit_8cpp_a860ed92f1320639409049d250196db8f}} 
+\index{resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}!EXPECT\_EQ@{EXPECT\_EQ}}
+\index{EXPECT\_EQ@{EXPECT\_EQ}!resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_EQ()}{EXPECT\_EQ()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+EQ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{resource__locator__unit_8cpp_ab74140b9018cd427d0b685f2cd27777d}{sub\+\_\+resource}}-\/$>$}]{get\+Url(),  }\item[{\char`\"{}package\+://tesseract\+\_\+common/colcon.\+pkg\char`\"{}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{resource__locator__unit_8cpp_a3698b0caf7c4d4fc14e4c80b5f43814c}\label{resource__locator__unit_8cpp_a3698b0caf7c4d4fc14e4c80b5f43814c}} 
+\index{resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}!EXPECT\_EQ@{EXPECT\_EQ}}
+\index{EXPECT\_EQ@{EXPECT\_EQ}!resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_EQ()}{EXPECT\_EQ()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+EQ (\begin{DoxyParamCaption}\item[{tesseract\+\_\+common\+::fs\+::path(\mbox{\hyperlink{resource__locator__unit_8cpp_acf8f69b40e998bd8f5330be6b90ab7dc}{resource}}-\/$>$get\+File\+Path())}]{,  }\item[{(\mbox{\hyperlink{resource__locator__unit_8cpp_a314de485e4a4b5454ffba827efda6480}{package\+\_\+path}}/\char`\"{}package.\+xml\char`\"{})}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{resource__locator__unit_8cpp_ae739d0d797856d6e01d8315101648430}\label{resource__locator__unit_8cpp_ae739d0d797856d6e01d8315101648430}} 
+\index{resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}!EXPECT\_EQ@{EXPECT\_EQ}}
+\index{EXPECT\_EQ@{EXPECT\_EQ}!resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_EQ()}{EXPECT\_EQ()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+EQ (\begin{DoxyParamCaption}\item[{tesseract\+\_\+common\+::fs\+::path(\mbox{\hyperlink{resource__locator__unit_8cpp_ab74140b9018cd427d0b685f2cd27777d}{sub\+\_\+resource}}-\/$>$get\+File\+Path())}]{,  }\item[{(\mbox{\hyperlink{resource__locator__unit_8cpp_a314de485e4a4b5454ffba827efda6480}{package\+\_\+path}}/\char`\"{}colcon.\+pkg\char`\"{})}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{resource__locator__unit_8cpp_a84929574bfae8e42b28804a232570483}\label{resource__locator__unit_8cpp_a84929574bfae8e42b28804a232570483}} 
+\index{resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}!EXPECT\_FALSE@{EXPECT\_FALSE}}
+\index{EXPECT\_FALSE@{EXPECT\_FALSE}!resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_FALSE()}{EXPECT\_FALSE()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+FALSE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{resource__locator__unit_8cpp_ac6c064d21fc49a8b154ddd3509b46b5e}{byte\+\_\+resource}}-\/$>$}]{get\+Resource\+Contents).\+empty( }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{resource__locator__unit_8cpp_a3d15f0e67252ce33f65b6ce1e44c9ed5}\label{resource__locator__unit_8cpp_a3d15f0e67252ce33f65b6ce1e44c9ed5}} 
+\index{resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}!EXPECT\_FALSE@{EXPECT\_FALSE}}
+\index{EXPECT\_FALSE@{EXPECT\_FALSE}!resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_FALSE()}{EXPECT\_FALSE()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+FALSE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{resource__locator__unit_8cpp_ac6c064d21fc49a8b154ddd3509b46b5e}{byte\+\_\+resource}}-\/$>$}]{is\+File() }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{resource__locator__unit_8cpp_a3bfed5e45a66c0cb4ed9bd4ee600abbb}\label{resource__locator__unit_8cpp_a3bfed5e45a66c0cb4ed9bd4ee600abbb}} 
+\index{resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}!EXPECT\_FALSE@{EXPECT\_FALSE}}
+\index{EXPECT\_FALSE@{EXPECT\_FALSE}!resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_FALSE()}{EXPECT\_FALSE()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+FALSE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{resource__locator__unit_8cpp_acf8f69b40e998bd8f5330be6b90ab7dc}{resource}}-\/$>$}]{get\+Resource\+Contents).\+empty( }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{resource__locator__unit_8cpp_a11f2b165af6255093b77b2f4cb8693af}\label{resource__locator__unit_8cpp_a11f2b165af6255093b77b2f4cb8693af}} 
+\index{resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}!EXPECT\_FALSE@{EXPECT\_FALSE}}
+\index{EXPECT\_FALSE@{EXPECT\_FALSE}!resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_FALSE()}{EXPECT\_FALSE()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+FALSE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{resource__locator__unit_8cpp_ab74140b9018cd427d0b685f2cd27777d}{sub\+\_\+resource}}-\/$>$}]{get\+Resource\+Contents).\+empty( }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{resource__locator__unit_8cpp_ad334d4cfb728de502300cc1337b66c4d}\label{resource__locator__unit_8cpp_ad334d4cfb728de502300cc1337b66c4d}} 
+\index{resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [1/14]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{resource__locator__unit_8cpp_ac6c064d21fc49a8b154ddd3509b46b5e}{byte\+\_\+resource}} !}]{ = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{resource__locator__unit_8cpp_a1f2c49eff9a2c57a5816654d14948c66}\label{resource__locator__unit_8cpp_a1f2c49eff9a2c57a5816654d14948c66}} 
+\index{resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [2/14]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{resource__locator__unit_8cpp_ac6c064d21fc49a8b154ddd3509b46b5e}{byte\+\_\+resource}}-\/$>$}]{get\+File\+Path).\+empty( }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{resource__locator__unit_8cpp_ad28015acfb3180f0971cf390fda7b490}\label{resource__locator__unit_8cpp_ad28015acfb3180f0971cf390fda7b490}} 
+\index{resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [3/14]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{resource__locator__unit_8cpp_ac6c064d21fc49a8b154ddd3509b46b5e}{byte\+\_\+resource}}-\/$>$get\+Resource\+Content\+Stream() !}]{ = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{resource__locator__unit_8cpp_aa29faa3ea34a6a91c4095e628cd50f22}\label{resource__locator__unit_8cpp_aa29faa3ea34a6a91c4095e628cd50f22}} 
+\index{resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [4/14]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{resource__locator__unit_8cpp_acf8f69b40e998bd8f5330be6b90ab7dc}{resource}} !}]{ = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{resource__locator__unit_8cpp_a5496ffffe260973b7fe55388e767b06d}\label{resource__locator__unit_8cpp_a5496ffffe260973b7fe55388e767b06d}} 
+\index{resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [5/14]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{resource__locator__unit_8cpp_acf8f69b40e998bd8f5330be6b90ab7dc}{resource}}-\/$>$get\+Resource\+Content\+Stream() !}]{ = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{resource__locator__unit_8cpp_a471cb40a8800a1a37b6de72eadb11707}\label{resource__locator__unit_8cpp_a471cb40a8800a1a37b6de72eadb11707}} 
+\index{resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [6/14]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{resource__locator__unit_8cpp_acf8f69b40e998bd8f5330be6b90ab7dc}{resource}}-\/$>$}]{is\+File() }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{resource__locator__unit_8cpp_aa15dec59b2ba58ef7206bb7e4b64599f}\label{resource__locator__unit_8cpp_aa15dec59b2ba58ef7206bb7e4b64599f}} 
+\index{resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [7/14]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{resource__locator__unit_8cpp_acab2e5f8809d7aebe38882be300e0c00}{resource\+\_\+does\+\_\+not\+\_\+exist}} !}]{ = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{resource__locator__unit_8cpp_a37a7e57776ab1486ac388874ca984763}\label{resource__locator__unit_8cpp_a37a7e57776ab1486ac388874ca984763}} 
+\index{resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [8/14]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{resource__locator__unit_8cpp_acab2e5f8809d7aebe38882be300e0c00}{resource\+\_\+does\+\_\+not\+\_\+exist}}-\/$>$}]{get\+Resource\+Contents).\+empty( }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{resource__locator__unit_8cpp_a13e60f8c1400544bc2953e5eb6390471}\label{resource__locator__unit_8cpp_a13e60f8c1400544bc2953e5eb6390471}} 
+\index{resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [9/14]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{resource__locator__unit_8cpp_acab2e5f8809d7aebe38882be300e0c00}{resource\+\_\+does\+\_\+not\+\_\+exist}}-\/$>$}]{get\+Resource\+Content\+Stream() = {\ttfamily =nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{resource__locator__unit_8cpp_adfbc48c23139a6783236e46cb6a78f2e}\label{resource__locator__unit_8cpp_adfbc48c23139a6783236e46cb6a78f2e}} 
+\index{resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [10/14]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{resource__locator__unit_8cpp_a8bc7d15922e66c545a7c6ebf4f573239}{resource\+\_\+empty}}}]{ = {\ttfamily =nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{resource__locator__unit_8cpp_a4feed1c9f68936417bc7668651cc56fa}\label{resource__locator__unit_8cpp_a4feed1c9f68936417bc7668651cc56fa}} 
+\index{resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [11/14]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{resource__locator__unit_8cpp_ab74140b9018cd427d0b685f2cd27777d}{sub\+\_\+resource}} !}]{ = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{resource__locator__unit_8cpp_af09359e2719c34f5d333a89d02552ea3}\label{resource__locator__unit_8cpp_af09359e2719c34f5d333a89d02552ea3}} 
+\index{resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [12/14]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{resource__locator__unit_8cpp_ab74140b9018cd427d0b685f2cd27777d}{sub\+\_\+resource}}-\/$>$get\+Resource\+Content\+Stream() !}]{ = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{resource__locator__unit_8cpp_a90b2d63ee2bf16d656dc3f798ec09ac7}\label{resource__locator__unit_8cpp_a90b2d63ee2bf16d656dc3f798ec09ac7}} 
+\index{resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [13/14]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{resource__locator__unit_8cpp_ab74140b9018cd427d0b685f2cd27777d}{sub\+\_\+resource}}-\/$>$}]{is\+File() }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{resource__locator__unit_8cpp_a4b6bfacaa27b65a82bbb93b85576d7ee}\label{resource__locator__unit_8cpp_a4b6bfacaa27b65a82bbb93b85576d7ee}} 
+\index{resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [14/14]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{resource__locator__unit_8cpp_a4cd33f8b0cd4bb9fd084288f8c6a399a}{sub\+\_\+resource\+\_\+empty}}}]{ = {\ttfamily =nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{resource__locator__unit_8cpp_a803157d97edf460a9f115ca41b182e73}\label{resource__locator__unit_8cpp_a803157d97edf460a9f115ca41b182e73}} 
+\index{resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}!file\_path@{file\_path}}
+\index{file\_path@{file\_path}!resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{file\_path()}{file\_path()}}
+{\footnotesize\ttfamily tesseract\+\_\+common\+::fs\+::path file\+\_\+path (\begin{DoxyParamCaption}\item[{\+\_\+\+\_\+\+FILE\+\_\+\+\_\+}]{ }\end{DoxyParamCaption})}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  \textcolor{keyword}{using namespace }\mbox{\hyperlink{namespacetesseract__common}{tesseract\_common}}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{resource__locator__unit_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{resource__locator__unit_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}!main@{main}}
+\index{main@{main}!resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{resource__locator__unit_8cpp_ab6a2f3202de6f621d783a429bd906a6c}\label{resource__locator__unit_8cpp_ab6a2f3202de6f621d783a429bd906a6c}} 
+\index{resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}!putenv@{putenv}}
+\index{putenv@{putenv}!resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{putenv()}{putenv()}}
+{\footnotesize\ttfamily putenv (\begin{DoxyParamCaption}\item[{env\+\_\+var.}]{data() }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{resource__locator__unit_8cpp_a1c74603550ad79c822b4bf55819a9092}\label{resource__locator__unit_8cpp_a1c74603550ad79c822b4bf55819a9092}} 
+\index{resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}!resource@{resource}}
+\index{resource@{resource}!resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{resource()}{resource()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Simple\+Located\+Resource resource (\begin{DoxyParamCaption}\item[{\char`\"{}url\char`\"{}}]{,  }\item[{\char`\"{}file\+\_\+path\char`\"{}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{resource__locator__unit_8cpp_abf7cc486d35ccfde1679b34fb83dbe07}\label{resource__locator__unit_8cpp_abf7cc486d35ccfde1679b34fb83dbe07}} 
+\index{resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}!resource@{resource}}
+\index{resource@{resource}!resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{resource()}{resource()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Bytes\+Resource resource (\begin{DoxyParamCaption}\item[{\char`\"{}url\char`\"{}}]{,  }\item[{\{ 1, 2, 3, 4, 5 \}}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{resource__locator__unit_8cpp_ac6c064d21fc49a8b154ddd3509b46b5e}\label{resource__locator__unit_8cpp_ac6c064d21fc49a8b154ddd3509b46b5e}} 
+\index{resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}!byte\_resource@{byte\_resource}}
+\index{byte\_resource@{byte\_resource}!resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{byte\_resource}{byte\_resource}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a395d31593a673a3b0efd30ad8d2bba78}{auto}} byte\+\_\+resource}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= std::make\_shared<BytesResource>(}
+\DoxyCodeLine{      \textcolor{stringliteral}{"{}package://tesseract\_common/package.xml"{}}, std::vector<uint8\_t>(\{ 1, 2, 3, 4 \}), \mbox{\hyperlink{resource__locator__unit_8cpp_acf8f69b40e998bd8f5330be6b90ab7dc}{resource}})}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{resource__locator__unit_8cpp_ae5984a8f66b65da1eaf281e91a554a65}\label{resource__locator__unit_8cpp_ae5984a8f66b65da1eaf281e91a554a65}} 
+\index{resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}!env\_var@{env\_var}}
+\index{env\_var@{env\_var}!resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{env\_var}{env\_var}}
+{\footnotesize\ttfamily std\+::string env\+\_\+var = \char`\"{}TESSERACT\+\_\+\+RESOURCE\+\_\+\+PATH=\char`\"{} + package\+\_\+path.\+string()}
+
+\mbox{\Hypertarget{resource__locator__unit_8cpp_ad889712fa094e762b2a887aec9001270}\label{resource__locator__unit_8cpp_ad889712fa094e762b2a887aec9001270}} 
+\index{resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}!locator@{locator}}
+\index{locator@{locator}!resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{locator}{locator}}
+{\footnotesize\ttfamily Resource\+Locator\+::\+Ptr locator = std\+::make\+\_\+shared$<$\mbox{\hyperlink{classTestResourceLocator}{Test\+Resource\+Locator}}$>$()}
+
+\mbox{\Hypertarget{resource__locator__unit_8cpp_a314de485e4a4b5454ffba827efda6480}\label{resource__locator__unit_8cpp_a314de485e4a4b5454ffba827efda6480}} 
+\index{resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}!package\_path@{package\_path}}
+\index{package\_path@{package\_path}!resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{package\_path}{package\_path}}
+{\footnotesize\ttfamily tesseract\+\_\+common\+::fs\+::path package\+\_\+path = file\+\_\+path.\+parent\+\_\+path().parent\+\_\+path()}
+
+\mbox{\Hypertarget{resource__locator__unit_8cpp_acf8f69b40e998bd8f5330be6b90ab7dc}\label{resource__locator__unit_8cpp_acf8f69b40e998bd8f5330be6b90ab7dc}} 
+\index{resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}!resource@{resource}}
+\index{resource@{resource}!resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{resource}{resource}}
+{\footnotesize\ttfamily Resource\+::\+Ptr resource = \mbox{\hyperlink{resource__locator__unit_8cpp_ad889712fa094e762b2a887aec9001270}{locator}}-\/$>$locate\+Resource(\char`\"{}package\+://tesseract\+\_\+common/package.\+xml\char`\"{})}
+
+\mbox{\Hypertarget{resource__locator__unit_8cpp_acab2e5f8809d7aebe38882be300e0c00}\label{resource__locator__unit_8cpp_acab2e5f8809d7aebe38882be300e0c00}} 
+\index{resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}!resource\_does\_not\_exist@{resource\_does\_not\_exist}}
+\index{resource\_does\_not\_exist@{resource\_does\_not\_exist}!resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{resource\_does\_not\_exist}{resource\_does\_not\_exist}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__common_1_1Resource_acdba916fa227bef4391c469581844dc6}{tesseract\+\_\+common\+::\+Resource\+::\+Ptr}} resource\+\_\+does\+\_\+not\+\_\+exist}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \mbox{\hyperlink{resource__locator__unit_8cpp_ad889712fa094e762b2a887aec9001270}{locator}}-\/>locateResource(\textcolor{stringliteral}{"{}package://tesseract\_common/"{}}}
+\DoxyCodeLine{                                                                                    \textcolor{stringliteral}{"{}does\_not\_exist.txt"{}})}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{resource__locator__unit_8cpp_a8bc7d15922e66c545a7c6ebf4f573239}\label{resource__locator__unit_8cpp_a8bc7d15922e66c545a7c6ebf4f573239}} 
+\index{resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}!resource\_empty@{resource\_empty}}
+\index{resource\_empty@{resource\_empty}!resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{resource\_empty}{resource\_empty}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__common_1_1Resource_acdba916fa227bef4391c469581844dc6}{tesseract\+\_\+common\+::\+Resource\+::\+Ptr}} resource\+\_\+empty = \mbox{\hyperlink{resource__locator__unit_8cpp_ad889712fa094e762b2a887aec9001270}{locator}}-\/$>$locate\+Resource(\char`\"{}\char`\"{})}
+
+\mbox{\Hypertarget{resource__locator__unit_8cpp_ab74140b9018cd427d0b685f2cd27777d}\label{resource__locator__unit_8cpp_ab74140b9018cd427d0b685f2cd27777d}} 
+\index{resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}!sub\_resource@{sub\_resource}}
+\index{sub\_resource@{sub\_resource}!resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{sub\_resource}{sub\_resource}}
+{\footnotesize\ttfamily Resource\+::\+Ptr sub\+\_\+resource = \mbox{\hyperlink{resource__locator__unit_8cpp_acf8f69b40e998bd8f5330be6b90ab7dc}{resource}}-\/$>$locate\+Resource(\char`\"{}colcon.\+pkg\char`\"{})}
+
+\mbox{\Hypertarget{resource__locator__unit_8cpp_a4cd33f8b0cd4bb9fd084288f8c6a399a}\label{resource__locator__unit_8cpp_a4cd33f8b0cd4bb9fd084288f8c6a399a}} 
+\index{resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}!sub\_resource\_empty@{sub\_resource\_empty}}
+\index{sub\_resource\_empty@{sub\_resource\_empty}!resource\_locator\_unit.cpp@{resource\_locator\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{sub\_resource\_empty}{sub\_resource\_empty}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__common_1_1Resource_acdba916fa227bef4391c469581844dc6}{tesseract\+\_\+common\+::\+Resource\+::\+Ptr}} sub\+\_\+resource\+\_\+empty = \mbox{\hyperlink{resource__locator__unit_8cpp_ab74140b9018cd427d0b685f2cd27777d}{sub\+\_\+resource}}-\/$>$locate\+Resource(\char`\"{}\char`\"{})}
+

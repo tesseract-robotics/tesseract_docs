@@ -1,0 +1,140 @@
+\hypertarget{contact__managers__plugin__factory_8h_source}{}\doxysection{contact\+\_\+managers\+\_\+plugin\+\_\+factory.\+h}
+\label{contact__managers__plugin__factory_8h_source}\index{tesseract\_collision/core/include/tesseract\_collision/core/contact\_managers\_plugin\_factory.h@{tesseract\_collision/core/include/tesseract\_collision/core/contact\_managers\_plugin\_factory.h}}
+\mbox{\hyperlink{contact__managers__plugin__factory_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#ifndef TESSERACT\_COLLISION\_CONTACT\_MANAGERS\_PLUGIN\_FACTORY\_H}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define TESSERACT\_COLLISION\_CONTACT\_MANAGERS\_PLUGIN\_FACTORY\_H}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{macros_8h}{tesseract\_common/macros.h}}>}}
+\DoxyCodeLine{30 \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include <yaml-\/cpp/yaml.h>}}
+\DoxyCodeLine{35 \mbox{\hyperlink{namespaceTESSERACT__COMMON__IGNORE__WARNINGS__POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{discrete__contact__manager_8h}{tesseract\_collision/core/discrete\_contact\_manager.h}}>}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{continuous__contact__manager_8h}{tesseract\_collision/core/continuous\_contact\_manager.h}}>}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{plugin__loader_8h}{tesseract\_common/plugin\_loader.h}}>}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{tesseract__common_2include_2tesseract__common_2types_8h}{tesseract\_common/types.h}}>}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{comment}{// clang-\/format off}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#define TESSERACT\_ADD\_DISCRETE\_MANAGER\_PLUGIN(DERIVED\_CLASS, ALIAS)                                                    \(\backslash\)}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{  TESSERACT\_ADD\_PLUGIN\_SECTIONED(DERIVED\_CLASS, ALIAS, DiscColl)}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define TESSERACT\_ADD\_CONTINUOUS\_MANAGER\_PLUGIN(DERIVED\_CLASS, ALIAS)                                                  \(\backslash\)}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{  TESSERACT\_ADD\_PLUGIN\_SECTIONED(DERIVED\_CLASS, ALIAS, ContColl)}}
+\DoxyCodeLine{48 \textcolor{comment}{// clang-\/format on}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__collision}{tesseract\_collision}}}
+\DoxyCodeLine{51 \{}
+\DoxyCodeLine{53 \textcolor{keyword}{class }ContactManagersPluginFactory;}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{56 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManagerFactory}{DiscreteContactManagerFactory}}}
+\DoxyCodeLine{57 \{}
+\DoxyCodeLine{58 \textcolor{keyword}{public}:}
+\DoxyCodeLine{59   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManagerFactory_a0e81355d33b06da2e342608267209350}{Ptr}} = std::shared\_ptr<DiscreteContactManagerFactory>;}
+\DoxyCodeLine{60   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManagerFactory_a604b06365184ddc4f05b8e0d4b52ed48}{ConstPtr}} = std::shared\_ptr<const DiscreteContactManagerFactory>;}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62   \textcolor{keyword}{virtual} \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManagerFactory_ac7ac270ac48528b672db8efc5786b1a8}{\string~DiscreteContactManagerFactory}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{69   \textcolor{keyword}{virtual} \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a52a7b770e7b6cec875254d7cdea3c314}{DiscreteContactManager::UPtr}} \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManagerFactory_ab4736b0628f0d120906209ee45a7ecfb}{create}}(\textcolor{keyword}{const} std::string\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}, \textcolor{keyword}{const} YAML::Node\& \mbox{\hyperlink{collision__core__unit_8cpp_a2013c60ebd4a63f15fafe2287736ae37}{config}}) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{72   \textcolor{keyword}{static} \textcolor{keyword}{const} std::string \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManagerFactory_a582642ba6f2847afc1b1db490c08786d}{SECTION\_NAME}};}
+\DoxyCodeLine{73   \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManagerFactory_a7935fed495dc747e3ee24e005a4439eb}{PluginLoader}};}
+\DoxyCodeLine{74 \};}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{77 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__collision_1_1ContinuousContactManagerFactory}{ContinuousContactManagerFactory}}}
+\DoxyCodeLine{78 \{}
+\DoxyCodeLine{79 \textcolor{keyword}{public}:}
+\DoxyCodeLine{80   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__collision_1_1ContinuousContactManagerFactory_a124ff62aa13a3dd3315c9ead622ae331}{Ptr}} = std::shared\_ptr<ContinuousContactManagerFactory>;}
+\DoxyCodeLine{81   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__collision_1_1ContinuousContactManagerFactory_aa2ff7a5b03a8fb1123aaa5fa7d1bd832}{ConstPtr}} = std::shared\_ptr<const ContinuousContactManagerFactory>;}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83   \textcolor{keyword}{virtual} \mbox{\hyperlink{classtesseract__collision_1_1ContinuousContactManagerFactory_afc31b5e9831c6b5638d6b4fe355a5dd3}{\string~ContinuousContactManagerFactory}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{90   \textcolor{keyword}{virtual} \mbox{\hyperlink{classtesseract__collision_1_1ContinuousContactManager_af3e8b59ffc319924eb2a7e3925bb6e56}{ContinuousContactManager::UPtr}} \mbox{\hyperlink{classtesseract__collision_1_1ContinuousContactManagerFactory_aac447861c73a3e284d7a9802c445f3dd}{create}}(\textcolor{keyword}{const} std::string\& solver\_name, \textcolor{keyword}{const} YAML::Node\& \mbox{\hyperlink{collision__core__unit_8cpp_a2013c60ebd4a63f15fafe2287736ae37}{config}}) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{93   \textcolor{keyword}{static} \textcolor{keyword}{const} std::string \mbox{\hyperlink{classtesseract__collision_1_1ContinuousContactManagerFactory_ad34f1a34cd49a31c3a2d3a9999554a03}{SECTION\_NAME}};}
+\DoxyCodeLine{94   \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__collision_1_1ContinuousContactManagerFactory_a7935fed495dc747e3ee24e005a4439eb}{PluginLoader}};}
+\DoxyCodeLine{95 \};}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory}{ContactManagersPluginFactory}}}
+\DoxyCodeLine{98 \{}
+\DoxyCodeLine{99 \textcolor{keyword}{public}:}
+\DoxyCodeLine{100   \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_a402fcf942bd0f7e87e2c2f83911b1bef}{ContactManagersPluginFactory}}();}
+\DoxyCodeLine{101   \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_a0c9a2d1528bbce71aa09aa53b718ab04}{\string~ContactManagersPluginFactory}}();}
+\DoxyCodeLine{102   \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_a0d77a0560f9d4352ea5d24622ace2a8b}{ContactManagersPluginFactory}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory}{ContactManagersPluginFactory}}\&) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{103   \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory}{ContactManagersPluginFactory}}\& \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_a4d11868e5b8fbdc5467a9229dd8901d4}{operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory}{ContactManagersPluginFactory}}\&) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{104   \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_a681fe65ad2e7e965f63bc63cef8abc2a}{ContactManagersPluginFactory}}(\mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory}{ContactManagersPluginFactory}}\&\&) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{105   \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory}{ContactManagersPluginFactory}}\& \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_ab47b34623781721e8de88e19145ae6fb}{operator=}}(\mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory}{ContactManagersPluginFactory}}\&\&) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{111   \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_a402fcf942bd0f7e87e2c2f83911b1bef}{ContactManagersPluginFactory}}(YAML::Node \mbox{\hyperlink{collision__core__unit_8cpp_a2013c60ebd4a63f15fafe2287736ae37}{config}});}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{117   \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_a402fcf942bd0f7e87e2c2f83911b1bef}{ContactManagersPluginFactory}}(\textcolor{keyword}{const} tesseract\_common::fs::path\& \mbox{\hyperlink{collision__core__unit_8cpp_a2013c60ebd4a63f15fafe2287736ae37}{config}});}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{123   \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_a402fcf942bd0f7e87e2c2f83911b1bef}{ContactManagersPluginFactory}}(\textcolor{keyword}{const} std::string\& \mbox{\hyperlink{collision__core__unit_8cpp_a2013c60ebd4a63f15fafe2287736ae37}{config}});}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{129   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_ae1bb7f5b20a62cc72ab498b86cf8862c}{addSearchPath}}(\textcolor{keyword}{const} std::string\& path);}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{135   std::set<std::string> \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_abba279cdeb75c502c70b6b31af3d993b}{getSearchPaths}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{141   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_a80035ba3dcd3d2fe34a71c7459bc302b}{clearSearchPaths}}();}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{147   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_ab465759ee4c5838e7be164958c5f163e}{addSearchLibrary}}(\textcolor{keyword}{const} std::string\& library\_name);}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{153   std::set<std::string> \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_ad3d350dd95449f85bbe57c7ddd07d234}{getSearchLibraries}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{159   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_a77596799af7ea33dc2486351e8f230d5}{clearSearchLibraries}}();}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{166   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_a401c5843b914e25d663d7c682ae7dc80}{addDiscreteContactManagerPlugin}}(\textcolor{keyword}{const} std::string\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}, \mbox{\hyperlink{structtesseract__common_1_1PluginInfo}{tesseract\_common::PluginInfo}} \mbox{\hyperlink{contact__managers__factory__unit_8cpp_aa85411aa79e8b65adf666700a5a44add}{plugin\_info}});}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{172   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_a61b8caba5438c15abd7d472822efcd0c}{hasDiscreteContactManagerPlugins}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{173 }
+\DoxyCodeLine{178   \mbox{\hyperlink{namespacetesseract__common_a43d1f6e0418164a6db0e1c447150340e}{tesseract\_common::PluginInfoMap}} \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_af54063011c3e109131fe5f4916874ffe}{getDiscreteContactManagerPlugins}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{179 }
+\DoxyCodeLine{184   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_adc04de4a93adb8c77db6ae22956b762d}{removeDiscreteContactManagerPlugin}}(\textcolor{keyword}{const} std::string\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}});}
+\DoxyCodeLine{185 }
+\DoxyCodeLine{190   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_a5dfc0e174af81f9c1820356568549cbf}{setDefaultDiscreteContactManagerPlugin}}(\textcolor{keyword}{const} std::string\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}});}
+\DoxyCodeLine{191 }
+\DoxyCodeLine{196   std::string \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_a084f6d82b5c3407759a476533e1589d5}{getDefaultDiscreteContactManagerPlugin}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{197 }
+\DoxyCodeLine{203   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_ae35befbfd8ff14780aafa81a15dbad82}{addContinuousContactManagerPlugin}}(\textcolor{keyword}{const} std::string\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}, \mbox{\hyperlink{structtesseract__common_1_1PluginInfo}{tesseract\_common::PluginInfo}} \mbox{\hyperlink{contact__managers__factory__unit_8cpp_aa85411aa79e8b65adf666700a5a44add}{plugin\_info}});}
+\DoxyCodeLine{204 }
+\DoxyCodeLine{209   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_a28dabdd5ddda589a68b6eeb0894340de}{hasContinuousContactManagerPlugins}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{210 }
+\DoxyCodeLine{215   \mbox{\hyperlink{namespacetesseract__common_a43d1f6e0418164a6db0e1c447150340e}{tesseract\_common::PluginInfoMap}} \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_ac4f2179464877cd56e2b6824731d5afb}{getContinuousContactManagerPlugins}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{216 }
+\DoxyCodeLine{221   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_ae9526f34186dd6ae87808d16d194c069}{removeContinuousContactManagerPlugin}}(\textcolor{keyword}{const} std::string\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}});}
+\DoxyCodeLine{222 }
+\DoxyCodeLine{227   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_a8c6f25b872d325a16260afd411834886}{setDefaultContinuousContactManagerPlugin}}(\textcolor{keyword}{const} std::string\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}});}
+\DoxyCodeLine{228 }
+\DoxyCodeLine{233   std::string \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_adf360a91ac0f2535647327971f910c69}{getDefaultContinuousContactManagerPlugin}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{234 }
+\DoxyCodeLine{240   \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a52a7b770e7b6cec875254d7cdea3c314}{DiscreteContactManager::UPtr}} \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_a66b4286cbaf71c71ea2c46a111bdcaed}{createDiscreteContactManager}}(\textcolor{keyword}{const} std::string\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}) \textcolor{keyword}{const};}
+\DoxyCodeLine{241 }
+\DoxyCodeLine{247   \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a52a7b770e7b6cec875254d7cdea3c314}{DiscreteContactManager::UPtr}} \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_a66b4286cbaf71c71ea2c46a111bdcaed}{createDiscreteContactManager}}(\textcolor{keyword}{const} std::string\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}},}
+\DoxyCodeLine{248                                                             \textcolor{keyword}{const} \mbox{\hyperlink{structtesseract__common_1_1PluginInfo}{tesseract\_common::PluginInfo}}\& \mbox{\hyperlink{contact__managers__factory__unit_8cpp_aa85411aa79e8b65adf666700a5a44add}{plugin\_info}}) \textcolor{keyword}{const};}
+\DoxyCodeLine{249 }
+\DoxyCodeLine{255   \mbox{\hyperlink{classtesseract__collision_1_1ContinuousContactManager_af3e8b59ffc319924eb2a7e3925bb6e56}{ContinuousContactManager::UPtr}} \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_aff83c1c5fd091d2a2efb281af2401c9d}{createContinuousContactManager}}(\textcolor{keyword}{const} std::string\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}) \textcolor{keyword}{const};}
+\DoxyCodeLine{256 }
+\DoxyCodeLine{262   \mbox{\hyperlink{classtesseract__collision_1_1ContinuousContactManager_af3e8b59ffc319924eb2a7e3925bb6e56}{ContinuousContactManager::UPtr}} \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_aff83c1c5fd091d2a2efb281af2401c9d}{createContinuousContactManager}}(\textcolor{keyword}{const} std::string\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}},}
+\DoxyCodeLine{263                                                                 \textcolor{keyword}{const} \mbox{\hyperlink{structtesseract__common_1_1PluginInfo}{tesseract\_common::PluginInfo}}\& \mbox{\hyperlink{contact__managers__factory__unit_8cpp_aa85411aa79e8b65adf666700a5a44add}{plugin\_info}}) \textcolor{keyword}{const};}
+\DoxyCodeLine{264 }
+\DoxyCodeLine{269   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_af64750889290d8bdd52a7a1e34df8d40}{saveConfig}}(\textcolor{keyword}{const} boost::filesystem::path\& \mbox{\hyperlink{resource__locator__unit_8cpp_a803157d97edf460a9f115ca41b182e73}{file\_path}}) \textcolor{keyword}{const};}
+\DoxyCodeLine{270 }
+\DoxyCodeLine{275   YAML::Node \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_a709b65fb4fc0ad58fcdba96adad9c559}{getConfig}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{276 }
+\DoxyCodeLine{277 \textcolor{keyword}{private}:}
+\DoxyCodeLine{278   \textcolor{keyword}{mutable} std::map<std::string, DiscreteContactManagerFactory::Ptr> \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_a0fd083c648e4ec85463320a7a1e50041}{discrete\_factories\_}};}
+\DoxyCodeLine{279   \textcolor{keyword}{mutable} std::map<std::string, ContinuousContactManagerFactory::Ptr> \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_a193ecf35d45efa1fd15f9094412f14cc}{continuous\_factories\_}};}
+\DoxyCodeLine{280   \mbox{\hyperlink{structtesseract__common_1_1PluginInfoContainer}{tesseract\_common::PluginInfoContainer}} \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_a993e35990a4bf3a9729afb993d4c4766}{discrete\_plugin\_info\_}};}
+\DoxyCodeLine{281   \mbox{\hyperlink{structtesseract__common_1_1PluginInfoContainer}{tesseract\_common::PluginInfoContainer}} \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_af0aec6afd68c05b9f81d75d4f8caf7a1}{continuous\_plugin\_info\_}};}
+\DoxyCodeLine{282   \mbox{\hyperlink{classtesseract__common_1_1PluginLoader}{tesseract\_common::PluginLoader}} \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory_a1c25a869dca05ccfb0f490e5eda0d3ff}{plugin\_loader\_}};}
+\DoxyCodeLine{283 \};}
+\DoxyCodeLine{284 \}  \textcolor{comment}{// namespace tesseract\_collision}}
+\DoxyCodeLine{285 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_COLLISION\_CONTACT\_MANAGERS\_PLUGIN\_FACTORY\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,441 @@
+\hypertarget{classtesseract__scene__graph_1_1MutableStateSolver}{}\doxysection{tesseract\+\_\+scene\+\_\+graph\+::Mutable\+State\+Solver Class Reference}
+\label{classtesseract__scene__graph_1_1MutableStateSolver}\index{tesseract\_scene\_graph::MutableStateSolver@{tesseract\_scene\_graph::MutableStateSolver}}
+
+
+A mutable state solver allows you to reconfigure the solver\textquotesingle{}s links and joints.  
+
+
+
+
+{\ttfamily \#include $<$mutable\+\_\+state\+\_\+solver.\+h$>$}
+
+
+
+Inheritance diagram for tesseract\+\_\+scene\+\_\+graph\+::Mutable\+State\+Solver\+:
+% FIG 0
+
+
+Collaboration diagram for tesseract\+\_\+scene\+\_\+graph\+::Mutable\+State\+Solver\+:
+% FIG 1
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver_acf888642a2ee3dc24dde3d540ce892ce}{Ptr}} = std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver}{Mutable\+State\+Solver}} $>$
+\item 
+using \mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver_a7a2e431c2bf879fb1afe690418f4cab7}{Const\+Ptr}} = std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver}{Mutable\+State\+Solver}} $>$
+\item 
+using \mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver_a1d061821b17d0e3a5bb9b0c3dc21a062}{UPtr}} = std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver}{Mutable\+State\+Solver}} $>$
+\item 
+using \mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver_a17336128deaa72d4a506495b80a5de35}{Const\+UPtr}} = std\+::unique\+\_\+ptr$<$ const \mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver}{Mutable\+State\+Solver}} $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver_a4526a715c68097ae8c135dcb92c06545}{Mutable\+State\+Solver}} ()=default
+\item 
+\mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver_aca62e6fb635273bca3bf53b3b8f03e8f}{$\sim$\+Mutable\+State\+Solver}} () override=default
+\item 
+\mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver_aa17467563c39be97b26eeda390098ba9}{Mutable\+State\+Solver}} (const \mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver}{Mutable\+State\+Solver}} \&)=default
+\item 
+\mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver}{Mutable\+State\+Solver}} \& \mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver_a0ccef6f8d6910508987fe954f6afbdcb}{operator=}} (const \mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver}{Mutable\+State\+Solver}} \&)=default
+\item 
+\mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver_a2b4036090e61b2c935bf212b3ee5be2f}{Mutable\+State\+Solver}} (\mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver}{Mutable\+State\+Solver}} \&\&)=default
+\item 
+\mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver}{Mutable\+State\+Solver}} \& \mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver_a2e38802589554cb39f49b03187231ea8}{operator=}} (\mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver}{Mutable\+State\+Solver}} \&\&)=default
+\item 
+virtual void \mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver_ae073b6457dcad8501a63ad7874cadfb6}{set\+Revision}} (int revision)=0
+\begin{DoxyCompactList}\small\item\em Set the state solver revision number. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver_a2f6574bca408984e18c6d6ac1df25edb}{get\+Revision}} () const =0
+\begin{DoxyCompactList}\small\item\em Get the state solver revision number. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver_a5765b59e98791881e80627e23e786ae1}{add\+Link}} (const \mbox{\hyperlink{classtesseract__scene__graph_1_1Link}{Link}} \&link, const \mbox{\hyperlink{classtesseract__scene__graph_1_1Joint}{Joint}} \&joint)=0
+\begin{DoxyCompactList}\small\item\em Adds a link/joint to the solver. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver_a3e932b1a61ff1443b9144b040620219d}{move\+Link}} (const \mbox{\hyperlink{classtesseract__scene__graph_1_1Joint}{Joint}} \&joint)=0
+\begin{DoxyCompactList}\small\item\em Move a link. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver_ac70940d6a07d6460867d14ec29384ec9}{remove\+Link}} (const std\+::string \&\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}})=0
+\begin{DoxyCompactList}\small\item\em Removes a link from the graph. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver_a69d0b258314644193cdd5dadb1459ce9}{replace\+Joint}} (const \mbox{\hyperlink{classtesseract__scene__graph_1_1Joint}{Joint}} \&joint)=0
+\begin{DoxyCompactList}\small\item\em Replace and existing joint with the provided one. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver_a7feca69cd86e830e91f602fb49536225}{remove\+Joint}} (const std\+::string \&\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}})=0
+\begin{DoxyCompactList}\small\item\em Removes a joint from the graph. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver_a827b214a2284312211d8f11e447564e5}{move\+Joint}} (const std\+::string \&\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}, const std\+::string \&parent\+\_\+link)=0
+\begin{DoxyCompactList}\small\item\em Move joint to new parent link. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver_a9677b01b0d0889e9553a7c7f4bce1aa0}{change\+Joint\+Origin}} (const std\+::string \&\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}, const Eigen\+::\+Isometry3d \&new\+\_\+origin)=0
+\begin{DoxyCompactList}\small\item\em Changes the \char`\"{}origin\char`\"{} transform of the joint and recomputes the associated edge. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver_ae23b2d3d7b0767b7ca7f341c10896478}{change\+Joint\+Position\+Limits}} (const std\+::string \&\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}, double \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a3c7c02ff5e570ea0344de12f1daa68a2}{lower}}, double \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_ab274f3e38b9588f2022dee7928e6e2dd}{upper}})=0
+\begin{DoxyCompactList}\small\item\em Changes the position limits associated with a joint. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver_ac9a021ed4ec2a308f17f4b06856b7f86}{change\+Joint\+Velocity\+Limits}} (const std\+::string \&\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}, double limit)=0
+\begin{DoxyCompactList}\small\item\em Changes the velocity limits associated with a joint. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver_a50cdd7cc770a98d5a2180066c4241e8a}{change\+Joint\+Acceleration\+Limits}} (const std\+::string \&\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}, double limit)=0
+\begin{DoxyCompactList}\small\item\em Changes the acceleration limits associated with a joint. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver_ad50118aa4a9c78bfa753bdd621d5bb3f}{insert\+Scene\+Graph}} (const \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph}{Scene\+Graph}} \&\mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a8d4d0dc3a6b9a7030970bf9ed3764756}{scene\+\_\+graph}}, const \mbox{\hyperlink{classtesseract__scene__graph_1_1Joint}{Joint}} \&joint, const std\+::string \&prefix=\char`\"{}\char`\"{})=0
+\begin{DoxyCompactList}\small\item\em Merge a scene into the current solver. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A mutable state solver allows you to reconfigure the solver\textquotesingle{}s links and joints. 
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1MutableStateSolver_a7a2e431c2bf879fb1afe690418f4cab7}\label{classtesseract__scene__graph_1_1MutableStateSolver_a7a2e431c2bf879fb1afe690418f4cab7}} 
+\index{tesseract\_scene\_graph::MutableStateSolver@{tesseract\_scene\_graph::MutableStateSolver}!ConstPtr@{ConstPtr}}
+\index{ConstPtr@{ConstPtr}!tesseract\_scene\_graph::MutableStateSolver@{tesseract\_scene\_graph::MutableStateSolver}}
+\doxysubsubsection{\texorpdfstring{ConstPtr}{ConstPtr}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver_a7a2e431c2bf879fb1afe690418f4cab7}{tesseract\+\_\+scene\+\_\+graph\+::\+Mutable\+State\+Solver\+::\+Const\+Ptr}} =  std\+::shared\+\_\+ptr$<$const \mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver}{Mutable\+State\+Solver}}$>$}
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1MutableStateSolver_a17336128deaa72d4a506495b80a5de35}\label{classtesseract__scene__graph_1_1MutableStateSolver_a17336128deaa72d4a506495b80a5de35}} 
+\index{tesseract\_scene\_graph::MutableStateSolver@{tesseract\_scene\_graph::MutableStateSolver}!ConstUPtr@{ConstUPtr}}
+\index{ConstUPtr@{ConstUPtr}!tesseract\_scene\_graph::MutableStateSolver@{tesseract\_scene\_graph::MutableStateSolver}}
+\doxysubsubsection{\texorpdfstring{ConstUPtr}{ConstUPtr}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver_a17336128deaa72d4a506495b80a5de35}{tesseract\+\_\+scene\+\_\+graph\+::\+Mutable\+State\+Solver\+::\+Const\+UPtr}} =  std\+::unique\+\_\+ptr$<$const \mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver}{Mutable\+State\+Solver}}$>$}
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1MutableStateSolver_acf888642a2ee3dc24dde3d540ce892ce}\label{classtesseract__scene__graph_1_1MutableStateSolver_acf888642a2ee3dc24dde3d540ce892ce}} 
+\index{tesseract\_scene\_graph::MutableStateSolver@{tesseract\_scene\_graph::MutableStateSolver}!Ptr@{Ptr}}
+\index{Ptr@{Ptr}!tesseract\_scene\_graph::MutableStateSolver@{tesseract\_scene\_graph::MutableStateSolver}}
+\doxysubsubsection{\texorpdfstring{Ptr}{Ptr}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver_acf888642a2ee3dc24dde3d540ce892ce}{tesseract\+\_\+scene\+\_\+graph\+::\+Mutable\+State\+Solver\+::\+Ptr}} =  std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver}{Mutable\+State\+Solver}}$>$}
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1MutableStateSolver_a1d061821b17d0e3a5bb9b0c3dc21a062}\label{classtesseract__scene__graph_1_1MutableStateSolver_a1d061821b17d0e3a5bb9b0c3dc21a062}} 
+\index{tesseract\_scene\_graph::MutableStateSolver@{tesseract\_scene\_graph::MutableStateSolver}!UPtr@{UPtr}}
+\index{UPtr@{UPtr}!tesseract\_scene\_graph::MutableStateSolver@{tesseract\_scene\_graph::MutableStateSolver}}
+\doxysubsubsection{\texorpdfstring{UPtr}{UPtr}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver_a1d061821b17d0e3a5bb9b0c3dc21a062}{tesseract\+\_\+scene\+\_\+graph\+::\+Mutable\+State\+Solver\+::\+UPtr}} =  std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver}{Mutable\+State\+Solver}}$>$}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1MutableStateSolver_a4526a715c68097ae8c135dcb92c06545}\label{classtesseract__scene__graph_1_1MutableStateSolver_a4526a715c68097ae8c135dcb92c06545}} 
+\index{tesseract\_scene\_graph::MutableStateSolver@{tesseract\_scene\_graph::MutableStateSolver}!MutableStateSolver@{MutableStateSolver}}
+\index{MutableStateSolver@{MutableStateSolver}!tesseract\_scene\_graph::MutableStateSolver@{tesseract\_scene\_graph::MutableStateSolver}}
+\doxysubsubsection{\texorpdfstring{MutableStateSolver()}{MutableStateSolver()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily tesseract\+\_\+scene\+\_\+graph\+::\+Mutable\+State\+Solver\+::\+Mutable\+State\+Solver (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1MutableStateSolver_aca62e6fb635273bca3bf53b3b8f03e8f}\label{classtesseract__scene__graph_1_1MutableStateSolver_aca62e6fb635273bca3bf53b3b8f03e8f}} 
+\index{tesseract\_scene\_graph::MutableStateSolver@{tesseract\_scene\_graph::MutableStateSolver}!````~MutableStateSolver@{$\sim$MutableStateSolver}}
+\index{````~MutableStateSolver@{$\sim$MutableStateSolver}!tesseract\_scene\_graph::MutableStateSolver@{tesseract\_scene\_graph::MutableStateSolver}}
+\doxysubsubsection{\texorpdfstring{$\sim$MutableStateSolver()}{~MutableStateSolver()}}
+{\footnotesize\ttfamily tesseract\+\_\+scene\+\_\+graph\+::\+Mutable\+State\+Solver\+::$\sim$\+Mutable\+State\+Solver (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1MutableStateSolver_aa17467563c39be97b26eeda390098ba9}\label{classtesseract__scene__graph_1_1MutableStateSolver_aa17467563c39be97b26eeda390098ba9}} 
+\index{tesseract\_scene\_graph::MutableStateSolver@{tesseract\_scene\_graph::MutableStateSolver}!MutableStateSolver@{MutableStateSolver}}
+\index{MutableStateSolver@{MutableStateSolver}!tesseract\_scene\_graph::MutableStateSolver@{tesseract\_scene\_graph::MutableStateSolver}}
+\doxysubsubsection{\texorpdfstring{MutableStateSolver()}{MutableStateSolver()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily tesseract\+\_\+scene\+\_\+graph\+::\+Mutable\+State\+Solver\+::\+Mutable\+State\+Solver (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver}{Mutable\+State\+Solver}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1MutableStateSolver_a2b4036090e61b2c935bf212b3ee5be2f}\label{classtesseract__scene__graph_1_1MutableStateSolver_a2b4036090e61b2c935bf212b3ee5be2f}} 
+\index{tesseract\_scene\_graph::MutableStateSolver@{tesseract\_scene\_graph::MutableStateSolver}!MutableStateSolver@{MutableStateSolver}}
+\index{MutableStateSolver@{MutableStateSolver}!tesseract\_scene\_graph::MutableStateSolver@{tesseract\_scene\_graph::MutableStateSolver}}
+\doxysubsubsection{\texorpdfstring{MutableStateSolver()}{MutableStateSolver()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily tesseract\+\_\+scene\+\_\+graph\+::\+Mutable\+State\+Solver\+::\+Mutable\+State\+Solver (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver}{Mutable\+State\+Solver}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1MutableStateSolver_a5765b59e98791881e80627e23e786ae1}\label{classtesseract__scene__graph_1_1MutableStateSolver_a5765b59e98791881e80627e23e786ae1}} 
+\index{tesseract\_scene\_graph::MutableStateSolver@{tesseract\_scene\_graph::MutableStateSolver}!addLink@{addLink}}
+\index{addLink@{addLink}!tesseract\_scene\_graph::MutableStateSolver@{tesseract\_scene\_graph::MutableStateSolver}}
+\doxysubsubsection{\texorpdfstring{addLink()}{addLink()}}
+{\footnotesize\ttfamily virtual bool tesseract\+\_\+scene\+\_\+graph\+::\+Mutable\+State\+Solver\+::add\+Link (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtesseract__scene__graph_1_1Link}{Link}} \&}]{link,  }\item[{const \mbox{\hyperlink{classtesseract__scene__graph_1_1Joint}{Joint}} \&}]{joint }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Adds a link/joint to the solver. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em link} & The link to be added to the graph \\
+\hline
+{\em joint} & The associated joint to be added to the graph \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return False if a link with the same name allready exists, otherwise true 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_ac3ef786331721e642c695c9749bfff9a}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1MutableStateSolver_a50cdd7cc770a98d5a2180066c4241e8a}\label{classtesseract__scene__graph_1_1MutableStateSolver_a50cdd7cc770a98d5a2180066c4241e8a}} 
+\index{tesseract\_scene\_graph::MutableStateSolver@{tesseract\_scene\_graph::MutableStateSolver}!changeJointAccelerationLimits@{changeJointAccelerationLimits}}
+\index{changeJointAccelerationLimits@{changeJointAccelerationLimits}!tesseract\_scene\_graph::MutableStateSolver@{tesseract\_scene\_graph::MutableStateSolver}}
+\doxysubsubsection{\texorpdfstring{changeJointAccelerationLimits()}{changeJointAccelerationLimits()}}
+{\footnotesize\ttfamily virtual bool tesseract\+\_\+scene\+\_\+graph\+::\+Mutable\+State\+Solver\+::change\+Joint\+Acceleration\+Limits (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{double}]{limit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Changes the acceleration limits associated with a joint. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em joint\+\_\+name} & Name of the joint to be updated \\
+\hline
+{\em limits} & New acceleration limits to be set as the joint limits \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_a439631c13339288be33a41476007fe7b}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1MutableStateSolver_a9677b01b0d0889e9553a7c7f4bce1aa0}\label{classtesseract__scene__graph_1_1MutableStateSolver_a9677b01b0d0889e9553a7c7f4bce1aa0}} 
+\index{tesseract\_scene\_graph::MutableStateSolver@{tesseract\_scene\_graph::MutableStateSolver}!changeJointOrigin@{changeJointOrigin}}
+\index{changeJointOrigin@{changeJointOrigin}!tesseract\_scene\_graph::MutableStateSolver@{tesseract\_scene\_graph::MutableStateSolver}}
+\doxysubsubsection{\texorpdfstring{changeJointOrigin()}{changeJointOrigin()}}
+{\footnotesize\ttfamily virtual bool tesseract\+\_\+scene\+\_\+graph\+::\+Mutable\+State\+Solver\+::change\+Joint\+Origin (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const Eigen\+::\+Isometry3d \&}]{new\+\_\+origin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Changes the \char`\"{}origin\char`\"{} transform of the joint and recomputes the associated edge. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the joint to be changed \\
+\hline
+{\em new\+\_\+origin} & The new transform associated with the joint \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if successful. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_aec35e56064d89983c6f85b72cc412d80}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1MutableStateSolver_ae23b2d3d7b0767b7ca7f341c10896478}\label{classtesseract__scene__graph_1_1MutableStateSolver_ae23b2d3d7b0767b7ca7f341c10896478}} 
+\index{tesseract\_scene\_graph::MutableStateSolver@{tesseract\_scene\_graph::MutableStateSolver}!changeJointPositionLimits@{changeJointPositionLimits}}
+\index{changeJointPositionLimits@{changeJointPositionLimits}!tesseract\_scene\_graph::MutableStateSolver@{tesseract\_scene\_graph::MutableStateSolver}}
+\doxysubsubsection{\texorpdfstring{changeJointPositionLimits()}{changeJointPositionLimits()}}
+{\footnotesize\ttfamily virtual bool tesseract\+\_\+scene\+\_\+graph\+::\+Mutable\+State\+Solver\+::change\+Joint\+Position\+Limits (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{double}]{lower,  }\item[{double}]{upper }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Changes the position limits associated with a joint. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em joint\+\_\+name} & Name of the joint to be updated \\
+\hline
+{\em limits} & New position limits to be set as the joint limits @return\+True if successful. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_aad0dd38c09d3fb22efe2e3fe6c7df382}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1MutableStateSolver_ac9a021ed4ec2a308f17f4b06856b7f86}\label{classtesseract__scene__graph_1_1MutableStateSolver_ac9a021ed4ec2a308f17f4b06856b7f86}} 
+\index{tesseract\_scene\_graph::MutableStateSolver@{tesseract\_scene\_graph::MutableStateSolver}!changeJointVelocityLimits@{changeJointVelocityLimits}}
+\index{changeJointVelocityLimits@{changeJointVelocityLimits}!tesseract\_scene\_graph::MutableStateSolver@{tesseract\_scene\_graph::MutableStateSolver}}
+\doxysubsubsection{\texorpdfstring{changeJointVelocityLimits()}{changeJointVelocityLimits()}}
+{\footnotesize\ttfamily virtual bool tesseract\+\_\+scene\+\_\+graph\+::\+Mutable\+State\+Solver\+::change\+Joint\+Velocity\+Limits (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{double}]{limit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Changes the velocity limits associated with a joint. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em joint\+\_\+name} & Name of the joint to be updated \\
+\hline
+{\em limits} & New velocity limits to be set as the joint limits \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_ad5ac41ceeb316c58874aa68f257144ea}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1MutableStateSolver_a2f6574bca408984e18c6d6ac1df25edb}\label{classtesseract__scene__graph_1_1MutableStateSolver_a2f6574bca408984e18c6d6ac1df25edb}} 
+\index{tesseract\_scene\_graph::MutableStateSolver@{tesseract\_scene\_graph::MutableStateSolver}!getRevision@{getRevision}}
+\index{getRevision@{getRevision}!tesseract\_scene\_graph::MutableStateSolver@{tesseract\_scene\_graph::MutableStateSolver}}
+\doxysubsubsection{\texorpdfstring{getRevision()}{getRevision()}}
+{\footnotesize\ttfamily virtual int tesseract\+\_\+scene\+\_\+graph\+::\+Mutable\+State\+Solver\+::get\+Revision (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the state solver revision number. 
+
+\begin{DoxyReturn}{Returns}
+revision number 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_aaebf658a50f9efd75bae693531e3f71b}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1MutableStateSolver_ad50118aa4a9c78bfa753bdd621d5bb3f}\label{classtesseract__scene__graph_1_1MutableStateSolver_ad50118aa4a9c78bfa753bdd621d5bb3f}} 
+\index{tesseract\_scene\_graph::MutableStateSolver@{tesseract\_scene\_graph::MutableStateSolver}!insertSceneGraph@{insertSceneGraph}}
+\index{insertSceneGraph@{insertSceneGraph}!tesseract\_scene\_graph::MutableStateSolver@{tesseract\_scene\_graph::MutableStateSolver}}
+\doxysubsubsection{\texorpdfstring{insertSceneGraph()}{insertSceneGraph()}}
+{\footnotesize\ttfamily virtual bool tesseract\+\_\+scene\+\_\+graph\+::\+Mutable\+State\+Solver\+::insert\+Scene\+Graph (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph}{Scene\+Graph}} \&}]{scene\+\_\+graph,  }\item[{const \mbox{\hyperlink{classtesseract__scene__graph_1_1Joint}{Joint}} \&}]{joint,  }\item[{const std\+::string \&}]{prefix = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Merge a scene into the current solver. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene\+\_\+graph} & Const ref to the graph to be merged \\
+\hline
+{\em joint} & The joint that connects current scene with the inserted scene \\
+\hline
+{\em prefix} & string Will be prepended to every link and joint of the merged scene \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return False if any link or joint name collides with current solver, otherwise True The prefix argument is meant to allow adding multiple copies of the same subgraph with different names 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_ab8c1b3ac2ff8c470f20cb9b159ae83a4}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1MutableStateSolver_a827b214a2284312211d8f11e447564e5}\label{classtesseract__scene__graph_1_1MutableStateSolver_a827b214a2284312211d8f11e447564e5}} 
+\index{tesseract\_scene\_graph::MutableStateSolver@{tesseract\_scene\_graph::MutableStateSolver}!moveJoint@{moveJoint}}
+\index{moveJoint@{moveJoint}!tesseract\_scene\_graph::MutableStateSolver@{tesseract\_scene\_graph::MutableStateSolver}}
+\doxysubsubsection{\texorpdfstring{moveJoint()}{moveJoint()}}
+{\footnotesize\ttfamily virtual bool tesseract\+\_\+scene\+\_\+graph\+::\+Mutable\+State\+Solver\+::move\+Joint (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const std\+::string \&}]{parent\+\_\+link }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Move joint to new parent link. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the joint to move \\
+\hline
+{\em parent\+\_\+link} & Name of parent link to move to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if successful, otherwise false. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_a2ce786f5c9931049dc646b8c367ecbd5}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1MutableStateSolver_a3e932b1a61ff1443b9144b040620219d}\label{classtesseract__scene__graph_1_1MutableStateSolver_a3e932b1a61ff1443b9144b040620219d}} 
+\index{tesseract\_scene\_graph::MutableStateSolver@{tesseract\_scene\_graph::MutableStateSolver}!moveLink@{moveLink}}
+\index{moveLink@{moveLink}!tesseract\_scene\_graph::MutableStateSolver@{tesseract\_scene\_graph::MutableStateSolver}}
+\doxysubsubsection{\texorpdfstring{moveLink()}{moveLink()}}
+{\footnotesize\ttfamily virtual bool tesseract\+\_\+scene\+\_\+graph\+::\+Mutable\+State\+Solver\+::move\+Link (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtesseract__scene__graph_1_1Joint}{Joint}} \&}]{joint }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Move a link. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em joint} & The associated joint that defines the move \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return False if link does not exist or if joint name already exists, otherwise true 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_a45a95b8ee0a71d0727d0a3d5f19a72d6}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1MutableStateSolver_a0ccef6f8d6910508987fe954f6afbdcb}\label{classtesseract__scene__graph_1_1MutableStateSolver_a0ccef6f8d6910508987fe954f6afbdcb}} 
+\index{tesseract\_scene\_graph::MutableStateSolver@{tesseract\_scene\_graph::MutableStateSolver}!operator=@{operator=}}
+\index{operator=@{operator=}!tesseract\_scene\_graph::MutableStateSolver@{tesseract\_scene\_graph::MutableStateSolver}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver}{Mutable\+State\+Solver}} \& tesseract\+\_\+scene\+\_\+graph\+::\+Mutable\+State\+Solver\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver}{Mutable\+State\+Solver}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1MutableStateSolver_a2e38802589554cb39f49b03187231ea8}\label{classtesseract__scene__graph_1_1MutableStateSolver_a2e38802589554cb39f49b03187231ea8}} 
+\index{tesseract\_scene\_graph::MutableStateSolver@{tesseract\_scene\_graph::MutableStateSolver}!operator=@{operator=}}
+\index{operator=@{operator=}!tesseract\_scene\_graph::MutableStateSolver@{tesseract\_scene\_graph::MutableStateSolver}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver}{Mutable\+State\+Solver}} \& tesseract\+\_\+scene\+\_\+graph\+::\+Mutable\+State\+Solver\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver}{Mutable\+State\+Solver}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1MutableStateSolver_a7feca69cd86e830e91f602fb49536225}\label{classtesseract__scene__graph_1_1MutableStateSolver_a7feca69cd86e830e91f602fb49536225}} 
+\index{tesseract\_scene\_graph::MutableStateSolver@{tesseract\_scene\_graph::MutableStateSolver}!removeJoint@{removeJoint}}
+\index{removeJoint@{removeJoint}!tesseract\_scene\_graph::MutableStateSolver@{tesseract\_scene\_graph::MutableStateSolver}}
+\doxysubsubsection{\texorpdfstring{removeJoint()}{removeJoint()}}
+{\footnotesize\ttfamily virtual bool tesseract\+\_\+scene\+\_\+graph\+::\+Mutable\+State\+Solver\+::remove\+Joint (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Removes a joint from the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the joint to be removed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return False if a joint does not exists, otherwise true 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_aa553b5d7c69564cbc428ae43293dd23a}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1MutableStateSolver_ac70940d6a07d6460867d14ec29384ec9}\label{classtesseract__scene__graph_1_1MutableStateSolver_ac70940d6a07d6460867d14ec29384ec9}} 
+\index{tesseract\_scene\_graph::MutableStateSolver@{tesseract\_scene\_graph::MutableStateSolver}!removeLink@{removeLink}}
+\index{removeLink@{removeLink}!tesseract\_scene\_graph::MutableStateSolver@{tesseract\_scene\_graph::MutableStateSolver}}
+\doxysubsubsection{\texorpdfstring{removeLink()}{removeLink()}}
+{\footnotesize\ttfamily virtual bool tesseract\+\_\+scene\+\_\+graph\+::\+Mutable\+State\+Solver\+::remove\+Link (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Removes a link from the graph. 
+
+Note\+: this will remove all inbound and outbound edges
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the link to be removed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return False if a link does not exists, otherwise true 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_ae01b945659e38e9368cbfabed370a309}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1MutableStateSolver_a69d0b258314644193cdd5dadb1459ce9}\label{classtesseract__scene__graph_1_1MutableStateSolver_a69d0b258314644193cdd5dadb1459ce9}} 
+\index{tesseract\_scene\_graph::MutableStateSolver@{tesseract\_scene\_graph::MutableStateSolver}!replaceJoint@{replaceJoint}}
+\index{replaceJoint@{replaceJoint}!tesseract\_scene\_graph::MutableStateSolver@{tesseract\_scene\_graph::MutableStateSolver}}
+\doxysubsubsection{\texorpdfstring{replaceJoint()}{replaceJoint()}}
+{\footnotesize\ttfamily virtual bool tesseract\+\_\+scene\+\_\+graph\+::\+Mutable\+State\+Solver\+::replace\+Joint (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtesseract__scene__graph_1_1Joint}{Joint}} \&}]{joint }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Replace and existing joint with the provided one. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em joint} & The replacement joint \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return False if a joint does not exists, otherwise true 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_a9bf70be378f138e97cbc5735f3701754}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1MutableStateSolver_ae073b6457dcad8501a63ad7874cadfb6}\label{classtesseract__scene__graph_1_1MutableStateSolver_ae073b6457dcad8501a63ad7874cadfb6}} 
+\index{tesseract\_scene\_graph::MutableStateSolver@{tesseract\_scene\_graph::MutableStateSolver}!setRevision@{setRevision}}
+\index{setRevision@{setRevision}!tesseract\_scene\_graph::MutableStateSolver@{tesseract\_scene\_graph::MutableStateSolver}}
+\doxysubsubsection{\texorpdfstring{setRevision()}{setRevision()}}
+{\footnotesize\ttfamily virtual void tesseract\+\_\+scene\+\_\+graph\+::\+Mutable\+State\+Solver\+::set\+Revision (\begin{DoxyParamCaption}\item[{int}]{revision }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Set the state solver revision number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em revision} & The revision number to assign \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_a79e00a40f6ed9206d20007dfd70932a4}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+tesseract\+\_\+state\+\_\+solver/include/tesseract\+\_\+state\+\_\+solver/\mbox{\hyperlink{mutable__state__solver_8h}{mutable\+\_\+state\+\_\+solver.\+h}}\end{DoxyCompactItemize}

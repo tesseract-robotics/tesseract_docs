@@ -1,0 +1,241 @@
+\hypertarget{vhacdVolume_8cpp}{}\doxysection{tesseract\+\_\+collision/vhacd/src/vhacd/vhacd\+Volume.cpp File Reference}
+\label{vhacdVolume_8cpp}\index{tesseract\_collision/vhacd/src/vhacd/vhacdVolume.cpp@{tesseract\_collision/vhacd/src/vhacd/vhacdVolume.cpp}}
+{\ttfamily \#include $<$tesseract\+\_\+common/macros.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+collision/vhacd/inc/vhacd\+Volume.\+h$>$}\newline
+{\ttfamily \#include $<$bullet/\+Linear\+Math/bt\+Convex\+Hull\+Computer.\+h$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$float.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$queue$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+Include dependency graph for vhacd\+Volume.\+cpp\+:
+% FIG 0
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacetesseract__collision}{tesseract\+\_\+collision}}
+\item 
+namespace \mbox{\hyperlink{namespacetesseract__collision_1_1VHACD}{tesseract\+\_\+collision\+::\+VHACD}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{vhacdVolume_8cpp_a207fd5507206d307cd63f95374fcd00d}{X}}~0
+\item 
+\#define \mbox{\hyperlink{vhacdVolume_8cpp_a798e4073d613ca5ba9618e1b3253df14}{Y}}~1
+\item 
+\#define \mbox{\hyperlink{vhacdVolume_8cpp_a51591cf51bdd6c1f6015532422e7770e}{Z}}~2
+\item 
+\#define \mbox{\hyperlink{vhacdVolume_8cpp_a27cf54160e51334c0f90ede5b9a30173}{FINDMINMAX}}(x0,  x1,  x2,  min,  max)
+\item 
+\#define \mbox{\hyperlink{vhacdVolume_8cpp_aa455fd95e25e2df0f1cf93a2de985fd8}{AXISTEST\+\_\+\+X01}}(a,  b,  fa,  fb)
+\item 
+\#define \mbox{\hyperlink{vhacdVolume_8cpp_a7f81d4a738f6ce0916cda8d449f1e757}{AXISTEST\+\_\+\+X2}}(a,  b,  fa,  fb)
+\item 
+\#define \mbox{\hyperlink{vhacdVolume_8cpp_a2409651c6dcde598145e0434cc80f8cb}{AXISTEST\+\_\+\+Y02}}(a,  b,  fa,  fb)
+\item 
+\#define \mbox{\hyperlink{vhacdVolume_8cpp_a77a3cf69f7cdf4e359d10a50a0498a75}{AXISTEST\+\_\+\+Y1}}(a,  b,  fa,  fb)
+\item 
+\#define \mbox{\hyperlink{vhacdVolume_8cpp_a2f2534d1e427de530b66531a42a7af82}{AXISTEST\+\_\+\+Z12}}(a,  b,  fa,  fb)
+\item 
+\#define \mbox{\hyperlink{vhacdVolume_8cpp_ae7c0544b51ee58f7b8891c5906d554ce}{AXISTEST\+\_\+\+Z0}}(a,  b,  fa,  fb)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int32\+\_\+t \mbox{\hyperlink{namespacetesseract__collision_1_1VHACD_ad6443bde055e476916b7cddae0787189}{tesseract\+\_\+collision\+::\+VHACD\+::\+Plane\+Box\+Overlap}} (const Vec3$<$ double $>$ \&\mbox{\hyperlink{collision__core__unit_8cpp_a7589b8c9c1397d28b5974168ee72f0a8}{normal}}, const Vec3$<$ double $>$ \&vert, const Vec3$<$ double $>$ \&maxbox)
+\item 
+int32\+\_\+t \mbox{\hyperlink{namespacetesseract__collision_1_1VHACD_a364f0630528625a55800b02469ad21a0}{tesseract\+\_\+collision\+::\+VHACD\+::\+Tri\+Box\+Overlap}} (const Vec3$<$ double $>$ \&boxcenter, const Vec3$<$ double $>$ \&boxhalfsize, const Vec3$<$ double $>$ \&triver0, const Vec3$<$ double $>$ \&triver1, const Vec3$<$ double $>$ \&triver2)
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1VHACD_a1740c547ff297bc2d9bb058b77042079}{tesseract\+\_\+collision\+::\+VHACD\+::\+Diagonalize}} (const double(\&A)\mbox{[}3\mbox{]}\mbox{[}3\mbox{]}, double(\&Q)\mbox{[}3\mbox{]}\mbox{[}3\mbox{]}, double(\&D)\mbox{[}3\mbox{]}\mbox{[}3\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{vhacdVolume_8cpp_aa455fd95e25e2df0f1cf93a2de985fd8}\label{vhacdVolume_8cpp_aa455fd95e25e2df0f1cf93a2de985fd8}} 
+\index{vhacdVolume.cpp@{vhacdVolume.cpp}!AXISTEST\_X01@{AXISTEST\_X01}}
+\index{AXISTEST\_X01@{AXISTEST\_X01}!vhacdVolume.cpp@{vhacdVolume.cpp}}
+\doxysubsubsection{\texorpdfstring{AXISTEST\_X01}{AXISTEST\_X01}}
+{\footnotesize\ttfamily \#define AXISTEST\+\_\+\+X01(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b,  }\item[{}]{fa,  }\item[{}]{fb }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  p0 = a * v0[\mbox{\hyperlink{vhacdVolume_8cpp_a798e4073d613ca5ba9618e1b3253df14}{Y}}] -\/ b * v0[\mbox{\hyperlink{vhacdVolume_8cpp_a51591cf51bdd6c1f6015532422e7770e}{Z}}];                                                                                          \(\backslash\)}
+\DoxyCodeLine{  p2 = a * \mbox{\hyperlink{tesseract__common__unit_8cpp_a23dd5e7fffd5f8400cbed32a5071f236}{v2}}[\mbox{\hyperlink{vhacdVolume_8cpp_a798e4073d613ca5ba9618e1b3253df14}{Y}}] -\/ b * \mbox{\hyperlink{tesseract__common__unit_8cpp_a23dd5e7fffd5f8400cbed32a5071f236}{v2}}[\mbox{\hyperlink{vhacdVolume_8cpp_a51591cf51bdd6c1f6015532422e7770e}{Z}}];                                                                                          \(\backslash\)}
+\DoxyCodeLine{  if (p0 < p2)                                                                                                         \(\backslash\)}
+\DoxyCodeLine{  \{                                                                                                                    \(\backslash\)}
+\DoxyCodeLine{    min = p0;                                                                                                          \(\backslash\)}
+\DoxyCodeLine{    max = p2;                                                                                                          \(\backslash\)}
+\DoxyCodeLine{  \}                                                                                                                    \(\backslash\)}
+\DoxyCodeLine{  \textcolor{keywordflow}{else}                                                                                                                 \(\backslash\)}
+\DoxyCodeLine{  \{                                                                                                                    \(\backslash\)}
+\DoxyCodeLine{    min = p2;                                                                                                          \(\backslash\)}
+\DoxyCodeLine{    max = p0;                                                                                                          \(\backslash\)}
+\DoxyCodeLine{  \}                                                                                                                    \(\backslash\)}
+\DoxyCodeLine{  rad = fa * boxhalfsize[\mbox{\hyperlink{vhacdVolume_8cpp_a798e4073d613ca5ba9618e1b3253df14}{Y}}] + fb * boxhalfsize[\mbox{\hyperlink{vhacdVolume_8cpp_a51591cf51bdd6c1f6015532422e7770e}{Z}}];                                                                     \(\backslash\)}
+\DoxyCodeLine{  if (min > rad || max < -\/rad)                                                                                         \(\backslash\)}
+\DoxyCodeLine{    \textcolor{keywordflow}{return} 0;}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{vhacdVolume_8cpp_a7f81d4a738f6ce0916cda8d449f1e757}\label{vhacdVolume_8cpp_a7f81d4a738f6ce0916cda8d449f1e757}} 
+\index{vhacdVolume.cpp@{vhacdVolume.cpp}!AXISTEST\_X2@{AXISTEST\_X2}}
+\index{AXISTEST\_X2@{AXISTEST\_X2}!vhacdVolume.cpp@{vhacdVolume.cpp}}
+\doxysubsubsection{\texorpdfstring{AXISTEST\_X2}{AXISTEST\_X2}}
+{\footnotesize\ttfamily \#define AXISTEST\+\_\+\+X2(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b,  }\item[{}]{fa,  }\item[{}]{fb }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  p0 = a * v0[\mbox{\hyperlink{vhacdVolume_8cpp_a798e4073d613ca5ba9618e1b3253df14}{Y}}] -\/ b * v0[\mbox{\hyperlink{vhacdVolume_8cpp_a51591cf51bdd6c1f6015532422e7770e}{Z}}];                                                                                          \(\backslash\)}
+\DoxyCodeLine{  p1 = a * \mbox{\hyperlink{tesseract__common__unit_8cpp_a78e1cc09f129a731d55ed82bc47956a7}{v1}}[\mbox{\hyperlink{vhacdVolume_8cpp_a798e4073d613ca5ba9618e1b3253df14}{Y}}] -\/ b * \mbox{\hyperlink{tesseract__common__unit_8cpp_a78e1cc09f129a731d55ed82bc47956a7}{v1}}[\mbox{\hyperlink{vhacdVolume_8cpp_a51591cf51bdd6c1f6015532422e7770e}{Z}}];                                                                                          \(\backslash\)}
+\DoxyCodeLine{  if (p0 < p1)                                                                                                         \(\backslash\)}
+\DoxyCodeLine{  \{                                                                                                                    \(\backslash\)}
+\DoxyCodeLine{    min = p0;                                                                                                          \(\backslash\)}
+\DoxyCodeLine{    max = p1;                                                                                                          \(\backslash\)}
+\DoxyCodeLine{  \}                                                                                                                    \(\backslash\)}
+\DoxyCodeLine{  \textcolor{keywordflow}{else}                                                                                                                 \(\backslash\)}
+\DoxyCodeLine{  \{                                                                                                                    \(\backslash\)}
+\DoxyCodeLine{    min = p1;                                                                                                          \(\backslash\)}
+\DoxyCodeLine{    max = p0;                                                                                                          \(\backslash\)}
+\DoxyCodeLine{  \}                                                                                                                    \(\backslash\)}
+\DoxyCodeLine{  rad = fa * boxhalfsize[\mbox{\hyperlink{vhacdVolume_8cpp_a798e4073d613ca5ba9618e1b3253df14}{Y}}] + fb * boxhalfsize[\mbox{\hyperlink{vhacdVolume_8cpp_a51591cf51bdd6c1f6015532422e7770e}{Z}}];                                                                     \(\backslash\)}
+\DoxyCodeLine{  if (min > rad || max < -\/rad)                                                                                         \(\backslash\)}
+\DoxyCodeLine{    \textcolor{keywordflow}{return} 0;}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{vhacdVolume_8cpp_a2409651c6dcde598145e0434cc80f8cb}\label{vhacdVolume_8cpp_a2409651c6dcde598145e0434cc80f8cb}} 
+\index{vhacdVolume.cpp@{vhacdVolume.cpp}!AXISTEST\_Y02@{AXISTEST\_Y02}}
+\index{AXISTEST\_Y02@{AXISTEST\_Y02}!vhacdVolume.cpp@{vhacdVolume.cpp}}
+\doxysubsubsection{\texorpdfstring{AXISTEST\_Y02}{AXISTEST\_Y02}}
+{\footnotesize\ttfamily \#define AXISTEST\+\_\+\+Y02(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b,  }\item[{}]{fa,  }\item[{}]{fb }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  p0 = -\/a * v0[\mbox{\hyperlink{vhacdVolume_8cpp_a207fd5507206d307cd63f95374fcd00d}{X}}] + b * v0[\mbox{\hyperlink{vhacdVolume_8cpp_a51591cf51bdd6c1f6015532422e7770e}{Z}}];                                                                                         \(\backslash\)}
+\DoxyCodeLine{  p2 = -\/a * \mbox{\hyperlink{tesseract__common__unit_8cpp_a23dd5e7fffd5f8400cbed32a5071f236}{v2}}[\mbox{\hyperlink{vhacdVolume_8cpp_a207fd5507206d307cd63f95374fcd00d}{X}}] + b * \mbox{\hyperlink{tesseract__common__unit_8cpp_a23dd5e7fffd5f8400cbed32a5071f236}{v2}}[\mbox{\hyperlink{vhacdVolume_8cpp_a51591cf51bdd6c1f6015532422e7770e}{Z}}];                                                                                         \(\backslash\)}
+\DoxyCodeLine{  if (p0 < p2)                                                                                                         \(\backslash\)}
+\DoxyCodeLine{  \{                                                                                                                    \(\backslash\)}
+\DoxyCodeLine{    min = p0;                                                                                                          \(\backslash\)}
+\DoxyCodeLine{    max = p2;                                                                                                          \(\backslash\)}
+\DoxyCodeLine{  \}                                                                                                                    \(\backslash\)}
+\DoxyCodeLine{  \textcolor{keywordflow}{else}                                                                                                                 \(\backslash\)}
+\DoxyCodeLine{  \{                                                                                                                    \(\backslash\)}
+\DoxyCodeLine{    min = p2;                                                                                                          \(\backslash\)}
+\DoxyCodeLine{    max = p0;                                                                                                          \(\backslash\)}
+\DoxyCodeLine{  \}                                                                                                                    \(\backslash\)}
+\DoxyCodeLine{  rad = fa * boxhalfsize[\mbox{\hyperlink{vhacdVolume_8cpp_a207fd5507206d307cd63f95374fcd00d}{X}}] + fb * boxhalfsize[\mbox{\hyperlink{vhacdVolume_8cpp_a51591cf51bdd6c1f6015532422e7770e}{Z}}];                                                                     \(\backslash\)}
+\DoxyCodeLine{  if (min > rad || max < -\/rad)                                                                                         \(\backslash\)}
+\DoxyCodeLine{    \textcolor{keywordflow}{return} 0;}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{vhacdVolume_8cpp_a77a3cf69f7cdf4e359d10a50a0498a75}\label{vhacdVolume_8cpp_a77a3cf69f7cdf4e359d10a50a0498a75}} 
+\index{vhacdVolume.cpp@{vhacdVolume.cpp}!AXISTEST\_Y1@{AXISTEST\_Y1}}
+\index{AXISTEST\_Y1@{AXISTEST\_Y1}!vhacdVolume.cpp@{vhacdVolume.cpp}}
+\doxysubsubsection{\texorpdfstring{AXISTEST\_Y1}{AXISTEST\_Y1}}
+{\footnotesize\ttfamily \#define AXISTEST\+\_\+\+Y1(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b,  }\item[{}]{fa,  }\item[{}]{fb }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  p0 = -\/a * v0[\mbox{\hyperlink{vhacdVolume_8cpp_a207fd5507206d307cd63f95374fcd00d}{X}}] + b * v0[\mbox{\hyperlink{vhacdVolume_8cpp_a51591cf51bdd6c1f6015532422e7770e}{Z}}];                                                                                         \(\backslash\)}
+\DoxyCodeLine{  p1 = -\/a * \mbox{\hyperlink{tesseract__common__unit_8cpp_a78e1cc09f129a731d55ed82bc47956a7}{v1}}[\mbox{\hyperlink{vhacdVolume_8cpp_a207fd5507206d307cd63f95374fcd00d}{X}}] + b * \mbox{\hyperlink{tesseract__common__unit_8cpp_a78e1cc09f129a731d55ed82bc47956a7}{v1}}[\mbox{\hyperlink{vhacdVolume_8cpp_a51591cf51bdd6c1f6015532422e7770e}{Z}}];                                                                                         \(\backslash\)}
+\DoxyCodeLine{  if (p0 < p1)                                                                                                         \(\backslash\)}
+\DoxyCodeLine{  \{                                                                                                                    \(\backslash\)}
+\DoxyCodeLine{    min = p0;                                                                                                          \(\backslash\)}
+\DoxyCodeLine{    max = p1;                                                                                                          \(\backslash\)}
+\DoxyCodeLine{  \}                                                                                                                    \(\backslash\)}
+\DoxyCodeLine{  \textcolor{keywordflow}{else}                                                                                                                 \(\backslash\)}
+\DoxyCodeLine{  \{                                                                                                                    \(\backslash\)}
+\DoxyCodeLine{    min = p1;                                                                                                          \(\backslash\)}
+\DoxyCodeLine{    max = p0;                                                                                                          \(\backslash\)}
+\DoxyCodeLine{  \}                                                                                                                    \(\backslash\)}
+\DoxyCodeLine{  rad = fa * boxhalfsize[\mbox{\hyperlink{vhacdVolume_8cpp_a207fd5507206d307cd63f95374fcd00d}{X}}] + fb * boxhalfsize[\mbox{\hyperlink{vhacdVolume_8cpp_a51591cf51bdd6c1f6015532422e7770e}{Z}}];                                                                     \(\backslash\)}
+\DoxyCodeLine{  if (min > rad || max < -\/rad)                                                                                         \(\backslash\)}
+\DoxyCodeLine{    \textcolor{keywordflow}{return} 0;}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{vhacdVolume_8cpp_ae7c0544b51ee58f7b8891c5906d554ce}\label{vhacdVolume_8cpp_ae7c0544b51ee58f7b8891c5906d554ce}} 
+\index{vhacdVolume.cpp@{vhacdVolume.cpp}!AXISTEST\_Z0@{AXISTEST\_Z0}}
+\index{AXISTEST\_Z0@{AXISTEST\_Z0}!vhacdVolume.cpp@{vhacdVolume.cpp}}
+\doxysubsubsection{\texorpdfstring{AXISTEST\_Z0}{AXISTEST\_Z0}}
+{\footnotesize\ttfamily \#define AXISTEST\+\_\+\+Z0(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b,  }\item[{}]{fa,  }\item[{}]{fb }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  p0 = a * v0[\mbox{\hyperlink{vhacdVolume_8cpp_a207fd5507206d307cd63f95374fcd00d}{X}}] -\/ b * v0[\mbox{\hyperlink{vhacdVolume_8cpp_a798e4073d613ca5ba9618e1b3253df14}{Y}}];                                                                                          \(\backslash\)}
+\DoxyCodeLine{  p1 = a * \mbox{\hyperlink{tesseract__common__unit_8cpp_a78e1cc09f129a731d55ed82bc47956a7}{v1}}[\mbox{\hyperlink{vhacdVolume_8cpp_a207fd5507206d307cd63f95374fcd00d}{X}}] -\/ b * \mbox{\hyperlink{tesseract__common__unit_8cpp_a78e1cc09f129a731d55ed82bc47956a7}{v1}}[\mbox{\hyperlink{vhacdVolume_8cpp_a798e4073d613ca5ba9618e1b3253df14}{Y}}];                                                                                          \(\backslash\)}
+\DoxyCodeLine{  if (p0 < p1)                                                                                                         \(\backslash\)}
+\DoxyCodeLine{  \{                                                                                                                    \(\backslash\)}
+\DoxyCodeLine{    min = p0;                                                                                                          \(\backslash\)}
+\DoxyCodeLine{    max = p1;                                                                                                          \(\backslash\)}
+\DoxyCodeLine{  \}                                                                                                                    \(\backslash\)}
+\DoxyCodeLine{  \textcolor{keywordflow}{else}                                                                                                                 \(\backslash\)}
+\DoxyCodeLine{  \{                                                                                                                    \(\backslash\)}
+\DoxyCodeLine{    min = p1;                                                                                                          \(\backslash\)}
+\DoxyCodeLine{    max = p0;                                                                                                          \(\backslash\)}
+\DoxyCodeLine{  \}                                                                                                                    \(\backslash\)}
+\DoxyCodeLine{  rad = fa * boxhalfsize[\mbox{\hyperlink{vhacdVolume_8cpp_a207fd5507206d307cd63f95374fcd00d}{X}}] + fb * boxhalfsize[\mbox{\hyperlink{vhacdVolume_8cpp_a798e4073d613ca5ba9618e1b3253df14}{Y}}];                                                                     \(\backslash\)}
+\DoxyCodeLine{  if (min > rad || max < -\/rad)                                                                                         \(\backslash\)}
+\DoxyCodeLine{    \textcolor{keywordflow}{return} 0;}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{vhacdVolume_8cpp_a2f2534d1e427de530b66531a42a7af82}\label{vhacdVolume_8cpp_a2f2534d1e427de530b66531a42a7af82}} 
+\index{vhacdVolume.cpp@{vhacdVolume.cpp}!AXISTEST\_Z12@{AXISTEST\_Z12}}
+\index{AXISTEST\_Z12@{AXISTEST\_Z12}!vhacdVolume.cpp@{vhacdVolume.cpp}}
+\doxysubsubsection{\texorpdfstring{AXISTEST\_Z12}{AXISTEST\_Z12}}
+{\footnotesize\ttfamily \#define AXISTEST\+\_\+\+Z12(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b,  }\item[{}]{fa,  }\item[{}]{fb }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  p1 = a * \mbox{\hyperlink{tesseract__common__unit_8cpp_a78e1cc09f129a731d55ed82bc47956a7}{v1}}[\mbox{\hyperlink{vhacdVolume_8cpp_a207fd5507206d307cd63f95374fcd00d}{X}}] -\/ b * \mbox{\hyperlink{tesseract__common__unit_8cpp_a78e1cc09f129a731d55ed82bc47956a7}{v1}}[\mbox{\hyperlink{vhacdVolume_8cpp_a798e4073d613ca5ba9618e1b3253df14}{Y}}];                                                                                          \(\backslash\)}
+\DoxyCodeLine{  p2 = a * \mbox{\hyperlink{tesseract__common__unit_8cpp_a23dd5e7fffd5f8400cbed32a5071f236}{v2}}[\mbox{\hyperlink{vhacdVolume_8cpp_a207fd5507206d307cd63f95374fcd00d}{X}}] -\/ b * \mbox{\hyperlink{tesseract__common__unit_8cpp_a23dd5e7fffd5f8400cbed32a5071f236}{v2}}[\mbox{\hyperlink{vhacdVolume_8cpp_a798e4073d613ca5ba9618e1b3253df14}{Y}}];                                                                                          \(\backslash\)}
+\DoxyCodeLine{  if (p2 < p1)                                                                                                         \(\backslash\)}
+\DoxyCodeLine{  \{                                                                                                                    \(\backslash\)}
+\DoxyCodeLine{    min = p2;                                                                                                          \(\backslash\)}
+\DoxyCodeLine{    max = p1;                                                                                                          \(\backslash\)}
+\DoxyCodeLine{  \}                                                                                                                    \(\backslash\)}
+\DoxyCodeLine{  \textcolor{keywordflow}{else}                                                                                                                 \(\backslash\)}
+\DoxyCodeLine{  \{                                                                                                                    \(\backslash\)}
+\DoxyCodeLine{    min = p1;                                                                                                          \(\backslash\)}
+\DoxyCodeLine{    max = p2;                                                                                                          \(\backslash\)}
+\DoxyCodeLine{  \}                                                                                                                    \(\backslash\)}
+\DoxyCodeLine{  rad = fa * boxhalfsize[\mbox{\hyperlink{vhacdVolume_8cpp_a207fd5507206d307cd63f95374fcd00d}{X}}] + fb * boxhalfsize[\mbox{\hyperlink{vhacdVolume_8cpp_a798e4073d613ca5ba9618e1b3253df14}{Y}}];                                                                     \(\backslash\)}
+\DoxyCodeLine{  if (min > rad || max < -\/rad)                                                                                         \(\backslash\)}
+\DoxyCodeLine{    \textcolor{keywordflow}{return} 0;}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{vhacdVolume_8cpp_a27cf54160e51334c0f90ede5b9a30173}\label{vhacdVolume_8cpp_a27cf54160e51334c0f90ede5b9a30173}} 
+\index{vhacdVolume.cpp@{vhacdVolume.cpp}!FINDMINMAX@{FINDMINMAX}}
+\index{FINDMINMAX@{FINDMINMAX}!vhacdVolume.cpp@{vhacdVolume.cpp}}
+\doxysubsubsection{\texorpdfstring{FINDMINMAX}{FINDMINMAX}}
+{\footnotesize\ttfamily \#define FINDMINMAX(\begin{DoxyParamCaption}\item[{}]{x0,  }\item[{}]{x1,  }\item[{}]{x2,  }\item[{}]{min,  }\item[{}]{max }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  min = max = x0;                                                                                                      \(\backslash\)}
+\DoxyCodeLine{  if (x1 < min)                                                                                                        \(\backslash\)}
+\DoxyCodeLine{    min = x1;                                                                                                          \(\backslash\)}
+\DoxyCodeLine{  if (x1 > max)                                                                                                        \(\backslash\)}
+\DoxyCodeLine{    max = x1;                                                                                                          \(\backslash\)}
+\DoxyCodeLine{  if (x2 < min)                                                                                                        \(\backslash\)}
+\DoxyCodeLine{    min = x2;                                                                                                          \(\backslash\)}
+\DoxyCodeLine{  if (x2 > max)                                                                                                        \(\backslash\)}
+\DoxyCodeLine{    max = x2;}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{vhacdVolume_8cpp_a207fd5507206d307cd63f95374fcd00d}\label{vhacdVolume_8cpp_a207fd5507206d307cd63f95374fcd00d}} 
+\index{vhacdVolume.cpp@{vhacdVolume.cpp}!X@{X}}
+\index{X@{X}!vhacdVolume.cpp@{vhacdVolume.cpp}}
+\doxysubsubsection{\texorpdfstring{X}{X}}
+{\footnotesize\ttfamily \#define X~0}
+
+\mbox{\Hypertarget{vhacdVolume_8cpp_a798e4073d613ca5ba9618e1b3253df14}\label{vhacdVolume_8cpp_a798e4073d613ca5ba9618e1b3253df14}} 
+\index{vhacdVolume.cpp@{vhacdVolume.cpp}!Y@{Y}}
+\index{Y@{Y}!vhacdVolume.cpp@{vhacdVolume.cpp}}
+\doxysubsubsection{\texorpdfstring{Y}{Y}}
+{\footnotesize\ttfamily \#define Y~1}
+
+\mbox{\Hypertarget{vhacdVolume_8cpp_a51591cf51bdd6c1f6015532422e7770e}\label{vhacdVolume_8cpp_a51591cf51bdd6c1f6015532422e7770e}} 
+\index{vhacdVolume.cpp@{vhacdVolume.cpp}!Z@{Z}}
+\index{Z@{Z}!vhacdVolume.cpp@{vhacdVolume.cpp}}
+\doxysubsubsection{\texorpdfstring{Z}{Z}}
+{\footnotesize\ttfamily \#define Z~2}
+

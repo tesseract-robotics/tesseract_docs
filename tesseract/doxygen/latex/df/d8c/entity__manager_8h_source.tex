@@ -1,0 +1,63 @@
+\hypertarget{entity__manager_8h_source}{}\doxysection{entity\+\_\+manager.\+h}
+\label{entity__manager_8h_source}\index{tesseract\_visualization/include/tesseract\_visualization/ignition/entity\_manager.h@{tesseract\_visualization/include/tesseract\_visualization/ignition/entity\_manager.h}}
+\mbox{\hyperlink{entity__manager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#ifndef TESSERACT\_VISUALIZATION\_IGNITION\_ENTITY\_MANAGER\_H}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define TESSERACT\_VISUALIZATION\_IGNITION\_ENTITY\_MANAGER\_H}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{macros_8h}{tesseract\_common/macros.h}}>}}
+\DoxyCodeLine{30 \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include <unordered\_map>}}
+\DoxyCodeLine{33 \mbox{\hyperlink{namespaceTESSERACT__COMMON__IGNORE__WARNINGS__POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__visualization}{tesseract\_visualization}}}
+\DoxyCodeLine{36 \{}
+\DoxyCodeLine{37 \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{int} \mbox{\hyperlink{namespacetesseract__visualization_a06a562dbdd5b945e34e0896aa06c74d1}{NULL\_ENTITY\_ID}} = -\/1;}
+\DoxyCodeLine{38 \textcolor{keyword}{using }\mbox{\hyperlink{namespacetesseract__visualization_a12376b06553445215c95f00b5fac42ea}{EntityID}} = int;}
+\DoxyCodeLine{39 \textcolor{keyword}{using }\mbox{\hyperlink{namespacetesseract__visualization_a62add283f33a3eda80b1ffdc98e34261}{EntityMap}} = std::unordered\_map<std::string, EntityID>;}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__visualization_1_1EntityManager}{EntityManager}}}
+\DoxyCodeLine{42 \{}
+\DoxyCodeLine{43 \textcolor{keyword}{public}:}
+\DoxyCodeLine{49   \mbox{\hyperlink{namespacetesseract__visualization_a12376b06553445215c95f00b5fac42ea}{EntityID}} \mbox{\hyperlink{classtesseract__visualization_1_1EntityManager_aa330a07d5e77ed0425773fe13b463498}{addModel}}(\textcolor{keyword}{const} std::string\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}});}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{56   \mbox{\hyperlink{namespacetesseract__visualization_a12376b06553445215c95f00b5fac42ea}{EntityID}} \mbox{\hyperlink{classtesseract__visualization_1_1EntityManager_a8ea08d96144c6a37eec6776df04d3331}{getModel}}(\textcolor{keyword}{const} std::string\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}) \textcolor{keyword}{const};}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{62   \textcolor{keyword}{const} \mbox{\hyperlink{namespacetesseract__visualization_a62add283f33a3eda80b1ffdc98e34261}{EntityMap}}\& \mbox{\hyperlink{classtesseract__visualization_1_1EntityManager_a3619ecdf4960cd2a0770438ce3cc7334}{getModels}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{69   \mbox{\hyperlink{namespacetesseract__visualization_a12376b06553445215c95f00b5fac42ea}{EntityID}} \mbox{\hyperlink{classtesseract__visualization_1_1EntityManager_a39ea712d769b17655d377b7b56830f4d}{addLink}}(\textcolor{keyword}{const} std::string\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}});}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{76   \mbox{\hyperlink{namespacetesseract__visualization_a12376b06553445215c95f00b5fac42ea}{EntityID}} \mbox{\hyperlink{classtesseract__visualization_1_1EntityManager_a4abbe7ff6fca270448dffe549cc30e58}{getLink}}(\textcolor{keyword}{const} std::string\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}) \textcolor{keyword}{const};}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{82   \textcolor{keyword}{const} \mbox{\hyperlink{namespacetesseract__visualization_a62add283f33a3eda80b1ffdc98e34261}{EntityMap}}\& \mbox{\hyperlink{classtesseract__visualization_1_1EntityManager_a3538bbc7b3b228d4f7d133f3fc61c992}{getLinks}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{89   \mbox{\hyperlink{namespacetesseract__visualization_a12376b06553445215c95f00b5fac42ea}{EntityID}} \mbox{\hyperlink{classtesseract__visualization_1_1EntityManager_ade42425b7e453160442ef00694265b1c}{addVisual}}(\textcolor{keyword}{const} std::string\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}});}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{96   \mbox{\hyperlink{namespacetesseract__visualization_a12376b06553445215c95f00b5fac42ea}{EntityID}} \mbox{\hyperlink{classtesseract__visualization_1_1EntityManager_a138e9982268a0727ac97e1ba5b2b5d28}{getVisual}}(\textcolor{keyword}{const} std::string\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}) \textcolor{keyword}{const};}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{102   \textcolor{keyword}{const} \mbox{\hyperlink{namespacetesseract__visualization_a62add283f33a3eda80b1ffdc98e34261}{EntityMap}}\& \mbox{\hyperlink{classtesseract__visualization_1_1EntityManager_a978028b45ef349d23f97b22c3dbdd159}{getVisuals}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{109   \mbox{\hyperlink{namespacetesseract__visualization_a12376b06553445215c95f00b5fac42ea}{EntityID}} \mbox{\hyperlink{classtesseract__visualization_1_1EntityManager_af8d614f61f182092609ed16314110470}{addSensor}}(\textcolor{keyword}{const} std::string\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}});}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{116   \mbox{\hyperlink{namespacetesseract__visualization_a12376b06553445215c95f00b5fac42ea}{EntityID}} \mbox{\hyperlink{classtesseract__visualization_1_1EntityManager_a624695fe9a722ec1142154038ddb6d23}{getSensor}}(\textcolor{keyword}{const} std::string\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}) \textcolor{keyword}{const};}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{122   \textcolor{keyword}{const} \mbox{\hyperlink{namespacetesseract__visualization_a62add283f33a3eda80b1ffdc98e34261}{EntityMap}}\& \mbox{\hyperlink{classtesseract__visualization_1_1EntityManager_a89badf59865b2fb141eb8f303b358470}{getSensors}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{125   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__visualization_1_1EntityManager_a53d56e0b9a9f9712ae3c2bb1fd78fe67}{empty}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{128   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__visualization_1_1EntityManager_a998ad966317e8dec12414c9dc7e96b6f}{clear}}();}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130 \textcolor{keyword}{private}:}
+\DoxyCodeLine{131   \mbox{\hyperlink{namespacetesseract__visualization_a62add283f33a3eda80b1ffdc98e34261}{EntityMap}} \mbox{\hyperlink{classtesseract__visualization_1_1EntityManager_a65aee6c8a606ab1a79aa79370de1c66f}{link\_id\_map\_}};           }
+\DoxyCodeLine{132   \mbox{\hyperlink{namespacetesseract__visualization_a62add283f33a3eda80b1ffdc98e34261}{EntityMap}} \mbox{\hyperlink{classtesseract__visualization_1_1EntityManager_a99c31de5ded2baa3d4245e32de2a26fc}{model\_id\_map\_}};          }
+\DoxyCodeLine{133   \mbox{\hyperlink{namespacetesseract__visualization_a62add283f33a3eda80b1ffdc98e34261}{EntityMap}} \mbox{\hyperlink{classtesseract__visualization_1_1EntityManager_aa1b255b51779aed2236f275b76f42b32}{visual\_id\_map\_}};         }
+\DoxyCodeLine{134   \mbox{\hyperlink{namespacetesseract__visualization_a62add283f33a3eda80b1ffdc98e34261}{EntityMap}} \mbox{\hyperlink{classtesseract__visualization_1_1EntityManager_ae6460b2258a7753a4055b4ec846a0ed1}{sensor\_id\_map\_}};         }
+\DoxyCodeLine{135   \mbox{\hyperlink{namespacetesseract__visualization_a12376b06553445215c95f00b5fac42ea}{EntityID}} \mbox{\hyperlink{classtesseract__visualization_1_1EntityManager_a937895810ef85ec94a50bcd67c285c9a}{entity\_counter\_}}\{ 1000 \}; }
+\DoxyCodeLine{136 \};}
+\DoxyCodeLine{137 \}  \textcolor{comment}{// namespace tesseract\_visualization}}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_VISUALIZATION\_IGNITION\_ENTITY\_MANAGER\_H}}
+
+\end{DoxyCode}

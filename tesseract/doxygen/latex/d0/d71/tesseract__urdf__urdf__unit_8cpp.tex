@@ -1,0 +1,275 @@
+\hypertarget{tesseract__urdf__urdf__unit_8cpp}{}\doxysection{tesseract\+\_\+urdf/test/tesseract\+\_\+urdf\+\_\+urdf\+\_\+unit.cpp File Reference}
+\label{tesseract__urdf__urdf__unit_8cpp}\index{tesseract\_urdf/test/tesseract\_urdf\_urdf\_unit.cpp@{tesseract\_urdf/test/tesseract\_urdf\_urdf\_unit.cpp}}
+{\ttfamily \#include $<$tesseract\+\_\+common/macros.\+h$>$}\newline
+{\ttfamily \#include $<$gtest/gtest.\+h$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Geometry$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+common/utils.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+urdf/urdf\+\_\+parser.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+support/tesseract\+\_\+support\+\_\+resource\+\_\+locator.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}tesseract\+\_\+urdf\+\_\+common\+\_\+unit.\+h\char`\"{}}\newline
+Include dependency graph for tesseract\+\_\+urdf\+\_\+urdf\+\_\+unit.\+cpp\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a2007e2ac5c24a810050700762d635dc4}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a1dbe6d2c170400b636ebdc0be424944d}{sg}} !=nullptr)
+\item 
+\mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_aa80ec7df122f853539f2936ee5e0734b}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a1dbe6d2c170400b636ebdc0be424944d}{sg}}-\/$>$get\+Name()==\char`\"{}test\char`\"{})
+\item 
+\mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a840feeee4db80a843a48f5d1078d432e}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a1dbe6d2c170400b636ebdc0be424944d}{sg}}-\/$>$get\+Joints().size()==1)
+\item 
+\mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a08dd2aef11edab6a3bf9cf541fb012c5}{EXPECT\+\_\+\+ANY\+\_\+\+THROW}} (\mbox{\hyperlink{namespacetesseract__urdf_a281f39218762083efcc308fb0888db6a}{tesseract\+\_\+urdf\+::parse\+URDFString}}(\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a5d55e2558544e2ad2ea0b54f8e3d41fc}{str}}, resource\+\_\+locator))
+\item 
+\mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_ae0be604e579f14b0f151ea393cf953af}{EXPECT\+\_\+\+EQ}} (\mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a1dbe6d2c170400b636ebdc0be424944d}{sg}}-\/$>$get\+Link(\char`\"{}l1\char`\"{}) -\/$>$visual\mbox{[}0\mbox{]}-\/$>$\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_abd1ae0faf8b8ed36ee5c62dd1c259a59}{material}}-\/$>$get\+Name(), \char`\"{}test\+\_\+material\char`\"{})
+\item 
+\mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a10e03a00f3e587b60e7bc1e6867cadd4}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a41309b4c659a8ee4246e23a5c741c8e8}{g}}-\/$>$get\+Joints().size()==9)
+\item 
+\mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a2734d886a848e851542ad7bc3da2d484}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a41309b4c659a8ee4246e23a5c741c8e8}{g}}-\/$>$is\+Tree())
+\item 
+\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a41309b4c659a8ee4246e23a5c741c8e8}{g}} \mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a5284fc951c72bc6c0917b3a5b18496ed}{save\+DOT}} (\mbox{\hyperlink{namespacetesseract__common_a58ecad04db85855fa9e4de21084598ca}{tesseract\+\_\+common\+::get\+Temp\+Path}}()+\char`\"{}tesseract\+\_\+urdf\+\_\+import.\+dot\char`\"{})
+\item 
+\mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_ad244b3a0b72fad48af9a4a4fd9cf1e0a}{std\+::cout$<$$<$ path$<$$<$ std\+::endl;\+EXPECT\+\_\+\+TRUE(path.\+links.\+size()==4);\+EXPECT\+\_\+\+TRUE(std\+::find(path.\+links.\+begin(), path.\+links.\+end(), \char`\"{}link\+\_\+1\char`\"{}) !=path.\+links.\+end());\+EXPECT\+\_\+\+TRUE(std\+::find(path.\+links.\+begin(), path.\+links.\+end(), \char`\"{}link\+\_\+2\char`\"{}) !=path.\+links.\+end());\+EXPECT\+\_\+\+TRUE(std\+::find(path.\+links.\+begin(), path.\+links.\+end(), \char`\"{}link\+\_\+3\char`\"{}) !=path.\+links.\+end());\+EXPECT\+\_\+\+TRUE(std\+::find(path.\+links.\+begin(), path.\+links.\+end(), \char`\"{}link\+\_\+4\char`\"{}) !=path.\+links.\+end());\+EXPECT\+\_\+\+TRUE(path.\+joints.\+size()==3);\+EXPECT\+\_\+\+TRUE(std\+::find(path.\+joints.\+begin(), path.\+joints.\+end(), \char`\"{}joint\+\_\+a2\char`\"{}) !=path.\+joints.\+end());\+EXPECT\+\_\+\+TRUE(std\+::find(path.\+joints.\+begin(), path.\+joints.\+end(), \char`\"{}joint\+\_\+a3\char`\"{}) !=path.\+joints.\+end());\+EXPECT\+\_\+\+TRUE(std\+::find(path.\+joints.\+begin(), path.\+joints.\+end(), \char`\"{}joint\+\_\+a4\char`\"{}) !=path.\+joints.\+end());\} \{ \{ tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+Graph\+::\+Ptr sg=nullptr;bool success=true;try \{ tesseract\+\_\+urdf\+::write\+URDFFile(sg, \char`\"{}/tmp/\char`\"{}, \char`\"{}urdf0.\+urdf\char`\"{});\} catch(...) \{ success=false;\} EXPECT\+\_\+\+FALSE(success);\} \{ tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+Graph\+::\+Ptr sg=std\+::make\+\_\+shared$<$ tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+Graph $>$}} ()
+\item 
+\mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a1204fa6444ae7174767e202a6d39b815}{catch}} (...)
+\item 
+\mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_afcf9f053b289fa1bc734612e9744d488}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{tesseract__environment__cache__unit_8cpp_a7960f9c558f9ee2c3d4a8fdea096fb56}{success}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\+\_\+\+COMMON\+\_\+\+IGNORE\+\_\+\+WARNINGS\+\_\+\+PUSH}} \mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a2733ace18b4e650b36b176083d0f9c42}{TESSERACT\+\_\+\+COMMON\+\_\+\+IGNORE\+\_\+\+WARNINGS\+\_\+\+POP}}
+\item 
+\mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph_a4421b8568bd664cf203613a054e1847b}{tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+Graph\+::\+Ptr}} \mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a1dbe6d2c170400b636ebdc0be424944d}{sg}} = \mbox{\hyperlink{namespacetesseract__urdf_a281f39218762083efcc308fb0888db6a}{tesseract\+\_\+urdf\+::parse\+URDFString}}(\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a5d55e2558544e2ad2ea0b54f8e3d41fc}{str}}, resource\+\_\+locator)
+\item 
+std\+::string \mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_ae14b9e3c6f792880fed61b0709121998}{urdf\+\_\+file}} = std\+::string(TESSERACT\+\_\+\+SUPPORT\+\_\+\+DIR) + \char`\"{}/urdf/lbr\+\_\+iiwa\+\_\+14\+\_\+r820.\+urdf\char`\"{}
+\item 
+\mbox{\hyperlink{classtesseract__common_1_1TesseractSupportResourceLocator}{tesseract\+\_\+common\+::\+Tesseract\+Support\+Resource\+Locator}} \mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_aacf03b1426c0d22169a350fadaefcfb2}{locator}}
+\item 
+\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a395d31593a673a3b0efd30ad8d2bba78}{auto}} \mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a8bf675ee24d81e4923baafdae5efebcc}{g}} = \mbox{\hyperlink{namespacetesseract__urdf_af87dbf019b08c4a9966e8131d382d5ad}{tesseract\+\_\+urdf\+::parse\+URDFFile}}(\mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_ae14b9e3c6f792880fed61b0709121998}{urdf\+\_\+file}}, \mbox{\hyperlink{resource__locator__unit_8cpp_ad889712fa094e762b2a887aec9001270}{locator}})
+\item 
+\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a395d31593a673a3b0efd30ad8d2bba78}{auto}} \mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_ae316b13952c0ac7d67c0365a3ae77d45}{path}} = \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a41309b4c659a8ee4246e23a5c741c8e8}{g}}-\/$>$get\+Shortest\+Path(\char`\"{}link\+\_\+1\char`\"{}, \char`\"{}link\+\_\+4\char`\"{})
+\item 
+\mbox{\hyperlink{classtesseract__scene__graph_1_1Link_a424c06b5c02fe0b92fee449ef1190bf0}{tesseract\+\_\+scene\+\_\+graph\+::\+Link\+::\+Ptr}} \mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a38091f48bfa25fe82f6a9a632e23f4f5}{link\+\_\+0}} = std\+::make\+\_\+shared$<$\mbox{\hyperlink{classtesseract__scene__graph_1_1Link}{tesseract\+\_\+scene\+\_\+graph\+::\+Link}}$>$(\char`\"{}link\+\_\+0\char`\"{})
+\item 
+\mbox{\hyperlink{classtesseract__scene__graph_1_1Link_a424c06b5c02fe0b92fee449ef1190bf0}{tesseract\+\_\+scene\+\_\+graph\+::\+Link\+::\+Ptr}} \mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a815afe8378ffb048c7fc0ee619dfef12}{link\+\_\+1}} = std\+::make\+\_\+shared$<$\mbox{\hyperlink{classtesseract__scene__graph_1_1Link}{tesseract\+\_\+scene\+\_\+graph\+::\+Link}}$>$(\char`\"{}link\+\_\+1\char`\"{})
+\item 
+\mbox{\hyperlink{classtesseract__scene__graph_1_1Joint_a9e557626dd69e69cebfd3ad516cfcd85}{tesseract\+\_\+scene\+\_\+graph\+::\+Joint\+::\+Ptr}} \mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a842d768e878553fb5fb2f27fe0af3278}{joint\+\_\+0}} = std\+::make\+\_\+shared$<$\mbox{\hyperlink{classtesseract__scene__graph_1_1Joint}{tesseract\+\_\+scene\+\_\+graph\+::\+Joint}}$>$(\char`\"{}joint\+\_\+0\char`\"{})
+\item 
+\mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a842d768e878553fb5fb2f27fe0af3278}{joint\+\_\+0}} \mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a0286b397100b91901e6da101c649d7f3}{type}} = \mbox{\hyperlink{namespacetesseract__scene__graph_ade43fa945a554b6e0c703e38e6a8cf16ac6e6dc18b53b4c2681394b9d8aefcec7}{tesseract\+\_\+scene\+\_\+graph\+::\+Joint\+Type\+::\+FIXED}}
+\item 
+\mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a842d768e878553fb5fb2f27fe0af3278}{joint\+\_\+0}} \mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a9739f86fd758565c5a668d76d469c290}{parent\+\_\+link\+\_\+name}} = \mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a38091f48bfa25fe82f6a9a632e23f4f5}{link\+\_\+0}}-\/$>$get\+Name()
+\item 
+\mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a842d768e878553fb5fb2f27fe0af3278}{joint\+\_\+0}} \mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a30397e7fb869d3d2b6c89289cf0b6f4a}{child\+\_\+link\+\_\+name}} = \mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a815afe8378ffb048c7fc0ee619dfef12}{link\+\_\+1}}-\/$>$get\+Name()
+\item 
+bool \mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a7960f9c558f9ee2c3d4a8fdea096fb56}{success}} = true
+\item 
+\mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_abe4cc9788f52e49485473dc699537388}{try}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{tesseract__urdf__urdf__unit_8cpp_a1204fa6444ae7174767e202a6d39b815}\label{tesseract__urdf__urdf__unit_8cpp_a1204fa6444ae7174767e202a6d39b815}} 
+\index{tesseract\_urdf\_urdf\_unit.cpp@{tesseract\_urdf\_urdf\_unit.cpp}!catch@{catch}}
+\index{catch@{catch}!tesseract\_urdf\_urdf\_unit.cpp@{tesseract\_urdf\_urdf\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{catch()}{catch()}}
+{\footnotesize\ttfamily catch (\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__urdf__urdf__unit_8cpp_a08dd2aef11edab6a3bf9cf541fb012c5}\label{tesseract__urdf__urdf__unit_8cpp_a08dd2aef11edab6a3bf9cf541fb012c5}} 
+\index{tesseract\_urdf\_urdf\_unit.cpp@{tesseract\_urdf\_urdf\_unit.cpp}!EXPECT\_ANY\_THROW@{EXPECT\_ANY\_THROW}}
+\index{EXPECT\_ANY\_THROW@{EXPECT\_ANY\_THROW}!tesseract\_urdf\_urdf\_unit.cpp@{tesseract\_urdf\_urdf\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_ANY\_THROW()}{EXPECT\_ANY\_THROW()}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+ANY\+\_\+\+THROW (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacetesseract__urdf_a281f39218762083efcc308fb0888db6a}{tesseract\+\_\+urdf\+::parse\+URDFString}}(\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a5d55e2558544e2ad2ea0b54f8e3d41fc}{str}}, resource\+\_\+locator)}]{ }\end{DoxyParamCaption})}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    std::string \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a5d55e2558544e2ad2ea0b54f8e3d41fc}{str}} =}
+\DoxyCodeLine{        R\textcolor{stringliteral}{"{}(<robot name="{}test"{}>}}
+\DoxyCodeLine{\textcolor{stringliteral}{             <joint name="{}j1"{} type="{}fixed"{}>}}
+\DoxyCodeLine{\textcolor{stringliteral}{               <parent link="{}l1"{}/>}}
+\DoxyCodeLine{\textcolor{stringliteral}{               <child link="{}l2"{}/>}}
+\DoxyCodeLine{\textcolor{stringliteral}{               <origin xyz="{}0 0 0"{} rpy="{}0 0 0"{}/>}}
+\DoxyCodeLine{\textcolor{stringliteral}{               <dynamics damping="{}87.098"{} friction="{}3.1290"{}/>}}
+\DoxyCodeLine{\textcolor{stringliteral}{               <limit lower="{}12.34"{} upper="{}22.999"{} effort="{}99.0"{} velocity="{}23.0"{}/>}}
+\DoxyCodeLine{\textcolor{stringliteral}{               <safety\_controller soft\_lower\_limit="{}8.765"{} soft\_upper\_limit="{}9.003"{} k\_position="{}7.0034"{} k\_velocity="{}9.998"{}/>}}
+\DoxyCodeLine{\textcolor{stringliteral}{               <calibration rising="{}8.654"{} falling="{}0.0445"{}/>}}
+\DoxyCodeLine{\textcolor{stringliteral}{               <mimic joint="{}j2"{} multiplier="{}9.87"{} offset="{}0.098"{}/>}}
+\DoxyCodeLine{\textcolor{stringliteral}{             </joint>}}
+\DoxyCodeLine{\textcolor{stringliteral}{             <joint name="{}j2"{} type="{}fixed"{}>}}
+\DoxyCodeLine{\textcolor{stringliteral}{               <parent link="{}l1"{}/>}}
+\DoxyCodeLine{\textcolor{stringliteral}{               <child link="{}l2"{}/>}}
+\DoxyCodeLine{\textcolor{stringliteral}{             </joint>}}
+\DoxyCodeLine{\textcolor{stringliteral}{             <link name="{}l1"{}/>}}
+\DoxyCodeLine{\textcolor{stringliteral}{             <link name="{}l2"{}/>}}
+\DoxyCodeLine{\textcolor{stringliteral}{           </robot>)"{}}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{tesseract__urdf__urdf__unit_8cpp_ae0be604e579f14b0f151ea393cf953af}\label{tesseract__urdf__urdf__unit_8cpp_ae0be604e579f14b0f151ea393cf953af}} 
+\index{tesseract\_urdf\_urdf\_unit.cpp@{tesseract\_urdf\_urdf\_unit.cpp}!EXPECT\_EQ@{EXPECT\_EQ}}
+\index{EXPECT\_EQ@{EXPECT\_EQ}!tesseract\_urdf\_urdf\_unit.cpp@{tesseract\_urdf\_urdf\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_EQ()}{EXPECT\_EQ()}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+EQ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a1dbe6d2c170400b636ebdc0be424944d}{sg}}-\/$>$}]{get\+Link(\char`\"{}l1\char`\"{}) -\/$>$visual-\/$>$material-\/$>$get\+Name()\mbox{[}0\mbox{]},  }\item[{\char`\"{}test\+\_\+material\char`\"{}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__urdf__urdf__unit_8cpp_a10e03a00f3e587b60e7bc1e6867cadd4}\label{tesseract__urdf__urdf__unit_8cpp_a10e03a00f3e587b60e7bc1e6867cadd4}} 
+\index{tesseract\_urdf\_urdf\_unit.cpp@{tesseract\_urdf\_urdf\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!tesseract\_urdf\_urdf\_unit.cpp@{tesseract\_urdf\_urdf\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a41309b4c659a8ee4246e23a5c741c8e8}{g}}-\/$>$}]{get\+Joints).\+size( = {\ttfamily =9} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__urdf__urdf__unit_8cpp_a2734d886a848e851542ad7bc3da2d484}\label{tesseract__urdf__urdf__unit_8cpp_a2734d886a848e851542ad7bc3da2d484}} 
+\index{tesseract\_urdf\_urdf\_unit.cpp@{tesseract\_urdf\_urdf\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!tesseract\_urdf\_urdf\_unit.cpp@{tesseract\_urdf\_urdf\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a41309b4c659a8ee4246e23a5c741c8e8}{g}}-\/$>$}]{is\+Tree() }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__urdf__urdf__unit_8cpp_a2007e2ac5c24a810050700762d635dc4}\label{tesseract__urdf__urdf__unit_8cpp_a2007e2ac5c24a810050700762d635dc4}} 
+\index{tesseract\_urdf\_urdf\_unit.cpp@{tesseract\_urdf\_urdf\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!tesseract\_urdf\_urdf\_unit.cpp@{tesseract\_urdf\_urdf\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a1dbe6d2c170400b636ebdc0be424944d}{sg}} !}]{ = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph_a4421b8568bd664cf203613a054e1847b}{tesseract\_scene\_graph::SceneGraph::Ptr}} \mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a1dbe6d2c170400b636ebdc0be424944d}{sg}} = \mbox{\hyperlink{namespacetesseract__urdf_af87dbf019b08c4a9966e8131d382d5ad}{tesseract\_urdf::parseURDFFile}}(std::string(TESSERACT\_SUPPORT\_DIR) + \textcolor{stringliteral}{"{}/ur"{}}}
+\DoxyCodeLine{                                                                                                                   \textcolor{stringliteral}{"{}df/"{}}}
+\DoxyCodeLine{                                                                                                                   \textcolor{stringliteral}{"{}lbr"{}}}
+\DoxyCodeLine{                                                                                                                   \textcolor{stringliteral}{"{}\_ii"{}}}
+\DoxyCodeLine{                                                                                                                   \textcolor{stringliteral}{"{}wa\_"{}}}
+\DoxyCodeLine{                                                                                                                   \textcolor{stringliteral}{"{}14\_"{}}}
+\DoxyCodeLine{                                                                                                                   \textcolor{stringliteral}{"{}r82"{}}}
+\DoxyCodeLine{                                                                                                                   \textcolor{stringliteral}{"{}0."{}}}
+\DoxyCodeLine{                                                                                                                   \textcolor{stringliteral}{"{}urd"{}}}
+\DoxyCodeLine{                                                                                                                   \textcolor{stringliteral}{"{}f"{}},}
+\DoxyCodeLine{                                                                              resource\_locator)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{tesseract__urdf__urdf__unit_8cpp_a840feeee4db80a843a48f5d1078d432e}\label{tesseract__urdf__urdf__unit_8cpp_a840feeee4db80a843a48f5d1078d432e}} 
+\index{tesseract\_urdf\_urdf\_unit.cpp@{tesseract\_urdf\_urdf\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!tesseract\_urdf\_urdf\_unit.cpp@{tesseract\_urdf\_urdf\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a1dbe6d2c170400b636ebdc0be424944d}{sg}}-\/$>$}]{get\+Joints).\+size( = {\ttfamily =1} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__urdf__urdf__unit_8cpp_aa80ec7df122f853539f2936ee5e0734b}\label{tesseract__urdf__urdf__unit_8cpp_aa80ec7df122f853539f2936ee5e0734b}} 
+\index{tesseract\_urdf\_urdf\_unit.cpp@{tesseract\_urdf\_urdf\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!tesseract\_urdf\_urdf\_unit.cpp@{tesseract\_urdf\_urdf\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a1dbe6d2c170400b636ebdc0be424944d}{sg}}-\/$>$}]{get\+Name() = {\ttfamily =\char`\"{}test\char`\"{}} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__urdf__urdf__unit_8cpp_afcf9f053b289fa1bc734612e9744d488}\label{tesseract__urdf__urdf__unit_8cpp_afcf9f053b289fa1bc734612e9744d488}} 
+\index{tesseract\_urdf\_urdf\_unit.cpp@{tesseract\_urdf\_urdf\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!tesseract\_urdf\_urdf\_unit.cpp@{tesseract\_urdf\_urdf\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tesseract__environment__cache__unit_8cpp_a7960f9c558f9ee2c3d4a8fdea096fb56}{success}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__urdf__urdf__unit_8cpp_a5284fc951c72bc6c0917b3a5b18496ed}\label{tesseract__urdf__urdf__unit_8cpp_a5284fc951c72bc6c0917b3a5b18496ed}} 
+\index{tesseract\_urdf\_urdf\_unit.cpp@{tesseract\_urdf\_urdf\_unit.cpp}!saveDOT@{saveDOT}}
+\index{saveDOT@{saveDOT}!tesseract\_urdf\_urdf\_unit.cpp@{tesseract\_urdf\_urdf\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{saveDOT()}{saveDOT()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a41309b4c659a8ee4246e23a5c741c8e8}{g}} save\+DOT (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacetesseract__common_a58ecad04db85855fa9e4de21084598ca}{tesseract\+\_\+common\+::get\+Temp\+Path}}()+\char`\"{}tesseract\+\_\+urdf\+\_\+import.\+dot\char`\"{}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__urdf__urdf__unit_8cpp_ad244b3a0b72fad48af9a4a4fd9cf1e0a}\label{tesseract__urdf__urdf__unit_8cpp_ad244b3a0b72fad48af9a4a4fd9cf1e0a}} 
+\index{tesseract\_urdf\_urdf\_unit.cpp@{tesseract\_urdf\_urdf\_unit.cpp}!std::cout$<$$<$ path$<$$<$ std::endl;EXPECT\_TRUE(path.links.size()==4);EXPECT\_TRUE(std::find(path.links.begin(), path.links.end(), \char`\"{}link\_1\char`\"{}) "!=path.links.end());EXPECT\_TRUE(std::find(path.links.begin(), path.links.end(), \char`\"{}link\_2\char`\"{}) "!=path.links.end());EXPECT\_TRUE(std::find(path.links.begin(), path.links.end(), \char`\"{}link\_3\char`\"{}) "!=path.links.end());EXPECT\_TRUE(std::find(path.links.begin(), path.links.end(), \char`\"{}link\_4\char`\"{}) "!=path.links.end());EXPECT\_TRUE(path.joints.size()==3);EXPECT\_TRUE(std::find(path.joints.begin(), path.joints.end(), \char`\"{}joint\_a2\char`\"{}) "!=path.joints.end());EXPECT\_TRUE(std::find(path.joints.begin(), path.joints.end(), \char`\"{}joint\_a3\char`\"{}) "!=path.joints.end());EXPECT\_TRUE(std::find(path.joints.begin(), path.joints.end(), \char`\"{}joint\_a4\char`\"{}) "!=path.joints.end());\rcurly{} \lcurly{} \lcurly{} tesseract\_scene\_graph::SceneGraph::Ptr sg=nullptr;bool success=true;try \lcurly{} tesseract\_urdf::writeURDFFile(sg, \char`\"{}/tmp/\char`\"{}, \char`\"{}urdf0.urdf\char`\"{});\rcurly{} catch(...) \lcurly{} success=false;\rcurly{} EXPECT\_FALSE(success);\rcurly{} \lcurly{} tesseract\_scene\_graph::SceneGraph::Ptr sg=std::make\_shared$<$ tesseract\_scene\_graph::SceneGraph $>$@{std::cout$<$$<$ path$<$$<$ std::endl;EXPECT\_TRUE(path.links.size()==4);EXPECT\_TRUE(std::find(path.links.begin(), path.links.end(), ""link\_1"") "!=path.links.end());EXPECT\_TRUE(std::find(path.links.begin(), path.links.end(), ""link\_2"") "!=path.links.end());EXPECT\_TRUE(std::find(path.links.begin(), path.links.end(), ""link\_3"") "!=path.links.end());EXPECT\_TRUE(std::find(path.links.begin(), path.links.end(), ""link\_4"") "!=path.links.end());EXPECT\_TRUE(path.joints.size()==3);EXPECT\_TRUE(std::find(path.joints.begin(), path.joints.end(), ""joint\_a2"") "!=path.joints.end());EXPECT\_TRUE(std::find(path.joints.begin(), path.joints.end(), ""joint\_a3"") "!=path.joints.end());EXPECT\_TRUE(std::find(path.joints.begin(), path.joints.end(), ""joint\_a4"") "!=path.joints.end());\rcurly{} \lcurly{} \lcurly{} tesseract\_scene\_graph::SceneGraph::Ptr sg=nullptr;bool success=true;try \lcurly{} tesseract\_urdf::writeURDFFile(sg, ""/tmp/"", ""urdf0.urdf"");\rcurly{} catch(...) \lcurly{} success=false;\rcurly{} EXPECT\_FALSE(success);\rcurly{} \lcurly{} tesseract\_scene\_graph::SceneGraph::Ptr sg=std::make\_shared$<$ tesseract\_scene\_graph::SceneGraph $>$}}
+\index{std::cout$<$$<$ path$<$$<$ std::endl;EXPECT\_TRUE(path.links.size()==4);EXPECT\_TRUE(std::find(path.links.begin(), path.links.end(), \char`\"{}link\_1\char`\"{}) "!=path.links.end());EXPECT\_TRUE(std::find(path.links.begin(), path.links.end(), \char`\"{}link\_2\char`\"{}) "!=path.links.end());EXPECT\_TRUE(std::find(path.links.begin(), path.links.end(), \char`\"{}link\_3\char`\"{}) "!=path.links.end());EXPECT\_TRUE(std::find(path.links.begin(), path.links.end(), \char`\"{}link\_4\char`\"{}) "!=path.links.end());EXPECT\_TRUE(path.joints.size()==3);EXPECT\_TRUE(std::find(path.joints.begin(), path.joints.end(), \char`\"{}joint\_a2\char`\"{}) "!=path.joints.end());EXPECT\_TRUE(std::find(path.joints.begin(), path.joints.end(), \char`\"{}joint\_a3\char`\"{}) "!=path.joints.end());EXPECT\_TRUE(std::find(path.joints.begin(), path.joints.end(), \char`\"{}joint\_a4\char`\"{}) "!=path.joints.end());\rcurly{} \lcurly{} \lcurly{} tesseract\_scene\_graph::SceneGraph::Ptr sg=nullptr;bool success=true;try \lcurly{} tesseract\_urdf::writeURDFFile(sg, \char`\"{}/tmp/\char`\"{}, \char`\"{}urdf0.urdf\char`\"{});\rcurly{} catch(...) \lcurly{} success=false;\rcurly{} EXPECT\_FALSE(success);\rcurly{} \lcurly{} tesseract\_scene\_graph::SceneGraph::Ptr sg=std::make\_shared$<$ tesseract\_scene\_graph::SceneGraph $>$@{std::cout$<$$<$ path$<$$<$ std::endl;EXPECT\_TRUE(path.links.size()==4);EXPECT\_TRUE(std::find(path.links.begin(), path.links.end(), ""link\_1"") "!=path.links.end());EXPECT\_TRUE(std::find(path.links.begin(), path.links.end(), ""link\_2"") "!=path.links.end());EXPECT\_TRUE(std::find(path.links.begin(), path.links.end(), ""link\_3"") "!=path.links.end());EXPECT\_TRUE(std::find(path.links.begin(), path.links.end(), ""link\_4"") "!=path.links.end());EXPECT\_TRUE(path.joints.size()==3);EXPECT\_TRUE(std::find(path.joints.begin(), path.joints.end(), ""joint\_a2"") "!=path.joints.end());EXPECT\_TRUE(std::find(path.joints.begin(), path.joints.end(), ""joint\_a3"") "!=path.joints.end());EXPECT\_TRUE(std::find(path.joints.begin(), path.joints.end(), ""joint\_a4"") "!=path.joints.end());\rcurly{} \lcurly{} \lcurly{} tesseract\_scene\_graph::SceneGraph::Ptr sg=nullptr;bool success=true;try \lcurly{} tesseract\_urdf::writeURDFFile(sg, ""/tmp/"", ""urdf0.urdf"");\rcurly{} catch(...) \lcurly{} success=false;\rcurly{} EXPECT\_FALSE(success);\rcurly{} \lcurly{} tesseract\_scene\_graph::SceneGraph::Ptr sg=std::make\_shared$<$ tesseract\_scene\_graph::SceneGraph $>$}!tesseract\_urdf\_urdf\_unit.cpp@{tesseract\_urdf\_urdf\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{std::cout$<$$<$ path$<$$<$ std::endl;EXPECT\_TRUE(path.links.size()==4);EXPECT\_TRUE(std::find(path.links.begin(), path.links.end(), ""link\_1"") "!=path.links.end());EXPECT\_TRUE(std::find(path.links.begin(), path.links.end(), ""link\_2"") "!=path.links.end());EXPECT\_TRUE(std::find(path.links.begin(), path.links.end(), ""link\_3"") "!=path.links.end());EXPECT\_TRUE(std::find(path.links.begin(), path.links.end(), ""link\_4"") "!=path.links.end());EXPECT\_TRUE(path.joints.size()==3);EXPECT\_TRUE(std::find(path.joints.begin(), path.joints.end(), ""joint\_a2"") "!=path.joints.end());EXPECT\_TRUE(std::find(path.joints.begin(), path.joints.end(), ""joint\_a3"") "!=path.joints.end());EXPECT\_TRUE(std::find(path.joints.begin(), path.joints.end(), ""joint\_a4"") "!=path.joints.end());\rcurly{} \lcurly{} \lcurly{} tesseract\_scene\_graph::SceneGraph::Ptr sg=nullptr;bool success=true;try \lcurly{} tesseract\_urdf::writeURDFFile(sg, ""/tmp/"", ""urdf0.urdf"");\rcurly{} catch(...) \lcurly{} success=false;\rcurly{} EXPECT\_FALSE(success);\rcurly{} \lcurly{} tesseract\_scene\_graph::SceneGraph::Ptr sg=std::make\_shared$<$ tesseract\_scene\_graph::SceneGraph $>$()}{std::cout<< path<< std::endl;EXPECT\_TRUE(path.links.size()==4);EXPECT\_TRUE(std::find(path.links.begin(), path.links.end(), "link\_1") !=path.links.end());EXPECT\_TRUE(std::find(path.links.begin(), path.links.end(), "link\_2") !=path.links.end());EXPECT\_TRUE(std::find(path.links.begin(), path.links.end(), "link\_3") !=path.links.end());EXPECT\_TRUE(std::find(path.links.begin(), path.links.end(), "link\_4") !=path.links.end());EXPECT\_TRUE(path.joints.size()==3);EXPECT\_TRUE(std::find(path.joints.begin(), path.joints.end(), "joint\_a2") !=path.joints.end());EXPECT\_TRUE(std::find(path.joints.begin(), path.joints.end(), "joint\_a3") !=path.joints.end());EXPECT\_TRUE(std::find(path.joints.begin(), path.joints.end(), "joint\_a4") !=path.joints.end());\} \{ \{ tesseract\_scene\_graph::SceneGraph::Ptr sg=nullptr;bool success=true;try \{ tesseract\_urdf::writeURDFFile(sg, "/tmp/", "urdf0.urdf");\} catch(...) \{ success=false;\} EXPECT\_FALSE(success);\} \{ tesseract\_scene\_graph::SceneGraph::Ptr sg=std::make\_shared< tesseract\_scene\_graph::SceneGraph >()}}
+{\footnotesize\ttfamily std\+::cout$<$$<$ path$<$$<$ std\+::endl;\mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\+\_\+\+TRUE}}(path.\+links.\+size()==4);\mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\+\_\+\+TRUE}}(std\+::find(path.\+links.\+begin(), path.\+links.\+end(), \char`\"{}link\+\_\+1\char`\"{}) !=path.\+links.\+end());\mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\+\_\+\+TRUE}}(std\+::find(path.\+links.\+begin(), path.\+links.\+end(), \char`\"{}link\+\_\+2\char`\"{}) !=path.\+links.\+end());\mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\+\_\+\+TRUE}}(std\+::find(path.\+links.\+begin(), path.\+links.\+end(), \char`\"{}link\+\_\+3\char`\"{}) !=path.\+links.\+end());\mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\+\_\+\+TRUE}}(std\+::find(path.\+links.\+begin(), path.\+links.\+end(), \char`\"{}link\+\_\+4\char`\"{}) !=path.\+links.\+end());\mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\+\_\+\+TRUE}}(path.\+joints.\+size()==3);\mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\+\_\+\+TRUE}}(std\+::find(path.\+joints.\+begin(), path.\+joints.\+end(), \char`\"{}joint\+\_\+a2\char`\"{}) !=path.\+joints.\+end());\mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\+\_\+\+TRUE}}(std\+::find(path.\+joints.\+begin(), path.\+joints.\+end(), \char`\"{}joint\+\_\+a3\char`\"{}) !=path.\+joints.\+end());\mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\+\_\+\+TRUE}}(std\+::find(path.\+joints.\+begin(), path.\+joints.\+end(), \char`\"{}joint\+\_\+a4\char`\"{}) !=path.\+joints.\+end());\} \{ \{ \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph_a4421b8568bd664cf203613a054e1847b}{tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+Graph\+::\+Ptr}} \mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a1dbe6d2c170400b636ebdc0be424944d}{sg}}=nullptr;bool \mbox{\hyperlink{tesseract__environment__cache__unit_8cpp_a7960f9c558f9ee2c3d4a8fdea096fb56}{success}}=true;\mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_abe4cc9788f52e49485473dc699537388}{try}} \{ \mbox{\hyperlink{namespacetesseract__urdf_a9cec4149c1fc2005fceade54104acb71}{tesseract\+\_\+urdf\+::write\+URDFFile}}(\mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a1dbe6d2c170400b636ebdc0be424944d}{sg}}, \char`\"{}/tmp/\char`\"{}, \char`\"{}urdf0.\+urdf\char`\"{});\} \mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a1204fa6444ae7174767e202a6d39b815}{catch}}(...) \{ \mbox{\hyperlink{tesseract__environment__cache__unit_8cpp_a7960f9c558f9ee2c3d4a8fdea096fb56}{success}}=false;\} \mbox{\hyperlink{collision__core__unit_8cpp_aa784f8de129e0ce90854ab7b6a043468}{EXPECT\+\_\+\+FALSE}}(\mbox{\hyperlink{tesseract__environment__cache__unit_8cpp_a7960f9c558f9ee2c3d4a8fdea096fb56}{success}});\} \{ \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph_a4421b8568bd664cf203613a054e1847b}{tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+Graph\+::\+Ptr}} \mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a1dbe6d2c170400b636ebdc0be424944d}{sg}}=std\+::make\+\_\+shared$<$ \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph}{tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+Graph}} $>$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{tesseract__urdf__urdf__unit_8cpp_a30397e7fb869d3d2b6c89289cf0b6f4a}\label{tesseract__urdf__urdf__unit_8cpp_a30397e7fb869d3d2b6c89289cf0b6f4a}} 
+\index{tesseract\_urdf\_urdf\_unit.cpp@{tesseract\_urdf\_urdf\_unit.cpp}!child\_link\_name@{child\_link\_name}}
+\index{child\_link\_name@{child\_link\_name}!tesseract\_urdf\_urdf\_unit.cpp@{tesseract\_urdf\_urdf\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{child\_link\_name}{child\_link\_name}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a842d768e878553fb5fb2f27fe0af3278}{joint\+\_\+0}} child\+\_\+link\+\_\+name = \mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a815afe8378ffb048c7fc0ee619dfef12}{link\+\_\+1}}-\/$>$get\+Name()}
+
+\mbox{\Hypertarget{tesseract__urdf__urdf__unit_8cpp_a8bf675ee24d81e4923baafdae5efebcc}\label{tesseract__urdf__urdf__unit_8cpp_a8bf675ee24d81e4923baafdae5efebcc}} 
+\index{tesseract\_urdf\_urdf\_unit.cpp@{tesseract\_urdf\_urdf\_unit.cpp}!g@{g}}
+\index{g@{g}!tesseract\_urdf\_urdf\_unit.cpp@{tesseract\_urdf\_urdf\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{g}{g}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a395d31593a673a3b0efd30ad8d2bba78}{auto}} g = \mbox{\hyperlink{namespacetesseract__urdf_af87dbf019b08c4a9966e8131d382d5ad}{tesseract\+\_\+urdf\+::parse\+URDFFile}}(\mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_ae14b9e3c6f792880fed61b0709121998}{urdf\+\_\+file}}, \mbox{\hyperlink{resource__locator__unit_8cpp_ad889712fa094e762b2a887aec9001270}{locator}})}
+
+\mbox{\Hypertarget{tesseract__urdf__urdf__unit_8cpp_a842d768e878553fb5fb2f27fe0af3278}\label{tesseract__urdf__urdf__unit_8cpp_a842d768e878553fb5fb2f27fe0af3278}} 
+\index{tesseract\_urdf\_urdf\_unit.cpp@{tesseract\_urdf\_urdf\_unit.cpp}!joint\_0@{joint\_0}}
+\index{joint\_0@{joint\_0}!tesseract\_urdf\_urdf\_unit.cpp@{tesseract\_urdf\_urdf\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{joint\_0}{joint\_0}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a1dbe6d2c170400b636ebdc0be424944d}{sg}} add\+Joint $\ast$ joint\+\_\+0 = std\+::make\+\_\+shared$<$\mbox{\hyperlink{classtesseract__scene__graph_1_1Joint}{tesseract\+\_\+scene\+\_\+graph\+::\+Joint}}$>$(\char`\"{}joint\+\_\+0\char`\"{})}
+
+\mbox{\Hypertarget{tesseract__urdf__urdf__unit_8cpp_a38091f48bfa25fe82f6a9a632e23f4f5}\label{tesseract__urdf__urdf__unit_8cpp_a38091f48bfa25fe82f6a9a632e23f4f5}} 
+\index{tesseract\_urdf\_urdf\_unit.cpp@{tesseract\_urdf\_urdf\_unit.cpp}!link\_0@{link\_0}}
+\index{link\_0@{link\_0}!tesseract\_urdf\_urdf\_unit.cpp@{tesseract\_urdf\_urdf\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{link\_0}{link\_0}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a1dbe6d2c170400b636ebdc0be424944d}{sg}} \mbox{\hyperlink{tesseract__environment__cache__unit_8cpp_ab414d78523a5812061029f51d1a8794d}{add\+Link}} $\ast$ link\+\_\+0 = std\+::make\+\_\+shared$<$\mbox{\hyperlink{classtesseract__scene__graph_1_1Link}{tesseract\+\_\+scene\+\_\+graph\+::\+Link}}$>$(\char`\"{}link\+\_\+0\char`\"{})}
+
+\mbox{\Hypertarget{tesseract__urdf__urdf__unit_8cpp_a815afe8378ffb048c7fc0ee619dfef12}\label{tesseract__urdf__urdf__unit_8cpp_a815afe8378ffb048c7fc0ee619dfef12}} 
+\index{tesseract\_urdf\_urdf\_unit.cpp@{tesseract\_urdf\_urdf\_unit.cpp}!link\_1@{link\_1}}
+\index{link\_1@{link\_1}!tesseract\_urdf\_urdf\_unit.cpp@{tesseract\_urdf\_urdf\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{link\_1}{link\_1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a1dbe6d2c170400b636ebdc0be424944d}{sg}} \mbox{\hyperlink{tesseract__environment__cache__unit_8cpp_ab414d78523a5812061029f51d1a8794d}{add\+Link}} $\ast$ link\+\_\+1 = std\+::make\+\_\+shared$<$\mbox{\hyperlink{classtesseract__scene__graph_1_1Link}{tesseract\+\_\+scene\+\_\+graph\+::\+Link}}$>$(\char`\"{}link\+\_\+1\char`\"{})}
+
+\mbox{\Hypertarget{tesseract__urdf__urdf__unit_8cpp_aacf03b1426c0d22169a350fadaefcfb2}\label{tesseract__urdf__urdf__unit_8cpp_aacf03b1426c0d22169a350fadaefcfb2}} 
+\index{tesseract\_urdf\_urdf\_unit.cpp@{tesseract\_urdf\_urdf\_unit.cpp}!locator@{locator}}
+\index{locator@{locator}!tesseract\_urdf\_urdf\_unit.cpp@{tesseract\_urdf\_urdf\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{locator}{locator}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__common_1_1TesseractSupportResourceLocator}{tesseract\+\_\+common\+::\+Tesseract\+Support\+Resource\+Locator}} locator}
+
+\mbox{\Hypertarget{tesseract__urdf__urdf__unit_8cpp_a9739f86fd758565c5a668d76d469c290}\label{tesseract__urdf__urdf__unit_8cpp_a9739f86fd758565c5a668d76d469c290}} 
+\index{tesseract\_urdf\_urdf\_unit.cpp@{tesseract\_urdf\_urdf\_unit.cpp}!parent\_link\_name@{parent\_link\_name}}
+\index{parent\_link\_name@{parent\_link\_name}!tesseract\_urdf\_urdf\_unit.cpp@{tesseract\_urdf\_urdf\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{parent\_link\_name}{parent\_link\_name}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a842d768e878553fb5fb2f27fe0af3278}{joint\+\_\+0}} parent\+\_\+link\+\_\+name = \mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a38091f48bfa25fe82f6a9a632e23f4f5}{link\+\_\+0}}-\/$>$get\+Name()}
+
+\mbox{\Hypertarget{tesseract__urdf__urdf__unit_8cpp_ae316b13952c0ac7d67c0365a3ae77d45}\label{tesseract__urdf__urdf__unit_8cpp_ae316b13952c0ac7d67c0365a3ae77d45}} 
+\index{tesseract\_urdf\_urdf\_unit.cpp@{tesseract\_urdf\_urdf\_unit.cpp}!path@{path}}
+\index{path@{path}!tesseract\_urdf\_urdf\_unit.cpp@{tesseract\_urdf\_urdf\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{path}{path}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a395d31593a673a3b0efd30ad8d2bba78}{auto}} path = \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a41309b4c659a8ee4246e23a5c741c8e8}{g}}-\/$>$get\+Shortest\+Path(\char`\"{}link\+\_\+1\char`\"{}, \char`\"{}link\+\_\+4\char`\"{})}
+
+\mbox{\Hypertarget{tesseract__urdf__urdf__unit_8cpp_a1dbe6d2c170400b636ebdc0be424944d}\label{tesseract__urdf__urdf__unit_8cpp_a1dbe6d2c170400b636ebdc0be424944d}} 
+\index{tesseract\_urdf\_urdf\_unit.cpp@{tesseract\_urdf\_urdf\_unit.cpp}!sg@{sg}}
+\index{sg@{sg}!tesseract\_urdf\_urdf\_unit.cpp@{tesseract\_urdf\_urdf\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{sg}{sg}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph_a4421b8568bd664cf203613a054e1847b}{tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+Graph\+::\+Ptr}} sg = \mbox{\hyperlink{namespacetesseract__urdf_a281f39218762083efcc308fb0888db6a}{tesseract\+\_\+urdf\+::parse\+URDFString}}(\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a5d55e2558544e2ad2ea0b54f8e3d41fc}{str}}, resource\+\_\+locator)}
+
+\mbox{\Hypertarget{tesseract__urdf__urdf__unit_8cpp_a7960f9c558f9ee2c3d4a8fdea096fb56}\label{tesseract__urdf__urdf__unit_8cpp_a7960f9c558f9ee2c3d4a8fdea096fb56}} 
+\index{tesseract\_urdf\_urdf\_unit.cpp@{tesseract\_urdf\_urdf\_unit.cpp}!success@{success}}
+\index{success@{success}!tesseract\_urdf\_urdf\_unit.cpp@{tesseract\_urdf\_urdf\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{success}{success}}
+{\footnotesize\ttfamily bool success = true}
+
+\mbox{\Hypertarget{tesseract__urdf__urdf__unit_8cpp_a2733ace18b4e650b36b176083d0f9c42}\label{tesseract__urdf__urdf__unit_8cpp_a2733ace18b4e650b36b176083d0f9c42}} 
+\index{tesseract\_urdf\_urdf\_unit.cpp@{tesseract\_urdf\_urdf\_unit.cpp}!TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP@{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}
+\index{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP@{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}!tesseract\_urdf\_urdf\_unit.cpp@{tesseract\_urdf\_urdf\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}
+{\footnotesize\ttfamily \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\+\_\+\+COMMON\+\_\+\+IGNORE\+\_\+\+WARNINGS\+\_\+\+PUSH}} TESSERACT\+\_\+\+COMMON\+\_\+\+IGNORE\+\_\+\+WARNINGS\+\_\+\+POP}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  \mbox{\hyperlink{classtesseract__common_1_1TesseractSupportResourceLocator}{tesseract\_common::TesseractSupportResourceLocator}} resource\_locator}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{tesseract__urdf__urdf__unit_8cpp_abe4cc9788f52e49485473dc699537388}\label{tesseract__urdf__urdf__unit_8cpp_abe4cc9788f52e49485473dc699537388}} 
+\index{tesseract\_urdf\_urdf\_unit.cpp@{tesseract\_urdf\_urdf\_unit.cpp}!try@{try}}
+\index{try@{try}!tesseract\_urdf\_urdf\_unit.cpp@{tesseract\_urdf\_urdf\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{try}{try}}
+{\footnotesize\ttfamily try}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{      \mbox{\hyperlink{namespacetesseract__urdf_a9cec4149c1fc2005fceade54104acb71}{tesseract\_urdf::writeURDFFile}}(\mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a1dbe6d2c170400b636ebdc0be424944d}{sg}}, \textcolor{stringliteral}{"{}/tmp/"{}}, \textcolor{stringliteral}{"{}urdf1.urdf"{}})}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{tesseract__urdf__urdf__unit_8cpp_a0286b397100b91901e6da101c649d7f3}\label{tesseract__urdf__urdf__unit_8cpp_a0286b397100b91901e6da101c649d7f3}} 
+\index{tesseract\_urdf\_urdf\_unit.cpp@{tesseract\_urdf\_urdf\_unit.cpp}!type@{type}}
+\index{type@{type}!tesseract\_urdf\_urdf\_unit.cpp@{tesseract\_urdf\_urdf\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a842d768e878553fb5fb2f27fe0af3278}{joint\+\_\+0}} type = \mbox{\hyperlink{namespacetesseract__scene__graph_ade43fa945a554b6e0c703e38e6a8cf16ac6e6dc18b53b4c2681394b9d8aefcec7}{tesseract\+\_\+scene\+\_\+graph\+::\+Joint\+Type\+::\+FIXED}}}
+
+\mbox{\Hypertarget{tesseract__urdf__urdf__unit_8cpp_ae14b9e3c6f792880fed61b0709121998}\label{tesseract__urdf__urdf__unit_8cpp_ae14b9e3c6f792880fed61b0709121998}} 
+\index{tesseract\_urdf\_urdf\_unit.cpp@{tesseract\_urdf\_urdf\_unit.cpp}!urdf\_file@{urdf\_file}}
+\index{urdf\_file@{urdf\_file}!tesseract\_urdf\_urdf\_unit.cpp@{tesseract\_urdf\_urdf\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{urdf\_file}{urdf\_file}}
+{\footnotesize\ttfamily std\+::string urdf\+\_\+file = std\+::string(TESSERACT\+\_\+\+SUPPORT\+\_\+\+DIR) + \char`\"{}/urdf/lbr\+\_\+iiwa\+\_\+14\+\_\+r820.\+urdf\char`\"{}}
+

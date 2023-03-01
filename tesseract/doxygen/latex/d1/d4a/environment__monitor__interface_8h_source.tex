@@ -1,0 +1,77 @@
+\hypertarget{environment__monitor__interface_8h_source}{}\doxysection{environment\+\_\+monitor\+\_\+interface.\+h}
+\label{environment__monitor__interface_8h_source}\index{tesseract\_environment/include/tesseract\_environment/environment\_monitor\_interface.h@{tesseract\_environment/include/tesseract\_environment/environment\_monitor\_interface.h}}
+\mbox{\hyperlink{environment__monitor__interface_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#ifndef TESSERACT\_ENVIRONMENT\_ENVIRONMENT\_MONITOR\_INTERFACE\_H}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#define TESSERACT\_ENVIRONMENT\_ENVIRONMENT\_MONITOR\_INTERFACE\_H}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{macros_8h}{tesseract\_common/macros.h}}>}}
+\DoxyCodeLine{29 \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include <chrono>}}
+\DoxyCodeLine{32 \mbox{\hyperlink{namespaceTESSERACT__COMMON__IGNORE__WARNINGS__POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{commands_8h}{tesseract\_environment/commands.h}}>}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{environment_8h}{tesseract\_environment/environment.h}}>}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__environment}{tesseract\_environment}}}
+\DoxyCodeLine{38 \{}
+\DoxyCodeLine{39 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface}{EnvironmentMonitorInterface}}}
+\DoxyCodeLine{40 \{}
+\DoxyCodeLine{41 \textcolor{keyword}{public}:}
+\DoxyCodeLine{42   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface_a3361308ff67ea22774e0a2d00808b086}{Ptr}} = std::shared\_ptr<EnvironmentMonitorInterface>;}
+\DoxyCodeLine{43   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface_a8499e009abcd62b39e6088c7ab1926e8}{ConstPtr}} = std::shared\_ptr<const EnvironmentMonitorInterface>;}
+\DoxyCodeLine{44   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface_a853cebc14fe94adc401bc9171b325875}{UPtr}} = std::unique\_ptr<EnvironmentMonitorInterface>;}
+\DoxyCodeLine{45   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface_ab67b5d59bb572c4a6cef2e9d09df3c0a}{ConstUPtr}} = std::unique\_ptr<const EnvironmentMonitorInterface>;}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47   \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface_a2285ecf17afb4d0dd07da66f75f70b7a}{EnvironmentMonitorInterface}}(std::string env\_name) : \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface_a535df3286eeb4edaa6f495bfc27c5061}{env\_name\_}}(std::move(env\_name)) \{\}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49   \textcolor{keyword}{virtual} \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface_ab2e427a5ddec13a7509d2998275fb3bb}{\string~EnvironmentMonitorInterface}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{56   \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface_aa84d97076821fee410854bd6e6900f88}{wait}}(std::chrono::duration<double> duration = std::chrono::seconds(0)) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{64   \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface_a66102791074b3a3ea06459d9a13b785b}{waitForNamespace}}(\textcolor{keyword}{const} std::string\& monitor\_namespace,}
+\DoxyCodeLine{65                                 std::chrono::duration<double> duration = std::chrono::seconds(0)) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{71   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface_ac5a65561ec8766fd8798183c56655a0f}{addNamespace}}(std::string monitor\_namespace) = 0;}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{77   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface_a1d7bd6c2f057414787e5e17d1601f3ab}{removeNamespace}}(\textcolor{keyword}{const} std::string\& monitor\_namespace) = 0;}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{84   \textcolor{keyword}{virtual} std::vector<std::string> \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface_acd131f299fb1fe46a525c3d01cbfc89a}{applyCommand}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__environment_1_1Command}{tesseract\_environment::Command}}\& command) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{85   \textcolor{keyword}{virtual} std::vector<std::string> \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface_a31f86c3af034de72735b40b2367a80a7}{applyCommands}}(\textcolor{keyword}{const} \mbox{\hyperlink{namespacetesseract__environment_acb95740502ec41d80a94a7631d4b7a3c}{tesseract\_environment::Commands}}\& commands) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{86   \textcolor{keyword}{virtual} std::vector<std::string> \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface_ac1d1832bf4e1dcccddfcbcae512af4d0}{applyCommands}}(\textcolor{keyword}{const} std::vector<tesseract\_environment::Command>\& commands) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{94   \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface_aacadc7f4d0c2b07725968ddbc7a6eecb}{applyCommand}}(\textcolor{keyword}{const} std::string\& monitor\_namespace,}
+\DoxyCodeLine{95                             \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__environment_1_1Command}{tesseract\_environment::Command}}\& command) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{96   \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface_a5fba3bda558a8a3d3aaed7e1e98d56b8}{applyCommands}}(\textcolor{keyword}{const} std::string\& monitor\_namespace,}
+\DoxyCodeLine{97                              \textcolor{keyword}{const} \mbox{\hyperlink{namespacetesseract__environment_acb95740502ec41d80a94a7631d4b7a3c}{tesseract\_environment::Commands}}\& commands) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{98   \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface_a3f35ed01d67a3b85d10b31d74c68c70d}{applyCommands}}(\textcolor{keyword}{const} std::string\& monitor\_namespace,}
+\DoxyCodeLine{99                              \textcolor{keyword}{const} std::vector<tesseract\_environment::Command>\& commands) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{106   \textcolor{keyword}{virtual} \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{tesseract\_scene\_graph::SceneState}} \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface_a42fac8fabd2638146b630889e4b4cea9}{getEnvironmentState}}(\textcolor{keyword}{const} std::string\& monitor\_namespace) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{113   \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface_a8c8eb6b844936c67d4fa0e8cf3a28979}{setEnvironmentState}}(\textcolor{keyword}{const} std::string\& monitor\_namespace,}
+\DoxyCodeLine{114                                    \textcolor{keyword}{const} std::unordered\_map<std::string, double>\& \mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_ae41993a59637cf36532d3620b8203555}{joints}}) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{115   \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface_a8b1f2c0bb603ed92eac991c062a4c226}{setEnvironmentState}}(\textcolor{keyword}{const} std::string\& monitor\_namespace,}
+\DoxyCodeLine{116                                    \textcolor{keyword}{const} std::vector<std::string>\& \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_ae55b39adb52b29eeefd7d128c4b56f2a}{joint\_names}},}
+\DoxyCodeLine{117                                    \textcolor{keyword}{const} std::vector<double>\& joint\_values) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{118   \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface_a3d1e9962d6c3153d7c19503890e80ca4}{setEnvironmentState}}(\textcolor{keyword}{const} std::string\& monitor\_namespace,}
+\DoxyCodeLine{119                                    \textcolor{keyword}{const} std::vector<std::string>\& \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_ae55b39adb52b29eeefd7d128c4b56f2a}{joint\_names}},}
+\DoxyCodeLine{120                                    \textcolor{keyword}{const} Eigen::Ref<const Eigen::VectorXd>\& joint\_values) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{126   \textcolor{keyword}{virtual} std::vector<std::string> \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface_ac3f378b7b4ce5eb6cf280c41be95a5b5}{setEnvironmentState}}(\textcolor{keyword}{const} std::unordered\_map<std::string, double>\& \mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_ae41993a59637cf36532d3620b8203555}{joints}}) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{127   \textcolor{keyword}{virtual} std::vector<std::string> \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface_a8b5ee7df49b9317be7fa997d44838c5b}{setEnvironmentState}}(\textcolor{keyword}{const} std::vector<std::string>\& \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_ae55b39adb52b29eeefd7d128c4b56f2a}{joint\_names}},}
+\DoxyCodeLine{128                                                        \textcolor{keyword}{const} std::vector<double>\& joint\_values) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{129   \textcolor{keyword}{virtual} std::vector<std::string> \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface_a0e1fc4c2662cecb87b7b2929134e0bf2}{setEnvironmentState}}(\textcolor{keyword}{const} std::vector<std::string>\& \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_ae55b39adb52b29eeefd7d128c4b56f2a}{joint\_names}},}
+\DoxyCodeLine{130                                                        \textcolor{keyword}{const} Eigen::Ref<const Eigen::VectorXd>\& joint\_values) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{137   \textcolor{keyword}{virtual} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a182513d107a55c729afb5e6482e2ac87}{tesseract\_environment::Environment::UPtr}} \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface_ad398704d853675b2b0037580fa5424eb}{getEnvironment}}(\textcolor{keyword}{const} std::string\& monitor\_namespace) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{140   std::string \mbox{\hyperlink{classtesseract__environment_1_1EnvironmentMonitorInterface_a535df3286eeb4edaa6f495bfc27c5061}{env\_name\_}};}
+\DoxyCodeLine{141 \};}
+\DoxyCodeLine{142 \}  \textcolor{comment}{// namespace tesseract\_environment}}
+\DoxyCodeLine{143 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_ENVIRONMENT\_ENVIRONMENT\_MONITOR\_INTERFACE\_H}}
+
+\end{DoxyCode}

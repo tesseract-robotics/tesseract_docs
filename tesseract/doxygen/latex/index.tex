@@ -1,0 +1,199 @@
+\label{index_md_README}%
+\Hypertarget{index_md_README}%
+ \href{https://codecov.io/gh/tesseract-robotics/tesseract}{\texttt{ }}
+
+\href{https://github.com/tesseract-robotics/tesseract_python}{\texttt{ }}
+
+
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Platform   }&\cellcolor{\tableheadbgcolor}\textbf{ CI Status    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Platform   }&\cellcolor{\tableheadbgcolor}\textbf{ CI Status    }\\\cline{1-2}
+\endhead
+Linux (Focal)   &\href{https://github.com/tesseract-robotics/tesseract/actions}{\texttt{ }}    \\\cline{1-2}
+Linux (Bionic)   &\href{https://github.com/tesseract-robotics/tesseract/actions}{\texttt{ }}    \\\cline{1-2}
+Windows   &\href{https://github.com/tesseract-robotics/tesseract/actions}{\texttt{ }}    \\\cline{1-2}
+Lint (Clang-\/\+Format)   &\href{https://github.com/tesseract-robotics/tesseract/actions}{\texttt{ }}    \\\cline{1-2}
+Lint (CMake-\/\+Format)   &\href{https://github.com/tesseract-robotics/tesseract/actions}{\texttt{ }}    \\\cline{1-2}
+Lint (Clang-\/\+Tidy)   &\href{https://github.com/tesseract-robotics/tesseract/actions}{\texttt{ }}    \\\cline{1-2}
+Lint (Code\+Cov)   &\href{https://github.com/tesseract-robotics/tesseract/actions}{\texttt{ }}   \\\cline{1-2}
+\end{longtabu}
+
+
+\href{http://github.com/tesseract-robotics/tesseract/issues}{\texttt{ }}
+
+\href{https://opensource.org/licenses/Apache-2.0}{\texttt{ }} \href{https://opensource.org/licenses/BSD-2-Clause}{\texttt{ }}
+
+\href{http://rosindustrial.org/news/2016/10/7/better-supporting-a-growing-ros-industrial-software-platform}{\texttt{ }}
+
+The planning framework (Tesseract) was designed to be light weight, limiting the number of dependencies, mainly only using standard libraries like, eigen, boost, orocos and to the packages below. The core packages are ROS agnostic and have full python support.\hypertarget{index_autotoc_md1}{}\doxysection{Dependencies}\label{index_autotoc_md1}
+\href{https://github.com/ros-industrial/ros_industrial_cmake_boilerplate/tree/0.2.15}{\texttt{ }} ~\newline
+ \href{https://github.com/Jmeyer1292/opw_kinematics/tree/0.4.5}{\texttt{ }}\hypertarget{index_autotoc_md2}{}\doxysection{Tesseract Setup Wizard and Visualization Tools}\label{index_autotoc_md2}
+\href{https://snapcraft.io/tesseract-ignition}{\texttt{ }}\hypertarget{index_autotoc_md3}{}\doxysection{Python Installation}\label{index_autotoc_md3}
+A self contained Tesseract Python package is available on Py\+PI for Windows 10+, Ubuntu 20.\+04, and Ubuntu 22.\+04. This package contains Tesseract, Tesseract Planning, and all dependencies in the single package. Packages are available for Python 3.\+7 -\/ 3.\+10.
+
+To install on Windows\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{python -\/m pip install tesseract-\/robotics tesseract-\/robotics-\/viewer}
+
+\end{DoxyCode}
+ To install on Ubuntu 20.\+04 and Ubuntu 22.\+04\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sudo apt install python3-\/pip python3-\/numpy}
+\DoxyCodeLine{\# The supplied version of pip on Ubuntu 20.04 is too old for manylinux\_2\_31, upgrade pip}
+\DoxyCodeLine{python3 -\/m pip install -\/U pip}
+\DoxyCodeLine{python3 -\/m pip install -\/-\/user  tesseract\_robotics tesseract\_robotics\_viewer}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md4}{}\doxysection{Tesseract Core Packages}\label{index_autotoc_md4}
+
+\begin{DoxyItemize}
+\item {\bfseries{tesseract}} – This is the main class that manages the major component Environment, Forward Kinematics, Inverse Kinematics and loading from various data.
+\item {\bfseries{tesseract\+\_\+command\+\_\+language}} – This package contains a generic command language to support motion and process planning similar to industrial teach pendants
+\item {\bfseries{\mbox{\hyperlink{namespacetesseract__collision}{tesseract\+\_\+collision}}}} – This package contains a common interface for collision checking prividing several implementation of a Bullet collision library and FCL collision library. It includes both continuous and discrete collision checking for convex-\/convex, convex-\/concave and concave-\/concave shapes.
+\item {\bfseries{\mbox{\hyperlink{namespacetesseract__common}{tesseract\+\_\+common}}}} – This package contains common functionality needed by the majority of the packages.
+\item {\bfseries{\mbox{\hyperlink{namespacetesseract__environment}{tesseract\+\_\+environment}}}} – This package contains the Tesseract Environment which provides functionality to add,remove,move and modify links and joint. It also manages adding object to the contact managers and provides the ability.
+\item {\bfseries{\mbox{\hyperlink{namespacetesseract__geometry}{tesseract\+\_\+geometry}}}} – This package contains geometry types used by Tesseract including primitive shapes, mesh, convex hull mesh, octomap and signed distance field.
+\item {\bfseries{\mbox{\hyperlink{namespacetesseract__kinematics}{tesseract\+\_\+kinematics}}}} – This package contains a common interface for Forward and Inverse kinematics for Chains, Trees and Graphs including implementation using KDL and OPW Kinematics.
+\item {\bfseries{\mbox{\hyperlink{namespacetesseract__scene__graph}{tesseract\+\_\+scene\+\_\+graph}}}} – This package contains the scene graph which is the data structure used to manage the connectivity of objects in the environment. It inherits from boost graph and provides addition functionality for adding,removing and modifying Links and Joints along with search implementation.
+\item {\bfseries{tesseract\+\_\+support}} – This package contains support data used for unit tests and examples throughout Tesseract.
+\item {\bfseries{\mbox{\hyperlink{namespacetesseract__visualization}{tesseract\+\_\+visualization}}}} – This package contains visualization utilities and libraries.
+\end{DoxyItemize}\hypertarget{index_autotoc_md5}{}\doxysection{Related Repositories}\label{index_autotoc_md5}
+
+\begin{DoxyItemize}
+\item \href{https://github.com/tesseract-robotics/tesseract_planning}{\texttt{ Tesseract Planning}}
+\item \href{https://github.com/tesseract-robotics/tesseract_python}{\texttt{ Tesseract Python}}
+\item \href{https://github.com/tesseract-robotics/tesseract_ros}{\texttt{ Tesseract ROS}}
+\item \href{https://github.com/tesseract-robotics/tesseract_docs}{\texttt{ Tesseract Documentation}}
+\end{DoxyItemize}\hypertarget{index_autotoc_md6}{}\doxysection{Documentation}\label{index_autotoc_md6}
+
+\begin{DoxyItemize}
+\item \href{https://tesseract-docs.readthedocs.io}{\texttt{ Wiki}}
+\item \href{https://tesseract-robotics.github.io/tesseract/}{\texttt{ Doxygen}}
+\item \href{https://tesseract-robotics.github.io/tesseract/dev/bench}{\texttt{ Benchmark}}
+\end{DoxyItemize}\hypertarget{index_autotoc_md7}{}\doxysection{Evolution}\label{index_autotoc_md7}
+\href{https://www.youtube.com/watch?v=rxlzlsSBxAY}{\texttt{ }}
+
+How to create\+:
+
+
+\begin{DoxyItemize}
+\item Create Video\+: {\ttfamily gource -\/1280x720 -\/seconds-\/per-\/day 0.\+2 -\/-\/auto-\/skip-\/seconds 0.\+2 -\/-\/disable-\/bloom -\/background d0d3d4 -\/-\/hide filenames,mouse,progress -\/o -\/ $\vert$ ffmpeg -\/y -\/r 60 -\/f image2pipe -\/vcodec ppm -\/i -\/ -\/vcodec libx264 -\/preset ultrafast -\/pix\+\_\+fmt yuv420p -\/crf 1 -\/threads 0 -\/bf 0 gource.\+mp4}
+\item Create Gif\+: {\ttfamily ffmpeg -\/i gource.\+mp4 -\/r 10 -\/vf \char`\"{}scale=800\+:-\/1,split\mbox{[}s0\mbox{]}\mbox{[}s1\mbox{]};\mbox{[}s0\mbox{]}palettegen\mbox{[}p\mbox{]};\mbox{[}s1\mbox{]}\mbox{[}p\mbox{]}paletteuse\char`\"{} tesseract\+\_\+evolution.\+gif}
+\end{DoxyItemize}\hypertarget{index_autotoc_md8}{}\doxysection{TODO\textquotesingle{}s}\label{index_autotoc_md8}
+Warning\+: These packages are under heavy development and are subject to change.
+
+See \href{https://github.com/tesseract-robotics/tesseract/issues/66}{\texttt{ issue \#66}}\hypertarget{index_autotoc_md9}{}\doxysection{Build Instructions}\label{index_autotoc_md9}
+1) Clone repository into your workspace 2) Clone the repositories in the dependencies.\+rosinstall file using wstool or some other method (e.\+g. manually git cloning them) 3) Build the workspace using catkin tools, colcon, or a similar tool
+
+NOTE\+: For noetic tesseract\+\_\+ext is not required. Install the following dependencies\+: libbullet-\/dev, libbullet-\/extras-\/dev and ros-\/noetic-\/fcl. Taskflow can be install using the PPA below.
+
+NOTE\+: To speed up clean build you may want to add tesseract\+\_\+ext to an extended workspace.
+
+NOTE\+: Install Task\+Flow from \href{https://launchpad.net/~ros-industrial/+archive/ubuntu/ppa}{\texttt{ ROS-\/\+Industrial PPA}}.\hypertarget{index_autotoc_md10}{}\doxysubsection{Building with Clang-\/\+Tidy Enabled}\label{index_autotoc_md10}
+Must pass the -\/DTESSERACT\+\_\+\+ENABLE\+\_\+\+CLANG\+\_\+\+TIDY=ON to cmake when building. This is automatically enabled if cmake argument -\/DTESSERACT\+\_\+\+ENABLE\+\_\+\+TESTING\+\_\+\+ALL=ON is passed.\hypertarget{index_autotoc_md11}{}\doxysubsection{Building Tesseract Tests}\label{index_autotoc_md11}
+Must pass the -\/DTESSERACT\+\_\+\+ENABLE\+\_\+\+TESTING=ON to cmake when wanting to build tests. This is automatically enabled if cmake argument -\/DTESSERACT\+\_\+\+ENABLE\+\_\+\+TESTING\+\_\+\+ALL=ON is passed.
+
+NOTE\+: If you are building using catkin tools, use {\ttfamily catkin build -\/-\/force-\/cmake -\/DTESSERACT\+\_\+\+ENABLE\+\_\+\+TESTING=ON}.\hypertarget{index_autotoc_md12}{}\doxysubsubsection{Running Tesseract Tests}\label{index_autotoc_md12}
+Tesseract packages use ctest because it is ROS agnostic, so to run the test call {\ttfamily catkin test -\/-\/no-\/deps \mbox{\hyperlink{namespacetesseract__collision}{tesseract\+\_\+collision}} \mbox{\hyperlink{namespacetesseract__common}{tesseract\+\_\+common}} \mbox{\hyperlink{namespacetesseract__environment}{tesseract\+\_\+environment}} \mbox{\hyperlink{namespacetesseract__geometry}{tesseract\+\_\+geometry}} \mbox{\hyperlink{namespacetesseract__kinematics}{tesseract\+\_\+kinematics}} \mbox{\hyperlink{namespacetesseract__scene__graph}{tesseract\+\_\+scene\+\_\+graph}} \mbox{\hyperlink{namespacetesseract__urdf}{tesseract\+\_\+urdf}} tesseract\+\_\+command\+\_\+language}\hypertarget{index_autotoc_md13}{}\doxysubsection{Building Tesseract Code Coverage}\label{index_autotoc_md13}
+Must pass the -\/DTESSERACT\+\_\+\+ENABLE\+\_\+\+CODE\+\_\+\+COVERAGE=ON to cmake when wanting to build code coverage. The code coverage report is located in each individuals build directory inside a ccov/all-\/merged folder. Open the index.\+html file to see the packages code coverage report.
+
+NOTE\+: Must be a clean build when generating a code coverage report. Also must build in debug.\hypertarget{index_autotoc_md14}{}\doxysubsubsection{Exclude Code From Code Coverage}\label{index_autotoc_md14}
+
+\begin{DoxyItemize}
+\item LCOV\+\_\+\+EXCL\+\_\+\+LINE
+\begin{DoxyItemize}
+\item Lines containing this marker will be excluded.
+\end{DoxyItemize}
+\item LCOV\+\_\+\+EXCL\+\_\+\+START
+\begin{DoxyItemize}
+\item Marks the beginning of an excluded section. The current line is part of this section.
+\end{DoxyItemize}
+\item LCOV\+\_\+\+EXCL\+\_\+\+STOP
+\begin{DoxyItemize}
+\item Marks the end of an excluded section. The current line not part of this section.
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+.. NOTE\+: You can replace {\bfseries{LCOV}} above with {\bfseries{GCOV}} or {\bfseries{GCOVR}}.\hypertarget{index_autotoc_md15}{}\doxysection{Create Debian Package (\+Linux) or Nu\+Get Package (\+Windows)}\label{index_autotoc_md15}
+The following process will generate a Debian or Nu\+Get package leveraging cmake and cpack based on the OS.
+
+The package should be located in the current directory.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cd <workspace directory>}
+\DoxyCodeLine{catkin build -\/DCMAKE\_BUILD\_TYPE=Release -\/DTESSERACT\_PACKAGE=ON}
+\DoxyCodeLine{./src/tesseract/.run-\/cpack}
+
+\end{DoxyCode}
+
+
+.. NOTE\+: You can add a prefix to the package name by setting -\/DTESSERACT\+\_\+\+PACKAGE\+\_\+\+PREFIX=\char`\"{}ros-\/noetic-\/\char`\"{}.\hypertarget{index_autotoc_md16}{}\doxysection{Quality Tools Leverage}\label{index_autotoc_md16}
+Tesseract currently leverages Compiler Warnigs, Clang Tidy and Code Coverage. All warnings produced by Compiler and Clang Tidy are treated as errors during CI builds.
+
+
+\begin{DoxyItemize}
+\item Compiler
+\begin{DoxyItemize}
+\item Wall
+\item Wextra
+\item Wconversion
+\item Wsign-\/conversion
+\item Wno-\/sign-\/compare
+\item Wnon-\/virtual-\/dtor
+\end{DoxyItemize}
+\item Clang Tidy
+\begin{DoxyItemize}
+\item clang-\/analyzer-\/$\ast$
+\item bugprone-\/$\ast$
+\item cppcoreguidelines-\/avoid-\/goto
+\item cppcoreguidelines-\/c-\/copy-\/assignment-\/signature
+\item cppcoreguidelines-\/interfaces-\/global-\/init
+\item cppcoreguidelines-\/narrowing-\/conversions
+\item cppcoreguidelines-\/no-\/malloc
+\item cppcoreguidelines-\/slicing
+\item cppcoreguidelines-\/special-\/member-\/functions
+\item misc-\/$\ast$,-\/misc-\/non-\/private-\/member-\/variables-\/in-\/classes
+\item modernize-\/$\ast$,-\/modernize-\/use-\/trailing-\/return-\/type,-\/modernize-\/use-\/nodiscard
+\item performance-\/$\ast$
+\item readability-\/avoid-\/const-\/params-\/in-\/decls
+\item readability-\/container-\/size-\/empty
+\item readability-\/delete-\/null-\/pointer
+\item readability-\/deleted-\/default
+\item readability-\/else-\/after-\/return
+\item readability-\/function-\/size
+\item readability-\/identifier-\/naming
+\item readability-\/inconsistent-\/declaration-\/parameter-\/name
+\item readability-\/misleading-\/indentation
+\item readability-\/misplaced-\/array-\/index
+\item readability-\/non-\/const-\/parameter
+\item readability-\/redundant-\/$\ast$
+\item readability-\/simplify-\/$\ast$
+\item readability-\/static-\/$\ast$
+\item readability-\/string-\/compare
+\item readability-\/uniqueptr-\/delete-\/release
+\item readability-\/rary-\/objects
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{index_autotoc_md17}{}\doxysection{Documentation and Tutorials}\label{index_autotoc_md17}
+Documentation and tutorials for Tesseract are located at \href{https://github.com/tesseract-robotics/tesseract_docs.git}{\texttt{ https\+://github.\+com/tesseract-\/robotics/tesseract\+\_\+docs.\+git}}\hypertarget{index_autotoc_md18}{}\doxysection{Debugging Windows Build}\label{index_autotoc_md18}
+
+\begin{DoxyItemize}
+\item Search Directories CI
+\begin{DoxyItemize}
+\item dir /s /b c\+:\textbackslash{}opt\textbackslash{}ros\textbackslash{}noetic$\ast$assimp$\ast$
+\end{DoxyItemize}
+\item Location of ROS Windows Builds
+\begin{DoxyItemize}
+\item \href{https://ros-win.visualstudio.com/ros-win/_build}{\texttt{ https\+://ros-\/win.\+visualstudio.\+com/ros-\/win/\+\_\+build}}
+\item \href{https://ros-win.visualstudio.com/ros-win/_build/results?buildId=8711&view=artifacts&type=publishedArtifacts}{\texttt{ https\+://ros-\/win.\+visualstudio.\+com/ros-\/win/\+\_\+build/results?build\+Id=8711\&view=artifacts\&type=published\+Artifacts}} 
+\end{DoxyItemize}
+\end{DoxyItemize}

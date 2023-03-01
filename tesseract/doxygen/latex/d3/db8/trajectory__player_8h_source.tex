@@ -1,0 +1,64 @@
+\hypertarget{trajectory__player_8h_source}{}\doxysection{trajectory\+\_\+player.\+h}
+\label{trajectory__player_8h_source}\index{tesseract\_visualization/include/tesseract\_visualization/trajectory\_player.h@{tesseract\_visualization/include/tesseract\_visualization/trajectory\_player.h}}
+\mbox{\hyperlink{trajectory__player_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#ifndef TESSERACT\_VISUALIZATION\_TRAJECTORY\_PLAYER\_H}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define TESSERACT\_VISUALIZATION\_TRAJECTORY\_PLAYER\_H}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{macros_8h}{tesseract\_common/macros.h}}>}}
+\DoxyCodeLine{30 \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include <chrono>}}
+\DoxyCodeLine{32 \mbox{\hyperlink{namespaceTESSERACT__COMMON__IGNORE__WARNINGS__POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{trajectory__interpolator_8h}{tesseract\_visualization/trajectory\_interpolator.h}}>}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__visualization}{tesseract\_visualization}}}
+\DoxyCodeLine{37 \{}
+\DoxyCodeLine{39 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryPlayer}{TrajectoryPlayer}}}
+\DoxyCodeLine{40 \{}
+\DoxyCodeLine{41 \textcolor{keyword}{public}:}
+\DoxyCodeLine{42   \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryPlayer_ac87f2740051bc6851f4c9a3f3a9f2199}{TrajectoryPlayer}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{48   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryPlayer_a04d97f87cf42de4e41b4ab957c1dec6f}{setTrajectory}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__common_1_1JointTrajectory}{tesseract\_common::JointTrajectory}}\& \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a2eb4f502ad97d43c60111b5ffd01a1e6}{trajectory}});}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{54   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryPlayer_a10e3f10cb4cf8cd80fa0157008bb435b}{setScale}}(\textcolor{keywordtype}{double} \mbox{\hyperlink{collision__margin__data__unit_8cpp_a80d402d10e8341004c0caf10133b80ab}{scale}});}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{61   \mbox{\hyperlink{classtesseract__common_1_1JointState}{tesseract\_common::JointState}} \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryPlayer_a3d4549fa3a9cbfcedaacbda53cc48ad3}{setCurrentDurationByIndex}}(\textcolor{keywordtype}{long} index);}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{68   \mbox{\hyperlink{classtesseract__common_1_1JointState}{tesseract\_common::JointState}} \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryPlayer_a5007624d13948a3846798d133c95f875}{setCurrentDuration}}(\textcolor{keywordtype}{double} duration);}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{74   \mbox{\hyperlink{classtesseract__common_1_1JointState}{tesseract\_common::JointState}} \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryPlayer_a1c4e4ce6b05ac1beef79fb11950950c5}{getNext}}();}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{81   \mbox{\hyperlink{classtesseract__common_1_1JointState}{tesseract\_common::JointState}} \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryPlayer_a507d35c0500f58c47087601c63ffb309}{getByIndex}}(\textcolor{keywordtype}{long} index) \textcolor{keyword}{const};}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{87   \textcolor{keywordtype}{double} \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryPlayer_a1e0cc2b68724af0504e5a27c03fa20d5}{currentDuration}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{93   \textcolor{keywordtype}{double} \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryPlayer_a90fe6e002e33766af3a686ab15e1670f}{trajectoryDuration}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{99   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryPlayer_a683adbb456cab0cf2a38d36af78b6cbb}{isFinished}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{105   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryPlayer_ab0a99456ba62b1bf0d49f1322d3d452e}{enableLoop}}(\textcolor{keywordtype}{bool} loop);}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{111   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryPlayer_ae3beb2c8664fe9b9e739b4f0e92ff17e}{isLoopEnabled}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{114   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryPlayer_a0febc89ed87200c70337f7dbae089ece}{reset}}();}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{117   \textcolor{keywordtype}{long} \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryPlayer_a10cd5cd5edf0d6918b32ad3ed3591652}{size}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119 \textcolor{keyword}{private}:}
+\DoxyCodeLine{120   \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryInterpolator_a85929854568e018c309906476e64b103}{TrajectoryInterpolator::UPtr}} \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryPlayer_a59b6345cf54738c49ff41e9a806e2845}{trajectory\_}}\{ \textcolor{keyword}{nullptr} \};}
+\DoxyCodeLine{121   \textcolor{keywordtype}{double} \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryPlayer_acff34823e835ee5d09f9590cfcc6739b}{trajectory\_duration\_}}\{ 0 \};}
+\DoxyCodeLine{122   \textcolor{keywordtype}{double} \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryPlayer_a28f05e5d6ea1b86fecfc92e591aa0e29}{current\_duration\_}}\{ 0 \};}
+\DoxyCodeLine{123   \textcolor{keywordtype}{double} \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryPlayer_a77ad040c6d1f9f13801e1202660d4674}{scale\_}}\{ 1 \};}
+\DoxyCodeLine{124   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryPlayer_ab7b2f045fe6658dbf39109a436c38132}{loop\_}}\{ \textcolor{keyword}{false} \};}
+\DoxyCodeLine{125   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryPlayer_abfe1f2d649ddd72b8c7ba09cb60f0827}{finished\_}}\{ \textcolor{keyword}{false} \};}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127   std::chrono::time\_point<std::chrono::high\_resolution\_clock> \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryPlayer_a8233c4d3ade5f873a2e4a113add8151c}{start\_time\_}};}
+\DoxyCodeLine{128 \};}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130 \}  \textcolor{comment}{// namespace tesseract\_visualization}}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_VISUALIZATION\_TRAJECTORY\_PLAYER\_H}}
+
+\end{DoxyCode}

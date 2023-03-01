@@ -1,0 +1,108 @@
+\hypertarget{vhacdMutex_8h_source}{}\doxysection{vhacd\+Mutex.\+h}
+\label{vhacdMutex_8h_source}\index{tesseract\_collision/vhacd/include/tesseract\_collision/vhacd/inc/vhacdMutex.h@{tesseract\_collision/vhacd/include/tesseract\_collision/vhacd/inc/vhacdMutex.h}}
+\mbox{\hyperlink{vhacdMutex_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#if defined(WIN32)}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#ifndef \_WIN32\_WINNT}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#define \_WIN32\_WINNT 0x400}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#include <windows.h>}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#pragma comment(lib, "{}winmm.lib"{}})}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#if defined(\_\_linux\_\_)}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#include <ctime>}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#define \_\_stdcall}}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#if defined(\_\_APPLE\_\_) || defined(\_\_linux\_\_)}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#include <pthread.h>}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#include <cassert>}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#if defined(\_\_APPLE\_\_)}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#define PTHREAD\_MUTEX\_RECURSIVE\_NP PTHREAD\_MUTEX\_RECURSIVE}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#define VHACD\_DEBUG}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 \textcolor{comment}{//\#define VHACD\_NDEBUG}}
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#ifdef VHACD\_NDEBUG}}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#define VHACD\_VERIFY(x) (x)}}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#define VHACD\_VERIFY(x) assert((x))}}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__collision}{tesseract\_collision}}}
+\DoxyCodeLine{84 \{}
+\DoxyCodeLine{85 \textcolor{keyword}{namespace }VHACD}
+\DoxyCodeLine{86 \{}
+\DoxyCodeLine{87 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Mutex}{Mutex}}}
+\DoxyCodeLine{88 \{}
+\DoxyCodeLine{89 \textcolor{keyword}{public}:}
+\DoxyCodeLine{90   \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Mutex_afc8750d1c7b739ff3f2f26c4e3e50a96}{Mutex}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{91   \{}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#if defined(WIN32) || defined(\_XBOX)}}
+\DoxyCodeLine{93     InitializeCriticalSection(\&m\_mutex);}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#elif defined(\_\_APPLE\_\_) || defined(\_\_linux\_\_)}}
+\DoxyCodeLine{95     pthread\_mutexattr\_t mutexAttr;  \textcolor{comment}{// Mutex Attribute}}
+\DoxyCodeLine{96     \mbox{\hyperlink{vhacdMutex_8h_ad539e4f7123742216d949aabf220cfab}{VHACD\_VERIFY}}(pthread\_mutexattr\_init(\&mutexAttr) == 0);}
+\DoxyCodeLine{97     \mbox{\hyperlink{vhacdMutex_8h_ad539e4f7123742216d949aabf220cfab}{VHACD\_VERIFY}}(pthread\_mutexattr\_settype(\&mutexAttr, PTHREAD\_MUTEX\_RECURSIVE\_NP) == 0);}
+\DoxyCodeLine{98     \mbox{\hyperlink{vhacdMutex_8h_ad539e4f7123742216d949aabf220cfab}{VHACD\_VERIFY}}(pthread\_mutex\_init(\&m\_mutex, \&mutexAttr) == 0);}
+\DoxyCodeLine{99     \mbox{\hyperlink{vhacdMutex_8h_ad539e4f7123742216d949aabf220cfab}{VHACD\_VERIFY}}(pthread\_mutexattr\_destroy(\&mutexAttr) == 0);}
+\DoxyCodeLine{100     (void)(mutexAttr);}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{102   \}}
+\DoxyCodeLine{103   \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Mutex_ae4c4f7b3dcca1a4b7e2780af45cb3dc2}{\string~Mutex}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{104   \{}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#if defined(WIN32) || defined(\_XBOX)}}
+\DoxyCodeLine{106     DeleteCriticalSection(\&m\_mutex);}
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#elif defined(\_\_APPLE\_\_) || defined(\_\_linux\_\_)}}
+\DoxyCodeLine{108     \mbox{\hyperlink{vhacdMutex_8h_ad539e4f7123742216d949aabf220cfab}{VHACD\_VERIFY}}(pthread\_mutex\_destroy(\&m\_mutex) == 0);}
+\DoxyCodeLine{109 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{110   \}}
+\DoxyCodeLine{111   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Mutex_a9598e8ebf5c604cf2f5abc07199a0fe0}{Lock}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{112   \{}
+\DoxyCodeLine{113 \textcolor{preprocessor}{\#if defined(WIN32) || defined(\_XBOX)}}
+\DoxyCodeLine{114     EnterCriticalSection(\&m\_mutex);}
+\DoxyCodeLine{115 \textcolor{preprocessor}{\#elif defined(\_\_APPLE\_\_) || defined(\_\_linux\_\_)}}
+\DoxyCodeLine{116     \mbox{\hyperlink{vhacdMutex_8h_ad539e4f7123742216d949aabf220cfab}{VHACD\_VERIFY}}(pthread\_mutex\_lock(\&m\_mutex) == 0);}
+\DoxyCodeLine{117 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{118   \}}
+\DoxyCodeLine{119   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Mutex_a9bebde03ef7678ecd229a5c304c4b03c}{TryLock}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{120   \{}
+\DoxyCodeLine{121 \textcolor{preprocessor}{\#if defined(WIN32) || defined(\_XBOX)}}
+\DoxyCodeLine{122     \textcolor{keywordtype}{bool} bRet = \textcolor{keyword}{false};}
+\DoxyCodeLine{123     \textcolor{comment}{// assert(("{}TryEnterCriticalSection seems to not work on XP???"{}, 0));}}
+\DoxyCodeLine{124     bRet = TryEnterCriticalSection(\&m\_mutex) ? true : \textcolor{keyword}{false};}
+\DoxyCodeLine{125     \textcolor{keywordflow}{return} bRet;}
+\DoxyCodeLine{126 \textcolor{preprocessor}{\#elif defined(\_\_APPLE\_\_) || defined(\_\_linux\_\_)}}
+\DoxyCodeLine{127     int32\_t result = pthread\_mutex\_trylock(\&m\_mutex);}
+\DoxyCodeLine{128     \textcolor{keywordflow}{return} (result == 0);}
+\DoxyCodeLine{129 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{130   \}}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Mutex_a8f23a9f544cce57ed28c7bf3e64e64b2}{Unlock}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{133   \{}
+\DoxyCodeLine{134 \textcolor{preprocessor}{\#if defined(WIN32) || defined(\_XBOX)}}
+\DoxyCodeLine{135     LeaveCriticalSection(\&m\_mutex);}
+\DoxyCodeLine{136 \textcolor{preprocessor}{\#elif defined(\_\_APPLE\_\_) || defined(\_\_linux\_\_)}}
+\DoxyCodeLine{137     \mbox{\hyperlink{vhacdMutex_8h_ad539e4f7123742216d949aabf220cfab}{VHACD\_VERIFY}}(pthread\_mutex\_unlock(\&m\_mutex) == 0);}
+\DoxyCodeLine{138 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{139   \}}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{141 \textcolor{keyword}{private}:}
+\DoxyCodeLine{142 \textcolor{preprocessor}{\#if defined(WIN32) || defined(\_XBOX)}}
+\DoxyCodeLine{143   CRITICAL\_SECTION m\_mutex;}
+\DoxyCodeLine{144 \textcolor{preprocessor}{\#elif defined(\_\_APPLE\_\_) || defined(\_\_linux\_\_)}}
+\DoxyCodeLine{145   pthread\_mutex\_t m\_mutex;}
+\DoxyCodeLine{146 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{147 \};}
+\DoxyCodeLine{148 \}  \textcolor{comment}{// namespace VHACD}}
+\DoxyCodeLine{149 \}  \textcolor{comment}{// namespace tesseract\_collision}}
+
+\end{DoxyCode}

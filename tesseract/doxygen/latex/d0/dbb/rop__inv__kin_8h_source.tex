@@ -1,0 +1,110 @@
+\hypertarget{rop__inv__kin_8h_source}{}\doxysection{rop\+\_\+inv\+\_\+kin.\+h}
+\label{rop__inv__kin_8h_source}\index{tesseract\_kinematics/core/include/tesseract\_kinematics/core/rop\_inv\_kin.h@{tesseract\_kinematics/core/include/tesseract\_kinematics/core/rop\_inv\_kin.h}}
+\mbox{\hyperlink{rop__inv__kin_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#ifndef TESSERACT\_KINEMATICS\_ROP\_INVERSE\_KINEMATICS\_H}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define TESSERACT\_KINEMATICS\_ROP\_INVERSE\_KINEMATICS\_H}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{macros_8h}{tesseract\_common/macros.h}}>}}
+\DoxyCodeLine{30 \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include <unordered\_map>}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include <console\_bridge/console.h>}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{graph_8h}{tesseract\_scene\_graph/graph.h}}>}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{scene__state_8h}{tesseract\_scene\_graph/scene\_state.h}}>}}
+\DoxyCodeLine{36 \mbox{\hyperlink{namespaceTESSERACT__COMMON__IGNORE__WARNINGS__POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{inverse__kinematics_8h}{tesseract\_kinematics/core/inverse\_kinematics.h}}>}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{forward__kinematics_8h}{tesseract\_kinematics/core/forward\_kinematics.h}}>}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{tesseract__kinematics_2core_2include_2tesseract__kinematics_2core_2types_8h}{tesseract\_kinematics/core/types.h}}>}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__kinematics}{tesseract\_kinematics}}}
+\DoxyCodeLine{43 \{}
+\DoxyCodeLine{44 \textcolor{keyword}{static} \textcolor{keyword}{const} std::string \mbox{\hyperlink{namespacetesseract__kinematics_a4688779396f355f46351e2bc6f9c5c01}{DEFAULT\_ROP\_INV\_KIN\_SOLVER\_NAME}} = \textcolor{stringliteral}{"{}ROPInvKin"{}};}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{49 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__kinematics_1_1ROPInvKin}{ROPInvKin}} : \textcolor{keyword}{public} \mbox{\hyperlink{classtesseract__kinematics_1_1InverseKinematics}{InverseKinematics}}}
+\DoxyCodeLine{50 \{}
+\DoxyCodeLine{51 \textcolor{keyword}{public}:}
+\DoxyCodeLine{52   \textcolor{comment}{// LCOV\_EXCL\_START}}
+\DoxyCodeLine{53   EIGEN\_MAKE\_ALIGNED\_OPERATOR\_NEW}
+\DoxyCodeLine{54   \textcolor{comment}{// LCOV\_EXCL\_STOP}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__kinematics_1_1ROPInvKin_ab52d9e395639baee709f9352da605532}{Ptr}} = std::shared\_ptr<ROPInvKin>;}
+\DoxyCodeLine{57   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__kinematics_1_1ROPInvKin_a92abe7aeb5c64e3a8dea16b73a9f0572}{ConstPtr}} = std::shared\_ptr<const ROPInvKin>;}
+\DoxyCodeLine{58   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__kinematics_1_1ROPInvKin_ab621499b81d1154fc51db91dc402b4ec}{UPtr}} = std::unique\_ptr<ROPInvKin>;}
+\DoxyCodeLine{59   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__kinematics_1_1ROPInvKin_a162aa5aa19e8b6687f8f5b661c9e1a81}{ConstUPtr}} = std::unique\_ptr<const ROPInvKin>;}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61   \mbox{\hyperlink{classtesseract__kinematics_1_1ROPInvKin_a79bbc7a6c2edc7282cc67208456c456e}{\string~ROPInvKin}}() \textcolor{keyword}{override} = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{62   \mbox{\hyperlink{classtesseract__kinematics_1_1ROPInvKin}{ROPInvKin}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__kinematics_1_1ROPInvKin}{ROPInvKin}}\& other);}
+\DoxyCodeLine{63   \mbox{\hyperlink{classtesseract__kinematics_1_1ROPInvKin}{ROPInvKin}}\& \mbox{\hyperlink{classtesseract__kinematics_1_1ROPInvKin_a65000a1e42b77ae7fd2ee7e610cf9194}{operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__kinematics_1_1ROPInvKin}{ROPInvKin}}\& other);}
+\DoxyCodeLine{64   \mbox{\hyperlink{classtesseract__kinematics_1_1ROPInvKin_a1150723220312765ebf29f2a09ebe680}{ROPInvKin}}(\mbox{\hyperlink{classtesseract__kinematics_1_1ROPInvKin}{ROPInvKin}}\&\&) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{65   \mbox{\hyperlink{classtesseract__kinematics_1_1ROPInvKin}{ROPInvKin}}\& \mbox{\hyperlink{classtesseract__kinematics_1_1ROPInvKin_aca720781835d30fcc65ed5e8cbcc1081}{operator=}}(\mbox{\hyperlink{classtesseract__kinematics_1_1ROPInvKin}{ROPInvKin}}\&\&) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{79   \mbox{\hyperlink{classtesseract__kinematics_1_1ROPInvKin}{ROPInvKin}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph}{tesseract\_scene\_graph::SceneGraph}}\& \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a8d4d0dc3a6b9a7030970bf9ed3764756}{scene\_graph}},}
+\DoxyCodeLine{80             \textcolor{keyword}{const} \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{tesseract\_scene\_graph::SceneState}}\& \mbox{\hyperlink{kinematics__factory__unit_8cpp_a918c8faa92717caa3ba8aef1b4ef8163}{scene\_state}},}
+\DoxyCodeLine{81             \mbox{\hyperlink{classtesseract__kinematics_1_1InverseKinematics_a68e526591337b0781c9ec91618d1d5f0}{InverseKinematics::UPtr}} manipulator,}
+\DoxyCodeLine{82             \textcolor{keywordtype}{double} manipulator\_reach,}
+\DoxyCodeLine{83             \mbox{\hyperlink{classtesseract__kinematics_1_1ForwardKinematics_a53cb5fab19798d5afc20c259d4ffe1e3}{ForwardKinematics::UPtr}} positioner,}
+\DoxyCodeLine{84             \textcolor{keyword}{const} Eigen::VectorXd\& positioner\_sample\_resolution,}
+\DoxyCodeLine{85             std::string solver\_name = \mbox{\hyperlink{namespacetesseract__kinematics_a4688779396f355f46351e2bc6f9c5c01}{DEFAULT\_ROP\_INV\_KIN\_SOLVER\_NAME}});}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{100   \mbox{\hyperlink{classtesseract__kinematics_1_1ROPInvKin}{ROPInvKin}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph}{tesseract\_scene\_graph::SceneGraph}}\& \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a8d4d0dc3a6b9a7030970bf9ed3764756}{scene\_graph}},}
+\DoxyCodeLine{101             \textcolor{keyword}{const} \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{tesseract\_scene\_graph::SceneState}}\& \mbox{\hyperlink{kinematics__factory__unit_8cpp_a918c8faa92717caa3ba8aef1b4ef8163}{scene\_state}},}
+\DoxyCodeLine{102             \mbox{\hyperlink{classtesseract__kinematics_1_1InverseKinematics_a68e526591337b0781c9ec91618d1d5f0}{InverseKinematics::UPtr}} manipulator,}
+\DoxyCodeLine{103             \textcolor{keywordtype}{double} manipulator\_reach,}
+\DoxyCodeLine{104             \mbox{\hyperlink{classtesseract__kinematics_1_1ForwardKinematics_a53cb5fab19798d5afc20c259d4ffe1e3}{ForwardKinematics::UPtr}} positioner,}
+\DoxyCodeLine{105             \textcolor{keyword}{const} Eigen::MatrixX2d\& positioner\_sample\_range,}
+\DoxyCodeLine{106             \textcolor{keyword}{const} Eigen::VectorXd\& positioner\_sample\_resolution,}
+\DoxyCodeLine{107             std::string solver\_name = \mbox{\hyperlink{namespacetesseract__kinematics_a4688779396f355f46351e2bc6f9c5c01}{DEFAULT\_ROP\_INV\_KIN\_SOLVER\_NAME}});}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109   \mbox{\hyperlink{namespacetesseract__kinematics_af12a01d2264e3371dc9bc7db2a7b59ac}{IKSolutions}} \mbox{\hyperlink{classtesseract__kinematics_1_1ROPInvKin_ac1f9975af6ff225863180a3dbe66ac75}{calcInvKin}}(\textcolor{keyword}{const} \mbox{\hyperlink{namespacetesseract__common_a67bde3cb7bb235f0f61c370ef8bc74d8}{tesseract\_common::TransformMap}}\& tip\_link\_poses,}
+\DoxyCodeLine{110                          \textcolor{keyword}{const} Eigen::Ref<const Eigen::VectorXd>\& \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a113a9f110b7848f55fd8f5367a019304}{seed}}) \textcolor{keyword}{const} \textcolor{keyword}{override} \textcolor{keyword}{final};}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112   std::vector<std::string> \mbox{\hyperlink{classtesseract__kinematics_1_1ROPInvKin_ae1cb9c04333db6d00a519748e3699b4c}{getJointNames}}() const override final;}
+\DoxyCodeLine{113   Eigen::Index \mbox{\hyperlink{classtesseract__kinematics_1_1ROPInvKin_a2784204bdb837a72cfcb187346abfd20}{numJoints}}() const override final;}
+\DoxyCodeLine{114   std::\textcolor{keywordtype}{string} \mbox{\hyperlink{classtesseract__kinematics_1_1ROPInvKin_ad370533c7956ca16ab3be6aaaea488c4}{getBaseLinkName}}() const override final;}
+\DoxyCodeLine{115   std::\textcolor{keywordtype}{string} \mbox{\hyperlink{classtesseract__kinematics_1_1ROPInvKin_a3ef55686cd9ba1ce554763f5c461eaa4}{getWorkingFrame}}() const override final;}
+\DoxyCodeLine{116   std::\mbox{\hyperlink{FloatMath_8inl_adcf134d50025cc52907d0c8ac798d89d}{vector}}<std::\textcolor{keywordtype}{string}> \mbox{\hyperlink{classtesseract__kinematics_1_1ROPInvKin_abc036f05c23a590a9ed64ac9b348712d}{getTipLinkNames}}() const override final;}
+\DoxyCodeLine{117   std::\textcolor{keywordtype}{string} \mbox{\hyperlink{classtesseract__kinematics_1_1ROPInvKin_abd5b65e88f69cfac341e216a86f6c51d}{getSolverName}}() const override final;}
+\DoxyCodeLine{118   \mbox{\hyperlink{classtesseract__kinematics_1_1InverseKinematics}{InverseKinematics}}::\mbox{\hyperlink{classtesseract__kinematics_1_1ROPInvKin_ab621499b81d1154fc51db91dc402b4ec}{UPtr}} \mbox{\hyperlink{classtesseract__kinematics_1_1ROPInvKin_a130b798d9b90aa2aa8a9af6972f39a39}{clone}}() const override final;}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120 private:}
+\DoxyCodeLine{121   std::\mbox{\hyperlink{FloatMath_8inl_adcf134d50025cc52907d0c8ac798d89d}{vector}}<std::\textcolor{keywordtype}{string}> \mbox{\hyperlink{classtesseract__kinematics_1_1ROPInvKin_a771186ed5e9cc472ff3f5edac3f77075}{joint\_names\_}};}
+\DoxyCodeLine{122   \mbox{\hyperlink{classtesseract__kinematics_1_1InverseKinematics}{InverseKinematics}}::\mbox{\hyperlink{classtesseract__kinematics_1_1ROPInvKin_ab621499b81d1154fc51db91dc402b4ec}{UPtr}} \mbox{\hyperlink{classtesseract__kinematics_1_1ROPInvKin_af1936a64c6a53af3df756d0aff8e3178}{manip\_inv\_kin\_}};}
+\DoxyCodeLine{123   \mbox{\hyperlink{classtesseract__kinematics_1_1ForwardKinematics}{ForwardKinematics}}::\mbox{\hyperlink{classtesseract__kinematics_1_1ROPInvKin_ab621499b81d1154fc51db91dc402b4ec}{UPtr}} \mbox{\hyperlink{classtesseract__kinematics_1_1ROPInvKin_a4acb0102aab030d1938957df7390c06e}{positioner\_fwd\_kin\_}};}
+\DoxyCodeLine{124   std::\textcolor{keywordtype}{string} \mbox{\hyperlink{classtesseract__kinematics_1_1ROPInvKin_abc14d666874a06e0c23ae27723595d53}{manip\_tip\_link\_}};}
+\DoxyCodeLine{125   std::\textcolor{keywordtype}{string} \mbox{\hyperlink{classtesseract__kinematics_1_1ROPInvKin_a4b7ff93419c1f8273d98d8fc92147a8c}{positioner\_tip\_link\_}};}
+\DoxyCodeLine{126   \textcolor{keywordtype}{double} \mbox{\hyperlink{classtesseract__kinematics_1_1ROPInvKin_a6e42fa0eea0f60541e9f7071bde4e0f0}{manip\_reach\_}}\{ 0 \};}
+\DoxyCodeLine{127   Eigen::Index \mbox{\hyperlink{classtesseract__kinematics_1_1ROPInvKin_a78111058c848be179a42c575dde827b7}{dof\_}}\{ -\/1 \};}
+\DoxyCodeLine{128   Eigen::Isometry3d \mbox{\hyperlink{classtesseract__kinematics_1_1ROPInvKin_acaa2897159a8a386850692219ae8a409}{positioner\_to\_robot\_}}\{ Eigen::Isometry3d::Identity() \};}
+\DoxyCodeLine{129   std::vector<Eigen::VectorXd> \mbox{\hyperlink{classtesseract__kinematics_1_1ROPInvKin_af78571864458426a9e695d00d8b45c0d}{dof\_range\_}};}
+\DoxyCodeLine{130   std::string \mbox{\hyperlink{classtesseract__kinematics_1_1ROPInvKin_a5ed9acff6fb28b6f63d7fa8b0856513f}{solver\_name\_}}\{ \mbox{\hyperlink{namespacetesseract__kinematics_a4688779396f355f46351e2bc6f9c5c01}{DEFAULT\_ROP\_INV\_KIN\_SOLVER\_NAME}} \}; }
+\DoxyCodeLine{132   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__kinematics_1_1ROPInvKin_a8c7e1a1fe25197135b363d0a42f0aa22}{init}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph}{tesseract\_scene\_graph::SceneGraph}}\& \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a8d4d0dc3a6b9a7030970bf9ed3764756}{scene\_graph}},}
+\DoxyCodeLine{133             \textcolor{keyword}{const} \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{tesseract\_scene\_graph::SceneState}}\& \mbox{\hyperlink{kinematics__factory__unit_8cpp_a918c8faa92717caa3ba8aef1b4ef8163}{scene\_state}},}
+\DoxyCodeLine{134             \mbox{\hyperlink{classtesseract__kinematics_1_1InverseKinematics_a68e526591337b0781c9ec91618d1d5f0}{InverseKinematics::UPtr}} manipulator,}
+\DoxyCodeLine{135             \textcolor{keywordtype}{double} manipulator\_reach,}
+\DoxyCodeLine{136             \mbox{\hyperlink{classtesseract__kinematics_1_1ForwardKinematics_a53cb5fab19798d5afc20c259d4ffe1e3}{ForwardKinematics::UPtr}} positioner,}
+\DoxyCodeLine{137             \textcolor{keyword}{const} Eigen::MatrixX2d\& poitioner\_sample\_range,}
+\DoxyCodeLine{138             \textcolor{keyword}{const} Eigen::VectorXd\& positioner\_sample\_resolution,}
+\DoxyCodeLine{139             std::string solver\_name = \mbox{\hyperlink{namespacetesseract__kinematics_a4688779396f355f46351e2bc6f9c5c01}{DEFAULT\_ROP\_INV\_KIN\_SOLVER\_NAME}});}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{142   \mbox{\hyperlink{namespacetesseract__kinematics_af12a01d2264e3371dc9bc7db2a7b59ac}{IKSolutions}} \mbox{\hyperlink{classtesseract__kinematics_1_1ROPInvKin_a671ae9446865b0c31c01caf031f675f5}{calcInvKinHelper}}(\textcolor{keyword}{const} \mbox{\hyperlink{namespacetesseract__common_a67bde3cb7bb235f0f61c370ef8bc74d8}{tesseract\_common::TransformMap}}\& tip\_link\_poses,}
+\DoxyCodeLine{143                                \textcolor{keyword}{const} Eigen::Ref<const Eigen::VectorXd>\& \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a113a9f110b7848f55fd8f5367a019304}{seed}}) \textcolor{keyword}{const};}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__kinematics_1_1ROPInvKin_a83a6bd1aa064ccefb943a6b83643fac9}{nested\_ik}}(\mbox{\hyperlink{namespacetesseract__kinematics_af12a01d2264e3371dc9bc7db2a7b59ac}{IKSolutions}}\& solutions,}
+\DoxyCodeLine{146                  \textcolor{keywordtype}{int} loop\_level,}
+\DoxyCodeLine{147                  \textcolor{keyword}{const} std::vector<Eigen::VectorXd>\& dof\_range,}
+\DoxyCodeLine{148                  \textcolor{keyword}{const} \mbox{\hyperlink{namespacetesseract__common_a67bde3cb7bb235f0f61c370ef8bc74d8}{tesseract\_common::TransformMap}}\& tip\_link\_poses,}
+\DoxyCodeLine{149                  Eigen::VectorXd\& positioner\_pose,}
+\DoxyCodeLine{150                  \textcolor{keyword}{const} Eigen::Ref<const Eigen::VectorXd>\& \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a113a9f110b7848f55fd8f5367a019304}{seed}}) \textcolor{keyword}{const};}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{152   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__kinematics_1_1ROPInvKin_a9e0d45ca6aede08d03a74982edf6638a}{ikAt}}(\mbox{\hyperlink{namespacetesseract__kinematics_af12a01d2264e3371dc9bc7db2a7b59ac}{IKSolutions}}\& solutions,}
+\DoxyCodeLine{153             \textcolor{keyword}{const} \mbox{\hyperlink{namespacetesseract__common_a67bde3cb7bb235f0f61c370ef8bc74d8}{tesseract\_common::TransformMap}}\& tip\_link\_poses,}
+\DoxyCodeLine{154             Eigen::VectorXd\& positioner\_pose,}
+\DoxyCodeLine{155             \textcolor{keyword}{const} Eigen::Ref<const Eigen::VectorXd>\& \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a113a9f110b7848f55fd8f5367a019304}{seed}}) \textcolor{keyword}{const};}
+\DoxyCodeLine{156 \};}
+\DoxyCodeLine{157 \}  \textcolor{comment}{// namespace tesseract\_kinematics}}
+\DoxyCodeLine{158 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_KINEMATICS\_ROP\_INVERSE\_KINEMATICS\_H}}
+
+\end{DoxyCode}

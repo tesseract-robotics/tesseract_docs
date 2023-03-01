@@ -1,0 +1,108 @@
+\hypertarget{tesseract__gjk__pair__detector_8h_source}{}\doxysection{tesseract\+\_\+gjk\+\_\+pair\+\_\+detector.\+h}
+\label{tesseract__gjk__pair__detector_8h_source}\index{tesseract\_collision/bullet/include/tesseract\_collision/bullet/tesseract\_gjk\_pair\_detector.h@{tesseract\_collision/bullet/include/tesseract\_collision/bullet/tesseract\_gjk\_pair\_detector.h}}
+\mbox{\hyperlink{tesseract__gjk__pair__detector_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{Bullet Continuous Collision Detection and Physics Library}}
+\DoxyCodeLine{3 \textcolor{comment}{Copyright (c) 2003-\/2006 Erwin Coumans  http://continuousphysics.com/Bullet/}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{This software is provided 'as-\/is', without any express or implied warranty.}}
+\DoxyCodeLine{6 \textcolor{comment}{In no event will the authors be held liable for any damages arising from the use of this software.}}
+\DoxyCodeLine{7 \textcolor{comment}{Permission is granted to anyone to use this software for any purpose,}}
+\DoxyCodeLine{8 \textcolor{comment}{including commercial applications, and to alter it and redistribute it freely,}}
+\DoxyCodeLine{9 \textcolor{comment}{subject to the following restrictions:}}
+\DoxyCodeLine{10 \textcolor{comment}{}}
+\DoxyCodeLine{11 \textcolor{comment}{1. The origin of this software must not be misrepresented; you must not claim that you wrote the original software. If}}
+\DoxyCodeLine{12 \textcolor{comment}{you use this software in a product, an acknowledgment in the product documentation would be appreciated but is not}}
+\DoxyCodeLine{13 \textcolor{comment}{required.}}
+\DoxyCodeLine{14 \textcolor{comment}{2. Altered source versions must be plainly marked as such, and must not be misrepresented as being the original}}
+\DoxyCodeLine{15 \textcolor{comment}{software.}}
+\DoxyCodeLine{16 \textcolor{comment}{3. This notice may not be removed or altered from any source distribution.}}
+\DoxyCodeLine{17 \textcolor{comment}{*/}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#ifndef TESSERACT\_COLLISION\_TESSERACT\_GJK\_PAIR\_DETECTOR\_H}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#define TESSERACT\_COLLISION\_TESSERACT\_GJK\_PAIR\_DETECTOR\_H}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{macros_8h}{tesseract\_common/macros.h}}>}}
+\DoxyCodeLine{22 \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include <BulletCollision/NarrowPhaseCollision/btDiscreteCollisionDetectorInterface.h>}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include <BulletCollision/CollisionShapes/btCollisionMargin.h>}}
+\DoxyCodeLine{25 \mbox{\hyperlink{namespaceTESSERACT__COMMON__IGNORE__WARNINGS__POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{keyword}{class }btConvexShape;}
+\DoxyCodeLine{28 \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include <BulletCollision/NarrowPhaseCollision/btSimplexSolverInterface.h>}}
+\DoxyCodeLine{30 \mbox{\hyperlink{namespaceTESSERACT__COMMON__IGNORE__WARNINGS__POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{keyword}{class }btConvexPenetrationDepthSolver;}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{tesseract__collision_2core_2include_2tesseract__collision_2core_2types_8h}{tesseract\_collision/core/types.h}}>}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet}{tesseract\_collision::tesseract\_collision\_bullet}}}
+\DoxyCodeLine{37 \{}
+\DoxyCodeLine{50 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector}{TesseractGjkPairDetector}} : \textcolor{keyword}{public} btDiscreteCollisionDetectorInterface}
+\DoxyCodeLine{51 \{}
+\DoxyCodeLine{52   btVector3 \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_aff4643de88226ad7604f2d059393042e}{m\_cachedSeparatingAxis}};}
+\DoxyCodeLine{53   btConvexPenetrationDepthSolver* \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_ae3e557d87da46092bc3b9652da7c06c1}{m\_penetrationDepthSolver}};}
+\DoxyCodeLine{54   btSimplexSolverInterface* \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_ab4c7fe3fd879a4c32cb0a89e3c8a8b14}{m\_simplexSolver}};}
+\DoxyCodeLine{55   \textcolor{keyword}{const} btConvexShape* \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_aa52181ba02d7bd7f741e0e062c777205}{m\_minkowskiA}};}
+\DoxyCodeLine{56   \textcolor{keyword}{const} btConvexShape* \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a3e4cd75e8476ef3a74096d6e05085f4d}{m\_minkowskiB}};}
+\DoxyCodeLine{57   \textcolor{keywordtype}{int} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a847bf4d265e6cf6a379c9a29e9abf815}{m\_shapeTypeA}};}
+\DoxyCodeLine{58   \textcolor{keywordtype}{int} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a16988b07a51d336e5010e7ce574d15c6}{m\_shapeTypeB}};}
+\DoxyCodeLine{59   btScalar \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_ae212b7bed3fb0cf41a690f843c082d19}{m\_marginA}};}
+\DoxyCodeLine{60   btScalar \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a8a036783aa760858bf5984be797388d8}{m\_marginB}};}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_ad89dd2eed3e887ce7e9ac8da3db38c7c}{m\_ignoreMargin}};}
+\DoxyCodeLine{63   btScalar \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a8d16503a93a4fda75d04732ccbfeb249}{m\_cachedSeparatingDistance}}\{ 0 \};}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65   \textcolor{keyword}{const} \mbox{\hyperlink{structtesseract__collision_1_1ContactTestData}{ContactTestData}}* \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a450cffeab8295cb92d06fb3a2798fc88}{m\_cdata}};}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{keyword}{public}:}
+\DoxyCodeLine{68   \textcolor{comment}{// some debugging to fix degeneracy problems}}
+\DoxyCodeLine{69   \textcolor{keywordtype}{int} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a0c2a93f3294e3e2a3b63eea0f05f6be3}{m\_lastUsedMethod}};}
+\DoxyCodeLine{70   \textcolor{keywordtype}{int} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_aeb91a27e9ec72b774324830653695e81}{m\_curIter}}\{ 0 \};}
+\DoxyCodeLine{71   \textcolor{keywordtype}{int} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_aa126544a5b09d52be555fabfe925efdf}{m\_degenerateSimplex}}\{ 0 \};}
+\DoxyCodeLine{72   \textcolor{keywordtype}{int} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a4d91bb5f247c335b441a582a6e7f4e15}{m\_catchDegeneracies}};}
+\DoxyCodeLine{73   \textcolor{keywordtype}{int} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a1eef7c1434bd009c4edd4cf79b89b132}{m\_fixContactNormalDirection}};}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75   \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector}{TesseractGjkPairDetector}}(\textcolor{keyword}{const} btConvexShape* objectA,}
+\DoxyCodeLine{76                            \textcolor{keyword}{const} btConvexShape* objectB,}
+\DoxyCodeLine{77                            btSimplexSolverInterface* simplexSolver,}
+\DoxyCodeLine{78                            btConvexPenetrationDepthSolver* penetrationDepthSolver,}
+\DoxyCodeLine{79                            \textcolor{keyword}{const} \mbox{\hyperlink{structtesseract__collision_1_1ContactTestData}{ContactTestData}}* cdata);}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81   \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector}{TesseractGjkPairDetector}}(\textcolor{keyword}{const} btConvexShape* objectA,}
+\DoxyCodeLine{82                            \textcolor{keyword}{const} btConvexShape* objectB,}
+\DoxyCodeLine{83                            \textcolor{keywordtype}{int} shapeTypeA,}
+\DoxyCodeLine{84                            \textcolor{keywordtype}{int} shapeTypeB,}
+\DoxyCodeLine{85                            btScalar marginA,}
+\DoxyCodeLine{86                            btScalar marginB,}
+\DoxyCodeLine{87                            btSimplexSolverInterface* simplexSolver,}
+\DoxyCodeLine{88                            btConvexPenetrationDepthSolver* penetrationDepthSolver,}
+\DoxyCodeLine{89                            \textcolor{keyword}{const} \mbox{\hyperlink{structtesseract__collision_1_1ContactTestData}{ContactTestData}}* cdata);}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a911486ad054d6df2ad4f0ff7f6fbef1b}{getClosestPoints}}(\textcolor{keyword}{const} ClosestPointInput\& input,}
+\DoxyCodeLine{92                         Result\& output,}
+\DoxyCodeLine{93                         \textcolor{keyword}{class} btIDebugDraw* debugDraw,}
+\DoxyCodeLine{94                         \textcolor{keywordtype}{bool} swapResults = \textcolor{keyword}{false}) \textcolor{keyword}{override};}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_af4f3da9c2ea0a48933b3677fbc5e4a8a}{getClosestPointsNonVirtual}}(\textcolor{keyword}{const} ClosestPointInput\& input, Result\& output, \textcolor{keyword}{class} btIDebugDraw* debugDraw);}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a6dcdd3cc5df3eee3d104c830a495165d}{setMinkowskiA}}(\textcolor{keyword}{const} btConvexShape* minkA) \{ \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_aa52181ba02d7bd7f741e0e062c777205}{m\_minkowskiA}} = minkA; \}}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a992f165d7d74218ddccafff90c107f43}{setMinkowskiB}}(\textcolor{keyword}{const} btConvexShape* minkB) \{ \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a3e4cd75e8476ef3a74096d6e05085f4d}{m\_minkowskiB}} = minkB; \}}
+\DoxyCodeLine{101   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a3b6e7bc0b0b4d2e12f3f5190bfd2fd48}{setCachedSeparatingAxis}}(\textcolor{keyword}{const} btVector3\& separatingAxis) \{ \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_aff4643de88226ad7604f2d059393042e}{m\_cachedSeparatingAxis}} = separatingAxis; \}}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103   \textcolor{keyword}{const} btVector3\& \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_ae954a67008b2b23438caa7104062825b}{getCachedSeparatingAxis}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_aff4643de88226ad7604f2d059393042e}{m\_cachedSeparatingAxis}}; \}  \textcolor{comment}{// LCOV\_EXCL\_LINE}}
+\DoxyCodeLine{104   btScalar \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_aa1e6421ab398e1c58b329da3e6455964}{getCachedSeparatingDistance}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a8d16503a93a4fda75d04732ccbfeb249}{m\_cachedSeparatingDistance}}; \}}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_ab8c38223828d781143f5de9554b737e5}{setPenetrationDepthSolver}}(btConvexPenetrationDepthSolver* penetrationDepthSolver)}
+\DoxyCodeLine{107   \{}
+\DoxyCodeLine{108     \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_ae3e557d87da46092bc3b9652da7c06c1}{m\_penetrationDepthSolver}} = penetrationDepthSolver;}
+\DoxyCodeLine{109   \}}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{112   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a111b86548ba9e61a82e182fb1c1efea8}{setIgnoreMargin}}(\textcolor{keywordtype}{bool} ignoreMargin) \{ \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_ad89dd2eed3e887ce7e9ac8da3db38c7c}{m\_ignoreMargin}} = ignoreMargin; \}}
+\DoxyCodeLine{113 \};}
+\DoxyCodeLine{114 \}  \textcolor{comment}{// namespace tesseract\_collision::tesseract\_collision\_bullet}}
+\DoxyCodeLine{115 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_COLLISION\_TESSERACT\_GJK\_PAIR\_DETECTOR\_H}}
+
+\end{DoxyCode}

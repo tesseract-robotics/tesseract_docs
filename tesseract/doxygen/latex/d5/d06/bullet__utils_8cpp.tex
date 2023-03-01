@@ -1,0 +1,131 @@
+\hypertarget{bullet__utils_8cpp}{}\doxysection{tesseract\+\_\+collision/bullet/src/bullet\+\_\+utils.cpp File Reference}
+\label{bullet__utils_8cpp}\index{tesseract\_collision/bullet/src/bullet\_utils.cpp@{tesseract\_collision/bullet/src/bullet\_utils.cpp}}
+
+
+Tesseract ROS Bullet environment utility function.  
+
+
+{\ttfamily \#include \char`\"{}tesseract\+\_\+collision/bullet/bullet\+\_\+utils.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$Linear\+Math/bt\+Convex\+Hull\+Computer.\+h$>$}\newline
+{\ttfamily \#include $<$Bullet\+Collision/\+Collision\+Dispatch/bt\+Convex\+Convex\+Algorithm.\+h$>$}\newline
+{\ttfamily \#include $<$Bullet\+Collision/\+Collision\+Shapes/bt\+Shape\+Hull.\+h$>$}\newline
+{\ttfamily \#include $<$Bullet\+Collision/\+Gimpact/bt\+Triangle\+Shape\+Ex.\+h$>$}\newline
+{\ttfamily \#include $<$boost/thread/mutex.\+hpp$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$octomap/octomap.\+h$>$}\newline
+Include dependency graph for bullet\+\_\+utils.\+cpp\+:
+% FIG 0
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacetesseract__collision}{tesseract\+\_\+collision}}
+\item 
+namespace \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bt\+Vector3 \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_ab6260ffd652e88e821a535c8ef362788}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::convert\+Eigen\+To\+Bt}} (const Eigen\+::\+Vector3d \&\mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}})
+\item 
+Eigen\+::\+Vector3d \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_a69baa807981c7c67f8deaf70c775a569}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::convert\+Bt\+To\+Eigen}} (const bt\+Vector3 \&\mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}})
+\item 
+bt\+Quaternion \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_a0c9d0c67bd2e015e0bd76af19dc49ad3}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::convert\+Eigen\+To\+Bt}} (const Eigen\+::\+Quaterniond \&\mbox{\hyperlink{kinematics__core__unit_8cpp_af1c133f4166e08b7a95ddebfeef08de9}{q}})
+\item 
+bt\+Matrix3x3 \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_a71541ef4031834087fee6fa3d24d7f5e}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::convert\+Eigen\+To\+Bt}} (const Eigen\+::\+Matrix3d \&r)
+\item 
+Eigen\+::\+Matrix3d \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_a7d6f39222fe6a2bc43fdb7322d8696fd}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::convert\+Bt\+To\+Eigen}} (const bt\+Matrix3x3 \&r)
+\item 
+bt\+Transform \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_a04bf2dba88f3bea2c945f138a6d89f32}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::convert\+Eigen\+To\+Bt}} (const Eigen\+::\+Isometry3d \&t)
+\item 
+Eigen\+::\+Isometry3d \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_ae303deba9c9ad46de9e8d38ea7c5cc55}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::convert\+Bt\+To\+Eigen}} (const bt\+Transform \&t)
+\item 
+std\+::shared\+\_\+ptr$<$ bt\+Collision\+Shape $>$ \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_af850cf877b53cb446316776ccd990598}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::create\+Shape\+Primitive}} (const \mbox{\hyperlink{classtesseract__geometry_1_1Box_aec8152cc23a7ad1b16c135240824d161}{tesseract\+\_\+geometry\+::\+Box\+::\+Const\+Ptr}} \&\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}})
+\item 
+std\+::shared\+\_\+ptr$<$ bt\+Collision\+Shape $>$ \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_ad2dd7edd44779ad71fff18484ae3fa6b}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::create\+Shape\+Primitive}} (const \mbox{\hyperlink{classtesseract__geometry_1_1Sphere_ac986cb2217d07320a259ba4277af5b31}{tesseract\+\_\+geometry\+::\+Sphere\+::\+Const\+Ptr}} \&\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}})
+\item 
+std\+::shared\+\_\+ptr$<$ bt\+Collision\+Shape $>$ \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_a1570cc3fe002256a8069c102abf81470}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::create\+Shape\+Primitive}} (const \mbox{\hyperlink{classtesseract__geometry_1_1Cylinder_a4249ce200933a1fb9050e76d9fa45d93}{tesseract\+\_\+geometry\+::\+Cylinder\+::\+Const\+Ptr}} \&\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}})
+\item 
+std\+::shared\+\_\+ptr$<$ bt\+Collision\+Shape $>$ \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_a94359af0d70b6329a8bf7937e4744025}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::create\+Shape\+Primitive}} (const \mbox{\hyperlink{classtesseract__geometry_1_1Cone_a776461706bd71882a1cc0d38c56445de}{tesseract\+\_\+geometry\+::\+Cone\+::\+Const\+Ptr}} \&\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}})
+\item 
+std\+::shared\+\_\+ptr$<$ bt\+Collision\+Shape $>$ \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_a61940070a4df113e83cafe7f4be2ec29}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::create\+Shape\+Primitive}} (const \mbox{\hyperlink{classtesseract__geometry_1_1Capsule_ad1746418f72f252f0431e059a9ba5411}{tesseract\+\_\+geometry\+::\+Capsule\+::\+Const\+Ptr}} \&\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}})
+\item 
+std\+::shared\+\_\+ptr$<$ bt\+Collision\+Shape $>$ \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_af7ef3d11067f21455b00c753f41627dc}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::create\+Shape\+Primitive}} (const \mbox{\hyperlink{classtesseract__geometry_1_1Mesh_af9e7b416df5d635267f64b4604f969e2}{tesseract\+\_\+geometry\+::\+Mesh\+::\+Const\+Ptr}} \&\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}}, Collision\+Object\+Wrapper $\ast$cow, int shape\+\_\+index)
+\item 
+std\+::shared\+\_\+ptr$<$ bt\+Collision\+Shape $>$ \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_aa017e93fc49eab6d23ae6f427c9886dc}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::create\+Shape\+Primitive}} (const \mbox{\hyperlink{classtesseract__geometry_1_1ConvexMesh_a891ee4bcb9a02f4d57f1400bc32f561a}{tesseract\+\_\+geometry\+::\+Convex\+Mesh\+::\+Const\+Ptr}} \&\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}})
+\item 
+std\+::shared\+\_\+ptr$<$ bt\+Collision\+Shape $>$ \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_a96c432f079ee28cbf3343b3fe31b0bfd}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::create\+Shape\+Primitive}} (const \mbox{\hyperlink{classtesseract__geometry_1_1Octree_a0c3e8cdfa8826acdca6e727c3097a08c}{tesseract\+\_\+geometry\+::\+Octree\+::\+Const\+Ptr}} \&\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}}, Collision\+Object\+Wrapper $\ast$cow, int shape\+\_\+index)
+\item 
+std\+::shared\+\_\+ptr$<$ bt\+Collision\+Shape $>$ \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_adb87ec9db8f5ae1e636887a432379af4}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::create\+Shape\+Primitive}} (const Collision\+Shape\+Const\+Ptr \&\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}}, Collision\+Object\+Wrapper $\ast$cow, int shape\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Create a bullet collision shape from tesseract collision shape. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_aee49da084e6dd86cc7e384434c6a06f8}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::update\+Collision\+Object\+Filters}} (const std\+::vector$<$ std\+::string $>$ \&active, const COW\+::\+Ptr \&cow)
+\begin{DoxyCompactList}\small\item\em Update a collision objects filters. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_a51292eb04f12dbe924dd89888641c11e}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Get\+Average\+Support}} (const bt\+Convex\+Shape $\ast$shape, const bt\+Vector3 \&local\+Normal, bt\+Scalar \&outsupport, bt\+Vector3 \&outpt)
+\item 
+bt\+Transform \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_a913156c9424f8b201c5e754e67f117bb}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::get\+Link\+Transform\+From\+COW}} (const bt\+Collision\+Object\+Wrapper $\ast$cow)
+\begin{DoxyCompactList}\small\item\em This transversus the parent tree to find the base object and return its world transform This should be the links transform and it should only need to transverse twice at max. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_a53bb16a8ea8e89c25099ec490dec0ab3}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::needs\+Collision\+Check}} (const COW \&cow1, const COW \&cow2, const Is\+Contact\+Allowed\+Fn \&\mbox{\hyperlink{collision__core__unit_8cpp_a714392901b0c74193a9659fc77891a60}{acm}}, bool verbose=false)
+\begin{DoxyCompactList}\small\item\em This is used to check if a collision check is required between the provided two collision objects. \end{DoxyCompactList}\item 
+bt\+Scalar \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_a944725e709ae64de91e9b04a2fda3c3f}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::add\+Discrete\+Single\+Result}} (bt\+Manifold\+Point \&cp, const bt\+Collision\+Object\+Wrapper $\ast$col\+Obj0\+Wrap, const bt\+Collision\+Object\+Wrapper $\ast$col\+Obj1\+Wrap, Contact\+Test\+Data \&collisions)
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_af7c6dd578ec01e9c79a65f4f5e7a65d4}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::calculate\+Continuous\+Data}} (Contact\+Result $\ast$\mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a38407d2402d784852b9c0094464765ef}{col}}, const bt\+Collision\+Object\+Wrapper $\ast$cow, const bt\+Vector3 \&pt\+\_\+world, const bt\+Vector3 \&normal\+\_\+world, const bt\+Transform \&link\+\_\+tf\+\_\+inv, size\+\_\+t link\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Calculate the continuous contact data for casted collision shape. \end{DoxyCompactList}\item 
+bt\+Scalar \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_a023472eb7c78f445fefbfb2d085f5407}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::add\+Cast\+Single\+Result}} (bt\+Manifold\+Point \&cp, const bt\+Collision\+Object\+Wrapper $\ast$col\+Obj0\+Wrap, int index0, const bt\+Collision\+Object\+Wrapper $\ast$col\+Obj1\+Wrap, int index1, Contact\+Test\+Data \&collisions)
+\item 
+COW\+::\+Ptr \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_a9c284b5169360d33f83fc08b41cca03c}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::create\+Collision\+Object}} (const std\+::string \&\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}, const int \&\mbox{\hyperlink{collision__core__unit_8cpp_abd5b6e2207f4ef754f27366b9589816e}{type\+\_\+id}}, const Collision\+Shapes\+Const \&shapes, const \mbox{\hyperlink{namespacetesseract__common_a94d9921fc7ed323609ac57d06f939cb6}{tesseract\+\_\+common\+::\+Vector\+Isometry3d}} \&shape\+\_\+poses, bool enabled=true)
+\item 
+COW\+::\+Ptr \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_a5133b6061af8da1565519e1caab79ac7}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::make\+Cast\+Collision\+Object}} (const COW\+::\+Ptr \&cow)
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_ac32d8ab2b4e2177ce1a8d964cea67803}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::update\+Broadphase\+AABB}} (const COW\+::\+Ptr \&cow, const std\+::unique\+\_\+ptr$<$ bt\+Broadphase\+Interface $>$ \&broadphase, const std\+::unique\+\_\+ptr$<$ bt\+Collision\+Dispatcher $>$ \&dispatcher)
+\begin{DoxyCompactList}\small\item\em Update the Broadphase AABB for the input collision object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_acf22e0c89fd2ec0a19a2c54f3c0ec01f}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::remove\+Collision\+Object\+From\+Broadphase}} (const COW\+::\+Ptr \&cow, const std\+::unique\+\_\+ptr$<$ bt\+Broadphase\+Interface $>$ \&broadphase, const std\+::unique\+\_\+ptr$<$ bt\+Collision\+Dispatcher $>$ \&dispatcher)
+\begin{DoxyCompactList}\small\item\em Remove the collision object from broadphase. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_a6bfba14c0d54bc649688202fe589397e}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::add\+Collision\+Object\+To\+Broadphase}} (const COW\+::\+Ptr \&cow, const std\+::unique\+\_\+ptr$<$ bt\+Broadphase\+Interface $>$ \&broadphase, const std\+::unique\+\_\+ptr$<$ bt\+Collision\+Dispatcher $>$ \&dispatcher)
+\begin{DoxyCompactList}\small\item\em Add the collision object to broadphase. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_a31e50acd340ac0bf4728dbcae8262742}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::update\+Collision\+Object\+Filters}} (const std\+::vector$<$ std\+::string $>$ \&active, const COW\+::\+Ptr \&cow, const std\+::unique\+\_\+ptr$<$ bt\+Broadphase\+Interface $>$ \&broadphase, const std\+::unique\+\_\+ptr$<$ bt\+Collision\+Dispatcher $>$ \&dispatcher)
+\begin{DoxyCompactList}\small\item\em Update a collision objects filters for broadphase. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_ab00adc9a4c830a572b3ee17e153e88ef}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::refresh\+Broadphase\+Proxy}} (const COW\+::\+Ptr \&cow, const std\+::unique\+\_\+ptr$<$ bt\+Broadphase\+Interface $>$ \&broadphase, const std\+::unique\+\_\+ptr$<$ bt\+Collision\+Dispatcher $>$ \&dispatcher)
+\begin{DoxyCompactList}\small\item\em Refresh the broadphase data structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Tesseract ROS Bullet environment utility function. 
+
+\begin{DoxyAuthor}{Author}
+John Schulman 
+
+Levi Armstrong 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Dec 18, 2017 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+TODO 
+\end{DoxyVersion}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000015}{Bug}}]No known bugs\end{DoxyRefDesc}
+
+
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2017, Southwest Research Institute 
+
+Copyright (c) 2013, John Schulman
+\end{DoxyCopyright}
+\begin{DoxyParagraph}{License}
+Software License Agreement (BSD-\/2-\/\+Clause) 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+All rights reserved. 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met\+: 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+
+\begin{DoxyItemize}
+\item Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+\item Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution. 
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \char`\"{}\+AS IS\char`\"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
+\end{DoxyParagraph}

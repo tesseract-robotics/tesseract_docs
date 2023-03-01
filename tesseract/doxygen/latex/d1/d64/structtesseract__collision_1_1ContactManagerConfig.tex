@@ -1,0 +1,121 @@
+\hypertarget{structtesseract__collision_1_1ContactManagerConfig}{}\doxysection{tesseract\+\_\+collision\+::Contact\+Manager\+Config Struct Reference}
+\label{structtesseract__collision_1_1ContactManagerConfig}\index{tesseract\_collision::ContactManagerConfig@{tesseract\_collision::ContactManagerConfig}}
+
+
+Contains parameters used to configure a contact manager before a series of contact checks.  
+
+
+
+
+{\ttfamily \#include $<$types.\+h$>$}
+
+
+
+Collaboration diagram for tesseract\+\_\+collision\+::Contact\+Manager\+Config\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtesseract__collision_1_1ContactManagerConfig_a7e3ac3b3098999827ee460327a6fd11b}{Contact\+Manager\+Config}} ()=default
+\item 
+\mbox{\hyperlink{structtesseract__collision_1_1ContactManagerConfig_a04b51f6a1f2c83c42228e7de83fe6fe2}{Contact\+Manager\+Config}} (double \mbox{\hyperlink{collision__margin__data__unit_8cpp_ac3e3eb13e7a925c10e6739934db3c425}{default\+\_\+margin}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacetesseract__common_af06d85d024a36d63b58a6031556af8a1}{Collision\+Margin\+Override\+Type}} \mbox{\hyperlink{structtesseract__collision_1_1ContactManagerConfig_afdcd674e72f3b9c102202c5d65e1d712}{margin\+\_\+data\+\_\+override\+\_\+type}} \{ Collision\+Margin\+Override\+Type\+::\+NONE \}
+\begin{DoxyCompactList}\small\item\em Identify how the collision margin data should be applied to the contact manager. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacetesseract__collision_a0717a3c53d08d510257f631ea96cb560}{Collision\+Margin\+Data}} \mbox{\hyperlink{structtesseract__collision_1_1ContactManagerConfig_ae99431ef41da3d990072355fad366a7d}{margin\+\_\+data}}
+\begin{DoxyCompactList}\small\item\em Stores information about how the margins allowed between collision objects. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix}{tesseract\+\_\+common\+::\+Allowed\+Collision\+Matrix}} \mbox{\hyperlink{structtesseract__collision_1_1ContactManagerConfig_a22f49cad96d8de0cce15e07cab12f0e3}{acm}}
+\begin{DoxyCompactList}\small\item\em Additional Allowed\+Collision\+Matrix to consider for this collision check. ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacetesseract__collision_ab4aafe369f7930ea6a356f0b578c16af}{ACMOverride\+Type}} \mbox{\hyperlink{structtesseract__collision_1_1ContactManagerConfig_a1e26a636ac0d2f0868ed4063a9838bf9}{acm\+\_\+override\+\_\+type}} \{ \mbox{\hyperlink{namespacetesseract__collision_ab4aafe369f7930ea6a356f0b578c16afa1d00e7dce692e8dc3f6877f035e3a616}{ACMOverride\+Type\+::\+OR}} \}
+\begin{DoxyCompactList}\small\item\em Specifies how to combine the Is\+Contact\+Allowed\+Fn from acm with the one preset in the contact manager. \end{DoxyCompactList}\item 
+std\+::unordered\+\_\+map$<$ std\+::string, bool $>$ \mbox{\hyperlink{structtesseract__collision_1_1ContactManagerConfig_a7e54e61c7eb4d580a10dfc2bc3dc0e74}{modify\+\_\+object\+\_\+enabled}}
+\begin{DoxyCompactList}\small\item\em Each key is an object name. Objects will be enabled/disabled based on the value. Objects that aren\textquotesingle{}t in the map are unmodified from the defaults. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains parameters used to configure a contact manager before a series of contact checks. 
+
+It should not contain information that is usually specific to a single contact\+Test such as Collision\+Object\+Transforms or specific to the way contact\+Tests are carried out such as LVS parameters
+
+\begin{DoxyNote}{Note}
+Active links were not added to this config since this config could be shared by multiple manipulators, and those are set based on which one is being checked 
+\end{DoxyNote}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtesseract__collision_1_1ContactManagerConfig_a7e3ac3b3098999827ee460327a6fd11b}\label{structtesseract__collision_1_1ContactManagerConfig_a7e3ac3b3098999827ee460327a6fd11b}} 
+\index{tesseract\_collision::ContactManagerConfig@{tesseract\_collision::ContactManagerConfig}!ContactManagerConfig@{ContactManagerConfig}}
+\index{ContactManagerConfig@{ContactManagerConfig}!tesseract\_collision::ContactManagerConfig@{tesseract\_collision::ContactManagerConfig}}
+\doxysubsubsection{\texorpdfstring{ContactManagerConfig()}{ContactManagerConfig()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily tesseract\+\_\+collision\+::\+Contact\+Manager\+Config\+::\+Contact\+Manager\+Config (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{structtesseract__collision_1_1ContactManagerConfig_a04b51f6a1f2c83c42228e7de83fe6fe2}\label{structtesseract__collision_1_1ContactManagerConfig_a04b51f6a1f2c83c42228e7de83fe6fe2}} 
+\index{tesseract\_collision::ContactManagerConfig@{tesseract\_collision::ContactManagerConfig}!ContactManagerConfig@{ContactManagerConfig}}
+\index{ContactManagerConfig@{ContactManagerConfig}!tesseract\_collision::ContactManagerConfig@{tesseract\_collision::ContactManagerConfig}}
+\doxysubsubsection{\texorpdfstring{ContactManagerConfig()}{ContactManagerConfig()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily tesseract\+\_\+collision\+::\+Contact\+Manager\+Config\+::\+Contact\+Manager\+Config (\begin{DoxyParamCaption}\item[{double}]{default\+\_\+margin }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structtesseract__collision_1_1ContactManagerConfig_a22f49cad96d8de0cce15e07cab12f0e3}\label{structtesseract__collision_1_1ContactManagerConfig_a22f49cad96d8de0cce15e07cab12f0e3}} 
+\index{tesseract\_collision::ContactManagerConfig@{tesseract\_collision::ContactManagerConfig}!acm@{acm}}
+\index{acm@{acm}!tesseract\_collision::ContactManagerConfig@{tesseract\_collision::ContactManagerConfig}}
+\doxysubsubsection{\texorpdfstring{acm}{acm}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix}{tesseract\+\_\+common\+::\+Allowed\+Collision\+Matrix}} tesseract\+\_\+collision\+::\+Contact\+Manager\+Config\+::acm}
+
+
+
+Additional Allowed\+Collision\+Matrix to consider for this collision check. ~\newline
+ 
+
+\mbox{\Hypertarget{structtesseract__collision_1_1ContactManagerConfig_a1e26a636ac0d2f0868ed4063a9838bf9}\label{structtesseract__collision_1_1ContactManagerConfig_a1e26a636ac0d2f0868ed4063a9838bf9}} 
+\index{tesseract\_collision::ContactManagerConfig@{tesseract\_collision::ContactManagerConfig}!acm\_override\_type@{acm\_override\_type}}
+\index{acm\_override\_type@{acm\_override\_type}!tesseract\_collision::ContactManagerConfig@{tesseract\_collision::ContactManagerConfig}}
+\doxysubsubsection{\texorpdfstring{acm\_override\_type}{acm\_override\_type}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacetesseract__collision_ab4aafe369f7930ea6a356f0b578c16af}{ACMOverride\+Type}} tesseract\+\_\+collision\+::\+Contact\+Manager\+Config\+::acm\+\_\+override\+\_\+type \{ \mbox{\hyperlink{namespacetesseract__collision_ab4aafe369f7930ea6a356f0b578c16afa1d00e7dce692e8dc3f6877f035e3a616}{ACMOverride\+Type\+::\+OR}} \}}
+
+
+
+Specifies how to combine the Is\+Contact\+Allowed\+Fn from acm with the one preset in the contact manager. 
+
+\mbox{\Hypertarget{structtesseract__collision_1_1ContactManagerConfig_ae99431ef41da3d990072355fad366a7d}\label{structtesseract__collision_1_1ContactManagerConfig_ae99431ef41da3d990072355fad366a7d}} 
+\index{tesseract\_collision::ContactManagerConfig@{tesseract\_collision::ContactManagerConfig}!margin\_data@{margin\_data}}
+\index{margin\_data@{margin\_data}!tesseract\_collision::ContactManagerConfig@{tesseract\_collision::ContactManagerConfig}}
+\doxysubsubsection{\texorpdfstring{margin\_data}{margin\_data}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacetesseract__collision_a0717a3c53d08d510257f631ea96cb560}{Collision\+Margin\+Data}} tesseract\+\_\+collision\+::\+Contact\+Manager\+Config\+::margin\+\_\+data}
+
+
+
+Stores information about how the margins allowed between collision objects. 
+
+\mbox{\Hypertarget{structtesseract__collision_1_1ContactManagerConfig_afdcd674e72f3b9c102202c5d65e1d712}\label{structtesseract__collision_1_1ContactManagerConfig_afdcd674e72f3b9c102202c5d65e1d712}} 
+\index{tesseract\_collision::ContactManagerConfig@{tesseract\_collision::ContactManagerConfig}!margin\_data\_override\_type@{margin\_data\_override\_type}}
+\index{margin\_data\_override\_type@{margin\_data\_override\_type}!tesseract\_collision::ContactManagerConfig@{tesseract\_collision::ContactManagerConfig}}
+\doxysubsubsection{\texorpdfstring{margin\_data\_override\_type}{margin\_data\_override\_type}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacetesseract__common_af06d85d024a36d63b58a6031556af8a1}{Collision\+Margin\+Override\+Type}} tesseract\+\_\+collision\+::\+Contact\+Manager\+Config\+::margin\+\_\+data\+\_\+override\+\_\+type \{ Collision\+Margin\+Override\+Type\+::\+NONE \}}
+
+
+
+Identify how the collision margin data should be applied to the contact manager. 
+
+\mbox{\Hypertarget{structtesseract__collision_1_1ContactManagerConfig_a7e54e61c7eb4d580a10dfc2bc3dc0e74}\label{structtesseract__collision_1_1ContactManagerConfig_a7e54e61c7eb4d580a10dfc2bc3dc0e74}} 
+\index{tesseract\_collision::ContactManagerConfig@{tesseract\_collision::ContactManagerConfig}!modify\_object\_enabled@{modify\_object\_enabled}}
+\index{modify\_object\_enabled@{modify\_object\_enabled}!tesseract\_collision::ContactManagerConfig@{tesseract\_collision::ContactManagerConfig}}
+\doxysubsubsection{\texorpdfstring{modify\_object\_enabled}{modify\_object\_enabled}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$std\+::string, bool$>$ tesseract\+\_\+collision\+::\+Contact\+Manager\+Config\+::modify\+\_\+object\+\_\+enabled}
+
+
+
+Each key is an object name. Objects will be enabled/disabled based on the value. Objects that aren\textquotesingle{}t in the map are unmodified from the defaults. 
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+tesseract\+\_\+collision/core/include/tesseract\+\_\+collision/core/\mbox{\hyperlink{tesseract__collision_2core_2include_2tesseract__collision_2core_2types_8h}{types.\+h}}\item 
+tesseract\+\_\+collision/core/src/\mbox{\hyperlink{tesseract__collision_2core_2src_2types_8cpp}{types.\+cpp}}\end{DoxyCompactItemize}

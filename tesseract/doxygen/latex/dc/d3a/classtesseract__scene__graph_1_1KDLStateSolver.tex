@@ -1,0 +1,738 @@
+\hypertarget{classtesseract__scene__graph_1_1KDLStateSolver}{}\doxysection{tesseract\+\_\+scene\+\_\+graph\+::KDLState\+Solver Class Reference}
+\label{classtesseract__scene__graph_1_1KDLStateSolver}\index{tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}}
+
+
+{\ttfamily \#include $<$kdl\+\_\+state\+\_\+solver.\+h$>$}
+
+
+
+Inheritance diagram for tesseract\+\_\+scene\+\_\+graph\+::KDLState\+Solver\+:
+% FIG 0
+
+
+Collaboration diagram for tesseract\+\_\+scene\+\_\+graph\+::KDLState\+Solver\+:
+% FIG 1
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver_a71c7af7524087ae8a7111b79a033c06a}{Ptr}} = std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver}{KDLState\+Solver}} $>$
+\item 
+using \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver_a58c1cf31e46dd742611a3b2b8fb0517e}{Const\+Ptr}} = std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver}{KDLState\+Solver}} $>$
+\item 
+using \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver_adcd6857fb32390f6243e198c38f1855a}{UPtr}} = std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver}{KDLState\+Solver}} $>$
+\item 
+using \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver_aecbf1d40bb0b71fa340cc1ff9ff4c17a}{Const\+UPtr}} = std\+::unique\+\_\+ptr$<$ const \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver}{KDLState\+Solver}} $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver_ae61c799e404e81bb6d9b5cf5f419cdbc}{KDLState\+Solver}} (const \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph}{tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+Graph}} \&\mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a8d4d0dc3a6b9a7030970bf9ed3764756}{scene\+\_\+graph}})
+\item 
+\mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver_a6e37bf2b130792507862f415a44c52c3}{KDLState\+Solver}} (const \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph}{tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+Graph}} \&\mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a8d4d0dc3a6b9a7030970bf9ed3764756}{scene\+\_\+graph}}, \mbox{\hyperlink{structtesseract__scene__graph_1_1KDLTreeData}{KDLTree\+Data}} \mbox{\hyperlink{collision__margin__data__unit_8cpp_a0992235f6cab11fba6116193c7f42b8b}{data}})
+\item 
+\mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver_aafc8d71fef047b77fc10802a5a2995bd}{$\sim$\+KDLState\+Solver}} () override=default
+\item 
+\mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver_aa64e43ea781aa7739e6d27d3b5e55570}{KDLState\+Solver}} (const \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver}{KDLState\+Solver}} \&other)
+\item 
+\mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver}{KDLState\+Solver}} \& \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver_afe54527f5abea0a9d752aef1ef6c4111}{operator=}} (const \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver}{KDLState\+Solver}} \&other)
+\item 
+\mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver_a7a7323fca4b113062e786df37e9dcf76}{KDLState\+Solver}} (\mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver}{KDLState\+Solver}} \&\&)=delete
+\item 
+\mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver}{KDLState\+Solver}} \& \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver_a94d801bfec91f7726ea59a094853b2bf}{operator=}} (\mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver}{KDLState\+Solver}} \&\&)=delete
+\item 
+\mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a0834c4abefbc5b7da4e66cd26619a9ba}{State\+Solver\+::\+UPtr}} \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver_a50500b951b3390973b9defb65410dac9}{clone}} () const override
+\begin{DoxyCompactList}\small\item\em This should clone the object so it may be used in a multi threaded application where each thread would clone the solver. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver_a5318389e955709ccdc19380b2ea9ca56}{set\+State}} (const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xd $>$ \&joint\+\_\+values) override final
+\begin{DoxyCompactList}\small\item\em Set the current state of the solver. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver_a3b64d70a802c1c4d60fecfebeedd780a}{set\+State}} (const std\+::unordered\+\_\+map$<$ std\+::string, double $>$ \&joint\+\_\+values) override final
+\begin{DoxyCompactList}\small\item\em Set the current state of the solver. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver_a1ca8fca08fbae799a499adfdaeb356e9}{set\+State}} (const std\+::vector$<$ std\+::string $>$ \&\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_ae55b39adb52b29eeefd7d128c4b56f2a}{joint\+\_\+names}}, const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xd $>$ \&joint\+\_\+values) override final
+\item 
+\mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{Scene\+State}} \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver_afddbdb08c03bd03f2885386ac63011b1}{get\+State}} (const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xd $>$ \&joint\+\_\+values) const override final
+\begin{DoxyCompactList}\small\item\em Get the state of the solver given the joint values. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{Scene\+State}} \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver_a62148150dd2391d02589be6f275010a1}{get\+State}} (const std\+::unordered\+\_\+map$<$ std\+::string, double $>$ \&joint\+\_\+values) const override final
+\begin{DoxyCompactList}\small\item\em Get the state of the scene for a given set or subset of joint values. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{Scene\+State}} \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver_aa383788ed16b00607ee3c19cae62556a}{get\+State}} (const std\+::vector$<$ std\+::string $>$ \&\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_ae55b39adb52b29eeefd7d128c4b56f2a}{joint\+\_\+names}}, const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xd $>$ \&joint\+\_\+values) const override final
+\item 
+\mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{Scene\+State}} \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver_a99ebfd6fe9188acfa76aed166925a0e0}{get\+State}} () const override final
+\begin{DoxyCompactList}\small\item\em Get the current state of the scene. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{Scene\+State}} \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver_af41c34d197875dfa8e54e5bb3926a35e}{get\+Random\+State}} () const override final
+\begin{DoxyCompactList}\small\item\em Get the random state of the environment. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver_a52573c0a6db1a9ca91734594845ad16b}{get\+Jacobian}} (const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xd $>$ \&joint\+\_\+values, const std\+::string \&link\+\_\+name) const override final
+\begin{DoxyCompactList}\small\item\em Get the jacobian of the solver given the joint values. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver_acd4aead46a271c560e8f6d871fa981aa}{get\+Jacobian}} (const std\+::unordered\+\_\+map$<$ std\+::string, double $>$ \&joint\+\_\+values, const std\+::string \&link\+\_\+name) const override final
+\begin{DoxyCompactList}\small\item\em Get the jacobian of the scene for a given set or subset of joint values. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver_a6a4a7f7e533c29cfc47bae1e3457dc5f}{get\+Jacobian}} (const std\+::vector$<$ std\+::string $>$ \&\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_ae55b39adb52b29eeefd7d128c4b56f2a}{joint\+\_\+names}}, const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xd $>$ \&joint\+\_\+values, const std\+::string \&link\+\_\+name) const override final
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver_a9cc28b115331cc70ba3e9a6c31a48053}{get\+Joint\+Names}} () const override final
+\begin{DoxyCompactList}\small\item\em Get the vector of joint names. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver_a9cc12a5112faab9a1b9cb6fbcd90bb17}{get\+Active\+Joint\+Names}} () const override final
+\begin{DoxyCompactList}\small\item\em Get the vector of joint names which align with the limits. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver_a45f23d459f405ed5f3495674e010347c}{get\+Base\+Link\+Name}} () const override final
+\begin{DoxyCompactList}\small\item\em Get the base link name. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver_afa6ba6475c30534dcf0c2e7f55d5c589}{get\+Link\+Names}} () const override final
+\begin{DoxyCompactList}\small\item\em Get the vector of link names. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver_a86351df8d645c16fa42ce37b350e93b0}{get\+Active\+Link\+Names}} () const override final
+\begin{DoxyCompactList}\small\item\em Get the vector of active link names. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver_a722ca6ce2f0a75b03deabcf368c91e7b}{get\+Static\+Link\+Names}} () const override final
+\begin{DoxyCompactList}\small\item\em Get a vector of static link names in the environment. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver_a87ff2c249f94ffa7717f81529f246cb6}{is\+Active\+Link\+Name}} (const std\+::string \&link\+\_\+name) const override final
+\begin{DoxyCompactList}\small\item\em Check if link is an active link. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver_a1ab545a465543790c9d6242ebc326977}{has\+Link\+Name}} (const std\+::string \&link\+\_\+name) const override final
+\begin{DoxyCompactList}\small\item\em Check if link name exists. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacetesseract__common_a94d9921fc7ed323609ac57d06f939cb6}{tesseract\+\_\+common\+::\+Vector\+Isometry3d}} \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver_a02624ad236bbd644530140e5bc9a6c90}{get\+Link\+Transforms}} () const override final
+\begin{DoxyCompactList}\small\item\em Get all of the links transforms. \end{DoxyCompactList}\item 
+Eigen\+::\+Isometry3d \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver_a9009fbb4de24b94411ad1e1552590ccf}{get\+Link\+Transform}} (const std\+::string \&link\+\_\+name) const override final
+\begin{DoxyCompactList}\small\item\em Get the transform corresponding to the link. \end{DoxyCompactList}\item 
+Eigen\+::\+Isometry3d \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver_a6bdc5c185df597859ac033bc67974160}{get\+Relative\+Link\+Transform}} (const std\+::string \&from\+\_\+link\+\_\+name, const std\+::string \&to\+\_\+link\+\_\+name) const override final
+\begin{DoxyCompactList}\small\item\em Get transform between two links using the current state. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtesseract__common_1_1KinematicLimits}{tesseract\+\_\+common\+::\+Kinematic\+Limits}} \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver_a0e662295e4edb9ed0e7f3067d7e3f748}{get\+Limits}} () const override final
+\begin{DoxyCompactList}\small\item\em Getter for kinematic limits. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver_a50c83c819286fa4a61c0a10e1cf822c4}{calculate\+Transforms}} (\mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{Scene\+State}} \&state, const KDL\+::\+Jnt\+Array \&q\+\_\+in, const KDL\+::\+Segment\+Map\+::const\+\_\+iterator \&\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a325f3c2b297a245575c6f2f91bd5f1e2}{it}}, const Eigen\+::\+Isometry3d \&parent\+\_\+frame) const
+\item 
+void \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver_aad38e2280b484af0b8c05638bc6e6a00}{calculate\+Transforms\+Helper}} (\mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{Scene\+State}} \&state, const KDL\+::\+Jnt\+Array \&q\+\_\+in, const KDL\+::\+Segment\+Map\+::const\+\_\+iterator \&\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a325f3c2b297a245575c6f2f91bd5f1e2}{it}}, const Eigen\+::\+Isometry3d \&parent\+\_\+frame) const
+\item 
+bool \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver_ad1940d96a2973ecb37cbc6e5f3143b6e}{set\+Joint\+Values\+Helper}} (KDL\+::\+Jnt\+Array \&\mbox{\hyperlink{kinematics__core__unit_8cpp_af1c133f4166e08b7a95ddebfeef08de9}{q}}, const std\+::string \&\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aad74bf9891b141c288c96b20caff4dfa}{joint\+\_\+name}}, const double \&joint\+\_\+value) const
+\item 
+bool \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver_a981a2a7b98738f02c67794eb4518a580}{calc\+Jacobian\+Helper}} (KDL\+::\+Jacobian \&\mbox{\hyperlink{kinematics__core__unit_8cpp_afd43241933d01af91643a779b829d7a7}{jacobian}}, const KDL\+::\+Jnt\+Array \&kdl\+\_\+joints, const std\+::string \&link\+\_\+name) const
+\item 
+KDL\+::\+Jnt\+Array \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver_a5298217ce9089f0541a57e2b44d6da36}{get\+KDLJnt\+Array}} (const std\+::vector$<$ std\+::string $>$ \&\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_ae55b39adb52b29eeefd7d128c4b56f2a}{joint\+\_\+names}}, const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xd $>$ \&joint\+\_\+values) const
+\begin{DoxyCompactList}\small\item\em Get an updated kdl joint array. \end{DoxyCompactList}\item 
+KDL\+::\+Jnt\+Array \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver_ade6261721f58dc294e070c0618abf7c6}{get\+KDLJnt\+Array}} (const std\+::unordered\+\_\+map$<$ std\+::string, double $>$ \&joint\+\_\+values) const
+\item 
+bool \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver_a54d1f506756e290cc509d5215788f9dc}{process\+KDLData}} (const \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph}{tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+Graph}} \&\mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a8d4d0dc3a6b9a7030970bf9ed3764756}{scene\+\_\+graph}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{Scene\+State}} \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver_abb76cdd9e6a4bb2a2522a76e0fc2d6b8}{current\+\_\+state\+\_\+}}
+\item 
+\mbox{\hyperlink{structtesseract__scene__graph_1_1KDLTreeData}{KDLTree\+Data}} \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver_af76b4f0014b0d526666bd2c96f1ced49}{data\+\_\+}}
+\item 
+std\+::unique\+\_\+ptr$<$ KDL\+::\+Tree\+Jnt\+To\+Jac\+Solver $>$ \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver_af77b2229950f5ad5d2f4ee300b677eed}{jac\+\_\+solver\+\_\+}}
+\item 
+std\+::unordered\+\_\+map$<$ std\+::string, unsigned int $>$ \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver_aec3294056de85820b48fb110464ab983}{joint\+\_\+to\+\_\+qnr\+\_\+}}
+\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver_a7d95a6c36da68d4eccb8f6e8dbd8de66}{joint\+\_\+qnr\+\_\+}}
+\item 
+KDL\+::\+Jnt\+Array \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver_a3a08e290fe39a22a390695f06963ca35}{kdl\+\_\+jnt\+\_\+array\+\_\+}}
+\item 
+\mbox{\hyperlink{structtesseract__common_1_1KinematicLimits}{tesseract\+\_\+common\+::\+Kinematic\+Limits}} \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver_a04f5674a66af2874b064bceb5107f9bb}{limits\+\_\+}}
+\item 
+std\+::mutex \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver_aa750b930441ce01886ea36ca115aeb2f}{mutex\+\_\+}}
+\begin{DoxyCompactList}\small\item\em KDL is not thread safe due to mutable variables in \mbox{\hyperlink{classtesseract__scene__graph_1_1Joint}{Joint}} Class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1KDLStateSolver_a58c1cf31e46dd742611a3b2b8fb0517e}\label{classtesseract__scene__graph_1_1KDLStateSolver_a58c1cf31e46dd742611a3b2b8fb0517e}} 
+\index{tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}!ConstPtr@{ConstPtr}}
+\index{ConstPtr@{ConstPtr}!tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}}
+\doxysubsubsection{\texorpdfstring{ConstPtr}{ConstPtr}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver_a58c1cf31e46dd742611a3b2b8fb0517e}{tesseract\+\_\+scene\+\_\+graph\+::\+KDLState\+Solver\+::\+Const\+Ptr}} =  std\+::shared\+\_\+ptr$<$const \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver}{KDLState\+Solver}}$>$}
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1KDLStateSolver_aecbf1d40bb0b71fa340cc1ff9ff4c17a}\label{classtesseract__scene__graph_1_1KDLStateSolver_aecbf1d40bb0b71fa340cc1ff9ff4c17a}} 
+\index{tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}!ConstUPtr@{ConstUPtr}}
+\index{ConstUPtr@{ConstUPtr}!tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}}
+\doxysubsubsection{\texorpdfstring{ConstUPtr}{ConstUPtr}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver_aecbf1d40bb0b71fa340cc1ff9ff4c17a}{tesseract\+\_\+scene\+\_\+graph\+::\+KDLState\+Solver\+::\+Const\+UPtr}} =  std\+::unique\+\_\+ptr$<$const \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver}{KDLState\+Solver}}$>$}
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1KDLStateSolver_a71c7af7524087ae8a7111b79a033c06a}\label{classtesseract__scene__graph_1_1KDLStateSolver_a71c7af7524087ae8a7111b79a033c06a}} 
+\index{tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}!Ptr@{Ptr}}
+\index{Ptr@{Ptr}!tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}}
+\doxysubsubsection{\texorpdfstring{Ptr}{Ptr}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver_a71c7af7524087ae8a7111b79a033c06a}{tesseract\+\_\+scene\+\_\+graph\+::\+KDLState\+Solver\+::\+Ptr}} =  std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver}{KDLState\+Solver}}$>$}
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1KDLStateSolver_adcd6857fb32390f6243e198c38f1855a}\label{classtesseract__scene__graph_1_1KDLStateSolver_adcd6857fb32390f6243e198c38f1855a}} 
+\index{tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}!UPtr@{UPtr}}
+\index{UPtr@{UPtr}!tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}}
+\doxysubsubsection{\texorpdfstring{UPtr}{UPtr}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver_adcd6857fb32390f6243e198c38f1855a}{tesseract\+\_\+scene\+\_\+graph\+::\+KDLState\+Solver\+::\+UPtr}} =  std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver}{KDLState\+Solver}}$>$}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1KDLStateSolver_ae61c799e404e81bb6d9b5cf5f419cdbc}\label{classtesseract__scene__graph_1_1KDLStateSolver_ae61c799e404e81bb6d9b5cf5f419cdbc}} 
+\index{tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}!KDLStateSolver@{KDLStateSolver}}
+\index{KDLStateSolver@{KDLStateSolver}!tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}}
+\doxysubsubsection{\texorpdfstring{KDLStateSolver()}{KDLStateSolver()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily tesseract\+\_\+scene\+\_\+graph\+::\+KDLState\+Solver\+::\+KDLState\+Solver (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph}{tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+Graph}} \&}]{scene\+\_\+graph }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1KDLStateSolver_a6e37bf2b130792507862f415a44c52c3}\label{classtesseract__scene__graph_1_1KDLStateSolver_a6e37bf2b130792507862f415a44c52c3}} 
+\index{tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}!KDLStateSolver@{KDLStateSolver}}
+\index{KDLStateSolver@{KDLStateSolver}!tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}}
+\doxysubsubsection{\texorpdfstring{KDLStateSolver()}{KDLStateSolver()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily tesseract\+\_\+scene\+\_\+graph\+::\+KDLState\+Solver\+::\+KDLState\+Solver (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph}{tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+Graph}} \&}]{scene\+\_\+graph,  }\item[{\mbox{\hyperlink{structtesseract__scene__graph_1_1KDLTreeData}{KDLTree\+Data}}}]{data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1KDLStateSolver_aafc8d71fef047b77fc10802a5a2995bd}\label{classtesseract__scene__graph_1_1KDLStateSolver_aafc8d71fef047b77fc10802a5a2995bd}} 
+\index{tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}!````~KDLStateSolver@{$\sim$KDLStateSolver}}
+\index{````~KDLStateSolver@{$\sim$KDLStateSolver}!tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}}
+\doxysubsubsection{\texorpdfstring{$\sim$KDLStateSolver()}{~KDLStateSolver()}}
+{\footnotesize\ttfamily tesseract\+\_\+scene\+\_\+graph\+::\+KDLState\+Solver\+::$\sim$\+KDLState\+Solver (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1KDLStateSolver_aa64e43ea781aa7739e6d27d3b5e55570}\label{classtesseract__scene__graph_1_1KDLStateSolver_aa64e43ea781aa7739e6d27d3b5e55570}} 
+\index{tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}!KDLStateSolver@{KDLStateSolver}}
+\index{KDLStateSolver@{KDLStateSolver}!tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}}
+\doxysubsubsection{\texorpdfstring{KDLStateSolver()}{KDLStateSolver()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily tesseract\+\_\+scene\+\_\+graph\+::\+KDLState\+Solver\+::\+KDLState\+Solver (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver}{KDLState\+Solver}} \&}]{other }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1KDLStateSolver_a7a7323fca4b113062e786df37e9dcf76}\label{classtesseract__scene__graph_1_1KDLStateSolver_a7a7323fca4b113062e786df37e9dcf76}} 
+\index{tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}!KDLStateSolver@{KDLStateSolver}}
+\index{KDLStateSolver@{KDLStateSolver}!tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}}
+\doxysubsubsection{\texorpdfstring{KDLStateSolver()}{KDLStateSolver()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily tesseract\+\_\+scene\+\_\+graph\+::\+KDLState\+Solver\+::\+KDLState\+Solver (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver}{KDLState\+Solver}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1KDLStateSolver_a981a2a7b98738f02c67794eb4518a580}\label{classtesseract__scene__graph_1_1KDLStateSolver_a981a2a7b98738f02c67794eb4518a580}} 
+\index{tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}!calcJacobianHelper@{calcJacobianHelper}}
+\index{calcJacobianHelper@{calcJacobianHelper}!tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}}
+\doxysubsubsection{\texorpdfstring{calcJacobianHelper()}{calcJacobianHelper()}}
+{\footnotesize\ttfamily bool tesseract\+\_\+scene\+\_\+graph\+::\+KDLState\+Solver\+::calc\+Jacobian\+Helper (\begin{DoxyParamCaption}\item[{KDL\+::\+Jacobian \&}]{jacobian,  }\item[{const KDL\+::\+Jnt\+Array \&}]{kdl\+\_\+joints,  }\item[{const std\+::string \&}]{link\+\_\+name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1KDLStateSolver_a50c83c819286fa4a61c0a10e1cf822c4}\label{classtesseract__scene__graph_1_1KDLStateSolver_a50c83c819286fa4a61c0a10e1cf822c4}} 
+\index{tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}!calculateTransforms@{calculateTransforms}}
+\index{calculateTransforms@{calculateTransforms}!tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}}
+\doxysubsubsection{\texorpdfstring{calculateTransforms()}{calculateTransforms()}}
+{\footnotesize\ttfamily void tesseract\+\_\+scene\+\_\+graph\+::\+KDLState\+Solver\+::calculate\+Transforms (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{Scene\+State}} \&}]{state,  }\item[{const KDL\+::\+Jnt\+Array \&}]{q\+\_\+in,  }\item[{const KDL\+::\+Segment\+Map\+::const\+\_\+iterator \&}]{it,  }\item[{const Eigen\+::\+Isometry3d \&}]{parent\+\_\+frame }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1KDLStateSolver_aad38e2280b484af0b8c05638bc6e6a00}\label{classtesseract__scene__graph_1_1KDLStateSolver_aad38e2280b484af0b8c05638bc6e6a00}} 
+\index{tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}!calculateTransformsHelper@{calculateTransformsHelper}}
+\index{calculateTransformsHelper@{calculateTransformsHelper}!tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}}
+\doxysubsubsection{\texorpdfstring{calculateTransformsHelper()}{calculateTransformsHelper()}}
+{\footnotesize\ttfamily void tesseract\+\_\+scene\+\_\+graph\+::\+KDLState\+Solver\+::calculate\+Transforms\+Helper (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{Scene\+State}} \&}]{state,  }\item[{const KDL\+::\+Jnt\+Array \&}]{q\+\_\+in,  }\item[{const KDL\+::\+Segment\+Map\+::const\+\_\+iterator \&}]{it,  }\item[{const Eigen\+::\+Isometry3d \&}]{parent\+\_\+frame }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1KDLStateSolver_a50500b951b3390973b9defb65410dac9}\label{classtesseract__scene__graph_1_1KDLStateSolver_a50500b951b3390973b9defb65410dac9}} 
+\index{tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}!clone@{clone}}
+\index{clone@{clone}!tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a0834c4abefbc5b7da4e66cd26619a9ba}{State\+Solver\+::\+UPtr}} tesseract\+\_\+scene\+\_\+graph\+::\+KDLState\+Solver\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+This should clone the object so it may be used in a multi threaded application where each thread would clone the solver. 
+
+\begin{DoxyReturn}{Returns}
+A clone of the object. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_ad88a0e40214e35d5de7fa47074499ba0}{tesseract\+\_\+scene\+\_\+graph\+::\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1KDLStateSolver_a9cc12a5112faab9a1b9cb6fbcd90bb17}\label{classtesseract__scene__graph_1_1KDLStateSolver_a9cc12a5112faab9a1b9cb6fbcd90bb17}} 
+\index{tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}!getActiveJointNames@{getActiveJointNames}}
+\index{getActiveJointNames@{getActiveJointNames}!tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}}
+\doxysubsubsection{\texorpdfstring{getActiveJointNames()}{getActiveJointNames()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ tesseract\+\_\+scene\+\_\+graph\+::\+KDLState\+Solver\+::get\+Active\+Joint\+Names (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the vector of joint names which align with the limits. 
+
+\begin{DoxyReturn}{Returns}
+A vector of joint names 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a0c6aa138322ecc7eec14d7f0f2f5e84c}{tesseract\+\_\+scene\+\_\+graph\+::\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1KDLStateSolver_a86351df8d645c16fa42ce37b350e93b0}\label{classtesseract__scene__graph_1_1KDLStateSolver_a86351df8d645c16fa42ce37b350e93b0}} 
+\index{tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}!getActiveLinkNames@{getActiveLinkNames}}
+\index{getActiveLinkNames@{getActiveLinkNames}!tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}}
+\doxysubsubsection{\texorpdfstring{getActiveLinkNames()}{getActiveLinkNames()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ tesseract\+\_\+scene\+\_\+graph\+::\+KDLState\+Solver\+::get\+Active\+Link\+Names (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the vector of active link names. 
+
+\begin{DoxyReturn}{Returns}
+A vector of active link names 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_ad0e7aa7260bb4c0e90ab71c8d1a7e3b4}{tesseract\+\_\+scene\+\_\+graph\+::\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1KDLStateSolver_a45f23d459f405ed5f3495674e010347c}\label{classtesseract__scene__graph_1_1KDLStateSolver_a45f23d459f405ed5f3495674e010347c}} 
+\index{tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}!getBaseLinkName@{getBaseLinkName}}
+\index{getBaseLinkName@{getBaseLinkName}!tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}}
+\doxysubsubsection{\texorpdfstring{getBaseLinkName()}{getBaseLinkName()}}
+{\footnotesize\ttfamily std\+::string tesseract\+\_\+scene\+\_\+graph\+::\+KDLState\+Solver\+::get\+Base\+Link\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the base link name. 
+
+\begin{DoxyReturn}{Returns}
+The base link name 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_ab29a8aec90d5df565bdb9316280de860}{tesseract\+\_\+scene\+\_\+graph\+::\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1KDLStateSolver_a52573c0a6db1a9ca91734594845ad16b}\label{classtesseract__scene__graph_1_1KDLStateSolver_a52573c0a6db1a9ca91734594845ad16b}} 
+\index{tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}!getJacobian@{getJacobian}}
+\index{getJacobian@{getJacobian}!tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}}
+\doxysubsubsection{\texorpdfstring{getJacobian()}{getJacobian()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd tesseract\+\_\+scene\+\_\+graph\+::\+KDLState\+Solver\+::get\+Jacobian (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xd $>$ \&}]{joint\+\_\+values,  }\item[{const std\+::string \&}]{link\+\_\+name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the jacobian of the solver given the joint values. 
+
+This must be the same size and order as what is returned by get\+Joint\+Names 
+\begin{DoxyParams}{Parameters}
+{\em joint\+\_\+values} & The joint values \\
+\hline
+{\em link\+\_\+name} & The link name to calculate the jacobian \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a07bf9d73c4f6b3885e72ac696e71f6cb}{tesseract\+\_\+scene\+\_\+graph\+::\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1KDLStateSolver_acd4aead46a271c560e8f6d871fa981aa}\label{classtesseract__scene__graph_1_1KDLStateSolver_acd4aead46a271c560e8f6d871fa981aa}} 
+\index{tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}!getJacobian@{getJacobian}}
+\index{getJacobian@{getJacobian}!tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}}
+\doxysubsubsection{\texorpdfstring{getJacobian()}{getJacobian()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd tesseract\+\_\+scene\+\_\+graph\+::\+KDLState\+Solver\+::get\+Jacobian (\begin{DoxyParamCaption}\item[{const std\+::unordered\+\_\+map$<$ std\+::string, double $>$ \&}]{joint\+\_\+values,  }\item[{const std\+::string \&}]{link\+\_\+name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the jacobian of the scene for a given set or subset of joint values. 
+
+
+\begin{DoxyItemize}
+\item This does not return the jacobian based on the provided joint names. It is order based on the order returned from get\+Joint\+Names
+\end{DoxyItemize}
+
+This does not change the internal state of the solver.
+
+
+\begin{DoxyParams}{Parameters}
+{\em joints} & A map of joint names to joint values to change. \\
+\hline
+{\em link\+\_\+name} & The link name to calculate the jacobian \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A the state of the environment 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a3d858fad85dd1d7e6be45a477f11ed12}{tesseract\+\_\+scene\+\_\+graph\+::\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1KDLStateSolver_a6a4a7f7e533c29cfc47bae1e3457dc5f}\label{classtesseract__scene__graph_1_1KDLStateSolver_a6a4a7f7e533c29cfc47bae1e3457dc5f}} 
+\index{tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}!getJacobian@{getJacobian}}
+\index{getJacobian@{getJacobian}!tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}}
+\doxysubsubsection{\texorpdfstring{getJacobian()}{getJacobian()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd tesseract\+\_\+scene\+\_\+graph\+::\+KDLState\+Solver\+::get\+Jacobian (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{joint\+\_\+names,  }\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xd $>$ \&}]{joint\+\_\+values,  }\item[{const std\+::string \&}]{link\+\_\+name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a9148b4305eb045645bfb2a7eac2746dc}{tesseract\+\_\+scene\+\_\+graph\+::\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1KDLStateSolver_a9cc28b115331cc70ba3e9a6c31a48053}\label{classtesseract__scene__graph_1_1KDLStateSolver_a9cc28b115331cc70ba3e9a6c31a48053}} 
+\index{tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}!getJointNames@{getJointNames}}
+\index{getJointNames@{getJointNames}!tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}}
+\doxysubsubsection{\texorpdfstring{getJointNames()}{getJointNames()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ tesseract\+\_\+scene\+\_\+graph\+::\+KDLState\+Solver\+::get\+Joint\+Names (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the vector of joint names. 
+
+\begin{DoxyReturn}{Returns}
+A vector of joint names 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a3dfa78c3dc97ca119571503fca1202ee}{tesseract\+\_\+scene\+\_\+graph\+::\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1KDLStateSolver_ade6261721f58dc294e070c0618abf7c6}\label{classtesseract__scene__graph_1_1KDLStateSolver_ade6261721f58dc294e070c0618abf7c6}} 
+\index{tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}!getKDLJntArray@{getKDLJntArray}}
+\index{getKDLJntArray@{getKDLJntArray}!tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}}
+\doxysubsubsection{\texorpdfstring{getKDLJntArray()}{getKDLJntArray()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily KDL\+::\+Jnt\+Array tesseract\+\_\+scene\+\_\+graph\+::\+KDLState\+Solver\+::get\+KDLJnt\+Array (\begin{DoxyParamCaption}\item[{const std\+::unordered\+\_\+map$<$ std\+::string, double $>$ \&}]{joint\+\_\+values }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1KDLStateSolver_a5298217ce9089f0541a57e2b44d6da36}\label{classtesseract__scene__graph_1_1KDLStateSolver_a5298217ce9089f0541a57e2b44d6da36}} 
+\index{tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}!getKDLJntArray@{getKDLJntArray}}
+\index{getKDLJntArray@{getKDLJntArray}!tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}}
+\doxysubsubsection{\texorpdfstring{getKDLJntArray()}{getKDLJntArray()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily KDL\+::\+Jnt\+Array tesseract\+\_\+scene\+\_\+graph\+::\+KDLState\+Solver\+::get\+KDLJnt\+Array (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{joint\+\_\+names,  }\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xd $>$ \&}]{joint\+\_\+values }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Get an updated kdl joint array. 
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1KDLStateSolver_a0e662295e4edb9ed0e7f3067d7e3f748}\label{classtesseract__scene__graph_1_1KDLStateSolver_a0e662295e4edb9ed0e7f3067d7e3f748}} 
+\index{tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}!getLimits@{getLimits}}
+\index{getLimits@{getLimits}!tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}}
+\doxysubsubsection{\texorpdfstring{getLimits()}{getLimits()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtesseract__common_1_1KinematicLimits}{tesseract\+\_\+common\+::\+Kinematic\+Limits}} tesseract\+\_\+scene\+\_\+graph\+::\+KDLState\+Solver\+::get\+Limits (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Getter for kinematic limits. 
+
+\begin{DoxyReturn}{Returns}
+The kinematic limits 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a9a6500620632aa09e6f7d3ba06a11203}{tesseract\+\_\+scene\+\_\+graph\+::\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1KDLStateSolver_afa6ba6475c30534dcf0c2e7f55d5c589}\label{classtesseract__scene__graph_1_1KDLStateSolver_afa6ba6475c30534dcf0c2e7f55d5c589}} 
+\index{tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}!getLinkNames@{getLinkNames}}
+\index{getLinkNames@{getLinkNames}!tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}}
+\doxysubsubsection{\texorpdfstring{getLinkNames()}{getLinkNames()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ tesseract\+\_\+scene\+\_\+graph\+::\+KDLState\+Solver\+::get\+Link\+Names (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the vector of link names. 
+
+\begin{DoxyReturn}{Returns}
+A vector of link names 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_aa3352d3b6b37bc7af41f087771770b7e}{tesseract\+\_\+scene\+\_\+graph\+::\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1KDLStateSolver_a9009fbb4de24b94411ad1e1552590ccf}\label{classtesseract__scene__graph_1_1KDLStateSolver_a9009fbb4de24b94411ad1e1552590ccf}} 
+\index{tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}!getLinkTransform@{getLinkTransform}}
+\index{getLinkTransform@{getLinkTransform}!tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}}
+\doxysubsubsection{\texorpdfstring{getLinkTransform()}{getLinkTransform()}}
+{\footnotesize\ttfamily Eigen\+::\+Isometry3d tesseract\+\_\+scene\+\_\+graph\+::\+KDLState\+Solver\+::get\+Link\+Transform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{link\+\_\+name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the transform corresponding to the link. 
+
+\begin{DoxyReturn}{Returns}
+Transform and is identity when no transform is available. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a9ac88af6307dfbb281cda21970e96a94}{tesseract\+\_\+scene\+\_\+graph\+::\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1KDLStateSolver_a02624ad236bbd644530140e5bc9a6c90}\label{classtesseract__scene__graph_1_1KDLStateSolver_a02624ad236bbd644530140e5bc9a6c90}} 
+\index{tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}!getLinkTransforms@{getLinkTransforms}}
+\index{getLinkTransforms@{getLinkTransforms}!tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}}
+\doxysubsubsection{\texorpdfstring{getLinkTransforms()}{getLinkTransforms()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacetesseract__common_a94d9921fc7ed323609ac57d06f939cb6}{tesseract\+\_\+common\+::\+Vector\+Isometry3d}} tesseract\+\_\+scene\+\_\+graph\+::\+KDLState\+Solver\+::get\+Link\+Transforms (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get all of the links transforms. 
+
+Order should be the same as \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver_afa6ba6475c30534dcf0c2e7f55d5c589}{get\+Link\+Names()}} \begin{DoxyReturn}{Returns}
+Get a vector of transforms for all links. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_ac3991a6844bef5d336ddda10ad8e0fe8}{tesseract\+\_\+scene\+\_\+graph\+::\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1KDLStateSolver_af41c34d197875dfa8e54e5bb3926a35e}\label{classtesseract__scene__graph_1_1KDLStateSolver_af41c34d197875dfa8e54e5bb3926a35e}} 
+\index{tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}!getRandomState@{getRandomState}}
+\index{getRandomState@{getRandomState}!tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}}
+\doxysubsubsection{\texorpdfstring{getRandomState()}{getRandomState()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{Scene\+State}} tesseract\+\_\+scene\+\_\+graph\+::\+KDLState\+Solver\+::get\+Random\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the random state of the environment. 
+
+\begin{DoxyReturn}{Returns}
+Environment state 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a15567db8542f473c54b1bfe0a5cb360a}{tesseract\+\_\+scene\+\_\+graph\+::\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1KDLStateSolver_a6bdc5c185df597859ac033bc67974160}\label{classtesseract__scene__graph_1_1KDLStateSolver_a6bdc5c185df597859ac033bc67974160}} 
+\index{tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}!getRelativeLinkTransform@{getRelativeLinkTransform}}
+\index{getRelativeLinkTransform@{getRelativeLinkTransform}!tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}}
+\doxysubsubsection{\texorpdfstring{getRelativeLinkTransform()}{getRelativeLinkTransform()}}
+{\footnotesize\ttfamily Eigen\+::\+Isometry3d tesseract\+\_\+scene\+\_\+graph\+::\+KDLState\+Solver\+::get\+Relative\+Link\+Transform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{from\+\_\+link\+\_\+name,  }\item[{const std\+::string \&}]{to\+\_\+link\+\_\+name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get transform between two links using the current state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em from\+\_\+link\+\_\+name} & The link name the transform should be relative to \\
+\hline
+{\em to\+\_\+link\+\_\+name} & The link name to get transform \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The relative transform = inv(\+Transform(from\+\_\+link\+\_\+name)) $\ast$ Transform(to\+\_\+link\+\_\+name) 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_aaec713a1c063d905f8c66b011e2884d6}{tesseract\+\_\+scene\+\_\+graph\+::\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1KDLStateSolver_a99ebfd6fe9188acfa76aed166925a0e0}\label{classtesseract__scene__graph_1_1KDLStateSolver_a99ebfd6fe9188acfa76aed166925a0e0}} 
+\index{tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}!getState@{getState}}
+\index{getState@{getState}!tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{Scene\+State}} tesseract\+\_\+scene\+\_\+graph\+::\+KDLState\+Solver\+::get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the current state of the scene. 
+
+\begin{DoxyReturn}{Returns}
+The current state 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a8ee5f78843e293c4d9cd0d8b71372519}{tesseract\+\_\+scene\+\_\+graph\+::\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1KDLStateSolver_afddbdb08c03bd03f2885386ac63011b1}\label{classtesseract__scene__graph_1_1KDLStateSolver_afddbdb08c03bd03f2885386ac63011b1}} 
+\index{tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}!getState@{getState}}
+\index{getState@{getState}!tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{Scene\+State}} tesseract\+\_\+scene\+\_\+graph\+::\+KDLState\+Solver\+::get\+State (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xd $>$ \&}]{joint\+\_\+values }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the state of the solver given the joint values. 
+
+This must be the same size and order as what is returned by get\+Joint\+Names 
+\begin{DoxyParams}{Parameters}
+{\em joint\+\_\+values} & The joint values \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a795683cd30c399f5723bbbbe50b6c919}{tesseract\+\_\+scene\+\_\+graph\+::\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1KDLStateSolver_a62148150dd2391d02589be6f275010a1}\label{classtesseract__scene__graph_1_1KDLStateSolver_a62148150dd2391d02589be6f275010a1}} 
+\index{tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}!getState@{getState}}
+\index{getState@{getState}!tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{Scene\+State}} tesseract\+\_\+scene\+\_\+graph\+::\+KDLState\+Solver\+::get\+State (\begin{DoxyParamCaption}\item[{const std\+::unordered\+\_\+map$<$ std\+::string, double $>$ \&}]{joint\+\_\+values }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the state of the scene for a given set or subset of joint values. 
+
+This does not change the internal state of the solver.
+
+
+\begin{DoxyParams}{Parameters}
+{\em joints} & A map of joint names to joint values to change. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A the state of the environment 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a6a9e3e62ce768aaddbefd713a3be2115}{tesseract\+\_\+scene\+\_\+graph\+::\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1KDLStateSolver_aa383788ed16b00607ee3c19cae62556a}\label{classtesseract__scene__graph_1_1KDLStateSolver_aa383788ed16b00607ee3c19cae62556a}} 
+\index{tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}!getState@{getState}}
+\index{getState@{getState}!tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{Scene\+State}} tesseract\+\_\+scene\+\_\+graph\+::\+KDLState\+Solver\+::get\+State (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{joint\+\_\+names,  }\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xd $>$ \&}]{joint\+\_\+values }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a9979c4d7269be1902e0dcb64b9b61ed0}{tesseract\+\_\+scene\+\_\+graph\+::\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1KDLStateSolver_a722ca6ce2f0a75b03deabcf368c91e7b}\label{classtesseract__scene__graph_1_1KDLStateSolver_a722ca6ce2f0a75b03deabcf368c91e7b}} 
+\index{tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}!getStaticLinkNames@{getStaticLinkNames}}
+\index{getStaticLinkNames@{getStaticLinkNames}!tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}}
+\doxysubsubsection{\texorpdfstring{getStaticLinkNames()}{getStaticLinkNames()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ tesseract\+\_\+scene\+\_\+graph\+::\+KDLState\+Solver\+::get\+Static\+Link\+Names (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get a vector of static link names in the environment. 
+
+\begin{DoxyReturn}{Returns}
+A vector of static link names 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_ae46246329da823fd4eaa5c7190409468}{tesseract\+\_\+scene\+\_\+graph\+::\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1KDLStateSolver_a1ab545a465543790c9d6242ebc326977}\label{classtesseract__scene__graph_1_1KDLStateSolver_a1ab545a465543790c9d6242ebc326977}} 
+\index{tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}!hasLinkName@{hasLinkName}}
+\index{hasLinkName@{hasLinkName}!tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}}
+\doxysubsubsection{\texorpdfstring{hasLinkName()}{hasLinkName()}}
+{\footnotesize\ttfamily bool tesseract\+\_\+scene\+\_\+graph\+::\+KDLState\+Solver\+::has\+Link\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{link\+\_\+name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if link name exists. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em link\+\_\+name} & The link name to check for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if it exists, otherwise false 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a6651b931afdb4e5273b7e148c4210f6e}{tesseract\+\_\+scene\+\_\+graph\+::\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1KDLStateSolver_a87ff2c249f94ffa7717f81529f246cb6}\label{classtesseract__scene__graph_1_1KDLStateSolver_a87ff2c249f94ffa7717f81529f246cb6}} 
+\index{tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}!isActiveLinkName@{isActiveLinkName}}
+\index{isActiveLinkName@{isActiveLinkName}!tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}}
+\doxysubsubsection{\texorpdfstring{isActiveLinkName()}{isActiveLinkName()}}
+{\footnotesize\ttfamily bool tesseract\+\_\+scene\+\_\+graph\+::\+KDLState\+Solver\+::is\+Active\+Link\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{link\+\_\+name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if link is an active link. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em link\+\_\+name} & The link name to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if active, otherwise false 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_aa317e234377772c6c962a5743e299b1a}{tesseract\+\_\+scene\+\_\+graph\+::\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1KDLStateSolver_afe54527f5abea0a9d752aef1ef6c4111}\label{classtesseract__scene__graph_1_1KDLStateSolver_afe54527f5abea0a9d752aef1ef6c4111}} 
+\index{tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}!operator=@{operator=}}
+\index{operator=@{operator=}!tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver}{KDLState\+Solver}} \& tesseract\+\_\+scene\+\_\+graph\+::\+KDLState\+Solver\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver}{KDLState\+Solver}} \&}]{other }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1KDLStateSolver_a94d801bfec91f7726ea59a094853b2bf}\label{classtesseract__scene__graph_1_1KDLStateSolver_a94d801bfec91f7726ea59a094853b2bf}} 
+\index{tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}!operator=@{operator=}}
+\index{operator=@{operator=}!tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver}{KDLState\+Solver}} \& tesseract\+\_\+scene\+\_\+graph\+::\+KDLState\+Solver\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver}{KDLState\+Solver}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1KDLStateSolver_a54d1f506756e290cc509d5215788f9dc}\label{classtesseract__scene__graph_1_1KDLStateSolver_a54d1f506756e290cc509d5215788f9dc}} 
+\index{tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}!processKDLData@{processKDLData}}
+\index{processKDLData@{processKDLData}!tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}}
+\doxysubsubsection{\texorpdfstring{processKDLData()}{processKDLData()}}
+{\footnotesize\ttfamily bool tesseract\+\_\+scene\+\_\+graph\+::\+KDLState\+Solver\+::process\+KDLData (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph}{tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+Graph}} \&}]{scene\+\_\+graph }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1KDLStateSolver_ad1940d96a2973ecb37cbc6e5f3143b6e}\label{classtesseract__scene__graph_1_1KDLStateSolver_ad1940d96a2973ecb37cbc6e5f3143b6e}} 
+\index{tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}!setJointValuesHelper@{setJointValuesHelper}}
+\index{setJointValuesHelper@{setJointValuesHelper}!tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}}
+\doxysubsubsection{\texorpdfstring{setJointValuesHelper()}{setJointValuesHelper()}}
+{\footnotesize\ttfamily bool tesseract\+\_\+scene\+\_\+graph\+::\+KDLState\+Solver\+::set\+Joint\+Values\+Helper (\begin{DoxyParamCaption}\item[{KDL\+::\+Jnt\+Array \&}]{q,  }\item[{const std\+::string \&}]{joint\+\_\+name,  }\item[{const double \&}]{joint\+\_\+value }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1KDLStateSolver_a5318389e955709ccdc19380b2ea9ca56}\label{classtesseract__scene__graph_1_1KDLStateSolver_a5318389e955709ccdc19380b2ea9ca56}} 
+\index{tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}!setState@{setState}}
+\index{setState@{setState}!tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}}
+\doxysubsubsection{\texorpdfstring{setState()}{setState()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void tesseract\+\_\+scene\+\_\+graph\+::\+KDLState\+Solver\+::set\+State (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xd $>$ \&}]{joint\+\_\+values }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Set the current state of the solver. 
+
+This must be the same size and order as what is returned by get\+Joint\+Names 
+\begin{DoxyParams}{Parameters}
+{\em joint\+\_\+values} & The joint values \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_ae2d6ddc4de2aa1dcdf89dcf3d4d4a7ab}{tesseract\+\_\+scene\+\_\+graph\+::\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1KDLStateSolver_a3b64d70a802c1c4d60fecfebeedd780a}\label{classtesseract__scene__graph_1_1KDLStateSolver_a3b64d70a802c1c4d60fecfebeedd780a}} 
+\index{tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}!setState@{setState}}
+\index{setState@{setState}!tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}}
+\doxysubsubsection{\texorpdfstring{setState()}{setState()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void tesseract\+\_\+scene\+\_\+graph\+::\+KDLState\+Solver\+::set\+State (\begin{DoxyParamCaption}\item[{const std\+::unordered\+\_\+map$<$ std\+::string, double $>$ \&}]{joint\+\_\+values }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Set the current state of the solver. 
+
+After updating the current state these function must call current\+State\+Changed() which will update the contact managers transforms 
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a34cc5ed4d42c8ebe3a91a8ab624f7a55}{tesseract\+\_\+scene\+\_\+graph\+::\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1KDLStateSolver_a1ca8fca08fbae799a499adfdaeb356e9}\label{classtesseract__scene__graph_1_1KDLStateSolver_a1ca8fca08fbae799a499adfdaeb356e9}} 
+\index{tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}!setState@{setState}}
+\index{setState@{setState}!tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}}
+\doxysubsubsection{\texorpdfstring{setState()}{setState()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void tesseract\+\_\+scene\+\_\+graph\+::\+KDLState\+Solver\+::set\+State (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{joint\+\_\+names,  }\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xd $>$ \&}]{joint\+\_\+values }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a928eadfb2ddfd041245968697d11b77e}{tesseract\+\_\+scene\+\_\+graph\+::\+State\+Solver}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1KDLStateSolver_abb76cdd9e6a4bb2a2522a76e0fc2d6b8}\label{classtesseract__scene__graph_1_1KDLStateSolver_abb76cdd9e6a4bb2a2522a76e0fc2d6b8}} 
+\index{tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}!current\_state\_@{current\_state\_}}
+\index{current\_state\_@{current\_state\_}!tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}}
+\doxysubsubsection{\texorpdfstring{current\_state\_}{current\_state\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{Scene\+State}} tesseract\+\_\+scene\+\_\+graph\+::\+KDLState\+Solver\+::current\+\_\+state\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+Current state of the environment \mbox{\Hypertarget{classtesseract__scene__graph_1_1KDLStateSolver_af76b4f0014b0d526666bd2c96f1ced49}\label{classtesseract__scene__graph_1_1KDLStateSolver_af76b4f0014b0d526666bd2c96f1ced49}} 
+\index{tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}!data\_@{data\_}}
+\index{data\_@{data\_}!tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}}
+\doxysubsubsection{\texorpdfstring{data\_}{data\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtesseract__scene__graph_1_1KDLTreeData}{KDLTree\+Data}} tesseract\+\_\+scene\+\_\+graph\+::\+KDLState\+Solver\+::data\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+KDL tree data \mbox{\Hypertarget{classtesseract__scene__graph_1_1KDLStateSolver_af77b2229950f5ad5d2f4ee300b677eed}\label{classtesseract__scene__graph_1_1KDLStateSolver_af77b2229950f5ad5d2f4ee300b677eed}} 
+\index{tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}!jac\_solver\_@{jac\_solver\_}}
+\index{jac\_solver\_@{jac\_solver\_}!tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}}
+\doxysubsubsection{\texorpdfstring{jac\_solver\_}{jac\_solver\_}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$KDL\+::\+Tree\+Jnt\+To\+Jac\+Solver$>$ tesseract\+\_\+scene\+\_\+graph\+::\+KDLState\+Solver\+::jac\+\_\+solver\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+KDL Jacobian Solver \mbox{\Hypertarget{classtesseract__scene__graph_1_1KDLStateSolver_a7d95a6c36da68d4eccb8f6e8dbd8de66}\label{classtesseract__scene__graph_1_1KDLStateSolver_a7d95a6c36da68d4eccb8f6e8dbd8de66}} 
+\index{tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}!joint\_qnr\_@{joint\_qnr\_}}
+\index{joint\_qnr\_@{joint\_qnr\_}!tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}}
+\doxysubsubsection{\texorpdfstring{joint\_qnr\_}{joint\_qnr\_}}
+{\footnotesize\ttfamily std\+::vector$<$int$>$ tesseract\+\_\+scene\+\_\+graph\+::\+KDLState\+Solver\+::joint\+\_\+qnr\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+The kdl segment number corresponding to joint in joint names \mbox{\Hypertarget{classtesseract__scene__graph_1_1KDLStateSolver_aec3294056de85820b48fb110464ab983}\label{classtesseract__scene__graph_1_1KDLStateSolver_aec3294056de85820b48fb110464ab983}} 
+\index{tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}!joint\_to\_qnr\_@{joint\_to\_qnr\_}}
+\index{joint\_to\_qnr\_@{joint\_to\_qnr\_}!tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}}
+\doxysubsubsection{\texorpdfstring{joint\_to\_qnr\_}{joint\_to\_qnr\_}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$std\+::string, unsigned int$>$ tesseract\+\_\+scene\+\_\+graph\+::\+KDLState\+Solver\+::joint\+\_\+to\+\_\+qnr\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+Map between joint name and kdl q index \mbox{\Hypertarget{classtesseract__scene__graph_1_1KDLStateSolver_a3a08e290fe39a22a390695f06963ca35}\label{classtesseract__scene__graph_1_1KDLStateSolver_a3a08e290fe39a22a390695f06963ca35}} 
+\index{tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}!kdl\_jnt\_array\_@{kdl\_jnt\_array\_}}
+\index{kdl\_jnt\_array\_@{kdl\_jnt\_array\_}!tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}}
+\doxysubsubsection{\texorpdfstring{kdl\_jnt\_array\_}{kdl\_jnt\_array\_}}
+{\footnotesize\ttfamily KDL\+::\+Jnt\+Array tesseract\+\_\+scene\+\_\+graph\+::\+KDLState\+Solver\+::kdl\+\_\+jnt\+\_\+array\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+The kdl joint array \mbox{\Hypertarget{classtesseract__scene__graph_1_1KDLStateSolver_a04f5674a66af2874b064bceb5107f9bb}\label{classtesseract__scene__graph_1_1KDLStateSolver_a04f5674a66af2874b064bceb5107f9bb}} 
+\index{tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}!limits\_@{limits\_}}
+\index{limits\_@{limits\_}!tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}}
+\doxysubsubsection{\texorpdfstring{limits\_}{limits\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtesseract__common_1_1KinematicLimits}{tesseract\+\_\+common\+::\+Kinematic\+Limits}} tesseract\+\_\+scene\+\_\+graph\+::\+KDLState\+Solver\+::limits\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+The kinematic limits \mbox{\Hypertarget{classtesseract__scene__graph_1_1KDLStateSolver_aa750b930441ce01886ea36ca115aeb2f}\label{classtesseract__scene__graph_1_1KDLStateSolver_aa750b930441ce01886ea36ca115aeb2f}} 
+\index{tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}!mutex\_@{mutex\_}}
+\index{mutex\_@{mutex\_}!tesseract\_scene\_graph::KDLStateSolver@{tesseract\_scene\_graph::KDLStateSolver}}
+\doxysubsubsection{\texorpdfstring{mutex\_}{mutex\_}}
+{\footnotesize\ttfamily std\+::mutex tesseract\+\_\+scene\+\_\+graph\+::\+KDLState\+Solver\+::mutex\+\_\+\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}}
+
+
+
+KDL is not thread safe due to mutable variables in \mbox{\hyperlink{classtesseract__scene__graph_1_1Joint}{Joint}} Class. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+tesseract\+\_\+state\+\_\+solver/include/tesseract\+\_\+state\+\_\+solver/kdl/\mbox{\hyperlink{kdl__state__solver_8h}{kdl\+\_\+state\+\_\+solver.\+h}}\item 
+tesseract\+\_\+state\+\_\+solver/src/\mbox{\hyperlink{kdl__state__solver_8cpp}{kdl\+\_\+state\+\_\+solver.\+cpp}}\end{DoxyCompactItemize}

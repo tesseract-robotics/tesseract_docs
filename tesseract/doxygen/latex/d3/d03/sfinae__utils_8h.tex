@@ -1,0 +1,231 @@
+\hypertarget{sfinae__utils_8h}{}\doxysection{tesseract\+\_\+common/include/tesseract\+\_\+common/sfinae\+\_\+utils.h File Reference}
+\label{sfinae__utils_8h}\index{tesseract\_common/include/tesseract\_common/sfinae\_utils.h@{tesseract\_common/include/tesseract\_common/sfinae\_utils.h}}
+{\ttfamily \#include $<$tesseract\+\_\+common/macros.\+h$>$}\newline
+{\ttfamily \#include $<$type\+\_\+traits$>$}\newline
+{\ttfamily \#include $<$array$>$}\newline
+Include dependency graph for sfinae\+\_\+utils.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structtesseract__common_1_1ambiguate}{tesseract\+\_\+common\+::ambiguate$<$ Args $>$}}
+\item 
+struct \mbox{\hyperlink{structtesseract__common_1_1got__type}{tesseract\+\_\+common\+::got\+\_\+type$<$ A, typename $>$}}
+\item 
+struct \mbox{\hyperlink{structtesseract__common_1_1got__type_3_01A_01_4}{tesseract\+\_\+common\+::got\+\_\+type$<$ A $>$}}
+\item 
+struct \mbox{\hyperlink{structtesseract__common_1_1sig__check}{tesseract\+\_\+common\+::sig\+\_\+check$<$ T, T $>$}}
+\item 
+struct \mbox{\hyperlink{structtesseract__common_1_1has__member}{tesseract\+\_\+common\+::has\+\_\+member$<$ Alias, Ambiguity\+Seed $>$}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacetesseract__common}{tesseract\+\_\+common}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{sfinae__utils_8h_ab4fc7d2cccbb97d55e21010335cb36e2}{CREATE\+\_\+\+MEMBER\+\_\+\+CHECK}}(member)
+\begin{DoxyCompactList}\small\item\em Check for member x in a given class. Could be var, func, class, union, or enum\+: \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{sfinae__utils_8h_a96dcf3342ffbb45c8cce82a85b91efc0}{CREATE\+\_\+\+MEMBER\+\_\+\+FUNC\+\_\+\+INVOCABLE\+\_\+\+CHECK}}(func\+\_\+name, ...)
+\begin{DoxyCompactList}\small\item\em Check if a member function is invocable with the provided input types. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{sfinae__utils_8h_aed711533dcaf344ba098e7f2128c3655}{CREATE\+\_\+\+MEMBER\+\_\+\+FUNC\+\_\+\+RETURN\+\_\+\+TYPE\+\_\+\+CHECK}}(func\+\_\+name,  return\+\_\+type, ...)
+\begin{DoxyCompactList}\small\item\em Check if a member function has a given return type with input parameters. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{sfinae__utils_8h_ae42782198c5d4bc38afda33ad12cddcb}{CREATE\+\_\+\+MEMBER\+\_\+\+FUNC\+\_\+\+RETURN\+\_\+\+TYPE\+\_\+\+NOARGS\+\_\+\+CHECK}}(func\+\_\+name,  return\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Check if a member function has a given return type that takes no arguments. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{sfinae__utils_8h_ae4346ab46e4c15e532c077c4ce735873}{CREATE\+\_\+\+MEMBER\+\_\+\+FUNC\+\_\+\+SIGNATURE\+\_\+\+CHECK}}(func\+\_\+name,  return\+\_\+type, ...)
+\begin{DoxyCompactList}\small\item\em Check if a member function has a given return type. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{sfinae__utils_8h_adb3d1d45a0c6ead71dda4be85bcc508c}{CREATE\+\_\+\+MEMBER\+\_\+\+FUNC\+\_\+\+SIGNATURE\+\_\+\+NOARGS\+\_\+\+CHECK}}(func\+\_\+name,  return\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Check if a member function has a given return type that takes no arguments. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{sfinae__utils_8h_ab4fc7d2cccbb97d55e21010335cb36e2}\label{sfinae__utils_8h_ab4fc7d2cccbb97d55e21010335cb36e2}} 
+\index{sfinae\_utils.h@{sfinae\_utils.h}!CREATE\_MEMBER\_CHECK@{CREATE\_MEMBER\_CHECK}}
+\index{CREATE\_MEMBER\_CHECK@{CREATE\_MEMBER\_CHECK}!sfinae\_utils.h@{sfinae\_utils.h}}
+\doxysubsubsection{\texorpdfstring{CREATE\_MEMBER\_CHECK}{CREATE\_MEMBER\_CHECK}}
+{\footnotesize\ttfamily \#define CREATE\+\_\+\+MEMBER\+\_\+\+CHECK(\begin{DoxyParamCaption}\item[{}]{member }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                                                                                                       \(\backslash\)}
+\DoxyCodeLine{  \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, \textcolor{keyword}{typename} = std::true\_type>                                                                     \(\backslash\)}
+\DoxyCodeLine{  \textcolor{keyword}{struct }Alias\_\#\#member;                                                                                               \(\backslash\)}
+\DoxyCodeLine{                                                                                                                       \(\backslash\)}
+\DoxyCodeLine{  \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>                                                                                                \(\backslash\)}
+\DoxyCodeLine{  \textcolor{keyword}{struct }Alias\_\#\#member<\mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{T}}, std::integral\_constant<bool, tesseract\_common::got\_type<decltype(\&T::member)>::value>>      \(\backslash\)}
+\DoxyCodeLine{  \{                                                                                                                    \(\backslash\)}
+\DoxyCodeLine{    \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keyword}{decltype}(\&T::member) \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a767de28b215ddaceb31188034a0838c0}{value}};                                                                           \(\backslash\)}
+\DoxyCodeLine{  \};                                                                                                                   \(\backslash\)}
+\DoxyCodeLine{                                                                                                                       \(\backslash\)}
+\DoxyCodeLine{  \textcolor{keyword}{struct }AmbiguitySeed\_\#\#member                                                                                        \(\backslash\)}
+\DoxyCodeLine{  \{                                                                                                                    \(\backslash\)}
+\DoxyCodeLine{    \textcolor{keywordtype}{char} member; \textcolor{comment}{/* NOLINT */}                                                                                          \(\backslash\)}
+\DoxyCodeLine{  \};                                                                                                                   \(\backslash\)}
+\DoxyCodeLine{                                                                                                                       \(\backslash\)}
+\DoxyCodeLine{  \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>                                                                                                \(\backslash\)}
+\DoxyCodeLine{  \textcolor{keyword}{struct }has\_member\_\#\#member                                                                                           \(\backslash\)}
+\DoxyCodeLine{  \{                                                                                                                    \(\backslash\)}
+\DoxyCodeLine{    \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{bool} \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a767de28b215ddaceb31188034a0838c0}{value}} =                                                                                          \(\backslash\)}
+\DoxyCodeLine{        \mbox{\hyperlink{structtesseract__common_1_1has__member}{tesseract\_common::has\_member<Alias\_\#\#member<tesseract\_common::ambiguate<T, AmbiguitySeed\_\#\#member>}}>,           \(\backslash\)}
+\DoxyCodeLine{                                     Alias\_\#\#member<AmbiguitySeed\_\#\#member>>\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a767de28b215ddaceb31188034a0838c0}{::value}};                                   \(\backslash\)}
+\DoxyCodeLine{  \}}
+
+\end{DoxyCode}
+
+
+Check for member x in a given class. Could be var, func, class, union, or enum\+: 
+
+\mbox{\hyperlink{sfinae__utils_8h_ab4fc7d2cccbb97d55e21010335cb36e2}{CREATE\+\_\+\+MEMBER\+\_\+\+CHECK(x)}}; bool has\+\_\+x = has\+\_\+member\+\_\+x$<$class\+\_\+to\+\_\+check\+\_\+for\+\_\+x$>$\+::value;
+
+\begin{DoxyNote}{Note}
+Also useful to add static assert in constructor to provide useful message static\+\_\+assert(has\+\_\+member\+\_\+x$<$class\+\_\+to\+\_\+check\+\_\+for\+\_\+x$>$\+::value, \char`\"{}\+Class does not have member function \textquotesingle{}x\textquotesingle{}\char`\"{}); 
+\end{DoxyNote}
+\mbox{\Hypertarget{sfinae__utils_8h_a96dcf3342ffbb45c8cce82a85b91efc0}\label{sfinae__utils_8h_a96dcf3342ffbb45c8cce82a85b91efc0}} 
+\index{sfinae\_utils.h@{sfinae\_utils.h}!CREATE\_MEMBER\_FUNC\_INVOCABLE\_CHECK@{CREATE\_MEMBER\_FUNC\_INVOCABLE\_CHECK}}
+\index{CREATE\_MEMBER\_FUNC\_INVOCABLE\_CHECK@{CREATE\_MEMBER\_FUNC\_INVOCABLE\_CHECK}!sfinae\_utils.h@{sfinae\_utils.h}}
+\doxysubsubsection{\texorpdfstring{CREATE\_MEMBER\_FUNC\_INVOCABLE\_CHECK}{CREATE\_MEMBER\_FUNC\_INVOCABLE\_CHECK}}
+{\footnotesize\ttfamily \#define CREATE\+\_\+\+MEMBER\+\_\+\+FUNC\+\_\+\+INVOCABLE\+\_\+\+CHECK(\begin{DoxyParamCaption}\item[{}]{func\+\_\+name,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                                                                                                       \(\backslash\)}
+\DoxyCodeLine{  \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, \textcolor{keyword}{typename} = std::true\_type>                                                                     \(\backslash\)}
+\DoxyCodeLine{  \textcolor{keyword}{struct }has\_member\_func\_invocable\_\#\#func\_name : std::false\_type                                                       \(\backslash\)}
+\DoxyCodeLine{  \{                                                                                                                    \(\backslash\)}
+\DoxyCodeLine{  \};                                                                                                                   \(\backslash\)}
+\DoxyCodeLine{                                                                                                                       \(\backslash\)}
+\DoxyCodeLine{  \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>                                                                                                \(\backslash\)}
+\DoxyCodeLine{  \textcolor{keyword}{struct }has\_member\_func\_invocable\_\#\#func\_name<                                                                        \(\backslash\)}
+\DoxyCodeLine{      \mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{T}},                                                                                                               \(\backslash\)}
+\DoxyCodeLine{      std::integral\_constant<bool, std::is\_invocable<decltype(\&T::func\_name), T, \_\_VA\_ARGS\_\_>::value>>                 \(\backslash\)}
+\DoxyCodeLine{    : std::true\_type                                                                                                   \(\backslash\)}
+\DoxyCodeLine{  \{                                                                                                                    \(\backslash\)}
+\DoxyCodeLine{  \};}
+
+\end{DoxyCode}
+
+
+Check if a member function is invocable with the provided input types. 
+
+Check if the class has a function named add which takes two double as arguments \mbox{\hyperlink{sfinae__utils_8h_a96dcf3342ffbb45c8cce82a85b91efc0}{CREATE\+\_\+\+MEMBER\+\_\+\+FUNC\+\_\+\+INVOCABLE\+\_\+\+CHECK(add, double, double)}} bool has\+\_\+add\+\_\+invocable = has\+\_\+member\+\_\+func\+\_\+invocable\+\_\+add$<$class\+\_\+to\+\_\+check\+\_\+for\+\_\+add\+\_\+invocable$>$\+::value; \mbox{\Hypertarget{sfinae__utils_8h_aed711533dcaf344ba098e7f2128c3655}\label{sfinae__utils_8h_aed711533dcaf344ba098e7f2128c3655}} 
+\index{sfinae\_utils.h@{sfinae\_utils.h}!CREATE\_MEMBER\_FUNC\_RETURN\_TYPE\_CHECK@{CREATE\_MEMBER\_FUNC\_RETURN\_TYPE\_CHECK}}
+\index{CREATE\_MEMBER\_FUNC\_RETURN\_TYPE\_CHECK@{CREATE\_MEMBER\_FUNC\_RETURN\_TYPE\_CHECK}!sfinae\_utils.h@{sfinae\_utils.h}}
+\doxysubsubsection{\texorpdfstring{CREATE\_MEMBER\_FUNC\_RETURN\_TYPE\_CHECK}{CREATE\_MEMBER\_FUNC\_RETURN\_TYPE\_CHECK}}
+{\footnotesize\ttfamily \#define CREATE\+\_\+\+MEMBER\+\_\+\+FUNC\+\_\+\+RETURN\+\_\+\+TYPE\+\_\+\+CHECK(\begin{DoxyParamCaption}\item[{}]{func\+\_\+name,  }\item[{}]{return\+\_\+type,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                                                                                                       \(\backslash\)}
+\DoxyCodeLine{  \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, \textcolor{keyword}{typename} = std::true\_type>                                                                     \(\backslash\)}
+\DoxyCodeLine{  \textcolor{keyword}{struct }has\_member\_func\_return\_type\_\#\#func\_name : std::false\_type                                                     \(\backslash\)}
+\DoxyCodeLine{  \{                                                                                                                    \(\backslash\)}
+\DoxyCodeLine{  \};                                                                                                                   \(\backslash\)}
+\DoxyCodeLine{                                                                                                                       \(\backslash\)}
+\DoxyCodeLine{  \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>                                                                                                \(\backslash\)}
+\DoxyCodeLine{  \textcolor{keyword}{struct }has\_member\_func\_return\_type\_\#\#func\_name<                                                                      \(\backslash\)}
+\DoxyCodeLine{      \mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{T}},                                                                                                               \(\backslash\)}
+\DoxyCodeLine{      std::integral\_constant<bool,                                                                                     \(\backslash\)}
+\DoxyCodeLine{                             std::is\_same<typename std::invoke\_result<decltype(\&T::func\_name), T, \_\_VA\_ARGS\_\_>::type,  \(\backslash\)}
+\DoxyCodeLine{                                          return\_type>::value>> : std::true\_type                                       \(\backslash\)}
+\DoxyCodeLine{  \{                                                                                                                    \(\backslash\)}
+\DoxyCodeLine{  \};}
+
+\end{DoxyCode}
+
+
+Check if a member function has a given return type with input parameters. 
+
+Check if the class has a function named add with return type followed function parameters \mbox{\hyperlink{sfinae__utils_8h_aed711533dcaf344ba098e7f2128c3655}{CREATE\+\_\+\+MEMBER\+\_\+\+FUNC\+\_\+\+RETURN\+\_\+\+TYPE\+\_\+\+CHECK(add, double, double, double)}} bool has\+\_\+add\+\_\+return\+\_\+type = has\+\_\+member\+\_\+func\+\_\+return\+\_\+type\+\_\+add$<$class\+\_\+to\+\_\+check\+\_\+for\+\_\+add\+\_\+return\+\_\+type$>$\+::value; \mbox{\Hypertarget{sfinae__utils_8h_ae42782198c5d4bc38afda33ad12cddcb}\label{sfinae__utils_8h_ae42782198c5d4bc38afda33ad12cddcb}} 
+\index{sfinae\_utils.h@{sfinae\_utils.h}!CREATE\_MEMBER\_FUNC\_RETURN\_TYPE\_NOARGS\_CHECK@{CREATE\_MEMBER\_FUNC\_RETURN\_TYPE\_NOARGS\_CHECK}}
+\index{CREATE\_MEMBER\_FUNC\_RETURN\_TYPE\_NOARGS\_CHECK@{CREATE\_MEMBER\_FUNC\_RETURN\_TYPE\_NOARGS\_CHECK}!sfinae\_utils.h@{sfinae\_utils.h}}
+\doxysubsubsection{\texorpdfstring{CREATE\_MEMBER\_FUNC\_RETURN\_TYPE\_NOARGS\_CHECK}{CREATE\_MEMBER\_FUNC\_RETURN\_TYPE\_NOARGS\_CHECK}}
+{\footnotesize\ttfamily \#define CREATE\+\_\+\+MEMBER\+\_\+\+FUNC\+\_\+\+RETURN\+\_\+\+TYPE\+\_\+\+NOARGS\+\_\+\+CHECK(\begin{DoxyParamCaption}\item[{}]{func\+\_\+name,  }\item[{}]{return\+\_\+type }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                                                                                                       \(\backslash\)}
+\DoxyCodeLine{  \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, \textcolor{keyword}{typename} = std::true\_type>                                                                     \(\backslash\)}
+\DoxyCodeLine{  \textcolor{keyword}{struct }has\_member\_func\_return\_type\_\#\#func\_name : std::false\_type                                                     \(\backslash\)}
+\DoxyCodeLine{  \{                                                                                                                    \(\backslash\)}
+\DoxyCodeLine{  \};                                                                                                                   \(\backslash\)}
+\DoxyCodeLine{                                                                                                                       \(\backslash\)}
+\DoxyCodeLine{  \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>                                                                                                \(\backslash\)}
+\DoxyCodeLine{  \textcolor{keyword}{struct }has\_member\_func\_return\_type\_\#\#func\_name<                                                                      \(\backslash\)}
+\DoxyCodeLine{      \mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{T}},                                                                                                               \(\backslash\)}
+\DoxyCodeLine{      std::integral\_constant<                                                                                          \(\backslash\)}
+\DoxyCodeLine{          bool,                                                                                                        \(\backslash\)}
+\DoxyCodeLine{          std::is\_same<typename std::invoke\_result<decltype(\&T::func\_name), T>::type, return\_type>::value>>            \(\backslash\)}
+\DoxyCodeLine{    : std::true\_type                                                                                                   \(\backslash\)}
+\DoxyCodeLine{  \{                                                                                                                    \(\backslash\)}
+\DoxyCodeLine{  \};}
+
+\end{DoxyCode}
+
+
+Check if a member function has a given return type that takes no arguments. 
+
+Check if the class has a function named add with return type \mbox{\hyperlink{sfinae__utils_8h_ae42782198c5d4bc38afda33ad12cddcb}{CREATE\+\_\+\+MEMBER\+\_\+\+FUNC\+\_\+\+RETURN\+\_\+\+TYPE\+\_\+\+NOARGS\+\_\+\+CHECK(update, bool)}} bool has\+\_\+update\+\_\+return\+\_\+type = has\+\_\+member\+\_\+func\+\_\+return\+\_\+type\+\_\+update$<$class\+\_\+to\+\_\+check\+\_\+for\+\_\+update\+\_\+return\+\_\+type$>$\+::value; \mbox{\Hypertarget{sfinae__utils_8h_ae4346ab46e4c15e532c077c4ce735873}\label{sfinae__utils_8h_ae4346ab46e4c15e532c077c4ce735873}} 
+\index{sfinae\_utils.h@{sfinae\_utils.h}!CREATE\_MEMBER\_FUNC\_SIGNATURE\_CHECK@{CREATE\_MEMBER\_FUNC\_SIGNATURE\_CHECK}}
+\index{CREATE\_MEMBER\_FUNC\_SIGNATURE\_CHECK@{CREATE\_MEMBER\_FUNC\_SIGNATURE\_CHECK}!sfinae\_utils.h@{sfinae\_utils.h}}
+\doxysubsubsection{\texorpdfstring{CREATE\_MEMBER\_FUNC\_SIGNATURE\_CHECK}{CREATE\_MEMBER\_FUNC\_SIGNATURE\_CHECK}}
+{\footnotesize\ttfamily \#define CREATE\+\_\+\+MEMBER\+\_\+\+FUNC\+\_\+\+SIGNATURE\+\_\+\+CHECK(\begin{DoxyParamCaption}\item[{}]{func\+\_\+name,  }\item[{}]{return\+\_\+type,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                                                                                                       \(\backslash\)}
+\DoxyCodeLine{  \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, \textcolor{keyword}{typename} = std::true\_type>                                                                     \(\backslash\)}
+\DoxyCodeLine{  \textcolor{keyword}{struct }has\_member\_func\_signature\_\#\#func\_name : std::false\_type                                                       \(\backslash\)}
+\DoxyCodeLine{  \{                                                                                                                    \(\backslash\)}
+\DoxyCodeLine{  \};                                                                                                                   \(\backslash\)}
+\DoxyCodeLine{                                                                                                                       \(\backslash\)}
+\DoxyCodeLine{  \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>                                                                                                \(\backslash\)}
+\DoxyCodeLine{  \textcolor{keyword}{struct }has\_member\_func\_signature\_\#\#func\_name<                                                                        \(\backslash\)}
+\DoxyCodeLine{      \mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{T}},                                                                                                               \(\backslash\)}
+\DoxyCodeLine{      std::integral\_constant<                                                                                          \(\backslash\)}
+\DoxyCodeLine{          bool,                                                                                                        \(\backslash\)}
+\DoxyCodeLine{          std::is\_invocable<decltype(\&T::func\_name), T, \_\_VA\_ARGS\_\_>::value \&\&                                         \(\backslash\)}
+\DoxyCodeLine{              std::is\_same<typename std::invoke\_result<decltype(\&T::func\_name), T, \_\_VA\_ARGS\_\_>::type,                 \(\backslash\)}
+\DoxyCodeLine{                           return\_type>::value>> : std::true\_type                                                      \(\backslash\)}
+\DoxyCodeLine{  \{                                                                                                                    \(\backslash\)}
+\DoxyCodeLine{  \};}
+
+\end{DoxyCode}
+
+
+Check if a member function has a given return type. 
+
+Check if the class has a function named add with return type followed function parameters \mbox{\hyperlink{sfinae__utils_8h_ae4346ab46e4c15e532c077c4ce735873}{CREATE\+\_\+\+MEMBER\+\_\+\+FUNC\+\_\+\+SIGNATURE\+\_\+\+CHECK(add, double, double, double)}} bool has\+\_\+add\+\_\+signature = has\+\_\+member\+\_\+func\+\_\+signature\+\_\+add$<$class\+\_\+to\+\_\+check\+\_\+for\+\_\+add\+\_\+signature$>$\+::value; \mbox{\Hypertarget{sfinae__utils_8h_adb3d1d45a0c6ead71dda4be85bcc508c}\label{sfinae__utils_8h_adb3d1d45a0c6ead71dda4be85bcc508c}} 
+\index{sfinae\_utils.h@{sfinae\_utils.h}!CREATE\_MEMBER\_FUNC\_SIGNATURE\_NOARGS\_CHECK@{CREATE\_MEMBER\_FUNC\_SIGNATURE\_NOARGS\_CHECK}}
+\index{CREATE\_MEMBER\_FUNC\_SIGNATURE\_NOARGS\_CHECK@{CREATE\_MEMBER\_FUNC\_SIGNATURE\_NOARGS\_CHECK}!sfinae\_utils.h@{sfinae\_utils.h}}
+\doxysubsubsection{\texorpdfstring{CREATE\_MEMBER\_FUNC\_SIGNATURE\_NOARGS\_CHECK}{CREATE\_MEMBER\_FUNC\_SIGNATURE\_NOARGS\_CHECK}}
+{\footnotesize\ttfamily \#define CREATE\+\_\+\+MEMBER\+\_\+\+FUNC\+\_\+\+SIGNATURE\+\_\+\+NOARGS\+\_\+\+CHECK(\begin{DoxyParamCaption}\item[{}]{func\+\_\+name,  }\item[{}]{return\+\_\+type }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                                                                                                       \(\backslash\)}
+\DoxyCodeLine{  \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, \textcolor{keyword}{typename} = std::true\_type>                                                                     \(\backslash\)}
+\DoxyCodeLine{  \textcolor{keyword}{struct }has\_member\_func\_signature\_\#\#func\_name : std::false\_type                                                       \(\backslash\)}
+\DoxyCodeLine{  \{                                                                                                                    \(\backslash\)}
+\DoxyCodeLine{  \};                                                                                                                   \(\backslash\)}
+\DoxyCodeLine{                                                                                                                       \(\backslash\)}
+\DoxyCodeLine{  \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>                                                                                                \(\backslash\)}
+\DoxyCodeLine{  \textcolor{keyword}{struct }has\_member\_func\_signature\_\#\#func\_name<                                                                        \(\backslash\)}
+\DoxyCodeLine{      \mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{T}},                                                                                                               \(\backslash\)}
+\DoxyCodeLine{      std::integral\_constant<                                                                                          \(\backslash\)}
+\DoxyCodeLine{          bool,                                                                                                        \(\backslash\)}
+\DoxyCodeLine{          std::is\_invocable<decltype(\&T::func\_name), T>::value \&\&                                                      \(\backslash\)}
+\DoxyCodeLine{              std::is\_same<typename std::invoke\_result<decltype(\&T::func\_name), T>::type, return\_type>::value>>        \(\backslash\)}
+\DoxyCodeLine{    : std::true\_type                                                                                                   \(\backslash\)}
+\DoxyCodeLine{  \{                                                                                                                    \(\backslash\)}
+\DoxyCodeLine{  \};}
+
+\end{DoxyCode}
+
+
+Check if a member function has a given return type that takes no arguments. 
+
+Check if the class has a function named add with return type \mbox{\hyperlink{sfinae__utils_8h_adb3d1d45a0c6ead71dda4be85bcc508c}{CREATE\+\_\+\+MEMBER\+\_\+\+FUNC\+\_\+\+SIGNATURE\+\_\+\+NOARGS\+\_\+\+CHECK(add, double)}} bool has\+\_\+add\+\_\+signature = has\+\_\+member\+\_\+func\+\_\+signature\+\_\+add$<$class\+\_\+to\+\_\+check\+\_\+for\+\_\+add\+\_\+signature$>$\+::value; 

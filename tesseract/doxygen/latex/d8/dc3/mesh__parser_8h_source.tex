@@ -1,0 +1,502 @@
+\hypertarget{mesh__parser_8h_source}{}\doxysection{mesh\+\_\+parser.\+h}
+\label{mesh__parser_8h_source}\index{tesseract\_geometry/include/tesseract\_geometry/mesh\_parser.h@{tesseract\_geometry/include/tesseract\_geometry/mesh\_parser.h}}
+\mbox{\hyperlink{mesh__parser_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*********************************************************************}}
+\DoxyCodeLine{2 \textcolor{comment}{ * Software License Agreement (BSD License)}}
+\DoxyCodeLine{3 \textcolor{comment}{ *}}
+\DoxyCodeLine{4 \textcolor{comment}{ *  Copyright (c) 2008, Willow Garage, Inc.}}
+\DoxyCodeLine{5 \textcolor{comment}{ *  All rights reserved.}}
+\DoxyCodeLine{6 \textcolor{comment}{ *}}
+\DoxyCodeLine{7 \textcolor{comment}{ *  Redistribution and use in source and binary forms, with or without}}
+\DoxyCodeLine{8 \textcolor{comment}{ *  modification, are permitted provided that the following conditions}}
+\DoxyCodeLine{9 \textcolor{comment}{ *  are met:}}
+\DoxyCodeLine{10 \textcolor{comment}{ *}}
+\DoxyCodeLine{11 \textcolor{comment}{ *   * Redistributions of source code must retain the above copyright}}
+\DoxyCodeLine{12 \textcolor{comment}{ *     notice, this list of conditions and the following disclaimer.}}
+\DoxyCodeLine{13 \textcolor{comment}{ *   * Redistributions in binary form must reproduce the above}}
+\DoxyCodeLine{14 \textcolor{comment}{ *     copyright notice, this list of conditions and the following}}
+\DoxyCodeLine{15 \textcolor{comment}{ *     disclaimer in the documentation and/or other materials provided}}
+\DoxyCodeLine{16 \textcolor{comment}{ *     with the distribution.}}
+\DoxyCodeLine{17 \textcolor{comment}{ *   * Neither the name of the Willow Garage nor the names of its}}
+\DoxyCodeLine{18 \textcolor{comment}{ *     contributors may be used to endorse or promote products derived}}
+\DoxyCodeLine{19 \textcolor{comment}{ *     from this software without specific prior written permission.}}
+\DoxyCodeLine{20 \textcolor{comment}{ *}}
+\DoxyCodeLine{21 \textcolor{comment}{ *  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
+\DoxyCodeLine{22 \textcolor{comment}{ *  "{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
+\DoxyCodeLine{23 \textcolor{comment}{ *  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS}}
+\DoxyCodeLine{24 \textcolor{comment}{ *  FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE}}
+\DoxyCodeLine{25 \textcolor{comment}{ *  COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,}}
+\DoxyCodeLine{26 \textcolor{comment}{ *  INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,}}
+\DoxyCodeLine{27 \textcolor{comment}{ *  BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;}}
+\DoxyCodeLine{28 \textcolor{comment}{ *  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER}}
+\DoxyCodeLine{29 \textcolor{comment}{ *  CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT}}
+\DoxyCodeLine{30 \textcolor{comment}{ *  LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN}}
+\DoxyCodeLine{31 \textcolor{comment}{ *  ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE}}
+\DoxyCodeLine{32 \textcolor{comment}{ *  POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{33 \textcolor{comment}{ *********************************************************************/}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{comment}{/* Author: Ioan Sucan */}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{comment}{/* Updated by John Wason, Wason Technology, LLC, Dec 2020. Add loading mesh normals,}}
+\DoxyCodeLine{38 \textcolor{comment}{   materials, and textures */}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#ifndef TESSERACT\_SCENE\_GRAPH\_MESH\_PARSER\_H}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#define TESSERACT\_SCENE\_GRAPH\_MESH\_PARSER\_H}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{macros_8h}{tesseract\_common/macros.h}}>}}
+\DoxyCodeLine{44 \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#include <assimp/scene.h>}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#include <assimp/Importer.hpp>}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#include <assimp/postprocess.h>}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#ifdef TESSERACT\_ASSIMP\_USE\_PBRMATERIAL}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#include <assimp/pbrmaterial.h>}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#include <console\_bridge/console.h>}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{tesseract__common_2include_2tesseract__common_2types_8h}{tesseract\_common/types.h}}>}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{resource__locator_8h}{tesseract\_common/resource\_locator.h}}>}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#include <regex>}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#include <boost/filesystem/path.hpp>}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \mbox{\hyperlink{namespaceTESSERACT__COMMON__IGNORE__WARNINGS__POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{mesh__material_8h}{tesseract\_geometry/impl/mesh\_material.h}}>}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__geometry}{tesseract\_geometry}}}
+\DoxyCodeLine{68 \{}
+\DoxyCodeLine{75 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{76 std::vector<std::shared\_ptr<T>> \mbox{\hyperlink{namespacetesseract__geometry_a5a3fd49b971eb1975a812703e0a08932}{extractMeshData}}(\textcolor{keyword}{const} aiScene* scene,}
+\DoxyCodeLine{77                                                 \textcolor{keyword}{const} aiNode* node,}
+\DoxyCodeLine{78                                                 \textcolor{keyword}{const} aiMatrix4x4\& parent\_transform,}
+\DoxyCodeLine{79                                                 \textcolor{keyword}{const} Eigen::Vector3d\& \mbox{\hyperlink{collision__margin__data__unit_8cpp_a80d402d10e8341004c0caf10133b80ab}{scale}},}
+\DoxyCodeLine{80                                                 \mbox{\hyperlink{classtesseract__common_1_1Resource_acdba916fa227bef4391c469581844dc6}{tesseract\_common::Resource::Ptr}} \mbox{\hyperlink{resource__locator__unit_8cpp_acf8f69b40e998bd8f5330be6b90ab7dc}{resource}},}
+\DoxyCodeLine{81                                                 \textcolor{keywordtype}{bool} normals,}
+\DoxyCodeLine{82                                                 \textcolor{keywordtype}{bool} vertex\_colors,}
+\DoxyCodeLine{83                                                 \textcolor{keywordtype}{bool} material\_and\_texture)}
+\DoxyCodeLine{84 \{}
+\DoxyCodeLine{85   std::vector<std::shared\_ptr<T>> \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a5428deecfa188d28deb2a96fe29066e8}{meshes}};}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87   aiMatrix4x4 \mbox{\hyperlink{collision__core__unit_8cpp_a0711277889ece6b8e49c8ad05d361167}{transform}} = parent\_transform;}
+\DoxyCodeLine{88   \mbox{\hyperlink{collision__core__unit_8cpp_a0711277889ece6b8e49c8ad05d361167}{transform}} *= node-\/>mTransformation;}
+\DoxyCodeLine{89   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}} = 0; \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}} < node-\/>mNumMeshes; ++\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}})}
+\DoxyCodeLine{90   \{}
+\DoxyCodeLine{91     \textcolor{keyword}{auto} vertices = std::make\_shared<tesseract\_common::VectorVector3d>();}
+\DoxyCodeLine{92     \textcolor{keyword}{auto} triangles = std::make\_shared<Eigen::VectorXi>();}
+\DoxyCodeLine{93     std::shared\_ptr<tesseract\_common::VectorVector3d> vertex\_normals = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{94     std::shared\_ptr<tesseract\_common::VectorVector4d> vertex\_colors = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{95     \mbox{\hyperlink{classtesseract__geometry_1_1MeshMaterial_ad67358c38f5044f5759070974ec73e54}{MeshMaterial::Ptr}} \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_abd1ae0faf8b8ed36ee5c62dd1c259a59}{material}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{96     std::shared\_ptr<std::vector<MeshTexture::Ptr>> textures = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98     \textcolor{keyword}{const} aiMesh* a = scene-\/>mMeshes[node-\/>mMeshes[\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}]];}
+\DoxyCodeLine{99     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < a-\/>mNumVertices; ++i)}
+\DoxyCodeLine{100     \{}
+\DoxyCodeLine{101       aiVector3D \mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}} = \mbox{\hyperlink{collision__core__unit_8cpp_a0711277889ece6b8e49c8ad05d361167}{transform}} * a-\/>mVertices[i];}
+\DoxyCodeLine{102       vertices-\/>push\_back(Eigen::Vector3d(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(\mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}}.x) * \mbox{\hyperlink{collision__margin__data__unit_8cpp_a80d402d10e8341004c0caf10133b80ab}{scale}}(0),}
+\DoxyCodeLine{103                                           \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(\mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}}.y) * \mbox{\hyperlink{collision__margin__data__unit_8cpp_a80d402d10e8341004c0caf10133b80ab}{scale}}(1),}
+\DoxyCodeLine{104                                           \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(\mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}}.z) * \mbox{\hyperlink{collision__margin__data__unit_8cpp_a80d402d10e8341004c0caf10133b80ab}{scale}}(2)));}
+\DoxyCodeLine{105     \}}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107     \textcolor{keywordtype}{long} triangle\_count = 0;}
+\DoxyCodeLine{108     std::vector<int> local\_triangles;}
+\DoxyCodeLine{109     local\_triangles.reserve(a-\/>mNumFaces);}
+\DoxyCodeLine{110     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < a-\/>mNumFaces; ++i)}
+\DoxyCodeLine{111     \{}
+\DoxyCodeLine{112       \textcolor{keywordflow}{if} (a-\/>mFaces[i].mNumIndices >= 3)}
+\DoxyCodeLine{113       \{}
+\DoxyCodeLine{114         triangle\_count += 1;}
+\DoxyCodeLine{115         local\_triangles.push\_back(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(a-\/>mFaces[i].mNumIndices));}
+\DoxyCodeLine{116         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} k = 0; k < a-\/>mFaces[i].mNumIndices; ++k)}
+\DoxyCodeLine{117           local\_triangles.push\_back(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(a-\/>mFaces[i].mIndices[k]));}
+\DoxyCodeLine{118       \}}
+\DoxyCodeLine{119       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{120       \{}
+\DoxyCodeLine{121         CONSOLE\_BRIDGE\_logDebug(\textcolor{stringliteral}{"{}Mesh had a face with less than three vertices: \%s"{}}, \mbox{\hyperlink{resource__locator__unit_8cpp_acf8f69b40e998bd8f5330be6b90ab7dc}{resource}}-\/>getUrl().c\_str());}
+\DoxyCodeLine{122       \}}
+\DoxyCodeLine{123     \}}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125     triangles-\/>resize(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{long}\textcolor{keyword}{>}(local\_triangles.size()));}
+\DoxyCodeLine{126     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{long} i = 0; i < triangles-\/>size(); ++i)}
+\DoxyCodeLine{127       (*triangles)[i] = local\_triangles[\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(i)];}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129     \textcolor{keywordflow}{if} (normals \&\& a-\/>HasNormals())}
+\DoxyCodeLine{130     \{}
+\DoxyCodeLine{131       vertex\_normals = std::make\_shared<tesseract\_common::VectorVector3d>();}
+\DoxyCodeLine{132       \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < a-\/>mNumVertices; ++i)}
+\DoxyCodeLine{133       \{}
+\DoxyCodeLine{134         aiVector3D \mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}} = \mbox{\hyperlink{collision__core__unit_8cpp_a0711277889ece6b8e49c8ad05d361167}{transform}} * a-\/>mNormals[i];}
+\DoxyCodeLine{135         vertex\_normals-\/>push\_back(Eigen::Vector3d(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(\mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}}.x) * \mbox{\hyperlink{collision__margin__data__unit_8cpp_a80d402d10e8341004c0caf10133b80ab}{scale}}(0),}
+\DoxyCodeLine{136                                                   \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(\mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}}.y) * \mbox{\hyperlink{collision__margin__data__unit_8cpp_a80d402d10e8341004c0caf10133b80ab}{scale}}(1),}
+\DoxyCodeLine{137                                                   \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(\mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}}.z) * \mbox{\hyperlink{collision__margin__data__unit_8cpp_a80d402d10e8341004c0caf10133b80ab}{scale}}(2)));}
+\DoxyCodeLine{138       \}}
+\DoxyCodeLine{139     \}}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{141     \textcolor{keywordflow}{if} (vertex\_colors \&\& a-\/>HasVertexColors(0))}
+\DoxyCodeLine{142     \{}
+\DoxyCodeLine{143       vertex\_colors = std::make\_shared<tesseract\_common::VectorVector4d>();}
+\DoxyCodeLine{144       \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < a-\/>mNumVertices; ++i)}
+\DoxyCodeLine{145       \{}
+\DoxyCodeLine{146         aiColor4D \mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}} = a-\/>mColors[0][i];}
+\DoxyCodeLine{147         vertex\_colors-\/>push\_back(Eigen::Vector4d(}
+\DoxyCodeLine{148             \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(\mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}}.r), \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(\mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}}.g), \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(\mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}}.b), \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(\mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}}.a)));}
+\DoxyCodeLine{149       \}}
+\DoxyCodeLine{150     \}}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{152     \textcolor{keywordflow}{if} (material\_and\_texture)}
+\DoxyCodeLine{153     \{}
+\DoxyCodeLine{154       aiMaterial* mat = scene-\/>mMaterials[a-\/>mMaterialIndex];}
+\DoxyCodeLine{155       \{}
+\DoxyCodeLine{156         Eigen::Vector4d base\_color;}
+\DoxyCodeLine{157         \textcolor{keywordtype}{double} metallic = 0.0;}
+\DoxyCodeLine{158         \textcolor{keywordtype}{double} roughness = 0.5;}
+\DoxyCodeLine{159         Eigen::Vector4d emissive;}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{161         aiColor4D pbr\_base\_color;}
+\DoxyCodeLine{162 \textcolor{preprocessor}{\#ifdef TESSERACT\_ASSIMP\_USE\_PBRMATERIAL}}
+\DoxyCodeLine{163         \textcolor{keywordflow}{if} (mat-\/>Get(AI\_MATKEY\_GLTF\_PBRMETALLICROUGHNESS\_BASE\_COLOR\_FACTOR, pbr\_base\_color) == AI\_SUCCESS)}
+\DoxyCodeLine{164         \{}
+\DoxyCodeLine{165           \textcolor{comment}{// Use PBR Metallic material properties if available}}
+\DoxyCodeLine{166           base\_color = Eigen::Vector4d(pbr\_base\_color.r, pbr\_base\_color.g, pbr\_base\_color.b, pbr\_base\_color.a);}
+\DoxyCodeLine{167           \textcolor{keywordtype}{float} metallicFactor\{ 0 \};}
+\DoxyCodeLine{168           \textcolor{keywordflow}{if} (mat-\/>Get(AI\_MATKEY\_GLTF\_PBRMETALLICROUGHNESS\_METALLIC\_FACTOR, metallicFactor) == AI\_SUCCESS)}
+\DoxyCodeLine{169           \{}
+\DoxyCodeLine{170             metallic = metallicFactor;}
+\DoxyCodeLine{171           \}}
+\DoxyCodeLine{172           \textcolor{keywordtype}{float} roughnessFactor\{ 0.5 \};}
+\DoxyCodeLine{173           \textcolor{keywordflow}{if} (mat-\/>Get(AI\_MATKEY\_GLTF\_PBRMETALLICROUGHNESS\_ROUGHNESS\_FACTOR, roughnessFactor) == AI\_SUCCESS)}
+\DoxyCodeLine{174           \{}
+\DoxyCodeLine{175             roughness = roughnessFactor;}
+\DoxyCodeLine{176           \}}
+\DoxyCodeLine{177           aiColor4D pbr\_emissive\_color;}
+\DoxyCodeLine{178           \textcolor{keywordflow}{if} (mat-\/>Get(AI\_MATKEY\_COLOR\_EMISSIVE, pbr\_emissive\_color) == AI\_SUCCESS)}
+\DoxyCodeLine{179           \{}
+\DoxyCodeLine{180             emissive =}
+\DoxyCodeLine{181                 Eigen::Vector4d(pbr\_emissive\_color.r, pbr\_emissive\_color.g, pbr\_emissive\_color.b, pbr\_emissive\_color.a);}
+\DoxyCodeLine{182           \}}
+\DoxyCodeLine{183         \}}
+\DoxyCodeLine{184         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{185 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{186         \{}
+\DoxyCodeLine{187           \textcolor{comment}{// Use old style material. Ambient and specular not supported}}
+\DoxyCodeLine{188           aiColor4D diffuse\_color;}
+\DoxyCodeLine{189           \textcolor{keywordflow}{if} (mat-\/>Get(AI\_MATKEY\_COLOR\_DIFFUSE, diffuse\_color) == AI\_SUCCESS)}
+\DoxyCodeLine{190           \{}
+\DoxyCodeLine{191             base\_color = Eigen::Vector4d(diffuse\_color.r, diffuse\_color.g, diffuse\_color.b, diffuse\_color.a);}
+\DoxyCodeLine{192           \}}
+\DoxyCodeLine{193 }
+\DoxyCodeLine{194           aiColor4D emissive\_color;}
+\DoxyCodeLine{195           \textcolor{keywordflow}{if} (mat-\/>Get(AI\_MATKEY\_COLOR\_EMISSIVE, emissive\_color) == AI\_SUCCESS)}
+\DoxyCodeLine{196           \{}
+\DoxyCodeLine{197             emissive = Eigen::Vector4d(emissive\_color.r, emissive\_color.g, emissive\_color.b, emissive\_color.a);}
+\DoxyCodeLine{198           \}}
+\DoxyCodeLine{199         \}}
+\DoxyCodeLine{200 }
+\DoxyCodeLine{201         \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_abd1ae0faf8b8ed36ee5c62dd1c259a59}{material}} = std::make\_shared<MeshMaterial>(base\_color, metallic, roughness, emissive);}
+\DoxyCodeLine{202 }
+\DoxyCodeLine{203         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < a-\/>GetNumUVChannels(); i++)}
+\DoxyCodeLine{204         \{}
+\DoxyCodeLine{205           \textcolor{keywordflow}{if} (a-\/>HasTextureCoords(i))}
+\DoxyCodeLine{206           \{}
+\DoxyCodeLine{207             aiString texName;}
+\DoxyCodeLine{208             aiTextureMapping mapping\{ aiTextureMapping\_OTHER \};}
+\DoxyCodeLine{209             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} uvIndex\{ 0 \};}
+\DoxyCodeLine{210             \textcolor{keywordflow}{if} (mat-\/>GetTexture(aiTextureType\_DIFFUSE, i, \&texName, \&mapping, \&uvIndex) == AI\_SUCCESS)}
+\DoxyCodeLine{211             \{}
+\DoxyCodeLine{212               \mbox{\hyperlink{classtesseract__common_1_1Resource_acdba916fa227bef4391c469581844dc6}{tesseract\_common::Resource::Ptr}} texture\_image;}
+\DoxyCodeLine{213               \mbox{\hyperlink{namespacetesseract__common_ac60e1af30f961fc086b69e330c6434d4}{tesseract\_common::VectorVector2d}} uvs;}
+\DoxyCodeLine{214               \textcolor{comment}{// https://stackoverflow.com/questions/56820244/assimp-\/doenst-\/return-\/texture-\/data}}
+\DoxyCodeLine{215               \textcolor{keyword}{const} \textcolor{keywordtype}{char}* texNamec = texName.C\_Str();}
+\DoxyCodeLine{216               \textcolor{keywordflow}{if} (\textcolor{charliteral}{'*'} == *texNamec)}
+\DoxyCodeLine{217               \{}
+\DoxyCodeLine{218                 \textcolor{keywordtype}{int} tex\_index = std::atoi(texNamec + 1);}
+\DoxyCodeLine{219                 \textcolor{keywordflow}{if} (0 > tex\_index || scene-\/>mNumTextures <= \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\textcolor{keyword}{>}(tex\_index))}
+\DoxyCodeLine{220                   \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{221                 \textcolor{keyword}{auto}* texture\_data = scene-\/>mTextures[tex\_index];}
+\DoxyCodeLine{222                 \textcolor{comment}{// returned pointer is not null, read texture from memory}}
+\DoxyCodeLine{223                 std::string file\_type = texture\_data-\/>achFormatHint;}
+\DoxyCodeLine{224                 \textcolor{keywordflow}{if} (file\_type == \textcolor{stringliteral}{"{}jpg"{}} || file\_type == \textcolor{stringliteral}{"{}png"{}})}
+\DoxyCodeLine{225                 \{}
+\DoxyCodeLine{226                   texture\_image = std::make\_shared<tesseract\_common::BytesResource>(}
+\DoxyCodeLine{227                       \textcolor{stringliteral}{"{}data://"{}}, (\textcolor{keyword}{const} uint8\_t*)texture\_data-\/>pcData, texture\_data-\/>mWidth);  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{228                 \}}
+\DoxyCodeLine{229                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{230                 \{}
+\DoxyCodeLine{231                   \textcolor{comment}{// TODO: handle other file types}}
+\DoxyCodeLine{232                   \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{233                 \}}
+\DoxyCodeLine{234               \}}
+\DoxyCodeLine{235               \textcolor{keywordflow}{else}}
+\DoxyCodeLine{236               \{}
+\DoxyCodeLine{237                 \textcolor{keywordflow}{if} (!\mbox{\hyperlink{resource__locator__unit_8cpp_acf8f69b40e998bd8f5330be6b90ab7dc}{resource}})}
+\DoxyCodeLine{238                 \{}
+\DoxyCodeLine{239                   \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{240                 \}}
+\DoxyCodeLine{241                 std::string texName\_str(texName.C\_Str());}
+\DoxyCodeLine{242                 \textcolor{keyword}{auto} tex\_resource = \mbox{\hyperlink{resource__locator__unit_8cpp_acf8f69b40e998bd8f5330be6b90ab7dc}{resource}}-\/>locateResource(texName\_str);}
+\DoxyCodeLine{243                 \textcolor{keywordflow}{if} (!tex\_resource)}
+\DoxyCodeLine{244                 \{}
+\DoxyCodeLine{245                   \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{246                 \}}
+\DoxyCodeLine{247                 texture\_image = tex\_resource;}
+\DoxyCodeLine{248               \}}
+\DoxyCodeLine{249               aiVector3D* tex\_coords = a-\/>mTextureCoords[i];}
+\DoxyCodeLine{250               \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}} = 0; \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}} < a-\/>mNumVertices; ++\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}})}
+\DoxyCodeLine{251               \{}
+\DoxyCodeLine{252                 aiVector3D \mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}} = tex\_coords[\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}];}
+\DoxyCodeLine{253                 uvs.push\_back(Eigen::Vector2d(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(\mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}}.x), \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(\mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}}.y)));}
+\DoxyCodeLine{254               \}}
+\DoxyCodeLine{255               \textcolor{keyword}{auto} tex = std::make\_shared<MeshTexture>(}
+\DoxyCodeLine{256                   texture\_image, std::make\_shared<tesseract\_common::VectorVector2d>(std::move(uvs)));}
+\DoxyCodeLine{257               \textcolor{keywordflow}{if} (!textures)}
+\DoxyCodeLine{258               \{}
+\DoxyCodeLine{259                 textures = std::make\_shared<std::vector<MeshTexture::Ptr>>();}
+\DoxyCodeLine{260               \}}
+\DoxyCodeLine{261               textures-\/>push\_back(tex);}
+\DoxyCodeLine{262             \}}
+\DoxyCodeLine{263           \}}
+\DoxyCodeLine{264         \}}
+\DoxyCodeLine{265       \}}
+\DoxyCodeLine{266     \}}
+\DoxyCodeLine{267 }
+\DoxyCodeLine{268     \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a5428deecfa188d28deb2a96fe29066e8}{meshes}}.push\_back(std::make\_shared<T>(vertices,}
+\DoxyCodeLine{269                                          triangles,}
+\DoxyCodeLine{270                                          \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(triangle\_count),}
+\DoxyCodeLine{271                                          \mbox{\hyperlink{resource__locator__unit_8cpp_acf8f69b40e998bd8f5330be6b90ab7dc}{resource}},}
+\DoxyCodeLine{272                                          \mbox{\hyperlink{collision__margin__data__unit_8cpp_a80d402d10e8341004c0caf10133b80ab}{scale}},}
+\DoxyCodeLine{273                                          vertex\_normals,}
+\DoxyCodeLine{274                                          vertex\_colors,}
+\DoxyCodeLine{275                                          \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_abd1ae0faf8b8ed36ee5c62dd1c259a59}{material}},}
+\DoxyCodeLine{276                                          textures));}
+\DoxyCodeLine{277   \}}
+\DoxyCodeLine{278 }
+\DoxyCodeLine{279   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} n = 0; n < node-\/>mNumChildren; ++n)}
+\DoxyCodeLine{280   \{}
+\DoxyCodeLine{281     std::vector<std::shared\_ptr<T>> child\_meshes = extractMeshData<T>(}
+\DoxyCodeLine{282         scene, node-\/>mChildren[n], \mbox{\hyperlink{collision__core__unit_8cpp_a0711277889ece6b8e49c8ad05d361167}{transform}}, \mbox{\hyperlink{collision__margin__data__unit_8cpp_a80d402d10e8341004c0caf10133b80ab}{scale}}, \mbox{\hyperlink{resource__locator__unit_8cpp_acf8f69b40e998bd8f5330be6b90ab7dc}{resource}}, normals, vertex\_colors, material\_and\_texture);}
+\DoxyCodeLine{283     \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a5428deecfa188d28deb2a96fe29066e8}{meshes}}.insert(\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a5428deecfa188d28deb2a96fe29066e8}{meshes}}.end(), child\_meshes.begin(), child\_meshes.end());}
+\DoxyCodeLine{284   \}}
+\DoxyCodeLine{285   \textcolor{keywordflow}{return} \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a5428deecfa188d28deb2a96fe29066e8}{meshes}};}
+\DoxyCodeLine{286 \}}
+\DoxyCodeLine{287 }
+\DoxyCodeLine{298 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{299 std::vector<std::shared\_ptr<T>> \mbox{\hyperlink{namespacetesseract__geometry_a3a51378812ee2449279ff9c385db91fc}{createMeshFromAsset}}(\textcolor{keyword}{const} aiScene* scene,}
+\DoxyCodeLine{300                                                     \textcolor{keyword}{const} Eigen::Vector3d\& \mbox{\hyperlink{collision__margin__data__unit_8cpp_a80d402d10e8341004c0caf10133b80ab}{scale}},}
+\DoxyCodeLine{301                                                     \mbox{\hyperlink{classtesseract__common_1_1Resource_acdba916fa227bef4391c469581844dc6}{tesseract\_common::Resource::Ptr}} \mbox{\hyperlink{resource__locator__unit_8cpp_acf8f69b40e998bd8f5330be6b90ab7dc}{resource}},}
+\DoxyCodeLine{302                                                     \textcolor{keywordtype}{bool} normals,}
+\DoxyCodeLine{303                                                     \textcolor{keywordtype}{bool} vertex\_colors,}
+\DoxyCodeLine{304                                                     \textcolor{keywordtype}{bool} material\_and\_texture)}
+\DoxyCodeLine{305 \{}
+\DoxyCodeLine{306   \textcolor{keywordflow}{if} (!scene-\/>HasMeshes())}
+\DoxyCodeLine{307   \{}
+\DoxyCodeLine{308     CONSOLE\_BRIDGE\_logWarn(\textcolor{stringliteral}{"{}Assimp reports scene in \%s has no meshes"{}}, \mbox{\hyperlink{resource__locator__unit_8cpp_acf8f69b40e998bd8f5330be6b90ab7dc}{resource}}-\/>getUrl().c\_str());}
+\DoxyCodeLine{309     \textcolor{keywordflow}{return} std::vector<std::shared\_ptr<T>>();}
+\DoxyCodeLine{310   \}}
+\DoxyCodeLine{311   std::vector<std::shared\_ptr<T>> \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a5428deecfa188d28deb2a96fe29066e8}{meshes}} = extractMeshData<T>(}
+\DoxyCodeLine{312       scene, scene-\/>mRootNode, aiMatrix4x4(), \mbox{\hyperlink{collision__margin__data__unit_8cpp_a80d402d10e8341004c0caf10133b80ab}{scale}}, \mbox{\hyperlink{resource__locator__unit_8cpp_acf8f69b40e998bd8f5330be6b90ab7dc}{resource}}, normals, vertex\_colors, material\_and\_texture);}
+\DoxyCodeLine{313   \textcolor{keywordflow}{if} (\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a5428deecfa188d28deb2a96fe29066e8}{meshes}}.empty())}
+\DoxyCodeLine{314   \{}
+\DoxyCodeLine{315     CONSOLE\_BRIDGE\_logWarn(\textcolor{stringliteral}{"{}There are no meshes in the scene \%s"{}}, \mbox{\hyperlink{resource__locator__unit_8cpp_acf8f69b40e998bd8f5330be6b90ab7dc}{resource}}-\/>getUrl().c\_str());}
+\DoxyCodeLine{316     \textcolor{keywordflow}{return} std::vector<std::shared\_ptr<T>>();}
+\DoxyCodeLine{317   \}}
+\DoxyCodeLine{318 }
+\DoxyCodeLine{319   \textcolor{keywordflow}{return} \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a5428deecfa188d28deb2a96fe29066e8}{meshes}};}
+\DoxyCodeLine{320 \}}
+\DoxyCodeLine{321 }
+\DoxyCodeLine{335 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{336 std::vector<std::shared\_ptr<T>> \mbox{\hyperlink{namespacetesseract__geometry_a1b4cdf1aee6142e3870f87d2d9a9c931}{createMeshFromPath}}(\textcolor{keyword}{const} std::string\& path,}
+\DoxyCodeLine{337                                                    Eigen::Vector3d \mbox{\hyperlink{collision__margin__data__unit_8cpp_a80d402d10e8341004c0caf10133b80ab}{scale}} = Eigen::Vector3d(1, 1, 1),}
+\DoxyCodeLine{338                                                    \textcolor{keywordtype}{bool} triangulate = \textcolor{keyword}{false},}
+\DoxyCodeLine{339                                                    \textcolor{keywordtype}{bool} flatten = \textcolor{keyword}{false},}
+\DoxyCodeLine{340                                                    \textcolor{keywordtype}{bool} normals = \textcolor{keyword}{false},}
+\DoxyCodeLine{341                                                    \textcolor{keywordtype}{bool} vertex\_colors = \textcolor{keyword}{false},}
+\DoxyCodeLine{342                                                    \textcolor{keywordtype}{bool} material\_and\_texture = \textcolor{keyword}{false})}
+\DoxyCodeLine{343 \{}
+\DoxyCodeLine{344   \textcolor{comment}{// Create an instance of the Importer class}}
+\DoxyCodeLine{345   Assimp::Importer importer;}
+\DoxyCodeLine{346 }
+\DoxyCodeLine{347   \textcolor{comment}{// Issue \#38 fix: as part of the post-\/processing, we remove all other components in file but}}
+\DoxyCodeLine{348   \textcolor{comment}{// the meshes, as anyway the resulting shapes:Mesh object just receives vertices and triangles.}}
+\DoxyCodeLine{349   \textcolor{comment}{// John Wason Jan 2021 -\/ Adjust flags based on normals, vertex\_colors, and material\_and\_texture parameters}}
+\DoxyCodeLine{350   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} ai\_config\_pp\_rcv\_flags = aiComponent\_TANGENTS\_AND\_BITANGENTS | aiComponent\_BONEWEIGHTS |}
+\DoxyCodeLine{351                                         aiComponent\_ANIMATIONS | aiComponent\_LIGHTS | aiComponent\_CAMERAS;}
+\DoxyCodeLine{352   \textcolor{keywordflow}{if} (!normals)}
+\DoxyCodeLine{353   \{}
+\DoxyCodeLine{354     ai\_config\_pp\_rcv\_flags |= aiComponent\_NORMALS;}
+\DoxyCodeLine{355   \}}
+\DoxyCodeLine{356   \textcolor{keywordflow}{if} (!vertex\_colors)}
+\DoxyCodeLine{357   \{}
+\DoxyCodeLine{358     ai\_config\_pp\_rcv\_flags |= aiComponent\_COLORS;}
+\DoxyCodeLine{359   \}}
+\DoxyCodeLine{360   \textcolor{keywordflow}{if} (!material\_and\_texture)}
+\DoxyCodeLine{361   \{}
+\DoxyCodeLine{362     ai\_config\_pp\_rcv\_flags |= aiComponent\_TEXCOORDS | aiComponent\_TEXTURES | aiComponent\_MATERIALS;}
+\DoxyCodeLine{363   \}}
+\DoxyCodeLine{364   importer.SetPropertyInteger(AI\_CONFIG\_PP\_RVC\_FLAGS, (\textcolor{keywordtype}{int})ai\_config\_pp\_rcv\_flags);}
+\DoxyCodeLine{365 }
+\DoxyCodeLine{366   \textcolor{comment}{// And have it read the given file with some post-\/processing}}
+\DoxyCodeLine{367   \textcolor{keyword}{const} aiScene* scene = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{368   \textcolor{keywordflow}{if} (triangulate)}
+\DoxyCodeLine{369     scene = importer.ReadFile(\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a4f0c2c1ddd740994eb90524a8d086dca}{path}}.c\_str(),}
+\DoxyCodeLine{370                               aiProcess\_Triangulate | aiProcess\_JoinIdenticalVertices | aiProcess\_SortByPType |}
+\DoxyCodeLine{371                                   aiProcess\_RemoveComponent);}
+\DoxyCodeLine{372   \textcolor{keywordflow}{else}}
+\DoxyCodeLine{373     scene = importer.ReadFile(\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a4f0c2c1ddd740994eb90524a8d086dca}{path}}.c\_str(),}
+\DoxyCodeLine{374                               aiProcess\_JoinIdenticalVertices | aiProcess\_SortByPType | aiProcess\_RemoveComponent);}
+\DoxyCodeLine{375 }
+\DoxyCodeLine{376   \textcolor{keywordflow}{if} (!scene)}
+\DoxyCodeLine{377   \{}
+\DoxyCodeLine{378     CONSOLE\_BRIDGE\_logError(\textcolor{stringliteral}{"{}Could not load mesh from \(\backslash\)"{}\%s\(\backslash\)"{}: \%s"{}}, \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a4f0c2c1ddd740994eb90524a8d086dca}{path}}.c\_str(), importer.GetErrorString());}
+\DoxyCodeLine{379     \textcolor{keywordflow}{return} std::vector<std::shared\_ptr<T>>();}
+\DoxyCodeLine{380   \}}
+\DoxyCodeLine{381 }
+\DoxyCodeLine{382   \textcolor{comment}{// Assimp enforces Y\_UP convention by rotating models with different conventions.}}
+\DoxyCodeLine{383   \textcolor{comment}{// However, that behavior is confusing and doesn't match the ROS convention}}
+\DoxyCodeLine{384   \textcolor{comment}{// where the Z axis is pointing up.}}
+\DoxyCodeLine{385   \textcolor{comment}{// Hopefully this doesn't undo legit use of the root node transformation...}}
+\DoxyCodeLine{386   \textcolor{comment}{// Note that this is also what RViz does internally.}}
+\DoxyCodeLine{387   \textcolor{comment}{// @todo See this issue for possible fix parsing scene metadata https://github.com/assimp/assimp/issues/849}}
+\DoxyCodeLine{388   scene-\/>mRootNode-\/>mTransformation = aiMatrix4x4();}
+\DoxyCodeLine{389 }
+\DoxyCodeLine{390   \textcolor{keywordflow}{if} (flatten)}
+\DoxyCodeLine{391   \{}
+\DoxyCodeLine{392     \textcolor{comment}{// These post processing steps flatten the root node transformation into child nodes,}}
+\DoxyCodeLine{393     \textcolor{comment}{// so they must be delayed until after clearing the root node transform above.}}
+\DoxyCodeLine{394     importer.ApplyPostProcessing(aiProcess\_OptimizeMeshes | aiProcess\_OptimizeGraph);}
+\DoxyCodeLine{395   \}}
+\DoxyCodeLine{396   \textcolor{keywordflow}{else}}
+\DoxyCodeLine{397   \{}
+\DoxyCodeLine{398     importer.ApplyPostProcessing(aiProcess\_OptimizeGraph);}
+\DoxyCodeLine{399   \}}
+\DoxyCodeLine{400 }
+\DoxyCodeLine{401   \textcolor{keywordflow}{return} createMeshFromAsset<T>(scene, \mbox{\hyperlink{collision__margin__data__unit_8cpp_a80d402d10e8341004c0caf10133b80ab}{scale}}, \textcolor{keyword}{nullptr}, normals, vertex\_colors, material\_and\_texture);}
+\DoxyCodeLine{402 \}}
+\DoxyCodeLine{403 }
+\DoxyCodeLine{417 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{418 std::vector<std::shared\_ptr<T>> \mbox{\hyperlink{namespacetesseract__geometry_ac1c4aaf2f6dc8a3872ea2af8b905948c}{createMeshFromResource}}(\mbox{\hyperlink{classtesseract__common_1_1Resource_acdba916fa227bef4391c469581844dc6}{tesseract\_common::Resource::Ptr}} \mbox{\hyperlink{resource__locator__unit_8cpp_acf8f69b40e998bd8f5330be6b90ab7dc}{resource}},}
+\DoxyCodeLine{419                                                        Eigen::Vector3d \mbox{\hyperlink{collision__margin__data__unit_8cpp_a80d402d10e8341004c0caf10133b80ab}{scale}} = Eigen::Vector3d(1, 1, 1),}
+\DoxyCodeLine{420                                                        \textcolor{keywordtype}{bool} triangulate = \textcolor{keyword}{false},}
+\DoxyCodeLine{421                                                        \textcolor{keywordtype}{bool} flatten = \textcolor{keyword}{false},}
+\DoxyCodeLine{422                                                        \textcolor{keywordtype}{bool} normals = \textcolor{keyword}{false},}
+\DoxyCodeLine{423                                                        \textcolor{keywordtype}{bool} vertex\_colors = \textcolor{keyword}{false},}
+\DoxyCodeLine{424                                                        \textcolor{keywordtype}{bool} material\_and\_texture = \textcolor{keyword}{false})}
+\DoxyCodeLine{425 \{}
+\DoxyCodeLine{426   \textcolor{keywordflow}{if} (!\mbox{\hyperlink{resource__locator__unit_8cpp_acf8f69b40e998bd8f5330be6b90ab7dc}{resource}})}
+\DoxyCodeLine{427     \textcolor{keywordflow}{return} std::vector<std::shared\_ptr<T>>();}
+\DoxyCodeLine{428 }
+\DoxyCodeLine{429   \textcolor{keyword}{const} \textcolor{keywordtype}{char}* hint = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{430   std::string hint\_storage;}
+\DoxyCodeLine{431 }
+\DoxyCodeLine{432   std::string resource\_url = \mbox{\hyperlink{resource__locator__unit_8cpp_acf8f69b40e998bd8f5330be6b90ab7dc}{resource}}-\/>getUrl();}
+\DoxyCodeLine{433   std::regex hint\_re(\textcolor{stringliteral}{"{}\string^.*\(\backslash\)\(\backslash\).([A-\/Za-\/z0-\/9]\{1,8\})\$"{}});}
+\DoxyCodeLine{434   std::smatch hint\_match;}
+\DoxyCodeLine{435   \textcolor{keywordflow}{if} (std::regex\_match(resource\_url, hint\_match, hint\_re))}
+\DoxyCodeLine{436   \{}
+\DoxyCodeLine{437     \textcolor{keywordflow}{if} (hint\_match.size() == 2)}
+\DoxyCodeLine{438     \{}
+\DoxyCodeLine{439       hint\_storage = hint\_match[1].str();}
+\DoxyCodeLine{440       hint = hint\_storage.c\_str();}
+\DoxyCodeLine{441     \}}
+\DoxyCodeLine{442   \}}
+\DoxyCodeLine{443 }
+\DoxyCodeLine{444   std::vector<uint8\_t> \mbox{\hyperlink{collision__margin__data__unit_8cpp_a0992235f6cab11fba6116193c7f42b8b}{data}} = \mbox{\hyperlink{resource__locator__unit_8cpp_acf8f69b40e998bd8f5330be6b90ab7dc}{resource}}-\/>getResourceContents();}
+\DoxyCodeLine{445   \textcolor{keywordflow}{if} (\mbox{\hyperlink{collision__margin__data__unit_8cpp_a0992235f6cab11fba6116193c7f42b8b}{data}}.empty())}
+\DoxyCodeLine{446   \{}
+\DoxyCodeLine{447     \textcolor{keywordflow}{if} (\mbox{\hyperlink{resource__locator__unit_8cpp_acf8f69b40e998bd8f5330be6b90ab7dc}{resource}}-\/>isFile())}
+\DoxyCodeLine{448       \textcolor{keywordflow}{return} createMeshFromPath<T>(}
+\DoxyCodeLine{449           \mbox{\hyperlink{resource__locator__unit_8cpp_acf8f69b40e998bd8f5330be6b90ab7dc}{resource}}-\/>getFilePath(), \mbox{\hyperlink{collision__margin__data__unit_8cpp_a80d402d10e8341004c0caf10133b80ab}{scale}}, triangulate, flatten, normals, vertex\_colors, material\_and\_texture);}
+\DoxyCodeLine{450 }
+\DoxyCodeLine{451     \textcolor{keywordflow}{return} std::vector<std::shared\_ptr<T>>();}
+\DoxyCodeLine{452   \}}
+\DoxyCodeLine{453 }
+\DoxyCodeLine{454   \textcolor{comment}{// Create an instance of the Importer class}}
+\DoxyCodeLine{455   Assimp::Importer importer;}
+\DoxyCodeLine{456 }
+\DoxyCodeLine{457   \textcolor{comment}{// Issue \#38 fix: as part of the post-\/processing, we remove all other components in file but}}
+\DoxyCodeLine{458   \textcolor{comment}{// the meshes, as anyway the resulting shapes:Mesh object just receives vertices and triangles.}}
+\DoxyCodeLine{459   \textcolor{comment}{// John Wason Jan 2021 -\/ Adjust flags based on normals, vertex\_colors, and material\_and\_texture parameters}}
+\DoxyCodeLine{460   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} ai\_config\_pp\_rcv\_flags = aiComponent\_TANGENTS\_AND\_BITANGENTS | aiComponent\_BONEWEIGHTS |}
+\DoxyCodeLine{461                                         aiComponent\_ANIMATIONS | aiComponent\_LIGHTS | aiComponent\_CAMERAS;}
+\DoxyCodeLine{462   \textcolor{keywordflow}{if} (!normals)}
+\DoxyCodeLine{463   \{}
+\DoxyCodeLine{464     ai\_config\_pp\_rcv\_flags |= aiComponent\_NORMALS;}
+\DoxyCodeLine{465   \}}
+\DoxyCodeLine{466   \textcolor{keywordflow}{if} (!vertex\_colors)}
+\DoxyCodeLine{467   \{}
+\DoxyCodeLine{468     ai\_config\_pp\_rcv\_flags |= aiComponent\_COLORS;}
+\DoxyCodeLine{469   \}}
+\DoxyCodeLine{470   \textcolor{keywordflow}{if} (!material\_and\_texture)}
+\DoxyCodeLine{471   \{}
+\DoxyCodeLine{472     ai\_config\_pp\_rcv\_flags |= aiComponent\_TEXCOORDS | aiComponent\_TEXTURES | aiComponent\_MATERIALS;}
+\DoxyCodeLine{473   \}}
+\DoxyCodeLine{474   importer.SetPropertyInteger(AI\_CONFIG\_PP\_RVC\_FLAGS, (\textcolor{keywordtype}{int})ai\_config\_pp\_rcv\_flags);}
+\DoxyCodeLine{475 }
+\DoxyCodeLine{476   \textcolor{comment}{// And have it read the given file with some post-\/processing}}
+\DoxyCodeLine{477   \textcolor{keyword}{const} aiScene* scene = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{478   \textcolor{keywordflow}{if} (triangulate)}
+\DoxyCodeLine{479     scene = importer.ReadFileFromMemory(\mbox{\hyperlink{collision__margin__data__unit_8cpp_a0992235f6cab11fba6116193c7f42b8b}{data}}.data(),}
+\DoxyCodeLine{480                                         \mbox{\hyperlink{collision__margin__data__unit_8cpp_a0992235f6cab11fba6116193c7f42b8b}{data}}.size(),}
+\DoxyCodeLine{481                                         aiProcess\_Triangulate | aiProcess\_JoinIdenticalVertices |}
+\DoxyCodeLine{482                                             aiProcess\_SortByPType | aiProcess\_RemoveComponent,}
+\DoxyCodeLine{483                                         hint);}
+\DoxyCodeLine{484   \textcolor{keywordflow}{else}}
+\DoxyCodeLine{485     scene =}
+\DoxyCodeLine{486         importer.ReadFileFromMemory(\mbox{\hyperlink{collision__margin__data__unit_8cpp_a0992235f6cab11fba6116193c7f42b8b}{data}}.data(),}
+\DoxyCodeLine{487                                     \mbox{\hyperlink{collision__margin__data__unit_8cpp_a0992235f6cab11fba6116193c7f42b8b}{data}}.size(),}
+\DoxyCodeLine{488                                     aiProcess\_JoinIdenticalVertices | aiProcess\_SortByPType | aiProcess\_RemoveComponent,}
+\DoxyCodeLine{489                                     hint);}
+\DoxyCodeLine{490 }
+\DoxyCodeLine{491   \textcolor{keywordflow}{if} (!scene)}
+\DoxyCodeLine{492   \{}
+\DoxyCodeLine{493     CONSOLE\_BRIDGE\_logError(}
+\DoxyCodeLine{494         \textcolor{stringliteral}{"{}Could not load mesh from \(\backslash\)"{}\%s\(\backslash\)"{}: \%s"{}}, \mbox{\hyperlink{resource__locator__unit_8cpp_acf8f69b40e998bd8f5330be6b90ab7dc}{resource}}-\/>getUrl().c\_str(), importer.GetErrorString());}
+\DoxyCodeLine{495     \textcolor{keywordflow}{return} std::vector<std::shared\_ptr<T>>();}
+\DoxyCodeLine{496   \}}
+\DoxyCodeLine{497 }
+\DoxyCodeLine{498   \textcolor{comment}{// Assimp enforces Y\_UP convention by rotating models with different conventions.}}
+\DoxyCodeLine{499   \textcolor{comment}{// However, that behavior is confusing and doesn't match the ROS convention}}
+\DoxyCodeLine{500   \textcolor{comment}{// where the Z axis is pointing up.}}
+\DoxyCodeLine{501   \textcolor{comment}{// Hopefully this doesn't undo legit use of the root node transformation...}}
+\DoxyCodeLine{502   \textcolor{comment}{// Note that this is also what RViz does internally.}}
+\DoxyCodeLine{503   scene-\/>mRootNode-\/>mTransformation = aiMatrix4x4();}
+\DoxyCodeLine{504 }
+\DoxyCodeLine{505   \textcolor{keywordflow}{if} (flatten)}
+\DoxyCodeLine{506   \{}
+\DoxyCodeLine{507     \textcolor{comment}{// These post processing steps flatten the root node transformation into child nodes,}}
+\DoxyCodeLine{508     \textcolor{comment}{// so they must be delayed until after clearing the root node transform above.}}
+\DoxyCodeLine{509     importer.ApplyPostProcessing(aiProcess\_OptimizeMeshes | aiProcess\_OptimizeGraph);}
+\DoxyCodeLine{510   \}}
+\DoxyCodeLine{511   \textcolor{keywordflow}{else}}
+\DoxyCodeLine{512   \{}
+\DoxyCodeLine{513     importer.ApplyPostProcessing(aiProcess\_OptimizeGraph);}
+\DoxyCodeLine{514   \}}
+\DoxyCodeLine{515 }
+\DoxyCodeLine{516   \textcolor{keywordflow}{return} createMeshFromAsset<T>(scene, \mbox{\hyperlink{collision__margin__data__unit_8cpp_a80d402d10e8341004c0caf10133b80ab}{scale}}, \mbox{\hyperlink{resource__locator__unit_8cpp_acf8f69b40e998bd8f5330be6b90ab7dc}{resource}}, normals, vertex\_colors, material\_and\_texture);}
+\DoxyCodeLine{517 \}}
+\DoxyCodeLine{518 }
+\DoxyCodeLine{534 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{535 \textcolor{keyword}{static} std::vector<std::shared\_ptr<T>> \mbox{\hyperlink{namespacetesseract__geometry_a776ece4c5a30cc153042c0f13976f4f8}{createMeshFromBytes}}(\textcolor{keyword}{const} std::string\& url,}
+\DoxyCodeLine{536                                                            \textcolor{keyword}{const} uint8\_t* bytes,}
+\DoxyCodeLine{537                                                            \textcolor{keywordtype}{size\_t} bytes\_len,}
+\DoxyCodeLine{538                                                            Eigen::Vector3d \mbox{\hyperlink{collision__margin__data__unit_8cpp_a80d402d10e8341004c0caf10133b80ab}{scale}} = Eigen::Vector3d(1, 1, 1),}
+\DoxyCodeLine{539                                                            \textcolor{keywordtype}{bool} triangulate = \textcolor{keyword}{false},}
+\DoxyCodeLine{540                                                            \textcolor{keywordtype}{bool} flatten = \textcolor{keyword}{false},}
+\DoxyCodeLine{541                                                            \textcolor{keywordtype}{bool} normals = \textcolor{keyword}{false},}
+\DoxyCodeLine{542                                                            \textcolor{keywordtype}{bool} vertex\_colors = \textcolor{keyword}{false},}
+\DoxyCodeLine{543                                                            \textcolor{keywordtype}{bool} material\_and\_texture = \textcolor{keyword}{false})}
+\DoxyCodeLine{544 \{}
+\DoxyCodeLine{545   std::shared\_ptr<tesseract\_common::Resource> \mbox{\hyperlink{resource__locator__unit_8cpp_acf8f69b40e998bd8f5330be6b90ab7dc}{resource}} =}
+\DoxyCodeLine{546       std::make\_shared<tesseract\_common::BytesResource>(url, bytes, bytes\_len);}
+\DoxyCodeLine{547   \textcolor{keywordflow}{return} tesseract\_geometry::createMeshFromResource<T>(}
+\DoxyCodeLine{548       \mbox{\hyperlink{resource__locator__unit_8cpp_acf8f69b40e998bd8f5330be6b90ab7dc}{resource}}, \mbox{\hyperlink{collision__margin__data__unit_8cpp_a80d402d10e8341004c0caf10133b80ab}{scale}}, triangulate, flatten, normals, vertex\_colors, material\_and\_texture);}
+\DoxyCodeLine{549 \}}
+\DoxyCodeLine{550 }
+\DoxyCodeLine{551 \}  \textcolor{comment}{// namespace tesseract\_geometry}}
+\DoxyCodeLine{552 }
+\DoxyCodeLine{553 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

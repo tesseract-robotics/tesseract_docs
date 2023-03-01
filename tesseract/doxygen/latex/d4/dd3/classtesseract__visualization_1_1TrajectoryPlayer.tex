@@ -1,0 +1,313 @@
+\hypertarget{classtesseract__visualization_1_1TrajectoryPlayer}{}\doxysection{tesseract\+\_\+visualization\+::Trajectory\+Player Class Reference}
+\label{classtesseract__visualization_1_1TrajectoryPlayer}\index{tesseract\_visualization::TrajectoryPlayer@{tesseract\_visualization::TrajectoryPlayer}}
+
+
+Enables the ability to play a trajectory provided by the set program.  
+
+
+
+
+{\ttfamily \#include $<$trajectory\+\_\+player.\+h$>$}
+
+
+
+Collaboration diagram for tesseract\+\_\+visualization\+::Trajectory\+Player\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryPlayer_ac87f2740051bc6851f4c9a3f3a9f2199}{Trajectory\+Player}} ()=default
+\item 
+void \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryPlayer_a04d97f87cf42de4e41b4ab957c1dec6f}{set\+Trajectory}} (const \mbox{\hyperlink{classtesseract__common_1_1JointTrajectory}{tesseract\+\_\+common\+::\+Joint\+Trajectory}} \&\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a2eb4f502ad97d43c60111b5ffd01a1e6}{trajectory}})
+\begin{DoxyCompactList}\small\item\em Set the the trajectory for the trajectory player. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryPlayer_a10e3f10cb4cf8cd80fa0157008bb435b}{set\+Scale}} (double \mbox{\hyperlink{collision__margin__data__unit_8cpp_a80d402d10e8341004c0caf10133b80ab}{scale}})
+\begin{DoxyCompactList}\small\item\em Set the scale factor for the play back of the trajectory. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtesseract__common_1_1JointState}{tesseract\+\_\+common\+::\+Joint\+State}} \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryPlayer_a3d4549fa3a9cbfcedaacbda53cc48ad3}{set\+Current\+Duration\+By\+Index}} (long index)
+\begin{DoxyCompactList}\small\item\em Set the current time for the player by index of the input trajectoy. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtesseract__common_1_1JointState}{tesseract\+\_\+common\+::\+Joint\+State}} \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryPlayer_a5007624d13948a3846798d133c95f875}{set\+Current\+Duration}} (double duration)
+\begin{DoxyCompactList}\small\item\em Set the current time for the player by duration. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtesseract__common_1_1JointState}{tesseract\+\_\+common\+::\+Joint\+State}} \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryPlayer_a1c4e4ce6b05ac1beef79fb11950950c5}{get\+Next}} ()
+\begin{DoxyCompactList}\small\item\em Get the next move instruction from the player. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtesseract__common_1_1JointState}{tesseract\+\_\+common\+::\+Joint\+State}} \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryPlayer_a507d35c0500f58c47087601c63ffb309}{get\+By\+Index}} (long index) const
+\begin{DoxyCompactList}\small\item\em Get move instruction by index. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryPlayer_a1e0cc2b68724af0504e5a27c03fa20d5}{current\+Duration}} () const
+\begin{DoxyCompactList}\small\item\em Get the current duration populated by the last call to \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryPlayer_a1c4e4ce6b05ac1beef79fb11950950c5}{get\+Next()}} \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryPlayer_a90fe6e002e33766af3a686ab15e1670f}{trajectory\+Duration}} () const
+\begin{DoxyCompactList}\small\item\em Get the trajectory duration. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryPlayer_a683adbb456cab0cf2a38d36af78b6cbb}{is\+Finished}} () const
+\begin{DoxyCompactList}\small\item\em Check if the player has the reached the end of the trajectory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryPlayer_ab0a99456ba62b1bf0d49f1322d3d452e}{enable\+Loop}} (bool loop)
+\begin{DoxyCompactList}\small\item\em Enable looping playback of the trajectory. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryPlayer_ae3beb2c8664fe9b9e739b4f0e92ff17e}{is\+Loop\+Enabled}} () const
+\begin{DoxyCompactList}\small\item\em Get if looping playback is enabled. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryPlayer_a0febc89ed87200c70337f7dbae089ece}{reset}} ()
+\begin{DoxyCompactList}\small\item\em Reset the state of the trajectory player. \end{DoxyCompactList}\item 
+long \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryPlayer_a10cd5cd5edf0d6918b32ad3ed3591652}{size}} () const
+\begin{DoxyCompactList}\small\item\em The size of the tajectory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryInterpolator_a85929854568e018c309906476e64b103}{Trajectory\+Interpolator\+::\+UPtr}} \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryPlayer_a59b6345cf54738c49ff41e9a806e2845}{trajectory\+\_\+}} \{ nullptr \}
+\item 
+double \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryPlayer_acff34823e835ee5d09f9590cfcc6739b}{trajectory\+\_\+duration\+\_\+}} \{ 0 \}
+\item 
+double \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryPlayer_a28f05e5d6ea1b86fecfc92e591aa0e29}{current\+\_\+duration\+\_\+}} \{ 0 \}
+\item 
+double \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryPlayer_a77ad040c6d1f9f13801e1202660d4674}{scale\+\_\+}} \{ 1 \}
+\item 
+bool \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryPlayer_ab7b2f045fe6658dbf39109a436c38132}{loop\+\_\+}} \{ false \}
+\item 
+bool \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryPlayer_abfe1f2d649ddd72b8c7ba09cb60f0827}{finished\+\_\+}} \{ false \}
+\item 
+std\+::chrono\+::time\+\_\+point$<$ std\+::chrono\+::high\+\_\+resolution\+\_\+clock $>$ \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryPlayer_a8233c4d3ade5f873a2e4a113add8151c}{start\+\_\+time\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Enables the ability to play a trajectory provided by the set program. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtesseract__visualization_1_1TrajectoryPlayer_ac87f2740051bc6851f4c9a3f3a9f2199}\label{classtesseract__visualization_1_1TrajectoryPlayer_ac87f2740051bc6851f4c9a3f3a9f2199}} 
+\index{tesseract\_visualization::TrajectoryPlayer@{tesseract\_visualization::TrajectoryPlayer}!TrajectoryPlayer@{TrajectoryPlayer}}
+\index{TrajectoryPlayer@{TrajectoryPlayer}!tesseract\_visualization::TrajectoryPlayer@{tesseract\_visualization::TrajectoryPlayer}}
+\doxysubsubsection{\texorpdfstring{TrajectoryPlayer()}{TrajectoryPlayer()}}
+{\footnotesize\ttfamily tesseract\+\_\+visualization\+::\+Trajectory\+Player\+::\+Trajectory\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtesseract__visualization_1_1TrajectoryPlayer_a1e0cc2b68724af0504e5a27c03fa20d5}\label{classtesseract__visualization_1_1TrajectoryPlayer_a1e0cc2b68724af0504e5a27c03fa20d5}} 
+\index{tesseract\_visualization::TrajectoryPlayer@{tesseract\_visualization::TrajectoryPlayer}!currentDuration@{currentDuration}}
+\index{currentDuration@{currentDuration}!tesseract\_visualization::TrajectoryPlayer@{tesseract\_visualization::TrajectoryPlayer}}
+\doxysubsubsection{\texorpdfstring{currentDuration()}{currentDuration()}}
+{\footnotesize\ttfamily double tesseract\+\_\+visualization\+::\+Trajectory\+Player\+::current\+Duration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the current duration populated by the last call to \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryPlayer_a1c4e4ce6b05ac1beef79fb11950950c5}{get\+Next()}} 
+
+\begin{DoxyReturn}{Returns}
+The current duration 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__visualization_1_1TrajectoryPlayer_ab0a99456ba62b1bf0d49f1322d3d452e}\label{classtesseract__visualization_1_1TrajectoryPlayer_ab0a99456ba62b1bf0d49f1322d3d452e}} 
+\index{tesseract\_visualization::TrajectoryPlayer@{tesseract\_visualization::TrajectoryPlayer}!enableLoop@{enableLoop}}
+\index{enableLoop@{enableLoop}!tesseract\_visualization::TrajectoryPlayer@{tesseract\_visualization::TrajectoryPlayer}}
+\doxysubsubsection{\texorpdfstring{enableLoop()}{enableLoop()}}
+{\footnotesize\ttfamily void tesseract\+\_\+visualization\+::\+Trajectory\+Player\+::enable\+Loop (\begin{DoxyParamCaption}\item[{bool}]{loop }\end{DoxyParamCaption})}
+
+
+
+Enable looping playback of the trajectory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em loop} & True to enable looping play, otherwise single playback. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__visualization_1_1TrajectoryPlayer_a507d35c0500f58c47087601c63ffb309}\label{classtesseract__visualization_1_1TrajectoryPlayer_a507d35c0500f58c47087601c63ffb309}} 
+\index{tesseract\_visualization::TrajectoryPlayer@{tesseract\_visualization::TrajectoryPlayer}!getByIndex@{getByIndex}}
+\index{getByIndex@{getByIndex}!tesseract\_visualization::TrajectoryPlayer@{tesseract\_visualization::TrajectoryPlayer}}
+\doxysubsubsection{\texorpdfstring{getByIndex()}{getByIndex()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__common_1_1JointState}{tesseract\+\_\+common\+::\+Joint\+State}} tesseract\+\_\+visualization\+::\+Trajectory\+Player\+::get\+By\+Index (\begin{DoxyParamCaption}\item[{long}]{index }\end{DoxyParamCaption}) const}
+
+
+
+Get move instruction by index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of the input program to extract the move instruction from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The move instruction at the input index 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__visualization_1_1TrajectoryPlayer_a1c4e4ce6b05ac1beef79fb11950950c5}\label{classtesseract__visualization_1_1TrajectoryPlayer_a1c4e4ce6b05ac1beef79fb11950950c5}} 
+\index{tesseract\_visualization::TrajectoryPlayer@{tesseract\_visualization::TrajectoryPlayer}!getNext@{getNext}}
+\index{getNext@{getNext}!tesseract\_visualization::TrajectoryPlayer@{tesseract\_visualization::TrajectoryPlayer}}
+\doxysubsubsection{\texorpdfstring{getNext()}{getNext()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__common_1_1JointState}{tesseract\+\_\+common\+::\+Joint\+State}} tesseract\+\_\+visualization\+::\+Trajectory\+Player\+::get\+Next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the next move instruction from the player. 
+
+\begin{DoxyReturn}{Returns}
+The move instruction at the next time interval 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__visualization_1_1TrajectoryPlayer_a683adbb456cab0cf2a38d36af78b6cbb}\label{classtesseract__visualization_1_1TrajectoryPlayer_a683adbb456cab0cf2a38d36af78b6cbb}} 
+\index{tesseract\_visualization::TrajectoryPlayer@{tesseract\_visualization::TrajectoryPlayer}!isFinished@{isFinished}}
+\index{isFinished@{isFinished}!tesseract\_visualization::TrajectoryPlayer@{tesseract\_visualization::TrajectoryPlayer}}
+\doxysubsubsection{\texorpdfstring{isFinished()}{isFinished()}}
+{\footnotesize\ttfamily bool tesseract\+\_\+visualization\+::\+Trajectory\+Player\+::is\+Finished (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Check if the player has the reached the end of the trajectory. 
+
+\begin{DoxyReturn}{Returns}
+True if end has been reached, otherwise false. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__visualization_1_1TrajectoryPlayer_ae3beb2c8664fe9b9e739b4f0e92ff17e}\label{classtesseract__visualization_1_1TrajectoryPlayer_ae3beb2c8664fe9b9e739b4f0e92ff17e}} 
+\index{tesseract\_visualization::TrajectoryPlayer@{tesseract\_visualization::TrajectoryPlayer}!isLoopEnabled@{isLoopEnabled}}
+\index{isLoopEnabled@{isLoopEnabled}!tesseract\_visualization::TrajectoryPlayer@{tesseract\_visualization::TrajectoryPlayer}}
+\doxysubsubsection{\texorpdfstring{isLoopEnabled()}{isLoopEnabled()}}
+{\footnotesize\ttfamily bool tesseract\+\_\+visualization\+::\+Trajectory\+Player\+::is\+Loop\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get if looping playback is enabled. 
+
+\begin{DoxyReturn}{Returns}
+True if looping playback is enabled otherwise false. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__visualization_1_1TrajectoryPlayer_a0febc89ed87200c70337f7dbae089ece}\label{classtesseract__visualization_1_1TrajectoryPlayer_a0febc89ed87200c70337f7dbae089ece}} 
+\index{tesseract\_visualization::TrajectoryPlayer@{tesseract\_visualization::TrajectoryPlayer}!reset@{reset}}
+\index{reset@{reset}!tesseract\_visualization::TrajectoryPlayer@{tesseract\_visualization::TrajectoryPlayer}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void tesseract\+\_\+visualization\+::\+Trajectory\+Player\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Reset the state of the trajectory player. 
+
+\mbox{\Hypertarget{classtesseract__visualization_1_1TrajectoryPlayer_a5007624d13948a3846798d133c95f875}\label{classtesseract__visualization_1_1TrajectoryPlayer_a5007624d13948a3846798d133c95f875}} 
+\index{tesseract\_visualization::TrajectoryPlayer@{tesseract\_visualization::TrajectoryPlayer}!setCurrentDuration@{setCurrentDuration}}
+\index{setCurrentDuration@{setCurrentDuration}!tesseract\_visualization::TrajectoryPlayer@{tesseract\_visualization::TrajectoryPlayer}}
+\doxysubsubsection{\texorpdfstring{setCurrentDuration()}{setCurrentDuration()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__common_1_1JointState}{tesseract\+\_\+common\+::\+Joint\+State}} tesseract\+\_\+visualization\+::\+Trajectory\+Player\+::set\+Current\+Duration (\begin{DoxyParamCaption}\item[{double}]{duration }\end{DoxyParamCaption})}
+
+
+
+Set the current time for the player by duration. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em duration} & The duration for which to set the current time from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The trajectory state at the provided duration 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__visualization_1_1TrajectoryPlayer_a3d4549fa3a9cbfcedaacbda53cc48ad3}\label{classtesseract__visualization_1_1TrajectoryPlayer_a3d4549fa3a9cbfcedaacbda53cc48ad3}} 
+\index{tesseract\_visualization::TrajectoryPlayer@{tesseract\_visualization::TrajectoryPlayer}!setCurrentDurationByIndex@{setCurrentDurationByIndex}}
+\index{setCurrentDurationByIndex@{setCurrentDurationByIndex}!tesseract\_visualization::TrajectoryPlayer@{tesseract\_visualization::TrajectoryPlayer}}
+\doxysubsubsection{\texorpdfstring{setCurrentDurationByIndex()}{setCurrentDurationByIndex()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__common_1_1JointState}{tesseract\+\_\+common\+::\+Joint\+State}} tesseract\+\_\+visualization\+::\+Trajectory\+Player\+::set\+Current\+Duration\+By\+Index (\begin{DoxyParamCaption}\item[{long}]{index }\end{DoxyParamCaption})}
+
+
+
+Set the current time for the player by index of the input trajectoy. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The input trajectory index for which to set the current time from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The trajectory state at the input trajectory index 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__visualization_1_1TrajectoryPlayer_a10e3f10cb4cf8cd80fa0157008bb435b}\label{classtesseract__visualization_1_1TrajectoryPlayer_a10e3f10cb4cf8cd80fa0157008bb435b}} 
+\index{tesseract\_visualization::TrajectoryPlayer@{tesseract\_visualization::TrajectoryPlayer}!setScale@{setScale}}
+\index{setScale@{setScale}!tesseract\_visualization::TrajectoryPlayer@{tesseract\_visualization::TrajectoryPlayer}}
+\doxysubsubsection{\texorpdfstring{setScale()}{setScale()}}
+{\footnotesize\ttfamily void tesseract\+\_\+visualization\+::\+Trajectory\+Player\+::set\+Scale (\begin{DoxyParamCaption}\item[{double}]{scale }\end{DoxyParamCaption})}
+
+
+
+Set the scale factor for the play back of the trajectory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scale} & The scale playback of the trajectory \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__visualization_1_1TrajectoryPlayer_a04d97f87cf42de4e41b4ab957c1dec6f}\label{classtesseract__visualization_1_1TrajectoryPlayer_a04d97f87cf42de4e41b4ab957c1dec6f}} 
+\index{tesseract\_visualization::TrajectoryPlayer@{tesseract\_visualization::TrajectoryPlayer}!setTrajectory@{setTrajectory}}
+\index{setTrajectory@{setTrajectory}!tesseract\_visualization::TrajectoryPlayer@{tesseract\_visualization::TrajectoryPlayer}}
+\doxysubsubsection{\texorpdfstring{setTrajectory()}{setTrajectory()}}
+{\footnotesize\ttfamily void tesseract\+\_\+visualization\+::\+Trajectory\+Player\+::set\+Trajectory (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtesseract__common_1_1JointTrajectory}{tesseract\+\_\+common\+::\+Joint\+Trajectory}} \&}]{trajectory }\end{DoxyParamCaption})}
+
+
+
+Set the the trajectory for the trajectory player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em program} & The trajectory to play \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__visualization_1_1TrajectoryPlayer_a10cd5cd5edf0d6918b32ad3ed3591652}\label{classtesseract__visualization_1_1TrajectoryPlayer_a10cd5cd5edf0d6918b32ad3ed3591652}} 
+\index{tesseract\_visualization::TrajectoryPlayer@{tesseract\_visualization::TrajectoryPlayer}!size@{size}}
+\index{size@{size}!tesseract\_visualization::TrajectoryPlayer@{tesseract\_visualization::TrajectoryPlayer}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily long tesseract\+\_\+visualization\+::\+Trajectory\+Player\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+The size of the tajectory. 
+
+\mbox{\Hypertarget{classtesseract__visualization_1_1TrajectoryPlayer_a90fe6e002e33766af3a686ab15e1670f}\label{classtesseract__visualization_1_1TrajectoryPlayer_a90fe6e002e33766af3a686ab15e1670f}} 
+\index{tesseract\_visualization::TrajectoryPlayer@{tesseract\_visualization::TrajectoryPlayer}!trajectoryDuration@{trajectoryDuration}}
+\index{trajectoryDuration@{trajectoryDuration}!tesseract\_visualization::TrajectoryPlayer@{tesseract\_visualization::TrajectoryPlayer}}
+\doxysubsubsection{\texorpdfstring{trajectoryDuration()}{trajectoryDuration()}}
+{\footnotesize\ttfamily double tesseract\+\_\+visualization\+::\+Trajectory\+Player\+::trajectory\+Duration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the trajectory duration. 
+
+\begin{DoxyReturn}{Returns}
+The trajectory duration 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classtesseract__visualization_1_1TrajectoryPlayer_a28f05e5d6ea1b86fecfc92e591aa0e29}\label{classtesseract__visualization_1_1TrajectoryPlayer_a28f05e5d6ea1b86fecfc92e591aa0e29}} 
+\index{tesseract\_visualization::TrajectoryPlayer@{tesseract\_visualization::TrajectoryPlayer}!current\_duration\_@{current\_duration\_}}
+\index{current\_duration\_@{current\_duration\_}!tesseract\_visualization::TrajectoryPlayer@{tesseract\_visualization::TrajectoryPlayer}}
+\doxysubsubsection{\texorpdfstring{current\_duration\_}{current\_duration\_}}
+{\footnotesize\ttfamily double tesseract\+\_\+visualization\+::\+Trajectory\+Player\+::current\+\_\+duration\+\_\+ \{ 0 \}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__visualization_1_1TrajectoryPlayer_abfe1f2d649ddd72b8c7ba09cb60f0827}\label{classtesseract__visualization_1_1TrajectoryPlayer_abfe1f2d649ddd72b8c7ba09cb60f0827}} 
+\index{tesseract\_visualization::TrajectoryPlayer@{tesseract\_visualization::TrajectoryPlayer}!finished\_@{finished\_}}
+\index{finished\_@{finished\_}!tesseract\_visualization::TrajectoryPlayer@{tesseract\_visualization::TrajectoryPlayer}}
+\doxysubsubsection{\texorpdfstring{finished\_}{finished\_}}
+{\footnotesize\ttfamily bool tesseract\+\_\+visualization\+::\+Trajectory\+Player\+::finished\+\_\+ \{ false \}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__visualization_1_1TrajectoryPlayer_ab7b2f045fe6658dbf39109a436c38132}\label{classtesseract__visualization_1_1TrajectoryPlayer_ab7b2f045fe6658dbf39109a436c38132}} 
+\index{tesseract\_visualization::TrajectoryPlayer@{tesseract\_visualization::TrajectoryPlayer}!loop\_@{loop\_}}
+\index{loop\_@{loop\_}!tesseract\_visualization::TrajectoryPlayer@{tesseract\_visualization::TrajectoryPlayer}}
+\doxysubsubsection{\texorpdfstring{loop\_}{loop\_}}
+{\footnotesize\ttfamily bool tesseract\+\_\+visualization\+::\+Trajectory\+Player\+::loop\+\_\+ \{ false \}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__visualization_1_1TrajectoryPlayer_a77ad040c6d1f9f13801e1202660d4674}\label{classtesseract__visualization_1_1TrajectoryPlayer_a77ad040c6d1f9f13801e1202660d4674}} 
+\index{tesseract\_visualization::TrajectoryPlayer@{tesseract\_visualization::TrajectoryPlayer}!scale\_@{scale\_}}
+\index{scale\_@{scale\_}!tesseract\_visualization::TrajectoryPlayer@{tesseract\_visualization::TrajectoryPlayer}}
+\doxysubsubsection{\texorpdfstring{scale\_}{scale\_}}
+{\footnotesize\ttfamily double tesseract\+\_\+visualization\+::\+Trajectory\+Player\+::scale\+\_\+ \{ 1 \}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__visualization_1_1TrajectoryPlayer_a8233c4d3ade5f873a2e4a113add8151c}\label{classtesseract__visualization_1_1TrajectoryPlayer_a8233c4d3ade5f873a2e4a113add8151c}} 
+\index{tesseract\_visualization::TrajectoryPlayer@{tesseract\_visualization::TrajectoryPlayer}!start\_time\_@{start\_time\_}}
+\index{start\_time\_@{start\_time\_}!tesseract\_visualization::TrajectoryPlayer@{tesseract\_visualization::TrajectoryPlayer}}
+\doxysubsubsection{\texorpdfstring{start\_time\_}{start\_time\_}}
+{\footnotesize\ttfamily std\+::chrono\+::time\+\_\+point$<$std\+::chrono\+::high\+\_\+resolution\+\_\+clock$>$ tesseract\+\_\+visualization\+::\+Trajectory\+Player\+::start\+\_\+time\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__visualization_1_1TrajectoryPlayer_a59b6345cf54738c49ff41e9a806e2845}\label{classtesseract__visualization_1_1TrajectoryPlayer_a59b6345cf54738c49ff41e9a806e2845}} 
+\index{tesseract\_visualization::TrajectoryPlayer@{tesseract\_visualization::TrajectoryPlayer}!trajectory\_@{trajectory\_}}
+\index{trajectory\_@{trajectory\_}!tesseract\_visualization::TrajectoryPlayer@{tesseract\_visualization::TrajectoryPlayer}}
+\doxysubsubsection{\texorpdfstring{trajectory\_}{trajectory\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__visualization_1_1TrajectoryInterpolator_a85929854568e018c309906476e64b103}{Trajectory\+Interpolator\+::\+UPtr}} tesseract\+\_\+visualization\+::\+Trajectory\+Player\+::trajectory\+\_\+ \{ nullptr \}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__visualization_1_1TrajectoryPlayer_acff34823e835ee5d09f9590cfcc6739b}\label{classtesseract__visualization_1_1TrajectoryPlayer_acff34823e835ee5d09f9590cfcc6739b}} 
+\index{tesseract\_visualization::TrajectoryPlayer@{tesseract\_visualization::TrajectoryPlayer}!trajectory\_duration\_@{trajectory\_duration\_}}
+\index{trajectory\_duration\_@{trajectory\_duration\_}!tesseract\_visualization::TrajectoryPlayer@{tesseract\_visualization::TrajectoryPlayer}}
+\doxysubsubsection{\texorpdfstring{trajectory\_duration\_}{trajectory\_duration\_}}
+{\footnotesize\ttfamily double tesseract\+\_\+visualization\+::\+Trajectory\+Player\+::trajectory\+\_\+duration\+\_\+ \{ 0 \}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+tesseract\+\_\+visualization/include/tesseract\+\_\+visualization/\mbox{\hyperlink{trajectory__player_8h}{trajectory\+\_\+player.\+h}}\item 
+tesseract\+\_\+visualization/src/\mbox{\hyperlink{trajectory__player_8cpp}{trajectory\+\_\+player.\+cpp}}\end{DoxyCompactItemize}

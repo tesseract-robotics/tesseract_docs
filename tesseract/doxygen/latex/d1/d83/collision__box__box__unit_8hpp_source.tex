@@ -1,0 +1,302 @@
+\hypertarget{collision__box__box__unit_8hpp_source}{}\doxysection{collision\+\_\+box\+\_\+box\+\_\+unit.\+hpp}
+\label{collision__box__box__unit_8hpp_source}\index{tesseract\_collision/core/include/tesseract\_collision/test\_suite/collision\_box\_box\_unit.hpp@{tesseract\_collision/core/include/tesseract\_collision/test\_suite/collision\_box\_box\_unit.hpp}}
+\mbox{\hyperlink{collision__box__box__unit_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef TESSERACT\_COLLISION\_COLLISION\_BOX\_BOX\_UNIT\_HPP}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define TESSERACT\_COLLISION\_COLLISION\_BOX\_BOX\_UNIT\_HPP}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{convex__hull__utils_8h}{tesseract\_collision/bullet/convex\_hull\_utils.h}}>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{continuous__contact__manager_8h}{tesseract\_collision/core/continuous\_contact\_manager.h}}>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{discrete__contact__manager_8h}{tesseract\_collision/core/discrete\_contact\_manager.h}}>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{common_8h}{tesseract\_collision/core/common.h}}>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{geometries_8h}{tesseract\_geometry/geometries.h}}>}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__collision_1_1test__suite}{tesseract\_collision::test\_suite}}}
+\DoxyCodeLine{11 \{}
+\DoxyCodeLine{12 \textcolor{keyword}{namespace }detail}
+\DoxyCodeLine{13 \{}
+\DoxyCodeLine{14 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1test__suite_1_1detail_a3fb030da7784f5e059d57666cb288f3d}{addCollisionObjects}}(\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager}{DiscreteContactManager}}\& checker, \textcolor{keywordtype}{bool} use\_convex\_mesh = \textcolor{keyword}{false})}
+\DoxyCodeLine{15 \{}
+\DoxyCodeLine{17   \textcolor{comment}{// Add box to checker}}
+\DoxyCodeLine{19 \textcolor{comment}{}  \mbox{\hyperlink{namespacetesseract__collision_a0aa5b9a264467e92cd1b9f0cd0c38ee8}{CollisionShapePtr}} \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a78f639043a4f58691eb1a91bf3af3a0d}{box}} = std::make\_shared<tesseract\_geometry::Box>(1, 1, 1);}
+\DoxyCodeLine{20   Eigen::Isometry3d box\_pose;}
+\DoxyCodeLine{21   box\_pose.setIdentity();}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23   \mbox{\hyperlink{namespacetesseract__collision_a2472107aae8174a30873bb0a955c3cb4}{CollisionShapesConst}} obj1\_shapes;}
+\DoxyCodeLine{24   \mbox{\hyperlink{namespacetesseract__common_a94d9921fc7ed323609ac57d06f939cb6}{tesseract\_common::VectorIsometry3d}} obj1\_poses;}
+\DoxyCodeLine{25   obj1\_shapes.push\_back(\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a78f639043a4f58691eb1a91bf3af3a0d}{box}});}
+\DoxyCodeLine{26   obj1\_poses.push\_back(box\_pose);}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28   checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a2a82db2881b5f7c701ed3d42db053ae8}{addCollisionObject}}(\textcolor{stringliteral}{"{}box\_link"{}}, 0, obj1\_shapes, obj1\_poses, \textcolor{keyword}{false});}
+\DoxyCodeLine{29   checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a6327db89cb640fe6161481d3e0f39045}{enableCollisionObject}}(\textcolor{stringliteral}{"{}box\_link"{}});}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{32   \textcolor{comment}{// Add thin box to checker which is disabled}}
+\DoxyCodeLine{34 \textcolor{comment}{}  \mbox{\hyperlink{namespacetesseract__collision_a0aa5b9a264467e92cd1b9f0cd0c38ee8}{CollisionShapePtr}} thin\_box = std::make\_shared<tesseract\_geometry::Box>(0.1, 1, 1);}
+\DoxyCodeLine{35   Eigen::Isometry3d thin\_box\_pose;}
+\DoxyCodeLine{36   thin\_box\_pose.setIdentity();}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38   \mbox{\hyperlink{namespacetesseract__collision_a2472107aae8174a30873bb0a955c3cb4}{CollisionShapesConst}} obj2\_shapes;}
+\DoxyCodeLine{39   \mbox{\hyperlink{namespacetesseract__common_a94d9921fc7ed323609ac57d06f939cb6}{tesseract\_common::VectorIsometry3d}} obj2\_poses;}
+\DoxyCodeLine{40   obj2\_shapes.push\_back(thin\_box);}
+\DoxyCodeLine{41   obj2\_poses.push\_back(thin\_box\_pose);}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43   checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a2a82db2881b5f7c701ed3d42db053ae8}{addCollisionObject}}(\textcolor{stringliteral}{"{}thin\_box\_link"{}}, 0, obj2\_shapes, obj2\_poses);}
+\DoxyCodeLine{44   checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_aa5b4b0c83fbb06ba8944845b87471fa9}{disableCollisionObject}}(\textcolor{stringliteral}{"{}thin\_box\_link"{}});}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{47   \textcolor{comment}{// Add second box to checker. If use\_convex\_mesh = true then this}}
+\DoxyCodeLine{48   \textcolor{comment}{// box will be added as a convex hull mesh.}}
+\DoxyCodeLine{50 \textcolor{comment}{}  \mbox{\hyperlink{namespacetesseract__collision_a0aa5b9a264467e92cd1b9f0cd0c38ee8}{CollisionShapePtr}} second\_box;}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52   \textcolor{keywordflow}{if} (use\_convex\_mesh)}
+\DoxyCodeLine{53   \{}
+\DoxyCodeLine{54     \textcolor{keyword}{auto} mesh\_vertices = std::make\_shared<tesseract\_common::VectorVector3d>();}
+\DoxyCodeLine{55     \textcolor{keyword}{auto} mesh\_faces = std::make\_shared<Eigen::VectorXi>();}
+\DoxyCodeLine{56     \textcolor{comment}{// TODO: Need to figure out why this test not pass of bullet when using the box\_2m.ply mesh}}
+\DoxyCodeLine{57     \mbox{\hyperlink{kinematics__core__unit_8cpp_ab0c57dafb55423417d7f0fddf0944221}{EXPECT\_GT}}(\mbox{\hyperlink{namespacetesseract__collision_ab79187502eefb0f670dbde89a5b7b969}{loadSimplePlyFile}}(}
+\DoxyCodeLine{58                   std::string(TESSERACT\_SUPPORT\_DIR) + \textcolor{stringliteral}{"{}/meshes/box2\_2m.ply"{}}, *mesh\_vertices, *mesh\_faces, \textcolor{keyword}{true}),}
+\DoxyCodeLine{59               0);}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61     \textcolor{keyword}{auto} \mbox{\hyperlink{tesseract__geometry__unit_8cpp_ae8d539a4d41d4864a6a5452e33eebc31}{mesh}} = std::make\_shared<tesseract\_geometry::Mesh>(mesh\_vertices, mesh\_faces);}
+\DoxyCodeLine{62     second\_box = \mbox{\hyperlink{namespacetesseract__collision_ad17b98123f412bcc30207daa6931cbb2}{makeConvexMesh}}(*\mbox{\hyperlink{tesseract__geometry__unit_8cpp_ae8d539a4d41d4864a6a5452e33eebc31}{mesh}});}
+\DoxyCodeLine{63   \}}
+\DoxyCodeLine{64   \textcolor{keywordflow}{else}}
+\DoxyCodeLine{65   \{}
+\DoxyCodeLine{66     second\_box = std::make\_shared<tesseract\_geometry::Box>(2, 2, 2);}
+\DoxyCodeLine{67   \}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69   Eigen::Isometry3d second\_box\_pose;}
+\DoxyCodeLine{70   second\_box\_pose.setIdentity();}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72   \mbox{\hyperlink{namespacetesseract__collision_a2472107aae8174a30873bb0a955c3cb4}{CollisionShapesConst}} obj3\_shapes;}
+\DoxyCodeLine{73   \mbox{\hyperlink{namespacetesseract__common_a94d9921fc7ed323609ac57d06f939cb6}{tesseract\_common::VectorIsometry3d}} obj3\_poses;}
+\DoxyCodeLine{74   obj3\_shapes.push\_back(second\_box);}
+\DoxyCodeLine{75   obj3\_poses.push\_back(second\_box\_pose);}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77   checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a2a82db2881b5f7c701ed3d42db053ae8}{addCollisionObject}}(\textcolor{stringliteral}{"{}second\_box\_link"{}}, 0, obj3\_shapes, obj3\_poses);}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{80   \textcolor{comment}{// Add box and remove}}
+\DoxyCodeLine{82 \textcolor{comment}{}  \mbox{\hyperlink{namespacetesseract__collision_a0aa5b9a264467e92cd1b9f0cd0c38ee8}{CollisionShapePtr}} remove\_box = std::make\_shared<tesseract\_geometry::Box>(0.1, 1, 1);}
+\DoxyCodeLine{83   Eigen::Isometry3d remove\_box\_pose;}
+\DoxyCodeLine{84   thin\_box\_pose.setIdentity();}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86   \mbox{\hyperlink{namespacetesseract__collision_a2472107aae8174a30873bb0a955c3cb4}{CollisionShapesConst}} obj4\_shapes;}
+\DoxyCodeLine{87   \mbox{\hyperlink{namespacetesseract__common_a94d9921fc7ed323609ac57d06f939cb6}{tesseract\_common::VectorIsometry3d}} obj4\_poses;}
+\DoxyCodeLine{88   obj4\_shapes.push\_back(remove\_box);}
+\DoxyCodeLine{89   obj4\_poses.push\_back(remove\_box\_pose);}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91   checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a2a82db2881b5f7c701ed3d42db053ae8}{addCollisionObject}}(\textcolor{stringliteral}{"{}remove\_box\_link"{}}, 0, obj4\_shapes, obj4\_poses);}
+\DoxyCodeLine{92   \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a7a4697f7c582ab800142a1d4923607ab}{getCollisionObjects}}().size() == 4);}
+\DoxyCodeLine{93   \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a88de26744511600a096f25d37eebd5c9}{hasCollisionObject}}(\textcolor{stringliteral}{"{}remove\_box\_link"{}}));}
+\DoxyCodeLine{94   checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a76f980b2fff3c2aa69be2b1dfce33dc6}{removeCollisionObject}}(\textcolor{stringliteral}{"{}remove\_box\_link"{}});}
+\DoxyCodeLine{95   \mbox{\hyperlink{collision__core__unit_8cpp_aa784f8de129e0ce90854ab7b6a043468}{EXPECT\_FALSE}}(checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a88de26744511600a096f25d37eebd5c9}{hasCollisionObject}}(\textcolor{stringliteral}{"{}remove\_box\_link"{}}));}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{98   \textcolor{comment}{// Try functions on a link that does not exist}}
+\DoxyCodeLine{100 \textcolor{comment}{}  \mbox{\hyperlink{collision__core__unit_8cpp_aa784f8de129e0ce90854ab7b6a043468}{EXPECT\_FALSE}}(checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a76f980b2fff3c2aa69be2b1dfce33dc6}{removeCollisionObject}}(\textcolor{stringliteral}{"{}link\_does\_not\_exist"{}}));}
+\DoxyCodeLine{101   \mbox{\hyperlink{collision__core__unit_8cpp_aa784f8de129e0ce90854ab7b6a043468}{EXPECT\_FALSE}}(checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a6327db89cb640fe6161481d3e0f39045}{enableCollisionObject}}(\textcolor{stringliteral}{"{}link\_does\_not\_exist"{}}));}
+\DoxyCodeLine{102   \mbox{\hyperlink{collision__core__unit_8cpp_aa784f8de129e0ce90854ab7b6a043468}{EXPECT\_FALSE}}(checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_aa5b4b0c83fbb06ba8944845b87471fa9}{disableCollisionObject}}(\textcolor{stringliteral}{"{}link\_does\_not\_exist"{}}));}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{105   \textcolor{comment}{// Try to add empty Collision Object}}
+\DoxyCodeLine{107 \textcolor{comment}{}  \mbox{\hyperlink{collision__core__unit_8cpp_aa784f8de129e0ce90854ab7b6a043468}{EXPECT\_FALSE}}(}
+\DoxyCodeLine{108       checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a2a82db2881b5f7c701ed3d42db053ae8}{addCollisionObject}}(\textcolor{stringliteral}{"{}empty\_link"{}}, 0, \mbox{\hyperlink{namespacetesseract__collision_a2472107aae8174a30873bb0a955c3cb4}{CollisionShapesConst}}(), \mbox{\hyperlink{namespacetesseract__common_a94d9921fc7ed323609ac57d06f939cb6}{tesseract\_common::VectorIsometry3d}}()));}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{111   \textcolor{comment}{// Check sizes}}
+\DoxyCodeLine{113 \textcolor{comment}{}  \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a7a4697f7c582ab800142a1d4923607ab}{getCollisionObjects}}().size() == 3);}
+\DoxyCodeLine{114   \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& co : checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a7a4697f7c582ab800142a1d4923607ab}{getCollisionObjects}}())}
+\DoxyCodeLine{115   \{}
+\DoxyCodeLine{116     \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_adb11d7c35bd134e336d707d71faa1886}{getCollisionObjectGeometries}}(co).size() == 1);}
+\DoxyCodeLine{117     \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a894ac7465ba94d5d8b2642db3701815d}{getCollisionObjectGeometriesTransforms}}(co).size() == 1);}
+\DoxyCodeLine{118     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& cgt : checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a894ac7465ba94d5d8b2642db3701815d}{getCollisionObjectGeometriesTransforms}}(co))}
+\DoxyCodeLine{119     \{}
+\DoxyCodeLine{120       \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(cgt.isApprox(Eigen::Isometry3d::Identity(), 1e-\/5));}
+\DoxyCodeLine{121     \}}
+\DoxyCodeLine{122   \}}
+\DoxyCodeLine{123 \}}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1test__suite_1_1detail_a0a7ad50afb38adcc7d419ceb194393e4}{runTestTyped}}(\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager}{DiscreteContactManager}}\& checker, \mbox{\hyperlink{namespacetesseract__collision_ac3da4f46ae16e86ba4f1dfd2935eb80c}{ContactTestType}} test\_type)}
+\DoxyCodeLine{126 \{}
+\DoxyCodeLine{128   \textcolor{comment}{// Test when object is inside another}}
+\DoxyCodeLine{130 \textcolor{comment}{}  std::vector<std::string> \mbox{\hyperlink{tesseract__environment__collision_8cpp_a63bb2774cedec88326bab0804f03d82f}{active\_links}}\{ \textcolor{stringliteral}{"{}box\_link"{}}, \textcolor{stringliteral}{"{}second\_box\_link"{}} \};}
+\DoxyCodeLine{131   checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a14111f72aeaa2f22cf79b64e54479fb0}{setActiveCollisionObjects}}(\mbox{\hyperlink{tesseract__environment__collision_8cpp_a63bb2774cedec88326bab0804f03d82f}{active\_links}});}
+\DoxyCodeLine{132   std::vector<std::string> check\_active\_links = checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_abd1ad9870349f58375a7383adccd25cc}{getActiveCollisionObjects}}();}
+\DoxyCodeLine{133   \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(\mbox{\hyperlink{namespacetesseract__common_a81e6b461e723426fcfde3465ceb4b79d}{tesseract\_common::isIdentical<std::string>}}(\mbox{\hyperlink{tesseract__environment__collision_8cpp_a63bb2774cedec88326bab0804f03d82f}{active\_links}}, check\_active\_links, \textcolor{keyword}{false}));}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135   \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_ad515c562c2bc0cd98e3559dbd05bd7e4}{getIsContactAllowedFn}}() == \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137   checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_acbd053442a4d591c29aab5be5706ef04}{setCollisionMarginData}}(\mbox{\hyperlink{namespacetesseract__collision_a0717a3c53d08d510257f631ea96cb560}{CollisionMarginData}}(0.1));}
+\DoxyCodeLine{138   \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_abd2686026229a788a0e6836d20ea7008}{getCollisionMarginData}}().\mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_ac94cf7cce62f76b96a8d9aaab324d981}{getPairCollisionMargin}}(\textcolor{stringliteral}{"{}box\_link"{}}, \textcolor{stringliteral}{"{}second\_box\_link"{}}), 0.1, 1e-\/5);}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140   \textcolor{comment}{// Set the collision object transforms}}
+\DoxyCodeLine{141   \mbox{\hyperlink{namespacetesseract__common_a67bde3cb7bb235f0f61c370ef8bc74d8}{tesseract\_common::TransformMap}} location;}
+\DoxyCodeLine{142   location[\textcolor{stringliteral}{"{}box\_link"{}}] = Eigen::Isometry3d::Identity();}
+\DoxyCodeLine{143   location[\textcolor{stringliteral}{"{}box\_link"{}}].translation()(0) = 0.2;}
+\DoxyCodeLine{144   location[\textcolor{stringliteral}{"{}box\_link"{}}].translation()(1) = 0.1;}
+\DoxyCodeLine{145   location[\textcolor{stringliteral}{"{}second\_box\_link"{}}] = Eigen::Isometry3d::Identity();}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147   checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a21d038a9836cdb5a3b44ad527fd93a5b}{setCollisionObjectsTransform}}(location);}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149   \textcolor{comment}{// Perform collision check}}
+\DoxyCodeLine{150   \mbox{\hyperlink{namespacetesseract__collision_a1eeace4cc41027dbde8e7dbeb77ca7cf}{ContactResultMap}} result;}
+\DoxyCodeLine{151   checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a1ddfa181400941e093c76a852df72425}{contactTest}}(result, \mbox{\hyperlink{structtesseract__collision_1_1ContactRequest}{ContactRequest}}(test\_type));}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153   \mbox{\hyperlink{namespacetesseract__collision_a96d77f62b7c26962d1090f0a2f00419b}{ContactResultVector}} result\_vector;}
+\DoxyCodeLine{154   \mbox{\hyperlink{namespacetesseract__collision_a1e54919ee87e54445b7926d0b2880882}{flattenMoveResults}}(std::move(result), result\_vector);}
+\DoxyCodeLine{155 }
+\DoxyCodeLine{156   \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(!result\_vector.empty());}
+\DoxyCodeLine{157   \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_a1ceb8bb3849a05a320b82729fd3681bb}{distance}}, -\/1.30, 0.001);}
+\DoxyCodeLine{158   \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[0][1], result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[1][1], 0.001);}
+\DoxyCodeLine{159   \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[0][2], result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[1][2], 0.001);}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{161   std::vector<int> idx = \{ 0, 1, 1 \};}
+\DoxyCodeLine{162   \textcolor{keywordflow}{if} (result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_a464caf777ea79db067179ebe2bd7ecc7}{link\_names}}[0] != \textcolor{stringliteral}{"{}box\_link"{}})}
+\DoxyCodeLine{163     idx = \{ 1, 0, -\/1 \};}
+\DoxyCodeLine{164 }
+\DoxyCodeLine{165   \textcolor{keywordflow}{if} (result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_aef0b0de8aead4d0c192bfbc1665bdca1}{single\_contact\_point}})}
+\DoxyCodeLine{166   \{}
+\DoxyCodeLine{167     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[0][0], result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[1][0], 0.001);}
+\DoxyCodeLine{168     \mbox{\hyperlink{collision__core__unit_8cpp_aa784f8de129e0ce90854ab7b6a043468}{EXPECT\_FALSE}}(std::abs(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[0][0] -\/ (-\/0.3)) > 0.001 \&\&}
+\DoxyCodeLine{169                  std::abs(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[0][0] -\/ (1.0)) > 0.001);}
+\DoxyCodeLine{170   \}}
+\DoxyCodeLine{171   \textcolor{keywordflow}{else}}
+\DoxyCodeLine{172   \{}
+\DoxyCodeLine{173     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(idx[0])][0], -\/0.3, 0.001);}
+\DoxyCodeLine{174     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(idx[1])][0], 1.0, 0.001);}
+\DoxyCodeLine{175   \}}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{177   \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_a7589b8c9c1397d28b5974168ee72f0a8}{normal}}[0], idx[2] * -\/1.0, 0.001);}
+\DoxyCodeLine{178   \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_a7589b8c9c1397d28b5974168ee72f0a8}{normal}}[1], idx[2] * 0.0, 0.001);}
+\DoxyCodeLine{179   \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_a7589b8c9c1397d28b5974168ee72f0a8}{normal}}[2], idx[2] * 0.0, 0.001);}
+\DoxyCodeLine{180 }
+\DoxyCodeLine{182   \textcolor{comment}{// Test object is outside the contact distance}}
+\DoxyCodeLine{184 \textcolor{comment}{}  \{}
+\DoxyCodeLine{185     location[\textcolor{stringliteral}{"{}box\_link"{}}].translation() = Eigen::Vector3d(1.60, 0, 0);}
+\DoxyCodeLine{186     result = \mbox{\hyperlink{namespacetesseract__collision_a1eeace4cc41027dbde8e7dbeb77ca7cf}{ContactResultMap}}();}
+\DoxyCodeLine{187     result.clear();}
+\DoxyCodeLine{188     result\_vector.clear();}
+\DoxyCodeLine{189 }
+\DoxyCodeLine{190     \textcolor{comment}{// Use different method for setting transforms}}
+\DoxyCodeLine{191     std::vector<std::string> names = \{ \textcolor{stringliteral}{"{}box\_link"{}} \};}
+\DoxyCodeLine{192     \mbox{\hyperlink{namespacetesseract__common_a94d9921fc7ed323609ac57d06f939cb6}{tesseract\_common::VectorIsometry3d}} transforms = \{ location[\textcolor{stringliteral}{"{}box\_link"{}}] \};}
+\DoxyCodeLine{193     checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a21d038a9836cdb5a3b44ad527fd93a5b}{setCollisionObjectsTransform}}(names, transforms);}
+\DoxyCodeLine{194     checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a1ddfa181400941e093c76a852df72425}{contactTest}}(result, test\_type);}
+\DoxyCodeLine{195     \mbox{\hyperlink{namespacetesseract__collision_a0249bb2994ca5e8258ea55309467ae4a}{flattenCopyResults}}(result, result\_vector);}
+\DoxyCodeLine{196 }
+\DoxyCodeLine{197     \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(result\_vector.empty());}
+\DoxyCodeLine{198   \}}
+\DoxyCodeLine{200   \textcolor{comment}{// Test object is outside the contact distance only for this link pair}}
+\DoxyCodeLine{202 \textcolor{comment}{}  \{}
+\DoxyCodeLine{203     \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData}{CollisionMarginData}} \mbox{\hyperlink{collision__margin__data__unit_8cpp_a0992235f6cab11fba6116193c7f42b8b}{data}} = checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_abd2686026229a788a0e6836d20ea7008}{getCollisionMarginData}}();}
+\DoxyCodeLine{204     \mbox{\hyperlink{collision__margin__data__unit_8cpp_a0992235f6cab11fba6116193c7f42b8b}{data}}.setPairCollisionMargin(\textcolor{stringliteral}{"{}not\_box\_link"{}}, \textcolor{stringliteral}{"{}also\_not\_box\_link"{}}, 1.7);}
+\DoxyCodeLine{205     checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_acbd053442a4d591c29aab5be5706ef04}{setCollisionMarginData}}(\mbox{\hyperlink{collision__margin__data__unit_8cpp_a0992235f6cab11fba6116193c7f42b8b}{data}});}
+\DoxyCodeLine{206 }
+\DoxyCodeLine{207     \mbox{\hyperlink{collision__core__unit_8cpp_a6759a6545be66625356c6f193741efb0}{EXPECT\_EQ}}(checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_abd2686026229a788a0e6836d20ea7008}{getCollisionMarginData}}().\mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_a8b73bd2450f2c9215e67bba3c048fe4b}{getMaxCollisionMargin}}(), 1.7);}
+\DoxyCodeLine{208     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_abd2686026229a788a0e6836d20ea7008}{getCollisionMarginData}}().\mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_ac94cf7cce62f76b96a8d9aaab324d981}{getPairCollisionMargin}}(\textcolor{stringliteral}{"{}box\_link"{}}, \textcolor{stringliteral}{"{}second\_box\_link"{}}), 0.1, 1e-\/5);}
+\DoxyCodeLine{209     location[\textcolor{stringliteral}{"{}box\_link"{}}].translation() = Eigen::Vector3d(1.60, 0, 0);}
+\DoxyCodeLine{210     result = \mbox{\hyperlink{namespacetesseract__collision_a1eeace4cc41027dbde8e7dbeb77ca7cf}{ContactResultMap}}();}
+\DoxyCodeLine{211     result.clear();}
+\DoxyCodeLine{212     result\_vector.clear();}
+\DoxyCodeLine{213 }
+\DoxyCodeLine{214     \textcolor{comment}{// Use different method for setting transforms}}
+\DoxyCodeLine{215     std::vector<std::string> names = \{ \textcolor{stringliteral}{"{}box\_link"{}} \};}
+\DoxyCodeLine{216     \mbox{\hyperlink{namespacetesseract__common_a94d9921fc7ed323609ac57d06f939cb6}{tesseract\_common::VectorIsometry3d}} transforms = \{ location[\textcolor{stringliteral}{"{}box\_link"{}}] \};}
+\DoxyCodeLine{217     checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a21d038a9836cdb5a3b44ad527fd93a5b}{setCollisionObjectsTransform}}(names, transforms);}
+\DoxyCodeLine{218     checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a1ddfa181400941e093c76a852df72425}{contactTest}}(result, test\_type);}
+\DoxyCodeLine{219     \mbox{\hyperlink{namespacetesseract__collision_a1e54919ee87e54445b7926d0b2880882}{flattenMoveResults}}(std::move(result), result\_vector);}
+\DoxyCodeLine{220 }
+\DoxyCodeLine{221     \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(result\_vector.empty());}
+\DoxyCodeLine{222   \}}
+\DoxyCodeLine{224   \textcolor{comment}{// Test object inside the contact distance only for this link pair}}
+\DoxyCodeLine{226 \textcolor{comment}{}  \{}
+\DoxyCodeLine{227     result = \mbox{\hyperlink{namespacetesseract__collision_a1eeace4cc41027dbde8e7dbeb77ca7cf}{ContactResultMap}}();}
+\DoxyCodeLine{228     result.clear();}
+\DoxyCodeLine{229     result\_vector.clear();}
+\DoxyCodeLine{230 }
+\DoxyCodeLine{231     \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData}{CollisionMarginData}} \mbox{\hyperlink{collision__margin__data__unit_8cpp_a0992235f6cab11fba6116193c7f42b8b}{data}}(0.1);}
+\DoxyCodeLine{232     \mbox{\hyperlink{collision__margin__data__unit_8cpp_a0992235f6cab11fba6116193c7f42b8b}{data}}.setPairCollisionMargin(\textcolor{stringliteral}{"{}box\_link"{}}, \textcolor{stringliteral}{"{}second\_box\_link"{}}, 0.25);}
+\DoxyCodeLine{233 }
+\DoxyCodeLine{234     checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_acbd053442a4d591c29aab5be5706ef04}{setCollisionMarginData}}(\mbox{\hyperlink{collision__margin__data__unit_8cpp_a0992235f6cab11fba6116193c7f42b8b}{data}});}
+\DoxyCodeLine{235     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_abd2686026229a788a0e6836d20ea7008}{getCollisionMarginData}}().\mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_ac94cf7cce62f76b96a8d9aaab324d981}{getPairCollisionMargin}}(\textcolor{stringliteral}{"{}box\_link"{}}, \textcolor{stringliteral}{"{}second\_box\_link"{}}), 0.25, 1e-\/5);}
+\DoxyCodeLine{236     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_abd2686026229a788a0e6836d20ea7008}{getCollisionMarginData}}().\mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_a8b73bd2450f2c9215e67bba3c048fe4b}{getMaxCollisionMargin}}(), 0.25, 1e-\/5);}
+\DoxyCodeLine{237     checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a1ddfa181400941e093c76a852df72425}{contactTest}}(result, \mbox{\hyperlink{structtesseract__collision_1_1ContactRequest}{ContactRequest}}(test\_type));}
+\DoxyCodeLine{238     \mbox{\hyperlink{namespacetesseract__collision_a0249bb2994ca5e8258ea55309467ae4a}{flattenCopyResults}}(result, result\_vector);}
+\DoxyCodeLine{239 }
+\DoxyCodeLine{240     \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(!result\_vector.empty());}
+\DoxyCodeLine{241     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_a1ceb8bb3849a05a320b82729fd3681bb}{distance}}, 0.1, 0.001);}
+\DoxyCodeLine{242     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[0][1], result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[1][1], 0.001);}
+\DoxyCodeLine{243     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[0][2], result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[1][2], 0.001);}
+\DoxyCodeLine{244 }
+\DoxyCodeLine{245     idx = \{ 0, 1, 1 \};}
+\DoxyCodeLine{246     \textcolor{keywordflow}{if} (result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_a464caf777ea79db067179ebe2bd7ecc7}{link\_names}}[0] != \textcolor{stringliteral}{"{}box\_link"{}})}
+\DoxyCodeLine{247       idx = \{ 1, 0, -\/1 \};}
+\DoxyCodeLine{248 }
+\DoxyCodeLine{249     \textcolor{keywordflow}{if} (result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_aef0b0de8aead4d0c192bfbc1665bdca1}{single\_contact\_point}})}
+\DoxyCodeLine{250     \{}
+\DoxyCodeLine{251       \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[0][0], result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[1][0], 0.001);}
+\DoxyCodeLine{252       \mbox{\hyperlink{collision__core__unit_8cpp_aa784f8de129e0ce90854ab7b6a043468}{EXPECT\_FALSE}}(std::abs(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[0][0] -\/ (1.1)) > 0.001 \&\&}
+\DoxyCodeLine{253                    std::abs(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[0][0] -\/ (1.0)) > 0.001);}
+\DoxyCodeLine{254     \}}
+\DoxyCodeLine{255     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{256     \{}
+\DoxyCodeLine{257       \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(idx[0])][0], 1.1, 0.001);}
+\DoxyCodeLine{258       \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(idx[1])][0], 1.0, 0.001);}
+\DoxyCodeLine{259     \}}
+\DoxyCodeLine{260 }
+\DoxyCodeLine{261     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_a7589b8c9c1397d28b5974168ee72f0a8}{normal}}[0], idx[2] * -\/1.0, 0.001);}
+\DoxyCodeLine{262     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_a7589b8c9c1397d28b5974168ee72f0a8}{normal}}[1], idx[2] * 0.0, 0.001);}
+\DoxyCodeLine{263     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_a7589b8c9c1397d28b5974168ee72f0a8}{normal}}[2], idx[2] * 0.0, 0.001);}
+\DoxyCodeLine{264   \}}
+\DoxyCodeLine{266   \textcolor{comment}{// Test object inside the contact distance}}
+\DoxyCodeLine{268 \textcolor{comment}{}  \{}
+\DoxyCodeLine{269     result = \mbox{\hyperlink{namespacetesseract__collision_a1eeace4cc41027dbde8e7dbeb77ca7cf}{ContactResultMap}}();}
+\DoxyCodeLine{270     result.clear();}
+\DoxyCodeLine{271     result\_vector.clear();}
+\DoxyCodeLine{272 }
+\DoxyCodeLine{273     checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_acbd053442a4d591c29aab5be5706ef04}{setCollisionMarginData}}(\mbox{\hyperlink{namespacetesseract__collision_a0717a3c53d08d510257f631ea96cb560}{CollisionMarginData}}(0.25));}
+\DoxyCodeLine{274     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_abd2686026229a788a0e6836d20ea7008}{getCollisionMarginData}}().\mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_a8b73bd2450f2c9215e67bba3c048fe4b}{getMaxCollisionMargin}}(), 0.25, 1e-\/5);}
+\DoxyCodeLine{275     checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a1ddfa181400941e093c76a852df72425}{contactTest}}(result, \mbox{\hyperlink{structtesseract__collision_1_1ContactRequest}{ContactRequest}}(test\_type));}
+\DoxyCodeLine{276     \mbox{\hyperlink{namespacetesseract__collision_a1e54919ee87e54445b7926d0b2880882}{flattenMoveResults}}(std::move(result), result\_vector);}
+\DoxyCodeLine{277 }
+\DoxyCodeLine{278     \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(!result\_vector.empty());}
+\DoxyCodeLine{279     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_a1ceb8bb3849a05a320b82729fd3681bb}{distance}}, 0.1, 0.001);}
+\DoxyCodeLine{280     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[0][1], result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[1][1], 0.001);}
+\DoxyCodeLine{281     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[0][2], result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[1][2], 0.001);}
+\DoxyCodeLine{282 }
+\DoxyCodeLine{283     idx = \{ 0, 1, 1 \};}
+\DoxyCodeLine{284     \textcolor{keywordflow}{if} (result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_a464caf777ea79db067179ebe2bd7ecc7}{link\_names}}[0] != \textcolor{stringliteral}{"{}box\_link"{}})}
+\DoxyCodeLine{285       idx = \{ 1, 0, -\/1 \};}
+\DoxyCodeLine{286 }
+\DoxyCodeLine{287     \textcolor{keywordflow}{if} (result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_aef0b0de8aead4d0c192bfbc1665bdca1}{single\_contact\_point}})}
+\DoxyCodeLine{288     \{}
+\DoxyCodeLine{289       \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[0][0], result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[1][0], 0.001);}
+\DoxyCodeLine{290       \mbox{\hyperlink{collision__core__unit_8cpp_aa784f8de129e0ce90854ab7b6a043468}{EXPECT\_FALSE}}(std::abs(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[0][0] -\/ (1.1)) > 0.001 \&\&}
+\DoxyCodeLine{291                    std::abs(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[0][0] -\/ (1.0)) > 0.001);}
+\DoxyCodeLine{292     \}}
+\DoxyCodeLine{293     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{294     \{}
+\DoxyCodeLine{295       \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(idx[0])][0], 1.1, 0.001);}
+\DoxyCodeLine{296       \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(idx[1])][0], 1.0, 0.001);}
+\DoxyCodeLine{297     \}}
+\DoxyCodeLine{298 }
+\DoxyCodeLine{299     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_a7589b8c9c1397d28b5974168ee72f0a8}{normal}}[0], idx[2] * -\/1.0, 0.001);}
+\DoxyCodeLine{300     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_a7589b8c9c1397d28b5974168ee72f0a8}{normal}}[1], idx[2] * 0.0, 0.001);}
+\DoxyCodeLine{301     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_a7589b8c9c1397d28b5974168ee72f0a8}{normal}}[2], idx[2] * 0.0, 0.001);}
+\DoxyCodeLine{302   \}}
+\DoxyCodeLine{303 \}}
+\DoxyCodeLine{304 \}  \textcolor{comment}{// namespace detail}}
+\DoxyCodeLine{305 }
+\DoxyCodeLine{306 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1test__suite_a64721a2ef6abc909e9a762274303107b}{runTest}}(\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager}{DiscreteContactManager}}\& checker, \textcolor{keywordtype}{bool} use\_convex\_mesh = \textcolor{keyword}{false})}
+\DoxyCodeLine{307 \{}
+\DoxyCodeLine{308   \textcolor{comment}{// Add collision objects}}
+\DoxyCodeLine{309   \mbox{\hyperlink{namespacetesseract__collision_1_1test__suite_1_1detail_a3fb030da7784f5e059d57666cb288f3d}{detail::addCollisionObjects}}(checker, use\_convex\_mesh);}
+\DoxyCodeLine{310 }
+\DoxyCodeLine{311   \textcolor{comment}{// Call it again to test adding same object}}
+\DoxyCodeLine{312   \mbox{\hyperlink{namespacetesseract__collision_1_1test__suite_1_1detail_a3fb030da7784f5e059d57666cb288f3d}{detail::addCollisionObjects}}(checker, use\_convex\_mesh);}
+\DoxyCodeLine{313 }
+\DoxyCodeLine{314   \mbox{\hyperlink{namespacetesseract__collision_1_1test__suite_1_1detail_a0a7ad50afb38adcc7d419ceb194393e4}{detail::runTestTyped}}(checker, \mbox{\hyperlink{namespacetesseract__collision_ac3da4f46ae16e86ba4f1dfd2935eb80ca2c2624a5059934a947d6e25fe8332ade}{ContactTestType::FIRST}});}
+\DoxyCodeLine{315   \mbox{\hyperlink{namespacetesseract__collision_1_1test__suite_1_1detail_a0a7ad50afb38adcc7d419ceb194393e4}{detail::runTestTyped}}(checker, \mbox{\hyperlink{namespacetesseract__collision_ac3da4f46ae16e86ba4f1dfd2935eb80cae9c32f09a44ae1ae34e42d53502fab77}{ContactTestType::CLOSEST}});}
+\DoxyCodeLine{316   \mbox{\hyperlink{namespacetesseract__collision_1_1test__suite_1_1detail_a0a7ad50afb38adcc7d419ceb194393e4}{detail::runTestTyped}}(checker, \mbox{\hyperlink{namespacetesseract__collision_ac3da4f46ae16e86ba4f1dfd2935eb80ca5fb1f955b45e38e31789286a1790398d}{ContactTestType::ALL}});}
+\DoxyCodeLine{317 \}}
+\DoxyCodeLine{318 }
+\DoxyCodeLine{319 \}  \textcolor{comment}{// namespace tesseract\_collision::test\_suite}}
+\DoxyCodeLine{320 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// COLLISION\_BOX\_BOX\_UNIT\_HPP}}
+
+\end{DoxyCode}

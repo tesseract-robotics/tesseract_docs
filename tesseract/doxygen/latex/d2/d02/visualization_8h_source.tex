@@ -1,0 +1,67 @@
+\hypertarget{visualization_8h_source}{}\doxysection{visualization.\+h}
+\label{visualization_8h_source}\index{tesseract\_visualization/include/tesseract\_visualization/visualization.h@{tesseract\_visualization/include/tesseract\_visualization/visualization.h}}
+\mbox{\hyperlink{visualization_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#ifndef TESSERACT\_VISUALIZATION\_VISUALIZATION\_H}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define TESSERACT\_VISUALIZATION\_VISUALIZATION\_H}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{macros_8h}{tesseract\_common/macros.h}}>}}
+\DoxyCodeLine{30 \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include <Eigen/Core>}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include <Eigen/Geometry>}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include <any>}}
+\DoxyCodeLine{34 \mbox{\hyperlink{namespaceTESSERACT__COMMON__IGNORE__WARNINGS__POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{joint__state_8h}{tesseract\_common/joint\_state.h}}>}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{tesseract__collision_2core_2include_2tesseract__collision_2core_2types_8h}{tesseract\_collision/core/types.h}}>}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{graph_8h}{tesseract\_scene\_graph/graph.h}}>}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{environment_8h}{tesseract\_environment/environment.h}}>}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{marker_8h}{tesseract\_visualization/markers/marker.h}}>}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{comment}{// clang-\/format off}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#define TESSERACT\_ADD\_VISUALIZATION\_PLUGIN(DERIVED\_CLASS, ALIAS)                                                       \(\backslash\)}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{  TESSERACT\_ADD\_PLUGIN\_SECTIONED(DERIVED\_CLASS, ALIAS, Plotter)}}
+\DoxyCodeLine{45 \textcolor{comment}{// clang-\/format on}}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__visualization}{tesseract\_visualization}}}
+\DoxyCodeLine{48 \{}
+\DoxyCodeLine{50 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__visualization_1_1Visualization}{Visualization}}}
+\DoxyCodeLine{51 \{}
+\DoxyCodeLine{52 \textcolor{keyword}{public}:}
+\DoxyCodeLine{53   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__visualization_1_1Visualization_a61e87b2a04c6f22161fa0be9f808e077}{Ptr}} = std::shared\_ptr<Visualization>;}
+\DoxyCodeLine{54   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__visualization_1_1Visualization_a705b7c982396fb56d69b34f2dec106f7}{ConstPtr}} = std::shared\_ptr<const Visualization>;}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56   \mbox{\hyperlink{classtesseract__visualization_1_1Visualization_acd6c18a411ccdbee717fe0a9b2f37fa8}{Visualization}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{57   \textcolor{keyword}{virtual} \mbox{\hyperlink{classtesseract__visualization_1_1Visualization_af803aa96352fba0aa55ed6fa152a66a5}{\string~Visualization}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{58   \mbox{\hyperlink{classtesseract__visualization_1_1Visualization_afcccbd73dea09e75b7d59f0057da0259}{Visualization}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__visualization_1_1Visualization}{Visualization}}\&) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{59   \mbox{\hyperlink{classtesseract__visualization_1_1Visualization}{Visualization}}\& \mbox{\hyperlink{classtesseract__visualization_1_1Visualization_a1740d0a06477811e2f29d81a3776089c}{operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__visualization_1_1Visualization}{Visualization}}\&) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{60   \mbox{\hyperlink{classtesseract__visualization_1_1Visualization_a530fd713f952c4df287433ebff6e4b34}{Visualization}}(\mbox{\hyperlink{classtesseract__visualization_1_1Visualization}{Visualization}}\&\&) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{61   \mbox{\hyperlink{classtesseract__visualization_1_1Visualization}{Visualization}}\& \mbox{\hyperlink{classtesseract__visualization_1_1Visualization_ae6c2929f9f90c33b8b11c6962ad53292}{operator=}}(\mbox{\hyperlink{classtesseract__visualization_1_1Visualization}{Visualization}}\&\&) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{67   \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__visualization_1_1Visualization_ab87b08f586264357bf246f532a719d53}{isConnected}}() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{73   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__visualization_1_1Visualization_af5bc0d37ffe8ced55c50f7717414d2c6}{waitForConnection}}(\textcolor{keywordtype}{long} seconds = 0) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{79   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__visualization_1_1Visualization_abacd700ccba888aad3ff65dce4a9a9bf}{plotEnvironment}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__environment_1_1Environment}{tesseract\_environment::Environment}}\& \mbox{\hyperlink{tesseract__environment__cache__unit_8cpp_ad0ad93681569be4051e16dec148973e3}{env}}, std::string ns = \textcolor{stringliteral}{"{}"{}}) = 0;}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{85   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__visualization_1_1Visualization_afcba911c96ab43ff33a733dea96d359e}{plotEnvironmentState}}(\textcolor{keyword}{const} \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{tesseract\_scene\_graph::SceneState}}\& state, std::string ns = \textcolor{stringliteral}{"{}"{}}) = 0;}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{92   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__visualization_1_1Visualization_a0849835bb5b8351edf45dd2e3416af15}{plotTrajectory}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__common_1_1JointTrajectory}{tesseract\_common::JointTrajectory}}\& traj,}
+\DoxyCodeLine{93                               \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver}{tesseract\_scene\_graph::StateSolver}}\& state\_solver,}
+\DoxyCodeLine{94                               std::string ns = \textcolor{stringliteral}{"{}"{}}) = 0;}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{101   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__visualization_1_1Visualization_a7d448bef780df504e2b3538d0ecea1c6}{plotMarker}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__visualization_1_1Marker}{Marker}}\& marker, std::string ns = \textcolor{stringliteral}{"{}"{}}) = 0;}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{108   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__visualization_1_1Visualization_aa75e832a291c661973bd01310a08fb92}{plotMarkers}}(\textcolor{keyword}{const} std::vector<Marker::Ptr>\& markers, std::string ns = \textcolor{stringliteral}{"{}"{}}) = 0;}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{114   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__visualization_1_1Visualization_a78acc6273025d7a847c28045d80b064b}{clear}}(std::string ns = \textcolor{stringliteral}{"{}"{}}) = 0;}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{117   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__visualization_1_1Visualization_ac56d4388184de9cf6c668c142349569c}{waitForInput}}(std::string message = \textcolor{stringliteral}{"{}Hit enter key to continue!"{}}) = 0;}
+\DoxyCodeLine{118 \};}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120 \}  \textcolor{comment}{// namespace tesseract\_visualization}}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_VISUALIZATION\_VISUALIZATION\_H}}
+
+\end{DoxyCode}

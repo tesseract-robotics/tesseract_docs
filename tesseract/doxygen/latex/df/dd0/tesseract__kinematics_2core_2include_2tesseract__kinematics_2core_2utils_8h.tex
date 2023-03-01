@@ -1,0 +1,90 @@
+\hypertarget{tesseract__kinematics_2core_2include_2tesseract__kinematics_2core_2utils_8h}{}\doxysection{tesseract\+\_\+kinematics/core/include/tesseract\+\_\+kinematics/core/utils.h File Reference}
+\label{tesseract__kinematics_2core_2include_2tesseract__kinematics_2core_2utils_8h}\index{tesseract\_kinematics/core/include/tesseract\_kinematics/core/utils.h@{tesseract\_kinematics/core/include/tesseract\_kinematics/core/utils.h}}
+
+
+Kinematics utility functions.  
+
+
+{\ttfamily \#include $<$tesseract\+\_\+common/macros.\+h$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Geometry$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Eigenvalues$>$}\newline
+{\ttfamily \#include $<$console\+\_\+bridge/console.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+scene\+\_\+graph/graph.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+kinematics/core/forward\+\_\+kinematics.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+kinematics/core/kinematic\+\_\+group.\+h$>$}\newline
+Include dependency graph for utils.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structtesseract__kinematics_1_1ManipulabilityEllipsoid}{tesseract\+\_\+kinematics\+::\+Manipulability\+Ellipsoid}}
+\begin{DoxyCompactList}\small\item\em Used to store \mbox{\hyperlink{structtesseract__kinematics_1_1Manipulability}{Manipulability}} and Force Ellipsoid data. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structtesseract__kinematics_1_1Manipulability}{tesseract\+\_\+kinematics\+::\+Manipulability}}
+\begin{DoxyCompactList}\small\item\em Contains both manipulability ellipsoid and force ellipsoid data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacetesseract__kinematics}{tesseract\+\_\+kinematics}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Float\+Type $>$ }\\using \mbox{\hyperlink{namespacetesseract__kinematics_a59d7ac70f855c7d00848b703e6bcfe9a}{tesseract\+\_\+kinematics\+::\+VectorX}} = Eigen\+::\+Matrix$<$ Float\+Type, Eigen\+::\+Dynamic, 1 $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{namespacetesseract__kinematics_a43f562948ca86e1cd531b12a92191334}{tesseract\+\_\+kinematics\+::numerical\+Jacobian}} (Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$ \mbox{\hyperlink{kinematics__core__unit_8cpp_afd43241933d01af91643a779b829d7a7}{jacobian}}, const Eigen\+::\+Isometry3d \&change\+\_\+base, const \mbox{\hyperlink{classtesseract__kinematics_1_1ForwardKinematics}{tesseract\+\_\+kinematics\+::\+Forward\+Kinematics}} \&\mbox{\hyperlink{kinematics__factory__unit_8cpp_a898342b32b9a46004fe36efea9777fc6}{kin}}, const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xd $>$ \&joint\+\_\+values, const std\+::string \&link\+\_\+name, const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector3d $>$ \&link\+\_\+point)
+\begin{DoxyCompactList}\small\item\em Numerically calculate a jacobian. This is mainly used for testing. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{namespacetesseract__kinematics_ac70148823771fb1f69006393bc1629e3}{tesseract\+\_\+kinematics\+::numerical\+Jacobian}} (Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$ \mbox{\hyperlink{kinematics__core__unit_8cpp_afd43241933d01af91643a779b829d7a7}{jacobian}}, const Joint\+Group \&\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a31d9151d1cb842cded108072204f4194}{joint\+\_\+group}}, const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xd $>$ \&joint\+\_\+values, const std\+::string \&link\+\_\+name, const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector3d $>$ \&link\+\_\+point)
+\begin{DoxyCompactList}\small\item\em Numerically calculate a jacobian. This is mainly used for testing. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{namespacetesseract__kinematics_a7c0f58b6ad5f6ccb2f3887684f3760f0}{tesseract\+\_\+kinematics\+::solve\+PInv}} (const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xd $>$ \&A, const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xd $>$ \&b, Eigen\+::\+Ref$<$ Eigen\+::\+Vector\+Xd $>$ x)
+\begin{DoxyCompactList}\small\item\em Solve equation Ax=b for x Use this SVD to compute A+ (pseudoinverse of A). Weighting still TBD. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{namespacetesseract__kinematics_a1645b1b27fd8279b5f0289dfd1f662c7}{tesseract\+\_\+kinematics\+::damped\+PInv}} (const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xd $>$ \&A, Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$ P, const double eps=0.\+011, const double lambda=0.\+01)
+\begin{DoxyCompactList}\small\item\em Calculate Damped Pseudoinverse Use this SVD to compute A+ (pseudoinverse of A). Weighting still TBD. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacetesseract__kinematics_ae2bebd951f959b4c39b06dc7b38c8159}{tesseract\+\_\+kinematics\+::is\+Near\+Singularity}} (const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xd $>$ \&\mbox{\hyperlink{kinematics__core__unit_8cpp_afd43241933d01af91643a779b829d7a7}{jacobian}}, double threshold=0.\+01)
+\begin{DoxyCompactList}\small\item\em Check if the provided jacobian is near a singularity. \end{DoxyCompactList}\item 
+Manipulability \mbox{\hyperlink{namespacetesseract__kinematics_ad071f516596c9a983b661f60e4511ac3}{tesseract\+\_\+kinematics\+::calc\+Manipulability}} (const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xd $>$ \&\mbox{\hyperlink{kinematics__core__unit_8cpp_afd43241933d01af91643a779b829d7a7}{jacobian}})
+\begin{DoxyCompactList}\small\item\em Calculate manipulability data about the provided jacobian. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Float\+Type $>$ }\\void \mbox{\hyperlink{namespacetesseract__kinematics_a116ec2446a1d878c4be27231149a9896}{tesseract\+\_\+kinematics\+::get\+Redundant\+Solutions\+Helper}} (std\+::vector$<$ VectorX$<$ Float\+Type $>$ $>$ \&redundant\+\_\+sols, const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xd $>$ \&sol, const Eigen\+::\+Matrix\+X2d \&\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{limits}}, std\+::vector$<$ Eigen\+::\+Index $>$\+::const\+\_\+iterator current\+\_\+index, std\+::vector$<$ Eigen\+::\+Index $>$\+::const\+\_\+iterator end\+\_\+index)
+\begin{DoxyCompactList}\small\item\em This a recursive function for calculating all permutations of the redundant solutions. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Float\+Type $>$ }\\std\+::vector$<$ VectorX$<$ Float\+Type $>$ $>$ \mbox{\hyperlink{namespacetesseract__kinematics_a325b511b4f36172c8814db524742aed9}{tesseract\+\_\+kinematics\+::get\+Redundant\+Solutions}} (const Eigen\+::\+Ref$<$ const VectorX$<$ Float\+Type $>$ $>$ \&sol, const Eigen\+::\+Matrix\+X2d \&\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{limits}}, const std\+::vector$<$ Eigen\+::\+Index $>$ \&redundancy\+\_\+capable\+\_\+joints)
+\begin{DoxyCompactList}\small\item\em Kinematics only return solution between PI and -\/PI. Provided the limits it will append redundant solutions. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Float\+Type $>$ }\\bool \mbox{\hyperlink{namespacetesseract__kinematics_a2f74af65eeb166856e00a64254da7ee8}{tesseract\+\_\+kinematics\+::is\+Valid}} (const std\+::array$<$ Float\+Type, 6 $>$ \&qs)
+\begin{DoxyCompactList}\small\item\em Given a vector of floats, this check if they are finite. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Float\+Type $>$ }\\void \mbox{\hyperlink{namespacetesseract__kinematics_a51971caada7d5330a60765fd1a83cda1}{tesseract\+\_\+kinematics\+::harmonize\+Toward\+Zero}} (Eigen\+::\+Ref$<$ VectorX$<$ Float\+Type $>$ $>$ qs, const std\+::vector$<$ Eigen\+::\+Index $>$ \&redundancy\+\_\+capable\+\_\+joints)
+\begin{DoxyCompactList}\small\item\em This take an array of floats and modifies them in place to be between \mbox{[}-\/PI, PI\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Kinematics utility functions. 
+
+\begin{DoxyAuthor}{Author}
+Levi Armstrong 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+April 15, 2018 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+TODO 
+\end{DoxyVersion}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000174}{Bug}}]No known bugs\end{DoxyRefDesc}
+
+
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2013, Southwest Research Institute
+\end{DoxyCopyright}
+\begin{DoxyParagraph}{License}
+Software License Agreement (Apache License) 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+Licensed under the Apache License, Version 2.\+0 (the \char`\"{}\+License\char`\"{}); you may not use this file except in compliance with the License. You may obtain a copy of the License at \href{http://www.apache.org/licenses/LICENSE-2.0}{\texttt{ http\+://www.\+apache.\+org/licenses/\+LICENSE-\/2.\+0}} 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \char`\"{}\+AS IS\char`\"{} BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License. 
+\end{DoxyParagraph}

@@ -1,0 +1,64 @@
+\hypertarget{tesseract__convex__convex__algorithm_8cpp}{}\doxysection{tesseract\+\_\+collision/bullet/src/tesseract\+\_\+convex\+\_\+convex\+\_\+algorithm.cpp File Reference}
+\label{tesseract__convex__convex__algorithm_8cpp}\index{tesseract\_collision/bullet/src/tesseract\_convex\_convex\_algorithm.cpp@{tesseract\_collision/bullet/src/tesseract\_convex\_convex\_algorithm.cpp}}
+{\ttfamily \#include $<$tesseract\+\_\+collision/bullet/tesseract\+\_\+convex\+\_\+convex\+\_\+algorithm.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+collision/bullet/tesseract\+\_\+gjk\+\_\+pair\+\_\+detector.\+h$>$}\newline
+{\ttfamily \#include $<$Bullet\+Collision/\+Narrow\+Phase\+Collision/bt\+Discrete\+Collision\+Detector\+Interface.\+h$>$}\newline
+{\ttfamily \#include $<$Bullet\+Collision/\+Broadphase\+Collision/bt\+Broadphase\+Interface.\+h$>$}\newline
+{\ttfamily \#include $<$Bullet\+Collision/\+Collision\+Dispatch/bt\+Collision\+Object.\+h$>$}\newline
+{\ttfamily \#include $<$Bullet\+Collision/\+Collision\+Shapes/bt\+Convex\+Shape.\+h$>$}\newline
+{\ttfamily \#include $<$Bullet\+Collision/\+Collision\+Shapes/bt\+Capsule\+Shape.\+h$>$}\newline
+{\ttfamily \#include $<$Bullet\+Collision/\+Collision\+Shapes/bt\+Triangle\+Shape.\+h$>$}\newline
+{\ttfamily \#include $<$Bullet\+Collision/\+Collision\+Shapes/bt\+Convex\+Polyhedron.\+h$>$}\newline
+{\ttfamily \#include $<$Bullet\+Collision/\+Broadphase\+Collision/bt\+Broadphase\+Proxy.\+h$>$}\newline
+{\ttfamily \#include $<$Bullet\+Collision/\+Collision\+Dispatch/bt\+Collision\+Dispatcher.\+h$>$}\newline
+{\ttfamily \#include $<$Bullet\+Collision/\+Collision\+Shapes/bt\+Box\+Shape.\+h$>$}\newline
+{\ttfamily \#include $<$Bullet\+Collision/\+Collision\+Dispatch/bt\+Manifold\+Result.\+h$>$}\newline
+{\ttfamily \#include $<$Bullet\+Collision/\+Narrow\+Phase\+Collision/bt\+Convex\+Penetration\+Depth\+Solver.\+h$>$}\newline
+{\ttfamily \#include $<$Bullet\+Collision/\+Narrow\+Phase\+Collision/bt\+Continuous\+Convex\+Collision.\+h$>$}\newline
+{\ttfamily \#include $<$Bullet\+Collision/\+Narrow\+Phase\+Collision/bt\+Sub\+Simplex\+Convex\+Cast.\+h$>$}\newline
+{\ttfamily \#include $<$Bullet\+Collision/\+Narrow\+Phase\+Collision/bt\+Gjk\+Convex\+Cast.\+h$>$}\newline
+{\ttfamily \#include $<$Bullet\+Collision/\+Narrow\+Phase\+Collision/bt\+Voronoi\+Simplex\+Solver.\+h$>$}\newline
+{\ttfamily \#include $<$Bullet\+Collision/\+Collision\+Shapes/bt\+Sphere\+Shape.\+h$>$}\newline
+{\ttfamily \#include $<$Bullet\+Collision/\+Narrow\+Phase\+Collision/bt\+Minkowski\+Penetration\+Depth\+Solver.\+h$>$}\newline
+{\ttfamily \#include $<$Bullet\+Collision/\+Narrow\+Phase\+Collision/bt\+Gjk\+Epa2.\+h$>$}\newline
+{\ttfamily \#include $<$Bullet\+Collision/\+Narrow\+Phase\+Collision/bt\+Gjk\+Epa\+Penetration\+Depth\+Solver.\+h$>$}\newline
+{\ttfamily \#include $<$Bullet\+Collision/\+Narrow\+Phase\+Collision/bt\+Polyhedral\+Contact\+Clipping.\+h$>$}\newline
+{\ttfamily \#include $<$Bullet\+Collision/\+Collision\+Dispatch/bt\+Collision\+Object\+Wrapper.\+h$>$}\newline
+Include dependency graph for tesseract\+\_\+convex\+\_\+convex\+\_\+algorithm.\+cpp\+:
+% FIG 0
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1btPerturbedContactResult}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::bt\+Perturbed\+Contact\+Result}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacetesseract__collision}{tesseract\+\_\+collision}}
+\item 
+namespace \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static SIMD\+\_\+\+FORCE\+\_\+\+INLINE void \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_a6d90fbfc7fb2f714835a7773b1e1d0c7}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::segments\+Closest\+Points}} (bt\+Vector3 \&pts\+Vector, bt\+Vector3 \&offsetA, bt\+Vector3 \&offsetB, bt\+Scalar \&tA, bt\+Scalar \&tB, const bt\+Vector3 \&\mbox{\hyperlink{tesseract__environment__collision_8cpp_a444e5981b9daaa9413df8d049b9ad91c}{translation}}, const bt\+Vector3 \&dirA, bt\+Scalar hlenA, const bt\+Vector3 \&dirB, bt\+Scalar hlenB)
+\item 
+static SIMD\+\_\+\+FORCE\+\_\+\+INLINE bt\+Scalar \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_ae06578afcc7990e67b8b47261a3dc0e5}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::capsule\+Capsule\+Distance}} (bt\+Vector3 \&normal\+OnB, bt\+Vector3 \&point\+OnB, bt\+Scalar capsule\+LengthA, bt\+Scalar capsule\+RadiusA, bt\+Scalar capsule\+LengthB, bt\+Scalar capsule\+RadiusB, int capsule\+AxisA, int capsule\+AxisB, const bt\+Transform \&transformA, const bt\+Transform \&transformB, bt\+Scalar distance\+Threshold)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\+\_\+\+COMMON\+\_\+\+IGNORE\+\_\+\+WARNINGS\+\_\+\+PUSH}} \mbox{\hyperlink{macros_8h_a7af8561cf52519e9896b0697095c1b8b}{TESSERACT\+\_\+\+COMMON\+\_\+\+IGNORE\+\_\+\+WARNINGS\+\_\+\+POP}} bt\+Scalar \mbox{\hyperlink{tesseract__convex__convex__algorithm_8cpp_a7f6f17376ee27d51e39e1cb5436d2cad}{g\+Contact\+Breaking\+Threshold}}
+\item 
+static const bool \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_ab98cd88ba8479c4635bf36aefc7575f8}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::disable\+Ccd}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{tesseract__convex__convex__algorithm_8cpp_a7f6f17376ee27d51e39e1cb5436d2cad}\label{tesseract__convex__convex__algorithm_8cpp_a7f6f17376ee27d51e39e1cb5436d2cad}} 
+\index{tesseract\_convex\_convex\_algorithm.cpp@{tesseract\_convex\_convex\_algorithm.cpp}!gContactBreakingThreshold@{gContactBreakingThreshold}}
+\index{gContactBreakingThreshold@{gContactBreakingThreshold}!tesseract\_convex\_convex\_algorithm.cpp@{tesseract\_convex\_convex\_algorithm.cpp}}
+\doxysubsubsection{\texorpdfstring{gContactBreakingThreshold}{gContactBreakingThreshold}}
+{\footnotesize\ttfamily \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\+\_\+\+COMMON\+\_\+\+IGNORE\+\_\+\+WARNINGS\+\_\+\+PUSH}} \mbox{\hyperlink{macros_8h_a7af8561cf52519e9896b0697095c1b8b}{TESSERACT\+\_\+\+COMMON\+\_\+\+IGNORE\+\_\+\+WARNINGS\+\_\+\+POP}} bt\+Scalar g\+Contact\+Breaking\+Threshold\hspace{0.3cm}{\ttfamily [extern]}}
+
+Specialized capsule-\/capsule collision algorithm has been added for Bullet 2.\+75 release to increase ragdoll performance If you experience problems with capsule-\/capsule collision, try to define BT\+\_\+\+DISABLE\+\_\+\+CAPSULE\+\_\+\+CAPSULE\+\_\+\+COLLIDER and report it in the Bullet forums with reproduction case 

@@ -1,0 +1,336 @@
+\hypertarget{classtesseract__geometry_1_1Octree}{}\doxysection{tesseract\+\_\+geometry\+::Octree Class Reference}
+\label{classtesseract__geometry_1_1Octree}\index{tesseract\_geometry::Octree@{tesseract\_geometry::Octree}}
+
+
+{\ttfamily \#include $<$octree.\+h$>$}
+
+
+
+Inheritance diagram for tesseract\+\_\+geometry\+::Octree\+:
+% FIG 0
+
+
+Collaboration diagram for tesseract\+\_\+geometry\+::Octree\+:
+% FIG 1
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classtesseract__geometry_1_1Octree_a50b534fbd4a871cd257ac52d6009af00}{Sub\+Type}} \{ \mbox{\hyperlink{classtesseract__geometry_1_1Octree_a50b534fbd4a871cd257ac52d6009af00a35ed5bb4d02016adb5d4d839524348eb}{BOX}}
+, \mbox{\hyperlink{classtesseract__geometry_1_1Octree_a50b534fbd4a871cd257ac52d6009af00a779662c05992d34ec76271438b7def72}{SPHERE\+\_\+\+INSIDE}}
+, \mbox{\hyperlink{classtesseract__geometry_1_1Octree_a50b534fbd4a871cd257ac52d6009af00a474a03c0f9a733d18169249b3103e629}{SPHERE\+\_\+\+OUTSIDE}}
+ \}
+\item 
+using \mbox{\hyperlink{classtesseract__geometry_1_1Octree_a327bf1326aaf567a46e57a6c8739d577}{Ptr}} = std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classtesseract__geometry_1_1Octree}{Octree}} $>$
+\item 
+using \mbox{\hyperlink{classtesseract__geometry_1_1Octree_a0c3e8cdfa8826acdca6e727c3097a08c}{Const\+Ptr}} = std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{classtesseract__geometry_1_1Octree}{Octree}} $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtesseract__geometry_1_1Octree_ab3c357fdff2f3e06413fe9b8f7ae3f43}{Octree}} (std\+::shared\+\_\+ptr$<$ const octomap\+::\+Oc\+Tree $>$ \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a09b6910ca5fb38efe18604a65810e175}{octree}}, const \mbox{\hyperlink{classtesseract__geometry_1_1Octree_a50b534fbd4a871cd257ac52d6009af00}{Sub\+Type}} sub\+\_\+type)
+\item 
+{\footnotesize template$<$typename PointT $>$ }\\\mbox{\hyperlink{classtesseract__geometry_1_1Octree_ad52f7f770e2d193b03c19cfb5a4cd1c5}{Octree}} (const PointT \&point\+\_\+cloud, const double resolution, const \mbox{\hyperlink{classtesseract__geometry_1_1Octree_a50b534fbd4a871cd257ac52d6009af00}{Sub\+Type}} sub\+\_\+type, const bool \mbox{\hyperlink{classtesseract__geometry_1_1Octree_a6869e2482754d630b7c15b9b6c428fa9}{prune}}, const bool binary=true)
+\item 
+\mbox{\hyperlink{classtesseract__geometry_1_1Octree_a21da3ffff5b8fdcf12b292d4f5fb8893}{Octree}} ()=default
+\item 
+\mbox{\hyperlink{classtesseract__geometry_1_1Octree_ab5354ffdc5537961859e9b660b828d4e}{$\sim$\+Octree}} () override=default
+\item 
+const std\+::shared\+\_\+ptr$<$ const octomap\+::\+Oc\+Tree $>$ \& \mbox{\hyperlink{classtesseract__geometry_1_1Octree_ad732d54d1ab8846d3c7e71cc27cd3bd6}{get\+Octree}} () const
+\item 
+\mbox{\hyperlink{classtesseract__geometry_1_1Octree_a50b534fbd4a871cd257ac52d6009af00}{Sub\+Type}} \mbox{\hyperlink{classtesseract__geometry_1_1Octree_af32ea5602ecda329bfe44b24ba34c466}{get\+Sub\+Type}} () const
+\item 
+bool \mbox{\hyperlink{classtesseract__geometry_1_1Octree_a087069afe99c36b6923d7ef0e8e1e29f}{get\+Pruned}} () const
+\item 
+\mbox{\hyperlink{classtesseract__geometry_1_1Geometry_acd91c55fb9604ed374446c029b6f2d08}{Geometry\+::\+Ptr}} \mbox{\hyperlink{classtesseract__geometry_1_1Octree_a4414d599b9957d1751724f8aa2592ac1}{clone}} () const override final
+\begin{DoxyCompactList}\small\item\em Create a copy of this shape. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtesseract__geometry_1_1Octree_a4c444f55f5a7d75ed0381e935a3fe540}{operator==}} (const \mbox{\hyperlink{classtesseract__geometry_1_1Octree}{Octree}} \&rhs) const
+\item 
+bool \mbox{\hyperlink{classtesseract__geometry_1_1Octree_a2830205f4f1f7d5ad5422a1f7ac60cb1}{operator!=}} (const \mbox{\hyperlink{classtesseract__geometry_1_1Octree}{Octree}} \&rhs) const
+\item 
+void \mbox{\hyperlink{classtesseract__geometry_1_1Octree_a2ba384fe7fe9d489e61a84fda5872149}{update}} ()
+\begin{DoxyCompactList}\small\item\em Octrees are typically generated from 3D sensor data so this method should be used to efficiently update the collision shape. \end{DoxyCompactList}\item 
+long \mbox{\hyperlink{classtesseract__geometry_1_1Octree_ae854ec8aa19fa88ca10cd1376895151e}{calc\+Num\+Sub\+Shapes}} () const
+\begin{DoxyCompactList}\small\item\em Calculate the number of sub shapes that would get generated for this octree. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classtesseract__geometry_1_1Octree_a6869e2482754d630b7c15b9b6c428fa9}{prune}} (octomap\+::\+Oc\+Tree \&\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a09b6910ca5fb38efe18604a65810e175}{octree}})
+\begin{DoxyCompactList}\small\item\em A custom octree prune which will prune if all children are above the occupancy threshold. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class Archive $>$ }\\void \mbox{\hyperlink{classtesseract__geometry_1_1Octree_adbd6484be8e447fd8bd79746603bcae4}{save}} (Archive \&ar, const unsigned int version) const
+\item 
+{\footnotesize template$<$class Archive $>$ }\\void \mbox{\hyperlink{classtesseract__geometry_1_1Octree_a7c86b49ae7e5a6d80497f49b472eb355}{load}} (Archive \&ar, const unsigned int version)
+\item 
+{\footnotesize template$<$class Archive $>$ }\\void \mbox{\hyperlink{classtesseract__geometry_1_1Octree_ad46631b85c0924c9ffb2909933fcaa1f}{serialize}} (Archive \&ar, const unsigned int version)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classtesseract__geometry_1_1Octree_a39aca28bf2e00aa658ee2eb020ed8b66}{is\+Node\+Collapsible}} (octomap\+::\+Oc\+Tree \&\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a09b6910ca5fb38efe18604a65810e175}{octree}}, octomap\+::\+Oc\+Tree\+Node $\ast$node)
+\item 
+static bool \mbox{\hyperlink{classtesseract__geometry_1_1Octree_ae9d3f0673522f423474ca3cfa9f1aabe}{prune\+Node}} (octomap\+::\+Oc\+Tree \&\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a09b6910ca5fb38efe18604a65810e175}{octree}}, octomap\+::\+Oc\+Tree\+Node $\ast$node)
+\item 
+static void \mbox{\hyperlink{classtesseract__geometry_1_1Octree_a87de9242d4b911819da17bc2d6f1034a}{prune\+Recurs}} (octomap\+::\+Oc\+Tree \&\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a09b6910ca5fb38efe18604a65810e175}{octree}}, octomap\+::\+Oc\+Tree\+Node $\ast$node, unsigned int depth, unsigned int max\+\_\+depth, unsigned int \&num\+\_\+pruned)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ const octomap\+::\+Oc\+Tree $>$ \mbox{\hyperlink{classtesseract__geometry_1_1Octree_aca7587afddb38c0b5052e1ed8eaf88f4}{octree\+\_\+}}
+\item 
+\mbox{\hyperlink{classtesseract__geometry_1_1Octree_a50b534fbd4a871cd257ac52d6009af00}{Sub\+Type}} \mbox{\hyperlink{classtesseract__geometry_1_1Octree_a90a701b0f4f93fe9f80b01001f9a5166}{sub\+\_\+type\+\_\+}} \{ \mbox{\hyperlink{classtesseract__geometry_1_1Octree_a50b534fbd4a871cd257ac52d6009af00a35ed5bb4d02016adb5d4d839524348eb}{Sub\+Type\+::\+BOX}} \}
+\item 
+double \mbox{\hyperlink{classtesseract__geometry_1_1Octree_a0acd459ccc25a221769dfe3ed7f0c9cf}{resolution\+\_\+}} \{ 0.\+01 \}
+\item 
+bool \mbox{\hyperlink{classtesseract__geometry_1_1Octree_ae0f8d27720da5ad6c93dfb5dbe29affa}{pruned\+\_\+}} \{ false \}
+\item 
+bool \mbox{\hyperlink{classtesseract__geometry_1_1Octree_aba16a081a7d1fd0bd3b9c40145ef9542}{binary\+\_\+octree\+\_\+}} \{ false \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classtesseract__geometry_1_1Octree_ac98d07dd8f7b70e16ccb9a01abf56b9c}{boost\+::serialization\+::access}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classtesseract__geometry_1_1Octree_a0c3e8cdfa8826acdca6e727c3097a08c}\label{classtesseract__geometry_1_1Octree_a0c3e8cdfa8826acdca6e727c3097a08c}} 
+\index{tesseract\_geometry::Octree@{tesseract\_geometry::Octree}!ConstPtr@{ConstPtr}}
+\index{ConstPtr@{ConstPtr}!tesseract\_geometry::Octree@{tesseract\_geometry::Octree}}
+\doxysubsubsection{\texorpdfstring{ConstPtr}{ConstPtr}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classtesseract__geometry_1_1Octree_a0c3e8cdfa8826acdca6e727c3097a08c}{tesseract\+\_\+geometry\+::\+Octree\+::\+Const\+Ptr}} =  std\+::shared\+\_\+ptr$<$const \mbox{\hyperlink{classtesseract__geometry_1_1Octree}{Octree}}$>$}
+
+\mbox{\Hypertarget{classtesseract__geometry_1_1Octree_a327bf1326aaf567a46e57a6c8739d577}\label{classtesseract__geometry_1_1Octree_a327bf1326aaf567a46e57a6c8739d577}} 
+\index{tesseract\_geometry::Octree@{tesseract\_geometry::Octree}!Ptr@{Ptr}}
+\index{Ptr@{Ptr}!tesseract\_geometry::Octree@{tesseract\_geometry::Octree}}
+\doxysubsubsection{\texorpdfstring{Ptr}{Ptr}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classtesseract__geometry_1_1Octree_a327bf1326aaf567a46e57a6c8739d577}{tesseract\+\_\+geometry\+::\+Octree\+::\+Ptr}} =  std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classtesseract__geometry_1_1Octree}{Octree}}$>$}
+
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classtesseract__geometry_1_1Octree_a50b534fbd4a871cd257ac52d6009af00}\label{classtesseract__geometry_1_1Octree_a50b534fbd4a871cd257ac52d6009af00}} 
+\index{tesseract\_geometry::Octree@{tesseract\_geometry::Octree}!SubType@{SubType}}
+\index{SubType@{SubType}!tesseract\_geometry::Octree@{tesseract\_geometry::Octree}}
+\doxysubsubsection{\texorpdfstring{SubType}{SubType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classtesseract__geometry_1_1Octree_a50b534fbd4a871cd257ac52d6009af00}{tesseract\+\_\+geometry\+::\+Octree\+::\+Sub\+Type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BOX@{BOX}!tesseract\_geometry::Octree@{tesseract\_geometry::Octree}}\index{tesseract\_geometry::Octree@{tesseract\_geometry::Octree}!BOX@{BOX}}}\mbox{\Hypertarget{classtesseract__geometry_1_1Octree_a50b534fbd4a871cd257ac52d6009af00a35ed5bb4d02016adb5d4d839524348eb}\label{classtesseract__geometry_1_1Octree_a50b534fbd4a871cd257ac52d6009af00a35ed5bb4d02016adb5d4d839524348eb}} 
+BOX&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPHERE\_INSIDE@{SPHERE\_INSIDE}!tesseract\_geometry::Octree@{tesseract\_geometry::Octree}}\index{tesseract\_geometry::Octree@{tesseract\_geometry::Octree}!SPHERE\_INSIDE@{SPHERE\_INSIDE}}}\mbox{\Hypertarget{classtesseract__geometry_1_1Octree_a50b534fbd4a871cd257ac52d6009af00a779662c05992d34ec76271438b7def72}\label{classtesseract__geometry_1_1Octree_a50b534fbd4a871cd257ac52d6009af00a779662c05992d34ec76271438b7def72}} 
+SPHERE\+\_\+\+INSIDE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPHERE\_OUTSIDE@{SPHERE\_OUTSIDE}!tesseract\_geometry::Octree@{tesseract\_geometry::Octree}}\index{tesseract\_geometry::Octree@{tesseract\_geometry::Octree}!SPHERE\_OUTSIDE@{SPHERE\_OUTSIDE}}}\mbox{\Hypertarget{classtesseract__geometry_1_1Octree_a50b534fbd4a871cd257ac52d6009af00a474a03c0f9a733d18169249b3103e629}\label{classtesseract__geometry_1_1Octree_a50b534fbd4a871cd257ac52d6009af00a474a03c0f9a733d18169249b3103e629}} 
+SPHERE\+\_\+\+OUTSIDE&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtesseract__geometry_1_1Octree_ab3c357fdff2f3e06413fe9b8f7ae3f43}\label{classtesseract__geometry_1_1Octree_ab3c357fdff2f3e06413fe9b8f7ae3f43}} 
+\index{tesseract\_geometry::Octree@{tesseract\_geometry::Octree}!Octree@{Octree}}
+\index{Octree@{Octree}!tesseract\_geometry::Octree@{tesseract\_geometry::Octree}}
+\doxysubsubsection{\texorpdfstring{Octree()}{Octree()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily tesseract\+\_\+geometry\+::\+Octree\+::\+Octree (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ const octomap\+::\+Oc\+Tree $>$}]{octree,  }\item[{const \mbox{\hyperlink{classtesseract__geometry_1_1Octree_a50b534fbd4a871cd257ac52d6009af00}{Sub\+Type}}}]{sub\+\_\+type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classtesseract__geometry_1_1Octree_ad52f7f770e2d193b03c19cfb5a4cd1c5}\label{classtesseract__geometry_1_1Octree_ad52f7f770e2d193b03c19cfb5a4cd1c5}} 
+\index{tesseract\_geometry::Octree@{tesseract\_geometry::Octree}!Octree@{Octree}}
+\index{Octree@{Octree}!tesseract\_geometry::Octree@{tesseract\_geometry::Octree}}
+\doxysubsubsection{\texorpdfstring{Octree()}{Octree()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename PointT $>$ \\
+tesseract\+\_\+geometry\+::\+Octree\+::\+Octree (\begin{DoxyParamCaption}\item[{const PointT \&}]{point\+\_\+cloud,  }\item[{const double}]{resolution,  }\item[{const \mbox{\hyperlink{classtesseract__geometry_1_1Octree_a50b534fbd4a871cd257ac52d6009af00}{Sub\+Type}}}]{sub\+\_\+type,  }\item[{const bool}]{prune,  }\item[{const bool}]{binary = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classtesseract__geometry_1_1Octree_a21da3ffff5b8fdcf12b292d4f5fb8893}\label{classtesseract__geometry_1_1Octree_a21da3ffff5b8fdcf12b292d4f5fb8893}} 
+\index{tesseract\_geometry::Octree@{tesseract\_geometry::Octree}!Octree@{Octree}}
+\index{Octree@{Octree}!tesseract\_geometry::Octree@{tesseract\_geometry::Octree}}
+\doxysubsubsection{\texorpdfstring{Octree()}{Octree()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily tesseract\+\_\+geometry\+::\+Octree\+::\+Octree (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{classtesseract__geometry_1_1Octree_ab5354ffdc5537961859e9b660b828d4e}\label{classtesseract__geometry_1_1Octree_ab5354ffdc5537961859e9b660b828d4e}} 
+\index{tesseract\_geometry::Octree@{tesseract\_geometry::Octree}!````~Octree@{$\sim$Octree}}
+\index{````~Octree@{$\sim$Octree}!tesseract\_geometry::Octree@{tesseract\_geometry::Octree}}
+\doxysubsubsection{\texorpdfstring{$\sim$Octree()}{~Octree()}}
+{\footnotesize\ttfamily tesseract\+\_\+geometry\+::\+Octree\+::$\sim$\+Octree (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtesseract__geometry_1_1Octree_ae854ec8aa19fa88ca10cd1376895151e}\label{classtesseract__geometry_1_1Octree_ae854ec8aa19fa88ca10cd1376895151e}} 
+\index{tesseract\_geometry::Octree@{tesseract\_geometry::Octree}!calcNumSubShapes@{calcNumSubShapes}}
+\index{calcNumSubShapes@{calcNumSubShapes}!tesseract\_geometry::Octree@{tesseract\_geometry::Octree}}
+\doxysubsubsection{\texorpdfstring{calcNumSubShapes()}{calcNumSubShapes()}}
+{\footnotesize\ttfamily long tesseract\+\_\+geometry\+::\+Octree\+::calc\+Num\+Sub\+Shapes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Calculate the number of sub shapes that would get generated for this octree. 
+
+This is expensive and should not be called multiple times
+
+\begin{DoxyReturn}{Returns}
+number of sub shapes 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__geometry_1_1Octree_a4414d599b9957d1751724f8aa2592ac1}\label{classtesseract__geometry_1_1Octree_a4414d599b9957d1751724f8aa2592ac1}} 
+\index{tesseract\_geometry::Octree@{tesseract\_geometry::Octree}!clone@{clone}}
+\index{clone@{clone}!tesseract\_geometry::Octree@{tesseract\_geometry::Octree}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__geometry_1_1Geometry_acd91c55fb9604ed374446c029b6f2d08}{Geometry\+::\+Ptr}} tesseract\+\_\+geometry\+::\+Octree\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Create a copy of this shape. 
+
+
+
+Implements \mbox{\hyperlink{classtesseract__geometry_1_1Geometry_ae8e12b3ae80b55eff558ce4feea1efcd}{tesseract\+\_\+geometry\+::\+Geometry}}.
+
+\mbox{\Hypertarget{classtesseract__geometry_1_1Octree_ad732d54d1ab8846d3c7e71cc27cd3bd6}\label{classtesseract__geometry_1_1Octree_ad732d54d1ab8846d3c7e71cc27cd3bd6}} 
+\index{tesseract\_geometry::Octree@{tesseract\_geometry::Octree}!getOctree@{getOctree}}
+\index{getOctree@{getOctree}!tesseract\_geometry::Octree@{tesseract\_geometry::Octree}}
+\doxysubsubsection{\texorpdfstring{getOctree()}{getOctree()}}
+{\footnotesize\ttfamily const std\+::shared\+\_\+ptr$<$ const octomap\+::\+Oc\+Tree $>$ \& tesseract\+\_\+geometry\+::\+Octree\+::get\+Octree (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classtesseract__geometry_1_1Octree_a087069afe99c36b6923d7ef0e8e1e29f}\label{classtesseract__geometry_1_1Octree_a087069afe99c36b6923d7ef0e8e1e29f}} 
+\index{tesseract\_geometry::Octree@{tesseract\_geometry::Octree}!getPruned@{getPruned}}
+\index{getPruned@{getPruned}!tesseract\_geometry::Octree@{tesseract\_geometry::Octree}}
+\doxysubsubsection{\texorpdfstring{getPruned()}{getPruned()}}
+{\footnotesize\ttfamily bool tesseract\+\_\+geometry\+::\+Octree\+::get\+Pruned (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classtesseract__geometry_1_1Octree_af32ea5602ecda329bfe44b24ba34c466}\label{classtesseract__geometry_1_1Octree_af32ea5602ecda329bfe44b24ba34c466}} 
+\index{tesseract\_geometry::Octree@{tesseract\_geometry::Octree}!getSubType@{getSubType}}
+\index{getSubType@{getSubType}!tesseract\_geometry::Octree@{tesseract\_geometry::Octree}}
+\doxysubsubsection{\texorpdfstring{getSubType()}{getSubType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__geometry_1_1Octree_a50b534fbd4a871cd257ac52d6009af00}{Sub\+Type}} tesseract\+\_\+geometry\+::\+Octree\+::get\+Sub\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classtesseract__geometry_1_1Octree_a39aca28bf2e00aa658ee2eb020ed8b66}\label{classtesseract__geometry_1_1Octree_a39aca28bf2e00aa658ee2eb020ed8b66}} 
+\index{tesseract\_geometry::Octree@{tesseract\_geometry::Octree}!isNodeCollapsible@{isNodeCollapsible}}
+\index{isNodeCollapsible@{isNodeCollapsible}!tesseract\_geometry::Octree@{tesseract\_geometry::Octree}}
+\doxysubsubsection{\texorpdfstring{isNodeCollapsible()}{isNodeCollapsible()}}
+{\footnotesize\ttfamily static bool tesseract\+\_\+geometry\+::\+Octree\+::is\+Node\+Collapsible (\begin{DoxyParamCaption}\item[{octomap\+::\+Oc\+Tree \&}]{octree,  }\item[{octomap\+::\+Oc\+Tree\+Node $\ast$}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__geometry_1_1Octree_a7c86b49ae7e5a6d80497f49b472eb355}\label{classtesseract__geometry_1_1Octree_a7c86b49ae7e5a6d80497f49b472eb355}} 
+\index{tesseract\_geometry::Octree@{tesseract\_geometry::Octree}!load@{load}}
+\index{load@{load}!tesseract\_geometry::Octree@{tesseract\_geometry::Octree}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily template$<$class Archive $>$ \\
+void tesseract\+\_\+geometry\+::\+Octree\+::load (\begin{DoxyParamCaption}\item[{Archive \&}]{ar,  }\item[{const unsigned int}]{version }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__geometry_1_1Octree_a2830205f4f1f7d5ad5422a1f7ac60cb1}\label{classtesseract__geometry_1_1Octree_a2830205f4f1f7d5ad5422a1f7ac60cb1}} 
+\index{tesseract\_geometry::Octree@{tesseract\_geometry::Octree}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!tesseract\_geometry::Octree@{tesseract\_geometry::Octree}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool tesseract\+\_\+geometry\+::\+Octree\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtesseract__geometry_1_1Octree}{Octree}} \&}]{rhs }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classtesseract__geometry_1_1Octree_a4c444f55f5a7d75ed0381e935a3fe540}\label{classtesseract__geometry_1_1Octree_a4c444f55f5a7d75ed0381e935a3fe540}} 
+\index{tesseract\_geometry::Octree@{tesseract\_geometry::Octree}!operator==@{operator==}}
+\index{operator==@{operator==}!tesseract\_geometry::Octree@{tesseract\_geometry::Octree}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool tesseract\+\_\+geometry\+::\+Octree\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtesseract__geometry_1_1Octree}{Octree}} \&}]{rhs }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classtesseract__geometry_1_1Octree_a6869e2482754d630b7c15b9b6c428fa9}\label{classtesseract__geometry_1_1Octree_a6869e2482754d630b7c15b9b6c428fa9}} 
+\index{tesseract\_geometry::Octree@{tesseract\_geometry::Octree}!prune@{prune}}
+\index{prune@{prune}!tesseract\_geometry::Octree@{tesseract\_geometry::Octree}}
+\doxysubsubsection{\texorpdfstring{prune()}{prune()}}
+{\footnotesize\ttfamily static void tesseract\+\_\+geometry\+::\+Octree\+::prune (\begin{DoxyParamCaption}\item[{octomap\+::\+Oc\+Tree \&}]{octree }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+A custom octree prune which will prune if all children are above the occupancy threshold. 
+
+This is different from the octomap\+::\+Oc\+Tree\+::prune which requires all children to have the same occupancy to be collapsed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em octree} & The octree to be pruned. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__geometry_1_1Octree_ae9d3f0673522f423474ca3cfa9f1aabe}\label{classtesseract__geometry_1_1Octree_ae9d3f0673522f423474ca3cfa9f1aabe}} 
+\index{tesseract\_geometry::Octree@{tesseract\_geometry::Octree}!pruneNode@{pruneNode}}
+\index{pruneNode@{pruneNode}!tesseract\_geometry::Octree@{tesseract\_geometry::Octree}}
+\doxysubsubsection{\texorpdfstring{pruneNode()}{pruneNode()}}
+{\footnotesize\ttfamily static bool tesseract\+\_\+geometry\+::\+Octree\+::prune\+Node (\begin{DoxyParamCaption}\item[{octomap\+::\+Oc\+Tree \&}]{octree,  }\item[{octomap\+::\+Oc\+Tree\+Node $\ast$}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__geometry_1_1Octree_a87de9242d4b911819da17bc2d6f1034a}\label{classtesseract__geometry_1_1Octree_a87de9242d4b911819da17bc2d6f1034a}} 
+\index{tesseract\_geometry::Octree@{tesseract\_geometry::Octree}!pruneRecurs@{pruneRecurs}}
+\index{pruneRecurs@{pruneRecurs}!tesseract\_geometry::Octree@{tesseract\_geometry::Octree}}
+\doxysubsubsection{\texorpdfstring{pruneRecurs()}{pruneRecurs()}}
+{\footnotesize\ttfamily static void tesseract\+\_\+geometry\+::\+Octree\+::prune\+Recurs (\begin{DoxyParamCaption}\item[{octomap\+::\+Oc\+Tree \&}]{octree,  }\item[{octomap\+::\+Oc\+Tree\+Node $\ast$}]{node,  }\item[{unsigned int}]{depth,  }\item[{unsigned int}]{max\+\_\+depth,  }\item[{unsigned int \&}]{num\+\_\+pruned }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__geometry_1_1Octree_adbd6484be8e447fd8bd79746603bcae4}\label{classtesseract__geometry_1_1Octree_adbd6484be8e447fd8bd79746603bcae4}} 
+\index{tesseract\_geometry::Octree@{tesseract\_geometry::Octree}!save@{save}}
+\index{save@{save}!tesseract\_geometry::Octree@{tesseract\_geometry::Octree}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily template$<$class Archive $>$ \\
+void tesseract\+\_\+geometry\+::\+Octree\+::save (\begin{DoxyParamCaption}\item[{Archive \&}]{ar,  }\item[{const unsigned int}]{version }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__geometry_1_1Octree_ad46631b85c0924c9ffb2909933fcaa1f}\label{classtesseract__geometry_1_1Octree_ad46631b85c0924c9ffb2909933fcaa1f}} 
+\index{tesseract\_geometry::Octree@{tesseract\_geometry::Octree}!serialize@{serialize}}
+\index{serialize@{serialize}!tesseract\_geometry::Octree@{tesseract\_geometry::Octree}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily template$<$class Archive $>$ \\
+void tesseract\+\_\+geometry\+::\+Octree\+::serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{ar,  }\item[{const unsigned int}]{version }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__geometry_1_1Octree_a2ba384fe7fe9d489e61a84fda5872149}\label{classtesseract__geometry_1_1Octree_a2ba384fe7fe9d489e61a84fda5872149}} 
+\index{tesseract\_geometry::Octree@{tesseract\_geometry::Octree}!update@{update}}
+\index{update@{update}!tesseract\_geometry::Octree@{tesseract\_geometry::Octree}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void tesseract\+\_\+geometry\+::\+Octree\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Octrees are typically generated from 3D sensor data so this method should be used to efficiently update the collision shape. 
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classtesseract__geometry_1_1Octree_ac98d07dd8f7b70e16ccb9a01abf56b9c}\label{classtesseract__geometry_1_1Octree_ac98d07dd8f7b70e16ccb9a01abf56b9c}} 
+\index{tesseract\_geometry::Octree@{tesseract\_geometry::Octree}!boost::serialization::access@{boost::serialization::access}}
+\index{boost::serialization::access@{boost::serialization::access}!tesseract\_geometry::Octree@{tesseract\_geometry::Octree}}
+\doxysubsubsection{\texorpdfstring{boost::serialization::access}{boost::serialization::access}}
+{\footnotesize\ttfamily friend class boost\+::serialization\+::access\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classtesseract__geometry_1_1Octree_aba16a081a7d1fd0bd3b9c40145ef9542}\label{classtesseract__geometry_1_1Octree_aba16a081a7d1fd0bd3b9c40145ef9542}} 
+\index{tesseract\_geometry::Octree@{tesseract\_geometry::Octree}!binary\_octree\_@{binary\_octree\_}}
+\index{binary\_octree\_@{binary\_octree\_}!tesseract\_geometry::Octree@{tesseract\_geometry::Octree}}
+\doxysubsubsection{\texorpdfstring{binary\_octree\_}{binary\_octree\_}}
+{\footnotesize\ttfamily bool tesseract\+\_\+geometry\+::\+Octree\+::binary\+\_\+octree\+\_\+ \{ false \}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__geometry_1_1Octree_aca7587afddb38c0b5052e1ed8eaf88f4}\label{classtesseract__geometry_1_1Octree_aca7587afddb38c0b5052e1ed8eaf88f4}} 
+\index{tesseract\_geometry::Octree@{tesseract\_geometry::Octree}!octree\_@{octree\_}}
+\index{octree\_@{octree\_}!tesseract\_geometry::Octree@{tesseract\_geometry::Octree}}
+\doxysubsubsection{\texorpdfstring{octree\_}{octree\_}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$const octomap\+::\+Oc\+Tree$>$ tesseract\+\_\+geometry\+::\+Octree\+::octree\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__geometry_1_1Octree_ae0f8d27720da5ad6c93dfb5dbe29affa}\label{classtesseract__geometry_1_1Octree_ae0f8d27720da5ad6c93dfb5dbe29affa}} 
+\index{tesseract\_geometry::Octree@{tesseract\_geometry::Octree}!pruned\_@{pruned\_}}
+\index{pruned\_@{pruned\_}!tesseract\_geometry::Octree@{tesseract\_geometry::Octree}}
+\doxysubsubsection{\texorpdfstring{pruned\_}{pruned\_}}
+{\footnotesize\ttfamily bool tesseract\+\_\+geometry\+::\+Octree\+::pruned\+\_\+ \{ false \}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__geometry_1_1Octree_a0acd459ccc25a221769dfe3ed7f0c9cf}\label{classtesseract__geometry_1_1Octree_a0acd459ccc25a221769dfe3ed7f0c9cf}} 
+\index{tesseract\_geometry::Octree@{tesseract\_geometry::Octree}!resolution\_@{resolution\_}}
+\index{resolution\_@{resolution\_}!tesseract\_geometry::Octree@{tesseract\_geometry::Octree}}
+\doxysubsubsection{\texorpdfstring{resolution\_}{resolution\_}}
+{\footnotesize\ttfamily double tesseract\+\_\+geometry\+::\+Octree\+::resolution\+\_\+ \{ 0.\+01 \}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__geometry_1_1Octree_a90a701b0f4f93fe9f80b01001f9a5166}\label{classtesseract__geometry_1_1Octree_a90a701b0f4f93fe9f80b01001f9a5166}} 
+\index{tesseract\_geometry::Octree@{tesseract\_geometry::Octree}!sub\_type\_@{sub\_type\_}}
+\index{sub\_type\_@{sub\_type\_}!tesseract\_geometry::Octree@{tesseract\_geometry::Octree}}
+\doxysubsubsection{\texorpdfstring{sub\_type\_}{sub\_type\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__geometry_1_1Octree_a50b534fbd4a871cd257ac52d6009af00}{Sub\+Type}} tesseract\+\_\+geometry\+::\+Octree\+::sub\+\_\+type\+\_\+ \{ \mbox{\hyperlink{classtesseract__geometry_1_1Octree_a50b534fbd4a871cd257ac52d6009af00a35ed5bb4d02016adb5d4d839524348eb}{Sub\+Type\+::\+BOX}} \}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+tesseract\+\_\+geometry/include/tesseract\+\_\+geometry/impl/\mbox{\hyperlink{tesseract__geometry_2include_2tesseract__geometry_2impl_2octree_8h}{octree.\+h}}\item 
+tesseract\+\_\+geometry/src/geometries/\mbox{\hyperlink{tesseract__geometry_2src_2geometries_2octree_8cpp}{octree.\+cpp}}\end{DoxyCompactItemize}

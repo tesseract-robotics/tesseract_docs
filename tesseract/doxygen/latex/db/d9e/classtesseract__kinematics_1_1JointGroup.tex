@@ -1,0 +1,550 @@
+\hypertarget{classtesseract__kinematics_1_1JointGroup}{}\doxysection{tesseract\+\_\+kinematics\+::Joint\+Group Class Reference}
+\label{classtesseract__kinematics_1_1JointGroup}\index{tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}}
+
+
+A Joint Group is defined by a list of joint\+\_\+names.  
+
+
+
+
+{\ttfamily \#include $<$joint\+\_\+group.\+h$>$}
+
+
+
+Inheritance diagram for tesseract\+\_\+kinematics\+::Joint\+Group\+:
+% FIG 0
+
+
+Collaboration diagram for tesseract\+\_\+kinematics\+::Joint\+Group\+:
+% FIG 1
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup_aabac882c2dbe2103986a55c3533bc14a}{Ptr}} = std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup}{Joint\+Group}} $>$
+\item 
+using \mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup_a44b829724cc8c4048bc123195e2ded6d}{Const\+Ptr}} = std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup}{Joint\+Group}} $>$
+\item 
+using \mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup_ae671cb8eec7305576666282365c2e011}{UPtr}} = std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup}{Joint\+Group}} $>$
+\item 
+using \mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup_ab0a532ffcef865ed9fb1896bbfb31029}{Const\+UPtr}} = std\+::unique\+\_\+ptr$<$ const \mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup}{Joint\+Group}} $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup_a386a5baeea4e91cd36279c9221ee16e7}{$\sim$\+Joint\+Group}} ()=default
+\item 
+\mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup_afee70baf476a22dc99797134befbe90d}{Joint\+Group}} (const \mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup}{Joint\+Group}} \&other)
+\item 
+\mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup}{Joint\+Group}} \& \mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup_abf96e1dede91eeff1969343337a097cc}{operator=}} (const \mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup}{Joint\+Group}} \&other)
+\item 
+\mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup_a88e7452deb0ab77ad1bafd3b0b39d47f}{Joint\+Group}} (\mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup}{Joint\+Group}} \&\&)=default
+\item 
+\mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup}{Joint\+Group}} \& \mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup_ad9afe78e605772c8c7a8066387c5fa8c}{operator=}} (\mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup}{Joint\+Group}} \&\&)=default
+\item 
+\mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup_abb6394de1ed86cdfca4c44e4920f3ce1}{Joint\+Group}} (std\+::string \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}, std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_ae55b39adb52b29eeefd7d128c4b56f2a}{joint\+\_\+names}}, const \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph}{tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+Graph}} \&\mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a8d4d0dc3a6b9a7030970bf9ed3764756}{scene\+\_\+graph}}, const \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+State}} \&\mbox{\hyperlink{kinematics__factory__unit_8cpp_a918c8faa92717caa3ba8aef1b4ef8163}{scene\+\_\+state}})
+\begin{DoxyCompactList}\small\item\em Create a kinematics group without inverse kinematics for the provided joint names. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacetesseract__common_a67bde3cb7bb235f0f61c370ef8bc74d8}{tesseract\+\_\+common\+::\+Transform\+Map}} \mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup_a3579bdbb9feec4ab90101c6c5a729fa2}{calc\+Fwd\+Kin}} (const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xd $>$ \&joint\+\_\+angles) const
+\begin{DoxyCompactList}\small\item\em Calculates tool pose of robot chain. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup_ab92e8a1a44d1e883202208d30ce7ebe5}{calc\+Jacobian}} (const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xd $>$ \&joint\+\_\+angles, const std\+::string \&link\+\_\+name) const
+\begin{DoxyCompactList}\small\item\em Calculated jacobian of robot given joint angles. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup_a9eadaf0682bd1da919e41e1fd6dbd3bc}{calc\+Jacobian}} (const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xd $>$ \&joint\+\_\+angles, const std\+::string \&link\+\_\+name, const Eigen\+::\+Vector3d \&link\+\_\+point) const
+\begin{DoxyCompactList}\small\item\em Calculated jacobian of robot given joint angles. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup_a30fe6a74e7e15b735ca9f3c649c34ae7}{calc\+Jacobian}} (const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xd $>$ \&joint\+\_\+angles, const std\+::string \&\mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a7e2549355d7bca95ea407c633fe469c4}{base\+\_\+link\+\_\+name}}, const std\+::string \&link\+\_\+name) const
+\begin{DoxyCompactList}\small\item\em Calculated jacobian of robot given joint angles. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup_a1f550f7e3c1eba5d5464551f1ffce1c5}{calc\+Jacobian}} (const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xd $>$ \&joint\+\_\+angles, const std\+::string \&\mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a7e2549355d7bca95ea407c633fe469c4}{base\+\_\+link\+\_\+name}}, const std\+::string \&link\+\_\+name, const Eigen\+::\+Vector3d \&link\+\_\+point) const
+\begin{DoxyCompactList}\small\item\em Calculated jacobian of robot given joint angles. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup_a8f106ff4b84a4cd89de5a0db07bef4be}{get\+Joint\+Names}} () const
+\begin{DoxyCompactList}\small\item\em Get list of joint names for kinematic object. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup_ae6ac0e45a82996aa1e1b22a07f89432f}{get\+Link\+Names}} () const
+\begin{DoxyCompactList}\small\item\em Get list of all link names (with and without geometry) for kinematic object. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup_a90898bb8ffb350f5b052f185c3b6a78a}{get\+Active\+Link\+Names}} () const
+\begin{DoxyCompactList}\small\item\em Get list of active link names (with and without geometry) for kinematic object. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup_a7a88bab9495fa93b5d23e24708167eb1}{get\+Static\+Link\+Names}} () const
+\begin{DoxyCompactList}\small\item\em Get list of static link names (with and without geometry) for kinematic object. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup_a8dcd3be1753eda8f761b8552d3ed945e}{is\+Active\+Link\+Name}} (const std\+::string \&link\+\_\+name) const
+\begin{DoxyCompactList}\small\item\em Check if link is an active link. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup_a7ae1c549077f27abd264319704c7a2c2}{has\+Link\+Name}} (const std\+::string \&link\+\_\+name) const
+\begin{DoxyCompactList}\small\item\em Check if link name exists. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtesseract__common_1_1KinematicLimits}{tesseract\+\_\+common\+::\+Kinematic\+Limits}} \mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup_a0b1953e052c51df41bcf5beab0f59c17}{get\+Limits}} () const
+\begin{DoxyCompactList}\small\item\em Get the kinematic limits (joint, velocity, acceleration, etc.) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup_a8f610b2f60436e5c6c58d22b7da4aa89}{set\+Limits}} (const \mbox{\hyperlink{structtesseract__common_1_1KinematicLimits}{tesseract\+\_\+common\+::\+Kinematic\+Limits}} \&\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{limits}})
+\begin{DoxyCompactList}\small\item\em Setter for kinematic limits (joint, velocity, acceleration, etc.) \end{DoxyCompactList}\item 
+std\+::vector$<$ Eigen\+::\+Index $>$ \mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup_a33d65955912d0f4a5813d6cb9b6f9bd6}{get\+Redundancy\+Capable\+Joint\+Indices}} () const
+\begin{DoxyCompactList}\small\item\em Get vector indicating which joints are capable of producing redundant solutions. \end{DoxyCompactList}\item 
+Eigen\+::\+Index \mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup_a0940b0d49eb8e14b6c8290c832d01a4c}{num\+Joints}} () const
+\begin{DoxyCompactList}\small\item\em Number of joints in robot. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup_a2c5120ff520cb3ccb80adb2bbdcaba7c}{get\+Base\+Link\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Get the robot base link name. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup_ae5601f961e06d403cd7340d1d2fff7a2}{get\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Name of the manipulator. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup_afdafe9ea611404a32a005c2f0af8ea96}{check\+Joints}} (const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xd $>$ \&vec) const
+\begin{DoxyCompactList}\small\item\em Check for consistency in \# and limits of joints. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup_a244703c830830131755a09bc75755ea3}{name\+\_\+}}
+\item 
+\mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+State}} \mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup_a63873fc46dc40c5c488d529f1a630400}{state\+\_\+}}
+\item 
+\mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a0834c4abefbc5b7da4e66cd26619a9ba}{tesseract\+\_\+scene\+\_\+graph\+::\+State\+Solver\+::\+UPtr}} \mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup_a9010d34d1ca2b505566d2bcf4c000f51}{state\+\_\+solver\+\_\+}}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup_abe72b0c41ecd41b77b94897f469c8729}{joint\+\_\+names\+\_\+}}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup_ab03b7c417ebb42bdc1f2f7d89c6bc0b6}{link\+\_\+names\+\_\+}}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup_a417b73650c89ea1f22db44871e382131}{static\+\_\+link\+\_\+names\+\_\+}}
+\item 
+\mbox{\hyperlink{namespacetesseract__common_a67bde3cb7bb235f0f61c370ef8bc74d8}{tesseract\+\_\+common\+::\+Transform\+Map}} \mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup_adc2ecdd7cde30b6e55d9da6ba67ebe1f}{static\+\_\+link\+\_\+transforms\+\_\+}}
+\item 
+\mbox{\hyperlink{structtesseract__common_1_1KinematicLimits}{tesseract\+\_\+common\+::\+Kinematic\+Limits}} \mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup_a98ec16eda59d99d414a5b08a8402f507}{limits\+\_\+}}
+\item 
+std\+::vector$<$ Eigen\+::\+Index $>$ \mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup_a92b89404d2569ef6eddddfbcd5c60e93}{redundancy\+\_\+indices\+\_\+}}
+\item 
+std\+::vector$<$ Eigen\+::\+Index $>$ \mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup_ad985279ab414b46f06b9c4202e7518a4}{jacobian\+\_\+map\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A Joint Group is defined by a list of joint\+\_\+names. 
+
+Provides the ability to calculate forward kinematics and jacobian. \begin{DoxyNote}{Note}
+This creates an optimized object replace all joints not listed in the provided list with a fixed joint calculated using the provided state. Also the calc\+Fwd\+Kin only return the link transforms in the optimized object which is all active links and root of the scene graph usually. 
+\end{DoxyNote}
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classtesseract__kinematics_1_1JointGroup_a44b829724cc8c4048bc123195e2ded6d}\label{classtesseract__kinematics_1_1JointGroup_a44b829724cc8c4048bc123195e2ded6d}} 
+\index{tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}!ConstPtr@{ConstPtr}}
+\index{ConstPtr@{ConstPtr}!tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}}
+\doxysubsubsection{\texorpdfstring{ConstPtr}{ConstPtr}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup_a44b829724cc8c4048bc123195e2ded6d}{tesseract\+\_\+kinematics\+::\+Joint\+Group\+::\+Const\+Ptr}} =  std\+::shared\+\_\+ptr$<$const \mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup}{Joint\+Group}}$>$}
+
+\mbox{\Hypertarget{classtesseract__kinematics_1_1JointGroup_ab0a532ffcef865ed9fb1896bbfb31029}\label{classtesseract__kinematics_1_1JointGroup_ab0a532ffcef865ed9fb1896bbfb31029}} 
+\index{tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}!ConstUPtr@{ConstUPtr}}
+\index{ConstUPtr@{ConstUPtr}!tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}}
+\doxysubsubsection{\texorpdfstring{ConstUPtr}{ConstUPtr}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup_ab0a532ffcef865ed9fb1896bbfb31029}{tesseract\+\_\+kinematics\+::\+Joint\+Group\+::\+Const\+UPtr}} =  std\+::unique\+\_\+ptr$<$const \mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup}{Joint\+Group}}$>$}
+
+\mbox{\Hypertarget{classtesseract__kinematics_1_1JointGroup_aabac882c2dbe2103986a55c3533bc14a}\label{classtesseract__kinematics_1_1JointGroup_aabac882c2dbe2103986a55c3533bc14a}} 
+\index{tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}!Ptr@{Ptr}}
+\index{Ptr@{Ptr}!tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}}
+\doxysubsubsection{\texorpdfstring{Ptr}{Ptr}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup_aabac882c2dbe2103986a55c3533bc14a}{tesseract\+\_\+kinematics\+::\+Joint\+Group\+::\+Ptr}} =  std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup}{Joint\+Group}}$>$}
+
+\mbox{\Hypertarget{classtesseract__kinematics_1_1JointGroup_ae671cb8eec7305576666282365c2e011}\label{classtesseract__kinematics_1_1JointGroup_ae671cb8eec7305576666282365c2e011}} 
+\index{tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}!UPtr@{UPtr}}
+\index{UPtr@{UPtr}!tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}}
+\doxysubsubsection{\texorpdfstring{UPtr}{UPtr}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup_ae671cb8eec7305576666282365c2e011}{tesseract\+\_\+kinematics\+::\+Joint\+Group\+::\+UPtr}} =  std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup}{Joint\+Group}}$>$}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtesseract__kinematics_1_1JointGroup_a386a5baeea4e91cd36279c9221ee16e7}\label{classtesseract__kinematics_1_1JointGroup_a386a5baeea4e91cd36279c9221ee16e7}} 
+\index{tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}!````~JointGroup@{$\sim$JointGroup}}
+\index{````~JointGroup@{$\sim$JointGroup}!tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}}
+\doxysubsubsection{\texorpdfstring{$\sim$JointGroup()}{~JointGroup()}}
+{\footnotesize\ttfamily virtual tesseract\+\_\+kinematics\+::\+Joint\+Group\+::$\sim$\+Joint\+Group (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+\mbox{\Hypertarget{classtesseract__kinematics_1_1JointGroup_afee70baf476a22dc99797134befbe90d}\label{classtesseract__kinematics_1_1JointGroup_afee70baf476a22dc99797134befbe90d}} 
+\index{tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}!JointGroup@{JointGroup}}
+\index{JointGroup@{JointGroup}!tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}}
+\doxysubsubsection{\texorpdfstring{JointGroup()}{JointGroup()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily tesseract\+\_\+kinematics\+::\+Joint\+Group\+::\+Joint\+Group (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup}{Joint\+Group}} \&}]{other }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classtesseract__kinematics_1_1JointGroup_a88e7452deb0ab77ad1bafd3b0b39d47f}\label{classtesseract__kinematics_1_1JointGroup_a88e7452deb0ab77ad1bafd3b0b39d47f}} 
+\index{tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}!JointGroup@{JointGroup}}
+\index{JointGroup@{JointGroup}!tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}}
+\doxysubsubsection{\texorpdfstring{JointGroup()}{JointGroup()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily tesseract\+\_\+kinematics\+::\+Joint\+Group\+::\+Joint\+Group (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup}{Joint\+Group}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{classtesseract__kinematics_1_1JointGroup_abb6394de1ed86cdfca4c44e4920f3ce1}\label{classtesseract__kinematics_1_1JointGroup_abb6394de1ed86cdfca4c44e4920f3ce1}} 
+\index{tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}!JointGroup@{JointGroup}}
+\index{JointGroup@{JointGroup}!tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}}
+\doxysubsubsection{\texorpdfstring{JointGroup()}{JointGroup()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily tesseract\+\_\+kinematics\+::\+Joint\+Group\+::\+Joint\+Group (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{std\+::vector$<$ std\+::string $>$}]{joint\+\_\+names,  }\item[{const \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph}{tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+Graph}} \&}]{scene\+\_\+graph,  }\item[{const \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+State}} \&}]{scene\+\_\+state }\end{DoxyParamCaption})}
+
+
+
+Create a kinematics group without inverse kinematics for the provided joint names. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the kinematic group \\
+\hline
+{\em joint\+\_\+names} & The joints names to create kinematic group from \\
+\hline
+{\em scene\+\_\+graph} & The scene graph \\
+\hline
+{\em scene\+\_\+state} & The scene state \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtesseract__kinematics_1_1JointGroup_a3579bdbb9feec4ab90101c6c5a729fa2}\label{classtesseract__kinematics_1_1JointGroup_a3579bdbb9feec4ab90101c6c5a729fa2}} 
+\index{tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}!calcFwdKin@{calcFwdKin}}
+\index{calcFwdKin@{calcFwdKin}!tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}}
+\doxysubsubsection{\texorpdfstring{calcFwdKin()}{calcFwdKin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacetesseract__common_a67bde3cb7bb235f0f61c370ef8bc74d8}{tesseract\+\_\+common\+::\+Transform\+Map}} tesseract\+\_\+kinematics\+::\+Joint\+Group\+::calc\+Fwd\+Kin (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xd $>$ \&}]{joint\+\_\+angles }\end{DoxyParamCaption}) const}
+
+
+
+Calculates tool pose of robot chain. 
+
+Throws an exception on failures (including uninitialized) 
+\begin{DoxyParams}{Parameters}
+{\em pose} & Transform of end-\/of-\/tip relative to root \\
+\hline
+{\em joint\+\_\+angles} & Vector of joint angles (size must match number of joints in robot chain) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__kinematics_1_1JointGroup_a30fe6a74e7e15b735ca9f3c649c34ae7}\label{classtesseract__kinematics_1_1JointGroup_a30fe6a74e7e15b735ca9f3c649c34ae7}} 
+\index{tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}!calcJacobian@{calcJacobian}}
+\index{calcJacobian@{calcJacobian}!tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}}
+\doxysubsubsection{\texorpdfstring{calcJacobian()}{calcJacobian()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd tesseract\+\_\+kinematics\+::\+Joint\+Group\+::calc\+Jacobian (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xd $>$ \&}]{joint\+\_\+angles,  }\item[{const std\+::string \&}]{base\+\_\+link\+\_\+name,  }\item[{const std\+::string \&}]{link\+\_\+name }\end{DoxyParamCaption}) const}
+
+
+
+Calculated jacobian of robot given joint angles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em joint\+\_\+angles} & Input vector of joint angles \\
+\hline
+{\em base\+\_\+link\+\_\+name} & The frame that the jacobian is calculated in \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The jacobian at the provided link\+\_\+name relative to the provided base\+\_\+link\+\_\+name 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__kinematics_1_1JointGroup_a1f550f7e3c1eba5d5464551f1ffce1c5}\label{classtesseract__kinematics_1_1JointGroup_a1f550f7e3c1eba5d5464551f1ffce1c5}} 
+\index{tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}!calcJacobian@{calcJacobian}}
+\index{calcJacobian@{calcJacobian}!tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}}
+\doxysubsubsection{\texorpdfstring{calcJacobian()}{calcJacobian()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd tesseract\+\_\+kinematics\+::\+Joint\+Group\+::calc\+Jacobian (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xd $>$ \&}]{joint\+\_\+angles,  }\item[{const std\+::string \&}]{base\+\_\+link\+\_\+name,  }\item[{const std\+::string \&}]{link\+\_\+name,  }\item[{const Eigen\+::\+Vector3d \&}]{link\+\_\+point }\end{DoxyParamCaption}) const}
+
+
+
+Calculated jacobian of robot given joint angles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em joint\+\_\+angles} & Input vector of joint angles \\
+\hline
+{\em base\+\_\+link\+\_\+name} & The frame that the jacobian is calculated in \\
+\hline
+{\em link\+\_\+name} & The frame that the jacobian is calculated for \\
+\hline
+{\em link\+\_\+point} & A point on the link that the jacobian is calculated for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The jacobian at the provided link\+\_\+name relative to the provided base\+\_\+link\+\_\+name 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__kinematics_1_1JointGroup_ab92e8a1a44d1e883202208d30ce7ebe5}\label{classtesseract__kinematics_1_1JointGroup_ab92e8a1a44d1e883202208d30ce7ebe5}} 
+\index{tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}!calcJacobian@{calcJacobian}}
+\index{calcJacobian@{calcJacobian}!tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}}
+\doxysubsubsection{\texorpdfstring{calcJacobian()}{calcJacobian()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd tesseract\+\_\+kinematics\+::\+Joint\+Group\+::calc\+Jacobian (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xd $>$ \&}]{joint\+\_\+angles,  }\item[{const std\+::string \&}]{link\+\_\+name }\end{DoxyParamCaption}) const}
+
+
+
+Calculated jacobian of robot given joint angles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em joint\+\_\+angles} & Input vector of joint angles \\
+\hline
+{\em link\+\_\+name} & The frame that the jacobian is calculated for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The jacobian at the provided link\+\_\+name relative to the joint group base link 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__kinematics_1_1JointGroup_a9eadaf0682bd1da919e41e1fd6dbd3bc}\label{classtesseract__kinematics_1_1JointGroup_a9eadaf0682bd1da919e41e1fd6dbd3bc}} 
+\index{tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}!calcJacobian@{calcJacobian}}
+\index{calcJacobian@{calcJacobian}!tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}}
+\doxysubsubsection{\texorpdfstring{calcJacobian()}{calcJacobian()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd tesseract\+\_\+kinematics\+::\+Joint\+Group\+::calc\+Jacobian (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xd $>$ \&}]{joint\+\_\+angles,  }\item[{const std\+::string \&}]{link\+\_\+name,  }\item[{const Eigen\+::\+Vector3d \&}]{link\+\_\+point }\end{DoxyParamCaption}) const}
+
+
+
+Calculated jacobian of robot given joint angles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em joint\+\_\+angles} & Input vector of joint angles \\
+\hline
+{\em link\+\_\+name} & The frame that the jacobian is calculated for \\
+\hline
+{\em link\+\_\+point} & A point on the link that the jacobian is calculated for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The jacobian at the provided link\+\_\+name relative to the joint group base link 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__kinematics_1_1JointGroup_afdafe9ea611404a32a005c2f0af8ea96}\label{classtesseract__kinematics_1_1JointGroup_afdafe9ea611404a32a005c2f0af8ea96}} 
+\index{tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}!checkJoints@{checkJoints}}
+\index{checkJoints@{checkJoints}!tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}}
+\doxysubsubsection{\texorpdfstring{checkJoints()}{checkJoints()}}
+{\footnotesize\ttfamily bool tesseract\+\_\+kinematics\+::\+Joint\+Group\+::check\+Joints (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xd $>$ \&}]{vec }\end{DoxyParamCaption}) const}
+
+
+
+Check for consistency in \# and limits of joints. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vec} & Vector of joint values \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if size of vec matches \# of robot joints and all joints are within limits 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__kinematics_1_1JointGroup_a90898bb8ffb350f5b052f185c3b6a78a}\label{classtesseract__kinematics_1_1JointGroup_a90898bb8ffb350f5b052f185c3b6a78a}} 
+\index{tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}!getActiveLinkNames@{getActiveLinkNames}}
+\index{getActiveLinkNames@{getActiveLinkNames}!tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}}
+\doxysubsubsection{\texorpdfstring{getActiveLinkNames()}{getActiveLinkNames()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ tesseract\+\_\+kinematics\+::\+Joint\+Group\+::get\+Active\+Link\+Names (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get list of active link names (with and without geometry) for kinematic object. 
+
+Note\+: This only includes links that are children of the active joints
+
+\begin{DoxyReturn}{Returns}
+A vector of active link names 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__kinematics_1_1JointGroup_a2c5120ff520cb3ccb80adb2bbdcaba7c}\label{classtesseract__kinematics_1_1JointGroup_a2c5120ff520cb3ccb80adb2bbdcaba7c}} 
+\index{tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}!getBaseLinkName@{getBaseLinkName}}
+\index{getBaseLinkName@{getBaseLinkName}!tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}}
+\doxysubsubsection{\texorpdfstring{getBaseLinkName()}{getBaseLinkName()}}
+{\footnotesize\ttfamily std\+::string tesseract\+\_\+kinematics\+::\+Joint\+Group\+::get\+Base\+Link\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the robot base link name. 
+
+\mbox{\Hypertarget{classtesseract__kinematics_1_1JointGroup_a8f106ff4b84a4cd89de5a0db07bef4be}\label{classtesseract__kinematics_1_1JointGroup_a8f106ff4b84a4cd89de5a0db07bef4be}} 
+\index{tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}!getJointNames@{getJointNames}}
+\index{getJointNames@{getJointNames}!tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}}
+\doxysubsubsection{\texorpdfstring{getJointNames()}{getJointNames()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ tesseract\+\_\+kinematics\+::\+Joint\+Group\+::get\+Joint\+Names (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get list of joint names for kinematic object. 
+
+\begin{DoxyReturn}{Returns}
+A vector of joint names 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__kinematics_1_1JointGroup_a0b1953e052c51df41bcf5beab0f59c17}\label{classtesseract__kinematics_1_1JointGroup_a0b1953e052c51df41bcf5beab0f59c17}} 
+\index{tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}!getLimits@{getLimits}}
+\index{getLimits@{getLimits}!tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}}
+\doxysubsubsection{\texorpdfstring{getLimits()}{getLimits()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtesseract__common_1_1KinematicLimits}{tesseract\+\_\+common\+::\+Kinematic\+Limits}} tesseract\+\_\+kinematics\+::\+Joint\+Group\+::get\+Limits (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the kinematic limits (joint, velocity, acceleration, etc.) 
+
+\begin{DoxyReturn}{Returns}
+Kinematic Limits 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__kinematics_1_1JointGroup_ae6ac0e45a82996aa1e1b22a07f89432f}\label{classtesseract__kinematics_1_1JointGroup_ae6ac0e45a82996aa1e1b22a07f89432f}} 
+\index{tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}!getLinkNames@{getLinkNames}}
+\index{getLinkNames@{getLinkNames}!tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}}
+\doxysubsubsection{\texorpdfstring{getLinkNames()}{getLinkNames()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ tesseract\+\_\+kinematics\+::\+Joint\+Group\+::get\+Link\+Names (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get list of all link names (with and without geometry) for kinematic object. 
+
+\begin{DoxyReturn}{Returns}
+A vector of link names 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__kinematics_1_1JointGroup_ae5601f961e06d403cd7340d1d2fff7a2}\label{classtesseract__kinematics_1_1JointGroup_ae5601f961e06d403cd7340d1d2fff7a2}} 
+\index{tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}!getName@{getName}}
+\index{getName@{getName}!tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily std\+::string tesseract\+\_\+kinematics\+::\+Joint\+Group\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Name of the manipulator. 
+
+\mbox{\Hypertarget{classtesseract__kinematics_1_1JointGroup_a33d65955912d0f4a5813d6cb9b6f9bd6}\label{classtesseract__kinematics_1_1JointGroup_a33d65955912d0f4a5813d6cb9b6f9bd6}} 
+\index{tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}!getRedundancyCapableJointIndices@{getRedundancyCapableJointIndices}}
+\index{getRedundancyCapableJointIndices@{getRedundancyCapableJointIndices}!tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}}
+\doxysubsubsection{\texorpdfstring{getRedundancyCapableJointIndices()}{getRedundancyCapableJointIndices()}}
+{\footnotesize\ttfamily std\+::vector$<$ Eigen\+::\+Index $>$ tesseract\+\_\+kinematics\+::\+Joint\+Group\+::get\+Redundancy\+Capable\+Joint\+Indices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get vector indicating which joints are capable of producing redundant solutions. 
+
+\begin{DoxyReturn}{Returns}
+A vector of joint indices 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__kinematics_1_1JointGroup_a7a88bab9495fa93b5d23e24708167eb1}\label{classtesseract__kinematics_1_1JointGroup_a7a88bab9495fa93b5d23e24708167eb1}} 
+\index{tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}!getStaticLinkNames@{getStaticLinkNames}}
+\index{getStaticLinkNames@{getStaticLinkNames}!tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}}
+\doxysubsubsection{\texorpdfstring{getStaticLinkNames()}{getStaticLinkNames()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ tesseract\+\_\+kinematics\+::\+Joint\+Group\+::get\+Static\+Link\+Names (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get list of static link names (with and without geometry) for kinematic object. 
+
+\begin{DoxyReturn}{Returns}
+A vector of static link names 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__kinematics_1_1JointGroup_a7ae1c549077f27abd264319704c7a2c2}\label{classtesseract__kinematics_1_1JointGroup_a7ae1c549077f27abd264319704c7a2c2}} 
+\index{tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}!hasLinkName@{hasLinkName}}
+\index{hasLinkName@{hasLinkName}!tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}}
+\doxysubsubsection{\texorpdfstring{hasLinkName()}{hasLinkName()}}
+{\footnotesize\ttfamily bool tesseract\+\_\+kinematics\+::\+Joint\+Group\+::has\+Link\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{link\+\_\+name }\end{DoxyParamCaption}) const}
+
+
+
+Check if link name exists. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em link\+\_\+name} & The link name to check for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if it exists, otherwise false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__kinematics_1_1JointGroup_a8dcd3be1753eda8f761b8552d3ed945e}\label{classtesseract__kinematics_1_1JointGroup_a8dcd3be1753eda8f761b8552d3ed945e}} 
+\index{tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}!isActiveLinkName@{isActiveLinkName}}
+\index{isActiveLinkName@{isActiveLinkName}!tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}}
+\doxysubsubsection{\texorpdfstring{isActiveLinkName()}{isActiveLinkName()}}
+{\footnotesize\ttfamily bool tesseract\+\_\+kinematics\+::\+Joint\+Group\+::is\+Active\+Link\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{link\+\_\+name }\end{DoxyParamCaption}) const}
+
+
+
+Check if link is an active link. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em link\+\_\+name} & The link name to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if active, otherwise false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__kinematics_1_1JointGroup_a0940b0d49eb8e14b6c8290c832d01a4c}\label{classtesseract__kinematics_1_1JointGroup_a0940b0d49eb8e14b6c8290c832d01a4c}} 
+\index{tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}!numJoints@{numJoints}}
+\index{numJoints@{numJoints}!tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}}
+\doxysubsubsection{\texorpdfstring{numJoints()}{numJoints()}}
+{\footnotesize\ttfamily Eigen\+::\+Index tesseract\+\_\+kinematics\+::\+Joint\+Group\+::num\+Joints (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Number of joints in robot. 
+
+\begin{DoxyReturn}{Returns}
+Number of joints in robot 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__kinematics_1_1JointGroup_abf96e1dede91eeff1969343337a097cc}\label{classtesseract__kinematics_1_1JointGroup_abf96e1dede91eeff1969343337a097cc}} 
+\index{tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}!operator=@{operator=}}
+\index{operator=@{operator=}!tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup}{Joint\+Group}} \& tesseract\+\_\+kinematics\+::\+Joint\+Group\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup}{Joint\+Group}} \&}]{other }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classtesseract__kinematics_1_1JointGroup_ad9afe78e605772c8c7a8066387c5fa8c}\label{classtesseract__kinematics_1_1JointGroup_ad9afe78e605772c8c7a8066387c5fa8c}} 
+\index{tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}!operator=@{operator=}}
+\index{operator=@{operator=}!tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup}{Joint\+Group}} \& tesseract\+\_\+kinematics\+::\+Joint\+Group\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup}{Joint\+Group}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{classtesseract__kinematics_1_1JointGroup_a8f610b2f60436e5c6c58d22b7da4aa89}\label{classtesseract__kinematics_1_1JointGroup_a8f610b2f60436e5c6c58d22b7da4aa89}} 
+\index{tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}!setLimits@{setLimits}}
+\index{setLimits@{setLimits}!tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}}
+\doxysubsubsection{\texorpdfstring{setLimits()}{setLimits()}}
+{\footnotesize\ttfamily void tesseract\+\_\+kinematics\+::\+Joint\+Group\+::set\+Limits (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structtesseract__common_1_1KinematicLimits}{tesseract\+\_\+common\+::\+Kinematic\+Limits}} \&}]{limits }\end{DoxyParamCaption})}
+
+
+
+Setter for kinematic limits (joint, velocity, acceleration, etc.) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Kinematic} & Limits \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classtesseract__kinematics_1_1JointGroup_ad985279ab414b46f06b9c4202e7518a4}\label{classtesseract__kinematics_1_1JointGroup_ad985279ab414b46f06b9c4202e7518a4}} 
+\index{tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}!jacobian\_map\_@{jacobian\_map\_}}
+\index{jacobian\_map\_@{jacobian\_map\_}!tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}}
+\doxysubsubsection{\texorpdfstring{jacobian\_map\_}{jacobian\_map\_}}
+{\footnotesize\ttfamily std\+::vector$<$Eigen\+::\+Index$>$ tesseract\+\_\+kinematics\+::\+Joint\+Group\+::jacobian\+\_\+map\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classtesseract__kinematics_1_1JointGroup_abe72b0c41ecd41b77b94897f469c8729}\label{classtesseract__kinematics_1_1JointGroup_abe72b0c41ecd41b77b94897f469c8729}} 
+\index{tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}!joint\_names\_@{joint\_names\_}}
+\index{joint\_names\_@{joint\_names\_}!tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}}
+\doxysubsubsection{\texorpdfstring{joint\_names\_}{joint\_names\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ tesseract\+\_\+kinematics\+::\+Joint\+Group\+::joint\+\_\+names\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classtesseract__kinematics_1_1JointGroup_a98ec16eda59d99d414a5b08a8402f507}\label{classtesseract__kinematics_1_1JointGroup_a98ec16eda59d99d414a5b08a8402f507}} 
+\index{tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}!limits\_@{limits\_}}
+\index{limits\_@{limits\_}!tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}}
+\doxysubsubsection{\texorpdfstring{limits\_}{limits\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtesseract__common_1_1KinematicLimits}{tesseract\+\_\+common\+::\+Kinematic\+Limits}} tesseract\+\_\+kinematics\+::\+Joint\+Group\+::limits\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classtesseract__kinematics_1_1JointGroup_ab03b7c417ebb42bdc1f2f7d89c6bc0b6}\label{classtesseract__kinematics_1_1JointGroup_ab03b7c417ebb42bdc1f2f7d89c6bc0b6}} 
+\index{tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}!link\_names\_@{link\_names\_}}
+\index{link\_names\_@{link\_names\_}!tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}}
+\doxysubsubsection{\texorpdfstring{link\_names\_}{link\_names\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ tesseract\+\_\+kinematics\+::\+Joint\+Group\+::link\+\_\+names\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classtesseract__kinematics_1_1JointGroup_a244703c830830131755a09bc75755ea3}\label{classtesseract__kinematics_1_1JointGroup_a244703c830830131755a09bc75755ea3}} 
+\index{tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}!name\_@{name\_}}
+\index{name\_@{name\_}!tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}}
+\doxysubsubsection{\texorpdfstring{name\_}{name\_}}
+{\footnotesize\ttfamily std\+::string tesseract\+\_\+kinematics\+::\+Joint\+Group\+::name\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classtesseract__kinematics_1_1JointGroup_a92b89404d2569ef6eddddfbcd5c60e93}\label{classtesseract__kinematics_1_1JointGroup_a92b89404d2569ef6eddddfbcd5c60e93}} 
+\index{tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}!redundancy\_indices\_@{redundancy\_indices\_}}
+\index{redundancy\_indices\_@{redundancy\_indices\_}!tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}}
+\doxysubsubsection{\texorpdfstring{redundancy\_indices\_}{redundancy\_indices\_}}
+{\footnotesize\ttfamily std\+::vector$<$Eigen\+::\+Index$>$ tesseract\+\_\+kinematics\+::\+Joint\+Group\+::redundancy\+\_\+indices\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classtesseract__kinematics_1_1JointGroup_a63873fc46dc40c5c488d529f1a630400}\label{classtesseract__kinematics_1_1JointGroup_a63873fc46dc40c5c488d529f1a630400}} 
+\index{tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}!state\_@{state\_}}
+\index{state\_@{state\_}!tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}}
+\doxysubsubsection{\texorpdfstring{state\_}{state\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+State}} tesseract\+\_\+kinematics\+::\+Joint\+Group\+::state\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classtesseract__kinematics_1_1JointGroup_a9010d34d1ca2b505566d2bcf4c000f51}\label{classtesseract__kinematics_1_1JointGroup_a9010d34d1ca2b505566d2bcf4c000f51}} 
+\index{tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}!state\_solver\_@{state\_solver\_}}
+\index{state\_solver\_@{state\_solver\_}!tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}}
+\doxysubsubsection{\texorpdfstring{state\_solver\_}{state\_solver\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a0834c4abefbc5b7da4e66cd26619a9ba}{tesseract\+\_\+scene\+\_\+graph\+::\+State\+Solver\+::\+UPtr}} tesseract\+\_\+kinematics\+::\+Joint\+Group\+::state\+\_\+solver\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classtesseract__kinematics_1_1JointGroup_a417b73650c89ea1f22db44871e382131}\label{classtesseract__kinematics_1_1JointGroup_a417b73650c89ea1f22db44871e382131}} 
+\index{tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}!static\_link\_names\_@{static\_link\_names\_}}
+\index{static\_link\_names\_@{static\_link\_names\_}!tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}}
+\doxysubsubsection{\texorpdfstring{static\_link\_names\_}{static\_link\_names\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ tesseract\+\_\+kinematics\+::\+Joint\+Group\+::static\+\_\+link\+\_\+names\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classtesseract__kinematics_1_1JointGroup_adc2ecdd7cde30b6e55d9da6ba67ebe1f}\label{classtesseract__kinematics_1_1JointGroup_adc2ecdd7cde30b6e55d9da6ba67ebe1f}} 
+\index{tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}!static\_link\_transforms\_@{static\_link\_transforms\_}}
+\index{static\_link\_transforms\_@{static\_link\_transforms\_}!tesseract\_kinematics::JointGroup@{tesseract\_kinematics::JointGroup}}
+\doxysubsubsection{\texorpdfstring{static\_link\_transforms\_}{static\_link\_transforms\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacetesseract__common_a67bde3cb7bb235f0f61c370ef8bc74d8}{tesseract\+\_\+common\+::\+Transform\+Map}} tesseract\+\_\+kinematics\+::\+Joint\+Group\+::static\+\_\+link\+\_\+transforms\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+tesseract\+\_\+kinematics/core/include/tesseract\+\_\+kinematics/core/\mbox{\hyperlink{joint__group_8h}{joint\+\_\+group.\+h}}\item 
+tesseract\+\_\+kinematics/core/src/\mbox{\hyperlink{joint__group_8cpp}{joint\+\_\+group.\+cpp}}\end{DoxyCompactItemize}

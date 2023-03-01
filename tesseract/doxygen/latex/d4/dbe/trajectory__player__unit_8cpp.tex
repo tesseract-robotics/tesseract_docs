@@ -1,0 +1,190 @@
+\hypertarget{trajectory__player__unit_8cpp}{}\doxysection{tesseract\+\_\+visualization/test/trajectory\+\_\+player\+\_\+unit.cpp File Reference}
+\label{trajectory__player__unit_8cpp}\index{tesseract\_visualization/test/trajectory\_player\_unit.cpp@{tesseract\_visualization/test/trajectory\_player\_unit.cpp}}
+{\ttfamily \#include $<$tesseract\+\_\+common/macros.\+h$>$}\newline
+{\ttfamily \#include $<$gtest/gtest.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+visualization/trajectory\+\_\+player.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+visualization/trajectory\+\_\+interpolator.\+h$>$}\newline
+Include dependency graph for trajectory\+\_\+player\+\_\+unit.\+cpp\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{trajectory__player__unit_8cpp_a741abee052b11140343150b96006d485}{for}} (long i=0;i$<$ 10;++i)
+\item 
+\mbox{\hyperlink{trajectory__player__unit_8cpp_ae8567a78397bc132625b30f69745cdf3}{player}} \mbox{\hyperlink{trajectory__player__unit_8cpp_a5022f10e7d18043f52985e0632326967}{set\+Trajectory}} (\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a2eb4f502ad97d43c60111b5ffd01a1e6}{trajectory}})
+\item 
+\mbox{\hyperlink{trajectory__player__unit_8cpp_ab35129b0d9fd3173cc78bffc6c30699e}{EXPECT\+\_\+\+NEAR}} (player.\+trajectory\+Duration(), 9, 1e-\/5)
+\item 
+\mbox{\hyperlink{trajectory__player__unit_8cpp_a12520f36baaa4c3783643ece943703ee}{EXPECT\+\_\+\+NEAR}} (player.\+current\+Duration(), 0, 1e-\/5)
+\item 
+\mbox{\hyperlink{trajectory__player__unit_8cpp_a60e317607ebca568531b7f2e36b556fe}{EXPECT\+\_\+\+NEAR}} (\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_ad09056a4bcd52540541e635a0fdf5551}{s.\+time}}, 9, 1e-\/5)
+\item 
+\mbox{\hyperlink{trajectory__player__unit_8cpp_a767242f85cf1c1be75ff782953b07f34}{EXPECT\+\_\+\+NEAR}} (\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_af0c068d080af3059ecb802c9e338bd98}{s.\+position}}(0), 9, 1e-\/5)
+\item 
+\mbox{\hyperlink{trajectory__player__unit_8cpp_a679bc94da58ecbecc962dc90d2dce748}{EXPECT\+\_\+\+TRUE}} (player.\+is\+Finished())
+\item 
+\mbox{\hyperlink{trajectory__player__unit_8cpp_ae8567a78397bc132625b30f69745cdf3}{player}} \mbox{\hyperlink{trajectory__player__unit_8cpp_a12244118274155e598c55facfba98c7e}{set\+Current\+Duration}} (0)
+\item 
+\mbox{\hyperlink{trajectory__player__unit_8cpp_ae5f1435c3aa2338c8234b2ba00b143fe}{EXPECT\+\_\+\+FALSE}} (player.\+is\+Finished())
+\item 
+\mbox{\hyperlink{trajectory__player__unit_8cpp_a27b8a166701a3c2fbd924d75829ca999}{EXPECT\+\_\+\+NEAR}} (\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_ad09056a4bcd52540541e635a0fdf5551}{s.\+time}}, 0, 1e-\/5)
+\item 
+\mbox{\hyperlink{trajectory__player__unit_8cpp_a5668dbdf3eea720ef042b9fd29ebb9ff}{EXPECT\+\_\+\+NEAR}} (\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_af0c068d080af3059ecb802c9e338bd98}{s.\+position}}(0), 0, 1e-\/5)
+\item 
+Trajectory\+Interpolator \mbox{\hyperlink{trajectory__player__unit_8cpp_ab5392d86660f95d6a33614d03cb31cf9}{interpolator}} (\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a2eb4f502ad97d43c60111b5ffd01a1e6}{trajectory}})
+\item 
+\mbox{\hyperlink{trajectory__player__unit_8cpp_a7d773d6f084c4706571af66412914ef6}{EXPECT\+\_\+\+EQ}} (interpolator.\+get\+State\+Count(), 10)
+\item 
+int \mbox{\hyperlink{trajectory__player__unit_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\+\_\+\+COMMON\+\_\+\+IGNORE\+\_\+\+WARNINGS\+\_\+\+PUSH}} \mbox{\hyperlink{trajectory__player__unit_8cpp_a2733ace18b4e650b36b176083d0f9c42}{TESSERACT\+\_\+\+COMMON\+\_\+\+IGNORE\+\_\+\+WARNINGS\+\_\+\+POP}}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{trajectory__player__unit_8cpp_a9e7923dd434ecb1c52b6789e40426c26}{joint\+\_\+names}} = \{ \char`\"{}joint\+\_\+1\char`\"{}, \char`\"{}joint\+\_\+2\char`\"{}, \char`\"{}joint\+\_\+3\char`\"{}, \char`\"{}joint\+\_\+4\char`\"{}, \char`\"{}joint\+\_\+5\char`\"{}, \char`\"{}joint\+\_\+6\char`\"{} \}
+\item 
+\mbox{\hyperlink{classtesseract__common_1_1JointTrajectory}{Joint\+Trajectory}} \mbox{\hyperlink{trajectory__player__unit_8cpp_a2eb4f502ad97d43c60111b5ffd01a1e6}{trajectory}}
+\item 
+Trajectory\+Player \mbox{\hyperlink{trajectory__player__unit_8cpp_ae8567a78397bc132625b30f69745cdf3}{player}}
+\item 
+\mbox{\hyperlink{classtesseract__common_1_1JointState}{Joint\+State}} \mbox{\hyperlink{trajectory__player__unit_8cpp_a3926e8e28bd5263a3ec0839f652cf54c}{s}} = interpolator.\+get\+State(10)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{trajectory__player__unit_8cpp_a7d773d6f084c4706571af66412914ef6}\label{trajectory__player__unit_8cpp_a7d773d6f084c4706571af66412914ef6}} 
+\index{trajectory\_player\_unit.cpp@{trajectory\_player\_unit.cpp}!EXPECT\_EQ@{EXPECT\_EQ}}
+\index{EXPECT\_EQ@{EXPECT\_EQ}!trajectory\_player\_unit.cpp@{trajectory\_player\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_EQ()}{EXPECT\_EQ()}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+EQ (\begin{DoxyParamCaption}\item[{interpolator.}]{get\+State\+Count(),  }\item[{10}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{trajectory__player__unit_8cpp_ae5f1435c3aa2338c8234b2ba00b143fe}\label{trajectory__player__unit_8cpp_ae5f1435c3aa2338c8234b2ba00b143fe}} 
+\index{trajectory\_player\_unit.cpp@{trajectory\_player\_unit.cpp}!EXPECT\_FALSE@{EXPECT\_FALSE}}
+\index{EXPECT\_FALSE@{EXPECT\_FALSE}!trajectory\_player\_unit.cpp@{trajectory\_player\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_FALSE()}{EXPECT\_FALSE()}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+FALSE (\begin{DoxyParamCaption}\item[{player.}]{is\+Finished() }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{trajectory__player__unit_8cpp_a12520f36baaa4c3783643ece943703ee}\label{trajectory__player__unit_8cpp_a12520f36baaa4c3783643ece943703ee}} 
+\index{trajectory\_player\_unit.cpp@{trajectory\_player\_unit.cpp}!EXPECT\_NEAR@{EXPECT\_NEAR}}
+\index{EXPECT\_NEAR@{EXPECT\_NEAR}!trajectory\_player\_unit.cpp@{trajectory\_player\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_NEAR()}{EXPECT\_NEAR()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+NEAR (\begin{DoxyParamCaption}\item[{player.}]{current\+Duration(),  }\item[{0}]{,  }\item[{1e-\/}]{5 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{trajectory__player__unit_8cpp_ab35129b0d9fd3173cc78bffc6c30699e}\label{trajectory__player__unit_8cpp_ab35129b0d9fd3173cc78bffc6c30699e}} 
+\index{trajectory\_player\_unit.cpp@{trajectory\_player\_unit.cpp}!EXPECT\_NEAR@{EXPECT\_NEAR}}
+\index{EXPECT\_NEAR@{EXPECT\_NEAR}!trajectory\_player\_unit.cpp@{trajectory\_player\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_NEAR()}{EXPECT\_NEAR()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+NEAR (\begin{DoxyParamCaption}\item[{player.}]{trajectory\+Duration(),  }\item[{9}]{,  }\item[{1e-\/}]{5 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{trajectory__player__unit_8cpp_a5668dbdf3eea720ef042b9fd29ebb9ff}\label{trajectory__player__unit_8cpp_a5668dbdf3eea720ef042b9fd29ebb9ff}} 
+\index{trajectory\_player\_unit.cpp@{trajectory\_player\_unit.cpp}!EXPECT\_NEAR@{EXPECT\_NEAR}}
+\index{EXPECT\_NEAR@{EXPECT\_NEAR}!trajectory\_player\_unit.cpp@{trajectory\_player\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_NEAR()}{EXPECT\_NEAR()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+NEAR (\begin{DoxyParamCaption}\item[{s.}]{position0,  }\item[{0}]{,  }\item[{1e-\/}]{5 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{trajectory__player__unit_8cpp_a767242f85cf1c1be75ff782953b07f34}\label{trajectory__player__unit_8cpp_a767242f85cf1c1be75ff782953b07f34}} 
+\index{trajectory\_player\_unit.cpp@{trajectory\_player\_unit.cpp}!EXPECT\_NEAR@{EXPECT\_NEAR}}
+\index{EXPECT\_NEAR@{EXPECT\_NEAR}!trajectory\_player\_unit.cpp@{trajectory\_player\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_NEAR()}{EXPECT\_NEAR()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+NEAR (\begin{DoxyParamCaption}\item[{s.}]{position0,  }\item[{9}]{,  }\item[{1e-\/}]{5 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{trajectory__player__unit_8cpp_a27b8a166701a3c2fbd924d75829ca999}\label{trajectory__player__unit_8cpp_a27b8a166701a3c2fbd924d75829ca999}} 
+\index{trajectory\_player\_unit.cpp@{trajectory\_player\_unit.cpp}!EXPECT\_NEAR@{EXPECT\_NEAR}}
+\index{EXPECT\_NEAR@{EXPECT\_NEAR}!trajectory\_player\_unit.cpp@{trajectory\_player\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_NEAR()}{EXPECT\_NEAR()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+NEAR (\begin{DoxyParamCaption}\item[{s.}]{time,  }\item[{0}]{,  }\item[{1e-\/}]{5 }\end{DoxyParamCaption})}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \mbox{\hyperlink{classtesseract__common_1_1JointState}{JointState}} \mbox{\hyperlink{trajectory__player__unit_8cpp_a3926e8e28bd5263a3ec0839f652cf54c}{s}} = \mbox{\hyperlink{trajectory__player__unit_8cpp_ae8567a78397bc132625b30f69745cdf3}{player}}.setCurrentDuration(-\/1)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{trajectory__player__unit_8cpp_a60e317607ebca568531b7f2e36b556fe}\label{trajectory__player__unit_8cpp_a60e317607ebca568531b7f2e36b556fe}} 
+\index{trajectory\_player\_unit.cpp@{trajectory\_player\_unit.cpp}!EXPECT\_NEAR@{EXPECT\_NEAR}}
+\index{EXPECT\_NEAR@{EXPECT\_NEAR}!trajectory\_player\_unit.cpp@{trajectory\_player\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_NEAR()}{EXPECT\_NEAR()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+NEAR (\begin{DoxyParamCaption}\item[{s.}]{time,  }\item[{9}]{,  }\item[{1e-\/}]{5 }\end{DoxyParamCaption})}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \mbox{\hyperlink{classtesseract__common_1_1JointState}{JointState}} \mbox{\hyperlink{trajectory__player__unit_8cpp_a3926e8e28bd5263a3ec0839f652cf54c}{s}} = \mbox{\hyperlink{trajectory__player__unit_8cpp_ae8567a78397bc132625b30f69745cdf3}{player}}.setCurrentDuration(10)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{trajectory__player__unit_8cpp_a679bc94da58ecbecc962dc90d2dce748}\label{trajectory__player__unit_8cpp_a679bc94da58ecbecc962dc90d2dce748}} 
+\index{trajectory\_player\_unit.cpp@{trajectory\_player\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!trajectory\_player\_unit.cpp@{trajectory\_player\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{player.}]{is\+Finished() }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{trajectory__player__unit_8cpp_a741abee052b11140343150b96006d485}\label{trajectory__player__unit_8cpp_a741abee052b11140343150b96006d485}} 
+\index{trajectory\_player\_unit.cpp@{trajectory\_player\_unit.cpp}!for@{for}}
+\index{for@{for}!trajectory\_player\_unit.cpp@{trajectory\_player\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{for()}{for()}}
+{\footnotesize\ttfamily for (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{trajectory__player__unit_8cpp_ab5392d86660f95d6a33614d03cb31cf9}\label{trajectory__player__unit_8cpp_ab5392d86660f95d6a33614d03cb31cf9}} 
+\index{trajectory\_player\_unit.cpp@{trajectory\_player\_unit.cpp}!interpolator@{interpolator}}
+\index{interpolator@{interpolator}!trajectory\_player\_unit.cpp@{trajectory\_player\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{interpolator()}{interpolator()}}
+{\footnotesize\ttfamily Trajectory\+Interpolator interpolator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a2eb4f502ad97d43c60111b5ffd01a1e6}{trajectory}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{trajectory__player__unit_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{trajectory__player__unit_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{trajectory\_player\_unit.cpp@{trajectory\_player\_unit.cpp}!main@{main}}
+\index{main@{main}!trajectory\_player\_unit.cpp@{trajectory\_player\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{trajectory__player__unit_8cpp_a12244118274155e598c55facfba98c7e}\label{trajectory__player__unit_8cpp_a12244118274155e598c55facfba98c7e}} 
+\index{trajectory\_player\_unit.cpp@{trajectory\_player\_unit.cpp}!setCurrentDuration@{setCurrentDuration}}
+\index{setCurrentDuration@{setCurrentDuration}!trajectory\_player\_unit.cpp@{trajectory\_player\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{setCurrentDuration()}{setCurrentDuration()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{trajectory__player__unit_8cpp_ae8567a78397bc132625b30f69745cdf3}{player}} set\+Current\+Duration (\begin{DoxyParamCaption}\item[{0}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{trajectory__player__unit_8cpp_a5022f10e7d18043f52985e0632326967}\label{trajectory__player__unit_8cpp_a5022f10e7d18043f52985e0632326967}} 
+\index{trajectory\_player\_unit.cpp@{trajectory\_player\_unit.cpp}!setTrajectory@{setTrajectory}}
+\index{setTrajectory@{setTrajectory}!trajectory\_player\_unit.cpp@{trajectory\_player\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{setTrajectory()}{setTrajectory()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{trajectory__player__unit_8cpp_ae8567a78397bc132625b30f69745cdf3}{player}} set\+Trajectory (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a2eb4f502ad97d43c60111b5ffd01a1e6}{trajectory}}}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{trajectory__player__unit_8cpp_a9e7923dd434ecb1c52b6789e40426c26}\label{trajectory__player__unit_8cpp_a9e7923dd434ecb1c52b6789e40426c26}} 
+\index{trajectory\_player\_unit.cpp@{trajectory\_player\_unit.cpp}!joint\_names@{joint\_names}}
+\index{joint\_names@{joint\_names}!trajectory\_player\_unit.cpp@{trajectory\_player\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{joint\_names}{joint\_names}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ joint\+\_\+names = \{ \char`\"{}joint\+\_\+1\char`\"{}, \char`\"{}joint\+\_\+2\char`\"{}, \char`\"{}joint\+\_\+3\char`\"{}, \char`\"{}joint\+\_\+4\char`\"{}, \char`\"{}joint\+\_\+5\char`\"{}, \char`\"{}joint\+\_\+6\char`\"{} \}}
+
+\mbox{\Hypertarget{trajectory__player__unit_8cpp_ae8567a78397bc132625b30f69745cdf3}\label{trajectory__player__unit_8cpp_ae8567a78397bc132625b30f69745cdf3}} 
+\index{trajectory\_player\_unit.cpp@{trajectory\_player\_unit.cpp}!player@{player}}
+\index{player@{player}!trajectory\_player\_unit.cpp@{trajectory\_player\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{player}{player}}
+{\footnotesize\ttfamily Trajectory\+Player player}
+
+\mbox{\Hypertarget{trajectory__player__unit_8cpp_a3926e8e28bd5263a3ec0839f652cf54c}\label{trajectory__player__unit_8cpp_a3926e8e28bd5263a3ec0839f652cf54c}} 
+\index{trajectory\_player\_unit.cpp@{trajectory\_player\_unit.cpp}!s@{s}}
+\index{s@{s}!trajectory\_player\_unit.cpp@{trajectory\_player\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{s}{s}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__common_1_1JointState}{Joint\+State}} s = interpolator.\+get\+State(10)}
+
+\mbox{\Hypertarget{trajectory__player__unit_8cpp_a2733ace18b4e650b36b176083d0f9c42}\label{trajectory__player__unit_8cpp_a2733ace18b4e650b36b176083d0f9c42}} 
+\index{trajectory\_player\_unit.cpp@{trajectory\_player\_unit.cpp}!TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP@{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}
+\index{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP@{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}!trajectory\_player\_unit.cpp@{trajectory\_player\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}
+{\footnotesize\ttfamily \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\+\_\+\+COMMON\+\_\+\+IGNORE\+\_\+\+WARNINGS\+\_\+\+PUSH}} TESSERACT\+\_\+\+COMMON\+\_\+\+IGNORE\+\_\+\+WARNINGS\+\_\+\+POP}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  \textcolor{keyword}{using namespace }\mbox{\hyperlink{namespacetesseract__visualization}{tesseract\_visualization}}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{trajectory__player__unit_8cpp_a2eb4f502ad97d43c60111b5ffd01a1e6}\label{trajectory__player__unit_8cpp_a2eb4f502ad97d43c60111b5ffd01a1e6}} 
+\index{trajectory\_player\_unit.cpp@{trajectory\_player\_unit.cpp}!trajectory@{trajectory}}
+\index{trajectory@{trajectory}!trajectory\_player\_unit.cpp@{trajectory\_player\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{trajectory}{trajectory}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__common_1_1JointTrajectory}{Joint\+Trajectory}} trajectory}
+

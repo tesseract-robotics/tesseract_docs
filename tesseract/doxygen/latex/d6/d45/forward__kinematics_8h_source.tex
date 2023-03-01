@@ -1,0 +1,65 @@
+\hypertarget{forward__kinematics_8h_source}{}\doxysection{forward\+\_\+kinematics.\+h}
+\label{forward__kinematics_8h_source}\index{tesseract\_kinematics/core/include/tesseract\_kinematics/core/forward\_kinematics.h@{tesseract\_kinematics/core/include/tesseract\_kinematics/core/forward\_kinematics.h}}
+\mbox{\hyperlink{forward__kinematics_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#ifndef TESSERACT\_KINEMATICS\_FORWARD\_KINEMATICS\_H}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define TESSERACT\_KINEMATICS\_FORWARD\_KINEMATICS\_H}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{macros_8h}{tesseract\_common/macros.h}}>}}
+\DoxyCodeLine{30 \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include <Eigen/Core>}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include <Eigen/Geometry>}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#include <unordered\_map>}}
+\DoxyCodeLine{38 \mbox{\hyperlink{namespaceTESSERACT__COMMON__IGNORE__WARNINGS__POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{tesseract__common_2include_2tesseract__common_2types_8h}{tesseract\_common/types.h}}>}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{graph_8h}{tesseract\_scene\_graph/graph.h}}>}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__kinematics}{tesseract\_kinematics}}}
+\DoxyCodeLine{44 \{}
+\DoxyCodeLine{46 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__kinematics_1_1ForwardKinematics}{ForwardKinematics}}}
+\DoxyCodeLine{47 \{}
+\DoxyCodeLine{48 \textcolor{keyword}{public}:}
+\DoxyCodeLine{49   \textcolor{comment}{// LCOV\_EXCL\_START}}
+\DoxyCodeLine{50   EIGEN\_MAKE\_ALIGNED\_OPERATOR\_NEW}
+\DoxyCodeLine{51   \textcolor{comment}{// LCOV\_EXCL\_STOP}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__kinematics_1_1ForwardKinematics_abdb52d493e8f0c584be778ddb193ed46}{Ptr}} = std::shared\_ptr<ForwardKinematics>;}
+\DoxyCodeLine{54   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__kinematics_1_1ForwardKinematics_a2c99fff4d4596e15bfdc4f72ec3b7406}{ConstPtr}} = std::shared\_ptr<const ForwardKinematics>;}
+\DoxyCodeLine{55   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__kinematics_1_1ForwardKinematics_a53cb5fab19798d5afc20c259d4ffe1e3}{UPtr}} = std::unique\_ptr<ForwardKinematics>;}
+\DoxyCodeLine{56   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__kinematics_1_1ForwardKinematics_a6ac564350a1e997a4502d58b81f0a483}{ConstUPtr}} = std::unique\_ptr<const ForwardKinematics>;}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58   \mbox{\hyperlink{classtesseract__kinematics_1_1ForwardKinematics_ad076149c3b12c1d0a1630c459f4e94fe}{ForwardKinematics}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{59   \textcolor{keyword}{virtual} \mbox{\hyperlink{classtesseract__kinematics_1_1ForwardKinematics_a352af782f6aba0d41aec78ed6ce5c20d}{\string~ForwardKinematics}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{60   \mbox{\hyperlink{classtesseract__kinematics_1_1ForwardKinematics_a79fdfecfae28b99ee73853ef9e25d177}{ForwardKinematics}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__kinematics_1_1ForwardKinematics}{ForwardKinematics}}\&) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{61   \mbox{\hyperlink{classtesseract__kinematics_1_1ForwardKinematics}{ForwardKinematics}}\& \mbox{\hyperlink{classtesseract__kinematics_1_1ForwardKinematics_aa63b1e918514fcd7201ce0872e00f0ee}{operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__kinematics_1_1ForwardKinematics}{ForwardKinematics}}\&) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{62   \mbox{\hyperlink{classtesseract__kinematics_1_1ForwardKinematics_aa97e885003440aae7c5d53523a34ed3c}{ForwardKinematics}}(\mbox{\hyperlink{classtesseract__kinematics_1_1ForwardKinematics}{ForwardKinematics}}\&\&) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{63   \mbox{\hyperlink{classtesseract__kinematics_1_1ForwardKinematics}{ForwardKinematics}}\& \mbox{\hyperlink{classtesseract__kinematics_1_1ForwardKinematics_a78778d293b1c3c6c785eb1303749a6d4}{operator=}}(\mbox{\hyperlink{classtesseract__kinematics_1_1ForwardKinematics}{ForwardKinematics}}\&\&) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{73   \textcolor{keyword}{virtual} \mbox{\hyperlink{namespacetesseract__common_a67bde3cb7bb235f0f61c370ef8bc74d8}{tesseract\_common::TransformMap}} \mbox{\hyperlink{classtesseract__kinematics_1_1ForwardKinematics_a81f281915dbb7a3528f1ac2328b15c3c}{calcFwdKin}}(\textcolor{keyword}{const} Eigen::Ref<const Eigen::VectorXd>\& joint\_angles) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{84   \textcolor{keyword}{virtual} Eigen::MatrixXd \mbox{\hyperlink{classtesseract__kinematics_1_1ForwardKinematics_a4b70df584a97c3504ea7326eecc2804f}{calcJacobian}}(\textcolor{keyword}{const} Eigen::Ref<const Eigen::VectorXd>\& joint\_angles,}
+\DoxyCodeLine{85                                        \textcolor{keyword}{const} std::string\& link\_name) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{88   \textcolor{keyword}{virtual} std::string \mbox{\hyperlink{classtesseract__kinematics_1_1ForwardKinematics_ab02a688b0b0034b62a68da5103d6cb3b}{getBaseLinkName}}() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{94   \textcolor{keyword}{virtual} std::vector<std::string> \mbox{\hyperlink{classtesseract__kinematics_1_1ForwardKinematics_afcb0f6ae74bc94d575884d117a909c1d}{getJointNames}}() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{100   \textcolor{keyword}{virtual} std::vector<std::string> \mbox{\hyperlink{classtesseract__kinematics_1_1ForwardKinematics_a398d049d49fb2fa224735965c810de2c}{getTipLinkNames}}() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{106   \textcolor{keyword}{virtual} Eigen::Index \mbox{\hyperlink{classtesseract__kinematics_1_1ForwardKinematics_afcdf8be4f70df99050080c7c0a5ca379}{numJoints}}() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{109   \textcolor{keyword}{virtual} std::string \mbox{\hyperlink{classtesseract__kinematics_1_1ForwardKinematics_a8b09829842ef384b734a4bb28603f064}{getSolverName}}() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{112   \textcolor{keyword}{virtual} \mbox{\hyperlink{classtesseract__kinematics_1_1ForwardKinematics_a53cb5fab19798d5afc20c259d4ffe1e3}{ForwardKinematics::UPtr}} \mbox{\hyperlink{classtesseract__kinematics_1_1ForwardKinematics_adc550b87a373f9f5cac4d2154b0c6c80}{clone}}() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{113 \};}
+\DoxyCodeLine{114 \}  \textcolor{comment}{// namespace tesseract\_kinematics}}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_KINEMATICS\_FORWARD\_KINEMATICS\_H}}
+
+\end{DoxyCode}

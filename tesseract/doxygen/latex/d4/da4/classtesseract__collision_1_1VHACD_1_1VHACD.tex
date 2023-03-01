@@ -1,0 +1,413 @@
+\hypertarget{classtesseract__collision_1_1VHACD_1_1VHACD}{}\doxysection{tesseract\+\_\+collision\+::VHACD\+::VHACD Class Reference}
+\label{classtesseract__collision_1_1VHACD_1_1VHACD}\index{tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}}
+
+
+{\ttfamily \#include $<$vhacd\+VHACD.\+h$>$}
+
+
+
+Inheritance diagram for tesseract\+\_\+collision\+::VHACD\+::VHACD\+:
+% FIG 0
+
+
+Collaboration diagram for tesseract\+\_\+collision\+::VHACD\+::VHACD\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_aefb28803078126d162ddfc280f6b3e4b}{VHACD}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a8e304ee46f974e621ec0751093c658b5}{Get\+NConvex\+Hulls}} () const override
+\item 
+void \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_aa0065955820f10836abc7f2b15c85b98}{Cancel}} () override
+\item 
+void \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a6dde9e721a7e8f97ed9cc44a3b641781}{Get\+Convex\+Hull}} (uint32\+\_\+t index, \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1ConvexHull}{Convex\+Hull}} \&ch) const override
+\item 
+void \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_af260536d900c302113e876657ca5e694}{Clean}} () override
+\item 
+void \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a53159f616b33604d24932b0d3c269e61}{Release}} () override
+\item 
+bool \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a76d500131a5a314b964722f4d116d14b}{Compute}} (float const $\ast$points, uint32\+\_\+t n\+Points, uint32\+\_\+t const $\ast$triangles, uint32\+\_\+t n\+Triangles, const \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1Parameters}{Parameters}} \&params) override
+\item 
+bool \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a5578bd503ed5cd13a75acee7dae2b7d1}{Compute}} (double const $\ast$points, uint32\+\_\+t n\+Points, uint32\+\_\+t const $\ast$triangles, uint32\+\_\+t n\+Triangles, const \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1Parameters}{Parameters}} \&params) override
+\item 
+bool \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a233d7265a0a0a6e75c7f8492ff839392}{OCLInit}} (void const $\ast$ocl\+Device, \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1IUserLogger}{VHACD\+::\+IVHACD\+::\+IUser\+Logger}} const $\ast$logger=nullptr) override
+\item 
+bool \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a705fcd3b651b8a0c9c21a0af54ed3e7d}{OCLRelease}} (\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1IUserLogger}{IUser\+Logger}} const $\ast$logger=nullptr) override
+\item 
+virtual bool \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a5841546f0eabfa381383b94c20759f77}{Compute\+Center\+Of\+Mass}} (std\+::array$<$ double, 3 $>$ \&center\+Of\+Mass) const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a7423a51c9d998f9614187650f2c7b33c}{Set\+Cancel}} (bool cancel)
+\item 
+bool \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_ad08f7ec9d3489add6fb70181e0af5ff6}{Get\+Cancel}} ()
+\item 
+void \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a7709d5e4f458a52fa243bb75776b014d}{Update}} (const double stage\+Progress, const double operation\+Progress, const \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1Parameters}{Parameters}} \&params)
+\item 
+void \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_ae6cb35d36bdee18fd08b8947b7d48891}{Init}} ()
+\item 
+void \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_aaf5f49a3091fdfaa8493dc6280c233ac}{Compute\+Primitive\+Set}} (const \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1Parameters}{Parameters}} \&params)
+\item 
+void \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_abc26a7a09bd91d3aaa048402cda1b1fe}{Compute\+ACD}} (const \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1Parameters}{Parameters}} \&params)
+\item 
+void \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_ade5fa648e8c3a13f9d52c802c4df7ce8}{Merge\+Convex\+Hulls}} (const \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1Parameters}{Parameters}} \&params)
+\item 
+void \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_aebda68eb8828da8f4bdc16eab9e39dfb}{Simplify\+Convex\+Hull}} (\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Mesh}{Mesh}} $\ast$const ch, const size\+\_\+t nvertices, const double min\+Volume)
+\item 
+void \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a680dfe5d573014668d4e9fe7e9b8b52c}{Simplify\+Convex\+Hulls}} (const \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1Parameters}{Parameters}} \&params)
+\item 
+void \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_ae84a99890f36ae6188b75b8478918d90}{Compute\+Best\+Clipping\+Plane}} (const \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1PrimitiveSet}{Primitive\+Set}} $\ast$input\+PSet, const double volume, const \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray}{SArray}}$<$ \mbox{\hyperlink{structtesseract__collision_1_1VHACD_1_1Plane}{Plane}} $>$ \&planes, const \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Vec3}{Vec3}}$<$ double $>$ \&preferred\+Cutting\+Direction, const double w, const double alpha, const double beta, const int32\+\_\+t convexhull\+Downsampling, const double progress0, const double progress1, \mbox{\hyperlink{structtesseract__collision_1_1VHACD_1_1Plane}{Plane}} \&best\+Plane, double \&min\+Concavity, const \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1Parameters}{Parameters}} \&params)
+\item 
+{\footnotesize template$<$class \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$ }\\void \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_aced7e7858030bc8ec46841d94153eaa6}{Align\+Mesh}} (const \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $\ast$const points, const uint32\+\_\+t stride\+Points, const uint32\+\_\+t n\+Points, const int32\+\_\+t $\ast$const triangles, const uint32\+\_\+t stride\+Triangles, const uint32\+\_\+t n\+Triangles, const \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1Parameters}{Parameters}} \&params)
+\item 
+{\footnotesize template$<$class \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$ }\\void \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a5cabf81f93bfe5a114b5229fba393ac1}{Voxelize\+Mesh}} (const \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $\ast$const points, const uint32\+\_\+t stride\+Points, const uint32\+\_\+t n\+Points, const int32\+\_\+t $\ast$const triangles, const uint32\+\_\+t stride\+Triangles, const uint32\+\_\+t n\+Triangles, const \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1Parameters}{Parameters}} \&params)
+\item 
+{\footnotesize template$<$class \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$ }\\bool \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_abd3b1e194c371d9116cf2d0cbc3d4889}{Compute\+ACD}} (const \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $\ast$const points, const uint32\+\_\+t n\+Points, const uint32\+\_\+t $\ast$const triangles, const uint32\+\_\+t n\+Triangles, const \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1Parameters}{Parameters}} \&params)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1RaycastMesh}{Raycast\+Mesh}} $\ast$ \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a47fe798bf9aa8b03d794b2dd14cf89fe}{m\+Raycast\+Mesh}} \{ nullptr \}
+\item 
+\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray}{SArray}}$<$ \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Mesh}{Mesh}} $\ast$ $>$ \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_aa55709991616e116710ba56e52dbeae9}{m\+\_\+convex\+Hulls}}
+\item 
+std\+::string \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_ad2b50bd138af5f639e4f101e28f1140c}{m\+\_\+stage}}
+\item 
+std\+::string \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a6ed09e92c5bd1bf09fae48ce7d6f346c}{m\+\_\+operation}}
+\item 
+double \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_abf4a863d7c4dfcd757fcd5e99511c985}{m\+\_\+overall\+Progress}}
+\item 
+double \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_ad4f19cb97e7d3c66481e7bd98c1ebbc1}{m\+\_\+stage\+Progress}}
+\item 
+double \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a7ff0f1b582fe03a8312b092cb6dc1784}{m\+\_\+operation\+Progress}}
+\item 
+double \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a3c7dff4f0af3caf395223ff564d52302}{m\+\_\+rot}} \mbox{[}3\mbox{]}\mbox{[}3\mbox{]}
+\item 
+double \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a654a4b1392fbc7ddc1e57d243f04b2ee}{m\+\_\+volume\+CH0}}
+\item 
+\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Vec3}{Vec3}}$<$ double $>$ \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_aa8ae937f9f9b31e113907fbcdb6d5f84}{m\+\_\+barycenter}}
+\item 
+\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Timer}{Timer}} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_aa0beb1214e4e0d0d19f0dbe53ab93b7b}{m\+\_\+timer}}
+\item 
+size\+\_\+t \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a1208f1e90ea933bd1f48399dd97859ce}{m\+\_\+dim}}
+\item 
+\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Volume}{Volume}} $\ast$ \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a4f3d2f032daf5e14256d4b3a9f4e806b}{m\+\_\+volume}}
+\item 
+\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1PrimitiveSet}{Primitive\+Set}} $\ast$ \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_ace36a35b09a2baf26941b704090a41e9}{m\+\_\+pset}}
+\item 
+\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Mutex}{Mutex}} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a719255b711264d94832c05d41b8f9e2b}{m\+\_\+cancel\+Mutex}}
+\item 
+bool \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a697690df8525298fa7ead72c24fb5375}{m\+\_\+cancel}}
+\item 
+int32\+\_\+t \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_abde159111d4261315552acde47077ece}{m\+\_\+omp\+Num\+Processors}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtesseract__collision_1_1VHACD_1_1VHACD_aefb28803078126d162ddfc280f6b3e4b}\label{classtesseract__collision_1_1VHACD_1_1VHACD_aefb28803078126d162ddfc280f6b3e4b}} 
+\index{tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}!VHACD@{VHACD}}
+\index{VHACD@{VHACD}!tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}}
+\doxysubsubsection{\texorpdfstring{VHACD()}{VHACD()}}
+{\footnotesize\ttfamily tesseract\+\_\+collision\+::\+VHACD\+::\+VHACD\+::\+VHACD (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtesseract__collision_1_1VHACD_1_1VHACD_aced7e7858030bc8ec46841d94153eaa6}\label{classtesseract__collision_1_1VHACD_1_1VHACD_aced7e7858030bc8ec46841d94153eaa6}} 
+\index{tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}!AlignMesh@{AlignMesh}}
+\index{AlignMesh@{AlignMesh}!tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}}
+\doxysubsubsection{\texorpdfstring{AlignMesh()}{AlignMesh()}}
+{\footnotesize\ttfamily template$<$class \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$ \\
+void tesseract\+\_\+collision\+::\+VHACD\+::\+VHACD\+::\+Align\+Mesh (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $\ast$const}]{points,  }\item[{const uint32\+\_\+t}]{stride\+Points,  }\item[{const uint32\+\_\+t}]{n\+Points,  }\item[{const int32\+\_\+t $\ast$const}]{triangles,  }\item[{const uint32\+\_\+t}]{stride\+Triangles,  }\item[{const uint32\+\_\+t}]{n\+Triangles,  }\item[{const \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1Parameters}{Parameters}} \&}]{params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1VHACD_1_1VHACD_aa0065955820f10836abc7f2b15c85b98}\label{classtesseract__collision_1_1VHACD_1_1VHACD_aa0065955820f10836abc7f2b15c85b98}} 
+\index{tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}!Cancel@{Cancel}}
+\index{Cancel@{Cancel}!tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}}
+\doxysubsubsection{\texorpdfstring{Cancel()}{Cancel()}}
+{\footnotesize\ttfamily void tesseract\+\_\+collision\+::\+VHACD\+::\+VHACD\+::\+Cancel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_a4d105583051a88b227b8a2d533357459}{tesseract\+\_\+collision\+::\+VHACD\+::\+IVHACD}}.
+
+\mbox{\Hypertarget{classtesseract__collision_1_1VHACD_1_1VHACD_af260536d900c302113e876657ca5e694}\label{classtesseract__collision_1_1VHACD_1_1VHACD_af260536d900c302113e876657ca5e694}} 
+\index{tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}!Clean@{Clean}}
+\index{Clean@{Clean}!tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}}
+\doxysubsubsection{\texorpdfstring{Clean()}{Clean()}}
+{\footnotesize\ttfamily void tesseract\+\_\+collision\+::\+VHACD\+::\+VHACD\+::\+Clean (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_a5f19bca6911d30be6b65ad82517d6176}{tesseract\+\_\+collision\+::\+VHACD\+::\+IVHACD}}.
+
+\mbox{\Hypertarget{classtesseract__collision_1_1VHACD_1_1VHACD_a5578bd503ed5cd13a75acee7dae2b7d1}\label{classtesseract__collision_1_1VHACD_1_1VHACD_a5578bd503ed5cd13a75acee7dae2b7d1}} 
+\index{tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}!Compute@{Compute}}
+\index{Compute@{Compute}!tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}}
+\doxysubsubsection{\texorpdfstring{Compute()}{Compute()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool tesseract\+\_\+collision\+::\+VHACD\+::\+VHACD\+::\+Compute (\begin{DoxyParamCaption}\item[{double const $\ast$}]{points,  }\item[{uint32\+\_\+t}]{n\+Points,  }\item[{uint32\+\_\+t const $\ast$}]{triangles,  }\item[{uint32\+\_\+t}]{n\+Triangles,  }\item[{const \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1Parameters}{Parameters}} \&}]{params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_aab91e9a1fd5f8d6856eff33ca2793d0d}{tesseract\+\_\+collision\+::\+VHACD\+::\+IVHACD}}.
+
+\mbox{\Hypertarget{classtesseract__collision_1_1VHACD_1_1VHACD_a76d500131a5a314b964722f4d116d14b}\label{classtesseract__collision_1_1VHACD_1_1VHACD_a76d500131a5a314b964722f4d116d14b}} 
+\index{tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}!Compute@{Compute}}
+\index{Compute@{Compute}!tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}}
+\doxysubsubsection{\texorpdfstring{Compute()}{Compute()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool tesseract\+\_\+collision\+::\+VHACD\+::\+VHACD\+::\+Compute (\begin{DoxyParamCaption}\item[{float const $\ast$}]{points,  }\item[{uint32\+\_\+t}]{n\+Points,  }\item[{uint32\+\_\+t const $\ast$}]{triangles,  }\item[{uint32\+\_\+t}]{n\+Triangles,  }\item[{const \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1Parameters}{Parameters}} \&}]{params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_a45a9d1bff4a38298c5b3f5b16a3a254a}{tesseract\+\_\+collision\+::\+VHACD\+::\+IVHACD}}.
+
+\mbox{\Hypertarget{classtesseract__collision_1_1VHACD_1_1VHACD_abc26a7a09bd91d3aaa048402cda1b1fe}\label{classtesseract__collision_1_1VHACD_1_1VHACD_abc26a7a09bd91d3aaa048402cda1b1fe}} 
+\index{tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}!ComputeACD@{ComputeACD}}
+\index{ComputeACD@{ComputeACD}!tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}}
+\doxysubsubsection{\texorpdfstring{ComputeACD()}{ComputeACD()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void tesseract\+\_\+collision\+::\+VHACD\+::\+VHACD\+::\+Compute\+ACD (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1Parameters}{Parameters}} \&}]{params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1VHACD_1_1VHACD_abd3b1e194c371d9116cf2d0cbc3d4889}\label{classtesseract__collision_1_1VHACD_1_1VHACD_abd3b1e194c371d9116cf2d0cbc3d4889}} 
+\index{tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}!ComputeACD@{ComputeACD}}
+\index{ComputeACD@{ComputeACD}!tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}}
+\doxysubsubsection{\texorpdfstring{ComputeACD()}{ComputeACD()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$ \\
+bool tesseract\+\_\+collision\+::\+VHACD\+::\+VHACD\+::\+Compute\+ACD (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $\ast$const}]{points,  }\item[{const uint32\+\_\+t}]{n\+Points,  }\item[{const uint32\+\_\+t $\ast$const}]{triangles,  }\item[{const uint32\+\_\+t}]{n\+Triangles,  }\item[{const \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1Parameters}{Parameters}} \&}]{params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1VHACD_1_1VHACD_ae84a99890f36ae6188b75b8478918d90}\label{classtesseract__collision_1_1VHACD_1_1VHACD_ae84a99890f36ae6188b75b8478918d90}} 
+\index{tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}!ComputeBestClippingPlane@{ComputeBestClippingPlane}}
+\index{ComputeBestClippingPlane@{ComputeBestClippingPlane}!tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}}
+\doxysubsubsection{\texorpdfstring{ComputeBestClippingPlane()}{ComputeBestClippingPlane()}}
+{\footnotesize\ttfamily void tesseract\+\_\+collision\+::\+VHACD\+::\+VHACD\+::\+Compute\+Best\+Clipping\+Plane (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1PrimitiveSet}{Primitive\+Set}} $\ast$}]{input\+PSet,  }\item[{const double}]{volume,  }\item[{const \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray}{SArray}}$<$ \mbox{\hyperlink{structtesseract__collision_1_1VHACD_1_1Plane}{Plane}} $>$ \&}]{planes,  }\item[{const \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Vec3}{Vec3}}$<$ double $>$ \&}]{preferred\+Cutting\+Direction,  }\item[{const double}]{w,  }\item[{const double}]{alpha,  }\item[{const double}]{beta,  }\item[{const int32\+\_\+t}]{convexhull\+Downsampling,  }\item[{const double}]{progress0,  }\item[{const double}]{progress1,  }\item[{\mbox{\hyperlink{structtesseract__collision_1_1VHACD_1_1Plane}{Plane}} \&}]{best\+Plane,  }\item[{double \&}]{min\+Concavity,  }\item[{const \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1Parameters}{Parameters}} \&}]{params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1VHACD_1_1VHACD_a5841546f0eabfa381383b94c20759f77}\label{classtesseract__collision_1_1VHACD_1_1VHACD_a5841546f0eabfa381383b94c20759f77}} 
+\index{tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}!ComputeCenterOfMass@{ComputeCenterOfMass}}
+\index{ComputeCenterOfMass@{ComputeCenterOfMass}!tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}}
+\doxysubsubsection{\texorpdfstring{ComputeCenterOfMass()}{ComputeCenterOfMass()}}
+{\footnotesize\ttfamily bool tesseract\+\_\+collision\+::\+VHACD\+::\+VHACD\+::\+Compute\+Center\+Of\+Mass (\begin{DoxyParamCaption}\item[{std\+::array$<$ double, 3 $>$ \&}]{center\+Of\+Mass }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_a9f937acd303202517f5cccd5db7d91cc}{tesseract\+\_\+collision\+::\+VHACD\+::\+IVHACD}}.
+
+\mbox{\Hypertarget{classtesseract__collision_1_1VHACD_1_1VHACD_aaf5f49a3091fdfaa8493dc6280c233ac}\label{classtesseract__collision_1_1VHACD_1_1VHACD_aaf5f49a3091fdfaa8493dc6280c233ac}} 
+\index{tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}!ComputePrimitiveSet@{ComputePrimitiveSet}}
+\index{ComputePrimitiveSet@{ComputePrimitiveSet}!tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}}
+\doxysubsubsection{\texorpdfstring{ComputePrimitiveSet()}{ComputePrimitiveSet()}}
+{\footnotesize\ttfamily void tesseract\+\_\+collision\+::\+VHACD\+::\+VHACD\+::\+Compute\+Primitive\+Set (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1Parameters}{Parameters}} \&}]{params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1VHACD_1_1VHACD_ad08f7ec9d3489add6fb70181e0af5ff6}\label{classtesseract__collision_1_1VHACD_1_1VHACD_ad08f7ec9d3489add6fb70181e0af5ff6}} 
+\index{tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}!GetCancel@{GetCancel}}
+\index{GetCancel@{GetCancel}!tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}}
+\doxysubsubsection{\texorpdfstring{GetCancel()}{GetCancel()}}
+{\footnotesize\ttfamily bool tesseract\+\_\+collision\+::\+VHACD\+::\+VHACD\+::\+Get\+Cancel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1VHACD_1_1VHACD_a6dde9e721a7e8f97ed9cc44a3b641781}\label{classtesseract__collision_1_1VHACD_1_1VHACD_a6dde9e721a7e8f97ed9cc44a3b641781}} 
+\index{tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}!GetConvexHull@{GetConvexHull}}
+\index{GetConvexHull@{GetConvexHull}!tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}}
+\doxysubsubsection{\texorpdfstring{GetConvexHull()}{GetConvexHull()}}
+{\footnotesize\ttfamily void tesseract\+\_\+collision\+::\+VHACD\+::\+VHACD\+::\+Get\+Convex\+Hull (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{index,  }\item[{\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1ConvexHull}{Convex\+Hull}} \&}]{ch }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_ae566a00f1ca85223ad730d5756e5c9c9}{tesseract\+\_\+collision\+::\+VHACD\+::\+IVHACD}}.
+
+\mbox{\Hypertarget{classtesseract__collision_1_1VHACD_1_1VHACD_a8e304ee46f974e621ec0751093c658b5}\label{classtesseract__collision_1_1VHACD_1_1VHACD_a8e304ee46f974e621ec0751093c658b5}} 
+\index{tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}!GetNConvexHulls@{GetNConvexHulls}}
+\index{GetNConvexHulls@{GetNConvexHulls}!tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}}
+\doxysubsubsection{\texorpdfstring{GetNConvexHulls()}{GetNConvexHulls()}}
+{\footnotesize\ttfamily uint32\+\_\+t tesseract\+\_\+collision\+::\+VHACD\+::\+VHACD\+::\+Get\+NConvex\+Hulls (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_aa9e059776b6044e14309849b8affb1c3}{tesseract\+\_\+collision\+::\+VHACD\+::\+IVHACD}}.
+
+\mbox{\Hypertarget{classtesseract__collision_1_1VHACD_1_1VHACD_ae6cb35d36bdee18fd08b8947b7d48891}\label{classtesseract__collision_1_1VHACD_1_1VHACD_ae6cb35d36bdee18fd08b8947b7d48891}} 
+\index{tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}!Init@{Init}}
+\index{Init@{Init}!tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void tesseract\+\_\+collision\+::\+VHACD\+::\+VHACD\+::\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1VHACD_1_1VHACD_ade5fa648e8c3a13f9d52c802c4df7ce8}\label{classtesseract__collision_1_1VHACD_1_1VHACD_ade5fa648e8c3a13f9d52c802c4df7ce8}} 
+\index{tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}!MergeConvexHulls@{MergeConvexHulls}}
+\index{MergeConvexHulls@{MergeConvexHulls}!tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}}
+\doxysubsubsection{\texorpdfstring{MergeConvexHulls()}{MergeConvexHulls()}}
+{\footnotesize\ttfamily void tesseract\+\_\+collision\+::\+VHACD\+::\+VHACD\+::\+Merge\+Convex\+Hulls (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1Parameters}{Parameters}} \&}]{params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1VHACD_1_1VHACD_a233d7265a0a0a6e75c7f8492ff839392}\label{classtesseract__collision_1_1VHACD_1_1VHACD_a233d7265a0a0a6e75c7f8492ff839392}} 
+\index{tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}!OCLInit@{OCLInit}}
+\index{OCLInit@{OCLInit}!tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}}
+\doxysubsubsection{\texorpdfstring{OCLInit()}{OCLInit()}}
+{\footnotesize\ttfamily bool tesseract\+\_\+collision\+::\+VHACD\+::\+VHACD\+::\+OCLInit (\begin{DoxyParamCaption}\item[{void const $\ast$}]{ocl\+Device,  }\item[{\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1IUserLogger}{VHACD\+::\+IVHACD\+::\+IUser\+Logger}} const $\ast$}]{logger = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_aa52e505af21b44c89899694bfb3e1c78}{tesseract\+\_\+collision\+::\+VHACD\+::\+IVHACD}}.
+
+\mbox{\Hypertarget{classtesseract__collision_1_1VHACD_1_1VHACD_a705fcd3b651b8a0c9c21a0af54ed3e7d}\label{classtesseract__collision_1_1VHACD_1_1VHACD_a705fcd3b651b8a0c9c21a0af54ed3e7d}} 
+\index{tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}!OCLRelease@{OCLRelease}}
+\index{OCLRelease@{OCLRelease}!tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}}
+\doxysubsubsection{\texorpdfstring{OCLRelease()}{OCLRelease()}}
+{\footnotesize\ttfamily bool tesseract\+\_\+collision\+::\+VHACD\+::\+VHACD\+::\+OCLRelease (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1IUserLogger}{IUser\+Logger}} const $\ast$}]{logger = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_abee8bfbb766a446403e02b8a3db20ae7}{tesseract\+\_\+collision\+::\+VHACD\+::\+IVHACD}}.
+
+\mbox{\Hypertarget{classtesseract__collision_1_1VHACD_1_1VHACD_a53159f616b33604d24932b0d3c269e61}\label{classtesseract__collision_1_1VHACD_1_1VHACD_a53159f616b33604d24932b0d3c269e61}} 
+\index{tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}!Release@{Release}}
+\index{Release@{Release}!tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}}
+\doxysubsubsection{\texorpdfstring{Release()}{Release()}}
+{\footnotesize\ttfamily void tesseract\+\_\+collision\+::\+VHACD\+::\+VHACD\+::\+Release (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_a615d5bd4279154495ecbbd43195cd41b}{tesseract\+\_\+collision\+::\+VHACD\+::\+IVHACD}}.
+
+\mbox{\Hypertarget{classtesseract__collision_1_1VHACD_1_1VHACD_a7423a51c9d998f9614187650f2c7b33c}\label{classtesseract__collision_1_1VHACD_1_1VHACD_a7423a51c9d998f9614187650f2c7b33c}} 
+\index{tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}!SetCancel@{SetCancel}}
+\index{SetCancel@{SetCancel}!tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}}
+\doxysubsubsection{\texorpdfstring{SetCancel()}{SetCancel()}}
+{\footnotesize\ttfamily void tesseract\+\_\+collision\+::\+VHACD\+::\+VHACD\+::\+Set\+Cancel (\begin{DoxyParamCaption}\item[{bool}]{cancel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1VHACD_1_1VHACD_aebda68eb8828da8f4bdc16eab9e39dfb}\label{classtesseract__collision_1_1VHACD_1_1VHACD_aebda68eb8828da8f4bdc16eab9e39dfb}} 
+\index{tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}!SimplifyConvexHull@{SimplifyConvexHull}}
+\index{SimplifyConvexHull@{SimplifyConvexHull}!tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}}
+\doxysubsubsection{\texorpdfstring{SimplifyConvexHull()}{SimplifyConvexHull()}}
+{\footnotesize\ttfamily void tesseract\+\_\+collision\+::\+VHACD\+::\+VHACD\+::\+Simplify\+Convex\+Hull (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Mesh}{Mesh}} $\ast$const}]{ch,  }\item[{const size\+\_\+t}]{nvertices,  }\item[{const double}]{min\+Volume }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1VHACD_1_1VHACD_a680dfe5d573014668d4e9fe7e9b8b52c}\label{classtesseract__collision_1_1VHACD_1_1VHACD_a680dfe5d573014668d4e9fe7e9b8b52c}} 
+\index{tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}!SimplifyConvexHulls@{SimplifyConvexHulls}}
+\index{SimplifyConvexHulls@{SimplifyConvexHulls}!tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}}
+\doxysubsubsection{\texorpdfstring{SimplifyConvexHulls()}{SimplifyConvexHulls()}}
+{\footnotesize\ttfamily void tesseract\+\_\+collision\+::\+VHACD\+::\+VHACD\+::\+Simplify\+Convex\+Hulls (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1Parameters}{Parameters}} \&}]{params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1VHACD_1_1VHACD_a7709d5e4f458a52fa243bb75776b014d}\label{classtesseract__collision_1_1VHACD_1_1VHACD_a7709d5e4f458a52fa243bb75776b014d}} 
+\index{tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}!Update@{Update}}
+\index{Update@{Update}!tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void tesseract\+\_\+collision\+::\+VHACD\+::\+VHACD\+::\+Update (\begin{DoxyParamCaption}\item[{const double}]{stage\+Progress,  }\item[{const double}]{operation\+Progress,  }\item[{const \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1Parameters}{Parameters}} \&}]{params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1VHACD_1_1VHACD_a5cabf81f93bfe5a114b5229fba393ac1}\label{classtesseract__collision_1_1VHACD_1_1VHACD_a5cabf81f93bfe5a114b5229fba393ac1}} 
+\index{tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}!VoxelizeMesh@{VoxelizeMesh}}
+\index{VoxelizeMesh@{VoxelizeMesh}!tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}}
+\doxysubsubsection{\texorpdfstring{VoxelizeMesh()}{VoxelizeMesh()}}
+{\footnotesize\ttfamily template$<$class \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$ \\
+void tesseract\+\_\+collision\+::\+VHACD\+::\+VHACD\+::\+Voxelize\+Mesh (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $\ast$const}]{points,  }\item[{const uint32\+\_\+t}]{stride\+Points,  }\item[{const uint32\+\_\+t}]{n\+Points,  }\item[{const int32\+\_\+t $\ast$const}]{triangles,  }\item[{const uint32\+\_\+t}]{stride\+Triangles,  }\item[{const uint32\+\_\+t}]{n\+Triangles,  }\item[{const \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1Parameters}{Parameters}} \&}]{params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classtesseract__collision_1_1VHACD_1_1VHACD_aa8ae937f9f9b31e113907fbcdb6d5f84}\label{classtesseract__collision_1_1VHACD_1_1VHACD_aa8ae937f9f9b31e113907fbcdb6d5f84}} 
+\index{tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}!m\_barycenter@{m\_barycenter}}
+\index{m\_barycenter@{m\_barycenter}!tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}}
+\doxysubsubsection{\texorpdfstring{m\_barycenter}{m\_barycenter}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Vec3}{Vec3}}$<$double$>$ tesseract\+\_\+collision\+::\+VHACD\+::\+VHACD\+::m\+\_\+barycenter\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1VHACD_1_1VHACD_a697690df8525298fa7ead72c24fb5375}\label{classtesseract__collision_1_1VHACD_1_1VHACD_a697690df8525298fa7ead72c24fb5375}} 
+\index{tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}!m\_cancel@{m\_cancel}}
+\index{m\_cancel@{m\_cancel}!tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}}
+\doxysubsubsection{\texorpdfstring{m\_cancel}{m\_cancel}}
+{\footnotesize\ttfamily bool tesseract\+\_\+collision\+::\+VHACD\+::\+VHACD\+::m\+\_\+cancel\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1VHACD_1_1VHACD_a719255b711264d94832c05d41b8f9e2b}\label{classtesseract__collision_1_1VHACD_1_1VHACD_a719255b711264d94832c05d41b8f9e2b}} 
+\index{tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}!m\_cancelMutex@{m\_cancelMutex}}
+\index{m\_cancelMutex@{m\_cancelMutex}!tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}}
+\doxysubsubsection{\texorpdfstring{m\_cancelMutex}{m\_cancelMutex}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Mutex}{Mutex}} tesseract\+\_\+collision\+::\+VHACD\+::\+VHACD\+::m\+\_\+cancel\+Mutex\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1VHACD_1_1VHACD_aa55709991616e116710ba56e52dbeae9}\label{classtesseract__collision_1_1VHACD_1_1VHACD_aa55709991616e116710ba56e52dbeae9}} 
+\index{tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}!m\_convexHulls@{m\_convexHulls}}
+\index{m\_convexHulls@{m\_convexHulls}!tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}}
+\doxysubsubsection{\texorpdfstring{m\_convexHulls}{m\_convexHulls}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray}{SArray}}$<$\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Mesh}{Mesh}}$\ast$$>$ tesseract\+\_\+collision\+::\+VHACD\+::\+VHACD\+::m\+\_\+convex\+Hulls\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1VHACD_1_1VHACD_a1208f1e90ea933bd1f48399dd97859ce}\label{classtesseract__collision_1_1VHACD_1_1VHACD_a1208f1e90ea933bd1f48399dd97859ce}} 
+\index{tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}!m\_dim@{m\_dim}}
+\index{m\_dim@{m\_dim}!tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}}
+\doxysubsubsection{\texorpdfstring{m\_dim}{m\_dim}}
+{\footnotesize\ttfamily size\+\_\+t tesseract\+\_\+collision\+::\+VHACD\+::\+VHACD\+::m\+\_\+dim\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1VHACD_1_1VHACD_abde159111d4261315552acde47077ece}\label{classtesseract__collision_1_1VHACD_1_1VHACD_abde159111d4261315552acde47077ece}} 
+\index{tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}!m\_ompNumProcessors@{m\_ompNumProcessors}}
+\index{m\_ompNumProcessors@{m\_ompNumProcessors}!tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}}
+\doxysubsubsection{\texorpdfstring{m\_ompNumProcessors}{m\_ompNumProcessors}}
+{\footnotesize\ttfamily int32\+\_\+t tesseract\+\_\+collision\+::\+VHACD\+::\+VHACD\+::m\+\_\+omp\+Num\+Processors\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1VHACD_1_1VHACD_a6ed09e92c5bd1bf09fae48ce7d6f346c}\label{classtesseract__collision_1_1VHACD_1_1VHACD_a6ed09e92c5bd1bf09fae48ce7d6f346c}} 
+\index{tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}!m\_operation@{m\_operation}}
+\index{m\_operation@{m\_operation}!tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}}
+\doxysubsubsection{\texorpdfstring{m\_operation}{m\_operation}}
+{\footnotesize\ttfamily std\+::string tesseract\+\_\+collision\+::\+VHACD\+::\+VHACD\+::m\+\_\+operation\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1VHACD_1_1VHACD_a7ff0f1b582fe03a8312b092cb6dc1784}\label{classtesseract__collision_1_1VHACD_1_1VHACD_a7ff0f1b582fe03a8312b092cb6dc1784}} 
+\index{tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}!m\_operationProgress@{m\_operationProgress}}
+\index{m\_operationProgress@{m\_operationProgress}!tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}}
+\doxysubsubsection{\texorpdfstring{m\_operationProgress}{m\_operationProgress}}
+{\footnotesize\ttfamily double tesseract\+\_\+collision\+::\+VHACD\+::\+VHACD\+::m\+\_\+operation\+Progress\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1VHACD_1_1VHACD_abf4a863d7c4dfcd757fcd5e99511c985}\label{classtesseract__collision_1_1VHACD_1_1VHACD_abf4a863d7c4dfcd757fcd5e99511c985}} 
+\index{tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}!m\_overallProgress@{m\_overallProgress}}
+\index{m\_overallProgress@{m\_overallProgress}!tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}}
+\doxysubsubsection{\texorpdfstring{m\_overallProgress}{m\_overallProgress}}
+{\footnotesize\ttfamily double tesseract\+\_\+collision\+::\+VHACD\+::\+VHACD\+::m\+\_\+overall\+Progress\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1VHACD_1_1VHACD_ace36a35b09a2baf26941b704090a41e9}\label{classtesseract__collision_1_1VHACD_1_1VHACD_ace36a35b09a2baf26941b704090a41e9}} 
+\index{tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}!m\_pset@{m\_pset}}
+\index{m\_pset@{m\_pset}!tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}}
+\doxysubsubsection{\texorpdfstring{m\_pset}{m\_pset}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1PrimitiveSet}{Primitive\+Set}}$\ast$ tesseract\+\_\+collision\+::\+VHACD\+::\+VHACD\+::m\+\_\+pset\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1VHACD_1_1VHACD_a3c7dff4f0af3caf395223ff564d52302}\label{classtesseract__collision_1_1VHACD_1_1VHACD_a3c7dff4f0af3caf395223ff564d52302}} 
+\index{tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}!m\_rot@{m\_rot}}
+\index{m\_rot@{m\_rot}!tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}}
+\doxysubsubsection{\texorpdfstring{m\_rot}{m\_rot}}
+{\footnotesize\ttfamily double tesseract\+\_\+collision\+::\+VHACD\+::\+VHACD\+::m\+\_\+rot\mbox{[}3\mbox{]}\mbox{[}3\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1VHACD_1_1VHACD_ad2b50bd138af5f639e4f101e28f1140c}\label{classtesseract__collision_1_1VHACD_1_1VHACD_ad2b50bd138af5f639e4f101e28f1140c}} 
+\index{tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}!m\_stage@{m\_stage}}
+\index{m\_stage@{m\_stage}!tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}}
+\doxysubsubsection{\texorpdfstring{m\_stage}{m\_stage}}
+{\footnotesize\ttfamily std\+::string tesseract\+\_\+collision\+::\+VHACD\+::\+VHACD\+::m\+\_\+stage\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1VHACD_1_1VHACD_ad4f19cb97e7d3c66481e7bd98c1ebbc1}\label{classtesseract__collision_1_1VHACD_1_1VHACD_ad4f19cb97e7d3c66481e7bd98c1ebbc1}} 
+\index{tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}!m\_stageProgress@{m\_stageProgress}}
+\index{m\_stageProgress@{m\_stageProgress}!tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}}
+\doxysubsubsection{\texorpdfstring{m\_stageProgress}{m\_stageProgress}}
+{\footnotesize\ttfamily double tesseract\+\_\+collision\+::\+VHACD\+::\+VHACD\+::m\+\_\+stage\+Progress\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1VHACD_1_1VHACD_aa0beb1214e4e0d0d19f0dbe53ab93b7b}\label{classtesseract__collision_1_1VHACD_1_1VHACD_aa0beb1214e4e0d0d19f0dbe53ab93b7b}} 
+\index{tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}!m\_timer@{m\_timer}}
+\index{m\_timer@{m\_timer}!tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}}
+\doxysubsubsection{\texorpdfstring{m\_timer}{m\_timer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Timer}{Timer}} tesseract\+\_\+collision\+::\+VHACD\+::\+VHACD\+::m\+\_\+timer\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1VHACD_1_1VHACD_a4f3d2f032daf5e14256d4b3a9f4e806b}\label{classtesseract__collision_1_1VHACD_1_1VHACD_a4f3d2f032daf5e14256d4b3a9f4e806b}} 
+\index{tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}!m\_volume@{m\_volume}}
+\index{m\_volume@{m\_volume}!tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}}
+\doxysubsubsection{\texorpdfstring{m\_volume}{m\_volume}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Volume}{Volume}}$\ast$ tesseract\+\_\+collision\+::\+VHACD\+::\+VHACD\+::m\+\_\+volume\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1VHACD_1_1VHACD_a654a4b1392fbc7ddc1e57d243f04b2ee}\label{classtesseract__collision_1_1VHACD_1_1VHACD_a654a4b1392fbc7ddc1e57d243f04b2ee}} 
+\index{tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}!m\_volumeCH0@{m\_volumeCH0}}
+\index{m\_volumeCH0@{m\_volumeCH0}!tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}}
+\doxysubsubsection{\texorpdfstring{m\_volumeCH0}{m\_volumeCH0}}
+{\footnotesize\ttfamily double tesseract\+\_\+collision\+::\+VHACD\+::\+VHACD\+::m\+\_\+volume\+CH0\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1VHACD_1_1VHACD_a47fe798bf9aa8b03d794b2dd14cf89fe}\label{classtesseract__collision_1_1VHACD_1_1VHACD_a47fe798bf9aa8b03d794b2dd14cf89fe}} 
+\index{tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}!mRaycastMesh@{mRaycastMesh}}
+\index{mRaycastMesh@{mRaycastMesh}!tesseract\_collision::VHACD::VHACD@{tesseract\_collision::VHACD::VHACD}}
+\doxysubsubsection{\texorpdfstring{mRaycastMesh}{mRaycastMesh}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1RaycastMesh}{Raycast\+Mesh}}$\ast$ tesseract\+\_\+collision\+::\+VHACD\+::\+VHACD\+::m\+Raycast\+Mesh \{ nullptr \}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+tesseract\+\_\+collision/vhacd/include/tesseract\+\_\+collision/vhacd/inc/\mbox{\hyperlink{vhacdVHACD_8h}{vhacd\+VHACD.\+h}}\item 
+tesseract\+\_\+collision/vhacd/src/vhacd/\mbox{\hyperlink{VHACD_8cpp}{VHACD.\+cpp}}\end{DoxyCompactItemize}

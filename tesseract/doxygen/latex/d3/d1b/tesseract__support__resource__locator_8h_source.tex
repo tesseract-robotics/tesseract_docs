@@ -1,0 +1,41 @@
+\hypertarget{tesseract__support__resource__locator_8h_source}{}\doxysection{tesseract\+\_\+support\+\_\+resource\+\_\+locator.\+h}
+\label{tesseract__support__resource__locator_8h_source}\index{tesseract\_support/include/tesseract\_support/tesseract\_support\_resource\_locator.h@{tesseract\_support/include/tesseract\_support/tesseract\_support\_resource\_locator.h}}
+\mbox{\hyperlink{tesseract__support__resource__locator_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#ifndef TESSERACT\_SUPPORT\_TESSERACT\_SUPPORT\_RESOURCE\_LOCATOR\_H}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define TESSERACT\_SUPPORT\_TESSERACT\_SUPPORT\_RESOURCE\_LOCATOR\_H}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{macros_8h}{tesseract\_common/macros.h}}>}}
+\DoxyCodeLine{30 \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include <boost/serialization/access.hpp>}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{33 \mbox{\hyperlink{namespaceTESSERACT__COMMON__IGNORE__WARNINGS__POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{resource__locator_8h}{tesseract\_common/resource\_locator.h}}>}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{tesseract__common_2include_2tesseract__common_2types_8h}{tesseract\_common/types.h}}>}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__common}{tesseract\_common}}}
+\DoxyCodeLine{39 \{}
+\DoxyCodeLine{41 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__common_1_1TesseractSupportResourceLocator}{TesseractSupportResourceLocator}} : \textcolor{keyword}{public} \mbox{\hyperlink{classtesseract__common_1_1ResourceLocator}{ResourceLocator}}}
+\DoxyCodeLine{42 \{}
+\DoxyCodeLine{43 \textcolor{keyword}{public}:}
+\DoxyCodeLine{44   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__common_1_1TesseractSupportResourceLocator_acb357010270fce5f2f0903432da9c36f}{Ptr}} = std::shared\_ptr<TesseractSupportResourceLocator>;}
+\DoxyCodeLine{45   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__common_1_1TesseractSupportResourceLocator_aa4a71e460a9f8167c188f290dec1eb95}{ConstPtr}} = std::shared\_ptr<const TesseractSupportResourceLocator>;}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47   std::shared\_ptr<Resource> \mbox{\hyperlink{classtesseract__common_1_1TesseractSupportResourceLocator_a19b93eea76ac36e68e53a340ba36cb2f}{locateResource}}(\textcolor{keyword}{const} std::string\& url) \textcolor{keyword}{const} \textcolor{keyword}{override} \textcolor{keyword}{final};}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{keyword}{private}:}
+\DoxyCodeLine{50   \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__common_1_1TesseractSupportResourceLocator_ac98d07dd8f7b70e16ccb9a01abf56b9c}{boost::serialization::access}};}
+\DoxyCodeLine{51   \textcolor{keyword}{template} <\textcolor{keyword}{class} Archive>}
+\DoxyCodeLine{52   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__common_1_1TesseractSupportResourceLocator_a35634d2ad46debf3a250b16d4594bf98}{serialize}}(Archive\& ar, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} version);  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{53 \};}
+\DoxyCodeLine{54 \}  \textcolor{comment}{// namespace tesseract\_common}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#include <boost/serialization/export.hpp>}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#include <boost/serialization/tracking.hpp>}}
+\DoxyCodeLine{58 BOOST\_CLASS\_EXPORT\_KEY2(\mbox{\hyperlink{classtesseract__common_1_1TesseractSupportResourceLocator}{tesseract\_common::TesseractSupportResourceLocator}}, \textcolor{stringliteral}{"{}TesseractSupportResourceLocator"{}})}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_SUPPORT\_TESSERACT\_SUPPORT\_RESOURCE\_LOCATOR\_H}}
+
+\end{DoxyCode}

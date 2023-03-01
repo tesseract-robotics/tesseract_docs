@@ -1,0 +1,145 @@
+\hypertarget{tesseract__common_2include_2tesseract__common_2utils_8h}{}\doxysection{tesseract\+\_\+common/include/tesseract\+\_\+common/utils.h File Reference}
+\label{tesseract__common_2include_2tesseract__common_2utils_8h}\index{tesseract\_common/include/tesseract\_common/utils.h@{tesseract\_common/include/tesseract\_common/utils.h}}
+
+
+Common Tesseract Utility Functions.  
+
+
+{\ttfamily \#include $<$tesseract\+\_\+common/macros.\+h$>$}\newline
+{\ttfamily \#include $<$array$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include $<$random$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$tinyxml2.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+common/allowed\+\_\+collision\+\_\+matrix.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+common/types.\+h$>$}\newline
+Include dependency graph for utils.\+h\+:
+% FIG 0
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacetesseract__common}{tesseract\+\_\+common}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename... Args$>$ }\\std\+::string \mbox{\hyperlink{namespacetesseract__common_a7f13ad2a741226ab5255302f6750ed4a}{tesseract\+\_\+common\+::str\+Format}} (const std\+::string \&format, Args... args)
+\item 
+std\+::string \mbox{\hyperlink{namespacetesseract__common_aca142577b0d587606411468a2163106f}{tesseract\+\_\+common\+::file\+To\+String}} (const tesseract\+\_\+common\+::fs\+::path \&filepath)
+\begin{DoxyCompactList}\small\item\em Read in the contents of the file into a string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespacetesseract__common_a4ed12ea384452e2d5d4f7a0854035384}{tesseract\+\_\+common\+::twist\+Change\+Ref\+Point}} (Eigen\+::\+Ref$<$ Eigen\+::\+Vector\+Xd $>$ twist, const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector3d $>$ \&ref\+\_\+point)
+\begin{DoxyCompactList}\small\item\em Change the reference point of the provided Twist. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespacetesseract__common_a98c27df906a6e17d088772d3d1c21a5d}{tesseract\+\_\+common\+::twist\+Change\+Base}} (Eigen\+::\+Ref$<$ Eigen\+::\+Vector\+Xd $>$ twist, const Eigen\+::\+Isometry3d \&change\+\_\+base)
+\begin{DoxyCompactList}\small\item\em Change the base coordinate system of the Twist. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespacetesseract__common_a9b00920e39050a4b9df5e3100aac7e55}{tesseract\+\_\+common\+::jacobian\+Change\+Base}} (Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$ \mbox{\hyperlink{kinematics__core__unit_8cpp_afd43241933d01af91643a779b829d7a7}{jacobian}}, const Eigen\+::\+Isometry3d \&change\+\_\+base)
+\begin{DoxyCompactList}\small\item\em Change the base coordinate system of the jacobian. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespacetesseract__common_a5043afd3f3dbdd6655d543e09a7c9ea4}{tesseract\+\_\+common\+::jacobian\+Change\+Ref\+Point}} (Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$ \mbox{\hyperlink{kinematics__core__unit_8cpp_afd43241933d01af91643a779b829d7a7}{jacobian}}, const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector3d $>$ \&ref\+\_\+point)
+\begin{DoxyCompactList}\small\item\em Change the reference point of the jacobian. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{namespacetesseract__common_a757f1e4610f79b4e79e796c698a3c113}{tesseract\+\_\+common\+::concat}} (const Eigen\+::\+Vector\+Xd \&a, const Eigen\+::\+Vector\+Xd \&b)
+\begin{DoxyCompactList}\small\item\em Concatenate two vector. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector3d \mbox{\hyperlink{namespacetesseract__common_a715e8a56239e73ccfa00e82cda79a28c}{tesseract\+\_\+common\+::calc\+Rotational\+Error}} (const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix3d $>$ \&R)
+\begin{DoxyCompactList}\small\item\em Calculate the rotation error vector given a rotation error matrix where the angle is between \mbox{[}-\/pi, pi\mbox{]}. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector3d \mbox{\hyperlink{namespacetesseract__common_a41a6314e5371fa9604c459b85f159afd}{tesseract\+\_\+common\+::calc\+Rotational\+Error2}} (const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix3d $>$ \&R)
+\begin{DoxyCompactList}\small\item\em Calculate the rotation error vector given a rotation error matrix where the angle is between \mbox{[}0, 2 $\ast$ pi\mbox{]}. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{namespacetesseract__common_a913b8ec499e3bfe779dc95bae54f39d4}{tesseract\+\_\+common\+::calc\+Transform\+Error}} (const Eigen\+::\+Isometry3d \&t1, const Eigen\+::\+Isometry3d \&t2)
+\begin{DoxyCompactList}\small\item\em Calculate error between two transforms expressed in t1 coordinate system. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector4d \mbox{\hyperlink{namespacetesseract__common_a0d105162c2cd10693e7387cb74d8318b}{tesseract\+\_\+common\+::compute\+Random\+Color}} ()
+\begin{DoxyCompactList}\small\item\em This computes a random color RGBA \mbox{[}0, 1\mbox{]} with alpha set to 1. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespacetesseract__common_ac4e9558332430365cd69cb2eec1784c8}{tesseract\+\_\+common\+::print\+Nested\+Exception}} (const std\+::exception \&e, int level=0)
+\begin{DoxyCompactList}\small\item\em Print a nested exception. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{namespacetesseract__common_a58ecad04db85855fa9e4de21084598ca}{tesseract\+\_\+common\+::get\+Temp\+Path}} ()
+\begin{DoxyCompactList}\small\item\em Get the host temp directory path. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacetesseract__common_a1dc3a9525efbe582991edd4eedc26079}{tesseract\+\_\+common\+::is\+Numeric}} (const std\+::string \&\mbox{\hyperlink{plugin__loader__unit_8cpp_aa0d75bebf90ce49ae839876d1d62e199}{s}})
+\begin{DoxyCompactList}\small\item\em Determine if a string is a number. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacetesseract__common_a0db40f06dba7e6be18a2c4f098ad7a00}{tesseract\+\_\+common\+::is\+Numeric}} (const std\+::vector$<$ std\+::string $>$ \&sv)
+\begin{DoxyCompactList}\small\item\em Determine if each string in vector is a number. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{namespacetesseract__common_aa14552337385ce1de42da699506f8b03}{tesseract\+\_\+common\+::generate\+Random\+Number}} (const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+X2d $>$ \&\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{limits}})
+\begin{DoxyCompactList}\small\item\em Given a set of limits it will generate a vector of random numbers between the limit. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespacetesseract__common_af46edf9701e45b20e95a5abfac500b8f}{tesseract\+\_\+common\+::ltrim}} (std\+::string \&\mbox{\hyperlink{plugin__loader__unit_8cpp_aa0d75bebf90ce49ae839876d1d62e199}{s}})
+\begin{DoxyCompactList}\small\item\em Left trim string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespacetesseract__common_aa86a4f0e5ca9d2b1f5abc3f34735d85b}{tesseract\+\_\+common\+::rtrim}} (std\+::string \&\mbox{\hyperlink{plugin__loader__unit_8cpp_aa0d75bebf90ce49ae839876d1d62e199}{s}})
+\begin{DoxyCompactList}\small\item\em Right trim string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespacetesseract__common_aeacd629bcf585286917aafa7b8e603bb}{tesseract\+\_\+common\+::trim}} (std\+::string \&\mbox{\hyperlink{plugin__loader__unit_8cpp_aa0d75bebf90ce49ae839876d1d62e199}{s}})
+\begin{DoxyCompactList}\small\item\em Trim left and right of string. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$ }\\bool \mbox{\hyperlink{namespacetesseract__common_a34d98b9f0df320e12b9f9686761f5b1e}{tesseract\+\_\+common\+::is\+Identical}} (const std\+::vector$<$ \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$ \&vec1, const std\+::vector$<$ \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$ \&vec2, bool ordered=true, const std\+::function$<$ bool(const \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} \&, const \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} \&)$>$ \&equal\+\_\+pred=\mbox{[}$\,$\mbox{]}(const \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} \&\mbox{\hyperlink{tesseract__common__unit_8cpp_a78e1cc09f129a731d55ed82bc47956a7}{v1}}, const \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} \&\mbox{\hyperlink{tesseract__common__unit_8cpp_a23dd5e7fffd5f8400cbed32a5071f236}{v2}}) \{ return \mbox{\hyperlink{tesseract__common__unit_8cpp_a78e1cc09f129a731d55ed82bc47956a7}{v1}}==\mbox{\hyperlink{tesseract__common__unit_8cpp_a23dd5e7fffd5f8400cbed32a5071f236}{v2}};\}, const std\+::function$<$ bool(const \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} \&, const \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} \&)$>$ \&comp=\mbox{[}$\,$\mbox{]}(const \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} \&\mbox{\hyperlink{tesseract__common__unit_8cpp_a78e1cc09f129a731d55ed82bc47956a7}{v1}}, const \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} \&\mbox{\hyperlink{tesseract__common__unit_8cpp_a23dd5e7fffd5f8400cbed32a5071f236}{v2}}) \{ return \mbox{\hyperlink{tesseract__common__unit_8cpp_a78e1cc09f129a731d55ed82bc47956a7}{v1}}$<$ \mbox{\hyperlink{tesseract__common__unit_8cpp_a23dd5e7fffd5f8400cbed32a5071f236}{v2}};\})
+\begin{DoxyCompactList}\small\item\em Check if two vector of strings are identical. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Key\+Value\+Container\+Type , typename Value\+Type $>$ }\\bool \mbox{\hyperlink{namespacetesseract__common_a4be902621fe3d33f5fe7d72116196f24}{tesseract\+\_\+common\+::is\+Identical\+Map}} (const Key\+Value\+Container\+Type \&map\+\_\+1, const Key\+Value\+Container\+Type \&map\+\_\+2, const std\+::function$<$ bool(const Value\+Type \&, const Value\+Type \&)$>$ \&value\+\_\+eq=\mbox{[}$\,$\mbox{]}(const Value\+Type \&\mbox{\hyperlink{tesseract__common__unit_8cpp_a78e1cc09f129a731d55ed82bc47956a7}{v1}}, const Value\+Type \&\mbox{\hyperlink{tesseract__common__unit_8cpp_a23dd5e7fffd5f8400cbed32a5071f236}{v2}}) \{ return \mbox{\hyperlink{tesseract__common__unit_8cpp_a78e1cc09f129a731d55ed82bc47956a7}{v1}}==\mbox{\hyperlink{tesseract__common__unit_8cpp_a23dd5e7fffd5f8400cbed32a5071f236}{v2}};\})
+\begin{DoxyCompactList}\small\item\em Checks if 2 maps are identical. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Value\+Type $>$ }\\bool \mbox{\hyperlink{namespacetesseract__common_a129feb5b5288a992d9fb72ba5dbb579d}{tesseract\+\_\+common\+::is\+Identical\+Set}} (const std\+::set$<$ Value\+Type $>$ \&set\+\_\+1, const std\+::set$<$ Value\+Type $>$ \&set\+\_\+2, const std\+::function$<$ bool(const Value\+Type \&, const Value\+Type \&)$>$ \&value\+\_\+eq=\mbox{[}$\,$\mbox{]}(const Value\+Type \&\mbox{\hyperlink{tesseract__common__unit_8cpp_a78e1cc09f129a731d55ed82bc47956a7}{v1}}, const Value\+Type \&\mbox{\hyperlink{tesseract__common__unit_8cpp_a23dd5e7fffd5f8400cbed32a5071f236}{v2}}) \{ return \mbox{\hyperlink{tesseract__common__unit_8cpp_a78e1cc09f129a731d55ed82bc47956a7}{v1}}==\mbox{\hyperlink{tesseract__common__unit_8cpp_a23dd5e7fffd5f8400cbed32a5071f236}{v2}};\})
+\begin{DoxyCompactList}\small\item\em Checks if 2 sets are identical. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Value\+Type , std\+::size\+\_\+t Size$>$ }\\bool \mbox{\hyperlink{namespacetesseract__common_aff7498ab87445e5c870e74a7d3cbc78f}{tesseract\+\_\+common\+::is\+Identical\+Array}} (const std\+::array$<$ Value\+Type, Size $>$ \&array\+\_\+1, const std\+::array$<$ Value\+Type, Size $>$ \&array\+\_\+2, const std\+::function$<$ bool(const Value\+Type \&, const Value\+Type \&)$>$ \&value\+\_\+eq=\mbox{[}$\,$\mbox{]}(const Value\+Type \&\mbox{\hyperlink{tesseract__common__unit_8cpp_a78e1cc09f129a731d55ed82bc47956a7}{v1}}, const Value\+Type \&\mbox{\hyperlink{tesseract__common__unit_8cpp_a23dd5e7fffd5f8400cbed32a5071f236}{v2}}) \{ return \mbox{\hyperlink{tesseract__common__unit_8cpp_a78e1cc09f129a731d55ed82bc47956a7}{v1}}==\mbox{\hyperlink{tesseract__common__unit_8cpp_a23dd5e7fffd5f8400cbed32a5071f236}{v2}};\})
+\begin{DoxyCompactList}\small\item\em Checks if 2 arrays are identical. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$ }\\bool \mbox{\hyperlink{namespacetesseract__common_a65966457329351239c51b09ec1a8d3a4}{tesseract\+\_\+common\+::pointers\+Equal}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$ \&p1, const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$ \&p2)
+\begin{DoxyCompactList}\small\item\em Checks if 2 pointers point to objects that are ==. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$ }\\bool \mbox{\hyperlink{namespacetesseract__common_a5691a34b0a37453566326959831fb6df}{tesseract\+\_\+common\+::pointers\+Comparison}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$ \&p1, const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$ \&p2)
+\begin{DoxyCompactList}\small\item\em Comparison operator for the objects 2 points point to. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{namespacetesseract__common_a1077809c98ad8bf5262e426cff6e63a3}{tesseract\+\_\+common\+::get\+Timestamp\+String}} ()
+\begin{DoxyCompactList}\small\item\em Get Timestamp string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespacetesseract__common_a7da14d8e3b6c20175711209343aafe2f}{tesseract\+\_\+common\+::reorder}} (Eigen\+::\+Ref$<$ Eigen\+::\+Vector\+Xd $>$ \mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}}, std\+::vector$<$ Eigen\+::\+Index $>$ order)
+\begin{DoxyCompactList}\small\item\em Reorder Eigen\+::\+Vector\+Xd implace given index list. \end{DoxyCompactList}\item 
+tinyxml2\+::\+XMLError \mbox{\hyperlink{namespacetesseract__common_ae1a3ebd3610dce6d24cc7569606fd9ab}{tesseract\+\_\+common\+::\+Query\+String\+Value}} (const tinyxml2\+::\+XMLElement $\ast$xml\+\_\+element, std\+::string \&\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a767de28b215ddaceb31188034a0838c0}{value}})
+\begin{DoxyCompactList}\small\item\em Query a string value from xml element. \end{DoxyCompactList}\item 
+tinyxml2\+::\+XMLError \mbox{\hyperlink{namespacetesseract__common_ab95676b5418063a1d7c84fbba4ff1fe0}{tesseract\+\_\+common\+::\+Query\+String\+Text}} (const tinyxml2\+::\+XMLElement $\ast$xml\+\_\+element, std\+::string \&text)
+\begin{DoxyCompactList}\small\item\em Query a string Text from xml element. \end{DoxyCompactList}\item 
+tinyxml2\+::\+XMLError \mbox{\hyperlink{namespacetesseract__common_ad3e6914a612484e89bf86c60198b6cdc}{tesseract\+\_\+common\+::\+Query\+String\+Value}} (const tinyxml2\+::\+XMLAttribute $\ast$xml\+\_\+attribute, std\+::string \&\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a767de28b215ddaceb31188034a0838c0}{value}})
+\begin{DoxyCompactList}\small\item\em Query a string value from xml attribute. \end{DoxyCompactList}\item 
+tinyxml2\+::\+XMLError \mbox{\hyperlink{namespacetesseract__common_a22a4a1b896230ca84cce7aae2e21673a}{tesseract\+\_\+common\+::\+Query\+String\+Attribute}} (const tinyxml2\+::\+XMLElement $\ast$xml\+\_\+element, const char $\ast$\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}, std\+::string \&\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a767de28b215ddaceb31188034a0838c0}{value}})
+\begin{DoxyCompactList}\small\item\em Query a string attribute from an xml element. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{namespacetesseract__common_aadfa4845aecc119ae62b37e59c6ee168}{tesseract\+\_\+common\+::\+String\+Attribute}} (const tinyxml2\+::\+XMLElement $\ast$xml\+\_\+element, const char $\ast$\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}, std\+::string default\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Get string attribute if exist. If it does not exist it returns the default value. \end{DoxyCompactList}\item 
+tinyxml2\+::\+XMLError \mbox{\hyperlink{namespacetesseract__common_a609734264f8b63f5c7815871c40b231f}{tesseract\+\_\+common\+::\+Query\+String\+Attribute\+Required}} (const tinyxml2\+::\+XMLElement $\ast$xml\+\_\+element, const char $\ast$\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}, std\+::string \&\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a767de28b215ddaceb31188034a0838c0}{value}})
+\begin{DoxyCompactList}\small\item\em Query a string attribute from an xml element and print error log. \end{DoxyCompactList}\item 
+tinyxml2\+::\+XMLError \mbox{\hyperlink{namespacetesseract__common_ab5ec94b62bea51b6e40598e0f8e7a6c3}{tesseract\+\_\+common\+::\+Query\+Double\+Attribute\+Required}} (const tinyxml2\+::\+XMLElement $\ast$xml\+\_\+element, const char $\ast$\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}, double \&\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a767de28b215ddaceb31188034a0838c0}{value}})
+\begin{DoxyCompactList}\small\item\em Query a double attribute from an xml element and print error log. \end{DoxyCompactList}\item 
+tinyxml2\+::\+XMLError \mbox{\hyperlink{namespacetesseract__common_ad9a12946985d34fc3b1fcfb61b473f8b}{tesseract\+\_\+common\+::\+Query\+Int\+Attribute\+Required}} (const tinyxml2\+::\+XMLElement $\ast$xml\+\_\+element, const char $\ast$\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}, int \&\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a767de28b215ddaceb31188034a0838c0}{value}})
+\begin{DoxyCompactList}\small\item\em Query a int attribute from an xml element and print error log. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacetesseract__common_ac9961ff2a5d322165a817241b7746f64}{tesseract\+\_\+common\+::almost\+Equal\+Relative\+And\+Abs}} (double a, double b, double max\+\_\+diff=1e-\/6, double max\+\_\+rel\+\_\+diff=std\+::numeric\+\_\+limits$<$ double $>$\+::epsilon())
+\begin{DoxyCompactList}\small\item\em Check if two double are relatively equal. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacetesseract__common_a12eb899ec3967699e946431730eed959}{tesseract\+\_\+common\+::almost\+Equal\+Relative\+And\+Abs}} (const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xd $>$ \&\mbox{\hyperlink{tesseract__common__unit_8cpp_a78e1cc09f129a731d55ed82bc47956a7}{v1}}, const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xd $>$ \&\mbox{\hyperlink{tesseract__common__unit_8cpp_a23dd5e7fffd5f8400cbed32a5071f236}{v2}}, double max\+\_\+diff=1e-\/6, double max\+\_\+rel\+\_\+diff=std\+::numeric\+\_\+limits$<$ double $>$\+::epsilon())
+\begin{DoxyCompactList}\small\item\em Check if two Eigen Vector\+Xd are relatively and absolute equal. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacetesseract__common_a8eb8b43bdac2751a9a899e4552537cda}{tesseract\+\_\+common\+::almost\+Equal\+Relative\+And\+Abs}} (const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xd $>$ \&\mbox{\hyperlink{tesseract__common__unit_8cpp_a78e1cc09f129a731d55ed82bc47956a7}{v1}}, const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xd $>$ \&\mbox{\hyperlink{tesseract__common__unit_8cpp_a23dd5e7fffd5f8400cbed32a5071f236}{v2}}, const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xd $>$ \&max\+\_\+diff, const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xd $>$ \&max\+\_\+rel\+\_\+diff)
+\begin{DoxyCompactList}\small\item\em Check if two Eigen Vector\+Xd are relatively and absolute equal. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Float\+Type $>$ }\\bool \mbox{\hyperlink{namespacetesseract__common_a00bc131acfeba0eba8fe7ff7cd944860}{tesseract\+\_\+common\+::to\+Numeric}} (const std\+::string \&\mbox{\hyperlink{plugin__loader__unit_8cpp_aa0d75bebf90ce49ae839876d1d62e199}{s}}, Float\+Type \&\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a767de28b215ddaceb31188034a0838c0}{value}})
+\begin{DoxyCompactList}\small\item\em Convert a string to a numeric value type. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{namespacetesseract__common_aaca6ae7b6cbd8d28ad6e141239a0206f}{tesseract\+\_\+common\+::get\+Allowed\+Collisions}} (const std\+::vector$<$ std\+::string $>$ \&\mbox{\hyperlink{collision__core__unit_8cpp_a464caf777ea79db067179ebe2bd7ecc7}{link\+\_\+names}}, const Allowed\+Collision\+Entries \&acm\+\_\+entries, bool remove\+\_\+duplicates=true)
+\begin{DoxyCompactList}\small\item\em Gets allowed collisions for a set of link names. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::mt19937 \mbox{\hyperlink{namespacetesseract__common_aef65970d6ccc97d88621f27e7c35b32a}{tesseract\+\_\+common\+::mersenne}} \{ static\+\_\+cast$<$std\+::mt19937\+::result\+\_\+type$>$(\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_ad09056a4bcd52540541e635a0fdf5551}{std\+::time}}(nullptr)) \}
+\begin{DoxyCompactList}\small\item\em Random number generator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Common Tesseract Utility Functions. 
+
+\begin{DoxyAuthor}{Author}
+Levi Armstrong 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+January 18, 2018 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+TODO 
+\end{DoxyVersion}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000064}{Bug}}]No known bugs\end{DoxyRefDesc}
+
+
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2017, Southwest Research Institute
+\end{DoxyCopyright}
+\begin{DoxyParagraph}{License}
+Software License Agreement (Apache License) 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+Licensed under the Apache License, Version 2.\+0 (the \char`\"{}\+License\char`\"{}); you may not use this file except in compliance with the License. You may obtain a copy of the License at \href{http://www.apache.org/licenses/LICENSE-2.0}{\texttt{ http\+://www.\+apache.\+org/licenses/\+LICENSE-\/2.\+0}} 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \char`\"{}\+AS IS\char`\"{} BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License. 
+\end{DoxyParagraph}

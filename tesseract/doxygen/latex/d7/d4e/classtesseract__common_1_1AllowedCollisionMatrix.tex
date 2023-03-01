@@ -1,0 +1,282 @@
+\hypertarget{classtesseract__common_1_1AllowedCollisionMatrix}{}\doxysection{tesseract\+\_\+common\+::Allowed\+Collision\+Matrix Class Reference}
+\label{classtesseract__common_1_1AllowedCollisionMatrix}\index{tesseract\_common::AllowedCollisionMatrix@{tesseract\_common::AllowedCollisionMatrix}}
+
+
+{\ttfamily \#include $<$allowed\+\_\+collision\+\_\+matrix.\+h$>$}
+
+
+
+Collaboration diagram for tesseract\+\_\+common\+::Allowed\+Collision\+Matrix\+:
+% FIG 0
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix_aeb97e65aad60fe0e5e1265c3f9e755a0}{Ptr}} = std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix}{Allowed\+Collision\+Matrix}} $>$
+\item 
+using \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix_a6a8fd56f7cd2c4098245c7a15d1736d7}{Const\+Ptr}} = std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix}{Allowed\+Collision\+Matrix}} $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix_acee39bbad0c96e4f03bdc1faeee76efe}{Allowed\+Collision\+Matrix}} ()=default
+\item 
+virtual \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix_abcb8afa9666e92825ec42ab66d4db670}{$\sim$\+Allowed\+Collision\+Matrix}} ()=default
+\item 
+\mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix_acccd13929ebe177ba621513a78a979d7}{Allowed\+Collision\+Matrix}} (const \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix}{Allowed\+Collision\+Matrix}} \&)=default
+\item 
+\mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix}{Allowed\+Collision\+Matrix}} \& \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix_a41fc18ca33b8e58e93066d492c749222}{operator=}} (const \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix}{Allowed\+Collision\+Matrix}} \&)=default
+\item 
+\mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix_a86c7b71a1350f479a7165687d9eb0727}{Allowed\+Collision\+Matrix}} (\mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix}{Allowed\+Collision\+Matrix}} \&\&)=default
+\item 
+\mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix}{Allowed\+Collision\+Matrix}} \& \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix_ae1276e5ef080d9de89b391bb7eb833f7}{operator=}} (\mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix}{Allowed\+Collision\+Matrix}} \&\&)=default
+\item 
+virtual void \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix_acb30c28e16a9e9484f1d4c5cfa7d03d4}{add\+Allowed\+Collision}} (const std\+::string \&link\+\_\+name1, const std\+::string \&link\+\_\+name2, const std\+::string \&reason)
+\begin{DoxyCompactList}\small\item\em Disable collision between two collision objects. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{namespacetesseract__common_a79d2a34647d0da5e574629878c142086}{Allowed\+Collision\+Entries}} \& \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix_a7bb1745d0489667875d48df2733cb13e}{get\+All\+Allowed\+Collisions}} () const
+\begin{DoxyCompactList}\small\item\em Get all of the entries in the allowed collision matrix. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix_abd9e3ba2ea464defd95be1d8d3f2eb98}{remove\+Allowed\+Collision}} (const std\+::string \&link\+\_\+name1, const std\+::string \&link\+\_\+name2)
+\begin{DoxyCompactList}\small\item\em Remove disabled collision pair from allowed collision matrix. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix_a34d4949d62fd6e58b24e7c21803bed31}{remove\+Allowed\+Collision}} (const std\+::string \&link\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Remove disabled collision for any pair with link\+\_\+name from allowed collision matrix. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix_a8e1b9f8f0d0a99a456aa43a4ccbf4c15}{is\+Collision\+Allowed}} (const std\+::string \&link\+\_\+name1, const std\+::string \&link\+\_\+name2) const
+\begin{DoxyCompactList}\small\item\em This checks if two links are allowed to be in collision. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix_a73cf0e3b8e7bc09a19e67750ebe1f864}{clear\+Allowed\+Collisions}} ()
+\begin{DoxyCompactList}\small\item\em Clears the list of allowed collisions, so that no collision will be allowed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix_a2c7049482b44916ebb62b7f3ce71de66}{insert\+Allowed\+Collision\+Matrix}} (const \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix}{Allowed\+Collision\+Matrix}} \&\mbox{\hyperlink{collision__core__unit_8cpp_a714392901b0c74193a9659fc77891a60}{acm}})
+\begin{DoxyCompactList}\small\item\em Inserts an allowable collision matrix ignoring duplicate pairs. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix_a9b45662be7af08955526d361814b292c}{operator==}} (const \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix}{Allowed\+Collision\+Matrix}} \&rhs) const
+\item 
+bool \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix_a5f22852d28bac337e818740ec3a22bee}{operator!=}} (const \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix}{Allowed\+Collision\+Matrix}} \&rhs) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class Archive $>$ }\\void \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix_ade8e24a702a875ed5e636892429bf6ce}{serialize}} (Archive \&ar, const unsigned int version)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacetesseract__common_a79d2a34647d0da5e574629878c142086}{Allowed\+Collision\+Entries}} \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix_a4f71038c5617e4208c9fcb9123c08448}{lookup\+\_\+table\+\_\+}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix_ac98d07dd8f7b70e16ccb9a01abf56b9c}{boost\+::serialization\+::access}}
+\item 
+std\+::ostream \& \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix_a3cc3aec9ac23d224aa128d26ac84df70}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix}{Allowed\+Collision\+Matrix}} \&\mbox{\hyperlink{collision__core__unit_8cpp_a714392901b0c74193a9659fc77891a60}{acm}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classtesseract__common_1_1AllowedCollisionMatrix_a6a8fd56f7cd2c4098245c7a15d1736d7}\label{classtesseract__common_1_1AllowedCollisionMatrix_a6a8fd56f7cd2c4098245c7a15d1736d7}} 
+\index{tesseract\_common::AllowedCollisionMatrix@{tesseract\_common::AllowedCollisionMatrix}!ConstPtr@{ConstPtr}}
+\index{ConstPtr@{ConstPtr}!tesseract\_common::AllowedCollisionMatrix@{tesseract\_common::AllowedCollisionMatrix}}
+\doxysubsubsection{\texorpdfstring{ConstPtr}{ConstPtr}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix_a6a8fd56f7cd2c4098245c7a15d1736d7}{tesseract\+\_\+common\+::\+Allowed\+Collision\+Matrix\+::\+Const\+Ptr}} =  std\+::shared\+\_\+ptr$<$const \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix}{Allowed\+Collision\+Matrix}}$>$}
+
+\mbox{\Hypertarget{classtesseract__common_1_1AllowedCollisionMatrix_aeb97e65aad60fe0e5e1265c3f9e755a0}\label{classtesseract__common_1_1AllowedCollisionMatrix_aeb97e65aad60fe0e5e1265c3f9e755a0}} 
+\index{tesseract\_common::AllowedCollisionMatrix@{tesseract\_common::AllowedCollisionMatrix}!Ptr@{Ptr}}
+\index{Ptr@{Ptr}!tesseract\_common::AllowedCollisionMatrix@{tesseract\_common::AllowedCollisionMatrix}}
+\doxysubsubsection{\texorpdfstring{Ptr}{Ptr}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix_aeb97e65aad60fe0e5e1265c3f9e755a0}{tesseract\+\_\+common\+::\+Allowed\+Collision\+Matrix\+::\+Ptr}} =  std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix}{Allowed\+Collision\+Matrix}}$>$}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtesseract__common_1_1AllowedCollisionMatrix_acee39bbad0c96e4f03bdc1faeee76efe}\label{classtesseract__common_1_1AllowedCollisionMatrix_acee39bbad0c96e4f03bdc1faeee76efe}} 
+\index{tesseract\_common::AllowedCollisionMatrix@{tesseract\_common::AllowedCollisionMatrix}!AllowedCollisionMatrix@{AllowedCollisionMatrix}}
+\index{AllowedCollisionMatrix@{AllowedCollisionMatrix}!tesseract\_common::AllowedCollisionMatrix@{tesseract\_common::AllowedCollisionMatrix}}
+\doxysubsubsection{\texorpdfstring{AllowedCollisionMatrix()}{AllowedCollisionMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily tesseract\+\_\+common\+::\+Allowed\+Collision\+Matrix\+::\+Allowed\+Collision\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{classtesseract__common_1_1AllowedCollisionMatrix_abcb8afa9666e92825ec42ab66d4db670}\label{classtesseract__common_1_1AllowedCollisionMatrix_abcb8afa9666e92825ec42ab66d4db670}} 
+\index{tesseract\_common::AllowedCollisionMatrix@{tesseract\_common::AllowedCollisionMatrix}!````~AllowedCollisionMatrix@{$\sim$AllowedCollisionMatrix}}
+\index{````~AllowedCollisionMatrix@{$\sim$AllowedCollisionMatrix}!tesseract\_common::AllowedCollisionMatrix@{tesseract\_common::AllowedCollisionMatrix}}
+\doxysubsubsection{\texorpdfstring{$\sim$AllowedCollisionMatrix()}{~AllowedCollisionMatrix()}}
+{\footnotesize\ttfamily virtual tesseract\+\_\+common\+::\+Allowed\+Collision\+Matrix\+::$\sim$\+Allowed\+Collision\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+\mbox{\Hypertarget{classtesseract__common_1_1AllowedCollisionMatrix_acccd13929ebe177ba621513a78a979d7}\label{classtesseract__common_1_1AllowedCollisionMatrix_acccd13929ebe177ba621513a78a979d7}} 
+\index{tesseract\_common::AllowedCollisionMatrix@{tesseract\_common::AllowedCollisionMatrix}!AllowedCollisionMatrix@{AllowedCollisionMatrix}}
+\index{AllowedCollisionMatrix@{AllowedCollisionMatrix}!tesseract\_common::AllowedCollisionMatrix@{tesseract\_common::AllowedCollisionMatrix}}
+\doxysubsubsection{\texorpdfstring{AllowedCollisionMatrix()}{AllowedCollisionMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily tesseract\+\_\+common\+::\+Allowed\+Collision\+Matrix\+::\+Allowed\+Collision\+Matrix (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix}{Allowed\+Collision\+Matrix}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{classtesseract__common_1_1AllowedCollisionMatrix_a86c7b71a1350f479a7165687d9eb0727}\label{classtesseract__common_1_1AllowedCollisionMatrix_a86c7b71a1350f479a7165687d9eb0727}} 
+\index{tesseract\_common::AllowedCollisionMatrix@{tesseract\_common::AllowedCollisionMatrix}!AllowedCollisionMatrix@{AllowedCollisionMatrix}}
+\index{AllowedCollisionMatrix@{AllowedCollisionMatrix}!tesseract\_common::AllowedCollisionMatrix@{tesseract\_common::AllowedCollisionMatrix}}
+\doxysubsubsection{\texorpdfstring{AllowedCollisionMatrix()}{AllowedCollisionMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily tesseract\+\_\+common\+::\+Allowed\+Collision\+Matrix\+::\+Allowed\+Collision\+Matrix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix}{Allowed\+Collision\+Matrix}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtesseract__common_1_1AllowedCollisionMatrix_acb30c28e16a9e9484f1d4c5cfa7d03d4}\label{classtesseract__common_1_1AllowedCollisionMatrix_acb30c28e16a9e9484f1d4c5cfa7d03d4}} 
+\index{tesseract\_common::AllowedCollisionMatrix@{tesseract\_common::AllowedCollisionMatrix}!addAllowedCollision@{addAllowedCollision}}
+\index{addAllowedCollision@{addAllowedCollision}!tesseract\_common::AllowedCollisionMatrix@{tesseract\_common::AllowedCollisionMatrix}}
+\doxysubsubsection{\texorpdfstring{addAllowedCollision()}{addAllowedCollision()}}
+{\footnotesize\ttfamily virtual void tesseract\+\_\+common\+::\+Allowed\+Collision\+Matrix\+::add\+Allowed\+Collision (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{link\+\_\+name1,  }\item[{const std\+::string \&}]{link\+\_\+name2,  }\item[{const std\+::string \&}]{reason }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Disable collision between two collision objects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj1} & Collision object name \\
+\hline
+{\em obj2} & Collision object name \\
+\hline
+{\em reason} & The reason for disabling collison \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__common_1_1AllowedCollisionMatrix_a73cf0e3b8e7bc09a19e67750ebe1f864}\label{classtesseract__common_1_1AllowedCollisionMatrix_a73cf0e3b8e7bc09a19e67750ebe1f864}} 
+\index{tesseract\_common::AllowedCollisionMatrix@{tesseract\_common::AllowedCollisionMatrix}!clearAllowedCollisions@{clearAllowedCollisions}}
+\index{clearAllowedCollisions@{clearAllowedCollisions}!tesseract\_common::AllowedCollisionMatrix@{tesseract\_common::AllowedCollisionMatrix}}
+\doxysubsubsection{\texorpdfstring{clearAllowedCollisions()}{clearAllowedCollisions()}}
+{\footnotesize\ttfamily void tesseract\+\_\+common\+::\+Allowed\+Collision\+Matrix\+::clear\+Allowed\+Collisions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Clears the list of allowed collisions, so that no collision will be allowed. 
+
+\mbox{\Hypertarget{classtesseract__common_1_1AllowedCollisionMatrix_a7bb1745d0489667875d48df2733cb13e}\label{classtesseract__common_1_1AllowedCollisionMatrix_a7bb1745d0489667875d48df2733cb13e}} 
+\index{tesseract\_common::AllowedCollisionMatrix@{tesseract\_common::AllowedCollisionMatrix}!getAllAllowedCollisions@{getAllAllowedCollisions}}
+\index{getAllAllowedCollisions@{getAllAllowedCollisions}!tesseract\_common::AllowedCollisionMatrix@{tesseract\_common::AllowedCollisionMatrix}}
+\doxysubsubsection{\texorpdfstring{getAllAllowedCollisions()}{getAllAllowedCollisions()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{namespacetesseract__common_a79d2a34647d0da5e574629878c142086}{Allowed\+Collision\+Entries}} \& tesseract\+\_\+common\+::\+Allowed\+Collision\+Matrix\+::get\+All\+Allowed\+Collisions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get all of the entries in the allowed collision matrix. 
+
+\begin{DoxyReturn}{Returns}
+Allowed\+Collision\+Entries an unordered map containing all allowed collision entries. The keys of the unordered map are a std\+::pair of the link names in the allowed collision pair. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__common_1_1AllowedCollisionMatrix_a2c7049482b44916ebb62b7f3ce71de66}\label{classtesseract__common_1_1AllowedCollisionMatrix_a2c7049482b44916ebb62b7f3ce71de66}} 
+\index{tesseract\_common::AllowedCollisionMatrix@{tesseract\_common::AllowedCollisionMatrix}!insertAllowedCollisionMatrix@{insertAllowedCollisionMatrix}}
+\index{insertAllowedCollisionMatrix@{insertAllowedCollisionMatrix}!tesseract\_common::AllowedCollisionMatrix@{tesseract\_common::AllowedCollisionMatrix}}
+\doxysubsubsection{\texorpdfstring{insertAllowedCollisionMatrix()}{insertAllowedCollisionMatrix()}}
+{\footnotesize\ttfamily void tesseract\+\_\+common\+::\+Allowed\+Collision\+Matrix\+::insert\+Allowed\+Collision\+Matrix (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix}{Allowed\+Collision\+Matrix}} \&}]{acm }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Inserts an allowable collision matrix ignoring duplicate pairs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em acm} & ACM to be inserted \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__common_1_1AllowedCollisionMatrix_a8e1b9f8f0d0a99a456aa43a4ccbf4c15}\label{classtesseract__common_1_1AllowedCollisionMatrix_a8e1b9f8f0d0a99a456aa43a4ccbf4c15}} 
+\index{tesseract\_common::AllowedCollisionMatrix@{tesseract\_common::AllowedCollisionMatrix}!isCollisionAllowed@{isCollisionAllowed}}
+\index{isCollisionAllowed@{isCollisionAllowed}!tesseract\_common::AllowedCollisionMatrix@{tesseract\_common::AllowedCollisionMatrix}}
+\doxysubsubsection{\texorpdfstring{isCollisionAllowed()}{isCollisionAllowed()}}
+{\footnotesize\ttfamily virtual bool tesseract\+\_\+common\+::\+Allowed\+Collision\+Matrix\+::is\+Collision\+Allowed (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{link\+\_\+name1,  }\item[{const std\+::string \&}]{link\+\_\+name2 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+This checks if two links are allowed to be in collision. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em link\+\_\+name1} & First link name \\
+\hline
+{\em link\+\_\+name2} & Second link anme \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if allowed to be in collision, otherwise false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__common_1_1AllowedCollisionMatrix_a5f22852d28bac337e818740ec3a22bee}\label{classtesseract__common_1_1AllowedCollisionMatrix_a5f22852d28bac337e818740ec3a22bee}} 
+\index{tesseract\_common::AllowedCollisionMatrix@{tesseract\_common::AllowedCollisionMatrix}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!tesseract\_common::AllowedCollisionMatrix@{tesseract\_common::AllowedCollisionMatrix}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool tesseract\+\_\+common\+::\+Allowed\+Collision\+Matrix\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix}{Allowed\+Collision\+Matrix}} \&}]{rhs }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classtesseract__common_1_1AllowedCollisionMatrix_ae1276e5ef080d9de89b391bb7eb833f7}\label{classtesseract__common_1_1AllowedCollisionMatrix_ae1276e5ef080d9de89b391bb7eb833f7}} 
+\index{tesseract\_common::AllowedCollisionMatrix@{tesseract\_common::AllowedCollisionMatrix}!operator=@{operator=}}
+\index{operator=@{operator=}!tesseract\_common::AllowedCollisionMatrix@{tesseract\_common::AllowedCollisionMatrix}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix}{Allowed\+Collision\+Matrix}} \& tesseract\+\_\+common\+::\+Allowed\+Collision\+Matrix\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix}{Allowed\+Collision\+Matrix}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{classtesseract__common_1_1AllowedCollisionMatrix_a41fc18ca33b8e58e93066d492c749222}\label{classtesseract__common_1_1AllowedCollisionMatrix_a41fc18ca33b8e58e93066d492c749222}} 
+\index{tesseract\_common::AllowedCollisionMatrix@{tesseract\_common::AllowedCollisionMatrix}!operator=@{operator=}}
+\index{operator=@{operator=}!tesseract\_common::AllowedCollisionMatrix@{tesseract\_common::AllowedCollisionMatrix}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix}{Allowed\+Collision\+Matrix}} \& tesseract\+\_\+common\+::\+Allowed\+Collision\+Matrix\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix}{Allowed\+Collision\+Matrix}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{classtesseract__common_1_1AllowedCollisionMatrix_a9b45662be7af08955526d361814b292c}\label{classtesseract__common_1_1AllowedCollisionMatrix_a9b45662be7af08955526d361814b292c}} 
+\index{tesseract\_common::AllowedCollisionMatrix@{tesseract\_common::AllowedCollisionMatrix}!operator==@{operator==}}
+\index{operator==@{operator==}!tesseract\_common::AllowedCollisionMatrix@{tesseract\_common::AllowedCollisionMatrix}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool tesseract\+\_\+common\+::\+Allowed\+Collision\+Matrix\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix}{Allowed\+Collision\+Matrix}} \&}]{rhs }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classtesseract__common_1_1AllowedCollisionMatrix_a34d4949d62fd6e58b24e7c21803bed31}\label{classtesseract__common_1_1AllowedCollisionMatrix_a34d4949d62fd6e58b24e7c21803bed31}} 
+\index{tesseract\_common::AllowedCollisionMatrix@{tesseract\_common::AllowedCollisionMatrix}!removeAllowedCollision@{removeAllowedCollision}}
+\index{removeAllowedCollision@{removeAllowedCollision}!tesseract\_common::AllowedCollisionMatrix@{tesseract\_common::AllowedCollisionMatrix}}
+\doxysubsubsection{\texorpdfstring{removeAllowedCollision()}{removeAllowedCollision()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void tesseract\+\_\+common\+::\+Allowed\+Collision\+Matrix\+::remove\+Allowed\+Collision (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{link\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Remove disabled collision for any pair with link\+\_\+name from allowed collision matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em link\+\_\+name} & Collision object name \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__common_1_1AllowedCollisionMatrix_abd9e3ba2ea464defd95be1d8d3f2eb98}\label{classtesseract__common_1_1AllowedCollisionMatrix_abd9e3ba2ea464defd95be1d8d3f2eb98}} 
+\index{tesseract\_common::AllowedCollisionMatrix@{tesseract\_common::AllowedCollisionMatrix}!removeAllowedCollision@{removeAllowedCollision}}
+\index{removeAllowedCollision@{removeAllowedCollision}!tesseract\_common::AllowedCollisionMatrix@{tesseract\_common::AllowedCollisionMatrix}}
+\doxysubsubsection{\texorpdfstring{removeAllowedCollision()}{removeAllowedCollision()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void tesseract\+\_\+common\+::\+Allowed\+Collision\+Matrix\+::remove\+Allowed\+Collision (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{link\+\_\+name1,  }\item[{const std\+::string \&}]{link\+\_\+name2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Remove disabled collision pair from allowed collision matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj1} & Collision object name \\
+\hline
+{\em obj2} & Collision object name \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__common_1_1AllowedCollisionMatrix_ade8e24a702a875ed5e636892429bf6ce}\label{classtesseract__common_1_1AllowedCollisionMatrix_ade8e24a702a875ed5e636892429bf6ce}} 
+\index{tesseract\_common::AllowedCollisionMatrix@{tesseract\_common::AllowedCollisionMatrix}!serialize@{serialize}}
+\index{serialize@{serialize}!tesseract\_common::AllowedCollisionMatrix@{tesseract\_common::AllowedCollisionMatrix}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily template$<$class Archive $>$ \\
+void tesseract\+\_\+common\+::\+Allowed\+Collision\+Matrix\+::serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{ar,  }\item[{const unsigned int}]{version }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classtesseract__common_1_1AllowedCollisionMatrix_ac98d07dd8f7b70e16ccb9a01abf56b9c}\label{classtesseract__common_1_1AllowedCollisionMatrix_ac98d07dd8f7b70e16ccb9a01abf56b9c}} 
+\index{tesseract\_common::AllowedCollisionMatrix@{tesseract\_common::AllowedCollisionMatrix}!boost::serialization::access@{boost::serialization::access}}
+\index{boost::serialization::access@{boost::serialization::access}!tesseract\_common::AllowedCollisionMatrix@{tesseract\_common::AllowedCollisionMatrix}}
+\doxysubsubsection{\texorpdfstring{boost::serialization::access}{boost::serialization::access}}
+{\footnotesize\ttfamily friend class boost\+::serialization\+::access\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{classtesseract__common_1_1AllowedCollisionMatrix_a3cc3aec9ac23d224aa128d26ac84df70}\label{classtesseract__common_1_1AllowedCollisionMatrix_a3cc3aec9ac23d224aa128d26ac84df70}} 
+\index{tesseract\_common::AllowedCollisionMatrix@{tesseract\_common::AllowedCollisionMatrix}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!tesseract\_common::AllowedCollisionMatrix@{tesseract\_common::AllowedCollisionMatrix}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix}{Allowed\+Collision\+Matrix}} \&}]{acm }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classtesseract__common_1_1AllowedCollisionMatrix_a4f71038c5617e4208c9fcb9123c08448}\label{classtesseract__common_1_1AllowedCollisionMatrix_a4f71038c5617e4208c9fcb9123c08448}} 
+\index{tesseract\_common::AllowedCollisionMatrix@{tesseract\_common::AllowedCollisionMatrix}!lookup\_table\_@{lookup\_table\_}}
+\index{lookup\_table\_@{lookup\_table\_}!tesseract\_common::AllowedCollisionMatrix@{tesseract\_common::AllowedCollisionMatrix}}
+\doxysubsubsection{\texorpdfstring{lookup\_table\_}{lookup\_table\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacetesseract__common_a79d2a34647d0da5e574629878c142086}{Allowed\+Collision\+Entries}} tesseract\+\_\+common\+::\+Allowed\+Collision\+Matrix\+::lookup\+\_\+table\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+tesseract\+\_\+common/include/tesseract\+\_\+common/\mbox{\hyperlink{allowed__collision__matrix_8h}{allowed\+\_\+collision\+\_\+matrix.\+h}}\item 
+tesseract\+\_\+common/src/\mbox{\hyperlink{allowed__collision__matrix_8cpp}{allowed\+\_\+collision\+\_\+matrix.\+cpp}}\end{DoxyCompactItemize}

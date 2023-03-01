@@ -1,0 +1,523 @@
+\hypertarget{iiwa7__ikfast__solver_8hpp}{}\doxysection{tesseract\+\_\+kinematics/test/iiwa7\+\_\+ikfast\+\_\+solver.hpp File Reference}
+\label{iiwa7__ikfast__solver_8hpp}\index{tesseract\_kinematics/test/iiwa7\_ikfast\_solver.hpp@{tesseract\_kinematics/test/iiwa7\_ikfast\_solver.hpp}}
+{\ttfamily \#include $<$tesseract\+\_\+common/macros.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+kinematics/ikfast/external/ikfast.\+h$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$limits$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$complex$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+Include dependency graph for iiwa7\+\_\+ikfast\+\_\+solver.\+hpp\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structCheckValue}{Check\+Value$<$ T $>$}}
+\item 
+class \mbox{\hyperlink{classIKSolver}{IKSolver}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{iiwa7__ikfast__solver_8hpp_a2acf0f2516ebf5481d4db7f86f4d0da6}{IKFAST\+\_\+\+NO\+\_\+\+MAIN}}
+\item 
+\#define \mbox{\hyperlink{iiwa7__ikfast__solver_8hpp_a14ff3dec1d7bf1b6f8bc3a7dcc0ed883}{IKFAST\+\_\+\+COMPILE\+\_\+\+ASSERT}}(x)~extern int \+\_\+\+\_\+dummy\mbox{[}(int)x\mbox{]}
+\item 
+\#define \mbox{\hyperlink{iiwa7__ikfast__solver_8hpp_a9c15fe1e91b07ea3280f5239f9841b67}{\+\_\+\+\_\+\+PRETTY\+\_\+\+FUNCTION\+\_\+\+\_\+}}~\+\_\+\+\_\+func\+\_\+\+\_\+
+\item 
+\#define \mbox{\hyperlink{iiwa7__ikfast__solver_8hpp_af4e88f631e5a9381055a48fc90f3a633}{IKFAST\+\_\+\+ASSERT}}(b)
+\item 
+\#define \mbox{\hyperlink{iiwa7__ikfast__solver_8hpp_a3940302e120211bb7af8a8a8290bb9e8}{IKFAST\+\_\+\+ALIGNED16}}(x)~x \+\_\+\+\_\+attribute((aligned(16)))
+\item 
+\#define \mbox{\hyperlink{iiwa7__ikfast__solver_8hpp_ad6a7e3ecef3983ec46a211ee00f30364}{IK2\+PI}}~((Ik\+Real)6.\+28318530717959)
+\item 
+\#define \mbox{\hyperlink{iiwa7__ikfast__solver_8hpp_a0975daf07554eaa98742b83ae89344e6}{IKPI}}~((Ik\+Real)3.\+14159265358979)
+\item 
+\#define \mbox{\hyperlink{iiwa7__ikfast__solver_8hpp_a45ed2f0e7e8e411264ebad95010986a7}{IKPI\+\_\+2}}~((Ik\+Real)1.\+57079632679490)
+\item 
+\#define \mbox{\hyperlink{iiwa7__ikfast__solver_8hpp_a66d4d0ad56673a9555ebafe898d1e2c6}{IKFAST\+\_\+\+SINCOS\+\_\+\+THRESH}}~((Ik\+Real)1e-\/7)
+\item 
+\#define \mbox{\hyperlink{iiwa7__ikfast__solver_8hpp_a0b03d83cf16b77e025d2100621f1f321}{IKFAST\+\_\+\+ATAN2\+\_\+\+MAGTHRESH}}~((Ik\+Real)1e-\/7)
+\item 
+\#define \mbox{\hyperlink{iiwa7__ikfast__solver_8hpp_adac93ad3ac22e016e6d690887e8688ba}{IKFAST\+\_\+\+SOLUTION\+\_\+\+THRESH}}~((Ik\+Real)1e-\/6)
+\item 
+\#define \mbox{\hyperlink{iiwa7__ikfast__solver_8hpp_a6e9c1fe901fde05201a0260782c920be}{IKFAST\+\_\+\+EVALCOND\+\_\+\+THRESH}}~((Ik\+Real)0.\+00001)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{iiwa7__ikfast__solver_8hpp_adf4b4c56fd2ff1b505933aef3f73caab}{IKFAST\+\_\+\+COMPILE\+\_\+\+ASSERT}} (\mbox{\hyperlink{ikfast_8h_afb507c47cee8d15d0241aa894bef5a67}{IKFAST\+\_\+\+VERSION}}==61)
+\item 
+void \mbox{\hyperlink{iiwa7__ikfast__solver_8hpp_a1173528e396c678a5482bae5e7f6e43e}{dgetrf\+\_\+}} (const int $\ast$\mbox{\hyperlink{kinematics__core__unit_8cpp_a9d4c159548a3d787ff62c64175409328}{m}}, const int $\ast$n, double $\ast$a, const int $\ast$lda, int $\ast$ipiv, int $\ast$\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a1be1e7cba5e739fcb7798261b4da47dd}{info}})
+\item 
+void \mbox{\hyperlink{iiwa7__ikfast__solver_8hpp_a6993bc2ff3751954630153bfd08bdd0b}{zgetrf\+\_\+}} (const int $\ast$\mbox{\hyperlink{kinematics__core__unit_8cpp_a9d4c159548a3d787ff62c64175409328}{m}}, const int $\ast$n, std\+::complex$<$ double $>$ $\ast$a, const int $\ast$lda, int $\ast$ipiv, int $\ast$\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a1be1e7cba5e739fcb7798261b4da47dd}{info}})
+\item 
+void \mbox{\hyperlink{iiwa7__ikfast__solver_8hpp_a8a0a23abeb2b5f4d136f544560421d68}{dgetri\+\_\+}} (const int $\ast$n, const double $\ast$a, const int $\ast$lda, int $\ast$ipiv, double $\ast$work, const int $\ast$lwork, int $\ast$\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a1be1e7cba5e739fcb7798261b4da47dd}{info}})
+\item 
+void \mbox{\hyperlink{iiwa7__ikfast__solver_8hpp_a8a0c34faf9ee31a4d83412a2b5d58125}{dgesv\+\_\+}} (const int $\ast$n, const int $\ast$nrhs, double $\ast$a, const int $\ast$lda, int $\ast$ipiv, double $\ast$b, const int $\ast$ldb, int $\ast$\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a1be1e7cba5e739fcb7798261b4da47dd}{info}})
+\item 
+void \mbox{\hyperlink{iiwa7__ikfast__solver_8hpp_a1a2d74eb3410ef5bee213fce4b1f6443}{dgetrs\+\_\+}} (const char $\ast$trans, const int $\ast$n, const int $\ast$nrhs, double $\ast$a, const int $\ast$lda, int $\ast$ipiv, double $\ast$b, const int $\ast$ldb, int $\ast$\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a1be1e7cba5e739fcb7798261b4da47dd}{info}})
+\item 
+void \mbox{\hyperlink{iiwa7__ikfast__solver_8hpp_ae833a06f7ce2542df24b072e9c61d4e6}{dgeev\+\_\+}} (const char $\ast$jobvl, const char $\ast$jobvr, const int $\ast$n, double $\ast$a, const int $\ast$lda, double $\ast$wr, double $\ast$wi, double $\ast$vl, const int $\ast$ldvl, double $\ast$vr, const int $\ast$ldvr, double $\ast$work, const int $\ast$lwork, int $\ast$\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a1be1e7cba5e739fcb7798261b4da47dd}{info}})
+\item 
+float \mbox{\hyperlink{iiwa7__ikfast__solver_8hpp_af50774e991c9af3d423e2f15a1864fcd}{IKabs}} (float f)
+\item 
+double \mbox{\hyperlink{iiwa7__ikfast__solver_8hpp_a95e1896df0cdeedf37f08dcb341b3918}{IKabs}} (double f)
+\item 
+float \mbox{\hyperlink{iiwa7__ikfast__solver_8hpp_ab527b2a76479c7f6ef9545b3c41a3b37}{IKsqr}} (float f)
+\item 
+double \mbox{\hyperlink{iiwa7__ikfast__solver_8hpp_a95d600e8b1f9ee1b1f0d8919b31f1ce0}{IKsqr}} (double f)
+\item 
+float \mbox{\hyperlink{iiwa7__ikfast__solver_8hpp_ae5812d083cf95d2945bbd8b75c38d7cd}{IKlog}} (float f)
+\item 
+double \mbox{\hyperlink{iiwa7__ikfast__solver_8hpp_a429184284f7e6da54369a2290d8da22d}{IKlog}} (double f)
+\item 
+float \mbox{\hyperlink{iiwa7__ikfast__solver_8hpp_a159f6680a5e7eb9da0d76bfce5461050}{IKasin}} (float f)
+\item 
+double \mbox{\hyperlink{iiwa7__ikfast__solver_8hpp_abb5416a593fd7617f75130836a9f5491}{IKasin}} (double f)
+\item 
+float \mbox{\hyperlink{iiwa7__ikfast__solver_8hpp_a8af0ce9307f58d1e64bb413077478244}{IKfmod}} (float x, float y)
+\item 
+double \mbox{\hyperlink{iiwa7__ikfast__solver_8hpp_a1ec8174f881fb22cf1a7cdf19b9a84ad}{IKfmod}} (double x, double y)
+\item 
+float \mbox{\hyperlink{iiwa7__ikfast__solver_8hpp_a6985b623469662633075c50b708b5a97}{IKacos}} (float f)
+\item 
+double \mbox{\hyperlink{iiwa7__ikfast__solver_8hpp_a10d86f8d485d2f30ce2638cb94b1e20e}{IKacos}} (double f)
+\item 
+float \mbox{\hyperlink{iiwa7__ikfast__solver_8hpp_a7b5e881d13d85a4bc1020963f9e605b5}{IKsin}} (float f)
+\item 
+double \mbox{\hyperlink{iiwa7__ikfast__solver_8hpp_a8a11e6f22a19bd8f4ac73c3645c93c81}{IKsin}} (double f)
+\item 
+float \mbox{\hyperlink{iiwa7__ikfast__solver_8hpp_a8d241417f26868995cfb5a5648816e63}{IKcos}} (float f)
+\item 
+double \mbox{\hyperlink{iiwa7__ikfast__solver_8hpp_ac925942daf5e1b7df0c38f2a7a501ac0}{IKcos}} (double f)
+\item 
+float \mbox{\hyperlink{iiwa7__ikfast__solver_8hpp_ad2361d774d694b5935519a1b3c1075f9}{IKtan}} (float f)
+\item 
+double \mbox{\hyperlink{iiwa7__ikfast__solver_8hpp_acd8f1e5b83501cc42ffef27bd6458f9a}{IKtan}} (double f)
+\item 
+float \mbox{\hyperlink{iiwa7__ikfast__solver_8hpp_a6f476874d10b265f6b0e6409104126b7}{IKsqrt}} (float f)
+\item 
+double \mbox{\hyperlink{iiwa7__ikfast__solver_8hpp_abb830ca15935c1c9b95a2ede5b2d43cc}{IKsqrt}} (double f)
+\item 
+float \mbox{\hyperlink{iiwa7__ikfast__solver_8hpp_a1bbba04cc5114eb36e98181457e9f535}{IKatan2\+Simple}} (float fy, float fx)
+\item 
+float \mbox{\hyperlink{iiwa7__ikfast__solver_8hpp_a5e00463327d5e1acfd4e8eb788bbd6ac}{IKatan2}} (float fy, float fx)
+\item 
+double \mbox{\hyperlink{iiwa7__ikfast__solver_8hpp_a3ef91ca6735fc89a591ce04038c85ccf}{IKatan2\+Simple}} (double fy, double fx)
+\item 
+double \mbox{\hyperlink{iiwa7__ikfast__solver_8hpp_a82c3e90527cb705afd35438841994aa2}{IKatan2}} (double fy, double fx)
+\item 
+{\footnotesize template$<$typename \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$ }\\\mbox{\hyperlink{structCheckValue}{Check\+Value}}$<$ \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$ \mbox{\hyperlink{iiwa7__ikfast__solver_8hpp_ad2da3c414ad57c32c4b7a2ce61cfbfad}{IKatan2\+With\+Check}} (\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} fy, \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} fx, \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} epsilon)
+\item 
+float \mbox{\hyperlink{iiwa7__ikfast__solver_8hpp_a845afc8ffdb8c068f0e75abac0d78b15}{IKsign}} (float f)
+\item 
+double \mbox{\hyperlink{iiwa7__ikfast__solver_8hpp_a903ab9632f6846449bbb3a8bba65ad8e}{IKsign}} (double f)
+\item 
+{\footnotesize template$<$typename \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$ }\\\mbox{\hyperlink{structCheckValue}{Check\+Value}}$<$ \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$ \mbox{\hyperlink{iiwa7__ikfast__solver_8hpp_ae347d3fd8d00f0690c85ddd8b226be9b}{IKPow\+With\+Integer\+Check}} (\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} f, int n)
+\item 
+IKFAST\+\_\+\+API void \mbox{\hyperlink{iiwa7__ikfast__solver_8hpp_ac5b257dc48deeb1c904d40b5dbf4a5a4}{Compute\+Fk}} (const Ik\+Real $\ast$\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}, Ik\+Real $\ast$eetrans, Ik\+Real $\ast$eerot)
+\item 
+IKFAST\+\_\+\+API int \mbox{\hyperlink{iiwa7__ikfast__solver_8hpp_af0cf03d3ad69d099a9a2eb6db5e5b352}{Get\+Num\+Free\+Parameters}} ()
+\item 
+IKFAST\+\_\+\+API int $\ast$ \mbox{\hyperlink{iiwa7__ikfast__solver_8hpp_a1b412cff74e968ac44ade3643dce7468}{Get\+Free\+Parameters}} ()
+\item 
+IKFAST\+\_\+\+API int \mbox{\hyperlink{iiwa7__ikfast__solver_8hpp_a3e9541dde410904e043fe18701061b62}{Get\+Num\+Joints}} ()
+\item 
+IKFAST\+\_\+\+API int \mbox{\hyperlink{iiwa7__ikfast__solver_8hpp_a6709f20b26f0903f0aa58a26934c853c}{Get\+Ik\+Real\+Size}} ()
+\item 
+IKFAST\+\_\+\+API int \mbox{\hyperlink{iiwa7__ikfast__solver_8hpp_abc401850b948d5a0402e9dbb77d3846f}{Get\+Ik\+Type}} ()
+\item 
+IKFAST\+\_\+\+API bool \mbox{\hyperlink{iiwa7__ikfast__solver_8hpp_ad6e97fc303efda1a956b9a044f8424fc}{Compute\+Ik}} (const Ik\+Real $\ast$eetrans, const Ik\+Real $\ast$eerot, const Ik\+Real $\ast$pfree, \mbox{\hyperlink{classikfast_1_1IkSolutionListBase}{Ik\+Solution\+List\+Base}}$<$ Ik\+Real $>$ \&solutions)
+\item 
+IKFAST\+\_\+\+API bool \mbox{\hyperlink{iiwa7__ikfast__solver_8hpp_a0657832109f0b05edc3d2b70d8ecc5ac}{Compute\+Ik2}} (const Ik\+Real $\ast$eetrans, const Ik\+Real $\ast$eerot, const Ik\+Real $\ast$pfree, \mbox{\hyperlink{classikfast_1_1IkSolutionListBase}{Ik\+Solution\+List\+Base}}$<$ Ik\+Real $>$ \&solutions, void $\ast$p\+Open\+RAVEManip)
+\item 
+IKFAST\+\_\+\+API const char $\ast$ \mbox{\hyperlink{iiwa7__ikfast__solver_8hpp_a6aaaf2b8161411dad90e79c1c62f7ef5}{Get\+Kinematics\+Hash}} ()
+\item 
+IKFAST\+\_\+\+API const char $\ast$ \mbox{\hyperlink{iiwa7__ikfast__solver_8hpp_a4dc4cea86dab954c3d0d67c75b1cec60}{Get\+Ik\+Fast\+Version}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{iiwa7__ikfast__solver_8hpp_a9c15fe1e91b07ea3280f5239f9841b67}\label{iiwa7__ikfast__solver_8hpp_a9c15fe1e91b07ea3280f5239f9841b67}} 
+\index{iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}!\_\_PRETTY\_FUNCTION\_\_@{\_\_PRETTY\_FUNCTION\_\_}}
+\index{\_\_PRETTY\_FUNCTION\_\_@{\_\_PRETTY\_FUNCTION\_\_}!iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}}
+\doxysubsubsection{\texorpdfstring{\_\_PRETTY\_FUNCTION\_\_}{\_\_PRETTY\_FUNCTION\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+PRETTY\+\_\+\+FUNCTION\+\_\+\+\_\+~\+\_\+\+\_\+func\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{iiwa7__ikfast__solver_8hpp_ad6a7e3ecef3983ec46a211ee00f30364}\label{iiwa7__ikfast__solver_8hpp_ad6a7e3ecef3983ec46a211ee00f30364}} 
+\index{iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}!IK2PI@{IK2PI}}
+\index{IK2PI@{IK2PI}!iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}}
+\doxysubsubsection{\texorpdfstring{IK2PI}{IK2PI}}
+{\footnotesize\ttfamily \#define IK2\+PI~((Ik\+Real)6.\+28318530717959)}
+
+\mbox{\Hypertarget{iiwa7__ikfast__solver_8hpp_a3940302e120211bb7af8a8a8290bb9e8}\label{iiwa7__ikfast__solver_8hpp_a3940302e120211bb7af8a8a8290bb9e8}} 
+\index{iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}!IKFAST\_ALIGNED16@{IKFAST\_ALIGNED16}}
+\index{IKFAST\_ALIGNED16@{IKFAST\_ALIGNED16}!iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}}
+\doxysubsubsection{\texorpdfstring{IKFAST\_ALIGNED16}{IKFAST\_ALIGNED16}}
+{\footnotesize\ttfamily \#define IKFAST\+\_\+\+ALIGNED16(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~x \+\_\+\+\_\+attribute((aligned(16)))}
+
+\mbox{\Hypertarget{iiwa7__ikfast__solver_8hpp_af4e88f631e5a9381055a48fc90f3a633}\label{iiwa7__ikfast__solver_8hpp_af4e88f631e5a9381055a48fc90f3a633}} 
+\index{iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}!IKFAST\_ASSERT@{IKFAST\_ASSERT}}
+\index{IKFAST\_ASSERT@{IKFAST\_ASSERT}!iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}}
+\doxysubsubsection{\texorpdfstring{IKFAST\_ASSERT}{IKFAST\_ASSERT}}
+{\footnotesize\ttfamily \#define IKFAST\+\_\+\+ASSERT(\begin{DoxyParamCaption}\item[{}]{b }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  \{                                                                                                                    \(\backslash\)}
+\DoxyCodeLine{    if (!(b))                                                                                                          \(\backslash\)}
+\DoxyCodeLine{    \{                                                                                                                  \(\backslash\)}
+\DoxyCodeLine{      std::stringstream ss;                                                                                            \(\backslash\)}
+\DoxyCodeLine{      ss << \textcolor{stringliteral}{"{}ikfast exception: "{}} << \_\_FILE\_\_ << \textcolor{stringliteral}{"{}:"{}} << \_\_LINE\_\_ << \textcolor{stringliteral}{"{}: "{}} << \mbox{\hyperlink{iiwa7__ikfast__solver_8hpp_a9c15fe1e91b07ea3280f5239f9841b67}{\_\_PRETTY\_FUNCTION\_\_}} << \textcolor{stringliteral}{"{}: Assertion '"{}}      \(\backslash\)}
+\DoxyCodeLine{         << \#b << \textcolor{stringliteral}{"{}' failed"{}};                                                                                          \(\backslash\)}
+\DoxyCodeLine{      \textcolor{keywordflow}{throw} std::runtime\_error(ss.str());                                                                              \(\backslash\)}
+\DoxyCodeLine{    \}                                                                                                                  \(\backslash\)}
+\DoxyCodeLine{  \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{iiwa7__ikfast__solver_8hpp_a0b03d83cf16b77e025d2100621f1f321}\label{iiwa7__ikfast__solver_8hpp_a0b03d83cf16b77e025d2100621f1f321}} 
+\index{iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}!IKFAST\_ATAN2\_MAGTHRESH@{IKFAST\_ATAN2\_MAGTHRESH}}
+\index{IKFAST\_ATAN2\_MAGTHRESH@{IKFAST\_ATAN2\_MAGTHRESH}!iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}}
+\doxysubsubsection{\texorpdfstring{IKFAST\_ATAN2\_MAGTHRESH}{IKFAST\_ATAN2\_MAGTHRESH}}
+{\footnotesize\ttfamily \#define IKFAST\+\_\+\+ATAN2\+\_\+\+MAGTHRESH~((Ik\+Real)1e-\/7)}
+
+\mbox{\Hypertarget{iiwa7__ikfast__solver_8hpp_a14ff3dec1d7bf1b6f8bc3a7dcc0ed883}\label{iiwa7__ikfast__solver_8hpp_a14ff3dec1d7bf1b6f8bc3a7dcc0ed883}} 
+\index{iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}!IKFAST\_COMPILE\_ASSERT@{IKFAST\_COMPILE\_ASSERT}}
+\index{IKFAST\_COMPILE\_ASSERT@{IKFAST\_COMPILE\_ASSERT}!iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}}
+\doxysubsubsection{\texorpdfstring{IKFAST\_COMPILE\_ASSERT}{IKFAST\_COMPILE\_ASSERT}}
+{\footnotesize\ttfamily \#define IKFAST\+\_\+\+COMPILE\+\_\+\+ASSERT(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~extern int \+\_\+\+\_\+dummy\mbox{[}(int)x\mbox{]}}
+
+\mbox{\Hypertarget{iiwa7__ikfast__solver_8hpp_a6e9c1fe901fde05201a0260782c920be}\label{iiwa7__ikfast__solver_8hpp_a6e9c1fe901fde05201a0260782c920be}} 
+\index{iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}!IKFAST\_EVALCOND\_THRESH@{IKFAST\_EVALCOND\_THRESH}}
+\index{IKFAST\_EVALCOND\_THRESH@{IKFAST\_EVALCOND\_THRESH}!iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}}
+\doxysubsubsection{\texorpdfstring{IKFAST\_EVALCOND\_THRESH}{IKFAST\_EVALCOND\_THRESH}}
+{\footnotesize\ttfamily \#define IKFAST\+\_\+\+EVALCOND\+\_\+\+THRESH~((Ik\+Real)0.\+00001)}
+
+\mbox{\Hypertarget{iiwa7__ikfast__solver_8hpp_a2acf0f2516ebf5481d4db7f86f4d0da6}\label{iiwa7__ikfast__solver_8hpp_a2acf0f2516ebf5481d4db7f86f4d0da6}} 
+\index{iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}!IKFAST\_NO\_MAIN@{IKFAST\_NO\_MAIN}}
+\index{IKFAST\_NO\_MAIN@{IKFAST\_NO\_MAIN}!iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}}
+\doxysubsubsection{\texorpdfstring{IKFAST\_NO\_MAIN}{IKFAST\_NO\_MAIN}}
+{\footnotesize\ttfamily \#define IKFAST\+\_\+\+NO\+\_\+\+MAIN}
+
+autogenerated analytical inverse kinematics code from ikfast program part of Open\+RAVE \begin{DoxyAuthor}{Author}
+Rosen Diankov
+\end{DoxyAuthor}
+Licensed under the Apache License, Version 2.\+0 (the \char`\"{}\+License\char`\"{}); you may not use this file except in compliance with the License. You may obtain a copy of the License at \href{http://www.apache.org/licenses/LICENSE-2.0}{\texttt{ http\+://www.\+apache.\+org/licenses/\+LICENSE-\/2.\+0}}
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \char`\"{}\+AS IS\char`\"{} BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+
+ikfast version 0x1000004a generated on 2019-\/04-\/02 01\+:57\+:40.\+892043 Generated using solver transform6d To compile with gcc\+: gcc -\/lstdc++ ik.\+cpp To compile without any main function as a shared object (might need -\/llapack)\+: gcc -\/f\+PIC -\/lstdc++ -\/DIKFAST\+\_\+\+NO\+\_\+\+MAIN -\/DIKFAST\+\_\+\+CLIBRARY -\/shared -\/Wl,-\/soname,libik.\+so -\/o libik.\+so ik.\+cpp \mbox{\Hypertarget{iiwa7__ikfast__solver_8hpp_a66d4d0ad56673a9555ebafe898d1e2c6}\label{iiwa7__ikfast__solver_8hpp_a66d4d0ad56673a9555ebafe898d1e2c6}} 
+\index{iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}!IKFAST\_SINCOS\_THRESH@{IKFAST\_SINCOS\_THRESH}}
+\index{IKFAST\_SINCOS\_THRESH@{IKFAST\_SINCOS\_THRESH}!iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}}
+\doxysubsubsection{\texorpdfstring{IKFAST\_SINCOS\_THRESH}{IKFAST\_SINCOS\_THRESH}}
+{\footnotesize\ttfamily \#define IKFAST\+\_\+\+SINCOS\+\_\+\+THRESH~((Ik\+Real)1e-\/7)}
+
+\mbox{\Hypertarget{iiwa7__ikfast__solver_8hpp_adac93ad3ac22e016e6d690887e8688ba}\label{iiwa7__ikfast__solver_8hpp_adac93ad3ac22e016e6d690887e8688ba}} 
+\index{iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}!IKFAST\_SOLUTION\_THRESH@{IKFAST\_SOLUTION\_THRESH}}
+\index{IKFAST\_SOLUTION\_THRESH@{IKFAST\_SOLUTION\_THRESH}!iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}}
+\doxysubsubsection{\texorpdfstring{IKFAST\_SOLUTION\_THRESH}{IKFAST\_SOLUTION\_THRESH}}
+{\footnotesize\ttfamily \#define IKFAST\+\_\+\+SOLUTION\+\_\+\+THRESH~((Ik\+Real)1e-\/6)}
+
+\mbox{\Hypertarget{iiwa7__ikfast__solver_8hpp_a0975daf07554eaa98742b83ae89344e6}\label{iiwa7__ikfast__solver_8hpp_a0975daf07554eaa98742b83ae89344e6}} 
+\index{iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}!IKPI@{IKPI}}
+\index{IKPI@{IKPI}!iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}}
+\doxysubsubsection{\texorpdfstring{IKPI}{IKPI}}
+{\footnotesize\ttfamily \#define IKPI~((Ik\+Real)3.\+14159265358979)}
+
+\mbox{\Hypertarget{iiwa7__ikfast__solver_8hpp_a45ed2f0e7e8e411264ebad95010986a7}\label{iiwa7__ikfast__solver_8hpp_a45ed2f0e7e8e411264ebad95010986a7}} 
+\index{iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}!IKPI\_2@{IKPI\_2}}
+\index{IKPI\_2@{IKPI\_2}!iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}}
+\doxysubsubsection{\texorpdfstring{IKPI\_2}{IKPI\_2}}
+{\footnotesize\ttfamily \#define IKPI\+\_\+2~((Ik\+Real)1.\+57079632679490)}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{iiwa7__ikfast__solver_8hpp_ac5b257dc48deeb1c904d40b5dbf4a5a4}\label{iiwa7__ikfast__solver_8hpp_ac5b257dc48deeb1c904d40b5dbf4a5a4}} 
+\index{iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}!ComputeFk@{ComputeFk}}
+\index{ComputeFk@{ComputeFk}!iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}}
+\doxysubsubsection{\texorpdfstring{ComputeFk()}{ComputeFk()}}
+{\footnotesize\ttfamily IKFAST\+\_\+\+API void Compute\+Fk (\begin{DoxyParamCaption}\item[{const Ik\+Real $\ast$}]{j,  }\item[{Ik\+Real $\ast$}]{eetrans,  }\item[{Ik\+Real $\ast$}]{eerot }\end{DoxyParamCaption})}
+
+solves the forward kinematics equations. 
+\begin{DoxyParams}{Parameters}
+{\em pfree} & is an array specifying the free joints of the chain. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{iiwa7__ikfast__solver_8hpp_ad6e97fc303efda1a956b9a044f8424fc}\label{iiwa7__ikfast__solver_8hpp_ad6e97fc303efda1a956b9a044f8424fc}} 
+\index{iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}!ComputeIk@{ComputeIk}}
+\index{ComputeIk@{ComputeIk}!iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}}
+\doxysubsubsection{\texorpdfstring{ComputeIk()}{ComputeIk()}}
+{\footnotesize\ttfamily IKFAST\+\_\+\+API bool Compute\+Ik (\begin{DoxyParamCaption}\item[{const Ik\+Real $\ast$}]{eetrans,  }\item[{const Ik\+Real $\ast$}]{eerot,  }\item[{const Ik\+Real $\ast$}]{pfree,  }\item[{\mbox{\hyperlink{classikfast_1_1IkSolutionListBase}{Ik\+Solution\+List\+Base}}$<$ Ik\+Real $>$ \&}]{solutions }\end{DoxyParamCaption})}
+
+solves the inverse kinematics equations. 
+\begin{DoxyParams}{Parameters}
+{\em pfree} & is an array specifying the free joints of the chain. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{iiwa7__ikfast__solver_8hpp_a0657832109f0b05edc3d2b70d8ecc5ac}\label{iiwa7__ikfast__solver_8hpp_a0657832109f0b05edc3d2b70d8ecc5ac}} 
+\index{iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}!ComputeIk2@{ComputeIk2}}
+\index{ComputeIk2@{ComputeIk2}!iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}}
+\doxysubsubsection{\texorpdfstring{ComputeIk2()}{ComputeIk2()}}
+{\footnotesize\ttfamily IKFAST\+\_\+\+API bool Compute\+Ik2 (\begin{DoxyParamCaption}\item[{const Ik\+Real $\ast$}]{eetrans,  }\item[{const Ik\+Real $\ast$}]{eerot,  }\item[{const Ik\+Real $\ast$}]{pfree,  }\item[{\mbox{\hyperlink{classikfast_1_1IkSolutionListBase}{Ik\+Solution\+List\+Base}}$<$ Ik\+Real $>$ \&}]{solutions,  }\item[{void $\ast$}]{p\+Open\+RAVEManip }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{iiwa7__ikfast__solver_8hpp_ae833a06f7ce2542df24b072e9c61d4e6}\label{iiwa7__ikfast__solver_8hpp_ae833a06f7ce2542df24b072e9c61d4e6}} 
+\index{iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}!dgeev\_@{dgeev\_}}
+\index{dgeev\_@{dgeev\_}!iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}}
+\doxysubsubsection{\texorpdfstring{dgeev\_()}{dgeev\_()}}
+{\footnotesize\ttfamily void dgeev\+\_\+ (\begin{DoxyParamCaption}\item[{const char $\ast$}]{jobvl,  }\item[{const char $\ast$}]{jobvr,  }\item[{const int $\ast$}]{n,  }\item[{double $\ast$}]{a,  }\item[{const int $\ast$}]{lda,  }\item[{double $\ast$}]{wr,  }\item[{double $\ast$}]{wi,  }\item[{double $\ast$}]{vl,  }\item[{const int $\ast$}]{ldvl,  }\item[{double $\ast$}]{vr,  }\item[{const int $\ast$}]{ldvr,  }\item[{double $\ast$}]{work,  }\item[{const int $\ast$}]{lwork,  }\item[{int $\ast$}]{info }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{iiwa7__ikfast__solver_8hpp_a8a0c34faf9ee31a4d83412a2b5d58125}\label{iiwa7__ikfast__solver_8hpp_a8a0c34faf9ee31a4d83412a2b5d58125}} 
+\index{iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}!dgesv\_@{dgesv\_}}
+\index{dgesv\_@{dgesv\_}!iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}}
+\doxysubsubsection{\texorpdfstring{dgesv\_()}{dgesv\_()}}
+{\footnotesize\ttfamily void dgesv\+\_\+ (\begin{DoxyParamCaption}\item[{const int $\ast$}]{n,  }\item[{const int $\ast$}]{nrhs,  }\item[{double $\ast$}]{a,  }\item[{const int $\ast$}]{lda,  }\item[{int $\ast$}]{ipiv,  }\item[{double $\ast$}]{b,  }\item[{const int $\ast$}]{ldb,  }\item[{int $\ast$}]{info }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{iiwa7__ikfast__solver_8hpp_a1173528e396c678a5482bae5e7f6e43e}\label{iiwa7__ikfast__solver_8hpp_a1173528e396c678a5482bae5e7f6e43e}} 
+\index{iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}!dgetrf\_@{dgetrf\_}}
+\index{dgetrf\_@{dgetrf\_}!iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}}
+\doxysubsubsection{\texorpdfstring{dgetrf\_()}{dgetrf\_()}}
+{\footnotesize\ttfamily void dgetrf\+\_\+ (\begin{DoxyParamCaption}\item[{const int $\ast$}]{m,  }\item[{const int $\ast$}]{n,  }\item[{double $\ast$}]{a,  }\item[{const int $\ast$}]{lda,  }\item[{int $\ast$}]{ipiv,  }\item[{int $\ast$}]{info }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{iiwa7__ikfast__solver_8hpp_a8a0a23abeb2b5f4d136f544560421d68}\label{iiwa7__ikfast__solver_8hpp_a8a0a23abeb2b5f4d136f544560421d68}} 
+\index{iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}!dgetri\_@{dgetri\_}}
+\index{dgetri\_@{dgetri\_}!iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}}
+\doxysubsubsection{\texorpdfstring{dgetri\_()}{dgetri\_()}}
+{\footnotesize\ttfamily void dgetri\+\_\+ (\begin{DoxyParamCaption}\item[{const int $\ast$}]{n,  }\item[{const double $\ast$}]{a,  }\item[{const int $\ast$}]{lda,  }\item[{int $\ast$}]{ipiv,  }\item[{double $\ast$}]{work,  }\item[{const int $\ast$}]{lwork,  }\item[{int $\ast$}]{info }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{iiwa7__ikfast__solver_8hpp_a1a2d74eb3410ef5bee213fce4b1f6443}\label{iiwa7__ikfast__solver_8hpp_a1a2d74eb3410ef5bee213fce4b1f6443}} 
+\index{iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}!dgetrs\_@{dgetrs\_}}
+\index{dgetrs\_@{dgetrs\_}!iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}}
+\doxysubsubsection{\texorpdfstring{dgetrs\_()}{dgetrs\_()}}
+{\footnotesize\ttfamily void dgetrs\+\_\+ (\begin{DoxyParamCaption}\item[{const char $\ast$}]{trans,  }\item[{const int $\ast$}]{n,  }\item[{const int $\ast$}]{nrhs,  }\item[{double $\ast$}]{a,  }\item[{const int $\ast$}]{lda,  }\item[{int $\ast$}]{ipiv,  }\item[{double $\ast$}]{b,  }\item[{const int $\ast$}]{ldb,  }\item[{int $\ast$}]{info }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{iiwa7__ikfast__solver_8hpp_a1b412cff74e968ac44ade3643dce7468}\label{iiwa7__ikfast__solver_8hpp_a1b412cff74e968ac44ade3643dce7468}} 
+\index{iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}!GetFreeParameters@{GetFreeParameters}}
+\index{GetFreeParameters@{GetFreeParameters}!iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}}
+\doxysubsubsection{\texorpdfstring{GetFreeParameters()}{GetFreeParameters()}}
+{\footnotesize\ttfamily IKFAST\+\_\+\+API int $\ast$ Get\+Free\+Parameters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{iiwa7__ikfast__solver_8hpp_a4dc4cea86dab954c3d0d67c75b1cec60}\label{iiwa7__ikfast__solver_8hpp_a4dc4cea86dab954c3d0d67c75b1cec60}} 
+\index{iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}!GetIkFastVersion@{GetIkFastVersion}}
+\index{GetIkFastVersion@{GetIkFastVersion}!iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}}
+\doxysubsubsection{\texorpdfstring{GetIkFastVersion()}{GetIkFastVersion()}}
+{\footnotesize\ttfamily IKFAST\+\_\+\+API const char $\ast$ Get\+Ik\+Fast\+Version (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{iiwa7__ikfast__solver_8hpp_a6709f20b26f0903f0aa58a26934c853c}\label{iiwa7__ikfast__solver_8hpp_a6709f20b26f0903f0aa58a26934c853c}} 
+\index{iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}!GetIkRealSize@{GetIkRealSize}}
+\index{GetIkRealSize@{GetIkRealSize}!iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}}
+\doxysubsubsection{\texorpdfstring{GetIkRealSize()}{GetIkRealSize()}}
+{\footnotesize\ttfamily IKFAST\+\_\+\+API int Get\+Ik\+Real\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{iiwa7__ikfast__solver_8hpp_abc401850b948d5a0402e9dbb77d3846f}\label{iiwa7__ikfast__solver_8hpp_abc401850b948d5a0402e9dbb77d3846f}} 
+\index{iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}!GetIkType@{GetIkType}}
+\index{GetIkType@{GetIkType}!iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}}
+\doxysubsubsection{\texorpdfstring{GetIkType()}{GetIkType()}}
+{\footnotesize\ttfamily IKFAST\+\_\+\+API int Get\+Ik\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{iiwa7__ikfast__solver_8hpp_a6aaaf2b8161411dad90e79c1c62f7ef5}\label{iiwa7__ikfast__solver_8hpp_a6aaaf2b8161411dad90e79c1c62f7ef5}} 
+\index{iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}!GetKinematicsHash@{GetKinematicsHash}}
+\index{GetKinematicsHash@{GetKinematicsHash}!iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}}
+\doxysubsubsection{\texorpdfstring{GetKinematicsHash()}{GetKinematicsHash()}}
+{\footnotesize\ttfamily IKFAST\+\_\+\+API const char $\ast$ Get\+Kinematics\+Hash (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{iiwa7__ikfast__solver_8hpp_af0cf03d3ad69d099a9a2eb6db5e5b352}\label{iiwa7__ikfast__solver_8hpp_af0cf03d3ad69d099a9a2eb6db5e5b352}} 
+\index{iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}!GetNumFreeParameters@{GetNumFreeParameters}}
+\index{GetNumFreeParameters@{GetNumFreeParameters}!iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}}
+\doxysubsubsection{\texorpdfstring{GetNumFreeParameters()}{GetNumFreeParameters()}}
+{\footnotesize\ttfamily IKFAST\+\_\+\+API int Get\+Num\+Free\+Parameters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{iiwa7__ikfast__solver_8hpp_a3e9541dde410904e043fe18701061b62}\label{iiwa7__ikfast__solver_8hpp_a3e9541dde410904e043fe18701061b62}} 
+\index{iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}!GetNumJoints@{GetNumJoints}}
+\index{GetNumJoints@{GetNumJoints}!iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}}
+\doxysubsubsection{\texorpdfstring{GetNumJoints()}{GetNumJoints()}}
+{\footnotesize\ttfamily IKFAST\+\_\+\+API int Get\+Num\+Joints (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{iiwa7__ikfast__solver_8hpp_a95e1896df0cdeedf37f08dcb341b3918}\label{iiwa7__ikfast__solver_8hpp_a95e1896df0cdeedf37f08dcb341b3918}} 
+\index{iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}!IKabs@{IKabs}}
+\index{IKabs@{IKabs}!iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}}
+\doxysubsubsection{\texorpdfstring{IKabs()}{IKabs()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double IKabs (\begin{DoxyParamCaption}\item[{double}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{iiwa7__ikfast__solver_8hpp_af50774e991c9af3d423e2f15a1864fcd}\label{iiwa7__ikfast__solver_8hpp_af50774e991c9af3d423e2f15a1864fcd}} 
+\index{iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}!IKabs@{IKabs}}
+\index{IKabs@{IKabs}!iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}}
+\doxysubsubsection{\texorpdfstring{IKabs()}{IKabs()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float IKabs (\begin{DoxyParamCaption}\item[{float}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{iiwa7__ikfast__solver_8hpp_a10d86f8d485d2f30ce2638cb94b1e20e}\label{iiwa7__ikfast__solver_8hpp_a10d86f8d485d2f30ce2638cb94b1e20e}} 
+\index{iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}!IKacos@{IKacos}}
+\index{IKacos@{IKacos}!iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}}
+\doxysubsubsection{\texorpdfstring{IKacos()}{IKacos()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double IKacos (\begin{DoxyParamCaption}\item[{double}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{iiwa7__ikfast__solver_8hpp_a6985b623469662633075c50b708b5a97}\label{iiwa7__ikfast__solver_8hpp_a6985b623469662633075c50b708b5a97}} 
+\index{iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}!IKacos@{IKacos}}
+\index{IKacos@{IKacos}!iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}}
+\doxysubsubsection{\texorpdfstring{IKacos()}{IKacos()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float IKacos (\begin{DoxyParamCaption}\item[{float}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{iiwa7__ikfast__solver_8hpp_abb5416a593fd7617f75130836a9f5491}\label{iiwa7__ikfast__solver_8hpp_abb5416a593fd7617f75130836a9f5491}} 
+\index{iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}!IKasin@{IKasin}}
+\index{IKasin@{IKasin}!iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}}
+\doxysubsubsection{\texorpdfstring{IKasin()}{IKasin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double IKasin (\begin{DoxyParamCaption}\item[{double}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{iiwa7__ikfast__solver_8hpp_a159f6680a5e7eb9da0d76bfce5461050}\label{iiwa7__ikfast__solver_8hpp_a159f6680a5e7eb9da0d76bfce5461050}} 
+\index{iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}!IKasin@{IKasin}}
+\index{IKasin@{IKasin}!iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}}
+\doxysubsubsection{\texorpdfstring{IKasin()}{IKasin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float IKasin (\begin{DoxyParamCaption}\item[{float}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{iiwa7__ikfast__solver_8hpp_a82c3e90527cb705afd35438841994aa2}\label{iiwa7__ikfast__solver_8hpp_a82c3e90527cb705afd35438841994aa2}} 
+\index{iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}!IKatan2@{IKatan2}}
+\index{IKatan2@{IKatan2}!iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}}
+\doxysubsubsection{\texorpdfstring{IKatan2()}{IKatan2()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double IKatan2 (\begin{DoxyParamCaption}\item[{double}]{fy,  }\item[{double}]{fx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{iiwa7__ikfast__solver_8hpp_a5e00463327d5e1acfd4e8eb788bbd6ac}\label{iiwa7__ikfast__solver_8hpp_a5e00463327d5e1acfd4e8eb788bbd6ac}} 
+\index{iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}!IKatan2@{IKatan2}}
+\index{IKatan2@{IKatan2}!iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}}
+\doxysubsubsection{\texorpdfstring{IKatan2()}{IKatan2()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float IKatan2 (\begin{DoxyParamCaption}\item[{float}]{fy,  }\item[{float}]{fx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{iiwa7__ikfast__solver_8hpp_a3ef91ca6735fc89a591ce04038c85ccf}\label{iiwa7__ikfast__solver_8hpp_a3ef91ca6735fc89a591ce04038c85ccf}} 
+\index{iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}!IKatan2Simple@{IKatan2Simple}}
+\index{IKatan2Simple@{IKatan2Simple}!iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}}
+\doxysubsubsection{\texorpdfstring{IKatan2Simple()}{IKatan2Simple()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double IKatan2\+Simple (\begin{DoxyParamCaption}\item[{double}]{fy,  }\item[{double}]{fx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{iiwa7__ikfast__solver_8hpp_a1bbba04cc5114eb36e98181457e9f535}\label{iiwa7__ikfast__solver_8hpp_a1bbba04cc5114eb36e98181457e9f535}} 
+\index{iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}!IKatan2Simple@{IKatan2Simple}}
+\index{IKatan2Simple@{IKatan2Simple}!iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}}
+\doxysubsubsection{\texorpdfstring{IKatan2Simple()}{IKatan2Simple()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float IKatan2\+Simple (\begin{DoxyParamCaption}\item[{float}]{fy,  }\item[{float}]{fx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{iiwa7__ikfast__solver_8hpp_ad2da3c414ad57c32c4b7a2ce61cfbfad}\label{iiwa7__ikfast__solver_8hpp_ad2da3c414ad57c32c4b7a2ce61cfbfad}} 
+\index{iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}!IKatan2WithCheck@{IKatan2WithCheck}}
+\index{IKatan2WithCheck@{IKatan2WithCheck}!iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}}
+\doxysubsubsection{\texorpdfstring{IKatan2WithCheck()}{IKatan2WithCheck()}}
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$ \\
+\mbox{\hyperlink{structCheckValue}{Check\+Value}}$<$ \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$ IKatan2\+With\+Check (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}}}]{fy,  }\item[{\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}}}]{fx,  }\item[{\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}}}]{epsilon }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{iiwa7__ikfast__solver_8hpp_ac925942daf5e1b7df0c38f2a7a501ac0}\label{iiwa7__ikfast__solver_8hpp_ac925942daf5e1b7df0c38f2a7a501ac0}} 
+\index{iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}!IKcos@{IKcos}}
+\index{IKcos@{IKcos}!iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}}
+\doxysubsubsection{\texorpdfstring{IKcos()}{IKcos()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double IKcos (\begin{DoxyParamCaption}\item[{double}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{iiwa7__ikfast__solver_8hpp_a8d241417f26868995cfb5a5648816e63}\label{iiwa7__ikfast__solver_8hpp_a8d241417f26868995cfb5a5648816e63}} 
+\index{iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}!IKcos@{IKcos}}
+\index{IKcos@{IKcos}!iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}}
+\doxysubsubsection{\texorpdfstring{IKcos()}{IKcos()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float IKcos (\begin{DoxyParamCaption}\item[{float}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{iiwa7__ikfast__solver_8hpp_adf4b4c56fd2ff1b505933aef3f73caab}\label{iiwa7__ikfast__solver_8hpp_adf4b4c56fd2ff1b505933aef3f73caab}} 
+\index{iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}!IKFAST\_COMPILE\_ASSERT@{IKFAST\_COMPILE\_ASSERT}}
+\index{IKFAST\_COMPILE\_ASSERT@{IKFAST\_COMPILE\_ASSERT}!iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}}
+\doxysubsubsection{\texorpdfstring{IKFAST\_COMPILE\_ASSERT()}{IKFAST\_COMPILE\_ASSERT()}}
+{\footnotesize\ttfamily IKFAST\+\_\+\+COMPILE\+\_\+\+ASSERT (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ikfast_8h_afb507c47cee8d15d0241aa894bef5a67}{IKFAST\+\_\+\+VERSION}}}]{ = {\ttfamily =61} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{iiwa7__ikfast__solver_8hpp_a1ec8174f881fb22cf1a7cdf19b9a84ad}\label{iiwa7__ikfast__solver_8hpp_a1ec8174f881fb22cf1a7cdf19b9a84ad}} 
+\index{iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}!IKfmod@{IKfmod}}
+\index{IKfmod@{IKfmod}!iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}}
+\doxysubsubsection{\texorpdfstring{IKfmod()}{IKfmod()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double IKfmod (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{iiwa7__ikfast__solver_8hpp_a8af0ce9307f58d1e64bb413077478244}\label{iiwa7__ikfast__solver_8hpp_a8af0ce9307f58d1e64bb413077478244}} 
+\index{iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}!IKfmod@{IKfmod}}
+\index{IKfmod@{IKfmod}!iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}}
+\doxysubsubsection{\texorpdfstring{IKfmod()}{IKfmod()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float IKfmod (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{iiwa7__ikfast__solver_8hpp_a429184284f7e6da54369a2290d8da22d}\label{iiwa7__ikfast__solver_8hpp_a429184284f7e6da54369a2290d8da22d}} 
+\index{iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}!IKlog@{IKlog}}
+\index{IKlog@{IKlog}!iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}}
+\doxysubsubsection{\texorpdfstring{IKlog()}{IKlog()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double IKlog (\begin{DoxyParamCaption}\item[{double}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{iiwa7__ikfast__solver_8hpp_ae5812d083cf95d2945bbd8b75c38d7cd}\label{iiwa7__ikfast__solver_8hpp_ae5812d083cf95d2945bbd8b75c38d7cd}} 
+\index{iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}!IKlog@{IKlog}}
+\index{IKlog@{IKlog}!iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}}
+\doxysubsubsection{\texorpdfstring{IKlog()}{IKlog()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float IKlog (\begin{DoxyParamCaption}\item[{float}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{iiwa7__ikfast__solver_8hpp_ae347d3fd8d00f0690c85ddd8b226be9b}\label{iiwa7__ikfast__solver_8hpp_ae347d3fd8d00f0690c85ddd8b226be9b}} 
+\index{iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}!IKPowWithIntegerCheck@{IKPowWithIntegerCheck}}
+\index{IKPowWithIntegerCheck@{IKPowWithIntegerCheck}!iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}}
+\doxysubsubsection{\texorpdfstring{IKPowWithIntegerCheck()}{IKPowWithIntegerCheck()}}
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$ \\
+\mbox{\hyperlink{structCheckValue}{Check\+Value}}$<$ \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$ IKPow\+With\+Integer\+Check (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}}}]{f,  }\item[{int}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{iiwa7__ikfast__solver_8hpp_a903ab9632f6846449bbb3a8bba65ad8e}\label{iiwa7__ikfast__solver_8hpp_a903ab9632f6846449bbb3a8bba65ad8e}} 
+\index{iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}!IKsign@{IKsign}}
+\index{IKsign@{IKsign}!iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}}
+\doxysubsubsection{\texorpdfstring{IKsign()}{IKsign()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double IKsign (\begin{DoxyParamCaption}\item[{double}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{iiwa7__ikfast__solver_8hpp_a845afc8ffdb8c068f0e75abac0d78b15}\label{iiwa7__ikfast__solver_8hpp_a845afc8ffdb8c068f0e75abac0d78b15}} 
+\index{iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}!IKsign@{IKsign}}
+\index{IKsign@{IKsign}!iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}}
+\doxysubsubsection{\texorpdfstring{IKsign()}{IKsign()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float IKsign (\begin{DoxyParamCaption}\item[{float}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{iiwa7__ikfast__solver_8hpp_a8a11e6f22a19bd8f4ac73c3645c93c81}\label{iiwa7__ikfast__solver_8hpp_a8a11e6f22a19bd8f4ac73c3645c93c81}} 
+\index{iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}!IKsin@{IKsin}}
+\index{IKsin@{IKsin}!iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}}
+\doxysubsubsection{\texorpdfstring{IKsin()}{IKsin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double IKsin (\begin{DoxyParamCaption}\item[{double}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{iiwa7__ikfast__solver_8hpp_a7b5e881d13d85a4bc1020963f9e605b5}\label{iiwa7__ikfast__solver_8hpp_a7b5e881d13d85a4bc1020963f9e605b5}} 
+\index{iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}!IKsin@{IKsin}}
+\index{IKsin@{IKsin}!iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}}
+\doxysubsubsection{\texorpdfstring{IKsin()}{IKsin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float IKsin (\begin{DoxyParamCaption}\item[{float}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{iiwa7__ikfast__solver_8hpp_a95d600e8b1f9ee1b1f0d8919b31f1ce0}\label{iiwa7__ikfast__solver_8hpp_a95d600e8b1f9ee1b1f0d8919b31f1ce0}} 
+\index{iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}!IKsqr@{IKsqr}}
+\index{IKsqr@{IKsqr}!iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}}
+\doxysubsubsection{\texorpdfstring{IKsqr()}{IKsqr()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double IKsqr (\begin{DoxyParamCaption}\item[{double}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{iiwa7__ikfast__solver_8hpp_ab527b2a76479c7f6ef9545b3c41a3b37}\label{iiwa7__ikfast__solver_8hpp_ab527b2a76479c7f6ef9545b3c41a3b37}} 
+\index{iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}!IKsqr@{IKsqr}}
+\index{IKsqr@{IKsqr}!iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}}
+\doxysubsubsection{\texorpdfstring{IKsqr()}{IKsqr()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float IKsqr (\begin{DoxyParamCaption}\item[{float}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{iiwa7__ikfast__solver_8hpp_abb830ca15935c1c9b95a2ede5b2d43cc}\label{iiwa7__ikfast__solver_8hpp_abb830ca15935c1c9b95a2ede5b2d43cc}} 
+\index{iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}!IKsqrt@{IKsqrt}}
+\index{IKsqrt@{IKsqrt}!iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}}
+\doxysubsubsection{\texorpdfstring{IKsqrt()}{IKsqrt()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double IKsqrt (\begin{DoxyParamCaption}\item[{double}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{iiwa7__ikfast__solver_8hpp_a6f476874d10b265f6b0e6409104126b7}\label{iiwa7__ikfast__solver_8hpp_a6f476874d10b265f6b0e6409104126b7}} 
+\index{iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}!IKsqrt@{IKsqrt}}
+\index{IKsqrt@{IKsqrt}!iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}}
+\doxysubsubsection{\texorpdfstring{IKsqrt()}{IKsqrt()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float IKsqrt (\begin{DoxyParamCaption}\item[{float}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{iiwa7__ikfast__solver_8hpp_acd8f1e5b83501cc42ffef27bd6458f9a}\label{iiwa7__ikfast__solver_8hpp_acd8f1e5b83501cc42ffef27bd6458f9a}} 
+\index{iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}!IKtan@{IKtan}}
+\index{IKtan@{IKtan}!iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}}
+\doxysubsubsection{\texorpdfstring{IKtan()}{IKtan()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double IKtan (\begin{DoxyParamCaption}\item[{double}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{iiwa7__ikfast__solver_8hpp_ad2361d774d694b5935519a1b3c1075f9}\label{iiwa7__ikfast__solver_8hpp_ad2361d774d694b5935519a1b3c1075f9}} 
+\index{iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}!IKtan@{IKtan}}
+\index{IKtan@{IKtan}!iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}}
+\doxysubsubsection{\texorpdfstring{IKtan()}{IKtan()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float IKtan (\begin{DoxyParamCaption}\item[{float}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{iiwa7__ikfast__solver_8hpp_a6993bc2ff3751954630153bfd08bdd0b}\label{iiwa7__ikfast__solver_8hpp_a6993bc2ff3751954630153bfd08bdd0b}} 
+\index{iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}!zgetrf\_@{zgetrf\_}}
+\index{zgetrf\_@{zgetrf\_}!iiwa7\_ikfast\_solver.hpp@{iiwa7\_ikfast\_solver.hpp}}
+\doxysubsubsection{\texorpdfstring{zgetrf\_()}{zgetrf\_()}}
+{\footnotesize\ttfamily void zgetrf\+\_\+ (\begin{DoxyParamCaption}\item[{const int $\ast$}]{m,  }\item[{const int $\ast$}]{n,  }\item[{std\+::complex$<$ double $>$ $\ast$}]{a,  }\item[{const int $\ast$}]{lda,  }\item[{int $\ast$}]{ipiv,  }\item[{int $\ast$}]{info }\end{DoxyParamCaption})}
+

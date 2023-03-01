@@ -1,0 +1,280 @@
+\hypertarget{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector}{}\doxysection{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::Tesseract\+Gjk\+Pair\+Detector Class Reference}
+\label{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector}\index{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector@{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector}}
+
+
+This is a modifed Convex to Convex collision algorithm.  
+
+
+
+
+{\ttfamily \#include $<$tesseract\+\_\+gjk\+\_\+pair\+\_\+detector.\+h$>$}
+
+
+
+Inheritance diagram for tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::Tesseract\+Gjk\+Pair\+Detector\+:
+% FIG 0
+
+
+Collaboration diagram for tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::Tesseract\+Gjk\+Pair\+Detector\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a3bf7c018860d376c6ee887062a0f44a2}{Tesseract\+Gjk\+Pair\+Detector}} (const bt\+Convex\+Shape $\ast$objectA, const bt\+Convex\+Shape $\ast$objectB, bt\+Simplex\+Solver\+Interface $\ast$simplex\+Solver, bt\+Convex\+Penetration\+Depth\+Solver $\ast$penetration\+Depth\+Solver, const \mbox{\hyperlink{structtesseract__collision_1_1ContactTestData}{Contact\+Test\+Data}} $\ast$cdata)
+\item 
+\mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a963f816875ccf160cc5c81471b92269e}{Tesseract\+Gjk\+Pair\+Detector}} (const bt\+Convex\+Shape $\ast$objectA, const bt\+Convex\+Shape $\ast$objectB, int shape\+TypeA, int shape\+TypeB, bt\+Scalar marginA, bt\+Scalar marginB, bt\+Simplex\+Solver\+Interface $\ast$simplex\+Solver, bt\+Convex\+Penetration\+Depth\+Solver $\ast$penetration\+Depth\+Solver, const \mbox{\hyperlink{structtesseract__collision_1_1ContactTestData}{Contact\+Test\+Data}} $\ast$cdata)
+\item 
+void \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a911486ad054d6df2ad4f0ff7f6fbef1b}{get\+Closest\+Points}} (const Closest\+Point\+Input \&input, Result \&output, class bt\+IDebug\+Draw $\ast$debug\+Draw, bool swap\+Results=false) override
+\item 
+void \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_af4f3da9c2ea0a48933b3677fbc5e4a8a}{get\+Closest\+Points\+Non\+Virtual}} (const Closest\+Point\+Input \&input, Result \&output, class bt\+IDebug\+Draw $\ast$debug\+Draw)
+\item 
+void \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a6dcdd3cc5df3eee3d104c830a495165d}{set\+MinkowskiA}} (const bt\+Convex\+Shape $\ast$minkA)
+\item 
+void \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a992f165d7d74218ddccafff90c107f43}{set\+MinkowskiB}} (const bt\+Convex\+Shape $\ast$minkB)
+\item 
+void \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a3b6e7bc0b0b4d2e12f3f5190bfd2fd48}{set\+Cached\+Separating\+Axis}} (const bt\+Vector3 \&separating\+Axis)
+\item 
+const bt\+Vector3 \& \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_ae954a67008b2b23438caa7104062825b}{get\+Cached\+Separating\+Axis}} () const
+\item 
+bt\+Scalar \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_aa1e6421ab398e1c58b329da3e6455964}{get\+Cached\+Separating\+Distance}} () const
+\item 
+void \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_ab8c38223828d781143f5de9554b737e5}{set\+Penetration\+Depth\+Solver}} (bt\+Convex\+Penetration\+Depth\+Solver $\ast$penetration\+Depth\+Solver)
+\item 
+void \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a111b86548ba9e61a82e182fb1c1efea8}{set\+Ignore\+Margin}} (bool ignore\+Margin)
+\begin{DoxyCompactList}\small\item\em don\textquotesingle{}t use set\+Ignore\+Margin, it\textquotesingle{}s for Bullet\textquotesingle{}s internal use \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a0c2a93f3294e3e2a3b63eea0f05f6be3}{m\+\_\+last\+Used\+Method}}
+\item 
+int \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_aeb91a27e9ec72b774324830653695e81}{m\+\_\+cur\+Iter}} \{ 0 \}
+\item 
+int \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_aa126544a5b09d52be555fabfe925efdf}{m\+\_\+degenerate\+Simplex}} \{ 0 \}
+\item 
+int \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a4d91bb5f247c335b441a582a6e7f4e15}{m\+\_\+catch\+Degeneracies}}
+\item 
+int \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a1eef7c1434bd009c4edd4cf79b89b132}{m\+\_\+fix\+Contact\+Normal\+Direction}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bt\+Vector3 \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_aff4643de88226ad7604f2d059393042e}{m\+\_\+cached\+Separating\+Axis}}
+\item 
+bt\+Convex\+Penetration\+Depth\+Solver $\ast$ \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_ae3e557d87da46092bc3b9652da7c06c1}{m\+\_\+penetration\+Depth\+Solver}}
+\item 
+bt\+Simplex\+Solver\+Interface $\ast$ \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_ab4c7fe3fd879a4c32cb0a89e3c8a8b14}{m\+\_\+simplex\+Solver}}
+\item 
+const bt\+Convex\+Shape $\ast$ \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_aa52181ba02d7bd7f741e0e062c777205}{m\+\_\+minkowskiA}}
+\item 
+const bt\+Convex\+Shape $\ast$ \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a3e4cd75e8476ef3a74096d6e05085f4d}{m\+\_\+minkowskiB}}
+\item 
+int \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a847bf4d265e6cf6a379c9a29e9abf815}{m\+\_\+shape\+TypeA}}
+\item 
+int \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a16988b07a51d336e5010e7ce574d15c6}{m\+\_\+shape\+TypeB}}
+\item 
+bt\+Scalar \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_ae212b7bed3fb0cf41a690f843c082d19}{m\+\_\+marginA}}
+\item 
+bt\+Scalar \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a8a036783aa760858bf5984be797388d8}{m\+\_\+marginB}}
+\item 
+bool \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_ad89dd2eed3e887ce7e9ac8da3db38c7c}{m\+\_\+ignore\+Margin}}
+\item 
+bt\+Scalar \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a8d16503a93a4fda75d04732ccbfeb249}{m\+\_\+cached\+Separating\+Distance}} \{ 0 \}
+\item 
+const \mbox{\hyperlink{structtesseract__collision_1_1ContactTestData}{Contact\+Test\+Data}} $\ast$ \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a450cffeab8295cb92d06fb3a2798fc88}{m\+\_\+cdata}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This is a modifed Convex to Convex collision algorithm. 
+
+This was modified to leverage the Tesseract contact request to enable and disable different parts of the algorithm. The algorithm first does a quick binary check if the two objects are in collision. If in collision it runs the penetration algorithm to get the nearest points and penetration depths. If not in collision it runs the an algorithm to get the nearest points and distance. The Tesseract contact request allow you to now decide if you need all three. Example, in the case of OMPL if you have a contact distance of zero you can get a performance increase, by disabling the penetration and distance calculation because they add no value.
+
+Note\+: This will not be able to be removed. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a3bf7c018860d376c6ee887062a0f44a2}\label{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a3bf7c018860d376c6ee887062a0f44a2}} 
+\index{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector@{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector}!TesseractGjkPairDetector@{TesseractGjkPairDetector}}
+\index{TesseractGjkPairDetector@{TesseractGjkPairDetector}!tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector@{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector}}
+\doxysubsubsection{\texorpdfstring{TesseractGjkPairDetector()}{TesseractGjkPairDetector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Tesseract\+Gjk\+Pair\+Detector\+::\+Tesseract\+Gjk\+Pair\+Detector (\begin{DoxyParamCaption}\item[{const bt\+Convex\+Shape $\ast$}]{objectA,  }\item[{const bt\+Convex\+Shape $\ast$}]{objectB,  }\item[{bt\+Simplex\+Solver\+Interface $\ast$}]{simplex\+Solver,  }\item[{bt\+Convex\+Penetration\+Depth\+Solver $\ast$}]{penetration\+Depth\+Solver,  }\item[{const \mbox{\hyperlink{structtesseract__collision_1_1ContactTestData}{Contact\+Test\+Data}} $\ast$}]{cdata }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a963f816875ccf160cc5c81471b92269e}\label{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a963f816875ccf160cc5c81471b92269e}} 
+\index{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector@{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector}!TesseractGjkPairDetector@{TesseractGjkPairDetector}}
+\index{TesseractGjkPairDetector@{TesseractGjkPairDetector}!tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector@{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector}}
+\doxysubsubsection{\texorpdfstring{TesseractGjkPairDetector()}{TesseractGjkPairDetector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Tesseract\+Gjk\+Pair\+Detector\+::\+Tesseract\+Gjk\+Pair\+Detector (\begin{DoxyParamCaption}\item[{const bt\+Convex\+Shape $\ast$}]{objectA,  }\item[{const bt\+Convex\+Shape $\ast$}]{objectB,  }\item[{int}]{shape\+TypeA,  }\item[{int}]{shape\+TypeB,  }\item[{bt\+Scalar}]{marginA,  }\item[{bt\+Scalar}]{marginB,  }\item[{bt\+Simplex\+Solver\+Interface $\ast$}]{simplex\+Solver,  }\item[{bt\+Convex\+Penetration\+Depth\+Solver $\ast$}]{penetration\+Depth\+Solver,  }\item[{const \mbox{\hyperlink{structtesseract__collision_1_1ContactTestData}{Contact\+Test\+Data}} $\ast$}]{cdata }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_ae954a67008b2b23438caa7104062825b}\label{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_ae954a67008b2b23438caa7104062825b}} 
+\index{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector@{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector}!getCachedSeparatingAxis@{getCachedSeparatingAxis}}
+\index{getCachedSeparatingAxis@{getCachedSeparatingAxis}!tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector@{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector}}
+\doxysubsubsection{\texorpdfstring{getCachedSeparatingAxis()}{getCachedSeparatingAxis()}}
+{\footnotesize\ttfamily const bt\+Vector3 \& tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Tesseract\+Gjk\+Pair\+Detector\+::get\+Cached\+Separating\+Axis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_aa1e6421ab398e1c58b329da3e6455964}\label{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_aa1e6421ab398e1c58b329da3e6455964}} 
+\index{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector@{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector}!getCachedSeparatingDistance@{getCachedSeparatingDistance}}
+\index{getCachedSeparatingDistance@{getCachedSeparatingDistance}!tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector@{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector}}
+\doxysubsubsection{\texorpdfstring{getCachedSeparatingDistance()}{getCachedSeparatingDistance()}}
+{\footnotesize\ttfamily bt\+Scalar tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Tesseract\+Gjk\+Pair\+Detector\+::get\+Cached\+Separating\+Distance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a911486ad054d6df2ad4f0ff7f6fbef1b}\label{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a911486ad054d6df2ad4f0ff7f6fbef1b}} 
+\index{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector@{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector}!getClosestPoints@{getClosestPoints}}
+\index{getClosestPoints@{getClosestPoints}!tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector@{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector}}
+\doxysubsubsection{\texorpdfstring{getClosestPoints()}{getClosestPoints()}}
+{\footnotesize\ttfamily void tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Tesseract\+Gjk\+Pair\+Detector\+::get\+Closest\+Points (\begin{DoxyParamCaption}\item[{const Closest\+Point\+Input \&}]{input,  }\item[{Result \&}]{output,  }\item[{class bt\+IDebug\+Draw $\ast$}]{debug\+Draw,  }\item[{bool}]{swap\+Results = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_af4f3da9c2ea0a48933b3677fbc5e4a8a}\label{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_af4f3da9c2ea0a48933b3677fbc5e4a8a}} 
+\index{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector@{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector}!getClosestPointsNonVirtual@{getClosestPointsNonVirtual}}
+\index{getClosestPointsNonVirtual@{getClosestPointsNonVirtual}!tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector@{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector}}
+\doxysubsubsection{\texorpdfstring{getClosestPointsNonVirtual()}{getClosestPointsNonVirtual()}}
+{\footnotesize\ttfamily void tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Tesseract\+Gjk\+Pair\+Detector\+::get\+Closest\+Points\+Non\+Virtual (\begin{DoxyParamCaption}\item[{const Closest\+Point\+Input \&}]{input,  }\item[{Result \&}]{output,  }\item[{class bt\+IDebug\+Draw $\ast$}]{debug\+Draw }\end{DoxyParamCaption})}
+
+this is another degenerate case, where the initial GJK calculation reports a degenerate case EPA reports no penetration, and the second GJK (using the supporting vector without margin) reports a valid positive distance. Use the results of the second GJK instead of failing. thanks to Jacob.\+Langford for the reproduction case \href{http://code.google.com/p/bullet/issues/detail?id=250}{\texttt{ http\+://code.\+google.\+com/p/bullet/issues/detail?id=250}}
+
+todo\+: need to track down this EPA penetration solver degeneracy the penetration solver reports penetration but the contact normal connecting the contact points is pointing in the opposite direction until then, detect the issue and revert the normal\mbox{\Hypertarget{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a3b6e7bc0b0b4d2e12f3f5190bfd2fd48}\label{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a3b6e7bc0b0b4d2e12f3f5190bfd2fd48}} 
+\index{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector@{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector}!setCachedSeparatingAxis@{setCachedSeparatingAxis}}
+\index{setCachedSeparatingAxis@{setCachedSeparatingAxis}!tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector@{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector}}
+\doxysubsubsection{\texorpdfstring{setCachedSeparatingAxis()}{setCachedSeparatingAxis()}}
+{\footnotesize\ttfamily void tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Tesseract\+Gjk\+Pair\+Detector\+::set\+Cached\+Separating\+Axis (\begin{DoxyParamCaption}\item[{const bt\+Vector3 \&}]{separating\+Axis }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a111b86548ba9e61a82e182fb1c1efea8}\label{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a111b86548ba9e61a82e182fb1c1efea8}} 
+\index{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector@{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector}!setIgnoreMargin@{setIgnoreMargin}}
+\index{setIgnoreMargin@{setIgnoreMargin}!tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector@{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector}}
+\doxysubsubsection{\texorpdfstring{setIgnoreMargin()}{setIgnoreMargin()}}
+{\footnotesize\ttfamily void tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Tesseract\+Gjk\+Pair\+Detector\+::set\+Ignore\+Margin (\begin{DoxyParamCaption}\item[{bool}]{ignore\+Margin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+don\textquotesingle{}t use set\+Ignore\+Margin, it\textquotesingle{}s for Bullet\textquotesingle{}s internal use 
+
+\mbox{\Hypertarget{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a6dcdd3cc5df3eee3d104c830a495165d}\label{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a6dcdd3cc5df3eee3d104c830a495165d}} 
+\index{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector@{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector}!setMinkowskiA@{setMinkowskiA}}
+\index{setMinkowskiA@{setMinkowskiA}!tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector@{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector}}
+\doxysubsubsection{\texorpdfstring{setMinkowskiA()}{setMinkowskiA()}}
+{\footnotesize\ttfamily void tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Tesseract\+Gjk\+Pair\+Detector\+::set\+MinkowskiA (\begin{DoxyParamCaption}\item[{const bt\+Convex\+Shape $\ast$}]{minkA }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a992f165d7d74218ddccafff90c107f43}\label{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a992f165d7d74218ddccafff90c107f43}} 
+\index{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector@{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector}!setMinkowskiB@{setMinkowskiB}}
+\index{setMinkowskiB@{setMinkowskiB}!tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector@{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector}}
+\doxysubsubsection{\texorpdfstring{setMinkowskiB()}{setMinkowskiB()}}
+{\footnotesize\ttfamily void tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Tesseract\+Gjk\+Pair\+Detector\+::set\+MinkowskiB (\begin{DoxyParamCaption}\item[{const bt\+Convex\+Shape $\ast$}]{minkB }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_ab8c38223828d781143f5de9554b737e5}\label{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_ab8c38223828d781143f5de9554b737e5}} 
+\index{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector@{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector}!setPenetrationDepthSolver@{setPenetrationDepthSolver}}
+\index{setPenetrationDepthSolver@{setPenetrationDepthSolver}!tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector@{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector}}
+\doxysubsubsection{\texorpdfstring{setPenetrationDepthSolver()}{setPenetrationDepthSolver()}}
+{\footnotesize\ttfamily void tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Tesseract\+Gjk\+Pair\+Detector\+::set\+Penetration\+Depth\+Solver (\begin{DoxyParamCaption}\item[{bt\+Convex\+Penetration\+Depth\+Solver $\ast$}]{penetration\+Depth\+Solver }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_aff4643de88226ad7604f2d059393042e}\label{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_aff4643de88226ad7604f2d059393042e}} 
+\index{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector@{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector}!m\_cachedSeparatingAxis@{m\_cachedSeparatingAxis}}
+\index{m\_cachedSeparatingAxis@{m\_cachedSeparatingAxis}!tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector@{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector}}
+\doxysubsubsection{\texorpdfstring{m\_cachedSeparatingAxis}{m\_cachedSeparatingAxis}}
+{\footnotesize\ttfamily bt\+Vector3 tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Tesseract\+Gjk\+Pair\+Detector\+::m\+\_\+cached\+Separating\+Axis\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a8d16503a93a4fda75d04732ccbfeb249}\label{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a8d16503a93a4fda75d04732ccbfeb249}} 
+\index{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector@{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector}!m\_cachedSeparatingDistance@{m\_cachedSeparatingDistance}}
+\index{m\_cachedSeparatingDistance@{m\_cachedSeparatingDistance}!tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector@{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector}}
+\doxysubsubsection{\texorpdfstring{m\_cachedSeparatingDistance}{m\_cachedSeparatingDistance}}
+{\footnotesize\ttfamily bt\+Scalar tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Tesseract\+Gjk\+Pair\+Detector\+::m\+\_\+cached\+Separating\+Distance \{ 0 \}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a4d91bb5f247c335b441a582a6e7f4e15}\label{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a4d91bb5f247c335b441a582a6e7f4e15}} 
+\index{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector@{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector}!m\_catchDegeneracies@{m\_catchDegeneracies}}
+\index{m\_catchDegeneracies@{m\_catchDegeneracies}!tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector@{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector}}
+\doxysubsubsection{\texorpdfstring{m\_catchDegeneracies}{m\_catchDegeneracies}}
+{\footnotesize\ttfamily int tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Tesseract\+Gjk\+Pair\+Detector\+::m\+\_\+catch\+Degeneracies}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a450cffeab8295cb92d06fb3a2798fc88}\label{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a450cffeab8295cb92d06fb3a2798fc88}} 
+\index{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector@{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector}!m\_cdata@{m\_cdata}}
+\index{m\_cdata@{m\_cdata}!tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector@{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector}}
+\doxysubsubsection{\texorpdfstring{m\_cdata}{m\_cdata}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structtesseract__collision_1_1ContactTestData}{Contact\+Test\+Data}}$\ast$ tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Tesseract\+Gjk\+Pair\+Detector\+::m\+\_\+cdata\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_aeb91a27e9ec72b774324830653695e81}\label{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_aeb91a27e9ec72b774324830653695e81}} 
+\index{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector@{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector}!m\_curIter@{m\_curIter}}
+\index{m\_curIter@{m\_curIter}!tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector@{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector}}
+\doxysubsubsection{\texorpdfstring{m\_curIter}{m\_curIter}}
+{\footnotesize\ttfamily int tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Tesseract\+Gjk\+Pair\+Detector\+::m\+\_\+cur\+Iter \{ 0 \}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_aa126544a5b09d52be555fabfe925efdf}\label{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_aa126544a5b09d52be555fabfe925efdf}} 
+\index{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector@{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector}!m\_degenerateSimplex@{m\_degenerateSimplex}}
+\index{m\_degenerateSimplex@{m\_degenerateSimplex}!tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector@{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector}}
+\doxysubsubsection{\texorpdfstring{m\_degenerateSimplex}{m\_degenerateSimplex}}
+{\footnotesize\ttfamily int tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Tesseract\+Gjk\+Pair\+Detector\+::m\+\_\+degenerate\+Simplex \{ 0 \}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a1eef7c1434bd009c4edd4cf79b89b132}\label{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a1eef7c1434bd009c4edd4cf79b89b132}} 
+\index{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector@{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector}!m\_fixContactNormalDirection@{m\_fixContactNormalDirection}}
+\index{m\_fixContactNormalDirection@{m\_fixContactNormalDirection}!tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector@{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector}}
+\doxysubsubsection{\texorpdfstring{m\_fixContactNormalDirection}{m\_fixContactNormalDirection}}
+{\footnotesize\ttfamily int tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Tesseract\+Gjk\+Pair\+Detector\+::m\+\_\+fix\+Contact\+Normal\+Direction}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_ad89dd2eed3e887ce7e9ac8da3db38c7c}\label{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_ad89dd2eed3e887ce7e9ac8da3db38c7c}} 
+\index{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector@{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector}!m\_ignoreMargin@{m\_ignoreMargin}}
+\index{m\_ignoreMargin@{m\_ignoreMargin}!tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector@{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector}}
+\doxysubsubsection{\texorpdfstring{m\_ignoreMargin}{m\_ignoreMargin}}
+{\footnotesize\ttfamily bool tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Tesseract\+Gjk\+Pair\+Detector\+::m\+\_\+ignore\+Margin\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a0c2a93f3294e3e2a3b63eea0f05f6be3}\label{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a0c2a93f3294e3e2a3b63eea0f05f6be3}} 
+\index{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector@{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector}!m\_lastUsedMethod@{m\_lastUsedMethod}}
+\index{m\_lastUsedMethod@{m\_lastUsedMethod}!tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector@{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector}}
+\doxysubsubsection{\texorpdfstring{m\_lastUsedMethod}{m\_lastUsedMethod}}
+{\footnotesize\ttfamily int tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Tesseract\+Gjk\+Pair\+Detector\+::m\+\_\+last\+Used\+Method}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_ae212b7bed3fb0cf41a690f843c082d19}\label{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_ae212b7bed3fb0cf41a690f843c082d19}} 
+\index{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector@{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector}!m\_marginA@{m\_marginA}}
+\index{m\_marginA@{m\_marginA}!tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector@{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector}}
+\doxysubsubsection{\texorpdfstring{m\_marginA}{m\_marginA}}
+{\footnotesize\ttfamily bt\+Scalar tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Tesseract\+Gjk\+Pair\+Detector\+::m\+\_\+marginA\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a8a036783aa760858bf5984be797388d8}\label{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a8a036783aa760858bf5984be797388d8}} 
+\index{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector@{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector}!m\_marginB@{m\_marginB}}
+\index{m\_marginB@{m\_marginB}!tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector@{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector}}
+\doxysubsubsection{\texorpdfstring{m\_marginB}{m\_marginB}}
+{\footnotesize\ttfamily bt\+Scalar tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Tesseract\+Gjk\+Pair\+Detector\+::m\+\_\+marginB\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_aa52181ba02d7bd7f741e0e062c777205}\label{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_aa52181ba02d7bd7f741e0e062c777205}} 
+\index{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector@{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector}!m\_minkowskiA@{m\_minkowskiA}}
+\index{m\_minkowskiA@{m\_minkowskiA}!tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector@{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector}}
+\doxysubsubsection{\texorpdfstring{m\_minkowskiA}{m\_minkowskiA}}
+{\footnotesize\ttfamily const bt\+Convex\+Shape$\ast$ tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Tesseract\+Gjk\+Pair\+Detector\+::m\+\_\+minkowskiA\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a3e4cd75e8476ef3a74096d6e05085f4d}\label{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a3e4cd75e8476ef3a74096d6e05085f4d}} 
+\index{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector@{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector}!m\_minkowskiB@{m\_minkowskiB}}
+\index{m\_minkowskiB@{m\_minkowskiB}!tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector@{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector}}
+\doxysubsubsection{\texorpdfstring{m\_minkowskiB}{m\_minkowskiB}}
+{\footnotesize\ttfamily const bt\+Convex\+Shape$\ast$ tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Tesseract\+Gjk\+Pair\+Detector\+::m\+\_\+minkowskiB\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_ae3e557d87da46092bc3b9652da7c06c1}\label{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_ae3e557d87da46092bc3b9652da7c06c1}} 
+\index{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector@{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector}!m\_penetrationDepthSolver@{m\_penetrationDepthSolver}}
+\index{m\_penetrationDepthSolver@{m\_penetrationDepthSolver}!tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector@{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector}}
+\doxysubsubsection{\texorpdfstring{m\_penetrationDepthSolver}{m\_penetrationDepthSolver}}
+{\footnotesize\ttfamily bt\+Convex\+Penetration\+Depth\+Solver$\ast$ tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Tesseract\+Gjk\+Pair\+Detector\+::m\+\_\+penetration\+Depth\+Solver\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a847bf4d265e6cf6a379c9a29e9abf815}\label{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a847bf4d265e6cf6a379c9a29e9abf815}} 
+\index{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector@{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector}!m\_shapeTypeA@{m\_shapeTypeA}}
+\index{m\_shapeTypeA@{m\_shapeTypeA}!tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector@{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector}}
+\doxysubsubsection{\texorpdfstring{m\_shapeTypeA}{m\_shapeTypeA}}
+{\footnotesize\ttfamily int tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Tesseract\+Gjk\+Pair\+Detector\+::m\+\_\+shape\+TypeA\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a16988b07a51d336e5010e7ce574d15c6}\label{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_a16988b07a51d336e5010e7ce574d15c6}} 
+\index{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector@{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector}!m\_shapeTypeB@{m\_shapeTypeB}}
+\index{m\_shapeTypeB@{m\_shapeTypeB}!tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector@{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector}}
+\doxysubsubsection{\texorpdfstring{m\_shapeTypeB}{m\_shapeTypeB}}
+{\footnotesize\ttfamily int tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Tesseract\+Gjk\+Pair\+Detector\+::m\+\_\+shape\+TypeB\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_ab4c7fe3fd879a4c32cb0a89e3c8a8b14}\label{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractGjkPairDetector_ab4c7fe3fd879a4c32cb0a89e3c8a8b14}} 
+\index{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector@{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector}!m\_simplexSolver@{m\_simplexSolver}}
+\index{m\_simplexSolver@{m\_simplexSolver}!tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector@{tesseract\_collision::tesseract\_collision\_bullet::TesseractGjkPairDetector}}
+\doxysubsubsection{\texorpdfstring{m\_simplexSolver}{m\_simplexSolver}}
+{\footnotesize\ttfamily bt\+Simplex\+Solver\+Interface$\ast$ tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Tesseract\+Gjk\+Pair\+Detector\+::m\+\_\+simplex\+Solver\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+tesseract\+\_\+collision/bullet/include/tesseract\+\_\+collision/bullet/\mbox{\hyperlink{tesseract__gjk__pair__detector_8h}{tesseract\+\_\+gjk\+\_\+pair\+\_\+detector.\+h}}\item 
+tesseract\+\_\+collision/bullet/src/\mbox{\hyperlink{tesseract__gjk__pair__detector_8cpp}{tesseract\+\_\+gjk\+\_\+pair\+\_\+detector.\+cpp}}\end{DoxyCompactItemize}

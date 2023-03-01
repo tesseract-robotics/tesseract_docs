@@ -1,0 +1,329 @@
+\hypertarget{environment_8h_source}{}\doxysection{environment.\+h}
+\label{environment_8h_source}\index{tesseract\_environment/include/tesseract\_environment/environment.h@{tesseract\_environment/include/tesseract\_environment/environment.h}}
+\mbox{\hyperlink{environment_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#ifndef TESSERACT\_ENVIRONMENT\_ENVIRONMENT\_H}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define TESSERACT\_ENVIRONMENT\_ENVIRONMENT\_H}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{macros_8h}{tesseract\_common/macros.h}}>}}
+\DoxyCodeLine{29 \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include <shared\_mutex>}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include <chrono>}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include <console\_bridge/console.h>}}
+\DoxyCodeLine{35 \mbox{\hyperlink{namespaceTESSERACT__COMMON__IGNORE__WARNINGS__POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{commands_8h}{tesseract\_environment/commands.h}}>}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{events_8h}{tesseract\_environment/events.h}}>}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{discrete__contact__manager_8h}{tesseract\_collision/core/discrete\_contact\_manager.h}}>}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{continuous__contact__manager_8h}{tesseract\_collision/core/continuous\_contact\_manager.h}}>}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{contact__managers__plugin__factory_8h}{tesseract\_collision/core/contact\_managers\_plugin\_factory.h}}>}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{graph_8h}{tesseract\_scene\_graph/graph.h}}>}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{scene__state_8h}{tesseract\_scene\_graph/scene\_state.h}}>}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{mutable__state__solver_8h}{tesseract\_state\_solver/mutable\_state\_solver.h}}>}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{urdf__parser_8h}{tesseract\_urdf/urdf\_parser.h}}>}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{srdf__model_8h}{tesseract\_srdf/srdf\_model.h}}>}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{resource__locator_8h}{tesseract\_common/resource\_locator.h}}>}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{manipulator__info_8h}{tesseract\_common/manipulator\_info.h}}>}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{tesseract__common_2include_2tesseract__common_2types_8h}{tesseract\_common/types.h}}>}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{tesseract__common_2include_2tesseract__common_2utils_8h}{tesseract\_common/utils.h}}>}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{joint__group_8h}{tesseract\_kinematics/core/joint\_group.h}}>}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{kinematic__group_8h}{tesseract\_kinematics/core/kinematic\_group.h}}>}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{kinematics__plugin__factory_8h}{tesseract\_kinematics/core/kinematics\_plugin\_factory.h}}>}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__environment}{tesseract\_environment}}}
+\DoxyCodeLine{56 \{}
+\DoxyCodeLine{62 \textcolor{keyword}{using }\mbox{\hyperlink{namespacetesseract__environment_a197ae00a2f4f5630ff6d044e2e6d7384}{FindTCPOffsetCallbackFn}} = std::function<Eigen::Isometry3d(\textcolor{keyword}{const} \mbox{\hyperlink{structtesseract__common_1_1ManipulatorInfo}{tesseract\_common::ManipulatorInfo}}\&)>;}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__environment_1_1Environment}{Environment}}}
+\DoxyCodeLine{65 \{}
+\DoxyCodeLine{66 \textcolor{keyword}{public}:}
+\DoxyCodeLine{67   \textcolor{comment}{// LCOV\_EXCL\_START}}
+\DoxyCodeLine{68   EIGEN\_MAKE\_ALIGNED\_OPERATOR\_NEW}
+\DoxyCodeLine{69   \textcolor{comment}{// LCOV\_EXCL\_STOP}}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__environment_1_1Environment_a7f9f24116120df888e99fe015803ffc0}{Ptr}} = std::shared\_ptr<Environment>;}
+\DoxyCodeLine{72   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__environment_1_1Environment_a9d9ecedaebeea1d7ba45be7670fbcd77}{ConstPtr}} = std::shared\_ptr<const Environment>;}
+\DoxyCodeLine{73   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__environment_1_1Environment_a182513d107a55c729afb5e6482e2ac87}{UPtr}} = std::unique\_ptr<Environment>;}
+\DoxyCodeLine{74   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__environment_1_1Environment_aa1c862b86928f56abbbe8b465aae3be5}{ConstUPtr}} = std::unique\_ptr<const Environment>;}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{77   \mbox{\hyperlink{classtesseract__environment_1_1Environment_a17f54debd76f348f87026851475a1321}{Environment}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{78   \textcolor{keyword}{virtual} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a3c2d32d8ab0b7631452702daf6ac75e0}{\string~Environment}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{79   \mbox{\hyperlink{classtesseract__environment_1_1Environment_a4fc559949f1402452a033eb60190c466}{Environment}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__environment_1_1Environment}{Environment}}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{80   \mbox{\hyperlink{classtesseract__environment_1_1Environment}{Environment}}\& \mbox{\hyperlink{classtesseract__environment_1_1Environment_ac907443876999cd9ce7b83d78095eda7}{operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__environment_1_1Environment}{Environment}}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{81   \mbox{\hyperlink{classtesseract__environment_1_1Environment_ade79bccc47aa99df8582675dbde9731e}{Environment}}(\mbox{\hyperlink{classtesseract__environment_1_1Environment}{Environment}}\&\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{82   \mbox{\hyperlink{classtesseract__environment_1_1Environment}{Environment}}\& \mbox{\hyperlink{classtesseract__environment_1_1Environment_a1a3b8e39272cc9b41e1f519f0b73ead8}{operator=}}(\mbox{\hyperlink{classtesseract__environment_1_1Environment}{Environment}}\&\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{92   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a64a181eec8532a17b8fc174f1a3b9a97}{init}}(\textcolor{keyword}{const} \mbox{\hyperlink{namespacetesseract__environment_acb95740502ec41d80a94a7631d4b7a3c}{Commands}}\& commands);}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{102   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a64a181eec8532a17b8fc174f1a3b9a97}{init}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph}{tesseract\_scene\_graph::SceneGraph}}\& \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a8d4d0dc3a6b9a7030970bf9ed3764756}{scene\_graph}},}
+\DoxyCodeLine{103             \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__srdf_1_1SRDFModel_a6e579a73e63af4e2d66448cdcc0998b5}{tesseract\_srdf::SRDFModel::ConstPtr}}\& \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a8ef742d34e730278291e48aa556fcc7f}{srdf\_model}} = \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a64a181eec8532a17b8fc174f1a3b9a97}{init}}(\textcolor{keyword}{const} std::string\& \mbox{\hyperlink{tesseract__environment__unit_8cpp_a840e56e5da5ec380d7799188bcd16ba2}{urdf\_string}}, \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__common_1_1ResourceLocator_a61a53e45948c47a9612096d8e7b90252}{tesseract\_common::ResourceLocator::ConstPtr}}\& \mbox{\hyperlink{resource__locator__unit_8cpp_ad889712fa094e762b2a887aec9001270}{locator}});}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a64a181eec8532a17b8fc174f1a3b9a97}{init}}(\textcolor{keyword}{const} std::string\& \mbox{\hyperlink{tesseract__environment__unit_8cpp_a840e56e5da5ec380d7799188bcd16ba2}{urdf\_string}},}
+\DoxyCodeLine{108             \textcolor{keyword}{const} std::string\& \mbox{\hyperlink{tesseract__environment__unit_8cpp_a73427883a50c240fad83eab80d411a51}{srdf\_string}},}
+\DoxyCodeLine{109             \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__common_1_1ResourceLocator_a61a53e45948c47a9612096d8e7b90252}{tesseract\_common::ResourceLocator::ConstPtr}}\& \mbox{\hyperlink{resource__locator__unit_8cpp_ad889712fa094e762b2a887aec9001270}{locator}});}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a64a181eec8532a17b8fc174f1a3b9a97}{init}}(\textcolor{keyword}{const} tesseract\_common::fs::path\& \mbox{\hyperlink{tesseract__environment__unit_8cpp_ae4ff3315a4cbf2fd5a883f4c50516af0}{urdf\_path}}, \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__common_1_1ResourceLocator_a61a53e45948c47a9612096d8e7b90252}{tesseract\_common::ResourceLocator::ConstPtr}}\& \mbox{\hyperlink{resource__locator__unit_8cpp_ad889712fa094e762b2a887aec9001270}{locator}});}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a64a181eec8532a17b8fc174f1a3b9a97}{init}}(\textcolor{keyword}{const} tesseract\_common::fs::path\& \mbox{\hyperlink{tesseract__environment__unit_8cpp_ae4ff3315a4cbf2fd5a883f4c50516af0}{urdf\_path}},}
+\DoxyCodeLine{114             \textcolor{keyword}{const} tesseract\_common::fs::path\& \mbox{\hyperlink{tesseract__environment__unit_8cpp_aecf2b697963284497a33fb7619d52e2a}{srdf\_path}},}
+\DoxyCodeLine{115             \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__common_1_1ResourceLocator_a61a53e45948c47a9612096d8e7b90252}{tesseract\_common::ResourceLocator::ConstPtr}}\& \mbox{\hyperlink{resource__locator__unit_8cpp_ad889712fa094e762b2a887aec9001270}{locator}});}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{121   \mbox{\hyperlink{classtesseract__environment_1_1Environment_a182513d107a55c729afb5e6482e2ac87}{Environment::UPtr}} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a9f122e18d3e77dd1392a29eba248884d}{clone}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{128   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a9af19c42a99bbd324fb4fee874408ae0}{reset}}();}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{131   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__environment_1_1Environment_aea53ba12317423f088aa2a60b4577eaa}{clear}}();}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{134   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1Environment_ae802d65ba39b511fe233185d774cd9fa}{isInitialized}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{140   \textcolor{keywordtype}{int} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a631792c18421c01ba9d0f6bbed1ea95c}{getRevision}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{146   \mbox{\hyperlink{namespacetesseract__environment_acb95740502ec41d80a94a7631d4b7a3c}{Commands}} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a4cac4954b248e1d07d8c6c6677a6b261}{getCommandHistory}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{154   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a9d1f92184c8f27d1a916a43414c36015}{applyCommands}}(\textcolor{keyword}{const} \mbox{\hyperlink{namespacetesseract__environment_acb95740502ec41d80a94a7631d4b7a3c}{Commands}}\& commands);}
+\DoxyCodeLine{155 }
+\DoxyCodeLine{162   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a180c9eb3de9ccb7c87a98eafcc14d9d2}{applyCommand}}(\mbox{\hyperlink{classtesseract__environment_1_1Command_a71f41840ff091003233e7ddaff1c4081}{Command::ConstPtr}} command);}
+\DoxyCodeLine{163 }
+\DoxyCodeLine{168   \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph_a9ee303b2514bfedd8c914d09551b00ff}{tesseract\_scene\_graph::SceneGraph::ConstPtr}} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a832b1b88f248ff86a5031addff4a3760}{getSceneGraph}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{169 }
+\DoxyCodeLine{175   std::vector<std::string> \mbox{\hyperlink{classtesseract__environment_1_1Environment_a5802d3184e8104b3b8ccef5f42ae6c2c}{getGroupJointNames}}(\textcolor{keyword}{const} std::string\& group\_name) \textcolor{keyword}{const};}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{182   \mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup_ae671cb8eec7305576666282365c2e011}{tesseract\_kinematics::JointGroup::UPtr}} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a9562be4e26c10c103bc4388f317ec0dd}{getJointGroup}}(\textcolor{keyword}{const} std::string\& group\_name) \textcolor{keyword}{const};}
+\DoxyCodeLine{183 }
+\DoxyCodeLine{190   \mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup_ae671cb8eec7305576666282365c2e011}{tesseract\_kinematics::JointGroup::UPtr}} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a9562be4e26c10c103bc4388f317ec0dd}{getJointGroup}}(\textcolor{keyword}{const} std::string\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}},}
+\DoxyCodeLine{191                                                        \textcolor{keyword}{const} std::vector<std::string>\& \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_ae55b39adb52b29eeefd7d128c4b56f2a}{joint\_names}}) \textcolor{keyword}{const};}
+\DoxyCodeLine{192 }
+\DoxyCodeLine{200   \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicGroup_a039a701cf2b2749effa2d0400d45aeec}{tesseract\_kinematics::KinematicGroup::UPtr}} \mbox{\hyperlink{classtesseract__environment_1_1Environment_ae37db2738f8628802eaef4231c22f9ea}{getKinematicGroup}}(\textcolor{keyword}{const} std::string\& group\_name,}
+\DoxyCodeLine{201                                                                std::string ik\_solver\_name = \textcolor{stringliteral}{"{}"{}}) \textcolor{keyword}{const};}
+\DoxyCodeLine{202 }
+\DoxyCodeLine{216   Eigen::Isometry3d \mbox{\hyperlink{classtesseract__environment_1_1Environment_a8cb186c5cfbeca01fbcd227153f2b4f0}{findTCPOffset}}(\textcolor{keyword}{const} \mbox{\hyperlink{structtesseract__common_1_1ManipulatorInfo}{tesseract\_common::ManipulatorInfo}}\& \mbox{\hyperlink{tesseract__common__unit_8cpp_a874312afd3ed6323f395176bea6f7fcc}{manip\_info}}) \textcolor{keyword}{const};}
+\DoxyCodeLine{217 }
+\DoxyCodeLine{222   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a4962a7b695aa525a64ae895f811a5e70}{addFindTCPOffsetCallback}}(\textcolor{keyword}{const} \mbox{\hyperlink{namespacetesseract__environment_a197ae00a2f4f5630ff6d044e2e6d7384}{FindTCPOffsetCallbackFn}}\& fn);}
+\DoxyCodeLine{223 }
+\DoxyCodeLine{228   std::vector<FindTCPOffsetCallbackFn> \mbox{\hyperlink{classtesseract__environment_1_1Environment_a33bf42162c58e920492b15de4a5a5981}{getFindTCPOffsetCallbacks}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{229 }
+\DoxyCodeLine{239   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__environment_1_1Environment_ac60d19d0af267533a645c049476b8a2e}{addEventCallback}}(std::size\_t hash, \textcolor{keyword}{const} \mbox{\hyperlink{namespacetesseract__environment_a842b4038cfb894a0b9cc45e6aea1e8c5}{EventCallbackFn}}\& fn);}
+\DoxyCodeLine{240 }
+\DoxyCodeLine{245   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a4b42351c64d03487e1439ea895ff2fe4}{removeEventCallback}}(std::size\_t hash);}
+\DoxyCodeLine{246 }
+\DoxyCodeLine{248   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__environment_1_1Environment_ae16232142c1de8d3d27e4ca0e15cabc3}{clearEventCallbacks}}();}
+\DoxyCodeLine{249 }
+\DoxyCodeLine{254   std::map<std::size\_t, EventCallbackFn> \mbox{\hyperlink{classtesseract__environment_1_1Environment_aadf700de601a2786166104f7cad9d363}{getEventCallbacks}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{255 }
+\DoxyCodeLine{260   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__environment_1_1Environment_ac82d299c1b7f7855f76e13a14d856536}{setResourceLocator}}(\mbox{\hyperlink{classtesseract__common_1_1ResourceLocator_a61a53e45948c47a9612096d8e7b90252}{tesseract\_common::ResourceLocator::ConstPtr}} \mbox{\hyperlink{resource__locator__unit_8cpp_ad889712fa094e762b2a887aec9001270}{locator}});}
+\DoxyCodeLine{261 }
+\DoxyCodeLine{267   \mbox{\hyperlink{classtesseract__common_1_1ResourceLocator_a61a53e45948c47a9612096d8e7b90252}{tesseract\_common::ResourceLocator::ConstPtr}} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a89c1999bd8798c6c8d7b5634efe972d8}{getResourceLocator}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{268 }
+\DoxyCodeLine{270   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a814bb70fb9ccd0b7e6bcb0fda99854b1}{setName}}(\textcolor{keyword}{const} std::string\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}});}
+\DoxyCodeLine{271 }
+\DoxyCodeLine{276   \textcolor{keyword}{const} std::string\& \mbox{\hyperlink{classtesseract__environment_1_1Environment_ade0db57cc182265b99c85237fca26a2c}{getName}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{277 }
+\DoxyCodeLine{285   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__environment_1_1Environment_ad3a215b6fc1762c3d45d4d35a44cb8a4}{setState}}(\textcolor{keyword}{const} std::unordered\_map<std::string, double>\& \mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_ae41993a59637cf36532d3620b8203555}{joints}});}
+\DoxyCodeLine{286   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__environment_1_1Environment_ad3a215b6fc1762c3d45d4d35a44cb8a4}{setState}}(\textcolor{keyword}{const} std::vector<std::string>\& \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_ae55b39adb52b29eeefd7d128c4b56f2a}{joint\_names}}, \textcolor{keyword}{const} Eigen::Ref<const Eigen::VectorXd>\& joint\_values);}
+\DoxyCodeLine{287 }
+\DoxyCodeLine{296   \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{tesseract\_scene\_graph::SceneState}} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a1061bfeac8177a020ce095806d5cce3f}{getState}}(\textcolor{keyword}{const} std::unordered\_map<std::string, double>\& \mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_ae41993a59637cf36532d3620b8203555}{joints}}) \textcolor{keyword}{const};}
+\DoxyCodeLine{297   \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{tesseract\_scene\_graph::SceneState}} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a1061bfeac8177a020ce095806d5cce3f}{getState}}(\textcolor{keyword}{const} std::vector<std::string>\& \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_ae55b39adb52b29eeefd7d128c4b56f2a}{joint\_names}},}
+\DoxyCodeLine{298                                              \textcolor{keyword}{const} Eigen::Ref<const Eigen::VectorXd>\& joint\_values) \textcolor{keyword}{const};}
+\DoxyCodeLine{299 }
+\DoxyCodeLine{301   \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{tesseract\_scene\_graph::SceneState}} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a1061bfeac8177a020ce095806d5cce3f}{getState}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{302 }
+\DoxyCodeLine{304   std::chrono::system\_clock::time\_point \mbox{\hyperlink{classtesseract__environment_1_1Environment_a58a80617a1b446b8084842309ed32c6b}{getTimestamp}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{305 }
+\DoxyCodeLine{307   std::chrono::system\_clock::time\_point \mbox{\hyperlink{classtesseract__environment_1_1Environment_ace663ca8b20444b8726ee798ede1dd38}{getCurrentStateTimestamp}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{308 }
+\DoxyCodeLine{314   \mbox{\hyperlink{classtesseract__scene__graph_1_1Link_afad1873344245e2223664b6b7f846f1c}{tesseract\_scene\_graph::Link::ConstPtr}} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a4c82e08472b33079d232bbe4e9bc8c7f}{getLink}}(\textcolor{keyword}{const} std::string\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}) \textcolor{keyword}{const};}
+\DoxyCodeLine{315 }
+\DoxyCodeLine{321   \mbox{\hyperlink{classtesseract__scene__graph_1_1Joint_a705d1f0a066833444550aa0c7f6d16b9}{tesseract\_scene\_graph::Joint::ConstPtr}} \mbox{\hyperlink{classtesseract__environment_1_1Environment_ad5ad16cf42dcbc40c20851731e2f221d}{getJoint}}(\textcolor{keyword}{const} std::string\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}) \textcolor{keyword}{const};}
+\DoxyCodeLine{322 }
+\DoxyCodeLine{328   \mbox{\hyperlink{classtesseract__scene__graph_1_1JointLimits_abbdeeb05eed0eb0696da5019186ab3c8}{tesseract\_scene\_graph::JointLimits::ConstPtr}} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a3bd46e64964a988c637d414e4aaa0afc}{getJointLimits}}(\textcolor{keyword}{const} std::string\& \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aad74bf9891b141c288c96b20caff4dfa}{joint\_name}}) \textcolor{keyword}{const};}
+\DoxyCodeLine{329 }
+\DoxyCodeLine{334   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1Environment_ab6cfcb8b6d9892dd27aa9f7e7748e25d}{getLinkCollisionEnabled}}(\textcolor{keyword}{const} std::string\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}) \textcolor{keyword}{const};}
+\DoxyCodeLine{335 }
+\DoxyCodeLine{340   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a113e5b98a118846499b44855e6691d9f}{getLinkVisibility}}(\textcolor{keyword}{const} std::string\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}) \textcolor{keyword}{const};}
+\DoxyCodeLine{341 }
+\DoxyCodeLine{346   \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix_a6a8fd56f7cd2c4098245c7a15d1736d7}{tesseract\_common::AllowedCollisionMatrix::ConstPtr}} \mbox{\hyperlink{classtesseract__environment_1_1Environment_ad0db7596e7046eedc310e5e5cf358270}{getAllowedCollisionMatrix}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{347 }
+\DoxyCodeLine{352   std::vector<std::string> \mbox{\hyperlink{classtesseract__environment_1_1Environment_a40c8713acb1f873ae2f9447007327965}{getJointNames}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{353 }
+\DoxyCodeLine{358   std::vector<std::string> \mbox{\hyperlink{classtesseract__environment_1_1Environment_a113c3c2d6fa4979d1ed0ec6ff054de00}{getActiveJointNames}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{359 }
+\DoxyCodeLine{367   Eigen::VectorXd \mbox{\hyperlink{classtesseract__environment_1_1Environment_a142aa50fc2767c11e77aee4cd141bcd2}{getCurrentJointValues}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{368 }
+\DoxyCodeLine{376   Eigen::VectorXd \mbox{\hyperlink{classtesseract__environment_1_1Environment_a142aa50fc2767c11e77aee4cd141bcd2}{getCurrentJointValues}}(\textcolor{keyword}{const} std::vector<std::string>\& \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_ae55b39adb52b29eeefd7d128c4b56f2a}{joint\_names}}) \textcolor{keyword}{const};}
+\DoxyCodeLine{377 }
+\DoxyCodeLine{382   std::string \mbox{\hyperlink{classtesseract__environment_1_1Environment_a664ec74b3c783ac1e0832e9857265d14}{getRootLinkName}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{383 }
+\DoxyCodeLine{388   std::vector<std::string> \mbox{\hyperlink{classtesseract__environment_1_1Environment_a71775148df709b5f669541ea8f07c9f6}{getLinkNames}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{389 }
+\DoxyCodeLine{394   std::vector<std::string> \mbox{\hyperlink{classtesseract__environment_1_1Environment_a4a76b212e0e3154df3b9581984d3e6ef}{getActiveLinkNames}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{395 }
+\DoxyCodeLine{401   std::vector<std::string> \mbox{\hyperlink{classtesseract__environment_1_1Environment_a4a76b212e0e3154df3b9581984d3e6ef}{getActiveLinkNames}}(\textcolor{keyword}{const} std::vector<std::string>\& \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_ae55b39adb52b29eeefd7d128c4b56f2a}{joint\_names}}) \textcolor{keyword}{const};}
+\DoxyCodeLine{402 }
+\DoxyCodeLine{407   std::vector<std::string> \mbox{\hyperlink{classtesseract__environment_1_1Environment_a122af420c63146e4edde242fe65d06a8}{getStaticLinkNames}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{408 }
+\DoxyCodeLine{414   std::vector<std::string> \mbox{\hyperlink{classtesseract__environment_1_1Environment_a122af420c63146e4edde242fe65d06a8}{getStaticLinkNames}}(\textcolor{keyword}{const} std::vector<std::string>\& \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_ae55b39adb52b29eeefd7d128c4b56f2a}{joint\_names}}) \textcolor{keyword}{const};}
+\DoxyCodeLine{415 }
+\DoxyCodeLine{423   \mbox{\hyperlink{namespacetesseract__common_a94d9921fc7ed323609ac57d06f939cb6}{tesseract\_common::VectorIsometry3d}} \mbox{\hyperlink{classtesseract__environment_1_1Environment_ad694d0f6ffbd89a68a58c797abc97a6e}{getLinkTransforms}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{424 }
+\DoxyCodeLine{429   Eigen::Isometry3d \mbox{\hyperlink{classtesseract__environment_1_1Environment_ac1ea45e7b76cfa06d09b9a2d2e25b137}{getLinkTransform}}(\textcolor{keyword}{const} std::string\& link\_name) \textcolor{keyword}{const};}
+\DoxyCodeLine{430 }
+\DoxyCodeLine{437   Eigen::Isometry3d \mbox{\hyperlink{classtesseract__environment_1_1Environment_a9cb82c5efb244f08bb3a6e5288de1e16}{getRelativeLinkTransform}}(\textcolor{keyword}{const} std::string\& from\_link\_name, \textcolor{keyword}{const} std::string\& to\_link\_name) \textcolor{keyword}{const};}
+\DoxyCodeLine{438 }
+\DoxyCodeLine{447   \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a0834c4abefbc5b7da4e66cd26619a9ba}{tesseract\_scene\_graph::StateSolver::UPtr}} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a7216e028199e439ac4b6ce13fea98cf3}{getStateSolver}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{448 }
+\DoxyCodeLine{453   \mbox{\hyperlink{structtesseract__srdf_1_1KinematicsInformation}{tesseract\_srdf::KinematicsInformation}} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a7c5b53b47ff3382955fee8fd3a44498f}{getKinematicsInformation}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{454 }
+\DoxyCodeLine{459   \mbox{\hyperlink{namespacetesseract__srdf_a4521a965628b7a88ca489d6c3c5f56ff}{tesseract\_srdf::GroupNames}} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a6e159713f4b2339d981dac0faead3d09}{getGroupNames}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{460 }
+\DoxyCodeLine{465   \mbox{\hyperlink{structtesseract__common_1_1ContactManagersPluginInfo}{tesseract\_common::ContactManagersPluginInfo}} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a049dc5abe9b1675e69304a3c5e316076}{getContactManagersPluginInfo}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{466 }
+\DoxyCodeLine{472   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1Environment_ae9e502d1e5f4a7e6c88a67b738e4c9c2}{setActiveDiscreteContactManager}}(\textcolor{keyword}{const} std::string\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}});}
+\DoxyCodeLine{473 }
+\DoxyCodeLine{475   \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a52a7b770e7b6cec875254d7cdea3c314}{tesseract\_collision::DiscreteContactManager::UPtr}} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a6394d4dde8fa7109c07fdccc6c955c66}{getDiscreteContactManager}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{476 }
+\DoxyCodeLine{481   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a45767a9e9232d0b0b74e0323c5c2e72b}{clearCachedDiscreteContactManager}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{482 }
+\DoxyCodeLine{484   \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a52a7b770e7b6cec875254d7cdea3c314}{tesseract\_collision::DiscreteContactManager::UPtr}} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a6394d4dde8fa7109c07fdccc6c955c66}{getDiscreteContactManager}}(\textcolor{keyword}{const} std::string\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}) \textcolor{keyword}{const};}
+\DoxyCodeLine{485 }
+\DoxyCodeLine{491   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a4ab1e3d2b9420b08a8ab2ad52ba0c74c}{setActiveContinuousContactManager}}(\textcolor{keyword}{const} std::string\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}});}
+\DoxyCodeLine{492 }
+\DoxyCodeLine{494   \mbox{\hyperlink{classtesseract__collision_1_1ContinuousContactManager_af3e8b59ffc319924eb2a7e3925bb6e56}{tesseract\_collision::ContinuousContactManager::UPtr}} \mbox{\hyperlink{classtesseract__environment_1_1Environment_aea8340415227e94a502247f3880ae6bb}{getContinuousContactManager}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{495 }
+\DoxyCodeLine{500   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a9877cda809cad1c0e43923b5fe5d8cff}{clearCachedContinuousContactManager}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{501 }
+\DoxyCodeLine{503   \mbox{\hyperlink{classtesseract__collision_1_1ContinuousContactManager_af3e8b59ffc319924eb2a7e3925bb6e56}{tesseract\_collision::ContinuousContactManager::UPtr}} \mbox{\hyperlink{classtesseract__environment_1_1Environment_aea8340415227e94a502247f3880ae6bb}{getContinuousContactManager}}(\textcolor{keyword}{const} std::string\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}) \textcolor{keyword}{const};}
+\DoxyCodeLine{504 }
+\DoxyCodeLine{506   \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData}{tesseract\_common::CollisionMarginData}} \mbox{\hyperlink{classtesseract__environment_1_1Environment_ad526de2abbc241612f0cd2d2a5fb45de}{getCollisionMarginData}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{507 }
+\DoxyCodeLine{513   std::shared\_lock<std::shared\_mutex> \mbox{\hyperlink{classtesseract__environment_1_1Environment_a313b9e1b061718c86d08791719a4cf26}{lockRead}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{514 }
+\DoxyCodeLine{520   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a0543f695f01a3cc661394d490d8ff110}{operator==}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__environment_1_1Environment}{Environment}}\& rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{521   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a51086c2db31c2f165bc6eada1e044f8b}{operator!=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__environment_1_1Environment}{Environment}}\& rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{522 }
+\DoxyCodeLine{523 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{528   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1Environment_ad92c4eff598e7855aceefbfc8382975a}{initialized\_}}\{ \textcolor{keyword}{false} \};}
+\DoxyCodeLine{529 }
+\DoxyCodeLine{534   \textcolor{keywordtype}{int} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a0b3238ab92d908344aae17c95c511453}{revision\_}}\{ 0 \};}
+\DoxyCodeLine{535 }
+\DoxyCodeLine{537   \textcolor{keywordtype}{int} \mbox{\hyperlink{classtesseract__environment_1_1Environment_ad8893d73b2310f67657460392cbb9395}{init\_revision\_}}\{ 0 \};}
+\DoxyCodeLine{538 }
+\DoxyCodeLine{540   \mbox{\hyperlink{namespacetesseract__environment_acb95740502ec41d80a94a7631d4b7a3c}{Commands}} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a8d698e80df3673fe5aa59528edbfc5ba}{commands\_}}\{\};}
+\DoxyCodeLine{541 }
+\DoxyCodeLine{546   \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph_a4421b8568bd664cf203613a054e1847b}{tesseract\_scene\_graph::SceneGraph::Ptr}} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a77778ecf8c6e808f19f617fc7ef599ee}{scene\_graph\_}}\{ \textcolor{keyword}{nullptr} \};}
+\DoxyCodeLine{547 }
+\DoxyCodeLine{552   \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph_a9ee303b2514bfedd8c914d09551b00ff}{tesseract\_scene\_graph::SceneGraph::ConstPtr}} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a82614f86932dff5e559a29e23af72df5}{scene\_graph\_const\_}}\{ \textcolor{keyword}{nullptr} \};}
+\DoxyCodeLine{553 }
+\DoxyCodeLine{558   \mbox{\hyperlink{structtesseract__srdf_1_1KinematicsInformation}{tesseract\_srdf::KinematicsInformation}} \mbox{\hyperlink{classtesseract__environment_1_1Environment_aeda1f76d988737752894a95081f40119}{kinematics\_information\_}};}
+\DoxyCodeLine{559 }
+\DoxyCodeLine{564   \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory}{tesseract\_kinematics::KinematicsPluginFactory}} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a4819f7c9532d9c52bdda64dbb633f53f}{kinematics\_factory\_}};}
+\DoxyCodeLine{565 }
+\DoxyCodeLine{567   \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{tesseract\_scene\_graph::SceneState}} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a255666138364e3fdb64d25ee424754e7}{current\_state\_}};}
+\DoxyCodeLine{568 }
+\DoxyCodeLine{570   std::chrono::system\_clock::time\_point \mbox{\hyperlink{classtesseract__environment_1_1Environment_aa294a3e822562cb0d5a9734e1561caa8}{timestamp\_}}\{ std::chrono::system\_clock::now() \};}
+\DoxyCodeLine{571 }
+\DoxyCodeLine{573   std::chrono::system\_clock::time\_point \mbox{\hyperlink{classtesseract__environment_1_1Environment_ad73e4685735c23b90cdd7d76256645c2}{current\_state\_timestamp\_}}\{ std::chrono::system\_clock::now() \};}
+\DoxyCodeLine{574 }
+\DoxyCodeLine{579   \mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver_a1d061821b17d0e3a5bb9b0c3dc21a062}{tesseract\_scene\_graph::MutableStateSolver::UPtr}} \mbox{\hyperlink{classtesseract__environment_1_1Environment_acf779958589fad0a093858527229c9c8}{state\_solver\_}}\{ \textcolor{keyword}{nullptr} \};}
+\DoxyCodeLine{580 }
+\DoxyCodeLine{585   \mbox{\hyperlink{namespacetesseract__collision_abe7752ce161fbd1139533ac566fec1cb}{tesseract\_collision::IsContactAllowedFn}} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a7176424d42ff21299f0d4a226f34037f}{is\_contact\_allowed\_fn\_}};}
+\DoxyCodeLine{586 }
+\DoxyCodeLine{591   std::vector<FindTCPOffsetCallbackFn> \mbox{\hyperlink{classtesseract__environment_1_1Environment_ae9a92e802b4924edfd5292874beb8c20}{find\_tcp\_cb\_}}\{\};}
+\DoxyCodeLine{592 }
+\DoxyCodeLine{597   std::map<std::size\_t, EventCallbackFn> \mbox{\hyperlink{classtesseract__environment_1_1Environment_a5fac827baa7afd75a1159e1621fa19db}{event\_cb\_}}\{\};}
+\DoxyCodeLine{598 }
+\DoxyCodeLine{600   \mbox{\hyperlink{classtesseract__common_1_1ResourceLocator_a61a53e45948c47a9612096d8e7b90252}{tesseract\_common::ResourceLocator::ConstPtr}} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a84cabfb4d751d01d53838dd8545b1c14}{resource\_locator\_}}\{ \textcolor{keyword}{nullptr} \};}
+\DoxyCodeLine{601 }
+\DoxyCodeLine{606   \mbox{\hyperlink{structtesseract__common_1_1ContactManagersPluginInfo}{tesseract\_common::ContactManagersPluginInfo}} \mbox{\hyperlink{classtesseract__environment_1_1Environment_ab66f1c154e58076c091231ffc4862d95}{contact\_managers\_plugin\_info\_}};}
+\DoxyCodeLine{607 }
+\DoxyCodeLine{612   \mbox{\hyperlink{classtesseract__collision_1_1ContactManagersPluginFactory}{tesseract\_collision::ContactManagersPluginFactory}} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a10be5ffd0fa3c61a81b55d6371fddf8f}{contact\_managers\_factory\_}};}
+\DoxyCodeLine{613 }
+\DoxyCodeLine{618   \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData}{tesseract\_collision::CollisionMarginData}} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a62a6ba1faafd93812a6bfe995d5ea8bb}{collision\_margin\_data\_}};}
+\DoxyCodeLine{619 }
+\DoxyCodeLine{624   \textcolor{keyword}{mutable} \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a52a7b770e7b6cec875254d7cdea3c314}{tesseract\_collision::DiscreteContactManager::UPtr}} \mbox{\hyperlink{classtesseract__environment_1_1Environment_ab255547fd3edef8112f36567d904576d}{discrete\_manager\_}}\{ \textcolor{keyword}{nullptr} \};}
+\DoxyCodeLine{625   \textcolor{keyword}{mutable} std::shared\_mutex \mbox{\hyperlink{classtesseract__environment_1_1Environment_af5a041cff1dccd76ac9a0fe7aa2fe0ba}{discrete\_manager\_mutex\_}};}
+\DoxyCodeLine{626 }
+\DoxyCodeLine{631   \textcolor{keyword}{mutable} \mbox{\hyperlink{classtesseract__collision_1_1ContinuousContactManager_af3e8b59ffc319924eb2a7e3925bb6e56}{tesseract\_collision::ContinuousContactManager::UPtr}} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a5510e7991d8c6a1daea9e212614201fe}{continuous\_manager\_}}\{ \textcolor{keyword}{nullptr} \};}
+\DoxyCodeLine{632   \textcolor{keyword}{mutable} std::shared\_mutex \mbox{\hyperlink{classtesseract__environment_1_1Environment_aba2a3db91d100620247ca2ad652a1a6f}{continuous\_manager\_mutex\_}};}
+\DoxyCodeLine{633 }
+\DoxyCodeLine{639   \textcolor{keyword}{mutable} std::unordered\_map<std::string, std::vector<std::string>> \mbox{\hyperlink{classtesseract__environment_1_1Environment_ae8aa86cda448600843289e11876674b8}{group\_joint\_names\_cache\_}}\{\};}
+\DoxyCodeLine{640   \textcolor{keyword}{mutable} std::shared\_mutex \mbox{\hyperlink{classtesseract__environment_1_1Environment_aea256f1e8b66716f97214cd9dbc500dd}{group\_joint\_names\_cache\_mutex\_}};}
+\DoxyCodeLine{641 }
+\DoxyCodeLine{647   \textcolor{keyword}{mutable} std::unordered\_map<std::string, tesseract\_kinematics::JointGroup::UPtr> \mbox{\hyperlink{classtesseract__environment_1_1Environment_a0f9255a3d71c501813c9a12ece0e1c11}{joint\_group\_cache\_}}\{\};}
+\DoxyCodeLine{648   \textcolor{keyword}{mutable} std::shared\_mutex \mbox{\hyperlink{classtesseract__environment_1_1Environment_a0c23446c1c7b5983505acfe0bacdf9f7}{joint\_group\_cache\_mutex\_}};}
+\DoxyCodeLine{649 }
+\DoxyCodeLine{655   \textcolor{keyword}{mutable} std::map<std::pair<std::string, std::string>, \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicGroup_a039a701cf2b2749effa2d0400d45aeec}{tesseract\_kinematics::KinematicGroup::UPtr}}>}
+\DoxyCodeLine{656       \mbox{\hyperlink{classtesseract__environment_1_1Environment_abe939641e3429b26419c5266b7a73994}{kinematic\_group\_cache\_}}\{\};}
+\DoxyCodeLine{657   \textcolor{keyword}{mutable} std::shared\_mutex \mbox{\hyperlink{classtesseract__environment_1_1Environment_a857fe314931f5dd986856772a52f5b5d}{kinematic\_group\_cache\_mutex\_}};}
+\DoxyCodeLine{658 }
+\DoxyCodeLine{660   \textcolor{keyword}{mutable} std::shared\_mutex \mbox{\hyperlink{classtesseract__environment_1_1Environment_a61a2ac8e2eff89640028975c4f57ed57}{mutex\_}};}
+\DoxyCodeLine{661 }
+\DoxyCodeLine{663   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a238869f6fec0c78de57a4284cc513bc6}{currentStateChanged}}();}
+\DoxyCodeLine{664 }
+\DoxyCodeLine{666   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__environment_1_1Environment_af504d9862f3cc6d15e359280c9688b47}{environmentChanged}}();}
+\DoxyCodeLine{667 }
+\DoxyCodeLine{672   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__environment_1_1Environment_ad0518e85bd6cd15af32d4e1c1d5cbc5e}{triggerCurrentStateChangedCallbacks}}();}
+\DoxyCodeLine{673 }
+\DoxyCodeLine{678   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a886950f18393cc71abca098780bf8918}{triggerEnvironmentChangedCallbacks}}();}
+\DoxyCodeLine{679 }
+\DoxyCodeLine{680 \textcolor{keyword}{private}:}
+\DoxyCodeLine{681   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a4807aff4eab80577536294aabe6d0767}{removeLinkHelper}}(\textcolor{keyword}{const} std::string\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}});}
+\DoxyCodeLine{682 }
+\DoxyCodeLine{683   \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a7ac392b19841527a64d1c05b9050ed26}{getCollisionObject}}(\mbox{\hyperlink{namespacetesseract__collision_a2472107aae8174a30873bb0a955c3cb4}{tesseract\_collision::CollisionShapesConst}}\& shapes,}
+\DoxyCodeLine{684                                  \mbox{\hyperlink{namespacetesseract__common_a94d9921fc7ed323609ac57d06f939cb6}{tesseract\_common::VectorIsometry3d}}\& shape\_poses,}
+\DoxyCodeLine{685                                  \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__scene__graph_1_1Link}{tesseract\_scene\_graph::Link}}\& link);}
+\DoxyCodeLine{686 }
+\DoxyCodeLine{687   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a44b76733c892be7608070a8da7f4f569}{setActiveDiscreteContactManagerHelper}}(\textcolor{keyword}{const} std::string\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}});}
+\DoxyCodeLine{688   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1Environment_ac5904ec32e511586254bf3c9536f00fe}{setActiveContinuousContactManagerHelper}}(\textcolor{keyword}{const} std::string\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}});}
+\DoxyCodeLine{689 }
+\DoxyCodeLine{690   \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a52a7b770e7b6cec875254d7cdea3c314}{tesseract\_collision::DiscreteContactManager::UPtr}} \mbox{\hyperlink{classtesseract__environment_1_1Environment_ae68e9c7265bc1a09c1b1f67777d58a39}{getDiscreteContactManagerHelper}}(\textcolor{keyword}{const} std::string\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}) \textcolor{keyword}{const};}
+\DoxyCodeLine{691 }
+\DoxyCodeLine{692   \mbox{\hyperlink{classtesseract__collision_1_1ContinuousContactManager_af3e8b59ffc319924eb2a7e3925bb6e56}{tesseract\_collision::ContinuousContactManager::UPtr}} \mbox{\hyperlink{classtesseract__environment_1_1Environment_ae064e84892ce82ee24f1b798dbfb6eb3}{getContinuousContactManagerHelper}}(\textcolor{keyword}{const} std::string\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}) \textcolor{keyword}{const};}
+\DoxyCodeLine{693 }
+\DoxyCodeLine{694   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a7db65379bfadb980152ea19a3b22d6af}{initHelper}}(\textcolor{keyword}{const} \mbox{\hyperlink{namespacetesseract__environment_acb95740502ec41d80a94a7631d4b7a3c}{Commands}}\& commands);}
+\DoxyCodeLine{695   \textcolor{keyword}{static} \mbox{\hyperlink{namespacetesseract__environment_acb95740502ec41d80a94a7631d4b7a3c}{Commands}} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a4c2cf7b144f14ce37a5b45b6e08b68af}{getInitCommands}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph}{tesseract\_scene\_graph::SceneGraph}}\& \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a8d4d0dc3a6b9a7030970bf9ed3764756}{scene\_graph}},}
+\DoxyCodeLine{696                                   \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__srdf_1_1SRDFModel_a6e579a73e63af4e2d66448cdcc0998b5}{tesseract\_srdf::SRDFModel::ConstPtr}}\& \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a8ef742d34e730278291e48aa556fcc7f}{srdf\_model}} = \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{697 }
+\DoxyCodeLine{699   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a17d4969997bc7c15a6880797b448ed86}{applyCommandsHelper}}(\textcolor{keyword}{const} \mbox{\hyperlink{namespacetesseract__environment_acb95740502ec41d80a94a7631d4b7a3c}{Commands}}\& commands);}
+\DoxyCodeLine{700 }
+\DoxyCodeLine{701   \textcolor{comment}{// Command Helper function}}
+\DoxyCodeLine{702   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a2b8bd838a8a4f8c353894d119c604c10}{applyAddCommand}}(\mbox{\hyperlink{classtesseract__environment_1_1AddLinkCommand_a7335730d8329f71b02d60c612c58c4fa}{AddLinkCommand::ConstPtr}} \mbox{\hyperlink{tesseract__environment__unit_8cpp_ac2e24111b456817afd97513bc4ddffdb}{cmd}});}
+\DoxyCodeLine{703   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a25e6b27aa43c5753a05d08c6ef520719}{applyMoveLinkCommand}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__environment_1_1MoveLinkCommand_aff5435d35b419004a90188018ab141c5}{MoveLinkCommand::ConstPtr}}\& \mbox{\hyperlink{tesseract__environment__unit_8cpp_ac2e24111b456817afd97513bc4ddffdb}{cmd}});}
+\DoxyCodeLine{704   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a41c01098b672358847478f9d32115d1e}{applyMoveJointCommand}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__environment_1_1MoveJointCommand_abd0490e6cad67b442c0f3f8d00ce52b3}{MoveJointCommand::ConstPtr}}\& \mbox{\hyperlink{tesseract__environment__unit_8cpp_ac2e24111b456817afd97513bc4ddffdb}{cmd}});}
+\DoxyCodeLine{705   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a26cb6e0ffce2ac1e6986e5b52b4b2fb9}{applyRemoveLinkCommand}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__environment_1_1RemoveLinkCommand_a31a75f9987d9bf8f51323fa00bfb2082}{RemoveLinkCommand::ConstPtr}}\& \mbox{\hyperlink{tesseract__environment__unit_8cpp_ac2e24111b456817afd97513bc4ddffdb}{cmd}});}
+\DoxyCodeLine{706   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a249d976b55af1b763c526de937c0d937}{applyRemoveJointCommand}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__environment_1_1RemoveJointCommand_a6cd0fcbaf19183016a7895e47b316609}{RemoveJointCommand::ConstPtr}}\& \mbox{\hyperlink{tesseract__environment__unit_8cpp_ac2e24111b456817afd97513bc4ddffdb}{cmd}});}
+\DoxyCodeLine{707   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1Environment_aa01dbe0644c5ad3f0bd0dfdda54630f9}{applyReplaceJointCommand}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__environment_1_1ReplaceJointCommand_af916c42f76c0bde81dc7aac295b545ab}{ReplaceJointCommand::ConstPtr}}\& \mbox{\hyperlink{tesseract__environment__unit_8cpp_ac2e24111b456817afd97513bc4ddffdb}{cmd}});}
+\DoxyCodeLine{708   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a82c027390c7f47973e830bbd3fb03c9c}{applyChangeLinkOriginCommand}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__environment_1_1ChangeLinkOriginCommand_a874c9bbcf832607001e63d94e463b302}{ChangeLinkOriginCommand::ConstPtr}}\& \mbox{\hyperlink{tesseract__environment__unit_8cpp_ac2e24111b456817afd97513bc4ddffdb}{cmd}});}
+\DoxyCodeLine{709   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a321d017a9803be463eed3fd99e600277}{applyChangeJointOriginCommand}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__environment_1_1ChangeJointOriginCommand_a5e88a57c1e52eeed9bc960db3b6f41f8}{ChangeJointOriginCommand::ConstPtr}}\& \mbox{\hyperlink{tesseract__environment__unit_8cpp_ac2e24111b456817afd97513bc4ddffdb}{cmd}});}
+\DoxyCodeLine{710   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1Environment_ad707bbc713547f71dc18800b6b02d7a2}{applyChangeLinkCollisionEnabledCommand}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__environment_1_1ChangeLinkCollisionEnabledCommand_a615b48d3e7e2194a72b86943f5d50656}{ChangeLinkCollisionEnabledCommand::ConstPtr}}\& \mbox{\hyperlink{tesseract__environment__unit_8cpp_ac2e24111b456817afd97513bc4ddffdb}{cmd}});}
+\DoxyCodeLine{711   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a96e16d8a925dac26c54239f4c16dba89}{applyChangeLinkVisibilityCommand}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__environment_1_1ChangeLinkVisibilityCommand_a32fe25dc1df9fb2c4114a2ecb36006b0}{ChangeLinkVisibilityCommand::ConstPtr}}\& \mbox{\hyperlink{tesseract__environment__unit_8cpp_ac2e24111b456817afd97513bc4ddffdb}{cmd}});}
+\DoxyCodeLine{712   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1Environment_ae74f5f73e42c66b915448e9ac6abd451}{applyModifyAllowedCollisionsCommand}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__environment_1_1ModifyAllowedCollisionsCommand_ac8f0571f45196b458e6a1e0f51e99468}{ModifyAllowedCollisionsCommand::ConstPtr}}\& \mbox{\hyperlink{tesseract__environment__unit_8cpp_ac2e24111b456817afd97513bc4ddffdb}{cmd}});}
+\DoxyCodeLine{713   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a42be6f3675b216f5a7ea3e67047f38f1}{applyRemoveAllowedCollisionLinkCommand}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__environment_1_1RemoveAllowedCollisionLinkCommand_a0e9f0d5be3bd60c2b387fd19a463afaa}{RemoveAllowedCollisionLinkCommand::ConstPtr}}\& \mbox{\hyperlink{tesseract__environment__unit_8cpp_ac2e24111b456817afd97513bc4ddffdb}{cmd}});}
+\DoxyCodeLine{714   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a42a724cae7758f8db57f8c58cd767209}{applyAddSceneGraphCommand}}(\mbox{\hyperlink{classtesseract__environment_1_1AddSceneGraphCommand_a1fc0a9e834cbefe4b25ff7fe530d4d70}{AddSceneGraphCommand::ConstPtr}} \mbox{\hyperlink{tesseract__environment__unit_8cpp_ac2e24111b456817afd97513bc4ddffdb}{cmd}});}
+\DoxyCodeLine{715   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a3d05ad3d5a6aa27c44428aedeead0891}{applyChangeJointPositionLimitsCommand}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__environment_1_1ChangeJointPositionLimitsCommand_a5e7d4fd9d43c62f95eb954ccb6395a71}{ChangeJointPositionLimitsCommand::ConstPtr}}\& \mbox{\hyperlink{tesseract__environment__unit_8cpp_ac2e24111b456817afd97513bc4ddffdb}{cmd}});}
+\DoxyCodeLine{716   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a9ec416bbca114add7b8236f37e496305}{applyChangeJointVelocityLimitsCommand}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__environment_1_1ChangeJointVelocityLimitsCommand_a384f0db571897a7ace20cf003eedd7be}{ChangeJointVelocityLimitsCommand::ConstPtr}}\& \mbox{\hyperlink{tesseract__environment__unit_8cpp_ac2e24111b456817afd97513bc4ddffdb}{cmd}});}
+\DoxyCodeLine{717   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1Environment_ac816a32794af98dc3951d3094312b249}{applyChangeJointAccelerationLimitsCommand}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__environment_1_1ChangeJointAccelerationLimitsCommand_a3f99fadf1ee8c17b1a8ab1206d4af8f4}{ChangeJointAccelerationLimitsCommand::ConstPtr}}\& \mbox{\hyperlink{tesseract__environment__unit_8cpp_ac2e24111b456817afd97513bc4ddffdb}{cmd}});}
+\DoxyCodeLine{718   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1Environment_ae4e5d539b426dadf1af40a0841a66e87}{applyAddKinematicsInformationCommand}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__environment_1_1AddKinematicsInformationCommand_a320b2ecd800ca109ae0212594201a83c}{AddKinematicsInformationCommand::ConstPtr}}\& \mbox{\hyperlink{tesseract__environment__unit_8cpp_ac2e24111b456817afd97513bc4ddffdb}{cmd}});}
+\DoxyCodeLine{719   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a599a3286e5960be88ee9729da4e03f25}{applyChangeCollisionMarginsCommand}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__environment_1_1ChangeCollisionMarginsCommand_ad40a680cc95d461aa99301d36f23444b}{ChangeCollisionMarginsCommand::ConstPtr}}\& \mbox{\hyperlink{tesseract__environment__unit_8cpp_ac2e24111b456817afd97513bc4ddffdb}{cmd}});}
+\DoxyCodeLine{720   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1Environment_ac247ff73c87dd77a283664a05d5dbb0c}{applyAddContactManagersPluginInfoCommand}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__environment_1_1AddContactManagersPluginInfoCommand_a6fecc4cb5a6d95d0638d83820884ff4b}{AddContactManagersPluginInfoCommand::ConstPtr}}\& \mbox{\hyperlink{tesseract__environment__unit_8cpp_ac2e24111b456817afd97513bc4ddffdb}{cmd}});}
+\DoxyCodeLine{721   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a9544f556b8dfe572a2701a352c00aedb}{applySetActiveContinuousContactManagerCommand}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__environment_1_1SetActiveContinuousContactManagerCommand_a79185c722aa1096c003bd338e6705a7a}{SetActiveContinuousContactManagerCommand::ConstPtr}}\& \mbox{\hyperlink{tesseract__environment__unit_8cpp_ac2e24111b456817afd97513bc4ddffdb}{cmd}});}
+\DoxyCodeLine{722   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1Environment_aa4d30c468077a1c01e132ec945135e6f}{applySetActiveDiscreteContactManagerCommand}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__environment_1_1SetActiveDiscreteContactManagerCommand_ac55466a5ca8d649618abeedd58395a32}{SetActiveDiscreteContactManagerCommand::ConstPtr}}\& \mbox{\hyperlink{tesseract__environment__unit_8cpp_ac2e24111b456817afd97513bc4ddffdb}{cmd}});}
+\DoxyCodeLine{723 }
+\DoxyCodeLine{724   \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__environment_1_1Environment_ac98d07dd8f7b70e16ccb9a01abf56b9c}{boost::serialization::access}};}
+\DoxyCodeLine{725   \textcolor{keyword}{template} <\textcolor{keyword}{class} Archive>}
+\DoxyCodeLine{726   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__environment_1_1Environment_ac0945b18ce81d1b1ff3b25f3bcd929f5}{save}}(Archive\& ar, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} version) \textcolor{keyword}{const};  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{727 }
+\DoxyCodeLine{728   \textcolor{keyword}{template} <\textcolor{keyword}{class} Archive>}
+\DoxyCodeLine{729   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a8e3a2ee19bf9c557b0d27d40f15cfb05}{load}}(Archive\& ar, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} version);  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{730 }
+\DoxyCodeLine{731   \textcolor{keyword}{template} <\textcolor{keyword}{class} Archive>}
+\DoxyCodeLine{732   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a060f0fa55a188cbed740cead91629d13}{serialize}}(Archive\& ar, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} version);  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{733 \};}
+\DoxyCodeLine{734 \}  \textcolor{comment}{// namespace tesseract\_environment}}
+\DoxyCodeLine{735 }
+\DoxyCodeLine{736 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_ENVIRONMENT\_ENVIRONMENT\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,56 @@
+\hypertarget{replace__joint__command_8h_source}{}\doxysection{replace\+\_\+joint\+\_\+command.\+h}
+\label{replace__joint__command_8h_source}\index{tesseract\_environment/include/tesseract\_environment/commands/replace\_joint\_command.h@{tesseract\_environment/include/tesseract\_environment/commands/replace\_joint\_command.h}}
+\mbox{\hyperlink{replace__joint__command_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#ifndef TESSERACT\_ENVIRONMENT\_REPLACE\_JOINT\_COMMAND\_H}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define TESSERACT\_ENVIRONMENT\_REPLACE\_JOINT\_COMMAND\_H}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{macros_8h}{tesseract\_common/macros.h}}>}}
+\DoxyCodeLine{29 \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include <boost/serialization/access.hpp>}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{32 \mbox{\hyperlink{namespaceTESSERACT__COMMON__IGNORE__WARNINGS__POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{command_8h}{tesseract\_environment/command.h}}>}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{tesseract__scene__graph_2include_2tesseract__scene__graph_2joint_8h}{tesseract\_scene\_graph/joint.h}}>}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__environment}{tesseract\_environment}}}
+\DoxyCodeLine{38 \{}
+\DoxyCodeLine{39 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__environment_1_1ReplaceJointCommand}{ReplaceJointCommand}} : \textcolor{keyword}{public} \mbox{\hyperlink{classtesseract__environment_1_1Command}{Command}}}
+\DoxyCodeLine{40 \{}
+\DoxyCodeLine{41 \textcolor{keyword}{public}:}
+\DoxyCodeLine{42   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__environment_1_1ReplaceJointCommand_a5babe318696b85cdac5dac2bd69b6fc2}{Ptr}} = std::shared\_ptr<ReplaceJointCommand>;}
+\DoxyCodeLine{43   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__environment_1_1ReplaceJointCommand_af916c42f76c0bde81dc7aac295b545ab}{ConstPtr}} = std::shared\_ptr<const ReplaceJointCommand>;}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45   \mbox{\hyperlink{classtesseract__environment_1_1ReplaceJointCommand_aa8b2aa47745d0ad3051512d5e35c8d9c}{ReplaceJointCommand}}() : \mbox{\hyperlink{classtesseract__environment_1_1Command}{Command}}(\mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029}{CommandType}}::\mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029ae487d29b5345ebdfa13433bc11a99e7c}{REPLACE\_JOINT}})\{\};}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{60   \mbox{\hyperlink{classtesseract__environment_1_1ReplaceJointCommand_a9fdde52130fe2aa8cfeb09138b1ebac6}{ReplaceJointCommand}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__scene__graph_1_1Joint}{tesseract\_scene\_graph::Joint}}\& joint)}
+\DoxyCodeLine{61     : \mbox{\hyperlink{classtesseract__environment_1_1Command}{Command}}(\mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029}{CommandType}}::\mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029ae487d29b5345ebdfa13433bc11a99e7c}{REPLACE\_JOINT}}), \mbox{\hyperlink{classtesseract__environment_1_1ReplaceJointCommand_ae01db2d4b52ffd1a67fcea3f281c0a45}{joint\_}}(std::make\_shared<\mbox{\hyperlink{namespacetesseract__scene__graph}{tesseract\_scene\_graph}}::Joint>(joint.\mbox{\hyperlink{clone__cache__unit_8cpp_a468102a14fab28bb8303ea654a9b891b}{clone}}()))}
+\DoxyCodeLine{62   \{}
+\DoxyCodeLine{63     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classtesseract__environment_1_1ReplaceJointCommand_ae01db2d4b52ffd1a67fcea3f281c0a45}{joint\_}}-\/>type != \mbox{\hyperlink{namespacetesseract__scene__graph_ade43fa945a554b6e0c703e38e6a8cf16ac6e6dc18b53b4c2681394b9d8aefcec7}{tesseract\_scene\_graph::JointType::FIXED}})}
+\DoxyCodeLine{64     \{}
+\DoxyCodeLine{65       \textcolor{comment}{//      if ()}}
+\DoxyCodeLine{67 \textcolor{comment}{}    \}}
+\DoxyCodeLine{68   \}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70   \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__scene__graph_1_1Joint_a705d1f0a066833444550aa0c7f6d16b9}{tesseract\_scene\_graph::Joint::ConstPtr}}\& \mbox{\hyperlink{classtesseract__environment_1_1ReplaceJointCommand_a7ca3e5ba135783a27d75610812e084eb}{getJoint}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classtesseract__environment_1_1ReplaceJointCommand_ae01db2d4b52ffd1a67fcea3f281c0a45}{joint\_}}; \}}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1ReplaceJointCommand_aedc64219cadf94c1f129ed470685a4ab}{operator==}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__environment_1_1ReplaceJointCommand}{ReplaceJointCommand}}\& rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{73   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1ReplaceJointCommand_af76786e97309cc96b1290637d61958df}{operator!=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__environment_1_1ReplaceJointCommand}{ReplaceJointCommand}}\& rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 \textcolor{keyword}{private}:}
+\DoxyCodeLine{76   \mbox{\hyperlink{classtesseract__scene__graph_1_1Joint_a705d1f0a066833444550aa0c7f6d16b9}{tesseract\_scene\_graph::Joint::ConstPtr}} \mbox{\hyperlink{classtesseract__environment_1_1ReplaceJointCommand_ae01db2d4b52ffd1a67fcea3f281c0a45}{joint\_}};}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78   \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__environment_1_1ReplaceJointCommand_ac98d07dd8f7b70e16ccb9a01abf56b9c}{boost::serialization::access}};}
+\DoxyCodeLine{79   \textcolor{keyword}{template} <\textcolor{keyword}{class} Archive>}
+\DoxyCodeLine{80   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__environment_1_1ReplaceJointCommand_a16f5bfbdc761c31030473aad1f11385e}{serialize}}(Archive\& ar, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} version);  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{81 \};}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 \}  \textcolor{comment}{// namespace tesseract\_environment}}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#include <boost/serialization/export.hpp>}}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#include <boost/serialization/tracking.hpp>}}
+\DoxyCodeLine{87 BOOST\_CLASS\_EXPORT\_KEY2(\mbox{\hyperlink{classtesseract__environment_1_1ReplaceJointCommand}{tesseract\_environment::ReplaceJointCommand}}, \textcolor{stringliteral}{"{}ReplaceJointCommand"{}})}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_ENVIRONMENT\_REPLACE\_JOINT\_COMMAND\_H}}
+
+\end{DoxyCode}

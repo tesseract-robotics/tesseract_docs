@@ -1,0 +1,182 @@
+\hypertarget{collision__margin__data_8h_source}{}\doxysection{collision\+\_\+margin\+\_\+data.\+h}
+\label{collision__margin__data_8h_source}\index{tesseract\_common/include/tesseract\_common/collision\_margin\_data.h@{tesseract\_common/include/tesseract\_common/collision\_margin\_data.h}}
+\mbox{\hyperlink{collision__margin__data_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#ifndef TESSERACT\_COMMON\_COLLISION\_MARGIN\_DATA\_H}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#define TESSERACT\_COMMON\_COLLISION\_MARGIN\_DATA\_H}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{macros_8h}{tesseract\_common/macros.h}}>}}
+\DoxyCodeLine{32 \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include <boost/serialization/access.hpp>}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include <Eigen/Core>}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include <unordered\_map>}}
+\DoxyCodeLine{37 \mbox{\hyperlink{namespaceTESSERACT__COMMON__IGNORE__WARNINGS__POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{tesseract__common_2include_2tesseract__common_2types_8h}{tesseract\_common/types.h}}>}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{tesseract__common_2include_2tesseract__common_2utils_8h}{tesseract\_common/utils.h}}>}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__common}{tesseract\_common}}}
+\DoxyCodeLine{43 \{}
+\DoxyCodeLine{45 \textcolor{keyword}{enum class} \mbox{\hyperlink{namespacetesseract__common_af06d85d024a36d63b58a6031556af8a1}{CollisionMarginOverrideType}}}
+\DoxyCodeLine{46 \{}
+\DoxyCodeLine{48   \mbox{\hyperlink{namespacetesseract__common_af06d85d024a36d63b58a6031556af8a1ab50339a10e1de285ac99d4c3990b8693}{NONE}},}
+\DoxyCodeLine{50   \mbox{\hyperlink{namespacetesseract__common_af06d85d024a36d63b58a6031556af8a1a560a2dd6f6744646473b3b19e1fe96d7}{REPLACE}},}
+\DoxyCodeLine{56   \mbox{\hyperlink{namespacetesseract__common_af06d85d024a36d63b58a6031556af8a1ab9f20f7748e2e578e81ea9ae1a0dfb30}{MODIFY}},}
+\DoxyCodeLine{58   \mbox{\hyperlink{namespacetesseract__common_af06d85d024a36d63b58a6031556af8a1a68f2f4f7ee420d8895a41ac3f35db3fe}{OVERRIDE\_DEFAULT\_MARGIN}},}
+\DoxyCodeLine{60   \mbox{\hyperlink{namespacetesseract__common_af06d85d024a36d63b58a6031556af8a1ae54086ed48f7d2ca425bdeca2121c83c}{OVERRIDE\_PAIR\_MARGIN}},}
+\DoxyCodeLine{66   \mbox{\hyperlink{namespacetesseract__common_af06d85d024a36d63b58a6031556af8a1a8f7ea9e9137c5d7d8bc6ea025484f55a}{MODIFY\_PAIR\_MARGIN}}}
+\DoxyCodeLine{67 \};}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \textcolor{keyword}{using }\mbox{\hyperlink{namespacetesseract__common_a84cc21cc4b384291adbbddaa81fe6447}{PairsCollisionMarginData}} =}
+\DoxyCodeLine{70     std::unordered\_map<tesseract\_common::LinkNamesPair, double, tesseract\_common::PairHash>;}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{73 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData}{CollisionMarginData}}}
+\DoxyCodeLine{74 \{}
+\DoxyCodeLine{75 \textcolor{keyword}{public}:}
+\DoxyCodeLine{76   EIGEN\_MAKE\_ALIGNED\_OPERATOR\_NEW}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_a9d0116259e8c3b97d61e63a3209ffa7b}{Ptr}} = std::shared\_ptr<CollisionMarginData>;}
+\DoxyCodeLine{79   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_af2235acd6d95c1c1336f4147d20270aa}{ConstPtr}} = std::shared\_ptr<const CollisionMarginData>;}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81   \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_a9a97127553eec26276c39d0b5be9867e}{CollisionMarginData}}(\textcolor{keywordtype}{double} default\_collision\_margin = 0)}
+\DoxyCodeLine{82     : \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_afe835b8ece629843894446a9df56c494}{default\_collision\_margin\_}}(default\_collision\_margin), \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_a6fec4a902fb625048da5611a857cd306}{max\_collision\_margin\_}}(default\_collision\_margin)}
+\DoxyCodeLine{83   \{}
+\DoxyCodeLine{84   \}}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86   \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_ab410d7f334d82cf661b76d423b193422}{CollisionMarginData}}(\textcolor{keywordtype}{double} default\_collision\_margin, \mbox{\hyperlink{namespacetesseract__common_a84cc21cc4b384291adbbddaa81fe6447}{PairsCollisionMarginData}} pair\_collision\_margins)}
+\DoxyCodeLine{87     : \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_afe835b8ece629843894446a9df56c494}{default\_collision\_margin\_}}(default\_collision\_margin), \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_ac10b4d26f9e79bb0f41b01167efec0cc}{lookup\_table\_}}(std::move(pair\_collision\_margins))}
+\DoxyCodeLine{88   \{}
+\DoxyCodeLine{89     \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_a18885b5cf57a1ae952b4b517b2ce7933}{updateMaxCollisionMargin}}();}
+\DoxyCodeLine{90   \}}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92   \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_ae43f99c1195e63cafe2c0b8ed458807b}{CollisionMarginData}}(\mbox{\hyperlink{namespacetesseract__common_a84cc21cc4b384291adbbddaa81fe6447}{PairsCollisionMarginData}} pair\_collision\_margins)}
+\DoxyCodeLine{93     : \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_ac10b4d26f9e79bb0f41b01167efec0cc}{lookup\_table\_}}(std::move(pair\_collision\_margins))}
+\DoxyCodeLine{94   \{}
+\DoxyCodeLine{95     \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_a18885b5cf57a1ae952b4b517b2ce7933}{updateMaxCollisionMargin}}();}
+\DoxyCodeLine{96   \}}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{102   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_ade4c1f40716db202cf87c37c4f39d95b}{setDefaultCollisionMargin}}(\textcolor{keywordtype}{double} default\_collision\_margin)}
+\DoxyCodeLine{103   \{}
+\DoxyCodeLine{104     \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_afe835b8ece629843894446a9df56c494}{default\_collision\_margin\_}} = default\_collision\_margin;}
+\DoxyCodeLine{105     \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_a18885b5cf57a1ae952b4b517b2ce7933}{updateMaxCollisionMargin}}();}
+\DoxyCodeLine{106   \}}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{112   \textcolor{keywordtype}{double} \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_a63a01d2569c7aeebb892b075b6c3530d}{getDefaultCollisionMargin}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_afe835b8ece629843894446a9df56c494}{default\_collision\_margin\_}}; \};}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{124   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_a04b719610e2542a120bfbcd3e123a8c6}{setPairCollisionMargin}}(\textcolor{keyword}{const} std::string\& obj1, \textcolor{keyword}{const} std::string\& obj2, \textcolor{keywordtype}{double} collision\_margin)}
+\DoxyCodeLine{125   \{}
+\DoxyCodeLine{126     \textcolor{keyword}{auto} key = \mbox{\hyperlink{namespacetesseract__common_a11bc9620a27eede3300420410e0b4a7a}{tesseract\_common::makeOrderedLinkPair}}(obj1, obj2);}
+\DoxyCodeLine{127     \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_ac10b4d26f9e79bb0f41b01167efec0cc}{lookup\_table\_}}[key] = collision\_margin;}
+\DoxyCodeLine{128     \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_a18885b5cf57a1ae952b4b517b2ce7933}{updateMaxCollisionMargin}}();}
+\DoxyCodeLine{129   \}}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{140   \textcolor{keywordtype}{double} \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_ac94cf7cce62f76b96a8d9aaab324d981}{getPairCollisionMargin}}(\textcolor{keyword}{const} std::string\& obj1, \textcolor{keyword}{const} std::string\& obj2)\textcolor{keyword}{ const}}
+\DoxyCodeLine{141 \textcolor{keyword}{  }\{}
+\DoxyCodeLine{142     \textcolor{keyword}{auto} key = \mbox{\hyperlink{namespacetesseract__common_a11bc9620a27eede3300420410e0b4a7a}{tesseract\_common::makeOrderedLinkPair}}(obj1, obj2);}
+\DoxyCodeLine{143     \textcolor{keyword}{const} \textcolor{keyword}{auto} \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a325f3c2b297a245575c6f2f91bd5f1e2}{it}} = \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_ac10b4d26f9e79bb0f41b01167efec0cc}{lookup\_table\_}}.find(key);}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145     \textcolor{keywordflow}{if} (\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a325f3c2b297a245575c6f2f91bd5f1e2}{it}} != \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_ac10b4d26f9e79bb0f41b01167efec0cc}{lookup\_table\_}}.end())}
+\DoxyCodeLine{146       \textcolor{keywordflow}{return} \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a325f3c2b297a245575c6f2f91bd5f1e2}{it}}-\/>second;}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148     \textcolor{keywordflow}{return} \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_afe835b8ece629843894446a9df56c494}{default\_collision\_margin\_}};}
+\DoxyCodeLine{149   \}}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{155   \textcolor{keyword}{const} \mbox{\hyperlink{namespacetesseract__common_a84cc21cc4b384291adbbddaa81fe6447}{PairsCollisionMarginData}}\& \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_aac04b62d79cd47a290dc95670bf1570f}{getPairCollisionMargins}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_ac10b4d26f9e79bb0f41b01167efec0cc}{lookup\_table\_}}; \}}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{164   \textcolor{keywordtype}{double} \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_a8b73bd2450f2c9215e67bba3c048fe4b}{getMaxCollisionMargin}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_a6fec4a902fb625048da5611a857cd306}{max\_collision\_margin\_}}; \}}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{170   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_ac2b27e6a2b4b58e8b7f65cab33da00e4}{incrementMargins}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double}\& \mbox{\hyperlink{collision__margin__data__unit_8cpp_ac504dff76b24ab9f15536c51aec9fbbb}{increment}})}
+\DoxyCodeLine{171   \{}
+\DoxyCodeLine{172     \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_afe835b8ece629843894446a9df56c494}{default\_collision\_margin\_}} += \mbox{\hyperlink{collision__margin__data__unit_8cpp_ac504dff76b24ab9f15536c51aec9fbbb}{increment}};}
+\DoxyCodeLine{173     \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_a6fec4a902fb625048da5611a857cd306}{max\_collision\_margin\_}} += \mbox{\hyperlink{collision__margin__data__unit_8cpp_ac504dff76b24ab9f15536c51aec9fbbb}{increment}};}
+\DoxyCodeLine{174     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto}\& pair : \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_ac10b4d26f9e79bb0f41b01167efec0cc}{lookup\_table\_}})}
+\DoxyCodeLine{175       pair.second += \mbox{\hyperlink{collision__margin__data__unit_8cpp_ac504dff76b24ab9f15536c51aec9fbbb}{increment}};}
+\DoxyCodeLine{176   \}}
+\DoxyCodeLine{177 }
+\DoxyCodeLine{182   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_aac09c8460a5e71148967b9f36248aa36}{scaleMargins}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double}\& \mbox{\hyperlink{collision__margin__data__unit_8cpp_a80d402d10e8341004c0caf10133b80ab}{scale}})}
+\DoxyCodeLine{183   \{}
+\DoxyCodeLine{184     \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_afe835b8ece629843894446a9df56c494}{default\_collision\_margin\_}} *= \mbox{\hyperlink{collision__margin__data__unit_8cpp_a80d402d10e8341004c0caf10133b80ab}{scale}};}
+\DoxyCodeLine{185     \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_a6fec4a902fb625048da5611a857cd306}{max\_collision\_margin\_}} *= \mbox{\hyperlink{collision__margin__data__unit_8cpp_a80d402d10e8341004c0caf10133b80ab}{scale}};}
+\DoxyCodeLine{186     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto}\& pair : \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_ac10b4d26f9e79bb0f41b01167efec0cc}{lookup\_table\_}})}
+\DoxyCodeLine{187       pair.second *= \mbox{\hyperlink{collision__margin__data__unit_8cpp_a80d402d10e8341004c0caf10133b80ab}{scale}};}
+\DoxyCodeLine{188   \}}
+\DoxyCodeLine{189 }
+\DoxyCodeLine{195   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_a3a33394139ee1d8963e111a2e0e0c294}{apply}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData}{CollisionMarginData}}\& collision\_margin\_data, \mbox{\hyperlink{namespacetesseract__common_af06d85d024a36d63b58a6031556af8a1}{CollisionMarginOverrideType}} override\_type)}
+\DoxyCodeLine{196   \{}
+\DoxyCodeLine{197     \textcolor{keywordflow}{switch} (override\_type)}
+\DoxyCodeLine{198     \{}
+\DoxyCodeLine{199       \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacetesseract__common_af06d85d024a36d63b58a6031556af8a1a560a2dd6f6744646473b3b19e1fe96d7}{CollisionMarginOverrideType::REPLACE}}:}
+\DoxyCodeLine{200       \{}
+\DoxyCodeLine{201         *\textcolor{keyword}{this} = collision\_margin\_data;}
+\DoxyCodeLine{202         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{203       \}}
+\DoxyCodeLine{204       \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacetesseract__common_af06d85d024a36d63b58a6031556af8a1ab9f20f7748e2e578e81ea9ae1a0dfb30}{CollisionMarginOverrideType::MODIFY}}:}
+\DoxyCodeLine{205       \{}
+\DoxyCodeLine{206         \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_afe835b8ece629843894446a9df56c494}{default\_collision\_margin\_}} = collision\_margin\_data.\mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_afe835b8ece629843894446a9df56c494}{default\_collision\_margin\_}};}
+\DoxyCodeLine{207 }
+\DoxyCodeLine{208         \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& p : collision\_margin\_data.\mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_ac10b4d26f9e79bb0f41b01167efec0cc}{lookup\_table\_}})}
+\DoxyCodeLine{209           \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_ac10b4d26f9e79bb0f41b01167efec0cc}{lookup\_table\_}}[p.first] = p.second;}
+\DoxyCodeLine{210 }
+\DoxyCodeLine{211         \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_a18885b5cf57a1ae952b4b517b2ce7933}{updateMaxCollisionMargin}}();}
+\DoxyCodeLine{212         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{213       \}}
+\DoxyCodeLine{214       \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacetesseract__common_af06d85d024a36d63b58a6031556af8a1a68f2f4f7ee420d8895a41ac3f35db3fe}{CollisionMarginOverrideType::OVERRIDE\_DEFAULT\_MARGIN}}:}
+\DoxyCodeLine{215       \{}
+\DoxyCodeLine{216         \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_afe835b8ece629843894446a9df56c494}{default\_collision\_margin\_}} = collision\_margin\_data.\mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_afe835b8ece629843894446a9df56c494}{default\_collision\_margin\_}};}
+\DoxyCodeLine{217         \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_a18885b5cf57a1ae952b4b517b2ce7933}{updateMaxCollisionMargin}}();}
+\DoxyCodeLine{218         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{219       \}}
+\DoxyCodeLine{220       \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacetesseract__common_af06d85d024a36d63b58a6031556af8a1ae54086ed48f7d2ca425bdeca2121c83c}{CollisionMarginOverrideType::OVERRIDE\_PAIR\_MARGIN}}:}
+\DoxyCodeLine{221       \{}
+\DoxyCodeLine{222         \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_ac10b4d26f9e79bb0f41b01167efec0cc}{lookup\_table\_}} = collision\_margin\_data.\mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_ac10b4d26f9e79bb0f41b01167efec0cc}{lookup\_table\_}};}
+\DoxyCodeLine{223         \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_a18885b5cf57a1ae952b4b517b2ce7933}{updateMaxCollisionMargin}}();}
+\DoxyCodeLine{224         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{225       \}}
+\DoxyCodeLine{226       \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacetesseract__common_af06d85d024a36d63b58a6031556af8a1a8f7ea9e9137c5d7d8bc6ea025484f55a}{CollisionMarginOverrideType::MODIFY\_PAIR\_MARGIN}}:}
+\DoxyCodeLine{227       \{}
+\DoxyCodeLine{228         \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& p : collision\_margin\_data.\mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_ac10b4d26f9e79bb0f41b01167efec0cc}{lookup\_table\_}})}
+\DoxyCodeLine{229           \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_ac10b4d26f9e79bb0f41b01167efec0cc}{lookup\_table\_}}[p.first] = p.second;}
+\DoxyCodeLine{230 }
+\DoxyCodeLine{231         \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_a18885b5cf57a1ae952b4b517b2ce7933}{updateMaxCollisionMargin}}();}
+\DoxyCodeLine{232         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{233       \}}
+\DoxyCodeLine{234       \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacetesseract__common_af06d85d024a36d63b58a6031556af8a1ab50339a10e1de285ac99d4c3990b8693}{CollisionMarginOverrideType::NONE}}:}
+\DoxyCodeLine{235       \{}
+\DoxyCodeLine{236         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{237       \}}
+\DoxyCodeLine{238     \}}
+\DoxyCodeLine{239   \}}
+\DoxyCodeLine{240 }
+\DoxyCodeLine{241   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_a9883fd58a6c185d00f41e61571f44590}{operator==}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData}{CollisionMarginData}}\& rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{242   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_a80fd9466c9ede844b31b3453708a61a7}{operator!=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData}{CollisionMarginData}}\& rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{243 }
+\DoxyCodeLine{244 \textcolor{keyword}{private}:}
+\DoxyCodeLine{246   \textcolor{keywordtype}{double} \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_afe835b8ece629843894446a9df56c494}{default\_collision\_margin\_}}\{ 0 \};}
+\DoxyCodeLine{247 }
+\DoxyCodeLine{249   \textcolor{keywordtype}{double} \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_a6fec4a902fb625048da5611a857cd306}{max\_collision\_margin\_}}\{ 0 \};}
+\DoxyCodeLine{250 }
+\DoxyCodeLine{252   \mbox{\hyperlink{namespacetesseract__common_a84cc21cc4b384291adbbddaa81fe6447}{PairsCollisionMarginData}} \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_ac10b4d26f9e79bb0f41b01167efec0cc}{lookup\_table\_}};}
+\DoxyCodeLine{253 }
+\DoxyCodeLine{255   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_a18885b5cf57a1ae952b4b517b2ce7933}{updateMaxCollisionMargin}}()}
+\DoxyCodeLine{256   \{}
+\DoxyCodeLine{257     \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_a6fec4a902fb625048da5611a857cd306}{max\_collision\_margin\_}} = \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_afe835b8ece629843894446a9df56c494}{default\_collision\_margin\_}};}
+\DoxyCodeLine{258     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& p : \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_ac10b4d26f9e79bb0f41b01167efec0cc}{lookup\_table\_}})}
+\DoxyCodeLine{259     \{}
+\DoxyCodeLine{260       \textcolor{keywordflow}{if} (p.second > \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_a6fec4a902fb625048da5611a857cd306}{max\_collision\_margin\_}})}
+\DoxyCodeLine{261         \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_a6fec4a902fb625048da5611a857cd306}{max\_collision\_margin\_}} = p.second;}
+\DoxyCodeLine{262     \}}
+\DoxyCodeLine{263   \}}
+\DoxyCodeLine{264   \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_ac98d07dd8f7b70e16ccb9a01abf56b9c}{boost::serialization::access}};}
+\DoxyCodeLine{265   \textcolor{keyword}{template} <\textcolor{keyword}{class} Archive>}
+\DoxyCodeLine{266   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_a5b8eb311ba3a70b140ee561910193de0}{serialize}}(Archive\& ar, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} version);  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{267 \};}
+\DoxyCodeLine{268 \}  \textcolor{comment}{// namespace tesseract\_common}}
+\DoxyCodeLine{269 \textcolor{preprocessor}{\#include <boost/serialization/export.hpp>}}
+\DoxyCodeLine{270 \textcolor{preprocessor}{\#include <boost/serialization/tracking.hpp>}}
+\DoxyCodeLine{271 BOOST\_CLASS\_EXPORT\_KEY2(\mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData}{tesseract\_common::CollisionMarginData}}, \textcolor{stringliteral}{"{}CollisionMarginData"{}})}
+\DoxyCodeLine{272 }
+\DoxyCodeLine{273 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_COMMON\_COLLISION\_MARGIN\_DATA\_H}}
+
+\end{DoxyCode}

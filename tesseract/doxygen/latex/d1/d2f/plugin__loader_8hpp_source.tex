@@ -1,0 +1,297 @@
+\hypertarget{plugin__loader_8hpp_source}{}\doxysection{plugin\+\_\+loader.\+hpp}
+\label{plugin__loader_8hpp_source}\index{tesseract\_common/include/tesseract\_common/plugin\_loader.hpp@{tesseract\_common/include/tesseract\_common/plugin\_loader.hpp}}
+\mbox{\hyperlink{plugin__loader_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#ifndef TESSERACT\_COMMON\_PLUGIN\_LOADER\_HPP}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define TESSERACT\_COMMON\_PLUGIN\_LOADER\_HPP}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{macros_8h}{tesseract\_common/macros.h}}>}}
+\DoxyCodeLine{30 \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include <boost/algorithm/string.hpp>}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include <console\_bridge/console.h>}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include <ostream>}}
+\DoxyCodeLine{34 \mbox{\hyperlink{namespaceTESSERACT__COMMON__IGNORE__WARNINGS__POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{plugin__loader_8h}{tesseract\_common/plugin\_loader.h}}>}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{class__loader_8h}{tesseract\_common/class\_loader.h}}>}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__common}{tesseract\_common}}}
+\DoxyCodeLine{40 \{}
+\DoxyCodeLine{41 \textcolor{keyword}{inline} std::set<std::string> \mbox{\hyperlink{namespacetesseract__common_af2c2ec207efac0e2080c6488163eb082}{parseEnvironmentVariableList}}(\textcolor{keyword}{const} std::string\& env\_variable)}
+\DoxyCodeLine{42 \{}
+\DoxyCodeLine{43   std::set<std::string> list;}
+\DoxyCodeLine{44   \textcolor{keywordtype}{char}* \mbox{\hyperlink{resource__locator__unit_8cpp_ae5984a8f66b65da1eaf281e91a554a65}{env\_var}} = std::getenv(env\_variable.c\_str());}
+\DoxyCodeLine{45   \textcolor{keywordflow}{if} (\mbox{\hyperlink{resource__locator__unit_8cpp_ae5984a8f66b65da1eaf281e91a554a65}{env\_var}} == \textcolor{keyword}{nullptr})  \textcolor{comment}{// Environment variable not found}}
+\DoxyCodeLine{46     \textcolor{keywordflow}{return} list;}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48   std::string evn\_str = std::string(\mbox{\hyperlink{resource__locator__unit_8cpp_ae5984a8f66b65da1eaf281e91a554a65}{env\_var}});}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#ifndef \_WIN32}}
+\DoxyCodeLine{50   boost::split(list, evn\_str, boost::is\_any\_of(\textcolor{stringliteral}{"{}:"{}}), boost::token\_compress\_on);}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{52   boost::split(list, evn\_str, boost::is\_any\_of(\textcolor{stringliteral}{"{};"{}}), boost::token\_compress\_on);}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{54   \textcolor{keywordflow}{return} list;}
+\DoxyCodeLine{55 \}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{keyword}{inline} std::set<std::string> \mbox{\hyperlink{namespacetesseract__common_a4d07851ebdfbd06448599d1c188a2a50}{getAllSearchPaths}}(\textcolor{keyword}{const} std::string\& search\_paths\_env,}
+\DoxyCodeLine{58                                                \textcolor{keyword}{const} std::set<std::string>\& existing\_search\_paths)}
+\DoxyCodeLine{59 \{}
+\DoxyCodeLine{60   \textcolor{comment}{// Check for environment variable to override default library}}
+\DoxyCodeLine{61   \textcolor{keywordflow}{if} (!search\_paths\_env.empty())}
+\DoxyCodeLine{62   \{}
+\DoxyCodeLine{63     std::set<std::string> \mbox{\hyperlink{contact__managers__factory__unit_8cpp_a2f3e59daa23f0b486727dd6eff7d7420}{search\_paths}} = \mbox{\hyperlink{namespacetesseract__common_af2c2ec207efac0e2080c6488163eb082}{parseEnvironmentVariableList}}(search\_paths\_env);}
+\DoxyCodeLine{64     \mbox{\hyperlink{contact__managers__factory__unit_8cpp_a2f3e59daa23f0b486727dd6eff7d7420}{search\_paths}}.insert(existing\_search\_paths.begin(), existing\_search\_paths.end());}
+\DoxyCodeLine{65     \textcolor{keywordflow}{return} \mbox{\hyperlink{contact__managers__factory__unit_8cpp_a2f3e59daa23f0b486727dd6eff7d7420}{search\_paths}};}
+\DoxyCodeLine{66   \}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68   \textcolor{keywordflow}{return} existing\_search\_paths;}
+\DoxyCodeLine{69 \}}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 \textcolor{keyword}{inline} std::set<std::string> \mbox{\hyperlink{namespacetesseract__common_a6649a8ac1b3dcd569656074bbcfce030}{getAllSearchLibraries}}(\textcolor{keyword}{const} std::string\& search\_libraries\_env,}
+\DoxyCodeLine{72                                                    \textcolor{keyword}{const} std::set<std::string>\& existing\_search\_libraries)}
+\DoxyCodeLine{73 \{}
+\DoxyCodeLine{74   \textcolor{comment}{// Check for environment variable to override default library}}
+\DoxyCodeLine{75   \textcolor{keywordflow}{if} (!search\_libraries\_env.empty())}
+\DoxyCodeLine{76   \{}
+\DoxyCodeLine{77     std::set<std::string> \mbox{\hyperlink{contact__managers__factory__unit_8cpp_a4eb26c3b59ba136eaa63f4139766f564}{search\_libraries}} = \mbox{\hyperlink{namespacetesseract__common_af2c2ec207efac0e2080c6488163eb082}{parseEnvironmentVariableList}}(search\_libraries\_env);}
+\DoxyCodeLine{78     \mbox{\hyperlink{contact__managers__factory__unit_8cpp_a4eb26c3b59ba136eaa63f4139766f564}{search\_libraries}}.insert(existing\_search\_libraries.begin(), existing\_search\_libraries.end());}
+\DoxyCodeLine{79     \textcolor{keywordflow}{return} \mbox{\hyperlink{contact__managers__factory__unit_8cpp_a4eb26c3b59ba136eaa63f4139766f564}{search\_libraries}};}
+\DoxyCodeLine{80   \}}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82   \textcolor{keywordflow}{return} existing\_search\_libraries;}
+\DoxyCodeLine{83 \}}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{90 \textcolor{keyword}{inline} std::set<std::string> \mbox{\hyperlink{namespacetesseract__common_ad10d68b681f3d352a15736ffef688010}{extractLibrariesWithFullPath}}(std::set<std::string>\& library\_names)}
+\DoxyCodeLine{91 \{}
+\DoxyCodeLine{92   std::set<std::string> libraries\_with\_fullpath;}
+\DoxyCodeLine{93   \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a325f3c2b297a245575c6f2f91bd5f1e2}{it}} = library\_names.begin(); \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a325f3c2b297a245575c6f2f91bd5f1e2}{it}} != library\_names.end();)}
+\DoxyCodeLine{94   \{}
+\DoxyCodeLine{95     \textcolor{keywordflow}{if} (boost::filesystem::exists(*\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a325f3c2b297a245575c6f2f91bd5f1e2}{it}}) \&\& boost::filesystem::path(*it).is\_absolute())}
+\DoxyCodeLine{96     \{}
+\DoxyCodeLine{97       libraries\_with\_fullpath.insert(*\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a325f3c2b297a245575c6f2f91bd5f1e2}{it}});}
+\DoxyCodeLine{98       \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a325f3c2b297a245575c6f2f91bd5f1e2}{it}} = library\_names.erase(\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a325f3c2b297a245575c6f2f91bd5f1e2}{it}});}
+\DoxyCodeLine{99     \}}
+\DoxyCodeLine{100     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{101     \{}
+\DoxyCodeLine{102       ++\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a325f3c2b297a245575c6f2f91bd5f1e2}{it}};}
+\DoxyCodeLine{103     \}}
+\DoxyCodeLine{104   \}}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106   \textcolor{keywordflow}{return} libraries\_with\_fullpath;}
+\DoxyCodeLine{107 \}}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109 \textcolor{keyword}{template} <\textcolor{keyword}{class} PluginBase>}
+\DoxyCodeLine{110 std::shared\_ptr<PluginBase> \mbox{\hyperlink{classtesseract__common_1_1PluginLoader_a453681a0572061cdfdefb561c9c084f2}{PluginLoader::instantiate}}(\textcolor{keyword}{const} std::string\& plugin\_name)\textcolor{keyword}{ const}}
+\DoxyCodeLine{111 \textcolor{keyword}{}\{}
+\DoxyCodeLine{112   \textcolor{comment}{// Check for environment variable for plugin definitions}}
+\DoxyCodeLine{113   std::set<std::string> library\_names = \mbox{\hyperlink{namespacetesseract__common_a6649a8ac1b3dcd569656074bbcfce030}{getAllSearchLibraries}}(\mbox{\hyperlink{classtesseract__common_1_1PluginLoader_af3929c97ee7a2ca0865c616397c1caba}{search\_libraries\_env}}, \mbox{\hyperlink{classtesseract__common_1_1PluginLoader_ac21baef3ac5e035e5d6604c48dce293c}{search\_libraries}});}
+\DoxyCodeLine{114   \textcolor{keywordflow}{if} (library\_names.empty())}
+\DoxyCodeLine{115   \{}
+\DoxyCodeLine{116     CONSOLE\_BRIDGE\_logError(\textcolor{stringliteral}{"{}No plugin libraries were provided!"{}});}
+\DoxyCodeLine{117     \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{118   \}}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120   std::set<std::string> libraries\_with\_fullpath = \mbox{\hyperlink{namespacetesseract__common_ad10d68b681f3d352a15736ffef688010}{extractLibrariesWithFullPath}}(library\_names);}
+\DoxyCodeLine{121   \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& library\_fullpath : libraries\_with\_fullpath)}
+\DoxyCodeLine{122   \{}
+\DoxyCodeLine{123     \textcolor{keywordflow}{if} (\mbox{\hyperlink{structtesseract__common_1_1ClassLoader_a0bc9e092d94b12566d67e5a5ee0de337}{ClassLoader::isClassAvailable}}(plugin\_name, library\_fullpath))}
+\DoxyCodeLine{124       \textcolor{keywordflow}{return} ClassLoader::createSharedInstance<PluginBase>(plugin\_name, library\_fullpath);}
+\DoxyCodeLine{125   \}}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127   \textcolor{comment}{// Check for environment variable for search paths}}
+\DoxyCodeLine{128   std::set<std::string> search\_paths\_local = \mbox{\hyperlink{namespacetesseract__common_a4d07851ebdfbd06448599d1c188a2a50}{getAllSearchPaths}}(\mbox{\hyperlink{classtesseract__common_1_1PluginLoader_a07ad5f9ed665a443296650ba4cf74ac2}{search\_paths\_env}}, \mbox{\hyperlink{classtesseract__common_1_1PluginLoader_a0708204dd34adfdec1a7506df07cd30a}{search\_paths}});}
+\DoxyCodeLine{129   \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a4f0c2c1ddd740994eb90524a8d086dca}{path}} : search\_paths\_local)}
+\DoxyCodeLine{130   \{}
+\DoxyCodeLine{131     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& library : \mbox{\hyperlink{classtesseract__common_1_1PluginLoader_ac21baef3ac5e035e5d6604c48dce293c}{search\_libraries}})}
+\DoxyCodeLine{132     \{}
+\DoxyCodeLine{133       \textcolor{keywordflow}{if} (\mbox{\hyperlink{structtesseract__common_1_1ClassLoader_a0bc9e092d94b12566d67e5a5ee0de337}{ClassLoader::isClassAvailable}}(plugin\_name, library, \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a4f0c2c1ddd740994eb90524a8d086dca}{path}}))}
+\DoxyCodeLine{134         \textcolor{keywordflow}{return} ClassLoader::createSharedInstance<PluginBase>(plugin\_name, library, \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a4f0c2c1ddd740994eb90524a8d086dca}{path}});}
+\DoxyCodeLine{135     \}}
+\DoxyCodeLine{136   \}}
+\DoxyCodeLine{137 }
+\DoxyCodeLine{138   \textcolor{comment}{// If not found in any of the provided search paths then search system folders if allowed}}
+\DoxyCodeLine{139   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classtesseract__common_1_1PluginLoader_aff0d53be8344f1875acd112f698cc117}{search\_system\_folders}})}
+\DoxyCodeLine{140   \{}
+\DoxyCodeLine{141     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& library : \mbox{\hyperlink{classtesseract__common_1_1PluginLoader_ac21baef3ac5e035e5d6604c48dce293c}{search\_libraries}})}
+\DoxyCodeLine{142     \{}
+\DoxyCodeLine{143       \textcolor{keywordflow}{if} (\mbox{\hyperlink{structtesseract__common_1_1ClassLoader_a0bc9e092d94b12566d67e5a5ee0de337}{ClassLoader::isClassAvailable}}(plugin\_name, library))}
+\DoxyCodeLine{144         \textcolor{keywordflow}{return} ClassLoader::createSharedInstance<PluginBase>(plugin\_name, library);}
+\DoxyCodeLine{145     \}}
+\DoxyCodeLine{146   \}}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148   std::stringstream msg;}
+\DoxyCodeLine{149   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classtesseract__common_1_1PluginLoader_aff0d53be8344f1875acd112f698cc117}{search\_system\_folders}})}
+\DoxyCodeLine{150     msg << std::endl << \textcolor{stringliteral}{"{}Search Paths (Search System Folders: True):"{}} << std::endl;}
+\DoxyCodeLine{151   \textcolor{keywordflow}{else}}
+\DoxyCodeLine{152     msg << std::endl << \textcolor{stringliteral}{"{}Search Paths (Search System Folders: False):"{}} << std::endl;}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{154   \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a4f0c2c1ddd740994eb90524a8d086dca}{path}} : search\_paths\_local)}
+\DoxyCodeLine{155     msg << \textcolor{stringliteral}{"{}    -\/ "{}} + \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a4f0c2c1ddd740994eb90524a8d086dca}{path}} << std::endl;}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{157   msg << \textcolor{stringliteral}{"{}Search Libraries:"{}} << std::endl;}
+\DoxyCodeLine{158   \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& library : \mbox{\hyperlink{classtesseract__common_1_1PluginLoader_ac21baef3ac5e035e5d6604c48dce293c}{search\_libraries}})}
+\DoxyCodeLine{159     msg << \textcolor{stringliteral}{"{}    -\/ "{}} + \mbox{\hyperlink{structtesseract__common_1_1ClassLoader_af2749622fe3be804a464ce5d5ea62ca9}{ClassLoader::decorate}}(library) << std::endl;}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{161   CONSOLE\_BRIDGE\_logError(\textcolor{stringliteral}{"{}Failed to instantiate plugin '\%s', Details: \%s"{}}, plugin\_name.c\_str(), msg.str().c\_str());}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{163   \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{164 \}}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{166 \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__common_1_1PluginLoader_ae73347144bf79b795ed17959370f0559}{PluginLoader::isPluginAvailable}}(\textcolor{keyword}{const} std::string\& plugin\_name)\textcolor{keyword}{ const}}
+\DoxyCodeLine{167 \textcolor{keyword}{}\{}
+\DoxyCodeLine{168   \textcolor{comment}{// Check for environment variable for plugin definitions}}
+\DoxyCodeLine{169   std::set<std::string> library\_names = \mbox{\hyperlink{namespacetesseract__common_a6649a8ac1b3dcd569656074bbcfce030}{getAllSearchLibraries}}(\mbox{\hyperlink{classtesseract__common_1_1PluginLoader_af3929c97ee7a2ca0865c616397c1caba}{search\_libraries\_env}}, \mbox{\hyperlink{classtesseract__common_1_1PluginLoader_ac21baef3ac5e035e5d6604c48dce293c}{search\_libraries}});}
+\DoxyCodeLine{170   \textcolor{keywordflow}{if} (library\_names.empty())}
+\DoxyCodeLine{171   \{}
+\DoxyCodeLine{172     CONSOLE\_BRIDGE\_logError(\textcolor{stringliteral}{"{}No plugin libraries were provided!"{}});}
+\DoxyCodeLine{173     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{174   \}}
+\DoxyCodeLine{175 }
+\DoxyCodeLine{176   \textcolor{comment}{// Check for libraries provided as full paths. These are searched first}}
+\DoxyCodeLine{177   std::set<std::string> libraries\_with\_fullpath = \mbox{\hyperlink{namespacetesseract__common_ad10d68b681f3d352a15736ffef688010}{extractLibrariesWithFullPath}}(library\_names);}
+\DoxyCodeLine{178   \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& library\_fullpath : libraries\_with\_fullpath)}
+\DoxyCodeLine{179   \{}
+\DoxyCodeLine{180     \textcolor{keywordflow}{if} (\mbox{\hyperlink{structtesseract__common_1_1ClassLoader_a0bc9e092d94b12566d67e5a5ee0de337}{ClassLoader::isClassAvailable}}(plugin\_name, library\_fullpath))}
+\DoxyCodeLine{181       \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{182   \}}
+\DoxyCodeLine{183 }
+\DoxyCodeLine{184   \textcolor{comment}{// Check for environment variable to override default library}}
+\DoxyCodeLine{185   std::set<std::string> search\_paths\_local = \mbox{\hyperlink{namespacetesseract__common_a4d07851ebdfbd06448599d1c188a2a50}{getAllSearchPaths}}(\mbox{\hyperlink{classtesseract__common_1_1PluginLoader_a07ad5f9ed665a443296650ba4cf74ac2}{search\_paths\_env}}, \mbox{\hyperlink{classtesseract__common_1_1PluginLoader_a0708204dd34adfdec1a7506df07cd30a}{search\_paths}});}
+\DoxyCodeLine{186   \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a4f0c2c1ddd740994eb90524a8d086dca}{path}} : search\_paths\_local)}
+\DoxyCodeLine{187   \{}
+\DoxyCodeLine{188     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& library : \mbox{\hyperlink{classtesseract__common_1_1PluginLoader_ac21baef3ac5e035e5d6604c48dce293c}{search\_libraries}})}
+\DoxyCodeLine{189     \{}
+\DoxyCodeLine{190       \textcolor{keywordflow}{if} (\mbox{\hyperlink{structtesseract__common_1_1ClassLoader_a0bc9e092d94b12566d67e5a5ee0de337}{ClassLoader::isClassAvailable}}(plugin\_name, library, \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a4f0c2c1ddd740994eb90524a8d086dca}{path}}))}
+\DoxyCodeLine{191         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{192     \}}
+\DoxyCodeLine{193   \}}
+\DoxyCodeLine{194 }
+\DoxyCodeLine{195   \textcolor{comment}{// If not found in any of the provided search paths then search system folders if allowed}}
+\DoxyCodeLine{196   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classtesseract__common_1_1PluginLoader_aff0d53be8344f1875acd112f698cc117}{search\_system\_folders}})}
+\DoxyCodeLine{197   \{}
+\DoxyCodeLine{198     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& library : \mbox{\hyperlink{classtesseract__common_1_1PluginLoader_ac21baef3ac5e035e5d6604c48dce293c}{search\_libraries}})}
+\DoxyCodeLine{199     \{}
+\DoxyCodeLine{200       \textcolor{keywordflow}{if} (\mbox{\hyperlink{structtesseract__common_1_1ClassLoader_a0bc9e092d94b12566d67e5a5ee0de337}{ClassLoader::isClassAvailable}}(plugin\_name, library))}
+\DoxyCodeLine{201         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{202     \}}
+\DoxyCodeLine{203   \}}
+\DoxyCodeLine{204 }
+\DoxyCodeLine{205   \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{206 \}}
+\DoxyCodeLine{207 }
+\DoxyCodeLine{208 \textcolor{keyword}{template} <\textcolor{keyword}{class} PluginBase>}
+\DoxyCodeLine{209 std::vector<std::string> \mbox{\hyperlink{classtesseract__common_1_1PluginLoader_af2804966fad2fe792f75dd24cd593531}{PluginLoader::getAvailablePlugins}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{210 \textcolor{keyword}{}\{}
+\DoxyCodeLine{211   \textcolor{keywordflow}{return} \mbox{\hyperlink{classtesseract__common_1_1PluginLoader_af2804966fad2fe792f75dd24cd593531}{getAvailablePlugins}}(PluginBase::SECTION\_NAME);}
+\DoxyCodeLine{212 \}}
+\DoxyCodeLine{213 }
+\DoxyCodeLine{214 std::vector<std::string> \mbox{\hyperlink{classtesseract__common_1_1PluginLoader_af2804966fad2fe792f75dd24cd593531}{PluginLoader::getAvailablePlugins}}(\textcolor{keyword}{const} std::string\& section)\textcolor{keyword}{ const}}
+\DoxyCodeLine{215 \textcolor{keyword}{}\{}
+\DoxyCodeLine{216   std::vector<std::string> \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a32a3b29016393b3b00302a9d84d3475c}{plugins}};}
+\DoxyCodeLine{217 }
+\DoxyCodeLine{218   \textcolor{comment}{// Check for environment variable for plugin definitions}}
+\DoxyCodeLine{219   std::set<std::string> library\_names = \mbox{\hyperlink{namespacetesseract__common_a6649a8ac1b3dcd569656074bbcfce030}{getAllSearchLibraries}}(\mbox{\hyperlink{classtesseract__common_1_1PluginLoader_af3929c97ee7a2ca0865c616397c1caba}{search\_libraries\_env}}, \mbox{\hyperlink{classtesseract__common_1_1PluginLoader_ac21baef3ac5e035e5d6604c48dce293c}{search\_libraries}});}
+\DoxyCodeLine{220   \textcolor{keywordflow}{if} (library\_names.empty())}
+\DoxyCodeLine{221   \{}
+\DoxyCodeLine{222     CONSOLE\_BRIDGE\_logError(\textcolor{stringliteral}{"{}No plugin libraries were provided!"{}});}
+\DoxyCodeLine{223     \textcolor{keywordflow}{return} \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a32a3b29016393b3b00302a9d84d3475c}{plugins}};}
+\DoxyCodeLine{224   \}}
+\DoxyCodeLine{225 }
+\DoxyCodeLine{226   \textcolor{comment}{// Check for libraries provided as full paths. These are searched first}}
+\DoxyCodeLine{227   std::set<std::string> libraries\_with\_fullpath = \mbox{\hyperlink{namespacetesseract__common_ad10d68b681f3d352a15736ffef688010}{extractLibrariesWithFullPath}}(library\_names);}
+\DoxyCodeLine{228   \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& library\_fullpath : libraries\_with\_fullpath)}
+\DoxyCodeLine{229   \{}
+\DoxyCodeLine{230     std::vector<std::string> lib\_plugins = \mbox{\hyperlink{structtesseract__common_1_1ClassLoader_a8d2d1f0b2f092748c0b0450955a8d9e0}{ClassLoader::getAvailableSymbols}}(section, library\_fullpath);}
+\DoxyCodeLine{231     \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a32a3b29016393b3b00302a9d84d3475c}{plugins}}.insert(\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a32a3b29016393b3b00302a9d84d3475c}{plugins}}.end(), lib\_plugins.begin(), lib\_plugins.end());}
+\DoxyCodeLine{232   \}}
+\DoxyCodeLine{233 }
+\DoxyCodeLine{234   \textcolor{comment}{// Check for environment variable to override default library}}
+\DoxyCodeLine{235   std::set<std::string> search\_paths\_local = \mbox{\hyperlink{namespacetesseract__common_a4d07851ebdfbd06448599d1c188a2a50}{getAllSearchPaths}}(\mbox{\hyperlink{classtesseract__common_1_1PluginLoader_a07ad5f9ed665a443296650ba4cf74ac2}{search\_paths\_env}}, \mbox{\hyperlink{classtesseract__common_1_1PluginLoader_a0708204dd34adfdec1a7506df07cd30a}{search\_paths}});}
+\DoxyCodeLine{236   \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a4f0c2c1ddd740994eb90524a8d086dca}{path}} : search\_paths\_local)}
+\DoxyCodeLine{237   \{}
+\DoxyCodeLine{238     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& library : \mbox{\hyperlink{classtesseract__common_1_1PluginLoader_ac21baef3ac5e035e5d6604c48dce293c}{search\_libraries}})}
+\DoxyCodeLine{239     \{}
+\DoxyCodeLine{240       std::vector<std::string> lib\_plugins = \mbox{\hyperlink{structtesseract__common_1_1ClassLoader_a8d2d1f0b2f092748c0b0450955a8d9e0}{ClassLoader::getAvailableSymbols}}(section, library, \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a4f0c2c1ddd740994eb90524a8d086dca}{path}});}
+\DoxyCodeLine{241       \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a32a3b29016393b3b00302a9d84d3475c}{plugins}}.insert(\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a32a3b29016393b3b00302a9d84d3475c}{plugins}}.end(), lib\_plugins.begin(), lib\_plugins.end());}
+\DoxyCodeLine{242     \}}
+\DoxyCodeLine{243   \}}
+\DoxyCodeLine{244 }
+\DoxyCodeLine{245   \textcolor{keywordflow}{return} \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a32a3b29016393b3b00302a9d84d3475c}{plugins}};}
+\DoxyCodeLine{246 \}}
+\DoxyCodeLine{247 }
+\DoxyCodeLine{248 std::vector<std::string> \mbox{\hyperlink{classtesseract__common_1_1PluginLoader_a6f7905ef925785966dfba57db217da85}{PluginLoader::getAvailableSections}}(\textcolor{keywordtype}{bool} include\_hidden)\textcolor{keyword}{ const}}
+\DoxyCodeLine{249 \textcolor{keyword}{}\{}
+\DoxyCodeLine{250   std::vector<std::string> \mbox{\hyperlink{plugin__loader__unit_8cpp_a6ba7a8d172b555bcf202bdaaae46799c}{sections}};}
+\DoxyCodeLine{251 }
+\DoxyCodeLine{252   \textcolor{comment}{// Check for environment variable for plugin definitions}}
+\DoxyCodeLine{253   std::set<std::string> library\_names = \mbox{\hyperlink{namespacetesseract__common_a6649a8ac1b3dcd569656074bbcfce030}{getAllSearchLibraries}}(\mbox{\hyperlink{classtesseract__common_1_1PluginLoader_af3929c97ee7a2ca0865c616397c1caba}{search\_libraries\_env}}, \mbox{\hyperlink{classtesseract__common_1_1PluginLoader_ac21baef3ac5e035e5d6604c48dce293c}{search\_libraries}});}
+\DoxyCodeLine{254   \textcolor{keywordflow}{if} (library\_names.empty())}
+\DoxyCodeLine{255   \{}
+\DoxyCodeLine{256     CONSOLE\_BRIDGE\_logError(\textcolor{stringliteral}{"{}No plugin libraries were provided!"{}});}
+\DoxyCodeLine{257     \textcolor{keywordflow}{return} \mbox{\hyperlink{plugin__loader__unit_8cpp_a6ba7a8d172b555bcf202bdaaae46799c}{sections}};}
+\DoxyCodeLine{258   \}}
+\DoxyCodeLine{259 }
+\DoxyCodeLine{260   \textcolor{comment}{// Check for libraries provided as full paths. These are searched first}}
+\DoxyCodeLine{261   std::set<std::string> libraries\_with\_fullpath = \mbox{\hyperlink{namespacetesseract__common_ad10d68b681f3d352a15736ffef688010}{extractLibrariesWithFullPath}}(library\_names);}
+\DoxyCodeLine{262   \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& library\_fullpath : libraries\_with\_fullpath)}
+\DoxyCodeLine{263   \{}
+\DoxyCodeLine{264     std::vector<std::string> lib\_sections = \mbox{\hyperlink{structtesseract__common_1_1ClassLoader_a816ec5cb50eb1a7011b561dd0d789494}{ClassLoader::getAvailableSections}}(library\_fullpath, \textcolor{stringliteral}{"{}"{}}, include\_hidden);}
+\DoxyCodeLine{265     \mbox{\hyperlink{plugin__loader__unit_8cpp_a6ba7a8d172b555bcf202bdaaae46799c}{sections}}.insert(\mbox{\hyperlink{plugin__loader__unit_8cpp_a6ba7a8d172b555bcf202bdaaae46799c}{sections}}.end(), lib\_sections.begin(), lib\_sections.end());}
+\DoxyCodeLine{266   \}}
+\DoxyCodeLine{267 }
+\DoxyCodeLine{268   \textcolor{comment}{// Check for environment variable to override default library}}
+\DoxyCodeLine{269   std::set<std::string> search\_paths\_local = \mbox{\hyperlink{namespacetesseract__common_a4d07851ebdfbd06448599d1c188a2a50}{getAllSearchPaths}}(\mbox{\hyperlink{classtesseract__common_1_1PluginLoader_a07ad5f9ed665a443296650ba4cf74ac2}{search\_paths\_env}}, \mbox{\hyperlink{classtesseract__common_1_1PluginLoader_a0708204dd34adfdec1a7506df07cd30a}{search\_paths}});}
+\DoxyCodeLine{270   \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a4f0c2c1ddd740994eb90524a8d086dca}{path}} : search\_paths\_local)}
+\DoxyCodeLine{271   \{}
+\DoxyCodeLine{272     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& library : \mbox{\hyperlink{classtesseract__common_1_1PluginLoader_ac21baef3ac5e035e5d6604c48dce293c}{search\_libraries}})}
+\DoxyCodeLine{273     \{}
+\DoxyCodeLine{274       std::vector<std::string> lib\_sections = \mbox{\hyperlink{structtesseract__common_1_1ClassLoader_a816ec5cb50eb1a7011b561dd0d789494}{ClassLoader::getAvailableSections}}(library, \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a4f0c2c1ddd740994eb90524a8d086dca}{path}}, include\_hidden);}
+\DoxyCodeLine{275       \mbox{\hyperlink{plugin__loader__unit_8cpp_a6ba7a8d172b555bcf202bdaaae46799c}{sections}}.insert(\mbox{\hyperlink{plugin__loader__unit_8cpp_a6ba7a8d172b555bcf202bdaaae46799c}{sections}}.end(), lib\_sections.begin(), lib\_sections.end());}
+\DoxyCodeLine{276     \}}
+\DoxyCodeLine{277   \}}
+\DoxyCodeLine{278 }
+\DoxyCodeLine{279   \textcolor{keywordflow}{return} \mbox{\hyperlink{plugin__loader__unit_8cpp_a6ba7a8d172b555bcf202bdaaae46799c}{sections}};}
+\DoxyCodeLine{280 \}}
+\DoxyCodeLine{281 }
+\DoxyCodeLine{282 \textcolor{keywordtype}{int} \mbox{\hyperlink{classtesseract__common_1_1PluginLoader_a8f0b1bf448293e184888f791baba0341}{PluginLoader::count}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{283 \textcolor{keyword}{}\{}
+\DoxyCodeLine{284   \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{namespacetesseract__common_a6649a8ac1b3dcd569656074bbcfce030}{getAllSearchLibraries}}(\mbox{\hyperlink{classtesseract__common_1_1PluginLoader_af3929c97ee7a2ca0865c616397c1caba}{search\_libraries\_env}}, \mbox{\hyperlink{classtesseract__common_1_1PluginLoader_ac21baef3ac5e035e5d6604c48dce293c}{search\_libraries}}).size());}
+\DoxyCodeLine{285 \}}
+\DoxyCodeLine{286 }
+\DoxyCodeLine{287 \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__common_1_1PluginLoader_a06b109e7bcab52ea618544b1e6695c9a}{PluginLoader::addSymbolLibraryToSearchLibrariesEnv}}(\textcolor{keyword}{const} \textcolor{keywordtype}{void}* symbol\_ptr, \textcolor{keyword}{const} std::string\& search\_libraries\_env)}
+\DoxyCodeLine{288 \{}
+\DoxyCodeLine{289   std::string env\_var\_str;}
+\DoxyCodeLine{290   \textcolor{keywordtype}{char}* \mbox{\hyperlink{resource__locator__unit_8cpp_ae5984a8f66b65da1eaf281e91a554a65}{env\_var}} = std::getenv(\mbox{\hyperlink{classtesseract__common_1_1PluginLoader_af3929c97ee7a2ca0865c616397c1caba}{search\_libraries\_env}}.c\_str());}
+\DoxyCodeLine{291   \textcolor{keywordflow}{if} (\mbox{\hyperlink{resource__locator__unit_8cpp_ae5984a8f66b65da1eaf281e91a554a65}{env\_var}} != \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{292   \{}
+\DoxyCodeLine{293     env\_var\_str = \mbox{\hyperlink{resource__locator__unit_8cpp_ae5984a8f66b65da1eaf281e91a554a65}{env\_var}};}
+\DoxyCodeLine{294   \}}
+\DoxyCodeLine{295 }
+\DoxyCodeLine{296   boost::filesystem::path lib\_path = boost::filesystem::canonical(boost::dll::symbol\_location\_ptr(symbol\_ptr));}
+\DoxyCodeLine{297 }
+\DoxyCodeLine{298   \textcolor{keywordflow}{if} (env\_var\_str.empty())}
+\DoxyCodeLine{299   \{}
+\DoxyCodeLine{300     env\_var\_str = lib\_path.string();}
+\DoxyCodeLine{301   \}}
+\DoxyCodeLine{302   \textcolor{keywordflow}{else}}
+\DoxyCodeLine{303   \{}
+\DoxyCodeLine{304 \textcolor{preprocessor}{\#ifndef \_WIN32}}
+\DoxyCodeLine{305     env\_var\_str = env\_var\_str + \textcolor{stringliteral}{"{}:"{}} + lib\_path.string();}
+\DoxyCodeLine{306 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{307     env\_var\_str = env\_var\_str + \textcolor{stringliteral}{"{};"{}} + lib\_path.string();}
+\DoxyCodeLine{308 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{309   \}}
+\DoxyCodeLine{310 }
+\DoxyCodeLine{311 \textcolor{preprocessor}{\#ifndef \_WIN32}}
+\DoxyCodeLine{312   setenv(\mbox{\hyperlink{classtesseract__common_1_1PluginLoader_af3929c97ee7a2ca0865c616397c1caba}{search\_libraries\_env}}.c\_str(), env\_var\_str.c\_str(), 1);}
+\DoxyCodeLine{313 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{314   \_putenv\_s(\mbox{\hyperlink{classtesseract__common_1_1PluginLoader_af3929c97ee7a2ca0865c616397c1caba}{search\_libraries\_env}}.c\_str(), env\_var\_str.c\_str());}
+\DoxyCodeLine{315 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{316 \}}
+\DoxyCodeLine{317 }
+\DoxyCodeLine{318 \}  \textcolor{comment}{// namespace tesseract\_common}}
+\DoxyCodeLine{319 }
+\DoxyCodeLine{320 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_COMMON\_PLUGIN\_LOADER\_HPP}}
+
+\end{DoxyCode}

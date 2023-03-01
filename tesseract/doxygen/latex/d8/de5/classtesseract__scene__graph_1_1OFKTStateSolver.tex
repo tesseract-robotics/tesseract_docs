@@ -1,0 +1,1288 @@
+\hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver}{}\doxysection{tesseract\+\_\+scene\+\_\+graph\+::OFKTState\+Solver Class Reference}
+\label{classtesseract__scene__graph_1_1OFKTStateSolver}\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+
+
+An implementation of the Optimized Forward Kinematic Tree as a stat solver.  
+
+
+
+
+{\ttfamily \#include $<$ofkt\+\_\+state\+\_\+solver.\+h$>$}
+
+
+
+Inheritance diagram for tesseract\+\_\+scene\+\_\+graph\+::OFKTState\+Solver\+:
+% FIG 0
+
+
+Collaboration diagram for tesseract\+\_\+scene\+\_\+graph\+::OFKTState\+Solver\+:
+% FIG 1
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_aec6ae27aa4d135f51af4704d86553c03}{Ptr}} = std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver}{OFKTState\+Solver}} $>$
+\item 
+using \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_a2c423706ec6e518a39f03a2ff7aff3df}{Const\+Ptr}} = std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver}{OFKTState\+Solver}} $>$
+\item 
+using \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_a7becda3021851a7ae4db474eaefed5c1}{UPtr}} = std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver}{OFKTState\+Solver}} $>$
+\item 
+using \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_aca489742c9decdc23aed93750dc3f5d9}{Const\+UPtr}} = std\+::unique\+\_\+ptr$<$ const \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver}{OFKTState\+Solver}} $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_a6574a3ff501312e26a5c4c493eb0bed8}{OFKTState\+Solver}} (const \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph}{tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+Graph}} \&\mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a8d4d0dc3a6b9a7030970bf9ed3764756}{scene\+\_\+graph}}, const std\+::string \&prefix=\char`\"{}\char`\"{})
+\item 
+\mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_a83c7840e75fe677b36f043d53afd91cd}{OFKTState\+Solver}} (const std\+::string \&root\+\_\+name)
+\item 
+\mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_a95f3d515b47fd91d99913d0e99cd1dfc}{$\sim$\+OFKTState\+Solver}} () override=default
+\item 
+\mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_ac1ce8d5379a9efbeb28ef6c8803ac4f3}{OFKTState\+Solver}} (const \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver}{OFKTState\+Solver}} \&other)
+\item 
+\mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver}{OFKTState\+Solver}} \& \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_a538facdeb0f8c910e87dcc3919a9642f}{operator=}} (const \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver}{OFKTState\+Solver}} \&other)
+\item 
+\mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_ae7291076eb6f472a376fca812c9e19d7}{OFKTState\+Solver}} (\mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver}{OFKTState\+Solver}} \&\&)=delete
+\item 
+\mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver}{OFKTState\+Solver}} \& \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_a5ac5d7e6090d7329642e1935d7d356e5}{operator=}} (\mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver}{OFKTState\+Solver}} \&\&)=delete
+\item 
+void \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_a79e00a40f6ed9206d20007dfd70932a4}{set\+Revision}} (int revision) override final
+\begin{DoxyCompactList}\small\item\em Set the state solver revision number. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_aaebf658a50f9efd75bae693531e3f71b}{get\+Revision}} () const override final
+\begin{DoxyCompactList}\small\item\em Get the state solver revision number. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_af700e9cef4517f715a0749ea58ac9bdd}{set\+State}} (const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xd $>$ \&joint\+\_\+values) override final
+\begin{DoxyCompactList}\small\item\em Set the current state of the solver. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_a1a7d316d62736a2b924bf46c7ca40966}{set\+State}} (const std\+::unordered\+\_\+map$<$ std\+::string, double $>$ \&joint\+\_\+values) override final
+\begin{DoxyCompactList}\small\item\em Set the current state of the solver. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_a2892df7e5cca9b4235226d3c338731f0}{set\+State}} (const std\+::vector$<$ std\+::string $>$ \&\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_ae55b39adb52b29eeefd7d128c4b56f2a}{joint\+\_\+names}}, const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xd $>$ \&joint\+\_\+values) override final
+\item 
+\mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{Scene\+State}} \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_a6c20881d959ec6360063308fad0d41e6}{get\+State}} (const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xd $>$ \&joint\+\_\+values) const override final
+\begin{DoxyCompactList}\small\item\em Get the state of the solver given the joint values. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{Scene\+State}} \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_ad7ba6d485ea31199335645f3d3e840d6}{get\+State}} (const std\+::unordered\+\_\+map$<$ std\+::string, double $>$ \&joint\+\_\+values) const override final
+\begin{DoxyCompactList}\small\item\em Get the state of the scene for a given set or subset of joint values. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{Scene\+State}} \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_a525e8276271c43077f6277df23a2e32b}{get\+State}} (const std\+::vector$<$ std\+::string $>$ \&\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_ae55b39adb52b29eeefd7d128c4b56f2a}{joint\+\_\+names}}, const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xd $>$ \&joint\+\_\+values) const override final
+\item 
+\mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{Scene\+State}} \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_ad094b8445776e90f63d5f85f19fb7c00}{get\+State}} () const override final
+\begin{DoxyCompactList}\small\item\em Get the current state of the scene. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{Scene\+State}} \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_a66a5121e1603ad876974e204ae0a14d9}{get\+Random\+State}} () const override final
+\begin{DoxyCompactList}\small\item\em Get the random state of the environment. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_a51d5e2e00d5b7a0fb566a121025234c4}{get\+Jacobian}} (const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xd $>$ \&joint\+\_\+values, const std\+::string \&link\+\_\+name) const override final
+\begin{DoxyCompactList}\small\item\em Get the jacobian of the solver given the joint values. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_afcb4e99f7fb9466ca122dcb98934f810}{get\+Jacobian}} (const std\+::unordered\+\_\+map$<$ std\+::string, double $>$ \&joints\+\_\+values, const std\+::string \&link\+\_\+name) const override final
+\begin{DoxyCompactList}\small\item\em Get the jacobian of the scene for a given set or subset of joint values. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_a12d49029643ba3fd79bafc9947096340}{get\+Jacobian}} (const std\+::vector$<$ std\+::string $>$ \&\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_ae55b39adb52b29eeefd7d128c4b56f2a}{joint\+\_\+names}}, const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xd $>$ \&joint\+\_\+values, const std\+::string \&link\+\_\+name) const override final
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_ab8c27800a8de8bac9c3b7719fa11de2a}{get\+Joint\+Names}} () const override final
+\begin{DoxyCompactList}\small\item\em Get the vector of joint names. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_a778cccf8f6702c880168e6475db48ad8}{get\+Active\+Joint\+Names}} () const override final
+\begin{DoxyCompactList}\small\item\em Get the vector of joint names which align with the limits. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_a3e7587e8449b9fa9d7ea46d13eccd0db}{get\+Base\+Link\+Name}} () const override final
+\begin{DoxyCompactList}\small\item\em Get the base link name. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_a71e753e43764b6e6f6f1729716b929b5}{get\+Link\+Names}} () const override final
+\begin{DoxyCompactList}\small\item\em Get the vector of link names. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_aea1e0f0a0489301d8b0bb391dd27fe55}{get\+Active\+Link\+Names}} () const override final
+\begin{DoxyCompactList}\small\item\em Get the vector of active link names. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_ad1292ae4f343f3d2498e9d87e857b9c2}{get\+Static\+Link\+Names}} () const override final
+\begin{DoxyCompactList}\small\item\em Get a vector of static link names in the environment. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_a8aee35dbbddeb62bdcd4069962eedf2d}{is\+Active\+Link\+Name}} (const std\+::string \&link\+\_\+name) const override final
+\begin{DoxyCompactList}\small\item\em Check if link is an active link. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_a002f51c7fb4fe4107f0a4c15ca551d55}{has\+Link\+Name}} (const std\+::string \&link\+\_\+name) const override final
+\begin{DoxyCompactList}\small\item\em Check if link name exists. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacetesseract__common_a94d9921fc7ed323609ac57d06f939cb6}{tesseract\+\_\+common\+::\+Vector\+Isometry3d}} \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_a7c191ea2aaf1b66d4352e3e1a6d69c4d}{get\+Link\+Transforms}} () const override final
+\begin{DoxyCompactList}\small\item\em Get all of the links transforms. \end{DoxyCompactList}\item 
+Eigen\+::\+Isometry3d \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_ab499161a0bc0b09fecee62ec5c349b8d}{get\+Link\+Transform}} (const std\+::string \&link\+\_\+name) const override final
+\begin{DoxyCompactList}\small\item\em Get the transform corresponding to the link. \end{DoxyCompactList}\item 
+Eigen\+::\+Isometry3d \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_a5439bd042e472bc072109ae837c0a740}{get\+Relative\+Link\+Transform}} (const std\+::string \&from\+\_\+link\+\_\+name, const std\+::string \&to\+\_\+link\+\_\+name) const override final
+\begin{DoxyCompactList}\small\item\em Get transform between two links using the current state. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtesseract__common_1_1KinematicLimits}{tesseract\+\_\+common\+::\+Kinematic\+Limits}} \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_a68cfe8c605215348546a2b67f7f69c0c}{get\+Limits}} () const override final
+\begin{DoxyCompactList}\small\item\em Getter for kinematic limits. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_ac3ef786331721e642c695c9749bfff9a}{add\+Link}} (const \mbox{\hyperlink{classtesseract__scene__graph_1_1Link}{Link}} \&link, const \mbox{\hyperlink{classtesseract__scene__graph_1_1Joint}{Joint}} \&joint) override final
+\begin{DoxyCompactList}\small\item\em Adds a link/joint to the solver. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_a45a95b8ee0a71d0727d0a3d5f19a72d6}{move\+Link}} (const \mbox{\hyperlink{classtesseract__scene__graph_1_1Joint}{Joint}} \&joint) override final
+\begin{DoxyCompactList}\small\item\em Move a link. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_ae01b945659e38e9368cbfabed370a309}{remove\+Link}} (const std\+::string \&\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}) override final
+\begin{DoxyCompactList}\small\item\em Removes a link from the graph. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_a9bf70be378f138e97cbc5735f3701754}{replace\+Joint}} (const \mbox{\hyperlink{classtesseract__scene__graph_1_1Joint}{Joint}} \&joint) override final
+\begin{DoxyCompactList}\small\item\em Replace and existing joint with the provided one. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_aa553b5d7c69564cbc428ae43293dd23a}{remove\+Joint}} (const std\+::string \&\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}) override final
+\begin{DoxyCompactList}\small\item\em Removes a joint from the graph. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_a2ce786f5c9931049dc646b8c367ecbd5}{move\+Joint}} (const std\+::string \&\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}, const std\+::string \&parent\+\_\+link) override final
+\begin{DoxyCompactList}\small\item\em Move joint to new parent link. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_aec35e56064d89983c6f85b72cc412d80}{change\+Joint\+Origin}} (const std\+::string \&\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}, const Eigen\+::\+Isometry3d \&new\+\_\+origin) override final
+\begin{DoxyCompactList}\small\item\em Changes the \char`\"{}origin\char`\"{} transform of the joint and recomputes the associated edge. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_aad0dd38c09d3fb22efe2e3fe6c7df382}{change\+Joint\+Position\+Limits}} (const std\+::string \&\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}, double \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a3c7c02ff5e570ea0344de12f1daa68a2}{lower}}, double \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_ab274f3e38b9588f2022dee7928e6e2dd}{upper}}) override final
+\begin{DoxyCompactList}\small\item\em Changes the position limits associated with a joint. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_ad5ac41ceeb316c58874aa68f257144ea}{change\+Joint\+Velocity\+Limits}} (const std\+::string \&\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}, double limit) override final
+\begin{DoxyCompactList}\small\item\em Changes the velocity limits associated with a joint. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_a439631c13339288be33a41476007fe7b}{change\+Joint\+Acceleration\+Limits}} (const std\+::string \&\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}, double limit) override final
+\begin{DoxyCompactList}\small\item\em Changes the acceleration limits associated with a joint. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_ab8c1b3ac2ff8c470f20cb9b159ae83a4}{insert\+Scene\+Graph}} (const \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph}{Scene\+Graph}} \&\mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a8d4d0dc3a6b9a7030970bf9ed3764756}{scene\+\_\+graph}}, const \mbox{\hyperlink{classtesseract__scene__graph_1_1Joint}{Joint}} \&joint, const std\+::string \&prefix=\char`\"{}\char`\"{}) override final
+\begin{DoxyCompactList}\small\item\em Merge a scene into the current solver. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a0834c4abefbc5b7da4e66cd26619a9ba}{State\+Solver\+::\+UPtr}} \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_a5734b842aca63380614f60f9092079de}{clone}} () const override final
+\begin{DoxyCompactList}\small\item\em This should clone the object so it may be used in a multi threaded application where each thread would clone the solver. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_ab61c01c09888cb61224b0fcf7686f10c}{init\+Helper}} (const \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph}{tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+Graph}} \&\mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a8d4d0dc3a6b9a7030970bf9ed3764756}{scene\+\_\+graph}}, const std\+::string \&prefix)
+\item 
+void \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_af4297ba3267ae0017b5e87dcaa4acf21}{clear}} ()
+\item 
+void \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_a619b8263a9d1ff7c5dec3d27191525e4}{load\+Active\+Link\+Names\+Recursive}} (std\+::vector$<$ std\+::string $>$ \&active\+\_\+link\+\_\+names, const \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode}{OFKTNode}} $\ast$node, bool active) const
+\begin{DoxyCompactList}\small\item\em load the active link names \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_a39d133dfafa6d8a3faf24bbd5e57c8b1}{load\+Static\+Link\+Names\+Recursive}} (std\+::vector$<$ std\+::string $>$ \&static\+\_\+link\+\_\+names, const \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode}{OFKTNode}} $\ast$node) const
+\begin{DoxyCompactList}\small\item\em load the static link names \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_a879cc7aa8da89043d2f1d290ae9cafbe}{update}} (\mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode}{OFKTNode}} $\ast$node, bool update\+\_\+required)
+\begin{DoxyCompactList}\small\item\em This update the local and world transforms. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_a49b2c2c90e2e3c092f087a4fb949e427}{update}} (\mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{Scene\+State}} \&state, const \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode}{OFKTNode}} $\ast$node, Eigen\+::\+Isometry3d parent\+\_\+world\+\_\+tf, bool update\+\_\+required) const
+\begin{DoxyCompactList}\small\item\em This is a const version of the function above. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_a7734863002452adc512c221b1403e5a5}{calc\+Jacobian\+Helper}} (const std\+::unordered\+\_\+map$<$ std\+::string, double $>$ \&\mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_ae41993a59637cf36532d3620b8203555}{joints}}, const std\+::string \&link\+\_\+name) const
+\begin{DoxyCompactList}\small\item\em Given a set of joint values calculate the jacobian for the provided link\+\_\+name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_a4be22ce749c6f1edac2b8ad2797054df}{clone\+Helper}} (\mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver}{OFKTState\+Solver}} \&cloned, const \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode}{OFKTNode}} $\ast$node) const
+\begin{DoxyCompactList}\small\item\em A helper function used for cloning the \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver}{OFKTState\+Solver}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_ad3029c80872bc2084edb4c2f803f5075}{add\+Node}} (const \mbox{\hyperlink{classtesseract__scene__graph_1_1Joint}{Joint}} \&joint, const std\+::string \&\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aad74bf9891b141c288c96b20caff4dfa}{joint\+\_\+name}}, const std\+::string \&\mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a1c8a54acf8831080b86833add3e01e16}{parent\+\_\+link\+\_\+name}}, const std\+::string \&\mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a0ee2553dcc3b0f52bcf8c8e552ef733d}{child\+\_\+link\+\_\+name}}, std\+::vector$<$ \mbox{\hyperlink{classtesseract__scene__graph_1_1JointLimits_abbdeeb05eed0eb0696da5019186ab3c8}{Joint\+Limits\+::\+Const\+Ptr}} $>$ \&new\+\_\+joint\+\_\+limits)
+\begin{DoxyCompactList}\small\item\em Add a node to the tree. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_a7adb6c740765b24a9dc31a3dfba47c52}{remove\+Node}} (\mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode}{OFKTNode}} $\ast$node, std\+::vector$<$ std\+::string $>$ \&removed\+\_\+links, std\+::vector$<$ std\+::string $>$ \&removed\+\_\+joints, std\+::vector$<$ std\+::string $>$ \&removed\+\_\+active\+\_\+joints, std\+::vector$<$ long $>$ \&removed\+\_\+active\+\_\+joints\+\_\+indices)
+\begin{DoxyCompactList}\small\item\em Remove a node and all of its children. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_ada7df058b56fd82f7178a173fd0eba09}{move\+Link\+Helper}} (std\+::vector$<$ \mbox{\hyperlink{classtesseract__scene__graph_1_1JointLimits_abbdeeb05eed0eb0696da5019186ab3c8}{Joint\+Limits\+::\+Const\+Ptr}} $>$ \&new\+\_\+joint\+\_\+limits, const \mbox{\hyperlink{classtesseract__scene__graph_1_1Joint}{Joint}} \&joint)
+\begin{DoxyCompactList}\small\item\em This a helper function for moving a link. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_a864c6d2052077c4858203835447d01f1}{replace\+Joint\+Helper}} (std\+::vector$<$ \mbox{\hyperlink{classtesseract__scene__graph_1_1JointLimits_abbdeeb05eed0eb0696da5019186ab3c8}{Joint\+Limits\+::\+Const\+Ptr}} $>$ \&new\+\_\+joint\+\_\+limits, const \mbox{\hyperlink{classtesseract__scene__graph_1_1Joint}{Joint}} \&joint)
+\begin{DoxyCompactList}\small\item\em This is a helper function for replacing a joint. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_a1ee811e857087efa5d68bd12fdaeffaa}{remove\+Joint\+Helper}} (const std\+::vector$<$ std\+::string $>$ \&removed\+\_\+links, const std\+::vector$<$ std\+::string $>$ \&removed\+\_\+joints, const std\+::vector$<$ std\+::string $>$ \&removed\+\_\+active\+\_\+joints, const std\+::vector$<$ long $>$ \&removed\+\_\+active\+\_\+joints\+\_\+indices)
+\begin{DoxyCompactList}\small\item\em This will clean up member variables joint\+\_\+names\+\_\+ and limits\+\_\+. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_ad9557f1c6f3ce0d53c4ef4ede3790539}{add\+New\+Joint\+Limits}} (const std\+::vector$<$ \mbox{\hyperlink{classtesseract__scene__graph_1_1JointLimits_abbdeeb05eed0eb0696da5019186ab3c8}{Joint\+Limits\+::\+Const\+Ptr}} $>$ \&new\+\_\+joint\+\_\+limits)
+\begin{DoxyCompactList}\small\item\em appends the new joint limits \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{Scene\+State}} \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_ac8e79ab61d299aa51a292180d12625a1}{current\+\_\+state\+\_\+}}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_a0165077bc3db7f4faba78da3a6bfe89c}{joint\+\_\+names\+\_\+}}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_aed37a10c9786f00127bed6aedcc8189d}{active\+\_\+joint\+\_\+names\+\_\+}}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_a21557e14491a0c547f8f190d4f045ed6}{link\+\_\+names\+\_\+}}
+\item 
+std\+::unordered\+\_\+map$<$ std\+::string, \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode_a95c6ae7f1e085493d4c60d87521c8638}{OFKTNode\+::\+UPtr}} $>$ \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_a6a4c3d0cac9c413fa3c61fc7a33fde20}{nodes\+\_\+}}
+\item 
+std\+::unordered\+\_\+map$<$ std\+::string, \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode}{OFKTNode}} $\ast$ $>$ \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_af8d638ce58c58ddeb9f1df1e828f3501}{link\+\_\+map\+\_\+}}
+\item 
+\mbox{\hyperlink{structtesseract__common_1_1KinematicLimits}{tesseract\+\_\+common\+::\+Kinematic\+Limits}} \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_a36e99fabb0e0c153685e61c17d0bb099}{limits\+\_\+}}
+\item 
+\mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode_a95c6ae7f1e085493d4c60d87521c8638}{OFKTNode\+::\+UPtr}} \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_a125fca1ab57900028e33cb2ce60e5160}{root\+\_\+}}
+\item 
+int \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_a4221a8b4c2dba8c30bb53fbbc6da960b}{revision\+\_\+}} \{ 0 \}
+\item 
+std\+::shared\+\_\+mutex \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_af8872168f97e7d3b93ffd523de8c5e5b}{mutex\+\_\+}}
+\begin{DoxyCompactList}\small\item\em The state solver can be accessed from multiple threads, need use mutex throughout. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_adbb104f4da94ac1963c63a970ed9477d}{ofkt\+\_\+builder}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An implementation of the Optimized Forward Kinematic Tree as a stat solver. 
+
+Starke, S., Hendrich, N., \& Zhang, J. (2018). A Forward Kinematics Data Structure for Efficient Evolutionary Inverse Kinematics. In Computational Kinematics (pp. 560-\/568). Springer, Cham. 
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_a2c423706ec6e518a39f03a2ff7aff3df}\label{classtesseract__scene__graph_1_1OFKTStateSolver_a2c423706ec6e518a39f03a2ff7aff3df}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!ConstPtr@{ConstPtr}}
+\index{ConstPtr@{ConstPtr}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{ConstPtr}{ConstPtr}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_a2c423706ec6e518a39f03a2ff7aff3df}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::\+Const\+Ptr}} =  std\+::shared\+\_\+ptr$<$const \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver}{OFKTState\+Solver}}$>$}
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_aca489742c9decdc23aed93750dc3f5d9}\label{classtesseract__scene__graph_1_1OFKTStateSolver_aca489742c9decdc23aed93750dc3f5d9}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!ConstUPtr@{ConstUPtr}}
+\index{ConstUPtr@{ConstUPtr}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{ConstUPtr}{ConstUPtr}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_aca489742c9decdc23aed93750dc3f5d9}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::\+Const\+UPtr}} =  std\+::unique\+\_\+ptr$<$const \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver}{OFKTState\+Solver}}$>$}
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_aec6ae27aa4d135f51af4704d86553c03}\label{classtesseract__scene__graph_1_1OFKTStateSolver_aec6ae27aa4d135f51af4704d86553c03}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!Ptr@{Ptr}}
+\index{Ptr@{Ptr}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{Ptr}{Ptr}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_aec6ae27aa4d135f51af4704d86553c03}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::\+Ptr}} =  std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver}{OFKTState\+Solver}}$>$}
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_a7becda3021851a7ae4db474eaefed5c1}\label{classtesseract__scene__graph_1_1OFKTStateSolver_a7becda3021851a7ae4db474eaefed5c1}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!UPtr@{UPtr}}
+\index{UPtr@{UPtr}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{UPtr}{UPtr}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_a7becda3021851a7ae4db474eaefed5c1}{tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::\+UPtr}} =  std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver}{OFKTState\+Solver}}$>$}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_a6574a3ff501312e26a5c4c493eb0bed8}\label{classtesseract__scene__graph_1_1OFKTStateSolver_a6574a3ff501312e26a5c4c493eb0bed8}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!OFKTStateSolver@{OFKTStateSolver}}
+\index{OFKTStateSolver@{OFKTStateSolver}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{OFKTStateSolver()}{OFKTStateSolver()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::\+OFKTState\+Solver (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph}{tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+Graph}} \&}]{scene\+\_\+graph,  }\item[{const std\+::string \&}]{prefix = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_a83c7840e75fe677b36f043d53afd91cd}\label{classtesseract__scene__graph_1_1OFKTStateSolver_a83c7840e75fe677b36f043d53afd91cd}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!OFKTStateSolver@{OFKTStateSolver}}
+\index{OFKTStateSolver@{OFKTStateSolver}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{OFKTStateSolver()}{OFKTStateSolver()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::\+OFKTState\+Solver (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{root\+\_\+name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_a95f3d515b47fd91d99913d0e99cd1dfc}\label{classtesseract__scene__graph_1_1OFKTStateSolver_a95f3d515b47fd91d99913d0e99cd1dfc}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!````~OFKTStateSolver@{$\sim$OFKTStateSolver}}
+\index{````~OFKTStateSolver@{$\sim$OFKTStateSolver}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{$\sim$OFKTStateSolver()}{~OFKTStateSolver()}}
+{\footnotesize\ttfamily tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::$\sim$\+OFKTState\+Solver (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_ac1ce8d5379a9efbeb28ef6c8803ac4f3}\label{classtesseract__scene__graph_1_1OFKTStateSolver_ac1ce8d5379a9efbeb28ef6c8803ac4f3}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!OFKTStateSolver@{OFKTStateSolver}}
+\index{OFKTStateSolver@{OFKTStateSolver}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{OFKTStateSolver()}{OFKTStateSolver()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::\+OFKTState\+Solver (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver}{OFKTState\+Solver}} \&}]{other }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_ae7291076eb6f472a376fca812c9e19d7}\label{classtesseract__scene__graph_1_1OFKTStateSolver_ae7291076eb6f472a376fca812c9e19d7}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!OFKTStateSolver@{OFKTStateSolver}}
+\index{OFKTStateSolver@{OFKTStateSolver}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{OFKTStateSolver()}{OFKTStateSolver()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::\+OFKTState\+Solver (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver}{OFKTState\+Solver}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_ac3ef786331721e642c695c9749bfff9a}\label{classtesseract__scene__graph_1_1OFKTStateSolver_ac3ef786331721e642c695c9749bfff9a}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!addLink@{addLink}}
+\index{addLink@{addLink}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{addLink()}{addLink()}}
+{\footnotesize\ttfamily bool tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::add\+Link (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtesseract__scene__graph_1_1Link}{Link}} \&}]{link,  }\item[{const \mbox{\hyperlink{classtesseract__scene__graph_1_1Joint}{Joint}} \&}]{joint }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Adds a link/joint to the solver. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em link} & The link to be added to the graph \\
+\hline
+{\em joint} & The associated joint to be added to the graph \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return False if a link with the same name allready exists, otherwise true 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver_a5765b59e98791881e80627e23e786ae1}{tesseract\+\_\+scene\+\_\+graph\+::\+Mutable\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_ad9557f1c6f3ce0d53c4ef4ede3790539}\label{classtesseract__scene__graph_1_1OFKTStateSolver_ad9557f1c6f3ce0d53c4ef4ede3790539}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!addNewJointLimits@{addNewJointLimits}}
+\index{addNewJointLimits@{addNewJointLimits}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{addNewJointLimits()}{addNewJointLimits()}}
+{\footnotesize\ttfamily void tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::add\+New\+Joint\+Limits (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classtesseract__scene__graph_1_1JointLimits_abbdeeb05eed0eb0696da5019186ab3c8}{Joint\+Limits\+::\+Const\+Ptr}} $>$ \&}]{new\+\_\+joint\+\_\+limits }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+appends the new joint limits 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+joint\+\_\+limits} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_ad3029c80872bc2084edb4c2f803f5075}\label{classtesseract__scene__graph_1_1OFKTStateSolver_ad3029c80872bc2084edb4c2f803f5075}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!addNode@{addNode}}
+\index{addNode@{addNode}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{addNode()}{addNode()}}
+{\footnotesize\ttfamily void tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::add\+Node (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtesseract__scene__graph_1_1Joint}{Joint}} \&}]{joint,  }\item[{const std\+::string \&}]{joint\+\_\+name,  }\item[{const std\+::string \&}]{parent\+\_\+link\+\_\+name,  }\item[{const std\+::string \&}]{child\+\_\+link\+\_\+name,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classtesseract__scene__graph_1_1JointLimits_abbdeeb05eed0eb0696da5019186ab3c8}{Joint\+Limits\+::\+Const\+Ptr}} $>$ \&}]{new\+\_\+joint\+\_\+limits }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Add a node to the tree. 
+
+The reason that joint\+\_\+name, parent\+\_\+link\+\_\+name, child\+\_\+link\+\_\+name are required when joint is provided is to handle add a scene graph with a prefix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em joint} & The joint being added to the tree \\
+\hline
+{\em joint\+\_\+name} & The joints name \\
+\hline
+{\em parent\+\_\+link\+\_\+name} & The joints parent link name \\
+\hline
+{\em child\+\_\+link\+\_\+name} & The joints child link name \\
+\hline
+{\em kinematic\+\_\+joints} & The vector to store new kinematic joints added to the solver \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_a7734863002452adc512c221b1403e5a5}\label{classtesseract__scene__graph_1_1OFKTStateSolver_a7734863002452adc512c221b1403e5a5}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!calcJacobianHelper@{calcJacobianHelper}}
+\index{calcJacobianHelper@{calcJacobianHelper}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{calcJacobianHelper()}{calcJacobianHelper()}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::calc\+Jacobian\+Helper (\begin{DoxyParamCaption}\item[{const std\+::unordered\+\_\+map$<$ std\+::string, double $>$ \&}]{joints,  }\item[{const std\+::string \&}]{link\+\_\+name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Given a set of joint values calculate the jacobian for the provided link\+\_\+name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em joints} & The joint values to calculate the jacobian for \\
+\hline
+{\em link\+\_\+name} & The link name to calculate the jacobian for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The calculated geometric jacobian 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_a439631c13339288be33a41476007fe7b}\label{classtesseract__scene__graph_1_1OFKTStateSolver_a439631c13339288be33a41476007fe7b}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!changeJointAccelerationLimits@{changeJointAccelerationLimits}}
+\index{changeJointAccelerationLimits@{changeJointAccelerationLimits}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{changeJointAccelerationLimits()}{changeJointAccelerationLimits()}}
+{\footnotesize\ttfamily bool tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::change\+Joint\+Acceleration\+Limits (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{double}]{limit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Changes the acceleration limits associated with a joint. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em joint\+\_\+name} & Name of the joint to be updated \\
+\hline
+{\em limits} & New acceleration limits to be set as the joint limits \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver_a50cdd7cc770a98d5a2180066c4241e8a}{tesseract\+\_\+scene\+\_\+graph\+::\+Mutable\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_aec35e56064d89983c6f85b72cc412d80}\label{classtesseract__scene__graph_1_1OFKTStateSolver_aec35e56064d89983c6f85b72cc412d80}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!changeJointOrigin@{changeJointOrigin}}
+\index{changeJointOrigin@{changeJointOrigin}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{changeJointOrigin()}{changeJointOrigin()}}
+{\footnotesize\ttfamily bool tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::change\+Joint\+Origin (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const Eigen\+::\+Isometry3d \&}]{new\+\_\+origin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Changes the \char`\"{}origin\char`\"{} transform of the joint and recomputes the associated edge. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the joint to be changed \\
+\hline
+{\em new\+\_\+origin} & The new transform associated with the joint \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if successful. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver_a9677b01b0d0889e9553a7c7f4bce1aa0}{tesseract\+\_\+scene\+\_\+graph\+::\+Mutable\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_aad0dd38c09d3fb22efe2e3fe6c7df382}\label{classtesseract__scene__graph_1_1OFKTStateSolver_aad0dd38c09d3fb22efe2e3fe6c7df382}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!changeJointPositionLimits@{changeJointPositionLimits}}
+\index{changeJointPositionLimits@{changeJointPositionLimits}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{changeJointPositionLimits()}{changeJointPositionLimits()}}
+{\footnotesize\ttfamily bool tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::change\+Joint\+Position\+Limits (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{double}]{lower,  }\item[{double}]{upper }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Changes the position limits associated with a joint. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em joint\+\_\+name} & Name of the joint to be updated \\
+\hline
+{\em limits} & New position limits to be set as the joint limits @return\+True if successful. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver_ae23b2d3d7b0767b7ca7f341c10896478}{tesseract\+\_\+scene\+\_\+graph\+::\+Mutable\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_ad5ac41ceeb316c58874aa68f257144ea}\label{classtesseract__scene__graph_1_1OFKTStateSolver_ad5ac41ceeb316c58874aa68f257144ea}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!changeJointVelocityLimits@{changeJointVelocityLimits}}
+\index{changeJointVelocityLimits@{changeJointVelocityLimits}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{changeJointVelocityLimits()}{changeJointVelocityLimits()}}
+{\footnotesize\ttfamily bool tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::change\+Joint\+Velocity\+Limits (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{double}]{limit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Changes the velocity limits associated with a joint. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em joint\+\_\+name} & Name of the joint to be updated \\
+\hline
+{\em limits} & New velocity limits to be set as the joint limits \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver_ac9a021ed4ec2a308f17f4b06856b7f86}{tesseract\+\_\+scene\+\_\+graph\+::\+Mutable\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_af4297ba3267ae0017b5e87dcaa4acf21}\label{classtesseract__scene__graph_1_1OFKTStateSolver_af4297ba3267ae0017b5e87dcaa4acf21}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!clear@{clear}}
+\index{clear@{clear}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_a5734b842aca63380614f60f9092079de}\label{classtesseract__scene__graph_1_1OFKTStateSolver_a5734b842aca63380614f60f9092079de}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!clone@{clone}}
+\index{clone@{clone}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a0834c4abefbc5b7da4e66cd26619a9ba}{State\+Solver\+::\+UPtr}} tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+This should clone the object so it may be used in a multi threaded application where each thread would clone the solver. 
+
+\begin{DoxyReturn}{Returns}
+A clone of the object. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_ad88a0e40214e35d5de7fa47074499ba0}{tesseract\+\_\+scene\+\_\+graph\+::\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_a4be22ce749c6f1edac2b8ad2797054df}\label{classtesseract__scene__graph_1_1OFKTStateSolver_a4be22ce749c6f1edac2b8ad2797054df}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!cloneHelper@{cloneHelper}}
+\index{cloneHelper@{cloneHelper}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{cloneHelper()}{cloneHelper()}}
+{\footnotesize\ttfamily void tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::clone\+Helper (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver}{OFKTState\+Solver}} \&}]{cloned,  }\item[{const \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode}{OFKTNode}} $\ast$}]{node }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+A helper function used for cloning the \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver}{OFKTState\+Solver}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cloned} & The cloned object \\
+\hline
+{\em node} & The node cloning \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_a778cccf8f6702c880168e6475db48ad8}\label{classtesseract__scene__graph_1_1OFKTStateSolver_a778cccf8f6702c880168e6475db48ad8}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!getActiveJointNames@{getActiveJointNames}}
+\index{getActiveJointNames@{getActiveJointNames}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{getActiveJointNames()}{getActiveJointNames()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::get\+Active\+Joint\+Names (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the vector of joint names which align with the limits. 
+
+\begin{DoxyReturn}{Returns}
+A vector of joint names 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a0c6aa138322ecc7eec14d7f0f2f5e84c}{tesseract\+\_\+scene\+\_\+graph\+::\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_aea1e0f0a0489301d8b0bb391dd27fe55}\label{classtesseract__scene__graph_1_1OFKTStateSolver_aea1e0f0a0489301d8b0bb391dd27fe55}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!getActiveLinkNames@{getActiveLinkNames}}
+\index{getActiveLinkNames@{getActiveLinkNames}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{getActiveLinkNames()}{getActiveLinkNames()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::get\+Active\+Link\+Names (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the vector of active link names. 
+
+\begin{DoxyReturn}{Returns}
+A vector of active link names 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_ad0e7aa7260bb4c0e90ab71c8d1a7e3b4}{tesseract\+\_\+scene\+\_\+graph\+::\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_a3e7587e8449b9fa9d7ea46d13eccd0db}\label{classtesseract__scene__graph_1_1OFKTStateSolver_a3e7587e8449b9fa9d7ea46d13eccd0db}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!getBaseLinkName@{getBaseLinkName}}
+\index{getBaseLinkName@{getBaseLinkName}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{getBaseLinkName()}{getBaseLinkName()}}
+{\footnotesize\ttfamily std\+::string tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::get\+Base\+Link\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the base link name. 
+
+\begin{DoxyReturn}{Returns}
+The base link name 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_ab29a8aec90d5df565bdb9316280de860}{tesseract\+\_\+scene\+\_\+graph\+::\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_a51d5e2e00d5b7a0fb566a121025234c4}\label{classtesseract__scene__graph_1_1OFKTStateSolver_a51d5e2e00d5b7a0fb566a121025234c4}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!getJacobian@{getJacobian}}
+\index{getJacobian@{getJacobian}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{getJacobian()}{getJacobian()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::get\+Jacobian (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xd $>$ \&}]{joint\+\_\+values,  }\item[{const std\+::string \&}]{link\+\_\+name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the jacobian of the solver given the joint values. 
+
+This must be the same size and order as what is returned by get\+Joint\+Names 
+\begin{DoxyParams}{Parameters}
+{\em joint\+\_\+values} & The joint values \\
+\hline
+{\em link\+\_\+name} & The link name to calculate the jacobian \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a07bf9d73c4f6b3885e72ac696e71f6cb}{tesseract\+\_\+scene\+\_\+graph\+::\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_afcb4e99f7fb9466ca122dcb98934f810}\label{classtesseract__scene__graph_1_1OFKTStateSolver_afcb4e99f7fb9466ca122dcb98934f810}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!getJacobian@{getJacobian}}
+\index{getJacobian@{getJacobian}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{getJacobian()}{getJacobian()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::get\+Jacobian (\begin{DoxyParamCaption}\item[{const std\+::unordered\+\_\+map$<$ std\+::string, double $>$ \&}]{joint\+\_\+values,  }\item[{const std\+::string \&}]{link\+\_\+name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the jacobian of the scene for a given set or subset of joint values. 
+
+
+\begin{DoxyItemize}
+\item This does not return the jacobian based on the provided joint names. It is order based on the order returned from get\+Joint\+Names
+\end{DoxyItemize}
+
+This does not change the internal state of the solver.
+
+
+\begin{DoxyParams}{Parameters}
+{\em joints} & A map of joint names to joint values to change. \\
+\hline
+{\em link\+\_\+name} & The link name to calculate the jacobian \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A the state of the environment 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a3d858fad85dd1d7e6be45a477f11ed12}{tesseract\+\_\+scene\+\_\+graph\+::\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_a12d49029643ba3fd79bafc9947096340}\label{classtesseract__scene__graph_1_1OFKTStateSolver_a12d49029643ba3fd79bafc9947096340}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!getJacobian@{getJacobian}}
+\index{getJacobian@{getJacobian}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{getJacobian()}{getJacobian()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::get\+Jacobian (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{joint\+\_\+names,  }\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xd $>$ \&}]{joint\+\_\+values,  }\item[{const std\+::string \&}]{link\+\_\+name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a9148b4305eb045645bfb2a7eac2746dc}{tesseract\+\_\+scene\+\_\+graph\+::\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_ab8c27800a8de8bac9c3b7719fa11de2a}\label{classtesseract__scene__graph_1_1OFKTStateSolver_ab8c27800a8de8bac9c3b7719fa11de2a}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!getJointNames@{getJointNames}}
+\index{getJointNames@{getJointNames}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{getJointNames()}{getJointNames()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::get\+Joint\+Names (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the vector of joint names. 
+
+\begin{DoxyReturn}{Returns}
+A vector of joint names 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a3dfa78c3dc97ca119571503fca1202ee}{tesseract\+\_\+scene\+\_\+graph\+::\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_a68cfe8c605215348546a2b67f7f69c0c}\label{classtesseract__scene__graph_1_1OFKTStateSolver_a68cfe8c605215348546a2b67f7f69c0c}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!getLimits@{getLimits}}
+\index{getLimits@{getLimits}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{getLimits()}{getLimits()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtesseract__common_1_1KinematicLimits}{tesseract\+\_\+common\+::\+Kinematic\+Limits}} tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::get\+Limits (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Getter for kinematic limits. 
+
+\begin{DoxyReturn}{Returns}
+The kinematic limits 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a9a6500620632aa09e6f7d3ba06a11203}{tesseract\+\_\+scene\+\_\+graph\+::\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_a71e753e43764b6e6f6f1729716b929b5}\label{classtesseract__scene__graph_1_1OFKTStateSolver_a71e753e43764b6e6f6f1729716b929b5}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!getLinkNames@{getLinkNames}}
+\index{getLinkNames@{getLinkNames}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{getLinkNames()}{getLinkNames()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::get\+Link\+Names (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the vector of link names. 
+
+\begin{DoxyReturn}{Returns}
+A vector of link names 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_aa3352d3b6b37bc7af41f087771770b7e}{tesseract\+\_\+scene\+\_\+graph\+::\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_ab499161a0bc0b09fecee62ec5c349b8d}\label{classtesseract__scene__graph_1_1OFKTStateSolver_ab499161a0bc0b09fecee62ec5c349b8d}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!getLinkTransform@{getLinkTransform}}
+\index{getLinkTransform@{getLinkTransform}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{getLinkTransform()}{getLinkTransform()}}
+{\footnotesize\ttfamily Eigen\+::\+Isometry3d tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::get\+Link\+Transform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{link\+\_\+name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the transform corresponding to the link. 
+
+\begin{DoxyReturn}{Returns}
+Transform and is identity when no transform is available. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a9ac88af6307dfbb281cda21970e96a94}{tesseract\+\_\+scene\+\_\+graph\+::\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_a7c191ea2aaf1b66d4352e3e1a6d69c4d}\label{classtesseract__scene__graph_1_1OFKTStateSolver_a7c191ea2aaf1b66d4352e3e1a6d69c4d}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!getLinkTransforms@{getLinkTransforms}}
+\index{getLinkTransforms@{getLinkTransforms}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{getLinkTransforms()}{getLinkTransforms()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacetesseract__common_a94d9921fc7ed323609ac57d06f939cb6}{tesseract\+\_\+common\+::\+Vector\+Isometry3d}} tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::get\+Link\+Transforms (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get all of the links transforms. 
+
+Order should be the same as \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver_a71e753e43764b6e6f6f1729716b929b5}{get\+Link\+Names()}} \begin{DoxyReturn}{Returns}
+Get a vector of transforms for all links. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_ac3991a6844bef5d336ddda10ad8e0fe8}{tesseract\+\_\+scene\+\_\+graph\+::\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_a66a5121e1603ad876974e204ae0a14d9}\label{classtesseract__scene__graph_1_1OFKTStateSolver_a66a5121e1603ad876974e204ae0a14d9}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!getRandomState@{getRandomState}}
+\index{getRandomState@{getRandomState}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{getRandomState()}{getRandomState()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{Scene\+State}} tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::get\+Random\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the random state of the environment. 
+
+\begin{DoxyReturn}{Returns}
+Environment state 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a15567db8542f473c54b1bfe0a5cb360a}{tesseract\+\_\+scene\+\_\+graph\+::\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_a5439bd042e472bc072109ae837c0a740}\label{classtesseract__scene__graph_1_1OFKTStateSolver_a5439bd042e472bc072109ae837c0a740}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!getRelativeLinkTransform@{getRelativeLinkTransform}}
+\index{getRelativeLinkTransform@{getRelativeLinkTransform}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{getRelativeLinkTransform()}{getRelativeLinkTransform()}}
+{\footnotesize\ttfamily Eigen\+::\+Isometry3d tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::get\+Relative\+Link\+Transform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{from\+\_\+link\+\_\+name,  }\item[{const std\+::string \&}]{to\+\_\+link\+\_\+name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get transform between two links using the current state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em from\+\_\+link\+\_\+name} & The link name the transform should be relative to \\
+\hline
+{\em to\+\_\+link\+\_\+name} & The link name to get transform \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The relative transform = inv(\+Transform(from\+\_\+link\+\_\+name)) $\ast$ Transform(to\+\_\+link\+\_\+name) 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_aaec713a1c063d905f8c66b011e2884d6}{tesseract\+\_\+scene\+\_\+graph\+::\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_aaebf658a50f9efd75bae693531e3f71b}\label{classtesseract__scene__graph_1_1OFKTStateSolver_aaebf658a50f9efd75bae693531e3f71b}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!getRevision@{getRevision}}
+\index{getRevision@{getRevision}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{getRevision()}{getRevision()}}
+{\footnotesize\ttfamily int tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::get\+Revision (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the state solver revision number. 
+
+\begin{DoxyReturn}{Returns}
+revision number 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver_a2f6574bca408984e18c6d6ac1df25edb}{tesseract\+\_\+scene\+\_\+graph\+::\+Mutable\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_ad094b8445776e90f63d5f85f19fb7c00}\label{classtesseract__scene__graph_1_1OFKTStateSolver_ad094b8445776e90f63d5f85f19fb7c00}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!getState@{getState}}
+\index{getState@{getState}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{Scene\+State}} tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the current state of the scene. 
+
+\begin{DoxyReturn}{Returns}
+The current state 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a8ee5f78843e293c4d9cd0d8b71372519}{tesseract\+\_\+scene\+\_\+graph\+::\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_a6c20881d959ec6360063308fad0d41e6}\label{classtesseract__scene__graph_1_1OFKTStateSolver_a6c20881d959ec6360063308fad0d41e6}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!getState@{getState}}
+\index{getState@{getState}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{Scene\+State}} tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::get\+State (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xd $>$ \&}]{joint\+\_\+values }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the state of the solver given the joint values. 
+
+This must be the same size and order as what is returned by get\+Joint\+Names 
+\begin{DoxyParams}{Parameters}
+{\em joint\+\_\+values} & The joint values \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a795683cd30c399f5723bbbbe50b6c919}{tesseract\+\_\+scene\+\_\+graph\+::\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_ad7ba6d485ea31199335645f3d3e840d6}\label{classtesseract__scene__graph_1_1OFKTStateSolver_ad7ba6d485ea31199335645f3d3e840d6}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!getState@{getState}}
+\index{getState@{getState}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{Scene\+State}} tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::get\+State (\begin{DoxyParamCaption}\item[{const std\+::unordered\+\_\+map$<$ std\+::string, double $>$ \&}]{joint\+\_\+values }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the state of the scene for a given set or subset of joint values. 
+
+This does not change the internal state of the solver.
+
+
+\begin{DoxyParams}{Parameters}
+{\em joints} & A map of joint names to joint values to change. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A the state of the environment 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a6a9e3e62ce768aaddbefd713a3be2115}{tesseract\+\_\+scene\+\_\+graph\+::\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_a525e8276271c43077f6277df23a2e32b}\label{classtesseract__scene__graph_1_1OFKTStateSolver_a525e8276271c43077f6277df23a2e32b}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!getState@{getState}}
+\index{getState@{getState}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{Scene\+State}} tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::get\+State (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{joint\+\_\+names,  }\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xd $>$ \&}]{joint\+\_\+values }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a9979c4d7269be1902e0dcb64b9b61ed0}{tesseract\+\_\+scene\+\_\+graph\+::\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_ad1292ae4f343f3d2498e9d87e857b9c2}\label{classtesseract__scene__graph_1_1OFKTStateSolver_ad1292ae4f343f3d2498e9d87e857b9c2}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!getStaticLinkNames@{getStaticLinkNames}}
+\index{getStaticLinkNames@{getStaticLinkNames}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{getStaticLinkNames()}{getStaticLinkNames()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::get\+Static\+Link\+Names (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get a vector of static link names in the environment. 
+
+\begin{DoxyReturn}{Returns}
+A vector of static link names 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_ae46246329da823fd4eaa5c7190409468}{tesseract\+\_\+scene\+\_\+graph\+::\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_a002f51c7fb4fe4107f0a4c15ca551d55}\label{classtesseract__scene__graph_1_1OFKTStateSolver_a002f51c7fb4fe4107f0a4c15ca551d55}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!hasLinkName@{hasLinkName}}
+\index{hasLinkName@{hasLinkName}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{hasLinkName()}{hasLinkName()}}
+{\footnotesize\ttfamily bool tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::has\+Link\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{link\+\_\+name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if link name exists. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em link\+\_\+name} & The link name to check for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if it exists, otherwise false 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a6651b931afdb4e5273b7e148c4210f6e}{tesseract\+\_\+scene\+\_\+graph\+::\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_ab61c01c09888cb61224b0fcf7686f10c}\label{classtesseract__scene__graph_1_1OFKTStateSolver_ab61c01c09888cb61224b0fcf7686f10c}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!initHelper@{initHelper}}
+\index{initHelper@{initHelper}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{initHelper()}{initHelper()}}
+{\footnotesize\ttfamily bool tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::init\+Helper (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph}{tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+Graph}} \&}]{scene\+\_\+graph,  }\item[{const std\+::string \&}]{prefix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_ab8c1b3ac2ff8c470f20cb9b159ae83a4}\label{classtesseract__scene__graph_1_1OFKTStateSolver_ab8c1b3ac2ff8c470f20cb9b159ae83a4}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!insertSceneGraph@{insertSceneGraph}}
+\index{insertSceneGraph@{insertSceneGraph}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{insertSceneGraph()}{insertSceneGraph()}}
+{\footnotesize\ttfamily bool tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::insert\+Scene\+Graph (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph}{Scene\+Graph}} \&}]{scene\+\_\+graph,  }\item[{const \mbox{\hyperlink{classtesseract__scene__graph_1_1Joint}{Joint}} \&}]{joint,  }\item[{const std\+::string \&}]{prefix = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Merge a scene into the current solver. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene\+\_\+graph} & Const ref to the graph to be merged \\
+\hline
+{\em joint} & The joint that connects current scene with the inserted scene \\
+\hline
+{\em prefix} & string Will be prepended to every link and joint of the merged scene \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return False if any link or joint name collides with current solver, otherwise True The prefix argument is meant to allow adding multiple copies of the same subgraph with different names 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver_ad50118aa4a9c78bfa753bdd621d5bb3f}{tesseract\+\_\+scene\+\_\+graph\+::\+Mutable\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_a8aee35dbbddeb62bdcd4069962eedf2d}\label{classtesseract__scene__graph_1_1OFKTStateSolver_a8aee35dbbddeb62bdcd4069962eedf2d}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!isActiveLinkName@{isActiveLinkName}}
+\index{isActiveLinkName@{isActiveLinkName}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{isActiveLinkName()}{isActiveLinkName()}}
+{\footnotesize\ttfamily bool tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::is\+Active\+Link\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{link\+\_\+name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if link is an active link. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em link\+\_\+name} & The link name to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if active, otherwise false 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_aa317e234377772c6c962a5743e299b1a}{tesseract\+\_\+scene\+\_\+graph\+::\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_a619b8263a9d1ff7c5dec3d27191525e4}\label{classtesseract__scene__graph_1_1OFKTStateSolver_a619b8263a9d1ff7c5dec3d27191525e4}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!loadActiveLinkNamesRecursive@{loadActiveLinkNamesRecursive}}
+\index{loadActiveLinkNamesRecursive@{loadActiveLinkNamesRecursive}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{loadActiveLinkNamesRecursive()}{loadActiveLinkNamesRecursive()}}
+{\footnotesize\ttfamily void tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::load\+Active\+Link\+Names\+Recursive (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::string $>$ \&}]{active\+\_\+link\+\_\+names,  }\item[{const \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode}{OFKTNode}} $\ast$}]{node,  }\item[{bool}]{active }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+load the active link names 
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_a39d133dfafa6d8a3faf24bbd5e57c8b1}\label{classtesseract__scene__graph_1_1OFKTStateSolver_a39d133dfafa6d8a3faf24bbd5e57c8b1}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!loadStaticLinkNamesRecursive@{loadStaticLinkNamesRecursive}}
+\index{loadStaticLinkNamesRecursive@{loadStaticLinkNamesRecursive}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{loadStaticLinkNamesRecursive()}{loadStaticLinkNamesRecursive()}}
+{\footnotesize\ttfamily void tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::load\+Static\+Link\+Names\+Recursive (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::string $>$ \&}]{static\+\_\+link\+\_\+names,  }\item[{const \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode}{OFKTNode}} $\ast$}]{node }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+load the static link names 
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_a2ce786f5c9931049dc646b8c367ecbd5}\label{classtesseract__scene__graph_1_1OFKTStateSolver_a2ce786f5c9931049dc646b8c367ecbd5}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!moveJoint@{moveJoint}}
+\index{moveJoint@{moveJoint}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{moveJoint()}{moveJoint()}}
+{\footnotesize\ttfamily bool tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::move\+Joint (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const std\+::string \&}]{parent\+\_\+link }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Move joint to new parent link. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the joint to move \\
+\hline
+{\em parent\+\_\+link} & Name of parent link to move to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if successful, otherwise false. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver_a827b214a2284312211d8f11e447564e5}{tesseract\+\_\+scene\+\_\+graph\+::\+Mutable\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_a45a95b8ee0a71d0727d0a3d5f19a72d6}\label{classtesseract__scene__graph_1_1OFKTStateSolver_a45a95b8ee0a71d0727d0a3d5f19a72d6}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!moveLink@{moveLink}}
+\index{moveLink@{moveLink}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{moveLink()}{moveLink()}}
+{\footnotesize\ttfamily bool tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::move\+Link (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtesseract__scene__graph_1_1Joint}{Joint}} \&}]{joint }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Move a link. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em joint} & The associated joint that defines the move \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return False if link does not exist or if joint name already exists, otherwise true 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver_a3e932b1a61ff1443b9144b040620219d}{tesseract\+\_\+scene\+\_\+graph\+::\+Mutable\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_ada7df058b56fd82f7178a173fd0eba09}\label{classtesseract__scene__graph_1_1OFKTStateSolver_ada7df058b56fd82f7178a173fd0eba09}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!moveLinkHelper@{moveLinkHelper}}
+\index{moveLinkHelper@{moveLinkHelper}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{moveLinkHelper()}{moveLinkHelper()}}
+{\footnotesize\ttfamily void tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::move\+Link\+Helper (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classtesseract__scene__graph_1_1JointLimits_abbdeeb05eed0eb0696da5019186ab3c8}{Joint\+Limits\+::\+Const\+Ptr}} $>$ \&}]{new\+\_\+joint\+\_\+limits,  }\item[{const \mbox{\hyperlink{classtesseract__scene__graph_1_1Joint}{Joint}} \&}]{joint }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+This a helper function for moving a link. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+kinematic\+\_\+joints} & The vector to store new kinematic joints added to the solver \\
+\hline
+{\em joint} & The joint performing the move \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_a538facdeb0f8c910e87dcc3919a9642f}\label{classtesseract__scene__graph_1_1OFKTStateSolver_a538facdeb0f8c910e87dcc3919a9642f}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!operator=@{operator=}}
+\index{operator=@{operator=}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver}{OFKTState\+Solver}} \& tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver}{OFKTState\+Solver}} \&}]{other }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_a5ac5d7e6090d7329642e1935d7d356e5}\label{classtesseract__scene__graph_1_1OFKTStateSolver_a5ac5d7e6090d7329642e1935d7d356e5}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!operator=@{operator=}}
+\index{operator=@{operator=}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver}{OFKTState\+Solver}} \& tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver}{OFKTState\+Solver}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_aa553b5d7c69564cbc428ae43293dd23a}\label{classtesseract__scene__graph_1_1OFKTStateSolver_aa553b5d7c69564cbc428ae43293dd23a}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!removeJoint@{removeJoint}}
+\index{removeJoint@{removeJoint}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{removeJoint()}{removeJoint()}}
+{\footnotesize\ttfamily bool tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::remove\+Joint (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Removes a joint from the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the joint to be removed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return False if a joint does not exists, otherwise true 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver_a7feca69cd86e830e91f602fb49536225}{tesseract\+\_\+scene\+\_\+graph\+::\+Mutable\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_a1ee811e857087efa5d68bd12fdaeffaa}\label{classtesseract__scene__graph_1_1OFKTStateSolver_a1ee811e857087efa5d68bd12fdaeffaa}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!removeJointHelper@{removeJointHelper}}
+\index{removeJointHelper@{removeJointHelper}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{removeJointHelper()}{removeJointHelper()}}
+{\footnotesize\ttfamily void tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::remove\+Joint\+Helper (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{removed\+\_\+links,  }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{removed\+\_\+joints,  }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{removed\+\_\+active\+\_\+joints,  }\item[{const std\+::vector$<$ long $>$ \&}]{removed\+\_\+active\+\_\+joints\+\_\+indices }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+This will clean up member variables joint\+\_\+names\+\_\+ and limits\+\_\+. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em removed\+\_\+links} & The removed link names container \\
+\hline
+{\em removed\+\_\+joints} & The removed joint names container \\
+\hline
+{\em removed\+\_\+active\+\_\+joints} & The removed active joint names container \\
+\hline
+{\em removed\+\_\+active\+\_\+joints\+\_\+indices} & The removed active joint names indices container \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_ae01b945659e38e9368cbfabed370a309}\label{classtesseract__scene__graph_1_1OFKTStateSolver_ae01b945659e38e9368cbfabed370a309}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!removeLink@{removeLink}}
+\index{removeLink@{removeLink}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{removeLink()}{removeLink()}}
+{\footnotesize\ttfamily bool tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::remove\+Link (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Removes a link from the graph. 
+
+Note\+: this will remove all inbound and outbound edges
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the link to be removed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return False if a link does not exists, otherwise true 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver_ac70940d6a07d6460867d14ec29384ec9}{tesseract\+\_\+scene\+\_\+graph\+::\+Mutable\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_a7adb6c740765b24a9dc31a3dfba47c52}\label{classtesseract__scene__graph_1_1OFKTStateSolver_a7adb6c740765b24a9dc31a3dfba47c52}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!removeNode@{removeNode}}
+\index{removeNode@{removeNode}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{removeNode()}{removeNode()}}
+{\footnotesize\ttfamily void tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::remove\+Node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode}{OFKTNode}} $\ast$}]{node,  }\item[{std\+::vector$<$ std\+::string $>$ \&}]{removed\+\_\+links,  }\item[{std\+::vector$<$ std\+::string $>$ \&}]{removed\+\_\+joints,  }\item[{std\+::vector$<$ std\+::string $>$ \&}]{removed\+\_\+active\+\_\+joints,  }\item[{std\+::vector$<$ long $>$ \&}]{removed\+\_\+active\+\_\+joints\+\_\+indices }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Remove a node and all of its children. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & The node to remove \\
+\hline
+{\em removed\+\_\+links} & The removed link names container \\
+\hline
+{\em removed\+\_\+joints} & The removed joint names container \\
+\hline
+{\em removed\+\_\+active\+\_\+joints} & The removed active joint names container \\
+\hline
+{\em removed\+\_\+active\+\_\+joints\+\_\+indices} & The removed active joint names indices container \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_a9bf70be378f138e97cbc5735f3701754}\label{classtesseract__scene__graph_1_1OFKTStateSolver_a9bf70be378f138e97cbc5735f3701754}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!replaceJoint@{replaceJoint}}
+\index{replaceJoint@{replaceJoint}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{replaceJoint()}{replaceJoint()}}
+{\footnotesize\ttfamily bool tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::replace\+Joint (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtesseract__scene__graph_1_1Joint}{Joint}} \&}]{joint }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Replace and existing joint with the provided one. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em joint} & The replacement joint \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return False if a joint does not exists, otherwise true 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver_a69d0b258314644193cdd5dadb1459ce9}{tesseract\+\_\+scene\+\_\+graph\+::\+Mutable\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_a864c6d2052077c4858203835447d01f1}\label{classtesseract__scene__graph_1_1OFKTStateSolver_a864c6d2052077c4858203835447d01f1}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!replaceJointHelper@{replaceJointHelper}}
+\index{replaceJointHelper@{replaceJointHelper}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{replaceJointHelper()}{replaceJointHelper()}}
+{\footnotesize\ttfamily void tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::replace\+Joint\+Helper (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classtesseract__scene__graph_1_1JointLimits_abbdeeb05eed0eb0696da5019186ab3c8}{Joint\+Limits\+::\+Const\+Ptr}} $>$ \&}]{new\+\_\+joint\+\_\+limits,  }\item[{const \mbox{\hyperlink{classtesseract__scene__graph_1_1Joint}{Joint}} \&}]{joint }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+This is a helper function for replacing a joint. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+kinematic\+\_\+joints} & The vector to store new kinematic joints added to the solver \\
+\hline
+{\em joint} & The joint performing the replacement \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_a79e00a40f6ed9206d20007dfd70932a4}\label{classtesseract__scene__graph_1_1OFKTStateSolver_a79e00a40f6ed9206d20007dfd70932a4}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!setRevision@{setRevision}}
+\index{setRevision@{setRevision}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{setRevision()}{setRevision()}}
+{\footnotesize\ttfamily void tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::set\+Revision (\begin{DoxyParamCaption}\item[{int}]{revision }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Set the state solver revision number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em revision} & The revision number to assign \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver_ae073b6457dcad8501a63ad7874cadfb6}{tesseract\+\_\+scene\+\_\+graph\+::\+Mutable\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_af700e9cef4517f715a0749ea58ac9bdd}\label{classtesseract__scene__graph_1_1OFKTStateSolver_af700e9cef4517f715a0749ea58ac9bdd}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!setState@{setState}}
+\index{setState@{setState}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{setState()}{setState()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::set\+State (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xd $>$ \&}]{joint\+\_\+values }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Set the current state of the solver. 
+
+This must be the same size and order as what is returned by get\+Joint\+Names 
+\begin{DoxyParams}{Parameters}
+{\em joint\+\_\+values} & The joint values \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_ae2d6ddc4de2aa1dcdf89dcf3d4d4a7ab}{tesseract\+\_\+scene\+\_\+graph\+::\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_a1a7d316d62736a2b924bf46c7ca40966}\label{classtesseract__scene__graph_1_1OFKTStateSolver_a1a7d316d62736a2b924bf46c7ca40966}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!setState@{setState}}
+\index{setState@{setState}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{setState()}{setState()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::set\+State (\begin{DoxyParamCaption}\item[{const std\+::unordered\+\_\+map$<$ std\+::string, double $>$ \&}]{joint\+\_\+values }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Set the current state of the solver. 
+
+After updating the current state these function must call current\+State\+Changed() which will update the contact managers transforms 
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a34cc5ed4d42c8ebe3a91a8ab624f7a55}{tesseract\+\_\+scene\+\_\+graph\+::\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_a2892df7e5cca9b4235226d3c338731f0}\label{classtesseract__scene__graph_1_1OFKTStateSolver_a2892df7e5cca9b4235226d3c338731f0}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!setState@{setState}}
+\index{setState@{setState}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{setState()}{setState()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::set\+State (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{joint\+\_\+names,  }\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xd $>$ \&}]{joint\+\_\+values }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a928eadfb2ddfd041245968697d11b77e}{tesseract\+\_\+scene\+\_\+graph\+::\+State\+Solver}}.
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_a879cc7aa8da89043d2f1d290ae9cafbe}\label{classtesseract__scene__graph_1_1OFKTStateSolver_a879cc7aa8da89043d2f1d290ae9cafbe}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!update@{update}}
+\index{update@{update}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode}{OFKTNode}} $\ast$}]{node,  }\item[{bool}]{update\+\_\+required }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+This update the local and world transforms. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & The node to start from \\
+\hline
+{\em update\+\_\+required} & Indicates if work transform update is required \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_a49b2c2c90e2e3c092f087a4fb949e427}\label{classtesseract__scene__graph_1_1OFKTStateSolver_a49b2c2c90e2e3c092f087a4fb949e427}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!update@{update}}
+\index{update@{update}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{Scene\+State}} \&}]{state,  }\item[{const \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode}{OFKTNode}} $\ast$}]{node,  }\item[{Eigen\+::\+Isometry3d}]{parent\+\_\+world\+\_\+tf,  }\item[{bool}]{update\+\_\+required }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+This is a const version of the function above. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & The node to start from \\
+\hline
+{\em parent\+\_\+world\+\_\+tf} & The nodes parent\textquotesingle{}s world transformaiton \\
+\hline
+{\em update\+\_\+required} & Indicates if work transform update is required \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_adbb104f4da94ac1963c63a970ed9477d}\label{classtesseract__scene__graph_1_1OFKTStateSolver_adbb104f4da94ac1963c63a970ed9477d}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!ofkt\_builder@{ofkt\_builder}}
+\index{ofkt\_builder@{ofkt\_builder}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{ofkt\_builder}{ofkt\_builder}}
+{\footnotesize\ttfamily friend struct \mbox{\hyperlink{structtesseract__scene__graph_1_1ofkt__builder}{ofkt\+\_\+builder}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_aed37a10c9786f00127bed6aedcc8189d}\label{classtesseract__scene__graph_1_1OFKTStateSolver_aed37a10c9786f00127bed6aedcc8189d}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!active\_joint\_names\_@{active\_joint\_names\_}}
+\index{active\_joint\_names\_@{active\_joint\_names\_}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{active\_joint\_names\_}{active\_joint\_names\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::active\+\_\+joint\+\_\+names\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+The active joint names \mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_ac8e79ab61d299aa51a292180d12625a1}\label{classtesseract__scene__graph_1_1OFKTStateSolver_ac8e79ab61d299aa51a292180d12625a1}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!current\_state\_@{current\_state\_}}
+\index{current\_state\_@{current\_state\_}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{current\_state\_}{current\_state\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{Scene\+State}} tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::current\+\_\+state\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+Current state of the scene \mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_a0165077bc3db7f4faba78da3a6bfe89c}\label{classtesseract__scene__graph_1_1OFKTStateSolver_a0165077bc3db7f4faba78da3a6bfe89c}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!joint\_names\_@{joint\_names\_}}
+\index{joint\_names\_@{joint\_names\_}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{joint\_names\_}{joint\_names\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::joint\+\_\+names\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+The link names \mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_a36e99fabb0e0c153685e61c17d0bb099}\label{classtesseract__scene__graph_1_1OFKTStateSolver_a36e99fabb0e0c153685e61c17d0bb099}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!limits\_@{limits\_}}
+\index{limits\_@{limits\_}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{limits\_}{limits\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtesseract__common_1_1KinematicLimits}{tesseract\+\_\+common\+::\+Kinematic\+Limits}} tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::limits\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+The kinematic limits \mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_af8d638ce58c58ddeb9f1df1e828f3501}\label{classtesseract__scene__graph_1_1OFKTStateSolver_af8d638ce58c58ddeb9f1df1e828f3501}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!link\_map\_@{link\_map\_}}
+\index{link\_map\_@{link\_map\_}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{link\_map\_}{link\_map\_}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$std\+::string, \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode}{OFKTNode}}$\ast$$>$ tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::link\+\_\+map\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+The link name map to node \mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_a21557e14491a0c547f8f190d4f045ed6}\label{classtesseract__scene__graph_1_1OFKTStateSolver_a21557e14491a0c547f8f190d4f045ed6}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!link\_names\_@{link\_names\_}}
+\index{link\_names\_@{link\_names\_}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{link\_names\_}{link\_names\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::link\+\_\+names\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+The link names \mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_af8872168f97e7d3b93ffd523de8c5e5b}\label{classtesseract__scene__graph_1_1OFKTStateSolver_af8872168f97e7d3b93ffd523de8c5e5b}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!mutex\_@{mutex\_}}
+\index{mutex\_@{mutex\_}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{mutex\_}{mutex\_}}
+{\footnotesize\ttfamily std\+::shared\+\_\+mutex tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::mutex\+\_\+\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}}
+
+
+
+The state solver can be accessed from multiple threads, need use mutex throughout. 
+
+\mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_a6a4c3d0cac9c413fa3c61fc7a33fde20}\label{classtesseract__scene__graph_1_1OFKTStateSolver_a6a4c3d0cac9c413fa3c61fc7a33fde20}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!nodes\_@{nodes\_}}
+\index{nodes\_@{nodes\_}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{nodes\_}{nodes\_}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$std\+::string, \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode_a95c6ae7f1e085493d4c60d87521c8638}{OFKTNode\+::\+UPtr}}$>$ tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::nodes\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+The joint name map to node \mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_a4221a8b4c2dba8c30bb53fbbc6da960b}\label{classtesseract__scene__graph_1_1OFKTStateSolver_a4221a8b4c2dba8c30bb53fbbc6da960b}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!revision\_@{revision\_}}
+\index{revision\_@{revision\_}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{revision\_}{revision\_}}
+{\footnotesize\ttfamily int tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::revision\+\_\+ \{ 0 \}\hspace{0.3cm}{\ttfamily [private]}}
+
+The revision number \mbox{\Hypertarget{classtesseract__scene__graph_1_1OFKTStateSolver_a125fca1ab57900028e33cb2ce60e5160}\label{classtesseract__scene__graph_1_1OFKTStateSolver_a125fca1ab57900028e33cb2ce60e5160}} 
+\index{tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}!root\_@{root\_}}
+\index{root\_@{root\_}!tesseract\_scene\_graph::OFKTStateSolver@{tesseract\_scene\_graph::OFKTStateSolver}}
+\doxysubsubsection{\texorpdfstring{root\_}{root\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode_a95c6ae7f1e085493d4c60d87521c8638}{OFKTNode\+::\+UPtr}} tesseract\+\_\+scene\+\_\+graph\+::\+OFKTState\+Solver\+::root\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+The root node of the tree 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+tesseract\+\_\+state\+\_\+solver/include/tesseract\+\_\+state\+\_\+solver/ofkt/\mbox{\hyperlink{ofkt__state__solver_8h}{ofkt\+\_\+state\+\_\+solver.\+h}}\item 
+tesseract\+\_\+state\+\_\+solver/src/\mbox{\hyperlink{ofkt__state__solver_8cpp}{ofkt\+\_\+state\+\_\+solver.\+cpp}}\end{DoxyCompactItemize}

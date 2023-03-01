@@ -1,0 +1,87 @@
+\hypertarget{kinematic__group_8h_source}{}\doxysection{kinematic\+\_\+group.\+h}
+\label{kinematic__group_8h_source}\index{tesseract\_kinematics/core/include/tesseract\_kinematics/core/kinematic\_group.h@{tesseract\_kinematics/core/include/tesseract\_kinematics/core/kinematic\_group.h}}
+\mbox{\hyperlink{kinematic__group_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#ifndef TESSERACT\_KINEMATICS\_KINEMATIC\_GROUP\_H}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define TESSERACT\_KINEMATICS\_KINEMATIC\_GROUP\_H}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{macros_8h}{tesseract\_common/macros.h}}>}}
+\DoxyCodeLine{30 \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include <Eigen/Geometry>}}
+\DoxyCodeLine{33 \mbox{\hyperlink{namespaceTESSERACT__COMMON__IGNORE__WARNINGS__POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{joint__group_8h}{tesseract\_kinematics/core/joint\_group.h}}>}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{inverse__kinematics_8h}{tesseract\_kinematics/core/inverse\_kinematics.h}}>}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__kinematics}{tesseract\_kinematics}}}
+\DoxyCodeLine{39 \{}
+\DoxyCodeLine{47 \textcolor{keyword}{struct }\mbox{\hyperlink{structtesseract__kinematics_1_1KinGroupIKInput}{KinGroupIKInput}}}
+\DoxyCodeLine{48 \{}
+\DoxyCodeLine{49   \textcolor{comment}{// LCOV\_EXCL\_START}}
+\DoxyCodeLine{50   EIGEN\_MAKE\_ALIGNED\_OPERATOR\_NEW}
+\DoxyCodeLine{51   \textcolor{comment}{// LCOV\_EXCL\_STOP}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53   \mbox{\hyperlink{structtesseract__kinematics_1_1KinGroupIKInput_a5313918d1348958c1d25863f55d6d7c5}{KinGroupIKInput}}(\textcolor{keyword}{const} Eigen::Isometry3d\& p, std::string wf, std::string tl)}
+\DoxyCodeLine{54     : \mbox{\hyperlink{structtesseract__kinematics_1_1KinGroupIKInput_a8fd97db35886336dc1d938efe59b20a5}{pose}}(p), \mbox{\hyperlink{structtesseract__kinematics_1_1KinGroupIKInput_ab1b77f0e7cf20ff72711db3a526f9d6a}{working\_frame}}(std::move(wf)), \mbox{\hyperlink{structtesseract__kinematics_1_1KinGroupIKInput_ab1b4bc86186d1166ac5aa64cfcc418a8}{tip\_link\_name}}(std::move(tl))}
+\DoxyCodeLine{55   \{}
+\DoxyCodeLine{56   \}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58   \mbox{\hyperlink{structtesseract__kinematics_1_1KinGroupIKInput_a2f8e4ac96b3f67f4026ed01315546ef6}{KinGroupIKInput}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{61   Eigen::Isometry3d \mbox{\hyperlink{structtesseract__kinematics_1_1KinGroupIKInput_a8fd97db35886336dc1d938efe59b20a5}{pose}};}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{67   std::string \mbox{\hyperlink{structtesseract__kinematics_1_1KinGroupIKInput_ab1b77f0e7cf20ff72711db3a526f9d6a}{working\_frame}};}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{73   std::string \mbox{\hyperlink{structtesseract__kinematics_1_1KinGroupIKInput_ab1b4bc86186d1166ac5aa64cfcc418a8}{tip\_link\_name}};  \textcolor{comment}{// This defines the internal kinematic group the information belongs to}}
+\DoxyCodeLine{74 \};}
+\DoxyCodeLine{75 \textcolor{keyword}{using }\mbox{\hyperlink{namespacetesseract__kinematics_ae5941af5d420d5b756e9d3d1fcaa1c5d}{KinGroupIKInputs}} = \mbox{\hyperlink{namespacetesseract__common_a000d15c3ab8d8ba4ebdaae64153b053a}{tesseract\_common::AlignedVector<KinGroupIKInput>}};}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__kinematics_1_1KinematicGroup}{KinematicGroup}} : \textcolor{keyword}{public} \mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup}{JointGroup}}}
+\DoxyCodeLine{78 \{}
+\DoxyCodeLine{79 \textcolor{keyword}{public}:}
+\DoxyCodeLine{80   \textcolor{comment}{// LCOV\_EXCL\_START}}
+\DoxyCodeLine{81   EIGEN\_MAKE\_ALIGNED\_OPERATOR\_NEW}
+\DoxyCodeLine{82   \textcolor{comment}{// LCOV\_EXCL\_STOP}}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__kinematics_1_1KinematicGroup_aadccd9a6ba66ca9d44deeca2d0c123bc}{Ptr}} = std::shared\_ptr<KinematicGroup>;}
+\DoxyCodeLine{85   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__kinematics_1_1KinematicGroup_a60cdca8ca45725ba707ff781160a1db0}{ConstPtr}} = std::shared\_ptr<const KinematicGroup>;}
+\DoxyCodeLine{86   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__kinematics_1_1KinematicGroup_a039a701cf2b2749effa2d0400d45aeec}{UPtr}} = std::unique\_ptr<KinematicGroup>;}
+\DoxyCodeLine{87   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__kinematics_1_1KinematicGroup_ad2a767f92fd6a70152d4ce65f3413672}{ConstUPtr}} = std::unique\_ptr<const KinematicGroup>;}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89   \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicGroup_a2d390f5fe3fb0937b83a71848f287bdd}{\string~KinematicGroup}}() \textcolor{keyword}{override} = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{90   \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicGroup}{KinematicGroup}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicGroup}{KinematicGroup}}\& other);}
+\DoxyCodeLine{91   \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicGroup}{KinematicGroup}}\& \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicGroup_a611f7456375ada53264ffcc435f8a475}{operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicGroup}{KinematicGroup}}\& other);}
+\DoxyCodeLine{92   \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicGroup_a9e591bdab82dbcd864715de0f9293623}{KinematicGroup}}(\mbox{\hyperlink{classtesseract__kinematics_1_1KinematicGroup}{KinematicGroup}}\&\&) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{93   \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicGroup}{KinematicGroup}}\& \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicGroup_a0d7f26562a934208db75013a676c698b}{operator=}}(\mbox{\hyperlink{classtesseract__kinematics_1_1KinematicGroup}{KinematicGroup}}\&\&) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{102   \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicGroup}{KinematicGroup}}(std::string \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}},}
+\DoxyCodeLine{103                  std::vector<std::string> \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_ae55b39adb52b29eeefd7d128c4b56f2a}{joint\_names}},}
+\DoxyCodeLine{104                  \mbox{\hyperlink{classtesseract__kinematics_1_1InverseKinematics_a68e526591337b0781c9ec91618d1d5f0}{InverseKinematics::UPtr}} \mbox{\hyperlink{ikfast__kinematics__unit_8cpp_a0b6eafb1eec9d96fe3214af2a8c5f07a}{inv\_kin}},}
+\DoxyCodeLine{105                  \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph}{tesseract\_scene\_graph::SceneGraph}}\& \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a8d4d0dc3a6b9a7030970bf9ed3764756}{scene\_graph}},}
+\DoxyCodeLine{106                  \textcolor{keyword}{const} \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{tesseract\_scene\_graph::SceneState}}\& \mbox{\hyperlink{kinematics__factory__unit_8cpp_a918c8faa92717caa3ba8aef1b4ef8163}{scene\_state}});}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{116   \mbox{\hyperlink{namespacetesseract__kinematics_af12a01d2264e3371dc9bc7db2a7b59ac}{IKSolutions}} \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicGroup_a7c036ae50a4ade99162fccd6c5a23b4f}{calcInvKin}}(\textcolor{keyword}{const} \mbox{\hyperlink{namespacetesseract__kinematics_ae5941af5d420d5b756e9d3d1fcaa1c5d}{KinGroupIKInputs}}\& tip\_link\_poses, \textcolor{keyword}{const} Eigen::Ref<const Eigen::VectorXd>\& \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a113a9f110b7848f55fd8f5367a019304}{seed}}) \textcolor{keyword}{const};}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{126   \mbox{\hyperlink{namespacetesseract__kinematics_af12a01d2264e3371dc9bc7db2a7b59ac}{IKSolutions}} \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicGroup_a7c036ae50a4ade99162fccd6c5a23b4f}{calcInvKin}}(\textcolor{keyword}{const} \mbox{\hyperlink{structtesseract__kinematics_1_1KinGroupIKInput}{KinGroupIKInput}}\& tip\_link\_pose, \textcolor{keyword}{const} Eigen::Ref<const Eigen::VectorXd>\& \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a113a9f110b7848f55fd8f5367a019304}{seed}}) \textcolor{keyword}{const};}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{136   std::vector<std::string> \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicGroup_aabfb7d966a2d4522897fa47f6347dfbf}{getAllValidWorkingFrames}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{137 }
+\DoxyCodeLine{146   std::vector<std::string> \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicGroup_a15dfeff9c322ae017dea1981c7354bd4}{getAllPossibleTipLinkNames}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148 \textcolor{keyword}{private}:}
+\DoxyCodeLine{149   std::vector<std::string> \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicGroup_a856beb499006e284d3810cde728bb149}{joint\_names\_}};}
+\DoxyCodeLine{150   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicGroup_a55e57bae41660848b376be8e6e55f747}{reorder\_required\_}}\{ \textcolor{keyword}{false} \};}
+\DoxyCodeLine{151   std::vector<Eigen::Index> \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicGroup_a81a213dacc5c61b7783008b58fff2296}{inv\_kin\_joint\_map\_}};}
+\DoxyCodeLine{152   \mbox{\hyperlink{classtesseract__kinematics_1_1InverseKinematics_a68e526591337b0781c9ec91618d1d5f0}{InverseKinematics::UPtr}} \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicGroup_a136a6e0ddb2dafd4fd881664cb4afac2}{inv\_kin\_}};}
+\DoxyCodeLine{153   Eigen::Isometry3d \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicGroup_a05c2633edafe43cb9a487fe410287ae1}{inv\_to\_fwd\_base\_}}\{ Eigen::Isometry3d::Identity() \};}
+\DoxyCodeLine{154   std::vector<std::string> \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicGroup_ab7358dc221a7b02415384cdcdfcdd0a2}{working\_frames\_}};}
+\DoxyCodeLine{155   std::unordered\_map<std::string, std::string> \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicGroup_a7044329e2f1dc1ac0301e1f2ed64ac03}{inv\_tip\_links\_map\_}};}
+\DoxyCodeLine{156 \};}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{158 \}  \textcolor{comment}{// namespace tesseract\_kinematics}}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_KINEMATICS\_KINEMATIC\_GROUP\_H}}
+
+\end{DoxyCode}

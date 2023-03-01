@@ -1,0 +1,626 @@
+\hypertarget{classtesseract__collision_1_1DiscreteContactManager}{}\doxysection{tesseract\+\_\+collision\+::Discrete\+Contact\+Manager Class Reference}
+\label{classtesseract__collision_1_1DiscreteContactManager}\index{tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}}
+
+
+{\ttfamily \#include $<$discrete\+\_\+contact\+\_\+manager.\+h$>$}
+
+
+
+Inheritance diagram for tesseract\+\_\+collision\+::Discrete\+Contact\+Manager\+:
+% FIG 0
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a108295071670971e81fe3c34794db427}{Ptr}} = std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager}{Discrete\+Contact\+Manager}} $>$
+\item 
+using \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a75a6bc0b45164d7c252a7164f4740530}{Const\+Ptr}} = std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager}{Discrete\+Contact\+Manager}} $>$
+\item 
+using \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a52a7b770e7b6cec875254d7cdea3c314}{UPtr}} = std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager}{Discrete\+Contact\+Manager}} $>$
+\item 
+using \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_aed27da57e80ae548948cb9d9f28abb30}{Const\+UPtr}} = std\+::unique\+\_\+ptr$<$ const \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager}{Discrete\+Contact\+Manager}} $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a294b2cb3347c5e0900ddb8c03d5477fe}{Discrete\+Contact\+Manager}} ()=default
+\item 
+virtual \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a00acdc693b869d2bfab59b51ac2f7bd1}{$\sim$\+Discrete\+Contact\+Manager}} ()=default
+\item 
+\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a479ac1bb99852d94b1218eb092492b3c}{Discrete\+Contact\+Manager}} (const \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager}{Discrete\+Contact\+Manager}} \&)=delete
+\item 
+\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager}{Discrete\+Contact\+Manager}} \& \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a59a8854b9b77cae6f682b1b39750642a}{operator=}} (const \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager}{Discrete\+Contact\+Manager}} \&)=delete
+\item 
+\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_aa969421ef7c1892d02ca048fbca43e88}{Discrete\+Contact\+Manager}} (\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager}{Discrete\+Contact\+Manager}} \&\&)=delete
+\item 
+\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager}{Discrete\+Contact\+Manager}} \& \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_aa64d3c606ad88ffd33f7fa3338558770}{operator=}} (\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager}{Discrete\+Contact\+Manager}} \&\&)=delete
+\item 
+virtual std\+::string \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a34f6da1e459e6ccaff64b6a2a80a2fcc}{get\+Name}} () const =0
+\begin{DoxyCompactList}\small\item\em Get the name of the contact manager. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a52a7b770e7b6cec875254d7cdea3c314}{Discrete\+Contact\+Manager\+::\+UPtr}} \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_ab491e2f52824b596646e0b86633140a2}{clone}} () const =0
+\begin{DoxyCompactList}\small\item\em Clone the manager. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a2a82db2881b5f7c701ed3d42db053ae8}{add\+Collision\+Object}} (const std\+::string \&\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}, const int \&mask\+\_\+id, const \mbox{\hyperlink{namespacetesseract__collision_a2472107aae8174a30873bb0a955c3cb4}{Collision\+Shapes\+Const}} \&shapes, const \mbox{\hyperlink{namespacetesseract__common_a94d9921fc7ed323609ac57d06f939cb6}{tesseract\+\_\+common\+::\+Vector\+Isometry3d}} \&shape\+\_\+poses, bool enabled=true)=0
+\begin{DoxyCompactList}\small\item\em Add a object to the checker. \end{DoxyCompactList}\item 
+virtual const \mbox{\hyperlink{namespacetesseract__collision_a2472107aae8174a30873bb0a955c3cb4}{Collision\+Shapes\+Const}} \& \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_adb11d7c35bd134e336d707d71faa1886}{get\+Collision\+Object\+Geometries}} (const std\+::string \&\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}) const =0
+\begin{DoxyCompactList}\small\item\em Get a collision objects collision geometries. \end{DoxyCompactList}\item 
+virtual const \mbox{\hyperlink{namespacetesseract__common_a94d9921fc7ed323609ac57d06f939cb6}{tesseract\+\_\+common\+::\+Vector\+Isometry3d}} \& \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a894ac7465ba94d5d8b2642db3701815d}{get\+Collision\+Object\+Geometries\+Transforms}} (const std\+::string \&\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}) const =0
+\begin{DoxyCompactList}\small\item\em Get a collision objects collision geometries transforms. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a88de26744511600a096f25d37eebd5c9}{has\+Collision\+Object}} (const std\+::string \&\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}) const =0
+\begin{DoxyCompactList}\small\item\em Find if a collision object already exists. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a76f980b2fff3c2aa69be2b1dfce33dc6}{remove\+Collision\+Object}} (const std\+::string \&\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}})=0
+\begin{DoxyCompactList}\small\item\em Remove an object from the checker. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a6327db89cb640fe6161481d3e0f39045}{enable\+Collision\+Object}} (const std\+::string \&\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}})=0
+\begin{DoxyCompactList}\small\item\em Enable an object. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_aa5b4b0c83fbb06ba8944845b87471fa9}{disable\+Collision\+Object}} (const std\+::string \&\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}})=0
+\begin{DoxyCompactList}\small\item\em Disable an object. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a08fe68873a15051d9b7ac5ad501c3de8}{is\+Collision\+Object\+Enabled}} (const std\+::string \&\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}) const =0
+\begin{DoxyCompactList}\small\item\em Check if collision object is enabled. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a21d038a9836cdb5a3b44ad527fd93a5b}{set\+Collision\+Objects\+Transform}} (const std\+::string \&\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}, const Eigen\+::\+Isometry3d \&\mbox{\hyperlink{tesseract__environment__collision_8cpp_a7272862bfe9e301a87918b3d560aebc3}{pose}})=0
+\begin{DoxyCompactList}\small\item\em Set a single collision object\textquotesingle{}s transforms. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a46fafdf26fad2dc2b3f86e2d41efc7e4}{set\+Collision\+Objects\+Transform}} (const std\+::vector$<$ std\+::string $>$ \&names, const \mbox{\hyperlink{namespacetesseract__common_a94d9921fc7ed323609ac57d06f939cb6}{tesseract\+\_\+common\+::\+Vector\+Isometry3d}} \&poses)=0
+\begin{DoxyCompactList}\small\item\em Set a series of collision object\textquotesingle{}s transforms. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_adabfaefb6fef85c3c6df04d4914dce71}{set\+Collision\+Objects\+Transform}} (const \mbox{\hyperlink{namespacetesseract__common_a67bde3cb7bb235f0f61c370ef8bc74d8}{tesseract\+\_\+common\+::\+Transform\+Map}} \&transforms)=0
+\begin{DoxyCompactList}\small\item\em Set a series of collision object\textquotesingle{}s transforms. \end{DoxyCompactList}\item 
+virtual const std\+::vector$<$ std\+::string $>$ \& \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a7a4697f7c582ab800142a1d4923607ab}{get\+Collision\+Objects}} () const =0
+\begin{DoxyCompactList}\small\item\em Get all collision objects. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a14111f72aeaa2f22cf79b64e54479fb0}{set\+Active\+Collision\+Objects}} (const std\+::vector$<$ std\+::string $>$ \&names)=0
+\begin{DoxyCompactList}\small\item\em Set which collision objects can move. \end{DoxyCompactList}\item 
+virtual const std\+::vector$<$ std\+::string $>$ \& \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_abd1ad9870349f58375a7383adccd25cc}{get\+Active\+Collision\+Objects}} () const =0
+\begin{DoxyCompactList}\small\item\em Get which collision objects can move. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_acbd053442a4d591c29aab5be5706ef04}{set\+Collision\+Margin\+Data}} (\mbox{\hyperlink{namespacetesseract__collision_a0717a3c53d08d510257f631ea96cb560}{Collision\+Margin\+Data}} collision\+\_\+margin\+\_\+data, \mbox{\hyperlink{namespacetesseract__common_af06d85d024a36d63b58a6031556af8a1}{Collision\+Margin\+Override\+Type}} override\+\_\+type=Collision\+Margin\+Override\+Type\+::\+REPLACE)=0
+\begin{DoxyCompactList}\small\item\em Set the contact distance thresholds for which collision should be considered on a per pair basis. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a7e2c12063bf47e53cdc52d9808731e53}{set\+Default\+Collision\+Margin\+Data}} (double default\+\_\+collision\+\_\+margin)=0
+\begin{DoxyCompactList}\small\item\em Set the default collision margin. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a759e34926ed6e0afcd797cd211202940}{set\+Pair\+Collision\+Margin\+Data}} (const std\+::string \&name1, const std\+::string \&name2, double collision\+\_\+margin)=0
+\begin{DoxyCompactList}\small\item\em Set the margin for a given contact pair. \end{DoxyCompactList}\item 
+virtual const \mbox{\hyperlink{namespacetesseract__collision_a0717a3c53d08d510257f631ea96cb560}{Collision\+Margin\+Data}} \& \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_abd2686026229a788a0e6836d20ea7008}{get\+Collision\+Margin\+Data}} () const =0
+\begin{DoxyCompactList}\small\item\em Get the contact distance threshold. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a0b08e08614381d595b6741e3a7bfb7fd}{set\+Is\+Contact\+Allowed\+Fn}} (\mbox{\hyperlink{namespacetesseract__collision_abe7752ce161fbd1139533ac566fec1cb}{Is\+Contact\+Allowed\+Fn}} fn)=0
+\begin{DoxyCompactList}\small\item\em Set the active function for determining if two links are allowed to be in collision. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{namespacetesseract__collision_abe7752ce161fbd1139533ac566fec1cb}{Is\+Contact\+Allowed\+Fn}} \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_ad515c562c2bc0cd98e3559dbd05bd7e4}{get\+Is\+Contact\+Allowed\+Fn}} () const =0
+\begin{DoxyCompactList}\small\item\em Get the active function for determining if two links are allowed to be in collision. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a1ddfa181400941e093c76a852df72425}{contact\+Test}} (\mbox{\hyperlink{namespacetesseract__collision_a1eeace4cc41027dbde8e7dbeb77ca7cf}{Contact\+Result\+Map}} \&collisions, const \mbox{\hyperlink{structtesseract__collision_1_1ContactRequest}{Contact\+Request}} \&request)=0
+\begin{DoxyCompactList}\small\item\em Perform a contact test for all objects based. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a2dcf9480a716e14fc0918516d2fa04cf}{apply\+Contact\+Manager\+Config}} (const \mbox{\hyperlink{structtesseract__collision_1_1ContactManagerConfig}{Contact\+Manager\+Config}} \&\mbox{\hyperlink{collision__core__unit_8cpp_a2013c60ebd4a63f15fafe2287736ae37}{config}})
+\begin{DoxyCompactList}\small\item\em Applies settings in the config. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classtesseract__collision_1_1DiscreteContactManager_a75a6bc0b45164d7c252a7164f4740530}\label{classtesseract__collision_1_1DiscreteContactManager_a75a6bc0b45164d7c252a7164f4740530}} 
+\index{tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}!ConstPtr@{ConstPtr}}
+\index{ConstPtr@{ConstPtr}!tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}}
+\doxysubsubsection{\texorpdfstring{ConstPtr}{ConstPtr}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a75a6bc0b45164d7c252a7164f4740530}{tesseract\+\_\+collision\+::\+Discrete\+Contact\+Manager\+::\+Const\+Ptr}} =  std\+::shared\+\_\+ptr$<$const \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager}{Discrete\+Contact\+Manager}}$>$}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1DiscreteContactManager_aed27da57e80ae548948cb9d9f28abb30}\label{classtesseract__collision_1_1DiscreteContactManager_aed27da57e80ae548948cb9d9f28abb30}} 
+\index{tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}!ConstUPtr@{ConstUPtr}}
+\index{ConstUPtr@{ConstUPtr}!tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}}
+\doxysubsubsection{\texorpdfstring{ConstUPtr}{ConstUPtr}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_aed27da57e80ae548948cb9d9f28abb30}{tesseract\+\_\+collision\+::\+Discrete\+Contact\+Manager\+::\+Const\+UPtr}} =  std\+::unique\+\_\+ptr$<$const \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager}{Discrete\+Contact\+Manager}}$>$}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1DiscreteContactManager_a108295071670971e81fe3c34794db427}\label{classtesseract__collision_1_1DiscreteContactManager_a108295071670971e81fe3c34794db427}} 
+\index{tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}!Ptr@{Ptr}}
+\index{Ptr@{Ptr}!tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}}
+\doxysubsubsection{\texorpdfstring{Ptr}{Ptr}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a108295071670971e81fe3c34794db427}{tesseract\+\_\+collision\+::\+Discrete\+Contact\+Manager\+::\+Ptr}} =  std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager}{Discrete\+Contact\+Manager}}$>$}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1DiscreteContactManager_a52a7b770e7b6cec875254d7cdea3c314}\label{classtesseract__collision_1_1DiscreteContactManager_a52a7b770e7b6cec875254d7cdea3c314}} 
+\index{tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}!UPtr@{UPtr}}
+\index{UPtr@{UPtr}!tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}}
+\doxysubsubsection{\texorpdfstring{UPtr}{UPtr}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a52a7b770e7b6cec875254d7cdea3c314}{tesseract\+\_\+collision\+::\+Discrete\+Contact\+Manager\+::\+UPtr}} =  std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager}{Discrete\+Contact\+Manager}}$>$}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtesseract__collision_1_1DiscreteContactManager_a294b2cb3347c5e0900ddb8c03d5477fe}\label{classtesseract__collision_1_1DiscreteContactManager_a294b2cb3347c5e0900ddb8c03d5477fe}} 
+\index{tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}!DiscreteContactManager@{DiscreteContactManager}}
+\index{DiscreteContactManager@{DiscreteContactManager}!tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}}
+\doxysubsubsection{\texorpdfstring{DiscreteContactManager()}{DiscreteContactManager()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily tesseract\+\_\+collision\+::\+Discrete\+Contact\+Manager\+::\+Discrete\+Contact\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1DiscreteContactManager_a00acdc693b869d2bfab59b51ac2f7bd1}\label{classtesseract__collision_1_1DiscreteContactManager_a00acdc693b869d2bfab59b51ac2f7bd1}} 
+\index{tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}!````~DiscreteContactManager@{$\sim$DiscreteContactManager}}
+\index{````~DiscreteContactManager@{$\sim$DiscreteContactManager}!tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}}
+\doxysubsubsection{\texorpdfstring{$\sim$DiscreteContactManager()}{~DiscreteContactManager()}}
+{\footnotesize\ttfamily virtual tesseract\+\_\+collision\+::\+Discrete\+Contact\+Manager\+::$\sim$\+Discrete\+Contact\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1DiscreteContactManager_a479ac1bb99852d94b1218eb092492b3c}\label{classtesseract__collision_1_1DiscreteContactManager_a479ac1bb99852d94b1218eb092492b3c}} 
+\index{tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}!DiscreteContactManager@{DiscreteContactManager}}
+\index{DiscreteContactManager@{DiscreteContactManager}!tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}}
+\doxysubsubsection{\texorpdfstring{DiscreteContactManager()}{DiscreteContactManager()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily tesseract\+\_\+collision\+::\+Discrete\+Contact\+Manager\+::\+Discrete\+Contact\+Manager (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager}{Discrete\+Contact\+Manager}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1DiscreteContactManager_aa969421ef7c1892d02ca048fbca43e88}\label{classtesseract__collision_1_1DiscreteContactManager_aa969421ef7c1892d02ca048fbca43e88}} 
+\index{tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}!DiscreteContactManager@{DiscreteContactManager}}
+\index{DiscreteContactManager@{DiscreteContactManager}!tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}}
+\doxysubsubsection{\texorpdfstring{DiscreteContactManager()}{DiscreteContactManager()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily tesseract\+\_\+collision\+::\+Discrete\+Contact\+Manager\+::\+Discrete\+Contact\+Manager (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager}{Discrete\+Contact\+Manager}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtesseract__collision_1_1DiscreteContactManager_a2a82db2881b5f7c701ed3d42db053ae8}\label{classtesseract__collision_1_1DiscreteContactManager_a2a82db2881b5f7c701ed3d42db053ae8}} 
+\index{tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}!addCollisionObject@{addCollisionObject}}
+\index{addCollisionObject@{addCollisionObject}!tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}}
+\doxysubsubsection{\texorpdfstring{addCollisionObject()}{addCollisionObject()}}
+{\footnotesize\ttfamily virtual bool tesseract\+\_\+collision\+::\+Discrete\+Contact\+Manager\+::add\+Collision\+Object (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const int \&}]{mask\+\_\+id,  }\item[{const \mbox{\hyperlink{namespacetesseract__collision_a2472107aae8174a30873bb0a955c3cb4}{Collision\+Shapes\+Const}} \&}]{shapes,  }\item[{const \mbox{\hyperlink{namespacetesseract__common_a94d9921fc7ed323609ac57d06f939cb6}{tesseract\+\_\+common\+::\+Vector\+Isometry3d}} \&}]{shape\+\_\+poses,  }\item[{bool}]{enabled = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Add a object to the checker. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the object, must be unique. \\
+\hline
+{\em mask\+\_\+id} & User defined id which gets stored in the results structure. \\
+\hline
+{\em shapes} & A vector of shapes that make up the collision object. \\
+\hline
+{\em shape\+\_\+poses} & A vector of poses for each shape, must be same length as shapes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if successfully added, otherwise false. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_afe3d61110c6a4f2a1c8bee5a2d39ebc1}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Bullet\+Discrete\+BVHManager}}, \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteSimpleManager_aeb812e2d270c6b03ba4001ba119a35b8}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Bullet\+Discrete\+Simple\+Manager}}, and \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__fcl_1_1FCLDiscreteBVHManager_ab0b2d615ce49b92846babbc54a5d90fa}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::\+FCLDiscrete\+BVHManager}}.
+
+\mbox{\Hypertarget{classtesseract__collision_1_1DiscreteContactManager_a2dcf9480a716e14fc0918516d2fa04cf}\label{classtesseract__collision_1_1DiscreteContactManager_a2dcf9480a716e14fc0918516d2fa04cf}} 
+\index{tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}!applyContactManagerConfig@{applyContactManagerConfig}}
+\index{applyContactManagerConfig@{applyContactManagerConfig}!tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}}
+\doxysubsubsection{\texorpdfstring{applyContactManagerConfig()}{applyContactManagerConfig()}}
+{\footnotesize\ttfamily void tesseract\+\_\+collision\+::\+Discrete\+Contact\+Manager\+::apply\+Contact\+Manager\+Config (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structtesseract__collision_1_1ContactManagerConfig}{Contact\+Manager\+Config}} \&}]{config }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Applies settings in the config. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em config} & Settings to be applies \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__collision_1_1DiscreteContactManager_ab491e2f52824b596646e0b86633140a2}\label{classtesseract__collision_1_1DiscreteContactManager_ab491e2f52824b596646e0b86633140a2}} 
+\index{tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}!clone@{clone}}
+\index{clone@{clone}!tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a52a7b770e7b6cec875254d7cdea3c314}{Discrete\+Contact\+Manager\+::\+UPtr}} tesseract\+\_\+collision\+::\+Discrete\+Contact\+Manager\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Clone the manager. 
+
+This is to be used for multi threaded application. A user should make a clone for each thread. 
+
+Implemented in \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_aae074f70250a0bd805205f020b7228ee}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Bullet\+Discrete\+BVHManager}}, \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteSimpleManager_adea40c2c2b8ccfd3da087067d8a80530}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Bullet\+Discrete\+Simple\+Manager}}, and \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__fcl_1_1FCLDiscreteBVHManager_a98257f3e012965924aa5aaec8c315710}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::\+FCLDiscrete\+BVHManager}}.
+
+\mbox{\Hypertarget{classtesseract__collision_1_1DiscreteContactManager_a1ddfa181400941e093c76a852df72425}\label{classtesseract__collision_1_1DiscreteContactManager_a1ddfa181400941e093c76a852df72425}} 
+\index{tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}!contactTest@{contactTest}}
+\index{contactTest@{contactTest}!tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}}
+\doxysubsubsection{\texorpdfstring{contactTest()}{contactTest()}}
+{\footnotesize\ttfamily virtual void tesseract\+\_\+collision\+::\+Discrete\+Contact\+Manager\+::contact\+Test (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacetesseract__collision_a1eeace4cc41027dbde8e7dbeb77ca7cf}{Contact\+Result\+Map}} \&}]{collisions,  }\item[{const \mbox{\hyperlink{structtesseract__collision_1_1ContactRequest}{Contact\+Request}} \&}]{request }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Perform a contact test for all objects based. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em collisions} & The contact results data \\
+\hline
+{\em request} & The contact request data \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_a095d60a60c4e6fea38d53062a581cc43}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Bullet\+Discrete\+BVHManager}}, \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteSimpleManager_a009aa7dbc208141c9976cbb14ff21847}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Bullet\+Discrete\+Simple\+Manager}}, and \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__fcl_1_1FCLDiscreteBVHManager_a0be5343d178c16d20a8bd34e067c97b6}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::\+FCLDiscrete\+BVHManager}}.
+
+\mbox{\Hypertarget{classtesseract__collision_1_1DiscreteContactManager_aa5b4b0c83fbb06ba8944845b87471fa9}\label{classtesseract__collision_1_1DiscreteContactManager_aa5b4b0c83fbb06ba8944845b87471fa9}} 
+\index{tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}!disableCollisionObject@{disableCollisionObject}}
+\index{disableCollisionObject@{disableCollisionObject}!tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}}
+\doxysubsubsection{\texorpdfstring{disableCollisionObject()}{disableCollisionObject()}}
+{\footnotesize\ttfamily virtual bool tesseract\+\_\+collision\+::\+Discrete\+Contact\+Manager\+::disable\+Collision\+Object (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Disable an object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the object \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_aac6f22ec8ec609649ef37b2b5ae205fd}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Bullet\+Discrete\+BVHManager}}, \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteSimpleManager_a4d702b7131394d73540ca77e960d488b}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Bullet\+Discrete\+Simple\+Manager}}, and \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__fcl_1_1FCLDiscreteBVHManager_afa4c8a76c9d6d402ad5802e16d95cb2f}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::\+FCLDiscrete\+BVHManager}}.
+
+\mbox{\Hypertarget{classtesseract__collision_1_1DiscreteContactManager_a6327db89cb640fe6161481d3e0f39045}\label{classtesseract__collision_1_1DiscreteContactManager_a6327db89cb640fe6161481d3e0f39045}} 
+\index{tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}!enableCollisionObject@{enableCollisionObject}}
+\index{enableCollisionObject@{enableCollisionObject}!tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}}
+\doxysubsubsection{\texorpdfstring{enableCollisionObject()}{enableCollisionObject()}}
+{\footnotesize\ttfamily virtual bool tesseract\+\_\+collision\+::\+Discrete\+Contact\+Manager\+::enable\+Collision\+Object (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Enable an object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the object \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_a0c5a3114ae651b2ad1bf3b220d37b9c9}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Bullet\+Discrete\+BVHManager}}, \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteSimpleManager_af31d35e92511a30b58410e3976692314}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Bullet\+Discrete\+Simple\+Manager}}, and \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__fcl_1_1FCLDiscreteBVHManager_ac9a30352b233f37f3e1979e6756e263d}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::\+FCLDiscrete\+BVHManager}}.
+
+\mbox{\Hypertarget{classtesseract__collision_1_1DiscreteContactManager_abd1ad9870349f58375a7383adccd25cc}\label{classtesseract__collision_1_1DiscreteContactManager_abd1ad9870349f58375a7383adccd25cc}} 
+\index{tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}!getActiveCollisionObjects@{getActiveCollisionObjects}}
+\index{getActiveCollisionObjects@{getActiveCollisionObjects}!tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}}
+\doxysubsubsection{\texorpdfstring{getActiveCollisionObjects()}{getActiveCollisionObjects()}}
+{\footnotesize\ttfamily virtual const std\+::vector$<$ std\+::string $>$ \& tesseract\+\_\+collision\+::\+Discrete\+Contact\+Manager\+::get\+Active\+Collision\+Objects (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get which collision objects can move. 
+
+\begin{DoxyReturn}{Returns}
+A list of collision object names 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_a518e70e18060945753c870e2c8e6abd1}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Bullet\+Discrete\+BVHManager}}, \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteSimpleManager_a928aa94f948bee09a6bc488d2371609c}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Bullet\+Discrete\+Simple\+Manager}}, and \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__fcl_1_1FCLDiscreteBVHManager_a921ba398db7e9ae63e2acf336c48a5fc}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::\+FCLDiscrete\+BVHManager}}.
+
+\mbox{\Hypertarget{classtesseract__collision_1_1DiscreteContactManager_abd2686026229a788a0e6836d20ea7008}\label{classtesseract__collision_1_1DiscreteContactManager_abd2686026229a788a0e6836d20ea7008}} 
+\index{tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}!getCollisionMarginData@{getCollisionMarginData}}
+\index{getCollisionMarginData@{getCollisionMarginData}!tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}}
+\doxysubsubsection{\texorpdfstring{getCollisionMarginData()}{getCollisionMarginData()}}
+{\footnotesize\ttfamily virtual const \mbox{\hyperlink{namespacetesseract__collision_a0717a3c53d08d510257f631ea96cb560}{Collision\+Margin\+Data}} \& tesseract\+\_\+collision\+::\+Discrete\+Contact\+Manager\+::get\+Collision\+Margin\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the contact distance threshold. 
+
+\begin{DoxyReturn}{Returns}
+The contact distance 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_ad303f306826d9f9b45c370aec963d8db}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Bullet\+Discrete\+BVHManager}}, \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteSimpleManager_afcb80dd46a7028a37ad2e348f3d9e1f0}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Bullet\+Discrete\+Simple\+Manager}}, and \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__fcl_1_1FCLDiscreteBVHManager_a8d855bd5e44d42e198e566bf58b09d43}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::\+FCLDiscrete\+BVHManager}}.
+
+\mbox{\Hypertarget{classtesseract__collision_1_1DiscreteContactManager_adb11d7c35bd134e336d707d71faa1886}\label{classtesseract__collision_1_1DiscreteContactManager_adb11d7c35bd134e336d707d71faa1886}} 
+\index{tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}!getCollisionObjectGeometries@{getCollisionObjectGeometries}}
+\index{getCollisionObjectGeometries@{getCollisionObjectGeometries}!tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}}
+\doxysubsubsection{\texorpdfstring{getCollisionObjectGeometries()}{getCollisionObjectGeometries()}}
+{\footnotesize\ttfamily virtual const \mbox{\hyperlink{namespacetesseract__collision_a2472107aae8174a30873bb0a955c3cb4}{Collision\+Shapes\+Const}} \& tesseract\+\_\+collision\+::\+Discrete\+Contact\+Manager\+::get\+Collision\+Object\+Geometries (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get a collision objects collision geometries. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The collision objects name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of collision geometries. The vector will be empty if the collision object is not found. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_a8ccb0e832dec30fe3d9e887497ba7d3e}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Bullet\+Discrete\+BVHManager}}, \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteSimpleManager_a431bdff9ee6092991b2f7b6d0fe28626}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Bullet\+Discrete\+Simple\+Manager}}, and \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__fcl_1_1FCLDiscreteBVHManager_a73b6d566a445c51fe4fb095bbea70dc8}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::\+FCLDiscrete\+BVHManager}}.
+
+\mbox{\Hypertarget{classtesseract__collision_1_1DiscreteContactManager_a894ac7465ba94d5d8b2642db3701815d}\label{classtesseract__collision_1_1DiscreteContactManager_a894ac7465ba94d5d8b2642db3701815d}} 
+\index{tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}!getCollisionObjectGeometriesTransforms@{getCollisionObjectGeometriesTransforms}}
+\index{getCollisionObjectGeometriesTransforms@{getCollisionObjectGeometriesTransforms}!tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}}
+\doxysubsubsection{\texorpdfstring{getCollisionObjectGeometriesTransforms()}{getCollisionObjectGeometriesTransforms()}}
+{\footnotesize\ttfamily virtual const \mbox{\hyperlink{namespacetesseract__common_a94d9921fc7ed323609ac57d06f939cb6}{tesseract\+\_\+common\+::\+Vector\+Isometry3d}} \& tesseract\+\_\+collision\+::\+Discrete\+Contact\+Manager\+::get\+Collision\+Object\+Geometries\+Transforms (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get a collision objects collision geometries transforms. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The collision objects name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of collision geometries transforms. The vector will be empty if the collision object is not found. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_abef85564988d35c4035e452176f5ad47}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Bullet\+Discrete\+BVHManager}}, \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteSimpleManager_afcb5b5bd44878eddda799ced8255b1cb}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Bullet\+Discrete\+Simple\+Manager}}, and \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__fcl_1_1FCLDiscreteBVHManager_a0dd101c8511a8f1b8806f4a640ee4386}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::\+FCLDiscrete\+BVHManager}}.
+
+\mbox{\Hypertarget{classtesseract__collision_1_1DiscreteContactManager_a7a4697f7c582ab800142a1d4923607ab}\label{classtesseract__collision_1_1DiscreteContactManager_a7a4697f7c582ab800142a1d4923607ab}} 
+\index{tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}!getCollisionObjects@{getCollisionObjects}}
+\index{getCollisionObjects@{getCollisionObjects}!tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}}
+\doxysubsubsection{\texorpdfstring{getCollisionObjects()}{getCollisionObjects()}}
+{\footnotesize\ttfamily virtual const std\+::vector$<$ std\+::string $>$ \& tesseract\+\_\+collision\+::\+Discrete\+Contact\+Manager\+::get\+Collision\+Objects (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get all collision objects. 
+
+\begin{DoxyReturn}{Returns}
+A list of collision object names 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_a6743ef86cfca50d1bd7403224edf267b}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Bullet\+Discrete\+BVHManager}}, \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteSimpleManager_ac1b3e6c1273b9f16aa4b462567e57825}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Bullet\+Discrete\+Simple\+Manager}}, and \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__fcl_1_1FCLDiscreteBVHManager_ae81c41ef313be9dd6ee5953a77d29267}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::\+FCLDiscrete\+BVHManager}}.
+
+\mbox{\Hypertarget{classtesseract__collision_1_1DiscreteContactManager_ad515c562c2bc0cd98e3559dbd05bd7e4}\label{classtesseract__collision_1_1DiscreteContactManager_ad515c562c2bc0cd98e3559dbd05bd7e4}} 
+\index{tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}!getIsContactAllowedFn@{getIsContactAllowedFn}}
+\index{getIsContactAllowedFn@{getIsContactAllowedFn}!tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}}
+\doxysubsubsection{\texorpdfstring{getIsContactAllowedFn()}{getIsContactAllowedFn()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespacetesseract__collision_abe7752ce161fbd1139533ac566fec1cb}{Is\+Contact\+Allowed\+Fn}} tesseract\+\_\+collision\+::\+Discrete\+Contact\+Manager\+::get\+Is\+Contact\+Allowed\+Fn (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the active function for determining if two links are allowed to be in collision. 
+
+
+
+Implemented in \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_a30b7902d4ac1dcab032e8fbadf2b0e24}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Bullet\+Discrete\+BVHManager}}, \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteSimpleManager_a714a8584d2f6b894751da8236df96a49}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Bullet\+Discrete\+Simple\+Manager}}, and \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__fcl_1_1FCLDiscreteBVHManager_a16c892208124c3944e2ee5baa96eb311}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::\+FCLDiscrete\+BVHManager}}.
+
+\mbox{\Hypertarget{classtesseract__collision_1_1DiscreteContactManager_a34f6da1e459e6ccaff64b6a2a80a2fcc}\label{classtesseract__collision_1_1DiscreteContactManager_a34f6da1e459e6ccaff64b6a2a80a2fcc}} 
+\index{tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}!getName@{getName}}
+\index{getName@{getName}!tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily virtual std\+::string tesseract\+\_\+collision\+::\+Discrete\+Contact\+Manager\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the name of the contact manager. 
+
+\begin{DoxyReturn}{Returns}
+The name 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_a7560b93875d27076cb56099c9ec25163}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Bullet\+Discrete\+BVHManager}}, \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteSimpleManager_a4c7dab57bc0be25537ea0c224972f1d8}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Bullet\+Discrete\+Simple\+Manager}}, and \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__fcl_1_1FCLDiscreteBVHManager_aca1a5a006d7371704deab672e60c308c}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::\+FCLDiscrete\+BVHManager}}.
+
+\mbox{\Hypertarget{classtesseract__collision_1_1DiscreteContactManager_a88de26744511600a096f25d37eebd5c9}\label{classtesseract__collision_1_1DiscreteContactManager_a88de26744511600a096f25d37eebd5c9}} 
+\index{tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}!hasCollisionObject@{hasCollisionObject}}
+\index{hasCollisionObject@{hasCollisionObject}!tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}}
+\doxysubsubsection{\texorpdfstring{hasCollisionObject()}{hasCollisionObject()}}
+{\footnotesize\ttfamily virtual bool tesseract\+\_\+collision\+::\+Discrete\+Contact\+Manager\+::has\+Collision\+Object (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Find if a collision object already exists. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the collision object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if it exists, otherwise false. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_a2f7ebbdc2d165f49d283c148cbe952b5}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Bullet\+Discrete\+BVHManager}}, \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteSimpleManager_a7ac2e3886aac11be182ce31bd7ff746e}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Bullet\+Discrete\+Simple\+Manager}}, and \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__fcl_1_1FCLDiscreteBVHManager_aad666ec71adcd6d2fc9bb98636f0ea0d}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::\+FCLDiscrete\+BVHManager}}.
+
+\mbox{\Hypertarget{classtesseract__collision_1_1DiscreteContactManager_a08fe68873a15051d9b7ac5ad501c3de8}\label{classtesseract__collision_1_1DiscreteContactManager_a08fe68873a15051d9b7ac5ad501c3de8}} 
+\index{tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}!isCollisionObjectEnabled@{isCollisionObjectEnabled}}
+\index{isCollisionObjectEnabled@{isCollisionObjectEnabled}!tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}}
+\doxysubsubsection{\texorpdfstring{isCollisionObjectEnabled()}{isCollisionObjectEnabled()}}
+{\footnotesize\ttfamily virtual bool tesseract\+\_\+collision\+::\+Discrete\+Contact\+Manager\+::is\+Collision\+Object\+Enabled (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Check if collision object is enabled. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if enabled, otherwise false 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_aa170196d73ba39e35a5336b11cb44bf6}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Bullet\+Discrete\+BVHManager}}, \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteSimpleManager_aaf11dea5bc0fa897b2edd82d55d18024}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Bullet\+Discrete\+Simple\+Manager}}, and \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__fcl_1_1FCLDiscreteBVHManager_ae7fa738f144cd0105bc1927489d4174c}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::\+FCLDiscrete\+BVHManager}}.
+
+\mbox{\Hypertarget{classtesseract__collision_1_1DiscreteContactManager_a59a8854b9b77cae6f682b1b39750642a}\label{classtesseract__collision_1_1DiscreteContactManager_a59a8854b9b77cae6f682b1b39750642a}} 
+\index{tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}!operator=@{operator=}}
+\index{operator=@{operator=}!tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager}{Discrete\+Contact\+Manager}} \& tesseract\+\_\+collision\+::\+Discrete\+Contact\+Manager\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager}{Discrete\+Contact\+Manager}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1DiscreteContactManager_aa64d3c606ad88ffd33f7fa3338558770}\label{classtesseract__collision_1_1DiscreteContactManager_aa64d3c606ad88ffd33f7fa3338558770}} 
+\index{tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}!operator=@{operator=}}
+\index{operator=@{operator=}!tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager}{Discrete\+Contact\+Manager}} \& tesseract\+\_\+collision\+::\+Discrete\+Contact\+Manager\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager}{Discrete\+Contact\+Manager}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classtesseract__collision_1_1DiscreteContactManager_a76f980b2fff3c2aa69be2b1dfce33dc6}\label{classtesseract__collision_1_1DiscreteContactManager_a76f980b2fff3c2aa69be2b1dfce33dc6}} 
+\index{tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}!removeCollisionObject@{removeCollisionObject}}
+\index{removeCollisionObject@{removeCollisionObject}!tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}}
+\doxysubsubsection{\texorpdfstring{removeCollisionObject()}{removeCollisionObject()}}
+{\footnotesize\ttfamily virtual bool tesseract\+\_\+collision\+::\+Discrete\+Contact\+Manager\+::remove\+Collision\+Object (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Remove an object from the checker. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if successfully removed, otherwise false. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_a394964b5c51b9a8ac9d74f1b7536aac7}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Bullet\+Discrete\+BVHManager}}, \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteSimpleManager_a054dfde5b6be573b902db6ffd154dcf9}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Bullet\+Discrete\+Simple\+Manager}}, and \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__fcl_1_1FCLDiscreteBVHManager_a1c164c476d464bf9ca582cb42912f6f8}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::\+FCLDiscrete\+BVHManager}}.
+
+\mbox{\Hypertarget{classtesseract__collision_1_1DiscreteContactManager_a14111f72aeaa2f22cf79b64e54479fb0}\label{classtesseract__collision_1_1DiscreteContactManager_a14111f72aeaa2f22cf79b64e54479fb0}} 
+\index{tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}!setActiveCollisionObjects@{setActiveCollisionObjects}}
+\index{setActiveCollisionObjects@{setActiveCollisionObjects}!tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}}
+\doxysubsubsection{\texorpdfstring{setActiveCollisionObjects()}{setActiveCollisionObjects()}}
+{\footnotesize\ttfamily virtual void tesseract\+\_\+collision\+::\+Discrete\+Contact\+Manager\+::set\+Active\+Collision\+Objects (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{names }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Set which collision objects can move. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em names} & A vector of collision object names \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_a6f7aea377737cce66148d30d1a8c17fc}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Bullet\+Discrete\+BVHManager}}, \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteSimpleManager_a816651fec0b3f9a7bd60fa04141d9cae}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Bullet\+Discrete\+Simple\+Manager}}, and \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__fcl_1_1FCLDiscreteBVHManager_a2103cf389fd40b54c72321d7b0e89424}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::\+FCLDiscrete\+BVHManager}}.
+
+\mbox{\Hypertarget{classtesseract__collision_1_1DiscreteContactManager_acbd053442a4d591c29aab5be5706ef04}\label{classtesseract__collision_1_1DiscreteContactManager_acbd053442a4d591c29aab5be5706ef04}} 
+\index{tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}!setCollisionMarginData@{setCollisionMarginData}}
+\index{setCollisionMarginData@{setCollisionMarginData}!tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}}
+\doxysubsubsection{\texorpdfstring{setCollisionMarginData()}{setCollisionMarginData()}}
+{\footnotesize\ttfamily virtual void tesseract\+\_\+collision\+::\+Discrete\+Contact\+Manager\+::set\+Collision\+Margin\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacetesseract__collision_a0717a3c53d08d510257f631ea96cb560}{Collision\+Margin\+Data}}}]{collision\+\_\+margin\+\_\+data,  }\item[{\mbox{\hyperlink{namespacetesseract__common_af06d85d024a36d63b58a6031556af8a1}{Collision\+Margin\+Override\+Type}}}]{override\+\_\+type = {\ttfamily CollisionMarginOverrideType\+:\+:REPLACE} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Set the contact distance thresholds for which collision should be considered on a per pair basis. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em collision\+\_\+margin\+\_\+data} & Contains the data that will replace the current settings \\
+\hline
+{\em override\+\_\+type} & This determines how the provided Collision\+Margin\+Data is applied \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_a4ea8088f291559368dd00f4734ae7881}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Bullet\+Discrete\+BVHManager}}, \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteSimpleManager_a76883d855c4d5dc3c45fa2150d030809}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Bullet\+Discrete\+Simple\+Manager}}, and \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__fcl_1_1FCLDiscreteBVHManager_af561464924b0e8f52a20b1ef56011b16}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::\+FCLDiscrete\+BVHManager}}.
+
+\mbox{\Hypertarget{classtesseract__collision_1_1DiscreteContactManager_a21d038a9836cdb5a3b44ad527fd93a5b}\label{classtesseract__collision_1_1DiscreteContactManager_a21d038a9836cdb5a3b44ad527fd93a5b}} 
+\index{tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}!setCollisionObjectsTransform@{setCollisionObjectsTransform}}
+\index{setCollisionObjectsTransform@{setCollisionObjectsTransform}!tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}}
+\doxysubsubsection{\texorpdfstring{setCollisionObjectsTransform()}{setCollisionObjectsTransform()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily virtual void tesseract\+\_\+collision\+::\+Discrete\+Contact\+Manager\+::set\+Collision\+Objects\+Transform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const Eigen\+::\+Isometry3d \&}]{pose }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Set a single collision object\textquotesingle{}s transforms. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the object \\
+\hline
+{\em pose} & The transformation in world \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_ad96a1858717d0b28cf6cf2de4fb1a118}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Bullet\+Discrete\+BVHManager}}, \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteSimpleManager_a2cb7587561bdc57ab1d47734e8cf7700}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Bullet\+Discrete\+Simple\+Manager}}, and \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__fcl_1_1FCLDiscreteBVHManager_a13bf9fe72bbd5510f555b6819d73ccfc}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::\+FCLDiscrete\+BVHManager}}.
+
+\mbox{\Hypertarget{classtesseract__collision_1_1DiscreteContactManager_a46fafdf26fad2dc2b3f86e2d41efc7e4}\label{classtesseract__collision_1_1DiscreteContactManager_a46fafdf26fad2dc2b3f86e2d41efc7e4}} 
+\index{tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}!setCollisionObjectsTransform@{setCollisionObjectsTransform}}
+\index{setCollisionObjectsTransform@{setCollisionObjectsTransform}!tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}}
+\doxysubsubsection{\texorpdfstring{setCollisionObjectsTransform()}{setCollisionObjectsTransform()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily virtual void tesseract\+\_\+collision\+::\+Discrete\+Contact\+Manager\+::set\+Collision\+Objects\+Transform (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{names,  }\item[{const \mbox{\hyperlink{namespacetesseract__common_a94d9921fc7ed323609ac57d06f939cb6}{tesseract\+\_\+common\+::\+Vector\+Isometry3d}} \&}]{poses }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Set a series of collision object\textquotesingle{}s transforms. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em names} & The name of the object \\
+\hline
+{\em poses} & The transformation in world \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_ad69f4df49673b79dded71e3f8cd61ec8}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Bullet\+Discrete\+BVHManager}}, \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteSimpleManager_a13fe6a2d9c7e46e4eb2084b8e1d7f3e4}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Bullet\+Discrete\+Simple\+Manager}}, and \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__fcl_1_1FCLDiscreteBVHManager_abce6513c0ea67149662cbe93f36a0081}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::\+FCLDiscrete\+BVHManager}}.
+
+\mbox{\Hypertarget{classtesseract__collision_1_1DiscreteContactManager_adabfaefb6fef85c3c6df04d4914dce71}\label{classtesseract__collision_1_1DiscreteContactManager_adabfaefb6fef85c3c6df04d4914dce71}} 
+\index{tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}!setCollisionObjectsTransform@{setCollisionObjectsTransform}}
+\index{setCollisionObjectsTransform@{setCollisionObjectsTransform}!tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}}
+\doxysubsubsection{\texorpdfstring{setCollisionObjectsTransform()}{setCollisionObjectsTransform()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily virtual void tesseract\+\_\+collision\+::\+Discrete\+Contact\+Manager\+::set\+Collision\+Objects\+Transform (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespacetesseract__common_a67bde3cb7bb235f0f61c370ef8bc74d8}{tesseract\+\_\+common\+::\+Transform\+Map}} \&}]{transforms }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Set a series of collision object\textquotesingle{}s transforms. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em transforms} & A transform map \texorpdfstring{$<$}{<}name, pose\texorpdfstring{$>$}{>} \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_ac178283a42c7810259b84a885683a2d8}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Bullet\+Discrete\+BVHManager}}, \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteSimpleManager_ad261bb44c1eb4333fdfc7f909d87196a}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Bullet\+Discrete\+Simple\+Manager}}, and \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__fcl_1_1FCLDiscreteBVHManager_abebd6616325e4793772e7c8c83a4ff0a}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::\+FCLDiscrete\+BVHManager}}.
+
+\mbox{\Hypertarget{classtesseract__collision_1_1DiscreteContactManager_a7e2c12063bf47e53cdc52d9808731e53}\label{classtesseract__collision_1_1DiscreteContactManager_a7e2c12063bf47e53cdc52d9808731e53}} 
+\index{tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}!setDefaultCollisionMarginData@{setDefaultCollisionMarginData}}
+\index{setDefaultCollisionMarginData@{setDefaultCollisionMarginData}!tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}}
+\doxysubsubsection{\texorpdfstring{setDefaultCollisionMarginData()}{setDefaultCollisionMarginData()}}
+{\footnotesize\ttfamily virtual void tesseract\+\_\+collision\+::\+Discrete\+Contact\+Manager\+::set\+Default\+Collision\+Margin\+Data (\begin{DoxyParamCaption}\item[{double}]{default\+\_\+collision\+\_\+margin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Set the default collision margin. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em default\+\_\+collision\+\_\+margin} & New default collision margin \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_a6b259b638648ff71ee4cfabde5a3a6ac}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Bullet\+Discrete\+BVHManager}}, \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteSimpleManager_ab1a0e4c14e6dda33e94d705b07b13c06}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Bullet\+Discrete\+Simple\+Manager}}, and \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__fcl_1_1FCLDiscreteBVHManager_a171bd41bcb1931c58a31b77f235089ed}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::\+FCLDiscrete\+BVHManager}}.
+
+\mbox{\Hypertarget{classtesseract__collision_1_1DiscreteContactManager_a0b08e08614381d595b6741e3a7bfb7fd}\label{classtesseract__collision_1_1DiscreteContactManager_a0b08e08614381d595b6741e3a7bfb7fd}} 
+\index{tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}!setIsContactAllowedFn@{setIsContactAllowedFn}}
+\index{setIsContactAllowedFn@{setIsContactAllowedFn}!tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}}
+\doxysubsubsection{\texorpdfstring{setIsContactAllowedFn()}{setIsContactAllowedFn()}}
+{\footnotesize\ttfamily virtual void tesseract\+\_\+collision\+::\+Discrete\+Contact\+Manager\+::set\+Is\+Contact\+Allowed\+Fn (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacetesseract__collision_abe7752ce161fbd1139533ac566fec1cb}{Is\+Contact\+Allowed\+Fn}}}]{fn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Set the active function for determining if two links are allowed to be in collision. 
+
+
+
+Implemented in \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_a2924a576c9f8c0eee646906983bc5f9f}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Bullet\+Discrete\+BVHManager}}, \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteSimpleManager_a1a6ec23c755b6795931ed9a21a6cde42}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Bullet\+Discrete\+Simple\+Manager}}, and \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__fcl_1_1FCLDiscreteBVHManager_ac8be8f5be8d563532380963930f54093}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::\+FCLDiscrete\+BVHManager}}.
+
+\mbox{\Hypertarget{classtesseract__collision_1_1DiscreteContactManager_a759e34926ed6e0afcd797cd211202940}\label{classtesseract__collision_1_1DiscreteContactManager_a759e34926ed6e0afcd797cd211202940}} 
+\index{tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}!setPairCollisionMarginData@{setPairCollisionMarginData}}
+\index{setPairCollisionMarginData@{setPairCollisionMarginData}!tesseract\_collision::DiscreteContactManager@{tesseract\_collision::DiscreteContactManager}}
+\doxysubsubsection{\texorpdfstring{setPairCollisionMarginData()}{setPairCollisionMarginData()}}
+{\footnotesize\ttfamily virtual void tesseract\+\_\+collision\+::\+Discrete\+Contact\+Manager\+::set\+Pair\+Collision\+Margin\+Data (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name1,  }\item[{const std\+::string \&}]{name2,  }\item[{double}]{collision\+\_\+margin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Set the margin for a given contact pair. 
+
+The order of the object names does not matter, that is handled internal to the class.
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj1} & The first object name. Order doesn\textquotesingle{}t matter \\
+\hline
+{\em obj2} & The Second object name. Order doesn\textquotesingle{}t matter \\
+\hline
+{\em collision\+\_\+margin} & contacts with distance \texorpdfstring{$<$}{<} collision\+\_\+margin are considered in collision \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager_aaf1847f37bd440769ad06f6b252d3c7f}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Bullet\+Discrete\+BVHManager}}, \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteSimpleManager_a20899140632ff1dbcaf0f5f95a4cf085}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Bullet\+Discrete\+Simple\+Manager}}, and \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__fcl_1_1FCLDiscreteBVHManager_aa7aaa69c9a30a762af322806541c9a00}{tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+fcl\+::\+FCLDiscrete\+BVHManager}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+tesseract\+\_\+collision/core/include/tesseract\+\_\+collision/core/\mbox{\hyperlink{discrete__contact__manager_8h}{discrete\+\_\+contact\+\_\+manager.\+h}}\item 
+tesseract\+\_\+collision/core/src/\mbox{\hyperlink{discrete__contact__manager_8cpp}{discrete\+\_\+contact\+\_\+manager.\+cpp}}\end{DoxyCompactItemize}

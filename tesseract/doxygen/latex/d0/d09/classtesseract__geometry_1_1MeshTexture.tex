@@ -1,0 +1,131 @@
+\hypertarget{classtesseract__geometry_1_1MeshTexture}{}\doxysection{tesseract\+\_\+geometry\+::Mesh\+Texture Class Reference}
+\label{classtesseract__geometry_1_1MeshTexture}\index{tesseract\_geometry::MeshTexture@{tesseract\_geometry::MeshTexture}}
+
+
+Represents a texture and UV coordinates extracted from a mesh file.  
+
+
+
+
+{\ttfamily \#include $<$mesh\+\_\+material.\+h$>$}
+
+
+
+Collaboration diagram for tesseract\+\_\+geometry\+::Mesh\+Texture\+:
+% FIG 0
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{classtesseract__geometry_1_1MeshTexture_a75fe5ca7baf1177876dc64818340beff}{Ptr}} = std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classtesseract__geometry_1_1MeshTexture}{Mesh\+Texture}} $>$
+\item 
+using \mbox{\hyperlink{classtesseract__geometry_1_1MeshTexture_aee88fe21c35c2abd661086aa83ddf22e}{Const\+Ptr}} = std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{classtesseract__geometry_1_1MeshTexture}{Mesh\+Texture}} $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtesseract__geometry_1_1MeshTexture_a39602e8e65f697427582cd179ff8fc1c}{Mesh\+Texture}} (\mbox{\hyperlink{classtesseract__common_1_1Resource_acdba916fa227bef4391c469581844dc6}{tesseract\+\_\+common\+::\+Resource\+::\+Ptr}} texture\+\_\+image, std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{namespacetesseract__common_ac60e1af30f961fc086b69e330c6434d4}{tesseract\+\_\+common\+::\+Vector\+Vector2d}} $>$ uvs)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classtesseract__geometry_1_1MeshTexture}{Mesh\+Texture}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtesseract__common_1_1Resource_acdba916fa227bef4391c469581844dc6}{tesseract\+\_\+common\+::\+Resource\+::\+Ptr}} \mbox{\hyperlink{classtesseract__geometry_1_1MeshTexture_a430ed5e5199f5391daac77eaf2dcfc4a}{get\+Texture\+Image}} () const
+\begin{DoxyCompactList}\small\item\em Get the texture image. \end{DoxyCompactList}\item 
+const std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{namespacetesseract__common_ac60e1af30f961fc086b69e330c6434d4}{tesseract\+\_\+common\+::\+Vector\+Vector2d}} $>$ \& \mbox{\hyperlink{classtesseract__geometry_1_1MeshTexture_a13f3d4d32fbcc79105e220365162aa74}{get\+UVs}} ()
+\begin{DoxyCompactList}\small\item\em Get the texture UV coordinates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{namespacetesseract__common_ac60e1af30f961fc086b69e330c6434d4}{tesseract\+\_\+common\+::\+Vector\+Vector2d}} $>$ \mbox{\hyperlink{classtesseract__geometry_1_1MeshTexture_ac487d953226d834e56ef912e81245b3f}{uvs\+\_\+}}
+\item 
+\mbox{\hyperlink{classtesseract__common_1_1Resource_acdba916fa227bef4391c469581844dc6}{tesseract\+\_\+common\+::\+Resource\+::\+Ptr}} \mbox{\hyperlink{classtesseract__geometry_1_1MeshTexture_abbf2065d9cebc48e765ff8686d32c44d}{texture\+\_\+image\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a texture and UV coordinates extracted from a mesh file. 
+
+\mbox{\hyperlink{classtesseract__geometry_1_1Mesh}{Mesh}} files contain (or reference) image files that form textures on the surface of the mesh. UV coordinates specify how the image is applied to the mesh. The \mbox{\hyperlink{classtesseract__geometry_1_1MeshTexture}{Mesh\+Texture}} structure contains a resource to the image, and the UV coordinates. Currently only jpg and png image formats are supported.
+
+UV coordinates specify the location of each vertex in the mesh on the texture. Each (u,v) coordinate is normalized to be between 0 and 1. 
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classtesseract__geometry_1_1MeshTexture_aee88fe21c35c2abd661086aa83ddf22e}\label{classtesseract__geometry_1_1MeshTexture_aee88fe21c35c2abd661086aa83ddf22e}} 
+\index{tesseract\_geometry::MeshTexture@{tesseract\_geometry::MeshTexture}!ConstPtr@{ConstPtr}}
+\index{ConstPtr@{ConstPtr}!tesseract\_geometry::MeshTexture@{tesseract\_geometry::MeshTexture}}
+\doxysubsubsection{\texorpdfstring{ConstPtr}{ConstPtr}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classtesseract__geometry_1_1MeshTexture_aee88fe21c35c2abd661086aa83ddf22e}{tesseract\+\_\+geometry\+::\+Mesh\+Texture\+::\+Const\+Ptr}} =  std\+::shared\+\_\+ptr$<$const \mbox{\hyperlink{classtesseract__geometry_1_1MeshTexture}{Mesh\+Texture}}$>$}
+
+\mbox{\Hypertarget{classtesseract__geometry_1_1MeshTexture_a75fe5ca7baf1177876dc64818340beff}\label{classtesseract__geometry_1_1MeshTexture_a75fe5ca7baf1177876dc64818340beff}} 
+\index{tesseract\_geometry::MeshTexture@{tesseract\_geometry::MeshTexture}!Ptr@{Ptr}}
+\index{Ptr@{Ptr}!tesseract\_geometry::MeshTexture@{tesseract\_geometry::MeshTexture}}
+\doxysubsubsection{\texorpdfstring{Ptr}{Ptr}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classtesseract__geometry_1_1MeshTexture_a75fe5ca7baf1177876dc64818340beff}{tesseract\+\_\+geometry\+::\+Mesh\+Texture\+::\+Ptr}} =  std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classtesseract__geometry_1_1MeshTexture}{Mesh\+Texture}}$>$}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtesseract__geometry_1_1MeshTexture_a39602e8e65f697427582cd179ff8fc1c}\label{classtesseract__geometry_1_1MeshTexture_a39602e8e65f697427582cd179ff8fc1c}} 
+\index{tesseract\_geometry::MeshTexture@{tesseract\_geometry::MeshTexture}!MeshTexture@{MeshTexture}}
+\index{MeshTexture@{MeshTexture}!tesseract\_geometry::MeshTexture@{tesseract\_geometry::MeshTexture}}
+\doxysubsubsection{\texorpdfstring{MeshTexture()}{MeshTexture()}}
+{\footnotesize\ttfamily tesseract\+\_\+geometry\+::\+Mesh\+Texture\+::\+Mesh\+Texture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtesseract__common_1_1Resource_acdba916fa227bef4391c469581844dc6}{tesseract\+\_\+common\+::\+Resource\+::\+Ptr}}}]{texture\+\_\+image,  }\item[{std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{namespacetesseract__common_ac60e1af30f961fc086b69e330c6434d4}{tesseract\+\_\+common\+::\+Vector\+Vector2d}} $>$}]{uvs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{classtesseract__geometry_1_1MeshTexture}{Mesh\+Texture}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em texture\+\_\+image} & Resource representing the texture image (jpg or png) \\
+\hline
+{\em uvs} & UV coordinates for texture on mesh \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtesseract__geometry_1_1MeshTexture_a430ed5e5199f5391daac77eaf2dcfc4a}\label{classtesseract__geometry_1_1MeshTexture_a430ed5e5199f5391daac77eaf2dcfc4a}} 
+\index{tesseract\_geometry::MeshTexture@{tesseract\_geometry::MeshTexture}!getTextureImage@{getTextureImage}}
+\index{getTextureImage@{getTextureImage}!tesseract\_geometry::MeshTexture@{tesseract\_geometry::MeshTexture}}
+\doxysubsubsection{\texorpdfstring{getTextureImage()}{getTextureImage()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__common_1_1Resource_acdba916fa227bef4391c469581844dc6}{tesseract\+\_\+common\+::\+Resource\+::\+Ptr}} tesseract\+\_\+geometry\+::\+Mesh\+Texture\+::get\+Texture\+Image (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the texture image. 
+
+Must be jpg or png
+
+\begin{DoxyReturn}{Returns}
+Resource to the texture image 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__geometry_1_1MeshTexture_a13f3d4d32fbcc79105e220365162aa74}\label{classtesseract__geometry_1_1MeshTexture_a13f3d4d32fbcc79105e220365162aa74}} 
+\index{tesseract\_geometry::MeshTexture@{tesseract\_geometry::MeshTexture}!getUVs@{getUVs}}
+\index{getUVs@{getUVs}!tesseract\_geometry::MeshTexture@{tesseract\_geometry::MeshTexture}}
+\doxysubsubsection{\texorpdfstring{getUVs()}{getUVs()}}
+{\footnotesize\ttfamily const std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{namespacetesseract__common_ac60e1af30f961fc086b69e330c6434d4}{tesseract\+\_\+common\+::\+Vector\+Vector2d}} $>$ \& tesseract\+\_\+geometry\+::\+Mesh\+Texture\+::get\+UVs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the texture UV coordinates. 
+
+\begin{DoxyReturn}{Returns}
+UV coordinate vector 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classtesseract__geometry_1_1MeshTexture_abbf2065d9cebc48e765ff8686d32c44d}\label{classtesseract__geometry_1_1MeshTexture_abbf2065d9cebc48e765ff8686d32c44d}} 
+\index{tesseract\_geometry::MeshTexture@{tesseract\_geometry::MeshTexture}!texture\_image\_@{texture\_image\_}}
+\index{texture\_image\_@{texture\_image\_}!tesseract\_geometry::MeshTexture@{tesseract\_geometry::MeshTexture}}
+\doxysubsubsection{\texorpdfstring{texture\_image\_}{texture\_image\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__common_1_1Resource_acdba916fa227bef4391c469581844dc6}{tesseract\+\_\+common\+::\+Resource\+::\+Ptr}} tesseract\+\_\+geometry\+::\+Mesh\+Texture\+::texture\+\_\+image\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__geometry_1_1MeshTexture_ac487d953226d834e56ef912e81245b3f}\label{classtesseract__geometry_1_1MeshTexture_ac487d953226d834e56ef912e81245b3f}} 
+\index{tesseract\_geometry::MeshTexture@{tesseract\_geometry::MeshTexture}!uvs\_@{uvs\_}}
+\index{uvs\_@{uvs\_}!tesseract\_geometry::MeshTexture@{tesseract\_geometry::MeshTexture}}
+\doxysubsubsection{\texorpdfstring{uvs\_}{uvs\_}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$const \mbox{\hyperlink{namespacetesseract__common_ac60e1af30f961fc086b69e330c6434d4}{tesseract\+\_\+common\+::\+Vector\+Vector2d}}$>$ tesseract\+\_\+geometry\+::\+Mesh\+Texture\+::uvs\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+tesseract\+\_\+geometry/include/tesseract\+\_\+geometry/impl/\mbox{\hyperlink{mesh__material_8h}{mesh\+\_\+material.\+h}}\end{DoxyCompactItemize}

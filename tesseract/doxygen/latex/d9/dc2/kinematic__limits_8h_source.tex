@@ -1,0 +1,98 @@
+\hypertarget{kinematic__limits_8h_source}{}\doxysection{kinematic\+\_\+limits.\+h}
+\label{kinematic__limits_8h_source}\index{tesseract\_common/include/tesseract\_common/kinematic\_limits.h@{tesseract\_common/include/tesseract\_common/kinematic\_limits.h}}
+\mbox{\hyperlink{kinematic__limits_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#ifndef TESSERACT\_COMMON\_KINEMATIC\_LIMITS\_H}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define TESSERACT\_COMMON\_KINEMATIC\_LIMITS\_H}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{macros_8h}{tesseract\_common/macros.h}}>}}
+\DoxyCodeLine{29 \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include <Eigen/Core>}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include <Eigen/Geometry>}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include <boost/serialization/base\_object.hpp>}}
+\DoxyCodeLine{33 \mbox{\hyperlink{namespaceTESSERACT__COMMON__IGNORE__WARNINGS__POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__common}{tesseract\_common}}}
+\DoxyCodeLine{36 \{}
+\DoxyCodeLine{38 \textcolor{keyword}{struct }\mbox{\hyperlink{structtesseract__common_1_1KinematicLimits}{KinematicLimits}}}
+\DoxyCodeLine{39 \{}
+\DoxyCodeLine{40   \textcolor{comment}{// LCOV\_EXCL\_START}}
+\DoxyCodeLine{41   EIGEN\_MAKE\_ALIGNED\_OPERATOR\_NEW}
+\DoxyCodeLine{42   \textcolor{comment}{// LCOV\_EXCL\_STOP}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{45   Eigen::MatrixX2d \mbox{\hyperlink{structtesseract__common_1_1KinematicLimits_a04641308fcc1e182fca0d85d80d25c68}{joint\_limits}};}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{48   Eigen::VectorXd \mbox{\hyperlink{structtesseract__common_1_1KinematicLimits_aef6ca9124185f5b366bccbbba3242d6e}{velocity\_limits}};}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{51   Eigen::VectorXd \mbox{\hyperlink{structtesseract__common_1_1KinematicLimits_a609b65f616f248719082654c9a8a51c6}{acceleration\_limits}};}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53   \textcolor{keywordtype}{void} \mbox{\hyperlink{structtesseract__common_1_1KinematicLimits_abd68f4faaf100411e8a067f02e0a6e66}{resize}}(Eigen::Index size);}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55   \textcolor{keywordtype}{bool} \mbox{\hyperlink{structtesseract__common_1_1KinematicLimits_ad44ef1fe9ffa93453d7ebeae4f3aef96}{operator==}}(\textcolor{keyword}{const} \mbox{\hyperlink{structtesseract__common_1_1KinematicLimits}{KinematicLimits}}\& rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{56   \textcolor{keywordtype}{bool} \mbox{\hyperlink{structtesseract__common_1_1KinematicLimits_a00dcfeec202e19fb26590209db5cedd8}{operator!=}}(\textcolor{keyword}{const} \mbox{\hyperlink{structtesseract__common_1_1KinematicLimits}{KinematicLimits}}\& rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \textcolor{keyword}{private}:}
+\DoxyCodeLine{59   \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{structtesseract__common_1_1KinematicLimits_ac98d07dd8f7b70e16ccb9a01abf56b9c}{boost::serialization::access}};}
+\DoxyCodeLine{60   \textcolor{keyword}{template} <\textcolor{keyword}{class} Archive>}
+\DoxyCodeLine{61   \textcolor{keywordtype}{void} \mbox{\hyperlink{structtesseract__common_1_1KinematicLimits_aaa4471bb1d7f3fe9c99df6c9e118f081}{serialize}}(Archive\& ar, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} version);  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{62 \};}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{70 \textcolor{keyword}{template} <\textcolor{keyword}{typename} FloatType>}
+\DoxyCodeLine{71 \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacetesseract__common_a6cc465537e94a07d22996dd2708f6084}{isWithinPositionLimits}}(\textcolor{keyword}{const} Eigen::Ref<\textcolor{keyword}{const} Eigen::Matrix<FloatType, Eigen::Dynamic, 1>>\& joint\_positions,}
+\DoxyCodeLine{72                             \textcolor{keyword}{const} Eigen::Ref<\textcolor{keyword}{const} Eigen::Matrix<FloatType, Eigen::Dynamic, 2>>\& position\_limits)}
+\DoxyCodeLine{73 \{}
+\DoxyCodeLine{74   \textcolor{keyword}{auto} p = joint\_positions.array();}
+\DoxyCodeLine{75   \textcolor{keyword}{auto} l0 = position\_limits.col(0).array();}
+\DoxyCodeLine{76   \textcolor{keyword}{auto} l1 = position\_limits.col(1).array();}
+\DoxyCodeLine{77   \textcolor{keywordflow}{return} (!(p > l1).any() \&\& !(p < l0).any());}
+\DoxyCodeLine{78 \}}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{90 \textcolor{keyword}{template} <\textcolor{keyword}{typename} FloatType>}
+\DoxyCodeLine{91 \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacetesseract__common_a538003ce5c67e13e56fd7decc0fd7585}{satisfiesPositionLimits}}(\textcolor{keyword}{const} Eigen::Ref<\textcolor{keyword}{const} Eigen::Matrix<FloatType, Eigen::Dynamic, 1>>\& joint\_positions,}
+\DoxyCodeLine{92                              \textcolor{keyword}{const} Eigen::Ref<\textcolor{keyword}{const} Eigen::Matrix<FloatType, Eigen::Dynamic, 2>>\& position\_limits,}
+\DoxyCodeLine{93                              \textcolor{keyword}{const} Eigen::Ref<\textcolor{keyword}{const} Eigen::Matrix<FloatType, Eigen::Dynamic, 1>>\& max\_diff,}
+\DoxyCodeLine{94                              \textcolor{keyword}{const} Eigen::Ref<\textcolor{keyword}{const} Eigen::Matrix<FloatType, Eigen::Dynamic, 1>>\& max\_rel\_diff)}
+\DoxyCodeLine{95 \{}
+\DoxyCodeLine{96   \textcolor{keyword}{auto} p = joint\_positions.array();}
+\DoxyCodeLine{97   \textcolor{keyword}{auto} l0 = position\_limits.col(0).array();}
+\DoxyCodeLine{98   \textcolor{keyword}{auto} l1 = position\_limits.col(1).array();}
+\DoxyCodeLine{99   \textcolor{keyword}{auto} md = max\_diff.array();}
+\DoxyCodeLine{100   \textcolor{keyword}{auto} mrd = max\_rel\_diff.array();}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102   \textcolor{keyword}{auto} lower\_diff\_abs = (p -\/ l0).abs();}
+\DoxyCodeLine{103   \textcolor{keyword}{auto} lower\_diff = (lower\_diff\_abs <= md);}
+\DoxyCodeLine{104   \textcolor{keyword}{auto} lower\_relative\_diff = (lower\_diff\_abs <= mrd * p.abs().max(l0.abs()));}
+\DoxyCodeLine{105   \textcolor{keyword}{auto} lower\_check = p > l0 || lower\_diff || lower\_relative\_diff;}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107   \textcolor{keyword}{auto} upper\_diff\_abs = (p -\/ l1).abs();}
+\DoxyCodeLine{108   \textcolor{keyword}{auto} upper\_diff = (upper\_diff\_abs <= md);}
+\DoxyCodeLine{109   \textcolor{keyword}{auto} upper\_relative\_diff = (upper\_diff\_abs <= mrd * p.abs().max(l1.abs()));}
+\DoxyCodeLine{110   \textcolor{keyword}{auto} upper\_check = p < l1 || upper\_diff || upper\_relative\_diff;}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112   \textcolor{keywordflow}{return} (lower\_check.all() \&\& upper\_check.all());}
+\DoxyCodeLine{113 \}}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{125 \textcolor{keyword}{template} <\textcolor{keyword}{typename} FloatType>}
+\DoxyCodeLine{126 \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacetesseract__common_a538003ce5c67e13e56fd7decc0fd7585}{satisfiesPositionLimits}}(\textcolor{keyword}{const} Eigen::Ref<\textcolor{keyword}{const} Eigen::Matrix<FloatType, Eigen::Dynamic, 1>>\& joint\_positions,}
+\DoxyCodeLine{127                              \textcolor{keyword}{const} Eigen::Ref<\textcolor{keyword}{const} Eigen::Matrix<FloatType, Eigen::Dynamic, 2>>\& position\_limits,}
+\DoxyCodeLine{128                              FloatType max\_diff = \textcolor{keyword}{static\_cast<}FloatType\textcolor{keyword}{>}(1e-\/6),}
+\DoxyCodeLine{129                              FloatType max\_rel\_diff = std::numeric\_limits<FloatType>::epsilon())}
+\DoxyCodeLine{130 \{}
+\DoxyCodeLine{131   \textcolor{keyword}{const} \textcolor{keyword}{auto} eigen\_max\_diff = Eigen::Matrix<FloatType, Eigen::Dynamic, 1>::Constant(joint\_positions.size(), max\_diff);}
+\DoxyCodeLine{132   \textcolor{keyword}{const} \textcolor{keyword}{auto} eigen\_max\_rel\_diff =}
+\DoxyCodeLine{133       Eigen::Matrix<FloatType, Eigen::Dynamic, 1>::Constant(joint\_positions.size(), max\_rel\_diff);}
+\DoxyCodeLine{134   \textcolor{comment}{// NOLINTNEXTLINE(clang-\/analyzer-\/core.uninitialized.UndefReturn)}}
+\DoxyCodeLine{135   \textcolor{keywordflow}{return} satisfiesPositionLimits<FloatType>(joint\_positions, position\_limits, eigen\_max\_diff, eigen\_max\_rel\_diff);}
+\DoxyCodeLine{136 \}}
+\DoxyCodeLine{137 }
+\DoxyCodeLine{143 \textcolor{keyword}{template} <\textcolor{keyword}{typename} FloatType>}
+\DoxyCodeLine{144 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__common_a1b11bad846aa502a484a8586f78c2a09}{enforcePositionLimits}}(Eigen::Ref<Eigen::Matrix<FloatType, Eigen::Dynamic, 1>> joint\_positions,}
+\DoxyCodeLine{145                            \textcolor{keyword}{const} Eigen::Ref<\textcolor{keyword}{const} Eigen::Matrix<FloatType, Eigen::Dynamic, 2>>\& position\_limits)}
+\DoxyCodeLine{146 \{}
+\DoxyCodeLine{147   joint\_positions = joint\_positions.array().min(position\_limits.col(1).array()).max(position\_limits.col(0).array());}
+\DoxyCodeLine{148 \}}
+\DoxyCodeLine{149 \}  \textcolor{comment}{// namespace tesseract\_common}}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_COMMON\_KINEMATIC\_LIMITS\_H}}
+
+\end{DoxyCode}

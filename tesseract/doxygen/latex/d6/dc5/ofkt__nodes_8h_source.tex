@@ -1,0 +1,220 @@
+\hypertarget{ofkt__nodes_8h_source}{}\doxysection{ofkt\+\_\+nodes.\+h}
+\label{ofkt__nodes_8h_source}\index{tesseract\_state\_solver/include/tesseract\_state\_solver/ofkt/ofkt\_nodes.h@{tesseract\_state\_solver/include/tesseract\_state\_solver/ofkt/ofkt\_nodes.h}}
+\mbox{\hyperlink{ofkt__nodes_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#ifndef TESSERACT\_STATE\_SOLVER\_OFKT\_NODES\_H}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#define TESSERACT\_STATE\_SOLVER\_OFKT\_NODES\_H}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{ofkt__node_8h}{tesseract\_state\_solver/ofkt/ofkt\_node.h}}>}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__scene__graph}{tesseract\_scene\_graph}}}
+\DoxyCodeLine{37 \{}
+\DoxyCodeLine{38 \textcolor{comment}{/*********************************************************************/}}
+\DoxyCodeLine{39 \textcolor{comment}{/*************************** BASE NODE *******************************/}}
+\DoxyCodeLine{40 \textcolor{comment}{/*********************************************************************/}}
+\DoxyCodeLine{41 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode}{OFKTBaseNode}} : \textcolor{keyword}{public} \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode}{OFKTNode}}}
+\DoxyCodeLine{42 \{}
+\DoxyCodeLine{43 \textcolor{keyword}{public}:}
+\DoxyCodeLine{44   \textcolor{comment}{// LCOV\_EXCL\_START}}
+\DoxyCodeLine{45   EIGEN\_MAKE\_ALIGNED\_OPERATOR\_NEW}
+\DoxyCodeLine{46   \textcolor{comment}{// LCOV\_EXCL\_STOP}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48   \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode}{OFKTBaseNode}}(\mbox{\hyperlink{namespacetesseract__scene__graph_ade43fa945a554b6e0c703e38e6a8cf16}{tesseract\_scene\_graph::JointType}} \mbox{\hyperlink{tesseract__environment__collision_8cpp_a30f93ee2d6b54c870d5c8295071072ac}{type}}, \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode}{OFKTNode}}* parent, std::string link\_name);}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50   \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode}{OFKTBaseNode}}(\mbox{\hyperlink{namespacetesseract__scene__graph_ade43fa945a554b6e0c703e38e6a8cf16}{tesseract\_scene\_graph::JointType}} \mbox{\hyperlink{tesseract__environment__collision_8cpp_a30f93ee2d6b54c870d5c8295071072ac}{type}},}
+\DoxyCodeLine{51                \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode}{OFKTNode}}* parent,}
+\DoxyCodeLine{52                std::string link\_name,}
+\DoxyCodeLine{53                std::string \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aad74bf9891b141c288c96b20caff4dfa}{joint\_name}},}
+\DoxyCodeLine{54                \textcolor{keyword}{const} Eigen::Isometry3d\& static\_tf);}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56   \mbox{\hyperlink{namespacetesseract__scene__graph_ade43fa945a554b6e0c703e38e6a8cf16}{JointType}} \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a4e1d94d93e5fe12e2b7fad64efb7fc23}{getType}}() \textcolor{keyword}{const override};}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a28a0b85fb901f1caf4f4927ebc3c7b15}{setParent}}(\mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode}{OFKTNode}}* parent) \textcolor{keyword}{override};}
+\DoxyCodeLine{59   \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode}{OFKTNode}}* \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_aba9ecfa017433b0bf196e5f58ebc59d2}{getParent}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{60   \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode}{OFKTNode}}* \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_aba9ecfa017433b0bf196e5f58ebc59d2}{getParent}}() \textcolor{keyword}{const override};}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62   \textcolor{keyword}{const} std::string\& \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a886f74bbd8f88166679b9083554f3edf}{getLinkName}}() \textcolor{keyword}{const override};}
+\DoxyCodeLine{63   \textcolor{keyword}{const} std::string\& \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a93e53901b651bdad3789401869a8a69d}{getJointName}}() \textcolor{keyword}{const override};}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a09bf85c903c7b06af846a994860990f0}{storeJointValue}}(\textcolor{keywordtype}{double} joint\_value) \textcolor{keyword}{override};}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67   \textcolor{keywordtype}{double} \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a8efa646a89820e0ab8330c2ea5d9e112}{getJointValue}}() \textcolor{keyword}{const override};}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a8d9c30e9bb4391e058954a8be9cc01d5}{hasJointValueChanged}}() \textcolor{keyword}{const override};}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a13009fa15aba352ad70fbf7d6f2882c2}{setStaticTransformation}}(Eigen::Isometry3d static\_tf) \textcolor{keyword}{override};}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73   \textcolor{keyword}{const} Eigen::Isometry3d\& \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_ae190b707426a8ec338ae1a42a884ad8c}{getStaticTransformation}}() \textcolor{keyword}{const override};}
+\DoxyCodeLine{74   \textcolor{keyword}{const} Eigen::Isometry3d\& \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a5eef1a04fed2e524bb6e8b18b4cb6c93}{getLocalTransformation}}() \textcolor{keyword}{const override};}
+\DoxyCodeLine{75   Eigen::Isometry3d \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a909b4b722c13ea6e85c40adbe120f87b}{computeLocalTransformation}}(\textcolor{keywordtype}{double} joint\_value) \textcolor{keyword}{const override};}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a19a8ae88ecef3d63f5874321147494bd}{computeAndStoreWorldTransformation}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{78   \textcolor{keyword}{const} Eigen::Isometry3d\& \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a8d95a06315d6f98edb15cc178e811573}{getWorldTransformation}}() \textcolor{keyword}{const override};}
+\DoxyCodeLine{79   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_ad0ab4f405a66c8a311e597a3ddc57b82}{updateWorldTransformationRequired}}() \textcolor{keyword}{const override};}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81   Eigen::Matrix<double, 6, 1> \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_ae4a18dc308b859d8b9ee1133bfc970ad}{getLocalTwist}}() \textcolor{keyword}{const override};}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a57fe11209457a2d00c11af8bdbe0a7c9}{addChild}}(\mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode}{OFKTNode}}* node) \textcolor{keyword}{override};}
+\DoxyCodeLine{84   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_aac5ba3c73d256e6c092b60865371beba}{removeChild}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode}{OFKTNode}}* node) \textcolor{keyword}{override};}
+\DoxyCodeLine{85   std::vector<OFKTNode*>\& \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a1f9015d398cc13a07652debe2cb943b6}{getChildren}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{86   \textcolor{keyword}{const} std::vector<const OFKTNode*>\& \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a1f9015d398cc13a07652debe2cb943b6}{getChildren}}() \textcolor{keyword}{const override};}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{89   \mbox{\hyperlink{namespacetesseract__scene__graph_ade43fa945a554b6e0c703e38e6a8cf16}{tesseract\_scene\_graph::JointType}} \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a600186b55fa3147f5f1b69a2acbc75ac}{type\_}};}
+\DoxyCodeLine{90   \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode}{OFKTNode}}* \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a40d4bb94219b9608af74275510f6d156}{parent\_}}\{ \textcolor{keyword}{nullptr} \};}
+\DoxyCodeLine{91   std::string \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_ac394544c98b9899adbdf1ea42cc1d47d}{link\_name\_}};}
+\DoxyCodeLine{92   std::string \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_ae6625c16deb61434476008f1b2e3a8ff}{joint\_name\_}};}
+\DoxyCodeLine{93   Eigen::Isometry3d \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a3c2ea555e6208b6682f55c5ecc41d31d}{static\_tf\_}}\{ Eigen::Isometry3d::Identity() \};}
+\DoxyCodeLine{94   Eigen::Isometry3d \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_ae6de6e56adea5f5087ae12cb8edfdddd}{joint\_tf\_}}\{ Eigen::Isometry3d::Identity() \};}
+\DoxyCodeLine{95   Eigen::Isometry3d \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_aa061b1d1614d750b2ee4531439138e01}{local\_tf\_}}\{ Eigen::Isometry3d::Identity() \};}
+\DoxyCodeLine{96   Eigen::Isometry3d \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_acb6a6b6a00a51ee18ca1c4b4344e71f5}{world\_tf\_}}\{ Eigen::Isometry3d::Identity() \};}
+\DoxyCodeLine{97   Eigen::Matrix<double, 6, 1> \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a512325a7eda963e3002c84a88adee5d7}{local\_twist\_}}\{ Eigen::VectorXd::Zero(6) \};}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99   \textcolor{keywordtype}{double} \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a162ea163c8c0033e51a6546bbcc14036}{joint\_value\_}}\{ 0 \};}
+\DoxyCodeLine{100   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_ad92627c415427322208a904b9d48607d}{joint\_value\_changed\_}}\{ \textcolor{keyword}{false} \};}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102   std::vector<OFKTNode*> \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_aeaf5173e7f2fab4735ba37ac4931e920}{children\_}};}
+\DoxyCodeLine{103   std::vector<const OFKTNode*> \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a824383ae35d7cca9da5b9d7eb59eacea}{children\_const\_}};}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode_a26fef0612bc1459b213f197c2e1e193a}{update\_world\_required\_}}\{ \textcolor{keyword}{true} \};}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107   \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver}{OFKTStateSolver}};}
+\DoxyCodeLine{108 \};}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110 \textcolor{comment}{/*********************************************************************/}}
+\DoxyCodeLine{111 \textcolor{comment}{/*************************** ROOT NODE *******************************/}}
+\DoxyCodeLine{112 \textcolor{comment}{/*********************************************************************/}}
+\DoxyCodeLine{113 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTRootNode}{OFKTRootNode}} : \textcolor{keyword}{public} \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode}{OFKTBaseNode}}}
+\DoxyCodeLine{114 \{}
+\DoxyCodeLine{115 \textcolor{keyword}{public}:}
+\DoxyCodeLine{116   \textcolor{comment}{// LCOV\_EXCL\_START}}
+\DoxyCodeLine{117   EIGEN\_MAKE\_ALIGNED\_OPERATOR\_NEW}
+\DoxyCodeLine{118   \textcolor{comment}{// LCOV\_EXCL\_STOP}}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{124   \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTRootNode}{OFKTRootNode}}(std::string link\_name);}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTRootNode_a66cc3950d2bb88ddb2179a3eac67b60e}{setParent}}(\mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode}{OFKTNode}}* parent) \textcolor{keyword}{override};}
+\DoxyCodeLine{127   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTRootNode_ac30baad43c45c6ea02a864b5c4de8ecd}{storeJointValue}}(\textcolor{keywordtype}{double} joint\_value) \textcolor{keyword}{override};}
+\DoxyCodeLine{128   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTRootNode_a1569c01a71ab2e46a7df946a17c8d67f}{setStaticTransformation}}(Eigen::Isometry3d static\_tf) \textcolor{keyword}{override};}
+\DoxyCodeLine{129   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTRootNode_a42945d191fad7fb0f90a570aaf8512b9}{computeAndStoreLocalTransformation}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{130   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTRootNode_add569faf12e6707c4859aee4b3671989}{computeAndStoreWorldTransformation}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{131   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTRootNode_a8d6eb376df18a0dbf488bae3629472c2}{updateWorldTransformationRequired}}() \textcolor{keyword}{const override};}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133   Eigen::Isometry3d \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTRootNode_a0c71bbb5f19427580753c14b6e8d01fe}{computeLocalTransformation}}(\textcolor{keywordtype}{double} joint\_value) \textcolor{keyword}{const override};}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135 \textcolor{keyword}{private}:}
+\DoxyCodeLine{136   \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver}{OFKTStateSolver}};}
+\DoxyCodeLine{137 \};}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139 \textcolor{comment}{/**********************************************************************/}}
+\DoxyCodeLine{140 \textcolor{comment}{/*************************** FIXED NODE *******************************/}}
+\DoxyCodeLine{141 \textcolor{comment}{/**********************************************************************/}}
+\DoxyCodeLine{142 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTFixedNode}{OFKTFixedNode}} : \textcolor{keyword}{public} \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode}{OFKTBaseNode}}}
+\DoxyCodeLine{143 \{}
+\DoxyCodeLine{144 \textcolor{keyword}{public}:}
+\DoxyCodeLine{145   \textcolor{comment}{// LCOV\_EXCL\_START}}
+\DoxyCodeLine{146   EIGEN\_MAKE\_ALIGNED\_OPERATOR\_NEW}
+\DoxyCodeLine{147   \textcolor{comment}{// LCOV\_EXCL\_STOP}}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149   \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTFixedNode}{OFKTFixedNode}}(\mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode}{OFKTNode}}* parent, std::string link\_name, std::string \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aad74bf9891b141c288c96b20caff4dfa}{joint\_name}}, \textcolor{keyword}{const} Eigen::Isometry3d\& static\_tf);}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTFixedNode_a734b18b3bfd566e59bf82bdcaf1f0019}{storeJointValue}}(\textcolor{keywordtype}{double} joint\_value) \textcolor{keyword}{override};}
+\DoxyCodeLine{152   \textcolor{keywordtype}{double} \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTFixedNode_a8263084b728064f55a19b19c7bcd72bd}{getJointValue}}() \textcolor{keyword}{const override};}
+\DoxyCodeLine{153   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTFixedNode_a18bdb53223fad4b6185a66eb7630e7f7}{setStaticTransformation}}(Eigen::Isometry3d static\_tf) \textcolor{keyword}{override};}
+\DoxyCodeLine{154   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTFixedNode_a859993174282115489c6f894da7625b8}{computeAndStoreLocalTransformation}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{155   Eigen::Isometry3d \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTFixedNode_acd17d4ffea29bbe33dd79ec53a45d04f}{computeLocalTransformation}}(\textcolor{keywordtype}{double} joint\_value) \textcolor{keyword}{const override};}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{157 \textcolor{keyword}{private}:}
+\DoxyCodeLine{158   \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver}{OFKTStateSolver}};}
+\DoxyCodeLine{159 \};}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{161 \textcolor{comment}{/*********************************************************************/}}
+\DoxyCodeLine{162 \textcolor{comment}{/************************* REVOLUTE NODE *****************************/}}
+\DoxyCodeLine{163 \textcolor{comment}{/*********************************************************************/}}
+\DoxyCodeLine{164 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTRevoluteNode}{OFKTRevoluteNode}} : \textcolor{keyword}{public} \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode}{OFKTBaseNode}}}
+\DoxyCodeLine{165 \{}
+\DoxyCodeLine{166 \textcolor{keyword}{public}:}
+\DoxyCodeLine{167   \textcolor{comment}{// LCOV\_EXCL\_START}}
+\DoxyCodeLine{168   EIGEN\_MAKE\_ALIGNED\_OPERATOR\_NEW}
+\DoxyCodeLine{169   \textcolor{comment}{// LCOV\_EXCL\_STOP}}
+\DoxyCodeLine{170 }
+\DoxyCodeLine{171   \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTRevoluteNode}{OFKTRevoluteNode}}(\mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode}{OFKTNode}}* parent,}
+\DoxyCodeLine{172                    std::string link\_name,}
+\DoxyCodeLine{173                    std::string \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aad74bf9891b141c288c96b20caff4dfa}{joint\_name}},}
+\DoxyCodeLine{174                    \textcolor{keyword}{const} Eigen::Isometry3d\& static\_tf,}
+\DoxyCodeLine{175                    \textcolor{keyword}{const} Eigen::Vector3d\& \mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a2a94595a4fd1b33d563dc7921da1bc7d}{axis}});}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{177   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTRevoluteNode_ab961bda64c57085118dccf0da2491844}{storeJointValue}}(\textcolor{keywordtype}{double} joint\_value) \textcolor{keyword}{override};}
+\DoxyCodeLine{178   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTRevoluteNode_a2ad8244a3d7af7cbafd1bcee77087af3}{computeAndStoreLocalTransformation}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{179   Eigen::Isometry3d \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTRevoluteNode_ae3d0b816639407a93cf93ba4ffb04bf9}{computeLocalTransformation}}(\textcolor{keywordtype}{double} joint\_value) \textcolor{keyword}{const override};}
+\DoxyCodeLine{180   \textcolor{keyword}{const} Eigen::Vector3d\& \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTRevoluteNode_af6e6eb2a9981e99c88e959064e134256}{getAxis}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{181 }
+\DoxyCodeLine{182 \textcolor{keyword}{private}:}
+\DoxyCodeLine{183   Eigen::Vector3d \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTRevoluteNode_ad899718c6752206feafbdaa986f93ca6}{axis\_}};}
+\DoxyCodeLine{184 }
+\DoxyCodeLine{185   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTRevoluteNode_ac80a5fd78574a6f2337bbc7264b52343}{computeAndStoreLocalTransformationImpl}}();}
+\DoxyCodeLine{186 }
+\DoxyCodeLine{187   \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver}{OFKTStateSolver}};}
+\DoxyCodeLine{188 \};}
+\DoxyCodeLine{189 }
+\DoxyCodeLine{190 \textcolor{comment}{/*********************************************************************/}}
+\DoxyCodeLine{191 \textcolor{comment}{/************************ CONTINUOUS NODE ****************************/}}
+\DoxyCodeLine{192 \textcolor{comment}{/*********************************************************************/}}
+\DoxyCodeLine{193 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTContinuousNode}{OFKTContinuousNode}} : \textcolor{keyword}{public} \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode}{OFKTBaseNode}}}
+\DoxyCodeLine{194 \{}
+\DoxyCodeLine{195 \textcolor{keyword}{public}:}
+\DoxyCodeLine{196   \textcolor{comment}{// LCOV\_EXCL\_START}}
+\DoxyCodeLine{197   EIGEN\_MAKE\_ALIGNED\_OPERATOR\_NEW}
+\DoxyCodeLine{198   \textcolor{comment}{// LCOV\_EXCL\_STOP}}
+\DoxyCodeLine{199 }
+\DoxyCodeLine{200   \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTContinuousNode}{OFKTContinuousNode}}(\mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode}{OFKTNode}}* parent,}
+\DoxyCodeLine{201                      std::string link\_name,}
+\DoxyCodeLine{202                      std::string \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aad74bf9891b141c288c96b20caff4dfa}{joint\_name}},}
+\DoxyCodeLine{203                      \textcolor{keyword}{const} Eigen::Isometry3d\& static\_tf,}
+\DoxyCodeLine{204                      \textcolor{keyword}{const} Eigen::Vector3d\& \mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a2a94595a4fd1b33d563dc7921da1bc7d}{axis}});}
+\DoxyCodeLine{205 }
+\DoxyCodeLine{206   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTContinuousNode_a6e5ecca3faaa0b6d3708e71132166b1d}{computeAndStoreLocalTransformation}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{207   Eigen::Isometry3d \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTContinuousNode_a52c5a037f9bbfc139a6a830f2a396ce6}{computeLocalTransformation}}(\textcolor{keywordtype}{double} joint\_value) \textcolor{keyword}{const override};}
+\DoxyCodeLine{208   \textcolor{keyword}{const} Eigen::Vector3d\& \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTContinuousNode_a1f91b0abbd87ef34b7a9bba3174d4d6d}{getAxis}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{209 }
+\DoxyCodeLine{210 \textcolor{keyword}{private}:}
+\DoxyCodeLine{211   Eigen::Vector3d \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTContinuousNode_a61bf2dab123e8b1fc1ce7cc2c30323d6}{axis\_}};}
+\DoxyCodeLine{212 }
+\DoxyCodeLine{213   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTContinuousNode_a86e721f9598280f5d3ac64f1fd0b50e7}{computeAndStoreLocalTransformationImpl}}();}
+\DoxyCodeLine{214 }
+\DoxyCodeLine{215   \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver}{OFKTStateSolver}};}
+\DoxyCodeLine{216 \};}
+\DoxyCodeLine{217 }
+\DoxyCodeLine{218 \textcolor{comment}{/*********************************************************************/}}
+\DoxyCodeLine{219 \textcolor{comment}{/************************* PRISMATIC NODE ****************************/}}
+\DoxyCodeLine{220 \textcolor{comment}{/*********************************************************************/}}
+\DoxyCodeLine{221 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTPrismaticNode}{OFKTPrismaticNode}} : \textcolor{keyword}{public} \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTBaseNode}{OFKTBaseNode}}}
+\DoxyCodeLine{222 \{}
+\DoxyCodeLine{223 \textcolor{keyword}{public}:}
+\DoxyCodeLine{224   \textcolor{comment}{// LCOV\_EXCL\_START}}
+\DoxyCodeLine{225   EIGEN\_MAKE\_ALIGNED\_OPERATOR\_NEW}
+\DoxyCodeLine{226   \textcolor{comment}{// LCOV\_EXCL\_STOP}}
+\DoxyCodeLine{227 }
+\DoxyCodeLine{228   \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTPrismaticNode}{OFKTPrismaticNode}}(\mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTNode}{OFKTNode}}* parent,}
+\DoxyCodeLine{229                     std::string link\_name,}
+\DoxyCodeLine{230                     std::string \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aad74bf9891b141c288c96b20caff4dfa}{joint\_name}},}
+\DoxyCodeLine{231                     \textcolor{keyword}{const} Eigen::Isometry3d\& static\_tf,}
+\DoxyCodeLine{232                     \textcolor{keyword}{const} Eigen::Vector3d\& \mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a2a94595a4fd1b33d563dc7921da1bc7d}{axis}});}
+\DoxyCodeLine{233 }
+\DoxyCodeLine{234   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTPrismaticNode_a099a1b3882b33874e2f4b95a5e1e2957}{computeAndStoreLocalTransformation}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{235   Eigen::Isometry3d \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTPrismaticNode_a09b9a20956733db191d0607ccebd7372}{computeLocalTransformation}}(\textcolor{keywordtype}{double} joint\_value) \textcolor{keyword}{const override};}
+\DoxyCodeLine{236   \textcolor{keyword}{const} Eigen::Vector3d\& \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTPrismaticNode_adf9356cefb207dcd48ecfa51a4d8bcee}{getAxis}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{237 }
+\DoxyCodeLine{238 \textcolor{keyword}{private}:}
+\DoxyCodeLine{239   Eigen::Vector3d \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTPrismaticNode_a8d01bbb1aa8acccbba786a1fb601cd49}{axis\_}};}
+\DoxyCodeLine{240 }
+\DoxyCodeLine{241   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTPrismaticNode_a24b10cf440e3ad0e72b7f3c2a92d8f8b}{computeAndStoreLocalTransformationImpl}}();}
+\DoxyCodeLine{242 }
+\DoxyCodeLine{243   \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__scene__graph_1_1OFKTStateSolver}{OFKTStateSolver}};}
+\DoxyCodeLine{244 \};}
+\DoxyCodeLine{245 \}  \textcolor{comment}{// namespace tesseract\_scene\_graph}}
+\DoxyCodeLine{246 }
+\DoxyCodeLine{247 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_STATE\_SOLVER\_OFKT\_NODES\_H}}
+
+\end{DoxyCode}

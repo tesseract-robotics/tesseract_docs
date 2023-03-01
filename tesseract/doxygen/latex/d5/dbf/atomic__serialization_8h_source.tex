@@ -1,0 +1,42 @@
+\hypertarget{atomic__serialization_8h_source}{}\doxysection{atomic\+\_\+serialization.\+h}
+\label{atomic__serialization_8h_source}\index{tesseract\_common/include/tesseract\_common/atomic\_serialization.h@{tesseract\_common/include/tesseract\_common/atomic\_serialization.h}}
+\mbox{\hyperlink{atomic__serialization_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#ifndef TESSERACT\_COMMON\_ATOMIC\_SERIALIZATION\_H}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#define TESSERACT\_COMMON\_ATOMIC\_SERIALIZATION\_H}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{macros_8h}{tesseract\_common/macros.h}}>}}
+\DoxyCodeLine{31 \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include <boost/serialization/serialization.hpp>}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include <boost/serialization/split\_free.hpp>}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include <boost/serialization/nvp.hpp>}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include <atomic>}}
+\DoxyCodeLine{36 \mbox{\hyperlink{namespaceTESSERACT__COMMON__IGNORE__WARNINGS__POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{39 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceboost_1_1serialization}{boost::serialization}}}
+\DoxyCodeLine{40 \{}
+\DoxyCodeLine{41 \textcolor{keyword}{template} <\textcolor{keyword}{class} Archive, \textcolor{keyword}{class} T>}
+\DoxyCodeLine{42 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespaceboost_1_1serialization_ac2d28988061f3431a765d4256c8ebb16}{save}}(Archive\& ar, \textcolor{keyword}{const} std::atomic<T>\& t, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int})}
+\DoxyCodeLine{43 \{}
+\DoxyCodeLine{44   \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{T}} \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a767de28b215ddaceb31188034a0838c0}{value}} = t.load();}
+\DoxyCodeLine{45   ar\& \mbox{\hyperlink{tesseract__common__unit_8cpp_a34841013cb79dee012f2616fed438ff2}{BOOST\_SERIALIZATION\_NVP}}(\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a767de28b215ddaceb31188034a0838c0}{value}});}
+\DoxyCodeLine{46 \}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{keyword}{template} <\textcolor{keyword}{class} Archive, \textcolor{keyword}{class} T>}
+\DoxyCodeLine{49 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespaceboost_1_1serialization_a74575a96c829776955839ceea11a5145}{load}}(Archive\& ar, std::atomic<T>\& t, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int})}
+\DoxyCodeLine{50 \{}
+\DoxyCodeLine{51   \mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{T}} \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a767de28b215ddaceb31188034a0838c0}{value}};}
+\DoxyCodeLine{52   ar\& \mbox{\hyperlink{tesseract__common__unit_8cpp_a34841013cb79dee012f2616fed438ff2}{BOOST\_SERIALIZATION\_NVP}}(\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a767de28b215ddaceb31188034a0838c0}{value}});}
+\DoxyCodeLine{53   t = \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a767de28b215ddaceb31188034a0838c0}{value}};}
+\DoxyCodeLine{54 \}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 \textcolor{keyword}{template} <\textcolor{keyword}{class} Archive, \textcolor{keyword}{class} T>}
+\DoxyCodeLine{57 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespaceboost_1_1serialization_aa09e7bc4ef1e47e77fdac84474259e71}{serialize}}(Archive\& ar, std::atomic<T>\& t, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} version)}
+\DoxyCodeLine{58 \{}
+\DoxyCodeLine{59   boost::serialization::split\_free(ar, t, version);}
+\DoxyCodeLine{60 \}}
+\DoxyCodeLine{61 \}  \textcolor{comment}{// namespace boost::serialization}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_COMMON\_ATOMIC\_SERIALIZATION\_H}}
+
+\end{DoxyCode}

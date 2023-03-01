@@ -1,0 +1,122 @@
+\hypertarget{graph_8h}{}\doxysection{tesseract\+\_\+scene\+\_\+graph/include/tesseract\+\_\+scene\+\_\+graph/graph.h File Reference}
+\label{graph_8h}\index{tesseract\_scene\_graph/include/tesseract\_scene\_graph/graph.h@{tesseract\_scene\_graph/include/tesseract\_scene\_graph/graph.h}}
+
+
+A basic scene graph using boost.  
+
+
+{\ttfamily \#include $<$tesseract\+\_\+common/macros.\+h$>$}\newline
+{\ttfamily \#include $<$boost/graph/adjacency\+\_\+list.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/graph/directed\+\_\+graph.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/graph/properties.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/graph/depth\+\_\+first\+\_\+search.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/graph/breadth\+\_\+first\+\_\+search.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/serialization/access.\+hpp$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+scene\+\_\+graph/link.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+scene\+\_\+graph/joint.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+common/allowed\+\_\+collision\+\_\+matrix.\+h$>$}\newline
+{\ttfamily \#include $<$boost/serialization/export.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/serialization/tracking.\+hpp$>$}\newline
+Include dependency graph for graph.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structtesseract__scene__graph_1_1ShortestPath}{tesseract\+\_\+scene\+\_\+graph\+::\+Shortest\+Path}}
+\begin{DoxyCompactList}\small\item\em Holds the shortest path information. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph}{tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+Graph}}
+\item 
+struct \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneGraph_1_1cycle__detector}{tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+Graph\+::cycle\+\_\+detector}}
+\item 
+struct \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneGraph_1_1tree__detector}{tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+Graph\+::tree\+\_\+detector}}
+\item 
+struct \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneGraph_1_1children__detector}{tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+Graph\+::children\+\_\+detector}}
+\item 
+struct \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneGraph_1_1adjacency__detector}{tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+Graph\+::adjacency\+\_\+detector}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceboost}{boost}}
+\item 
+namespace \mbox{\hyperlink{namespacetesseract__scene__graph}{tesseract\+\_\+scene\+\_\+graph}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{namespacetesseract__scene__graph_a8a54db22a9b9c10174389d74fc6a46bc}{tesseract\+\_\+scene\+\_\+graph\+::\+Graph\+Property}} = boost\+::property$<$ boost\+::graph\+\_\+name\+\_\+t, std\+::string, boost\+::property$<$ \mbox{\hyperlink{namespaceboost_ab3ffe54ba2693f8e8e5e709d8a425f65}{boost\+::graph\+\_\+root\+\_\+t}}, std\+::string $>$ $>$
+\begin{DoxyCompactList}\small\item\em Defines the boost graph property. \end{DoxyCompactList}\item 
+using \mbox{\hyperlink{namespacetesseract__scene__graph_a87d88949e8773cc1ab1a583b4bc6824f}{tesseract\+\_\+scene\+\_\+graph\+::\+Vertex\+Property}} = boost\+::property$<$ \mbox{\hyperlink{namespaceboost_ab951500554c258d05de53b1a9e47c6f7}{boost\+::vertex\+\_\+link\+\_\+t}}, Link\+::\+Ptr, boost\+::property$<$ \mbox{\hyperlink{namespaceboost_a662376eac1c00e8974a26749f83d93ce}{boost\+::vertex\+\_\+link\+\_\+visible\+\_\+t}}, bool, boost\+::property$<$ \mbox{\hyperlink{namespaceboost_afeaae59a22dd08541ea42fe3095b2b13}{boost\+::vertex\+\_\+link\+\_\+collision\+\_\+enabled\+\_\+t}}, bool $>$ $>$ $>$
+\begin{DoxyCompactList}\small\item\em Defines the boost graph vertex property. \end{DoxyCompactList}\item 
+using \mbox{\hyperlink{namespacetesseract__scene__graph_a9dc21bc544723df21ec27052717c4e1e}{tesseract\+\_\+scene\+\_\+graph\+::\+Edge\+Property}} = boost\+::property$<$ \mbox{\hyperlink{namespaceboost_a5bdec37849f299741830b4d2fc9f93aa}{boost\+::edge\+\_\+joint\+\_\+t}}, Joint\+::\+Ptr, boost\+::property$<$ boost\+::edge\+\_\+weight\+\_\+t, double $>$ $>$
+\begin{DoxyCompactList}\small\item\em Edge\+Property. \end{DoxyCompactList}\item 
+using \mbox{\hyperlink{namespacetesseract__scene__graph_acbaf9f6ad6831a8d42a5ece9f2d611a2}{tesseract\+\_\+scene\+\_\+graph\+::\+Graph}} = boost\+::adjacency\+\_\+list$<$ boost\+::listS, boost\+::listS, boost\+::bidirectionalS, Vertex\+Property, Edge\+Property, Graph\+Property $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespaceboost_ab951500554c258d05de53b1a9e47c6f7}{boost\+::vertex\+\_\+link\+\_\+t}} \{ \mbox{\hyperlink{namespaceboost_ab951500554c258d05de53b1a9e47c6f7aaa6eb1f0c641e015418e35bd1d9aa546}{boost\+::vertex\+\_\+link}}
+ \}
+\item 
+enum \mbox{\hyperlink{namespaceboost_a662376eac1c00e8974a26749f83d93ce}{boost\+::vertex\+\_\+link\+\_\+visible\+\_\+t}} \{ \mbox{\hyperlink{namespaceboost_a662376eac1c00e8974a26749f83d93cea0781dc3c140572dd75c5175ed57dbce2}{boost\+::vertex\+\_\+link\+\_\+visible}}
+ \}
+\item 
+enum \mbox{\hyperlink{namespaceboost_afeaae59a22dd08541ea42fe3095b2b13}{boost\+::vertex\+\_\+link\+\_\+collision\+\_\+enabled\+\_\+t}} \{ \mbox{\hyperlink{namespaceboost_afeaae59a22dd08541ea42fe3095b2b13ac90fb4523397ca746ec5a311ec9b4f05}{boost\+::vertex\+\_\+link\+\_\+collision\+\_\+enabled}}
+ \}
+\item 
+enum \mbox{\hyperlink{namespaceboost_a5bdec37849f299741830b4d2fc9f93aa}{boost\+::edge\+\_\+joint\+\_\+t}} \{ \mbox{\hyperlink{namespaceboost_a5bdec37849f299741830b4d2fc9f93aaafabcd8d39ed0870eb89a37f3c235026d}{boost\+::edge\+\_\+joint}}
+ \}
+\item 
+enum \mbox{\hyperlink{namespaceboost_ab3ffe54ba2693f8e8e5e709d8a425f65}{boost\+::graph\+\_\+root\+\_\+t}} \{ \mbox{\hyperlink{namespaceboost_ab3ffe54ba2693f8e8e5e709d8a425f65ad267908c11b3a5bcbeac9b6c81e909f4}{boost\+::graph\+\_\+root}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceboost_a602c251490fe2187e571fe829f4e58dc}{boost\+::\+BOOST\+\_\+\+INSTALL\+\_\+\+PROPERTY}} (vertex, link)
+\item 
+\mbox{\hyperlink{namespaceboost_a7224db930f8a0d837ef692f096b16f95}{boost\+::\+BOOST\+\_\+\+INSTALL\+\_\+\+PROPERTY}} (vertex, link\+\_\+visible)
+\item 
+\mbox{\hyperlink{namespaceboost_ad1f2a36eafa99906f62ea430f4b74421}{boost\+::\+BOOST\+\_\+\+INSTALL\+\_\+\+PROPERTY}} (vertex, link\+\_\+collision\+\_\+enabled)
+\item 
+\mbox{\hyperlink{namespaceboost_a1cec93e2deff69f89e87071cac799e66}{boost\+::\+BOOST\+\_\+\+INSTALL\+\_\+\+PROPERTY}} (edge, joint)
+\item 
+\mbox{\hyperlink{namespaceboost_a9e70dbab81a95f5c36fde0799a598dbf}{boost\+::\+BOOST\+\_\+\+INSTALL\+\_\+\+PROPERTY}} (\mbox{\hyperlink{tesseract__srdf__serialization__unit_8cpp_ae79c812e6854fd940ccc3959c8c10578}{graph}}, root)
+\item 
+std\+::ostream \& \mbox{\hyperlink{namespacetesseract__scene__graph_ad25649d17ef5727a5717fb842c8e9735}{tesseract\+\_\+scene\+\_\+graph\+::operator$<$$<$}} (std\+::ostream \&os, const Shortest\+Path \&path)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A basic scene graph using boost. 
+
+\begin{DoxyAuthor}{Author}
+Levi Armstrong 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Dec 18, 2017 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+TODO 
+\end{DoxyVersion}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000208}{Bug}}]No known bugs\end{DoxyRefDesc}
+
+
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2017, Southwest Research Institute
+\end{DoxyCopyright}
+\begin{DoxyParagraph}{License}
+Software License Agreement (Apache License) 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+Licensed under the Apache License, Version 2.\+0 (the \char`\"{}\+License\char`\"{}); you may not use this file except in compliance with the License. You may obtain a copy of the License at \href{http://www.apache.org/licenses/LICENSE-2.0}{\texttt{ http\+://www.\+apache.\+org/licenses/\+LICENSE-\/2.\+0}} 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \char`\"{}\+AS IS\char`\"{} BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License. 
+\end{DoxyParagraph}

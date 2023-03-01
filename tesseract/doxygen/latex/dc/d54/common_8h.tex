@@ -1,0 +1,79 @@
+\hypertarget{common_8h}{}\doxysection{tesseract\+\_\+collision/core/include/tesseract\+\_\+collision/core/common.h File Reference}
+\label{common_8h}\index{tesseract\_collision/core/include/tesseract\_collision/core/common.h@{tesseract\_collision/core/include/tesseract\_collision/core/common.h}}
+
+
+This is a collection of common methods.  
+
+
+{\ttfamily \#include $<$tesseract\+\_\+common/macros.\+h$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Geometry$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+collision/core/types.\+h$>$}\newline
+Include dependency graph for common.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacetesseract__collision}{tesseract\+\_\+collision}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{namespacetesseract__collision_af5926355228f0196ddf51e6951dbe491}{tesseract\+\_\+collision\+::\+Object\+Pair\+Key}} = std\+::pair$<$ std\+::string, std\+::string $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Object\+Pair\+Key \mbox{\hyperlink{namespacetesseract__collision_a0876bd0182505440236643eb5bade1c7}{tesseract\+\_\+collision\+::get\+Object\+Pair\+Key}} (const std\+::string \&obj1, const std\+::string \&obj2)
+\begin{DoxyCompactList}\small\item\em Get a key for two object to search the collision matrix. \end{DoxyCompactList}\item 
+std\+::vector$<$ Object\+Pair\+Key $>$ \mbox{\hyperlink{namespacetesseract__collision_ac37834bbb711cf5148c4b3a00faf6162}{tesseract\+\_\+collision\+::get\+Collision\+Object\+Pairs}} (const std\+::vector$<$ std\+::string $>$ \&\mbox{\hyperlink{tesseract__environment__collision_8cpp_a63bb2774cedec88326bab0804f03d82f}{active\+\_\+links}}, const std\+::vector$<$ std\+::string $>$ \&\mbox{\hyperlink{collision__core__unit_8cpp_a20f995abd2d70f9febd34141caf91491}{static\+\_\+links}}, const Is\+Contact\+Allowed\+Fn \&\mbox{\hyperlink{collision__core__unit_8cpp_a714392901b0c74193a9659fc77891a60}{acm}}=nullptr)
+\begin{DoxyCompactList}\small\item\em Get a vector of possible collision object pairs. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacetesseract__collision_ab6cce1ce95e96f38382f53976bbe9dea}{tesseract\+\_\+collision\+::is\+Link\+Active}} (const std\+::vector$<$ std\+::string $>$ \&active, const std\+::string \&\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}})
+\begin{DoxyCompactList}\small\item\em This will check if a link is active provided a list. If the list is empty the link is considered active. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacetesseract__collision_a1d5b1daf53ea0152f87f4ab565643478}{tesseract\+\_\+collision\+::is\+Contact\+Allowed}} (const std\+::string \&name1, const std\+::string \&name2, const Is\+Contact\+Allowed\+Fn \&\mbox{\hyperlink{collision__core__unit_8cpp_a714392901b0c74193a9659fc77891a60}{acm}}, bool verbose=false)
+\begin{DoxyCompactList}\small\item\em Determine if contact is allowed between two objects. \end{DoxyCompactList}\item 
+Contact\+Result $\ast$ \mbox{\hyperlink{namespacetesseract__collision_a883c51241e0ae2933532c43f8841a3f0}{tesseract\+\_\+collision\+::process\+Result}} (Contact\+Test\+Data \&cdata, Contact\+Result \&contact, const std\+::pair$<$ std\+::string, std\+::string $>$ \&key, bool found)
+\begin{DoxyCompactList}\small\item\em process\+Result Processes the \mbox{\hyperlink{structtesseract__collision_1_1ContactResult}{Contact\+Result}} based on the information in the \mbox{\hyperlink{structtesseract__collision_1_1ContactTestData}{Contact\+Test\+Data}} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespacetesseract__collision_ab4dd1d697dc897dc95de209f2a4d2df9}{tesseract\+\_\+collision\+::scale\+Vertices}} (\mbox{\hyperlink{namespacetesseract__common_af89ed6517f4c84bdb2b037bb40f7d9d9}{tesseract\+\_\+common\+::\+Vector\+Vector3d}} \&vertices, const Eigen\+::\+Vector3d \&center, const Eigen\+::\+Vector3d \&\mbox{\hyperlink{collision__margin__data__unit_8cpp_a80d402d10e8341004c0caf10133b80ab}{scale}})
+\begin{DoxyCompactList}\small\item\em Apply scaling to the geometry coordinates. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespacetesseract__collision_aa56b0690f742ef8f30f818ca562c8b67}{tesseract\+\_\+collision\+::scale\+Vertices}} (\mbox{\hyperlink{namespacetesseract__common_af89ed6517f4c84bdb2b037bb40f7d9d9}{tesseract\+\_\+common\+::\+Vector\+Vector3d}} \&vertices, const Eigen\+::\+Vector3d \&\mbox{\hyperlink{collision__margin__data__unit_8cpp_a80d402d10e8341004c0caf10133b80ab}{scale}})
+\begin{DoxyCompactList}\small\item\em Apply scaling to the geometry coordinates. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacetesseract__collision_a4dc11acdd34b2eaa5023e5828463ba05}{tesseract\+\_\+collision\+::write\+Simple\+Ply\+File}} (const std\+::string \&path, const \mbox{\hyperlink{namespacetesseract__common_af89ed6517f4c84bdb2b037bb40f7d9d9}{tesseract\+\_\+common\+::\+Vector\+Vector3d}} \&vertices, const std\+::vector$<$ Eigen\+::\+Vector3i $>$ \&vectices\+\_\+color, const Eigen\+::\+Vector\+Xi \&\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a514cb3f9f33e20ac314c8c0b3abd248b}{faces}}, int num\+\_\+faces)
+\begin{DoxyCompactList}\small\item\em Write a simple ply file given vertices and faces. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacetesseract__collision_ab322b688c8e598e590e5a9af30084272}{tesseract\+\_\+collision\+::write\+Simple\+Ply\+File}} (const std\+::string \&path, const \mbox{\hyperlink{namespacetesseract__common_af89ed6517f4c84bdb2b037bb40f7d9d9}{tesseract\+\_\+common\+::\+Vector\+Vector3d}} \&vertices, const Eigen\+::\+Vector\+Xi \&\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a514cb3f9f33e20ac314c8c0b3abd248b}{faces}}, int num\+\_\+faces)
+\begin{DoxyCompactList}\small\item\em Write a simple ply file given vertices and faces. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespacetesseract__collision_ab79187502eefb0f670dbde89a5b7b969}{tesseract\+\_\+collision\+::load\+Simple\+Ply\+File}} (const std\+::string \&path, \mbox{\hyperlink{namespacetesseract__common_af89ed6517f4c84bdb2b037bb40f7d9d9}{tesseract\+\_\+common\+::\+Vector\+Vector3d}} \&vertices, Eigen\+::\+Vector\+Xi \&\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a514cb3f9f33e20ac314c8c0b3abd248b}{faces}}, bool triangles\+\_\+only=false)
+\begin{DoxyCompactList}\small\item\em Loads a simple ply file given a path. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This is a collection of common methods. 
+
+\begin{DoxyAuthor}{Author}
+Levi Armstrong 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Dec 18, 2017 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+TODO 
+\end{DoxyVersion}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000019}{Bug}}]No known bugs\end{DoxyRefDesc}
+
+
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2017, Southwest Research Institute
+\end{DoxyCopyright}
+\begin{DoxyParagraph}{License}
+Software License Agreement (Apache License) 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+Licensed under the Apache License, Version 2.\+0 (the \char`\"{}\+License\char`\"{}); you may not use this file except in compliance with the License. You may obtain a copy of the License at \href{http://www.apache.org/licenses/LICENSE-2.0}{\texttt{ http\+://www.\+apache.\+org/licenses/\+LICENSE-\/2.\+0}} 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \char`\"{}\+AS IS\char`\"{} BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License. 
+\end{DoxyParagraph}

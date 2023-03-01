@@ -1,0 +1,101 @@
+\hypertarget{class__loader_8h}{}\doxysection{tesseract\+\_\+common/include/tesseract\+\_\+common/class\+\_\+loader.h File Reference}
+\label{class__loader_8h}\index{tesseract\_common/include/tesseract\_common/class\_loader.h@{tesseract\_common/include/tesseract\_common/class\_loader.h}}
+
+
+Class Loader to be used throughout Tesseract for loading plugins.  
+
+
+{\ttfamily \#include $<$tesseract\+\_\+common/macros.\+h$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+common/class\+\_\+loader.\+hpp$>$}\newline
+Include dependency graph for class\+\_\+loader.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structtesseract__common_1_1ClassLoader}{tesseract\+\_\+common\+::\+Class\+Loader}}
+\begin{DoxyCompactList}\small\item\em This is a wrapper around Boost DLL for loading plugins within Tesseract. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacetesseract__common}{tesseract\+\_\+common}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{class__loader_8h_ab42d8a920e7ee526e90d106f90d1ee7f}{TESSERACT\+\_\+\+ADD\+\_\+\+PLUGIN\+\_\+\+SECTIONED}}(DERIVED\+\_\+\+CLASS,  ALIAS,  SECTION)
+\item 
+\#define \mbox{\hyperlink{class__loader_8h_a97c9d4061ddaef2cc923033180af020f}{TESSERACT\+\_\+\+ADD\+\_\+\+PLUGIN}}(DERIVED\+\_\+\+CLASS,  ALIAS)~  \mbox{\hyperlink{class__loader_8h_ab42d8a920e7ee526e90d106f90d1ee7f}{TESSERACT\+\_\+\+ADD\+\_\+\+PLUGIN\+\_\+\+SECTIONED}}(DERIVED\+\_\+\+CLASS, ALIAS, boostdll)
+\item 
+\#define \mbox{\hyperlink{class__loader_8h_a3639a114268949edc9f877acfd1c6a3c}{TESSERACT\+\_\+\+PLUGIN\+\_\+\+ANCHOR\+\_\+\+DECL}}(ANCHOR\+\_\+\+NAME)~  const void$\ast$ ANCHOR\+\_\+\+NAME();
+\item 
+\#define \mbox{\hyperlink{class__loader_8h_ac94211e0321061621efa986ebe2a00d4}{TESSERACT\+\_\+\+PLUGIN\+\_\+\+ANCHOR\+\_\+\+IMPL}}(ANCHOR\+\_\+\+NAME)~  const void$\ast$ ANCHOR\+\_\+\+NAME() \{ return (const void$\ast$)(\&ANCHOR\+\_\+\+NAME); \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class Loader to be used throughout Tesseract for loading plugins. 
+
+\begin{DoxyAuthor}{Author}
+Levi Armstrong 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+March 25, 2021 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+TODO 
+\end{DoxyVersion}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000046}{Bug}}]No known bugs\end{DoxyRefDesc}
+
+
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2021, Southwest Research Institute
+\end{DoxyCopyright}
+\begin{DoxyParagraph}{License}
+Software License Agreement (Apache License) 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+Licensed under the Apache License, Version 2.\+0 (the \char`\"{}\+License\char`\"{}); you may not use this file except in compliance with the License. You may obtain a copy of the License at \href{http://www.apache.org/licenses/LICENSE-2.0}{\texttt{ http\+://www.\+apache.\+org/licenses/\+LICENSE-\/2.\+0}} 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \char`\"{}\+AS IS\char`\"{} BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License. 
+\end{DoxyParagraph}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{class__loader_8h_a97c9d4061ddaef2cc923033180af020f}\label{class__loader_8h_a97c9d4061ddaef2cc923033180af020f}} 
+\index{class\_loader.h@{class\_loader.h}!TESSERACT\_ADD\_PLUGIN@{TESSERACT\_ADD\_PLUGIN}}
+\index{TESSERACT\_ADD\_PLUGIN@{TESSERACT\_ADD\_PLUGIN}!class\_loader.h@{class\_loader.h}}
+\doxysubsubsection{\texorpdfstring{TESSERACT\_ADD\_PLUGIN}{TESSERACT\_ADD\_PLUGIN}}
+{\footnotesize\ttfamily \#define TESSERACT\+\_\+\+ADD\+\_\+\+PLUGIN(\begin{DoxyParamCaption}\item[{}]{DERIVED\+\_\+\+CLASS,  }\item[{}]{ALIAS }\end{DoxyParamCaption})~  \mbox{\hyperlink{class__loader_8h_ab42d8a920e7ee526e90d106f90d1ee7f}{TESSERACT\+\_\+\+ADD\+\_\+\+PLUGIN\+\_\+\+SECTIONED}}(DERIVED\+\_\+\+CLASS, ALIAS, boostdll)}
+
+\mbox{\Hypertarget{class__loader_8h_ab42d8a920e7ee526e90d106f90d1ee7f}\label{class__loader_8h_ab42d8a920e7ee526e90d106f90d1ee7f}} 
+\index{class\_loader.h@{class\_loader.h}!TESSERACT\_ADD\_PLUGIN\_SECTIONED@{TESSERACT\_ADD\_PLUGIN\_SECTIONED}}
+\index{TESSERACT\_ADD\_PLUGIN\_SECTIONED@{TESSERACT\_ADD\_PLUGIN\_SECTIONED}!class\_loader.h@{class\_loader.h}}
+\doxysubsubsection{\texorpdfstring{TESSERACT\_ADD\_PLUGIN\_SECTIONED}{TESSERACT\_ADD\_PLUGIN\_SECTIONED}}
+{\footnotesize\ttfamily \#define TESSERACT\+\_\+\+ADD\+\_\+\+PLUGIN\+\_\+\+SECTIONED(\begin{DoxyParamCaption}\item[{}]{DERIVED\+\_\+\+CLASS,  }\item[{}]{ALIAS,  }\item[{}]{SECTION }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} BOOST\_SYMBOL\_EXPORT DERIVED\_CLASS ALIAS;                                                                  \(\backslash\)}
+\DoxyCodeLine{  BOOST\_DLL\_SECTION(SECTION, read) BOOST\_DLL\_SELECTANY                                                                 \(\backslash\)}
+\DoxyCodeLine{  DERIVED\_CLASS ALIAS;}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class__loader_8h_a3639a114268949edc9f877acfd1c6a3c}\label{class__loader_8h_a3639a114268949edc9f877acfd1c6a3c}} 
+\index{class\_loader.h@{class\_loader.h}!TESSERACT\_PLUGIN\_ANCHOR\_DECL@{TESSERACT\_PLUGIN\_ANCHOR\_DECL}}
+\index{TESSERACT\_PLUGIN\_ANCHOR\_DECL@{TESSERACT\_PLUGIN\_ANCHOR\_DECL}!class\_loader.h@{class\_loader.h}}
+\doxysubsubsection{\texorpdfstring{TESSERACT\_PLUGIN\_ANCHOR\_DECL}{TESSERACT\_PLUGIN\_ANCHOR\_DECL}}
+{\footnotesize\ttfamily \#define TESSERACT\+\_\+\+PLUGIN\+\_\+\+ANCHOR\+\_\+\+DECL(\begin{DoxyParamCaption}\item[{}]{ANCHOR\+\_\+\+NAME }\end{DoxyParamCaption})~  const void$\ast$ ANCHOR\+\_\+\+NAME();}
+
+\mbox{\Hypertarget{class__loader_8h_ac94211e0321061621efa986ebe2a00d4}\label{class__loader_8h_ac94211e0321061621efa986ebe2a00d4}} 
+\index{class\_loader.h@{class\_loader.h}!TESSERACT\_PLUGIN\_ANCHOR\_IMPL@{TESSERACT\_PLUGIN\_ANCHOR\_IMPL}}
+\index{TESSERACT\_PLUGIN\_ANCHOR\_IMPL@{TESSERACT\_PLUGIN\_ANCHOR\_IMPL}!class\_loader.h@{class\_loader.h}}
+\doxysubsubsection{\texorpdfstring{TESSERACT\_PLUGIN\_ANCHOR\_IMPL}{TESSERACT\_PLUGIN\_ANCHOR\_IMPL}}
+{\footnotesize\ttfamily \#define TESSERACT\+\_\+\+PLUGIN\+\_\+\+ANCHOR\+\_\+\+IMPL(\begin{DoxyParamCaption}\item[{}]{ANCHOR\+\_\+\+NAME }\end{DoxyParamCaption})~  const void$\ast$ ANCHOR\+\_\+\+NAME() \{ return (const void$\ast$)(\&ANCHOR\+\_\+\+NAME); \}}
+

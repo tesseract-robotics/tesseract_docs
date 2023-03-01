@@ -1,0 +1,52 @@
+\hypertarget{vhacdVolume_8h}{}\doxysection{tesseract\+\_\+collision/vhacd/include/tesseract\+\_\+collision/vhacd/inc/vhacd\+Volume.h File Reference}
+\label{vhacdVolume_8h}\index{tesseract\_collision/vhacd/include/tesseract\_collision/vhacd/inc/vhacdVolume.h@{tesseract\_collision/vhacd/include/tesseract\_collision/vhacd/inc/vhacdVolume.h}}
+{\ttfamily \#include $<$tesseract\+\_\+common/macros.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+collision/vhacd/inc/vhacd\+Mesh.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+collision/vhacd/inc/vhacd\+Vector.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+Include dependency graph for vhacd\+Volume.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structtesseract__collision_1_1VHACD_1_1Voxel}{tesseract\+\_\+collision\+::\+VHACD\+::\+Voxel}}
+\item 
+class \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1PrimitiveSet}{tesseract\+\_\+collision\+::\+VHACD\+::\+Primitive\+Set}}
+\item 
+class \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VoxelSet}{tesseract\+\_\+collision\+::\+VHACD\+::\+Voxel\+Set}}
+\item 
+struct \mbox{\hyperlink{structtesseract__collision_1_1VHACD_1_1Tetrahedron}{tesseract\+\_\+collision\+::\+VHACD\+::\+Tetrahedron}}
+\item 
+class \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1TetrahedronSet}{tesseract\+\_\+collision\+::\+VHACD\+::\+Tetrahedron\+Set}}
+\item 
+class \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Volume}{tesseract\+\_\+collision\+::\+VHACD\+::\+Volume}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacetesseract__collision}{tesseract\+\_\+collision}}
+\item 
+namespace \mbox{\hyperlink{namespacetesseract__collision_1_1VHACD}{tesseract\+\_\+collision\+::\+VHACD}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespacetesseract__collision_1_1VHACD_a1c236714b121b592bb3b002726a39357}{tesseract\+\_\+collision\+::\+VHACD\+::\+VOXEL\+\_\+\+VALUE}} \{ \mbox{\hyperlink{namespacetesseract__collision_1_1VHACD_a1c236714b121b592bb3b002726a39357a74e612b311fd1be6ba7800874aa1596e}{tesseract\+\_\+collision\+::\+VHACD\+::\+PRIMITIVE\+\_\+\+UNDEFINED}} = 0
+, \mbox{\hyperlink{namespacetesseract__collision_1_1VHACD_a1c236714b121b592bb3b002726a39357a42534584dbc863550035ccb3e037e738}{tesseract\+\_\+collision\+::\+VHACD\+::\+PRIMITIVE\+\_\+\+OUTSIDE\+\_\+\+SURFACE}} = 1
+, \mbox{\hyperlink{namespacetesseract__collision_1_1VHACD_a1c236714b121b592bb3b002726a39357aeb804b8c219565a1841be70ac0009098}{tesseract\+\_\+collision\+::\+VHACD\+::\+PRIMITIVE\+\_\+\+INSIDE\+\_\+\+SURFACE}} = 2
+, \mbox{\hyperlink{namespacetesseract__collision_1_1VHACD_a1c236714b121b592bb3b002726a39357afe5826e302b0a31e27e4622efb20ae13}{tesseract\+\_\+collision\+::\+VHACD\+::\+PRIMITIVE\+\_\+\+ON\+\_\+\+SURFACE}} = 3
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int32\+\_\+t \mbox{\hyperlink{namespacetesseract__collision_1_1VHACD_a364f0630528625a55800b02469ad21a0}{tesseract\+\_\+collision\+::\+VHACD\+::\+Tri\+Box\+Overlap}} (const Vec3$<$ double $>$ \&boxcenter, const Vec3$<$ double $>$ \&boxhalfsize, const Vec3$<$ double $>$ \&triver0, const Vec3$<$ double $>$ \&triver1, const Vec3$<$ double $>$ \&triver2)
+\item 
+{\footnotesize template$<$class \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$ }\\void \mbox{\hyperlink{namespacetesseract__collision_1_1VHACD_a55dfb17a77faa7ecf310d0b384192617}{tesseract\+\_\+collision\+::\+VHACD\+::\+Compute\+Aligned\+Point}} (const \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $\ast$const points, const uint32\+\_\+t idx, const Vec3$<$ double $>$ \&barycenter, const double(\&rot)\mbox{[}3\mbox{]}\mbox{[}3\mbox{]}, Vec3$<$ double $>$ \&pt)
+\item 
+template$<$$>$ void \mbox{\hyperlink{namespacetesseract__collision_1_1VHACD_aa0ba9838e8240e8bfd6337705169f4d5}{tesseract\+\_\+collision\+::\+VHACD\+::\+Compute\+Aligned\+Point$<$ float $>$}} (const float $\ast$const points, const uint32\+\_\+t idx, const Vec3$<$ double $>$ \&barycenter, const double(\&rot)\mbox{[}3\mbox{]}\mbox{[}3\mbox{]}, Vec3$<$ double $>$ \&pt)
+\item 
+template$<$$>$ void \mbox{\hyperlink{namespacetesseract__collision_1_1VHACD_aca2cd28df3690aaf1a0a960aec9e46cc}{tesseract\+\_\+collision\+::\+VHACD\+::\+Compute\+Aligned\+Point$<$ double $>$}} (const double $\ast$const points, const uint32\+\_\+t idx, const Vec3$<$ double $>$ \&barycenter, const double(\&rot)\mbox{[}3\mbox{]}\mbox{[}3\mbox{]}, Vec3$<$ double $>$ \&pt)
+\end{DoxyCompactItemize}

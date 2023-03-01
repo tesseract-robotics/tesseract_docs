@@ -1,0 +1,46 @@
+\hypertarget{kdl__factories_8h_source}{}\doxysection{kdl\+\_\+factories.\+h}
+\label{kdl__factories_8h_source}\index{tesseract\_kinematics/kdl/include/tesseract\_kinematics/kdl/kdl\_factories.h@{tesseract\_kinematics/kdl/include/tesseract\_kinematics/kdl/kdl\_factories.h}}
+\mbox{\hyperlink{kdl__factories_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#ifndef TESSERACT\_KINEMATICS\_KDL\_FACTORIES\_H}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define TESSERACT\_KINEMATICS\_KDL\_FACTORIES\_H}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{kinematics__plugin__factory_8h}{tesseract\_kinematics/core/kinematics\_plugin\_factory.h}}>}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__kinematics}{tesseract\_kinematics}}}
+\DoxyCodeLine{32 \{}
+\DoxyCodeLine{33 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__kinematics_1_1KDLFwdKinChainFactory}{KDLFwdKinChainFactory}} : \textcolor{keyword}{public} \mbox{\hyperlink{classtesseract__kinematics_1_1FwdKinFactory}{FwdKinFactory}}}
+\DoxyCodeLine{34 \{}
+\DoxyCodeLine{35   \mbox{\hyperlink{classtesseract__kinematics_1_1ForwardKinematics_a53cb5fab19798d5afc20c259d4ffe1e3}{ForwardKinematics::UPtr}} \mbox{\hyperlink{classtesseract__kinematics_1_1KDLFwdKinChainFactory_a21be17247179a55a3c93641c3c90c18b}{create}}(\textcolor{keyword}{const} std::string\& solver\_name,}
+\DoxyCodeLine{36                                  \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph}{tesseract\_scene\_graph::SceneGraph}}\& \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a8d4d0dc3a6b9a7030970bf9ed3764756}{scene\_graph}},}
+\DoxyCodeLine{37                                  \textcolor{keyword}{const} \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{tesseract\_scene\_graph::SceneState}}\& \mbox{\hyperlink{kinematics__factory__unit_8cpp_a918c8faa92717caa3ba8aef1b4ef8163}{scene\_state}},}
+\DoxyCodeLine{38                                  \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory}{KinematicsPluginFactory}}\& plugin\_factory,}
+\DoxyCodeLine{39                                  \textcolor{keyword}{const} YAML::Node\& \mbox{\hyperlink{collision__core__unit_8cpp_a2013c60ebd4a63f15fafe2287736ae37}{config}}) \textcolor{keyword}{const} \textcolor{keyword}{override} \textcolor{keyword}{final};}
+\DoxyCodeLine{40 \};}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__kinematics_1_1KDLInvKinChainLMAFactory}{KDLInvKinChainLMAFactory}} : \textcolor{keyword}{public} \mbox{\hyperlink{classtesseract__kinematics_1_1InvKinFactory}{InvKinFactory}}}
+\DoxyCodeLine{43 \{}
+\DoxyCodeLine{44   \mbox{\hyperlink{classtesseract__kinematics_1_1InverseKinematics_a68e526591337b0781c9ec91618d1d5f0}{InverseKinematics::UPtr}} \mbox{\hyperlink{classtesseract__kinematics_1_1KDLInvKinChainLMAFactory_a6828c769b35ac4be5f2d0271965980d2}{create}}(\textcolor{keyword}{const} std::string\& solver\_name,}
+\DoxyCodeLine{45                                  \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph}{tesseract\_scene\_graph::SceneGraph}}\& \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a8d4d0dc3a6b9a7030970bf9ed3764756}{scene\_graph}},}
+\DoxyCodeLine{46                                  \textcolor{keyword}{const} \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{tesseract\_scene\_graph::SceneState}}\& \mbox{\hyperlink{kinematics__factory__unit_8cpp_a918c8faa92717caa3ba8aef1b4ef8163}{scene\_state}},}
+\DoxyCodeLine{47                                  \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory}{KinematicsPluginFactory}}\& plugin\_factory,}
+\DoxyCodeLine{48                                  \textcolor{keyword}{const} YAML::Node\& \mbox{\hyperlink{collision__core__unit_8cpp_a2013c60ebd4a63f15fafe2287736ae37}{config}}) \textcolor{keyword}{const} \textcolor{keyword}{override} \textcolor{keyword}{final};}
+\DoxyCodeLine{49 \};}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__kinematics_1_1KDLInvKinChainNRFactory}{KDLInvKinChainNRFactory}} : \textcolor{keyword}{public} \mbox{\hyperlink{classtesseract__kinematics_1_1InvKinFactory}{InvKinFactory}}}
+\DoxyCodeLine{52 \{}
+\DoxyCodeLine{53   \mbox{\hyperlink{classtesseract__kinematics_1_1InverseKinematics_a68e526591337b0781c9ec91618d1d5f0}{InverseKinematics::UPtr}} \mbox{\hyperlink{classtesseract__kinematics_1_1KDLInvKinChainNRFactory_a6c2d2c93202457638c77506f8f44ba45}{create}}(\textcolor{keyword}{const} std::string\& solver\_name,}
+\DoxyCodeLine{54                                  \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph}{tesseract\_scene\_graph::SceneGraph}}\& \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a8d4d0dc3a6b9a7030970bf9ed3764756}{scene\_graph}},}
+\DoxyCodeLine{55                                  \textcolor{keyword}{const} \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{tesseract\_scene\_graph::SceneState}}\& \mbox{\hyperlink{kinematics__factory__unit_8cpp_a918c8faa92717caa3ba8aef1b4ef8163}{scene\_state}},}
+\DoxyCodeLine{56                                  \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory}{KinematicsPluginFactory}}\& plugin\_factory,}
+\DoxyCodeLine{57                                  \textcolor{keyword}{const} YAML::Node\& \mbox{\hyperlink{collision__core__unit_8cpp_a2013c60ebd4a63f15fafe2287736ae37}{config}}) \textcolor{keyword}{const} \textcolor{keyword}{override} \textcolor{keyword}{final};}
+\DoxyCodeLine{58 \};}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \mbox{\hyperlink{class__loader_8h_a3639a114268949edc9f877acfd1c6a3c}{TESSERACT\_PLUGIN\_ANCHOR\_DECL}}(KDLFactoriesAnchor)}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \}  \textcolor{comment}{// namespace tesseract\_kinematics}}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_KINEMATICS\_KDL\_FACTORIES\_H}}
+
+\end{DoxyCode}

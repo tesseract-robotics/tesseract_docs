@@ -1,0 +1,53 @@
+\hypertarget{change__link__visibility__command_8h_source}{}\doxysection{change\+\_\+link\+\_\+visibility\+\_\+command.\+h}
+\label{change__link__visibility__command_8h_source}\index{tesseract\_environment/include/tesseract\_environment/commands/change\_link\_visibility\_command.h@{tesseract\_environment/include/tesseract\_environment/commands/change\_link\_visibility\_command.h}}
+\mbox{\hyperlink{change__link__visibility__command_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#ifndef TESSERACT\_ENVIRONMENT\_CHANGE\_LINK\_VISIBILITY\_COMMAND\_H}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define TESSERACT\_ENVIRONMENT\_CHANGE\_LINK\_VISIBILITY\_COMMAND\_H}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{macros_8h}{tesseract\_common/macros.h}}>}}
+\DoxyCodeLine{30 \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include <boost/serialization/access.hpp>}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{33 \mbox{\hyperlink{namespaceTESSERACT__COMMON__IGNORE__WARNINGS__POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{command_8h}{tesseract\_environment/command.h}}>}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__environment}{tesseract\_environment}}}
+\DoxyCodeLine{38 \{}
+\DoxyCodeLine{39 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__environment_1_1ChangeLinkVisibilityCommand}{ChangeLinkVisibilityCommand}} : \textcolor{keyword}{public} \mbox{\hyperlink{classtesseract__environment_1_1Command}{Command}}}
+\DoxyCodeLine{40 \{}
+\DoxyCodeLine{41 \textcolor{keyword}{public}:}
+\DoxyCodeLine{42   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__environment_1_1ChangeLinkVisibilityCommand_a47a850e9e4431e23e8dec865e5838fb7}{Ptr}} = std::shared\_ptr<ChangeLinkVisibilityCommand>;}
+\DoxyCodeLine{43   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__environment_1_1ChangeLinkVisibilityCommand_a32fe25dc1df9fb2c4114a2ecb36006b0}{ConstPtr}} = std::shared\_ptr<const ChangeLinkVisibilityCommand>;}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45   \mbox{\hyperlink{classtesseract__environment_1_1ChangeLinkVisibilityCommand_a7b4e08f2ac481d777e40e0e7978ec9c1}{ChangeLinkVisibilityCommand}}() : \mbox{\hyperlink{classtesseract__environment_1_1Command}{Command}}(\mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029}{CommandType}}::\mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029aaa5732dcc51c06b4e9af6373e937e4a1}{CHANGE\_LINK\_VISIBILITY}})\{\};}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{52   \mbox{\hyperlink{classtesseract__environment_1_1ChangeLinkVisibilityCommand_a01dac5180179c85a4b00de0293ea8a80}{ChangeLinkVisibilityCommand}}(std::string link\_name, \textcolor{keywordtype}{bool} enabled)}
+\DoxyCodeLine{53     : \mbox{\hyperlink{classtesseract__environment_1_1Command}{Command}}(\mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029}{CommandType}}::\mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029aaa5732dcc51c06b4e9af6373e937e4a1}{CHANGE\_LINK\_VISIBILITY}}), \mbox{\hyperlink{classtesseract__environment_1_1ChangeLinkVisibilityCommand_abae856e97928c905212c78157bfe1a15}{link\_name\_}}(std::move(link\_name)), \mbox{\hyperlink{classtesseract__environment_1_1ChangeLinkVisibilityCommand_a3591db5614f781e76b5fd0231c2dcfb4}{enabled\_}}(enabled)}
+\DoxyCodeLine{54   \{}
+\DoxyCodeLine{55   \}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57   \textcolor{keyword}{const} std::string\& \mbox{\hyperlink{classtesseract__environment_1_1ChangeLinkVisibilityCommand_ad598b9f005165e221136c0cb636ebee7}{getLinkName}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classtesseract__environment_1_1ChangeLinkVisibilityCommand_abae856e97928c905212c78157bfe1a15}{link\_name\_}}; \}}
+\DoxyCodeLine{58   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1ChangeLinkVisibilityCommand_a13f4e9b72c4baa5e3a879b0d74dd1971}{getEnabled}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classtesseract__environment_1_1ChangeLinkVisibilityCommand_a3591db5614f781e76b5fd0231c2dcfb4}{enabled\_}}; \}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1ChangeLinkVisibilityCommand_a6eb0fe1164fde0853b01289924f4deec}{operator==}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__environment_1_1ChangeLinkVisibilityCommand}{ChangeLinkVisibilityCommand}}\& rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{61   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1ChangeLinkVisibilityCommand_aabbc72aaf9cb840402507e2ed9a6be10}{operator!=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__environment_1_1ChangeLinkVisibilityCommand}{ChangeLinkVisibilityCommand}}\& rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{keyword}{private}:}
+\DoxyCodeLine{64   std::string \mbox{\hyperlink{classtesseract__environment_1_1ChangeLinkVisibilityCommand_abae856e97928c905212c78157bfe1a15}{link\_name\_}};}
+\DoxyCodeLine{65   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1ChangeLinkVisibilityCommand_a3591db5614f781e76b5fd0231c2dcfb4}{enabled\_}}\{ \textcolor{keyword}{false} \};}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67   \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__environment_1_1ChangeLinkVisibilityCommand_ac98d07dd8f7b70e16ccb9a01abf56b9c}{boost::serialization::access}};}
+\DoxyCodeLine{68   \textcolor{keyword}{template} <\textcolor{keyword}{class} Archive>}
+\DoxyCodeLine{69   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__environment_1_1ChangeLinkVisibilityCommand_a4bda570294cf1e904f1b086619adad98}{serialize}}(Archive\& ar, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} version);  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{70 \};}
+\DoxyCodeLine{71 \}  \textcolor{comment}{// namespace tesseract\_environment}}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#include <boost/serialization/export.hpp>}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#include <boost/serialization/tracking.hpp>}}
+\DoxyCodeLine{75 BOOST\_CLASS\_EXPORT\_KEY2(\mbox{\hyperlink{classtesseract__environment_1_1ChangeLinkVisibilityCommand}{tesseract\_environment::ChangeLinkVisibilityCommand}}, \textcolor{stringliteral}{"{}ChangeLinkVisibilityCommand"{}})}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_ENVIRONMENT\_CHANGE\_LINK\_VISIBILITY\_COMMAND\_H}}
+
+\end{DoxyCode}

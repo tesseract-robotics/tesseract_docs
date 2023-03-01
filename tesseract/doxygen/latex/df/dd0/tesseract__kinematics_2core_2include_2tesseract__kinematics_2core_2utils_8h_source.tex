@@ -1,0 +1,395 @@
+\hypertarget{tesseract__kinematics_2core_2include_2tesseract__kinematics_2core_2utils_8h_source}{}\doxysection{utils.\+h}
+\label{tesseract__kinematics_2core_2include_2tesseract__kinematics_2core_2utils_8h_source}\index{tesseract\_kinematics/core/include/tesseract\_kinematics/core/utils.h@{tesseract\_kinematics/core/include/tesseract\_kinematics/core/utils.h}}
+\mbox{\hyperlink{tesseract__kinematics_2core_2include_2tesseract__kinematics_2core_2utils_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#ifndef TESSERACT\_KINEMATICS\_UTILS\_H}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define TESSERACT\_KINEMATICS\_UTILS\_H}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{macros_8h}{tesseract\_common/macros.h}}>}}
+\DoxyCodeLine{30 \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include <Eigen/Core>}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include <Eigen/Geometry>}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include <Eigen/Eigenvalues>}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include <console\_bridge/console.h>}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{graph_8h}{tesseract\_scene\_graph/graph.h}}>}}
+\DoxyCodeLine{37 \mbox{\hyperlink{namespaceTESSERACT__COMMON__IGNORE__WARNINGS__POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{forward__kinematics_8h}{tesseract\_kinematics/core/forward\_kinematics.h}}>}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{kinematic__group_8h}{tesseract\_kinematics/core/kinematic\_group.h}}>}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__kinematics}{tesseract\_kinematics}}}
+\DoxyCodeLine{43 \{}
+\DoxyCodeLine{44 \textcolor{keyword}{template} <\textcolor{keyword}{typename} FloatType>}
+\DoxyCodeLine{45 \textcolor{keyword}{using }\mbox{\hyperlink{namespacetesseract__kinematics_a59d7ac70f855c7d00848b703e6bcfe9a}{VectorX}} = Eigen::Matrix<FloatType, Eigen::Dynamic, 1>;}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{55 \textcolor{keyword}{inline} \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__kinematics_a43f562948ca86e1cd531b12a92191334}{numericalJacobian}}(Eigen::Ref<Eigen::MatrixXd> \mbox{\hyperlink{kinematics__core__unit_8cpp_afd43241933d01af91643a779b829d7a7}{jacobian}},}
+\DoxyCodeLine{56                                      \textcolor{keyword}{const} Eigen::Isometry3d\& change\_base,}
+\DoxyCodeLine{57                                      \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__kinematics_1_1ForwardKinematics}{tesseract\_kinematics::ForwardKinematics}}\& \mbox{\hyperlink{kinematics__factory__unit_8cpp_a898342b32b9a46004fe36efea9777fc6}{kin}},}
+\DoxyCodeLine{58                                      \textcolor{keyword}{const} Eigen::Ref<const Eigen::VectorXd>\& joint\_values,}
+\DoxyCodeLine{59                                      \textcolor{keyword}{const} std::string\& link\_name,}
+\DoxyCodeLine{60                                      \textcolor{keyword}{const} Eigen::Ref<const Eigen::Vector3d>\& link\_point)}
+\DoxyCodeLine{61 \{}
+\DoxyCodeLine{62   Eigen::VectorXd njvals;}
+\DoxyCodeLine{63   \textcolor{keywordtype}{double} delta = 1e-\/8;}
+\DoxyCodeLine{64   \mbox{\hyperlink{namespacetesseract__common_a67bde3cb7bb235f0f61c370ef8bc74d8}{tesseract\_common::TransformMap}} poses = \mbox{\hyperlink{kinematics__factory__unit_8cpp_a898342b32b9a46004fe36efea9777fc6}{kin}}.calcFwdKin(joint\_values);}
+\DoxyCodeLine{65   Eigen::Isometry3d \mbox{\hyperlink{tesseract__environment__collision_8cpp_a7272862bfe9e301a87918b3d560aebc3}{pose}} = poses[link\_name];}
+\DoxyCodeLine{66   \mbox{\hyperlink{tesseract__environment__collision_8cpp_a7272862bfe9e301a87918b3d560aebc3}{pose}} = change\_base * \mbox{\hyperlink{tesseract__environment__collision_8cpp_a7272862bfe9e301a87918b3d560aebc3}{pose}};}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < static\_cast<int>(joint\_values.size()); ++i)}
+\DoxyCodeLine{69   \{}
+\DoxyCodeLine{70     njvals = joint\_values;}
+\DoxyCodeLine{71     njvals[i] += delta;}
+\DoxyCodeLine{72     Eigen::Isometry3d updated\_pose = \mbox{\hyperlink{kinematics__factory__unit_8cpp_a898342b32b9a46004fe36efea9777fc6}{kin}}.calcFwdKin(njvals)[link\_name];}
+\DoxyCodeLine{73     updated\_pose = change\_base * updated\_pose;}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75     Eigen::Vector3d temp = \mbox{\hyperlink{tesseract__environment__collision_8cpp_a7272862bfe9e301a87918b3d560aebc3}{pose}} * link\_point;}
+\DoxyCodeLine{76     Eigen::Vector3d temp2 = updated\_pose * link\_point;}
+\DoxyCodeLine{77     \mbox{\hyperlink{kinematics__core__unit_8cpp_afd43241933d01af91643a779b829d7a7}{jacobian}}(0, i) = (temp2.x() -\/ temp.x()) / delta;}
+\DoxyCodeLine{78     \mbox{\hyperlink{kinematics__core__unit_8cpp_afd43241933d01af91643a779b829d7a7}{jacobian}}(1, i) = (temp2.y() -\/ temp.y()) / delta;}
+\DoxyCodeLine{79     \mbox{\hyperlink{kinematics__core__unit_8cpp_afd43241933d01af91643a779b829d7a7}{jacobian}}(2, i) = (temp2.z() -\/ temp.z()) / delta;}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81     Eigen::VectorXd omega = (\mbox{\hyperlink{tesseract__environment__collision_8cpp_a7272862bfe9e301a87918b3d560aebc3}{pose}}.rotation() * \mbox{\hyperlink{namespacetesseract__common_a715e8a56239e73ccfa00e82cda79a28c}{tesseract\_common::calcRotationalError}}(\mbox{\hyperlink{tesseract__environment__collision_8cpp_a7272862bfe9e301a87918b3d560aebc3}{pose}}.rotation().transpose() *}
+\DoxyCodeLine{82                                                                                      updated\_pose.rotation())) /}
+\DoxyCodeLine{83                             delta;}
+\DoxyCodeLine{84     \mbox{\hyperlink{kinematics__core__unit_8cpp_afd43241933d01af91643a779b829d7a7}{jacobian}}(3, i) = omega(0);}
+\DoxyCodeLine{85     \mbox{\hyperlink{kinematics__core__unit_8cpp_afd43241933d01af91643a779b829d7a7}{jacobian}}(4, i) = omega(1);}
+\DoxyCodeLine{86     \mbox{\hyperlink{kinematics__core__unit_8cpp_afd43241933d01af91643a779b829d7a7}{jacobian}}(5, i) = omega(2);}
+\DoxyCodeLine{87   \}}
+\DoxyCodeLine{88 \}}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{98 \textcolor{keyword}{inline} \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__kinematics_a43f562948ca86e1cd531b12a92191334}{numericalJacobian}}(Eigen::Ref<Eigen::MatrixXd> \mbox{\hyperlink{kinematics__core__unit_8cpp_afd43241933d01af91643a779b829d7a7}{jacobian}},}
+\DoxyCodeLine{99                                      \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup}{JointGroup}}\& \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a31d9151d1cb842cded108072204f4194}{joint\_group}},}
+\DoxyCodeLine{100                                      \textcolor{keyword}{const} Eigen::Ref<const Eigen::VectorXd>\& joint\_values,}
+\DoxyCodeLine{101                                      \textcolor{keyword}{const} std::string\& link\_name,}
+\DoxyCodeLine{102                                      \textcolor{keyword}{const} Eigen::Ref<const Eigen::Vector3d>\& link\_point)}
+\DoxyCodeLine{103 \{}
+\DoxyCodeLine{104   Eigen::VectorXd njvals;}
+\DoxyCodeLine{105   \textcolor{keywordtype}{double} delta = 1e-\/8;}
+\DoxyCodeLine{106   \mbox{\hyperlink{namespacetesseract__common_a67bde3cb7bb235f0f61c370ef8bc74d8}{tesseract\_common::TransformMap}} poses = \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a31d9151d1cb842cded108072204f4194}{joint\_group}}.\mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup_a3579bdbb9feec4ab90101c6c5a729fa2}{calcFwdKin}}(joint\_values);}
+\DoxyCodeLine{107   Eigen::Isometry3d \mbox{\hyperlink{tesseract__environment__collision_8cpp_a7272862bfe9e301a87918b3d560aebc3}{pose}} = poses[link\_name];}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < static\_cast<int>(joint\_values.size()); ++i)}
+\DoxyCodeLine{110   \{}
+\DoxyCodeLine{111     njvals = joint\_values;}
+\DoxyCodeLine{112     njvals[i] += delta;}
+\DoxyCodeLine{113     \mbox{\hyperlink{namespacetesseract__common_a67bde3cb7bb235f0f61c370ef8bc74d8}{tesseract\_common::TransformMap}} updated\_poses = \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a31d9151d1cb842cded108072204f4194}{joint\_group}}.\mbox{\hyperlink{classtesseract__kinematics_1_1JointGroup_a3579bdbb9feec4ab90101c6c5a729fa2}{calcFwdKin}}(njvals);}
+\DoxyCodeLine{114     Eigen::Isometry3d updated\_pose = updated\_poses[link\_name];}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116     Eigen::Vector3d temp = \mbox{\hyperlink{tesseract__environment__collision_8cpp_a7272862bfe9e301a87918b3d560aebc3}{pose}} * link\_point;}
+\DoxyCodeLine{117     Eigen::Vector3d temp2 = updated\_pose * link\_point;}
+\DoxyCodeLine{118     \mbox{\hyperlink{kinematics__core__unit_8cpp_afd43241933d01af91643a779b829d7a7}{jacobian}}(0, i) = (temp2.x() -\/ temp.x()) / delta;}
+\DoxyCodeLine{119     \mbox{\hyperlink{kinematics__core__unit_8cpp_afd43241933d01af91643a779b829d7a7}{jacobian}}(1, i) = (temp2.y() -\/ temp.y()) / delta;}
+\DoxyCodeLine{120     \mbox{\hyperlink{kinematics__core__unit_8cpp_afd43241933d01af91643a779b829d7a7}{jacobian}}(2, i) = (temp2.z() -\/ temp.z()) / delta;}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122     Eigen::VectorXd omega = (\mbox{\hyperlink{tesseract__environment__collision_8cpp_a7272862bfe9e301a87918b3d560aebc3}{pose}}.rotation() * \mbox{\hyperlink{namespacetesseract__common_a715e8a56239e73ccfa00e82cda79a28c}{tesseract\_common::calcRotationalError}}(\mbox{\hyperlink{tesseract__environment__collision_8cpp_a7272862bfe9e301a87918b3d560aebc3}{pose}}.rotation().transpose() *}
+\DoxyCodeLine{123                                                                                      updated\_pose.rotation())) /}
+\DoxyCodeLine{124                             delta;}
+\DoxyCodeLine{125     \mbox{\hyperlink{kinematics__core__unit_8cpp_afd43241933d01af91643a779b829d7a7}{jacobian}}(3, i) = omega(0);}
+\DoxyCodeLine{126     \mbox{\hyperlink{kinematics__core__unit_8cpp_afd43241933d01af91643a779b829d7a7}{jacobian}}(4, i) = omega(1);}
+\DoxyCodeLine{127     \mbox{\hyperlink{kinematics__core__unit_8cpp_afd43241933d01af91643a779b829d7a7}{jacobian}}(5, i) = omega(2);}
+\DoxyCodeLine{128   \}}
+\DoxyCodeLine{129 \}}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{139 \textcolor{keyword}{inline} \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacetesseract__kinematics_a7c0f58b6ad5f6ccb2f3887684f3760f0}{solvePInv}}(\textcolor{keyword}{const} Eigen::Ref<const Eigen::MatrixXd>\& A,}
+\DoxyCodeLine{140                              \textcolor{keyword}{const} Eigen::Ref<const Eigen::VectorXd>\& b,}
+\DoxyCodeLine{141                              Eigen::Ref<Eigen::VectorXd> x)}
+\DoxyCodeLine{142 \{}
+\DoxyCodeLine{143   \textcolor{keyword}{const} \textcolor{keywordtype}{double} eps = 0.00001;  \textcolor{comment}{// TODO: Turn into class member var}}
+\DoxyCodeLine{144   \textcolor{keyword}{const} \textcolor{keywordtype}{double} lambda = 0.01;  \textcolor{comment}{// TODO: Turn into class member var}}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{146   \textcolor{keywordflow}{if} ((A.rows() == 0) || (A.cols() == 0))}
+\DoxyCodeLine{147   \{}
+\DoxyCodeLine{148     CONSOLE\_BRIDGE\_logError(\textcolor{stringliteral}{"{}Empty matrices not supported in solvePinv()"{}});}
+\DoxyCodeLine{149     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{150   \}}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{152   \textcolor{keywordflow}{if} (A.rows() != b.size())}
+\DoxyCodeLine{153   \{}
+\DoxyCodeLine{154     CONSOLE\_BRIDGE\_logError(\textcolor{stringliteral}{"{}Matrix size mismatch: A(\%d, \%d), b(\%d)"{}}, A.rows(), A.cols(), b.size());}
+\DoxyCodeLine{155     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{156   \}}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{158   \textcolor{comment}{// Calculate A+ (pseudoinverse of A) = V S+ U*, where U* is Hermition of U (just transpose if all values of U are}}
+\DoxyCodeLine{159   \textcolor{comment}{// real)}}
+\DoxyCodeLine{160   \textcolor{comment}{// in order to solve Ax=b -\/> x*=A+ b}}
+\DoxyCodeLine{161   Eigen::JacobiSVD<Eigen::MatrixXd> svd(A, Eigen::ComputeThinU | Eigen::ComputeThinV);}
+\DoxyCodeLine{162   \textcolor{keyword}{const} Eigen::MatrixXd\& U = svd.matrixU();}
+\DoxyCodeLine{163   \textcolor{keyword}{const} Eigen::VectorXd\& Sv = svd.singularValues();}
+\DoxyCodeLine{164   \textcolor{keyword}{const} Eigen::MatrixXd\& V = svd.matrixV();}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{166   \textcolor{comment}{// calculate the reciprocal of Singular-\/Values}}
+\DoxyCodeLine{167   \textcolor{comment}{// damp inverse with lambda so that inverse doesn't oscillate near solution}}
+\DoxyCodeLine{168   \textcolor{keywordtype}{long} \textcolor{keywordtype}{int} nSv = Sv.size();}
+\DoxyCodeLine{169   Eigen::VectorXd inv\_Sv(nSv);}
+\DoxyCodeLine{170   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{long} \textcolor{keywordtype}{int} i = 0; i < nSv; ++i)}
+\DoxyCodeLine{171   \{}
+\DoxyCodeLine{172     \textcolor{keywordflow}{if} (fabs(Sv(i)) > eps)}
+\DoxyCodeLine{173       inv\_Sv(i) = 1 / Sv(i);}
+\DoxyCodeLine{174     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{175       inv\_Sv(i) = Sv(i) / (Sv(i) * Sv(i) + lambda * lambda);}
+\DoxyCodeLine{176   \}}
+\DoxyCodeLine{177   x = V * inv\_Sv.asDiagonal() * U.transpose() * b;}
+\DoxyCodeLine{178   \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{179 \}}
+\DoxyCodeLine{180 }
+\DoxyCodeLine{190 \textcolor{keyword}{inline} \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacetesseract__kinematics_a1645b1b27fd8279b5f0289dfd1f662c7}{dampedPInv}}(\textcolor{keyword}{const} Eigen::Ref<const Eigen::MatrixXd>\& A,}
+\DoxyCodeLine{191                               Eigen::Ref<Eigen::MatrixXd> P,}
+\DoxyCodeLine{192                               \textcolor{keyword}{const} \textcolor{keywordtype}{double} eps = 0.011,}
+\DoxyCodeLine{193                               \textcolor{keyword}{const} \textcolor{keywordtype}{double} lambda = 0.01)}
+\DoxyCodeLine{194 \{}
+\DoxyCodeLine{195   \textcolor{keywordflow}{if} ((A.rows() == 0) || (A.cols() == 0))}
+\DoxyCodeLine{196   \{}
+\DoxyCodeLine{197     CONSOLE\_BRIDGE\_logError(\textcolor{stringliteral}{"{}Empty matrices not supported in dampedPInv()"{}});}
+\DoxyCodeLine{198     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{199   \}}
+\DoxyCodeLine{200 }
+\DoxyCodeLine{201   \textcolor{comment}{// Calculate A+ (pseudoinverse of A) = V S+ U*, where U* is Hermition of U (just transpose if all values of U are}}
+\DoxyCodeLine{202   \textcolor{comment}{// real)}}
+\DoxyCodeLine{203   \textcolor{comment}{// in order to solve Ax=b -\/> x*=A+ b}}
+\DoxyCodeLine{204   Eigen::JacobiSVD<Eigen::MatrixXd> svd(A, Eigen::ComputeThinU | Eigen::ComputeThinV);}
+\DoxyCodeLine{205   \textcolor{keyword}{const} Eigen::MatrixXd\& U = svd.matrixU();}
+\DoxyCodeLine{206   \textcolor{keyword}{const} Eigen::VectorXd\& Sv = svd.singularValues();}
+\DoxyCodeLine{207   \textcolor{keyword}{const} Eigen::MatrixXd\& V = svd.matrixV();}
+\DoxyCodeLine{208 }
+\DoxyCodeLine{209   \textcolor{comment}{// calculate the reciprocal of Singular-\/Values}}
+\DoxyCodeLine{210   \textcolor{comment}{// damp inverse with lambda so that inverse doesn't oscillate near solution}}
+\DoxyCodeLine{211   \textcolor{keywordtype}{long} \textcolor{keywordtype}{int} nSv = Sv.size();}
+\DoxyCodeLine{212   Eigen::VectorXd inv\_Sv(nSv);}
+\DoxyCodeLine{213   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{long} \textcolor{keywordtype}{int} i = 0; i < nSv; ++i)}
+\DoxyCodeLine{214   \{}
+\DoxyCodeLine{215     \textcolor{keywordflow}{if} (fabs(Sv(i)) > eps)}
+\DoxyCodeLine{216       inv\_Sv(i) = 1 / Sv(i);}
+\DoxyCodeLine{217     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{218     \{}
+\DoxyCodeLine{219       inv\_Sv(i) = Sv(i) / (Sv(i) * Sv(i) + lambda * lambda);}
+\DoxyCodeLine{220     \}}
+\DoxyCodeLine{221   \}}
+\DoxyCodeLine{222   P = V * inv\_Sv.asDiagonal() * U.transpose();}
+\DoxyCodeLine{223   \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{224 \}}
+\DoxyCodeLine{225 }
+\DoxyCodeLine{234 \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacetesseract__kinematics_ae2bebd951f959b4c39b06dc7b38c8159}{isNearSingularity}}(\textcolor{keyword}{const} Eigen::Ref<const Eigen::MatrixXd>\& \mbox{\hyperlink{kinematics__core__unit_8cpp_afd43241933d01af91643a779b829d7a7}{jacobian}}, \textcolor{keywordtype}{double} threshold = 0.01)}
+\DoxyCodeLine{235 \{}
+\DoxyCodeLine{236   Eigen::JacobiSVD<Eigen::MatrixXd> svd(\mbox{\hyperlink{kinematics__core__unit_8cpp_afd43241933d01af91643a779b829d7a7}{jacobian}}, Eigen::ComputeThinU | Eigen::ComputeThinV);}
+\DoxyCodeLine{237   \textcolor{keyword}{const} Eigen::VectorXd\& sv = svd.singularValues();}
+\DoxyCodeLine{238   \textcolor{keywordflow}{return} (sv.tail(1).value() < threshold);}
+\DoxyCodeLine{239 \}}
+\DoxyCodeLine{240 }
+\DoxyCodeLine{242 \textcolor{keyword}{struct }\mbox{\hyperlink{structtesseract__kinematics_1_1ManipulabilityEllipsoid}{ManipulabilityEllipsoid}}}
+\DoxyCodeLine{243 \{}
+\DoxyCodeLine{244   \textcolor{comment}{// LCOV\_EXCL\_START}}
+\DoxyCodeLine{245   EIGEN\_MAKE\_ALIGNED\_OPERATOR\_NEW}
+\DoxyCodeLine{246   \textcolor{comment}{// LCOV\_EXCL\_STOP}}
+\DoxyCodeLine{247 }
+\DoxyCodeLine{249   Eigen::VectorXd \mbox{\hyperlink{structtesseract__kinematics_1_1ManipulabilityEllipsoid_a435d10bf8202bacf9cb472b0ac2c0c36}{eigen\_values}};}
+\DoxyCodeLine{250 }
+\DoxyCodeLine{258   \textcolor{keywordtype}{double} \mbox{\hyperlink{structtesseract__kinematics_1_1ManipulabilityEllipsoid_abc54d1240b184a6dc0eaf16bf6461fbe}{measure}}\{ 0 \};}
+\DoxyCodeLine{259 }
+\DoxyCodeLine{265   \textcolor{keywordtype}{double} \mbox{\hyperlink{structtesseract__kinematics_1_1ManipulabilityEllipsoid_a85fa8d934966c5522aad3d405fb1296b}{condition}}\{ 0 \};}
+\DoxyCodeLine{266 }
+\DoxyCodeLine{268   \textcolor{keywordtype}{double} \mbox{\hyperlink{structtesseract__kinematics_1_1ManipulabilityEllipsoid_a3fb9e5490649a2f08866ddf2135e6662}{volume}}\{ 0 \};}
+\DoxyCodeLine{269 \};}
+\DoxyCodeLine{270 }
+\DoxyCodeLine{272 \textcolor{keyword}{struct }\mbox{\hyperlink{structtesseract__kinematics_1_1Manipulability}{Manipulability}}}
+\DoxyCodeLine{273 \{}
+\DoxyCodeLine{274   \textcolor{comment}{// LCOV\_EXCL\_START}}
+\DoxyCodeLine{275   EIGEN\_MAKE\_ALIGNED\_OPERATOR\_NEW}
+\DoxyCodeLine{276   \textcolor{comment}{// LCOV\_EXCL\_STOP}}
+\DoxyCodeLine{277 }
+\DoxyCodeLine{279   \mbox{\hyperlink{structtesseract__kinematics_1_1ManipulabilityEllipsoid}{ManipulabilityEllipsoid}} \mbox{\hyperlink{structtesseract__kinematics_1_1Manipulability_a278ada9b636b868767d17de4c696121c}{m}};}
+\DoxyCodeLine{280 }
+\DoxyCodeLine{282   \mbox{\hyperlink{structtesseract__kinematics_1_1ManipulabilityEllipsoid}{ManipulabilityEllipsoid}} \mbox{\hyperlink{structtesseract__kinematics_1_1Manipulability_afc236fe0a63f4050b89d58e6b69b1d81}{m\_linear}};}
+\DoxyCodeLine{283 }
+\DoxyCodeLine{285   \mbox{\hyperlink{structtesseract__kinematics_1_1ManipulabilityEllipsoid}{ManipulabilityEllipsoid}} \mbox{\hyperlink{structtesseract__kinematics_1_1Manipulability_af88c7eaa372421bbfb610ed8acc46b28}{m\_angular}};}
+\DoxyCodeLine{286 }
+\DoxyCodeLine{288   \mbox{\hyperlink{structtesseract__kinematics_1_1ManipulabilityEllipsoid}{ManipulabilityEllipsoid}} \mbox{\hyperlink{structtesseract__kinematics_1_1Manipulability_a3043ecfcb291c4dd9c3fde03244dcf5d}{f}};}
+\DoxyCodeLine{289 }
+\DoxyCodeLine{291   \mbox{\hyperlink{structtesseract__kinematics_1_1ManipulabilityEllipsoid}{ManipulabilityEllipsoid}} \mbox{\hyperlink{structtesseract__kinematics_1_1Manipulability_a4969a53954a8b868771b281bba59dcc2}{f\_linear}};}
+\DoxyCodeLine{292 }
+\DoxyCodeLine{294   \mbox{\hyperlink{structtesseract__kinematics_1_1ManipulabilityEllipsoid}{ManipulabilityEllipsoid}} \mbox{\hyperlink{structtesseract__kinematics_1_1Manipulability_a681c4751a7b40c0953c9420ad834a910}{f\_angular}};}
+\DoxyCodeLine{295 \};}
+\DoxyCodeLine{296 }
+\DoxyCodeLine{302 \textcolor{keyword}{inline} \mbox{\hyperlink{structtesseract__kinematics_1_1Manipulability}{Manipulability}} \mbox{\hyperlink{namespacetesseract__kinematics_ad071f516596c9a983b661f60e4511ac3}{calcManipulability}}(\textcolor{keyword}{const} Eigen::Ref<const Eigen::MatrixXd>\& \mbox{\hyperlink{kinematics__core__unit_8cpp_afd43241933d01af91643a779b829d7a7}{jacobian}})}
+\DoxyCodeLine{303 \{}
+\DoxyCodeLine{304   \mbox{\hyperlink{structtesseract__kinematics_1_1Manipulability}{Manipulability}} manip;}
+\DoxyCodeLine{305   Eigen::MatrixXd jacob\_linear = \mbox{\hyperlink{kinematics__core__unit_8cpp_afd43241933d01af91643a779b829d7a7}{jacobian}}.topRows(3);}
+\DoxyCodeLine{306   Eigen::MatrixXd jacob\_angular = \mbox{\hyperlink{kinematics__core__unit_8cpp_afd43241933d01af91643a779b829d7a7}{jacobian}}.bottomRows(3);}
+\DoxyCodeLine{307 }
+\DoxyCodeLine{308   \textcolor{keyword}{auto} fn = [](\textcolor{keyword}{const} Eigen::MatrixXd\& \mbox{\hyperlink{kinematics__core__unit_8cpp_a9d4c159548a3d787ff62c64175409328}{m}}) \{}
+\DoxyCodeLine{309     \mbox{\hyperlink{structtesseract__kinematics_1_1ManipulabilityEllipsoid}{ManipulabilityEllipsoid}} \mbox{\hyperlink{collision__margin__data__unit_8cpp_a0992235f6cab11fba6116193c7f42b8b}{data}};}
+\DoxyCodeLine{310     Eigen::SelfAdjointEigenSolver<Eigen::MatrixXd> sm(\mbox{\hyperlink{kinematics__core__unit_8cpp_a9d4c159548a3d787ff62c64175409328}{m}}, Eigen::DecompositionOptions::EigenvaluesOnly);}
+\DoxyCodeLine{311     \mbox{\hyperlink{collision__margin__data__unit_8cpp_a0992235f6cab11fba6116193c7f42b8b}{data}}.eigen\_values = sm.eigenvalues().real();}
+\DoxyCodeLine{312 }
+\DoxyCodeLine{313     \textcolor{comment}{// Set eigenvalues near zero to zero. This also implies zero volume}}
+\DoxyCodeLine{314     \textcolor{keywordflow}{for} (Eigen::Index i = 0; i < \mbox{\hyperlink{collision__margin__data__unit_8cpp_a0992235f6cab11fba6116193c7f42b8b}{data}}.eigen\_values.size(); ++i)}
+\DoxyCodeLine{315     \{}
+\DoxyCodeLine{316       \textcolor{keywordflow}{if} (\mbox{\hyperlink{namespacetesseract__common_ac9961ff2a5d322165a817241b7746f64}{tesseract\_common::almostEqualRelativeAndAbs}}(\mbox{\hyperlink{collision__margin__data__unit_8cpp_a0992235f6cab11fba6116193c7f42b8b}{data}}.eigen\_values[i], 0))}
+\DoxyCodeLine{317         \mbox{\hyperlink{collision__margin__data__unit_8cpp_a0992235f6cab11fba6116193c7f42b8b}{data}}.eigen\_values[i] = +0;}
+\DoxyCodeLine{318     \}}
+\DoxyCodeLine{319 }
+\DoxyCodeLine{320     \textcolor{comment}{// If the minimum eigen value is approximately zero set measure and condition to max double}}
+\DoxyCodeLine{321     \textcolor{keywordflow}{if} (\mbox{\hyperlink{namespacetesseract__common_ac9961ff2a5d322165a817241b7746f64}{tesseract\_common::almostEqualRelativeAndAbs}}(\mbox{\hyperlink{collision__margin__data__unit_8cpp_a0992235f6cab11fba6116193c7f42b8b}{data}}.eigen\_values.minCoeff(), 0))}
+\DoxyCodeLine{322     \{}
+\DoxyCodeLine{323       \mbox{\hyperlink{collision__margin__data__unit_8cpp_a0992235f6cab11fba6116193c7f42b8b}{data}}.measure = std::numeric\_limits<double>::max();}
+\DoxyCodeLine{324       \mbox{\hyperlink{collision__margin__data__unit_8cpp_a0992235f6cab11fba6116193c7f42b8b}{data}}.condition = std::numeric\_limits<double>::max();}
+\DoxyCodeLine{325     \}}
+\DoxyCodeLine{326     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{327     \{}
+\DoxyCodeLine{328       \mbox{\hyperlink{collision__margin__data__unit_8cpp_a0992235f6cab11fba6116193c7f42b8b}{data}}.condition = \mbox{\hyperlink{collision__margin__data__unit_8cpp_a0992235f6cab11fba6116193c7f42b8b}{data}}.eigen\_values.maxCoeff() / \mbox{\hyperlink{collision__margin__data__unit_8cpp_a0992235f6cab11fba6116193c7f42b8b}{data}}.eigen\_values.minCoeff();}
+\DoxyCodeLine{329       \mbox{\hyperlink{collision__margin__data__unit_8cpp_a0992235f6cab11fba6116193c7f42b8b}{data}}.measure = std::sqrt(\mbox{\hyperlink{collision__margin__data__unit_8cpp_a0992235f6cab11fba6116193c7f42b8b}{data}}.condition);}
+\DoxyCodeLine{330     \}}
+\DoxyCodeLine{331 }
+\DoxyCodeLine{332     \mbox{\hyperlink{collision__margin__data__unit_8cpp_a0992235f6cab11fba6116193c7f42b8b}{data}}.volume = std::sqrt(\mbox{\hyperlink{collision__margin__data__unit_8cpp_a0992235f6cab11fba6116193c7f42b8b}{data}}.eigen\_values.prod());}
+\DoxyCodeLine{333 }
+\DoxyCodeLine{334     \textcolor{keywordflow}{return} \mbox{\hyperlink{collision__margin__data__unit_8cpp_a0992235f6cab11fba6116193c7f42b8b}{data}};}
+\DoxyCodeLine{335   \};}
+\DoxyCodeLine{336 }
+\DoxyCodeLine{337   Eigen::MatrixXd a = \mbox{\hyperlink{kinematics__core__unit_8cpp_afd43241933d01af91643a779b829d7a7}{jacobian}} * \mbox{\hyperlink{kinematics__core__unit_8cpp_afd43241933d01af91643a779b829d7a7}{jacobian}}.transpose();}
+\DoxyCodeLine{338   Eigen::MatrixXd a\_linear = jacob\_linear * jacob\_linear.transpose();}
+\DoxyCodeLine{339   Eigen::MatrixXd a\_angular = jacob\_angular * jacob\_angular.transpose();}
+\DoxyCodeLine{340   manip.\mbox{\hyperlink{structtesseract__kinematics_1_1Manipulability_a278ada9b636b868767d17de4c696121c}{m}} = fn(a);}
+\DoxyCodeLine{341   manip.\mbox{\hyperlink{structtesseract__kinematics_1_1Manipulability_afc236fe0a63f4050b89d58e6b69b1d81}{m\_linear}} = fn(a\_linear);}
+\DoxyCodeLine{342   manip.\mbox{\hyperlink{structtesseract__kinematics_1_1Manipulability_af88c7eaa372421bbfb610ed8acc46b28}{m\_angular}} = fn(a\_angular);}
+\DoxyCodeLine{343 }
+\DoxyCodeLine{344   Eigen::MatrixXd a\_inv = a.inverse();}
+\DoxyCodeLine{345   Eigen::MatrixXd a\_linear\_inv = a\_linear.inverse();}
+\DoxyCodeLine{346   Eigen::MatrixXd a\_angular\_inv = a\_angular.inverse();}
+\DoxyCodeLine{347   manip.\mbox{\hyperlink{structtesseract__kinematics_1_1Manipulability_a3043ecfcb291c4dd9c3fde03244dcf5d}{f}} = fn(a\_inv);}
+\DoxyCodeLine{348   manip.\mbox{\hyperlink{structtesseract__kinematics_1_1Manipulability_a4969a53954a8b868771b281bba59dcc2}{f\_linear}} = fn(a\_linear\_inv);}
+\DoxyCodeLine{349   manip.\mbox{\hyperlink{structtesseract__kinematics_1_1Manipulability_a681c4751a7b40c0953c9420ad834a910}{f\_angular}} = fn(a\_angular\_inv);}
+\DoxyCodeLine{350 }
+\DoxyCodeLine{351   \textcolor{keywordflow}{return} manip;}
+\DoxyCodeLine{352 \}}
+\DoxyCodeLine{353 }
+\DoxyCodeLine{358 \textcolor{keyword}{template} <\textcolor{keyword}{typename} FloatType>}
+\DoxyCodeLine{359 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__kinematics_a116ec2446a1d878c4be27231149a9896}{getRedundantSolutionsHelper}}(std::vector<\mbox{\hyperlink{namespacetesseract__kinematics_a59d7ac70f855c7d00848b703e6bcfe9a}{VectorX<FloatType>}}>\& redundant\_sols,}
+\DoxyCodeLine{360                                         \textcolor{keyword}{const} Eigen::Ref<const Eigen::VectorXd>\& sol,}
+\DoxyCodeLine{361                                         \textcolor{keyword}{const} Eigen::MatrixX2d\& \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{limits}},}
+\DoxyCodeLine{362                                         std::vector<Eigen::Index>::const\_iterator current\_index,}
+\DoxyCodeLine{363                                         std::vector<Eigen::Index>::const\_iterator end\_index)}
+\DoxyCodeLine{364 \{}
+\DoxyCodeLine{365   \textcolor{keywordtype}{double} val\{ 0 \};}
+\DoxyCodeLine{366   \textcolor{keywordflow}{for} (; current\_index != end\_index; ++current\_index)}
+\DoxyCodeLine{367   \{}
+\DoxyCodeLine{368     \textcolor{keywordflow}{if} (std::isinf(\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{limits}}(*current\_index, 0)))}
+\DoxyCodeLine{369     \{}
+\DoxyCodeLine{370       std::stringstream ss;}
+\DoxyCodeLine{371       ss << \textcolor{stringliteral}{"{}Lower limit of joint "{}} << *current\_index << \textcolor{stringliteral}{"{} is infinite; no redundant solutions will be generated"{}}}
+\DoxyCodeLine{372          << std::endl;}
+\DoxyCodeLine{373       CONSOLE\_BRIDGE\_logWarn(ss.str().c\_str());}
+\DoxyCodeLine{374     \}}
+\DoxyCodeLine{375     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{376     \{}
+\DoxyCodeLine{377       val = sol[*current\_index];}
+\DoxyCodeLine{378       \textcolor{keywordflow}{while} ((val -\/= (2.0 * M\_PI)) > \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{limits}}(*current\_index, 0) ||}
+\DoxyCodeLine{379              \mbox{\hyperlink{namespacetesseract__common_ac9961ff2a5d322165a817241b7746f64}{tesseract\_common::almostEqualRelativeAndAbs}}(val, \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{limits}}(*current\_index, 0)))}
+\DoxyCodeLine{380       \{}
+\DoxyCodeLine{381         \textcolor{comment}{// It not guaranteed that the provided solution is within limits so this check is needed}}
+\DoxyCodeLine{382         \textcolor{keywordflow}{if} (val < \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{limits}}(*current\_index, 1) ||}
+\DoxyCodeLine{383             \mbox{\hyperlink{namespacetesseract__common_ac9961ff2a5d322165a817241b7746f64}{tesseract\_common::almostEqualRelativeAndAbs}}(val, \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{limits}}(*current\_index, 1)))}
+\DoxyCodeLine{384         \{}
+\DoxyCodeLine{385           Eigen::VectorXd new\_sol = sol;}
+\DoxyCodeLine{386           new\_sol[*current\_index] = val;}
+\DoxyCodeLine{387 }
+\DoxyCodeLine{388           \textcolor{keywordflow}{if} (\mbox{\hyperlink{namespacetesseract__common_a2357c2476cbb1427a259d1dc1b8c20b6}{tesseract\_common::satisfiesPositionLimits<double>}}(new\_sol, \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{limits}}))}
+\DoxyCodeLine{389           \{}
+\DoxyCodeLine{390             \mbox{\hyperlink{namespacetesseract__common_a1f8d20fecfeb1e99cc55d316977c3f3d}{tesseract\_common::enforcePositionLimits<double>}}(new\_sol, \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{limits}});}
+\DoxyCodeLine{391             redundant\_sols.push\_back(new\_sol.template cast<FloatType>());}
+\DoxyCodeLine{392           \}}
+\DoxyCodeLine{393 }
+\DoxyCodeLine{394           getRedundantSolutionsHelper<FloatType>(redundant\_sols, new\_sol, \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{limits}}, current\_index + 1, end\_index);}
+\DoxyCodeLine{395         \}}
+\DoxyCodeLine{396       \}}
+\DoxyCodeLine{397     \}}
+\DoxyCodeLine{398 }
+\DoxyCodeLine{399     \textcolor{keywordflow}{if} (std::isinf(\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{limits}}(*current\_index, 1)))}
+\DoxyCodeLine{400     \{}
+\DoxyCodeLine{401       std::stringstream ss;}
+\DoxyCodeLine{402       ss << \textcolor{stringliteral}{"{}Upper limit of joint "{}} << *current\_index << \textcolor{stringliteral}{"{} is infinite; no redundant solutions will be generated"{}}}
+\DoxyCodeLine{403          << std::endl;}
+\DoxyCodeLine{404       CONSOLE\_BRIDGE\_logWarn(ss.str().c\_str());}
+\DoxyCodeLine{405     \}}
+\DoxyCodeLine{406     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{407     \{}
+\DoxyCodeLine{408       val = sol[*current\_index];}
+\DoxyCodeLine{409       \textcolor{keywordflow}{while} ((val += (2.0 * M\_PI)) < \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{limits}}(*current\_index, 1) ||}
+\DoxyCodeLine{410              \mbox{\hyperlink{namespacetesseract__common_ac9961ff2a5d322165a817241b7746f64}{tesseract\_common::almostEqualRelativeAndAbs}}(val, \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{limits}}(*current\_index, 1)))}
+\DoxyCodeLine{411       \{}
+\DoxyCodeLine{412         \textcolor{comment}{// It not guaranteed that the provided solution is within limits so this check is needed}}
+\DoxyCodeLine{413         \textcolor{keywordflow}{if} (val > \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{limits}}(*current\_index, 0) ||}
+\DoxyCodeLine{414             \mbox{\hyperlink{namespacetesseract__common_ac9961ff2a5d322165a817241b7746f64}{tesseract\_common::almostEqualRelativeAndAbs}}(val, \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{limits}}(*current\_index, 0)))}
+\DoxyCodeLine{415         \{}
+\DoxyCodeLine{416           Eigen::VectorXd new\_sol = sol;}
+\DoxyCodeLine{417           new\_sol[*current\_index] = val;}
+\DoxyCodeLine{418 }
+\DoxyCodeLine{419           \textcolor{keywordflow}{if} (\mbox{\hyperlink{namespacetesseract__common_a2357c2476cbb1427a259d1dc1b8c20b6}{tesseract\_common::satisfiesPositionLimits<double>}}(new\_sol, \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{limits}}))}
+\DoxyCodeLine{420           \{}
+\DoxyCodeLine{421             \mbox{\hyperlink{namespacetesseract__common_a1f8d20fecfeb1e99cc55d316977c3f3d}{tesseract\_common::enforcePositionLimits<double>}}(new\_sol, \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{limits}});}
+\DoxyCodeLine{422             redundant\_sols.push\_back(new\_sol.template cast<FloatType>());}
+\DoxyCodeLine{423           \}}
+\DoxyCodeLine{424 }
+\DoxyCodeLine{425           getRedundantSolutionsHelper<FloatType>(redundant\_sols, new\_sol, \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{limits}}, current\_index + 1, end\_index);}
+\DoxyCodeLine{426         \}}
+\DoxyCodeLine{427       \}}
+\DoxyCodeLine{428     \}}
+\DoxyCodeLine{429   \}}
+\DoxyCodeLine{430 \}}
+\DoxyCodeLine{431 }
+\DoxyCodeLine{439 \textcolor{keyword}{template} <\textcolor{keyword}{typename} FloatType>}
+\DoxyCodeLine{440 \textcolor{keyword}{inline} std::vector<VectorX<FloatType>> \mbox{\hyperlink{namespacetesseract__kinematics_a325b511b4f36172c8814db524742aed9}{getRedundantSolutions}}(\textcolor{keyword}{const} Eigen::Ref<\textcolor{keyword}{const} \mbox{\hyperlink{namespacetesseract__kinematics_a59d7ac70f855c7d00848b703e6bcfe9a}{VectorX<FloatType>}}>\& sol,}
+\DoxyCodeLine{441                                                              \textcolor{keyword}{const} Eigen::MatrixX2d\& \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{limits}},}
+\DoxyCodeLine{442                                                              \textcolor{keyword}{const} std::vector<Eigen::Index>\& redundancy\_capable\_joints)}
+\DoxyCodeLine{443 \{}
+\DoxyCodeLine{444   \textcolor{keywordflow}{if} (redundancy\_capable\_joints.empty())}
+\DoxyCodeLine{445     \textcolor{keywordflow}{return} \{\};}
+\DoxyCodeLine{446 }
+\DoxyCodeLine{447   \textcolor{keywordflow}{for} (\textcolor{keyword}{const} Eigen::Index\& idx : redundancy\_capable\_joints)}
+\DoxyCodeLine{448   \{}
+\DoxyCodeLine{449     \textcolor{keywordflow}{if} (idx >= sol.size())}
+\DoxyCodeLine{450     \{}
+\DoxyCodeLine{451       std::stringstream ss;}
+\DoxyCodeLine{452       ss << \textcolor{stringliteral}{"{}Redundant joint index "{}} << idx << \textcolor{stringliteral}{"{} is greater than or equal to the joint state size ("{}} << sol.size()}
+\DoxyCodeLine{453          << \textcolor{stringliteral}{"{})"{}};}
+\DoxyCodeLine{454       \textcolor{keywordflow}{throw} std::runtime\_error(ss.str());}
+\DoxyCodeLine{455     \}}
+\DoxyCodeLine{456   \}}
+\DoxyCodeLine{457 }
+\DoxyCodeLine{458   std::vector<VectorX<FloatType>> redundant\_sols;}
+\DoxyCodeLine{459   getRedundantSolutionsHelper<FloatType>(redundant\_sols,}
+\DoxyCodeLine{460                                          sol.template cast<double>(),}
+\DoxyCodeLine{461                                          \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{limits}},}
+\DoxyCodeLine{462                                          redundancy\_capable\_joints.begin(),}
+\DoxyCodeLine{463                                          redundancy\_capable\_joints.end());}
+\DoxyCodeLine{464   \textcolor{keywordflow}{return} redundant\_sols;}
+\DoxyCodeLine{465 \}}
+\DoxyCodeLine{466 }
+\DoxyCodeLine{476 \textcolor{keyword}{template} <\textcolor{keyword}{typename} FloatType>}
+\DoxyCodeLine{477 \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacetesseract__kinematics_a2f74af65eeb166856e00a64254da7ee8}{isValid}}(\textcolor{keyword}{const} std::array<FloatType, 6>\& qs)}
+\DoxyCodeLine{478 \{}
+\DoxyCodeLine{479   \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& \mbox{\hyperlink{kinematics__core__unit_8cpp_af1c133f4166e08b7a95ddebfeef08de9}{q}} : qs)}
+\DoxyCodeLine{480     \textcolor{keywordflow}{if} (!std::isfinite(\mbox{\hyperlink{kinematics__core__unit_8cpp_af1c133f4166e08b7a95ddebfeef08de9}{q}}))}
+\DoxyCodeLine{481       \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{482 }
+\DoxyCodeLine{483   \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{484 \}}
+\DoxyCodeLine{485 }
+\DoxyCodeLine{491 \textcolor{keyword}{template} <\textcolor{keyword}{typename} FloatType>}
+\DoxyCodeLine{492 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__kinematics_a51971caada7d5330a60765fd1a83cda1}{harmonizeTowardZero}}(Eigen::Ref<\mbox{\hyperlink{namespacetesseract__kinematics_a59d7ac70f855c7d00848b703e6bcfe9a}{VectorX<FloatType>}}> qs,}
+\DoxyCodeLine{493                                 \textcolor{keyword}{const} std::vector<Eigen::Index>\& redundancy\_capable\_joints)}
+\DoxyCodeLine{494 \{}
+\DoxyCodeLine{495   \textcolor{keyword}{const} \textcolor{keyword}{static} \textcolor{keyword}{auto} \mbox{\hyperlink{contact__managers__factory__unit_8cpp_ae40c83f984192e54ccc972b090e8f401}{pi}} = FloatType(M\_PI);}
+\DoxyCodeLine{496   \textcolor{keyword}{const} \textcolor{keyword}{static} \textcolor{keyword}{auto} two\_pi = FloatType(2.0 * M\_PI);}
+\DoxyCodeLine{497 }
+\DoxyCodeLine{498   \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& i : redundancy\_capable\_joints)}
+\DoxyCodeLine{499   \{}
+\DoxyCodeLine{500     FloatType diff = std::fmod(qs[i] + \mbox{\hyperlink{contact__managers__factory__unit_8cpp_ae40c83f984192e54ccc972b090e8f401}{pi}}, two\_pi);}
+\DoxyCodeLine{501     qs[i] = (diff < 0) ? (diff + \mbox{\hyperlink{contact__managers__factory__unit_8cpp_ae40c83f984192e54ccc972b090e8f401}{pi}}) : (diff -\/ \mbox{\hyperlink{contact__managers__factory__unit_8cpp_ae40c83f984192e54ccc972b090e8f401}{pi}});}
+\DoxyCodeLine{502   \}}
+\DoxyCodeLine{503 \}}
+\DoxyCodeLine{504 }
+\DoxyCodeLine{505 \}  \textcolor{comment}{// namespace tesseract\_kinematics}}
+\DoxyCodeLine{506 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_KINEMATICS\_UTILS\_H}}
+
+\end{DoxyCode}

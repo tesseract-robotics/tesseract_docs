@@ -1,0 +1,957 @@
+\hypertarget{kinematics__test__utils_8h_source}{}\doxysection{kinematics\+\_\+test\+\_\+utils.\+h}
+\label{kinematics__test__utils_8h_source}\index{tesseract\_kinematics/test/kinematics\_test\_utils.h@{tesseract\_kinematics/test/kinematics\_test\_utils.h}}
+\mbox{\hyperlink{kinematics__test__utils_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#ifndef TESSERACT\_KINEMATICS\_KIN\_TEST\_SUITE\_H}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define TESSERACT\_KINEMATICS\_KIN\_TEST\_SUITE\_H}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{macros_8h}{tesseract\_common/macros.h}}>}}
+\DoxyCodeLine{30 \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include <gtest/gtest.h>}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include <yaml-\/cpp/yaml.h>}}
+\DoxyCodeLine{34 \mbox{\hyperlink{namespaceTESSERACT__COMMON__IGNORE__WARNINGS__POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{forward__kinematics_8h}{tesseract\_kinematics/core/forward\_kinematics.h}}>}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{inverse__kinematics_8h}{tesseract\_kinematics/core/inverse\_kinematics.h}}>}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{tesseract__kinematics_2core_2include_2tesseract__kinematics_2core_2utils_8h}{tesseract\_kinematics/core/utils.h}}>}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{tesseract__kinematics_2core_2include_2tesseract__kinematics_2core_2types_8h}{tesseract\_kinematics/core/types.h}}>}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{kinematic__group_8h}{tesseract\_kinematics/core/kinematic\_group.h}}>}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{kinematics__plugin__factory_8h}{tesseract\_kinematics/core/kinematics\_plugin\_factory.h}}>}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{validate_8h}{tesseract\_kinematics/core/validate.h}}>}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{graph_8h}{tesseract\_scene\_graph/graph.h}}>}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{kdl__state__solver_8h}{tesseract\_state\_solver/kdl/kdl\_state\_solver.h}}>}}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{urdf__parser_8h}{tesseract\_urdf/urdf\_parser.h}}>}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{tesseract__common_2include_2tesseract__common_2utils_8h}{tesseract\_common/utils.h}}>}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{tesseract__support__resource__locator_8h}{tesseract\_support/tesseract\_support\_resource\_locator.h}}>}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite}{tesseract\_kinematics::test\_suite}}}
+\DoxyCodeLine{52 \{}
+\DoxyCodeLine{53 \textcolor{keyword}{inline} \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph_aacd7acf57071e94cd87fbae62dbaafba}{tesseract\_scene\_graph::SceneGraph::UPtr}} \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_af21376adb5aa48be102cd8036777cefa}{getSceneGraphIIWA}}()}
+\DoxyCodeLine{54 \{}
+\DoxyCodeLine{55   std::string \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a4f0c2c1ddd740994eb90524a8d086dca}{path}} = std::string(TESSERACT\_SUPPORT\_DIR) + \textcolor{stringliteral}{"{}/urdf/lbr\_iiwa\_14\_r820.urdf"{}};}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57   \mbox{\hyperlink{classtesseract__common_1_1TesseractSupportResourceLocator}{tesseract\_common::TesseractSupportResourceLocator}} \mbox{\hyperlink{resource__locator__unit_8cpp_ad889712fa094e762b2a887aec9001270}{locator}};}
+\DoxyCodeLine{58   \textcolor{keywordflow}{return} \mbox{\hyperlink{namespacetesseract__urdf_af87dbf019b08c4a9966e8131d382d5ad}{tesseract\_urdf::parseURDFFile}}(\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a4f0c2c1ddd740994eb90524a8d086dca}{path}}, \mbox{\hyperlink{resource__locator__unit_8cpp_ad889712fa094e762b2a887aec9001270}{locator}});}
+\DoxyCodeLine{59 \}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{keyword}{inline} \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph_aacd7acf57071e94cd87fbae62dbaafba}{tesseract\_scene\_graph::SceneGraph::UPtr}} \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a5bf9dac46e4656e96bc26c0b8b8095f5}{getSceneGraphABBExternalPositioner}}()}
+\DoxyCodeLine{62 \{}
+\DoxyCodeLine{63   std::string \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a4f0c2c1ddd740994eb90524a8d086dca}{path}} = std::string(TESSERACT\_SUPPORT\_DIR) + \textcolor{stringliteral}{"{}/urdf/abb\_irb2400\_external\_positioner.urdf"{}};}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65   \mbox{\hyperlink{classtesseract__common_1_1TesseractSupportResourceLocator}{tesseract\_common::TesseractSupportResourceLocator}} \mbox{\hyperlink{resource__locator__unit_8cpp_ad889712fa094e762b2a887aec9001270}{locator}};}
+\DoxyCodeLine{66   \textcolor{keywordflow}{return} \mbox{\hyperlink{namespacetesseract__urdf_af87dbf019b08c4a9966e8131d382d5ad}{tesseract\_urdf::parseURDFFile}}(\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a4f0c2c1ddd740994eb90524a8d086dca}{path}}, \mbox{\hyperlink{resource__locator__unit_8cpp_ad889712fa094e762b2a887aec9001270}{locator}});}
+\DoxyCodeLine{67 \}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \textcolor{keyword}{inline} \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph_aacd7acf57071e94cd87fbae62dbaafba}{tesseract\_scene\_graph::SceneGraph::UPtr}} \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a423024ff947e983a858b211b6bbc3a05}{getSceneGraphABBOnPositioner}}()}
+\DoxyCodeLine{70 \{}
+\DoxyCodeLine{71   std::string \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a4f0c2c1ddd740994eb90524a8d086dca}{path}} = std::string(TESSERACT\_SUPPORT\_DIR) + \textcolor{stringliteral}{"{}/urdf/abb\_irb2400\_on\_positioner.urdf"{}};}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73   \mbox{\hyperlink{classtesseract__common_1_1TesseractSupportResourceLocator}{tesseract\_common::TesseractSupportResourceLocator}} \mbox{\hyperlink{resource__locator__unit_8cpp_ad889712fa094e762b2a887aec9001270}{locator}};}
+\DoxyCodeLine{74   \textcolor{keywordflow}{return} \mbox{\hyperlink{namespacetesseract__urdf_af87dbf019b08c4a9966e8131d382d5ad}{tesseract\_urdf::parseURDFFile}}(\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a4f0c2c1ddd740994eb90524a8d086dca}{path}}, \mbox{\hyperlink{resource__locator__unit_8cpp_ad889712fa094e762b2a887aec9001270}{locator}});}
+\DoxyCodeLine{75 \}}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 \textcolor{keyword}{inline} \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph_aacd7acf57071e94cd87fbae62dbaafba}{tesseract\_scene\_graph::SceneGraph::UPtr}} \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_ad0595afd44faa3169984a3e4423fa72b}{getSceneGraphABB}}()}
+\DoxyCodeLine{78 \{}
+\DoxyCodeLine{79   std::string \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a4f0c2c1ddd740994eb90524a8d086dca}{path}} = std::string(TESSERACT\_SUPPORT\_DIR) + \textcolor{stringliteral}{"{}/urdf/abb\_irb2400.urdf"{}};}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81   \mbox{\hyperlink{classtesseract__common_1_1TesseractSupportResourceLocator}{tesseract\_common::TesseractSupportResourceLocator}} \mbox{\hyperlink{resource__locator__unit_8cpp_ad889712fa094e762b2a887aec9001270}{locator}};}
+\DoxyCodeLine{82   \textcolor{keywordflow}{return} \mbox{\hyperlink{namespacetesseract__urdf_af87dbf019b08c4a9966e8131d382d5ad}{tesseract\_urdf::parseURDFFile}}(\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a4f0c2c1ddd740994eb90524a8d086dca}{path}}, \mbox{\hyperlink{resource__locator__unit_8cpp_ad889712fa094e762b2a887aec9001270}{locator}});}
+\DoxyCodeLine{83 \}}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 \textcolor{keyword}{inline} \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph_aacd7acf57071e94cd87fbae62dbaafba}{tesseract\_scene\_graph::SceneGraph::UPtr}} \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_aa0539dadd27399cac477205125b876b7}{getSceneGraphIIWA7}}()}
+\DoxyCodeLine{86 \{}
+\DoxyCodeLine{87   std::string \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a4f0c2c1ddd740994eb90524a8d086dca}{path}} = std::string(TESSERACT\_SUPPORT\_DIR) + \textcolor{stringliteral}{"{}/urdf/iiwa7.urdf"{}};}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89   \mbox{\hyperlink{classtesseract__common_1_1TesseractSupportResourceLocator}{tesseract\_common::TesseractSupportResourceLocator}} \mbox{\hyperlink{resource__locator__unit_8cpp_ad889712fa094e762b2a887aec9001270}{locator}};}
+\DoxyCodeLine{90   \textcolor{keywordflow}{return} \mbox{\hyperlink{namespacetesseract__urdf_af87dbf019b08c4a9966e8131d382d5ad}{tesseract\_urdf::parseURDFFile}}(\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a4f0c2c1ddd740994eb90524a8d086dca}{path}}, \mbox{\hyperlink{resource__locator__unit_8cpp_ad889712fa094e762b2a887aec9001270}{locator}});}
+\DoxyCodeLine{91 \}}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93 \textcolor{keyword}{inline} \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph_aacd7acf57071e94cd87fbae62dbaafba}{tesseract\_scene\_graph::SceneGraph::UPtr}} \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a999bbd27ece5bca20d8fd9b63221759c}{getSceneGraphUR}}(\textcolor{keyword}{const} \mbox{\hyperlink{structtesseract__kinematics_1_1URParameters}{tesseract\_kinematics::URParameters}}\& params,}
+\DoxyCodeLine{94                                                                \textcolor{keywordtype}{double} \mbox{\hyperlink{ur__kinematics__unit_8cpp_a963698a2e618cd15db75f4999ffe7424}{shoulder\_offset}},}
+\DoxyCodeLine{95                                                                \textcolor{keywordtype}{double} \mbox{\hyperlink{ur__kinematics__unit_8cpp_a37ab686acde2ec11750d18a958df6a3e}{elbow\_offset}})}
+\DoxyCodeLine{96 \{}
+\DoxyCodeLine{97   \textcolor{keyword}{using namespace }\mbox{\hyperlink{namespacetesseract__scene__graph}{tesseract\_scene\_graph}};}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99   \textcolor{keyword}{auto} \mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a1dbe6d2c170400b636ebdc0be424944d}{sg}} = std::make\_unique<SceneGraph>(\textcolor{stringliteral}{"{}universal\_robot"{}});}
+\DoxyCodeLine{100   \mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a1dbe6d2c170400b636ebdc0be424944d}{sg}}-\/>addLink(\mbox{\hyperlink{classtesseract__scene__graph_1_1Link}{Link}}(\textcolor{stringliteral}{"{}base\_link"{}}));}
+\DoxyCodeLine{101   \mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a1dbe6d2c170400b636ebdc0be424944d}{sg}}-\/>addLink(\mbox{\hyperlink{classtesseract__scene__graph_1_1Link}{Link}}(\textcolor{stringliteral}{"{}shoulder\_link"{}}));}
+\DoxyCodeLine{102   \mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a1dbe6d2c170400b636ebdc0be424944d}{sg}}-\/>addLink(\mbox{\hyperlink{classtesseract__scene__graph_1_1Link}{Link}}(\textcolor{stringliteral}{"{}upper\_arm\_link"{}}));}
+\DoxyCodeLine{103   \mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a1dbe6d2c170400b636ebdc0be424944d}{sg}}-\/>addLink(\mbox{\hyperlink{classtesseract__scene__graph_1_1Link}{Link}}(\textcolor{stringliteral}{"{}forearm\_link"{}}));}
+\DoxyCodeLine{104   \mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a1dbe6d2c170400b636ebdc0be424944d}{sg}}-\/>addLink(\mbox{\hyperlink{classtesseract__scene__graph_1_1Link}{Link}}(\textcolor{stringliteral}{"{}wrist\_1\_link"{}}));}
+\DoxyCodeLine{105   \mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a1dbe6d2c170400b636ebdc0be424944d}{sg}}-\/>addLink(\mbox{\hyperlink{classtesseract__scene__graph_1_1Link}{Link}}(\textcolor{stringliteral}{"{}wrist\_2\_link"{}}));}
+\DoxyCodeLine{106   \mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a1dbe6d2c170400b636ebdc0be424944d}{sg}}-\/>addLink(\mbox{\hyperlink{classtesseract__scene__graph_1_1Link}{Link}}(\textcolor{stringliteral}{"{}wrist\_3\_link"{}}));}
+\DoxyCodeLine{107   \mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a1dbe6d2c170400b636ebdc0be424944d}{sg}}-\/>addLink(\mbox{\hyperlink{classtesseract__scene__graph_1_1Link}{Link}}(\textcolor{stringliteral}{"{}ee\_link"{}}));}
+\DoxyCodeLine{108   \mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a1dbe6d2c170400b636ebdc0be424944d}{sg}}-\/>addLink(\mbox{\hyperlink{classtesseract__scene__graph_1_1Link}{Link}}(\textcolor{stringliteral}{"{}tool0"{}}));}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110   \{}
+\DoxyCodeLine{111     \mbox{\hyperlink{classtesseract__scene__graph_1_1Joint}{Joint}} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}(\textcolor{stringliteral}{"{}shoulder\_pan\_joint"{}});}
+\DoxyCodeLine{112     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.type = JointType::REVOLUTE;}
+\DoxyCodeLine{113     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.parent\_link\_name = \textcolor{stringliteral}{"{}base\_link"{}};}
+\DoxyCodeLine{114     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.child\_link\_name = \textcolor{stringliteral}{"{}shoulder\_link"{}};}
+\DoxyCodeLine{115     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.axis = Eigen::Vector3d::UnitZ();}
+\DoxyCodeLine{116     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.parent\_to\_joint\_origin\_transform.translation() = Eigen::Vector3d(0, 0, params.\mbox{\hyperlink{structtesseract__kinematics_1_1URParameters_a3aa4fd9c0663c80c8f509b9ce44800fb}{d1}});}
+\DoxyCodeLine{117     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.limits = std::make\_shared<JointLimits>();}
+\DoxyCodeLine{118     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.limits-\/>lower = -\/2.0 * M\_PI;}
+\DoxyCodeLine{119     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.limits-\/>upper = 2.0 * M\_PI;}
+\DoxyCodeLine{120     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.limits-\/>velocity = 2.16;}
+\DoxyCodeLine{121     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.limits-\/>acceleration = 0.5 * \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.limits-\/>velocity;}
+\DoxyCodeLine{122     \mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a1dbe6d2c170400b636ebdc0be424944d}{sg}}-\/>addJoint(\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}});}
+\DoxyCodeLine{123   \}}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125   \{}
+\DoxyCodeLine{126     \mbox{\hyperlink{classtesseract__scene__graph_1_1Joint}{Joint}} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}(\textcolor{stringliteral}{"{}shoulder\_lift\_joint"{}});}
+\DoxyCodeLine{127     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.type = JointType::REVOLUTE;}
+\DoxyCodeLine{128     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.parent\_link\_name = \textcolor{stringliteral}{"{}shoulder\_link"{}};}
+\DoxyCodeLine{129     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.child\_link\_name = \textcolor{stringliteral}{"{}upper\_arm\_link"{}};}
+\DoxyCodeLine{130     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.axis = Eigen::Vector3d::UnitY();}
+\DoxyCodeLine{131     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.parent\_to\_joint\_origin\_transform.translation() = Eigen::Vector3d(0, \mbox{\hyperlink{ur__kinematics__unit_8cpp_a963698a2e618cd15db75f4999ffe7424}{shoulder\_offset}}, 0);}
+\DoxyCodeLine{132     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.parent\_to\_joint\_origin\_transform =}
+\DoxyCodeLine{133         \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.parent\_to\_joint\_origin\_transform * Eigen::AngleAxisd(M\_PI\_2, Eigen::Vector3d::UnitY());}
+\DoxyCodeLine{134     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.limits = std::make\_shared<JointLimits>();}
+\DoxyCodeLine{135     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.limits-\/>lower = -\/2.0 * M\_PI;}
+\DoxyCodeLine{136     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.limits-\/>upper = 2.0 * M\_PI;}
+\DoxyCodeLine{137     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.limits-\/>velocity = 2.16;}
+\DoxyCodeLine{138     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.limits-\/>acceleration = 0.5 * \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.limits-\/>velocity;}
+\DoxyCodeLine{139     \mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a1dbe6d2c170400b636ebdc0be424944d}{sg}}-\/>addJoint(\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}});}
+\DoxyCodeLine{140   \}}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142   \{}
+\DoxyCodeLine{143     \mbox{\hyperlink{classtesseract__scene__graph_1_1Joint}{Joint}} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}(\textcolor{stringliteral}{"{}elbow\_joint"{}});}
+\DoxyCodeLine{144     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.type = JointType::REVOLUTE;}
+\DoxyCodeLine{145     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.parent\_link\_name = \textcolor{stringliteral}{"{}upper\_arm\_link"{}};}
+\DoxyCodeLine{146     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.child\_link\_name = \textcolor{stringliteral}{"{}forearm\_link"{}};}
+\DoxyCodeLine{147     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.axis = Eigen::Vector3d::UnitY();}
+\DoxyCodeLine{148     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.parent\_to\_joint\_origin\_transform.translation() = Eigen::Vector3d(0, \mbox{\hyperlink{ur__kinematics__unit_8cpp_a37ab686acde2ec11750d18a958df6a3e}{elbow\_offset}}, -\/params.\mbox{\hyperlink{structtesseract__kinematics_1_1URParameters_aa3ff18370178f9212bc415e3c4014824}{a2}});}
+\DoxyCodeLine{149     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.limits = std::make\_shared<JointLimits>();}
+\DoxyCodeLine{150     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.limits-\/>lower = -\/2.0 * M\_PI;}
+\DoxyCodeLine{151     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.limits-\/>upper = 2.0 * M\_PI;}
+\DoxyCodeLine{152     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.limits-\/>velocity = 2.16;}
+\DoxyCodeLine{153     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.limits-\/>acceleration = 0.5 * \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.limits-\/>velocity;}
+\DoxyCodeLine{154     \mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a1dbe6d2c170400b636ebdc0be424944d}{sg}}-\/>addJoint(\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}});}
+\DoxyCodeLine{155   \}}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{157   \{}
+\DoxyCodeLine{158     \mbox{\hyperlink{classtesseract__scene__graph_1_1Joint}{Joint}} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}(\textcolor{stringliteral}{"{}wrist\_1\_joint"{}});}
+\DoxyCodeLine{159     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.type = JointType::REVOLUTE;}
+\DoxyCodeLine{160     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.parent\_link\_name = \textcolor{stringliteral}{"{}forearm\_link"{}};}
+\DoxyCodeLine{161     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.child\_link\_name = \textcolor{stringliteral}{"{}wrist\_1\_link"{}};}
+\DoxyCodeLine{162     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.axis = Eigen::Vector3d::UnitY();}
+\DoxyCodeLine{163     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.parent\_to\_joint\_origin\_transform.translation() = Eigen::Vector3d(0, 0, -\/params.\mbox{\hyperlink{structtesseract__kinematics_1_1URParameters_ac1db1a3cd59fc229b8124f50aa7df293}{a3}});}
+\DoxyCodeLine{164     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.parent\_to\_joint\_origin\_transform =}
+\DoxyCodeLine{165         \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.parent\_to\_joint\_origin\_transform * Eigen::AngleAxisd(M\_PI\_2, Eigen::Vector3d::UnitY());}
+\DoxyCodeLine{166     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.limits = std::make\_shared<JointLimits>();}
+\DoxyCodeLine{167     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.limits-\/>lower = -\/2.0 * M\_PI;}
+\DoxyCodeLine{168     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.limits-\/>upper = 2.0 * M\_PI;}
+\DoxyCodeLine{169     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.limits-\/>velocity = 2.16;}
+\DoxyCodeLine{170     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.limits-\/>acceleration = 0.5 * \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.limits-\/>velocity;}
+\DoxyCodeLine{171     \mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a1dbe6d2c170400b636ebdc0be424944d}{sg}}-\/>addJoint(\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}});}
+\DoxyCodeLine{172   \}}
+\DoxyCodeLine{173 }
+\DoxyCodeLine{174   \{}
+\DoxyCodeLine{175     \mbox{\hyperlink{classtesseract__scene__graph_1_1Joint}{Joint}} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}(\textcolor{stringliteral}{"{}wrist\_2\_joint"{}});}
+\DoxyCodeLine{176     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.type = JointType::REVOLUTE;}
+\DoxyCodeLine{177     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.parent\_link\_name = \textcolor{stringliteral}{"{}wrist\_1\_link"{}};}
+\DoxyCodeLine{178     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.child\_link\_name = \textcolor{stringliteral}{"{}wrist\_2\_link"{}};}
+\DoxyCodeLine{179     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.axis = Eigen::Vector3d::UnitZ();}
+\DoxyCodeLine{180     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.parent\_to\_joint\_origin\_transform.translation() =}
+\DoxyCodeLine{181         Eigen::Vector3d(0, params.\mbox{\hyperlink{structtesseract__kinematics_1_1URParameters_ac7081e26c15fcb4de259fb25b217cb2e}{d4}} -\/ \mbox{\hyperlink{ur__kinematics__unit_8cpp_a37ab686acde2ec11750d18a958df6a3e}{elbow\_offset}} -\/ \mbox{\hyperlink{ur__kinematics__unit_8cpp_a963698a2e618cd15db75f4999ffe7424}{shoulder\_offset}}, 0);}
+\DoxyCodeLine{182     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.limits = std::make\_shared<JointLimits>();}
+\DoxyCodeLine{183     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.limits-\/>lower = -\/2.0 * M\_PI;}
+\DoxyCodeLine{184     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.limits-\/>upper = 2.0 * M\_PI;}
+\DoxyCodeLine{185     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.limits-\/>velocity = 2.16;}
+\DoxyCodeLine{186     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.limits-\/>acceleration = 0.5 * \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.limits-\/>velocity;}
+\DoxyCodeLine{187     \mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a1dbe6d2c170400b636ebdc0be424944d}{sg}}-\/>addJoint(\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}});}
+\DoxyCodeLine{188   \}}
+\DoxyCodeLine{189 }
+\DoxyCodeLine{190   \{}
+\DoxyCodeLine{191     \mbox{\hyperlink{classtesseract__scene__graph_1_1Joint}{Joint}} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}(\textcolor{stringliteral}{"{}wrist\_3\_joint"{}});}
+\DoxyCodeLine{192     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.type = JointType::REVOLUTE;}
+\DoxyCodeLine{193     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.parent\_link\_name = \textcolor{stringliteral}{"{}wrist\_2\_link"{}};}
+\DoxyCodeLine{194     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.child\_link\_name = \textcolor{stringliteral}{"{}wrist\_3\_link"{}};}
+\DoxyCodeLine{195     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.axis = Eigen::Vector3d::UnitY();}
+\DoxyCodeLine{196     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.parent\_to\_joint\_origin\_transform.translation() = Eigen::Vector3d(0, 0, params.\mbox{\hyperlink{structtesseract__kinematics_1_1URParameters_ab4e35e52bb15fe3903e99c65ff6818a3}{d5}});}
+\DoxyCodeLine{197     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.limits = std::make\_shared<JointLimits>();}
+\DoxyCodeLine{198     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.limits-\/>lower = -\/2.0 * M\_PI;}
+\DoxyCodeLine{199     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.limits-\/>upper = 2.0 * M\_PI;}
+\DoxyCodeLine{200     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.limits-\/>velocity = 2.16;}
+\DoxyCodeLine{201     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.limits-\/>acceleration = 0.5 * \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.limits-\/>velocity;}
+\DoxyCodeLine{202     \mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a1dbe6d2c170400b636ebdc0be424944d}{sg}}-\/>addJoint(\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}});}
+\DoxyCodeLine{203   \}}
+\DoxyCodeLine{204 }
+\DoxyCodeLine{205   \{}
+\DoxyCodeLine{206     \mbox{\hyperlink{classtesseract__scene__graph_1_1Joint}{Joint}} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}(\textcolor{stringliteral}{"{}ee\_fixed\_joint"{}});}
+\DoxyCodeLine{207     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.type = JointType::FIXED;}
+\DoxyCodeLine{208     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.parent\_link\_name = \textcolor{stringliteral}{"{}wrist\_3\_link"{}};}
+\DoxyCodeLine{209     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.child\_link\_name = \textcolor{stringliteral}{"{}ee\_link"{}};}
+\DoxyCodeLine{210     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.parent\_to\_joint\_origin\_transform.translation() = Eigen::Vector3d(0, params.\mbox{\hyperlink{structtesseract__kinematics_1_1URParameters_a9798e89afc2f48b89aecb5e3c2f496b8}{d6}}, 0);}
+\DoxyCodeLine{211     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.parent\_to\_joint\_origin\_transform =}
+\DoxyCodeLine{212         \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.parent\_to\_joint\_origin\_transform * Eigen::AngleAxisd(M\_PI\_2, Eigen::Vector3d::UnitZ());}
+\DoxyCodeLine{213     \mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a1dbe6d2c170400b636ebdc0be424944d}{sg}}-\/>addJoint(\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}});}
+\DoxyCodeLine{214   \}}
+\DoxyCodeLine{215 }
+\DoxyCodeLine{216   \{}
+\DoxyCodeLine{217     \mbox{\hyperlink{classtesseract__scene__graph_1_1Joint}{Joint}} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}(\textcolor{stringliteral}{"{}wrist\_3\_link-\/tool0\_fixed\_joint"{}});}
+\DoxyCodeLine{218     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.type = JointType::FIXED;}
+\DoxyCodeLine{219     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.parent\_link\_name = \textcolor{stringliteral}{"{}wrist\_3\_link"{}};}
+\DoxyCodeLine{220     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.child\_link\_name = \textcolor{stringliteral}{"{}tool0"{}};}
+\DoxyCodeLine{221     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.parent\_to\_joint\_origin\_transform.translation() = Eigen::Vector3d(0, params.\mbox{\hyperlink{structtesseract__kinematics_1_1URParameters_a9798e89afc2f48b89aecb5e3c2f496b8}{d6}}, 0);}
+\DoxyCodeLine{222     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.parent\_to\_joint\_origin\_transform =}
+\DoxyCodeLine{223         \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}.parent\_to\_joint\_origin\_transform * Eigen::AngleAxisd(-\/M\_PI\_2, Eigen::Vector3d::UnitX());}
+\DoxyCodeLine{224     \mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a1dbe6d2c170400b636ebdc0be424944d}{sg}}-\/>addJoint(\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}});}
+\DoxyCodeLine{225   \}}
+\DoxyCodeLine{226 }
+\DoxyCodeLine{227   \textcolor{keywordflow}{return} \mbox{\hyperlink{tesseract__urdf__urdf__unit_8cpp_a1dbe6d2c170400b636ebdc0be424944d}{sg}};}
+\DoxyCodeLine{228 \}}
+\DoxyCodeLine{229 }
+\DoxyCodeLine{230 \textcolor{keyword}{inline} \mbox{\hyperlink{structtesseract__common_1_1KinematicLimits}{tesseract\_common::KinematicLimits}} \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a9ad0cc4390e9818177c5fcd320740344}{getTargetLimits}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph}{tesseract\_scene\_graph::SceneGraph}}\& \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a8d4d0dc3a6b9a7030970bf9ed3764756}{scene\_graph}},}
+\DoxyCodeLine{231                                                          \textcolor{keyword}{const} std::vector<std::string>\& \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_ae55b39adb52b29eeefd7d128c4b56f2a}{joint\_names}})}
+\DoxyCodeLine{232 \{}
+\DoxyCodeLine{233   \textcolor{keyword}{auto} \mbox{\hyperlink{plugin__loader__unit_8cpp_aa0d75bebf90ce49ae839876d1d62e199}{s}} = \textcolor{keyword}{static\_cast<}Eigen::Index\textcolor{keyword}{>}(\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_ae55b39adb52b29eeefd7d128c4b56f2a}{joint\_names}}.size());}
+\DoxyCodeLine{234 }
+\DoxyCodeLine{235   \mbox{\hyperlink{structtesseract__common_1_1KinematicLimits}{tesseract\_common::KinematicLimits}} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{limits}};}
+\DoxyCodeLine{236   \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{limits}}.resize(\mbox{\hyperlink{plugin__loader__unit_8cpp_aa0d75bebf90ce49ae839876d1d62e199}{s}});}
+\DoxyCodeLine{237 }
+\DoxyCodeLine{238   \textcolor{keywordflow}{for} (Eigen::Index i = 0; i < \mbox{\hyperlink{plugin__loader__unit_8cpp_aa0d75bebf90ce49ae839876d1d62e199}{s}}; ++i)}
+\DoxyCodeLine{239   \{}
+\DoxyCodeLine{240     \textcolor{keyword}{auto} joint = \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a8d4d0dc3a6b9a7030970bf9ed3764756}{scene\_graph}}.getJoint(\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_ae55b39adb52b29eeefd7d128c4b56f2a}{joint\_names}}[\textcolor{keyword}{static\_cast<}std::size\_t\textcolor{keyword}{>}(i)]);}
+\DoxyCodeLine{241     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{limits}}.joint\_limits(i, 0) = joint-\/>limits-\/>lower;}
+\DoxyCodeLine{242     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{limits}}.joint\_limits(i, 1) = joint-\/>limits-\/>upper;}
+\DoxyCodeLine{243     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{limits}}.velocity\_limits(i) = joint-\/>limits-\/>velocity;}
+\DoxyCodeLine{244     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{limits}}.acceleration\_limits(i) = joint-\/>limits-\/>acceleration;}
+\DoxyCodeLine{245   \}}
+\DoxyCodeLine{246 }
+\DoxyCodeLine{247   \textcolor{keywordflow}{return} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{limits}};}
+\DoxyCodeLine{248 \}}
+\DoxyCodeLine{249 }
+\DoxyCodeLine{260 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a74590ea1a69437948e3ac53c7979006f}{runJacobianTest}}(\mbox{\hyperlink{classtesseract__kinematics_1_1ForwardKinematics}{tesseract\_kinematics::ForwardKinematics}}\& \mbox{\hyperlink{kinematics__factory__unit_8cpp_a898342b32b9a46004fe36efea9777fc6}{kin}},}
+\DoxyCodeLine{261                             \textcolor{keyword}{const} Eigen::VectorXd\& jvals,}
+\DoxyCodeLine{262                             \textcolor{keyword}{const} std::string\& link\_name,}
+\DoxyCodeLine{263                             \textcolor{keyword}{const} Eigen::Vector3d\& link\_point,}
+\DoxyCodeLine{264                             \textcolor{keyword}{const} Eigen::Isometry3d\& change\_base)}
+\DoxyCodeLine{265 \{}
+\DoxyCodeLine{266   Eigen::MatrixXd \mbox{\hyperlink{kinematics__core__unit_8cpp_afd43241933d01af91643a779b829d7a7}{jacobian}}, numerical\_jacobian;}
+\DoxyCodeLine{267   \mbox{\hyperlink{namespacetesseract__common_a67bde3cb7bb235f0f61c370ef8bc74d8}{tesseract\_common::TransformMap}} poses;}
+\DoxyCodeLine{268 }
+\DoxyCodeLine{269   \mbox{\hyperlink{kinematics__core__unit_8cpp_afd43241933d01af91643a779b829d7a7}{jacobian}}.resize(6, \mbox{\hyperlink{kinematics__factory__unit_8cpp_a898342b32b9a46004fe36efea9777fc6}{kin}}.numJoints());}
+\DoxyCodeLine{270 }
+\DoxyCodeLine{271   poses = \mbox{\hyperlink{kinematics__factory__unit_8cpp_a898342b32b9a46004fe36efea9777fc6}{kin}}.calcFwdKin(jvals);}
+\DoxyCodeLine{272   \mbox{\hyperlink{kinematics__core__unit_8cpp_afd43241933d01af91643a779b829d7a7}{jacobian}} = \mbox{\hyperlink{kinematics__factory__unit_8cpp_a898342b32b9a46004fe36efea9777fc6}{kin}}.calcJacobian(jvals, link\_name);}
+\DoxyCodeLine{273   \mbox{\hyperlink{namespacetesseract__common_a9b00920e39050a4b9df5e3100aac7e55}{tesseract\_common::jacobianChangeBase}}(\mbox{\hyperlink{kinematics__core__unit_8cpp_afd43241933d01af91643a779b829d7a7}{jacobian}}, change\_base);}
+\DoxyCodeLine{274   \mbox{\hyperlink{namespacetesseract__common_a5043afd3f3dbdd6655d543e09a7c9ea4}{tesseract\_common::jacobianChangeRefPoint}}(\mbox{\hyperlink{kinematics__core__unit_8cpp_afd43241933d01af91643a779b829d7a7}{jacobian}}, (change\_base * poses[link\_name]).linear() * link\_point);}
+\DoxyCodeLine{275 }
+\DoxyCodeLine{276   numerical\_jacobian.resize(6, \mbox{\hyperlink{kinematics__factory__unit_8cpp_a898342b32b9a46004fe36efea9777fc6}{kin}}.numJoints());}
+\DoxyCodeLine{277   \mbox{\hyperlink{namespacetesseract__kinematics_a43f562948ca86e1cd531b12a92191334}{tesseract\_kinematics::numericalJacobian}}(numerical\_jacobian, change\_base, \mbox{\hyperlink{kinematics__factory__unit_8cpp_a898342b32b9a46004fe36efea9777fc6}{kin}}, jvals, link\_name, link\_point);}
+\DoxyCodeLine{278 }
+\DoxyCodeLine{279   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 6; ++i)}
+\DoxyCodeLine{280     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}} = 0; j < static\_cast<int>(\mbox{\hyperlink{kinematics__factory__unit_8cpp_a898342b32b9a46004fe36efea9777fc6}{kin}}.numJoints()); ++\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}})}
+\DoxyCodeLine{281       \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(numerical\_jacobian(i, \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}), \mbox{\hyperlink{kinematics__core__unit_8cpp_afd43241933d01af91643a779b829d7a7}{jacobian}}(i, \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}), 1e-\/3);}
+\DoxyCodeLine{282 \}}
+\DoxyCodeLine{283 }
+\DoxyCodeLine{293 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a74590ea1a69437948e3ac53c7979006f}{runJacobianTest}}(\mbox{\hyperlink{classtesseract__kinematics_1_1KinematicGroup}{tesseract\_kinematics::KinematicGroup}}\& \mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}},}
+\DoxyCodeLine{294                             \textcolor{keyword}{const} Eigen::VectorXd\& jvals,}
+\DoxyCodeLine{295                             \textcolor{keyword}{const} std::string\& link\_name,}
+\DoxyCodeLine{296                             \textcolor{keyword}{const} Eigen::Vector3d\& link\_point)}
+\DoxyCodeLine{297 \{}
+\DoxyCodeLine{298   Eigen::MatrixXd \mbox{\hyperlink{kinematics__core__unit_8cpp_afd43241933d01af91643a779b829d7a7}{jacobian}}, numerical\_jacobian;}
+\DoxyCodeLine{299   \mbox{\hyperlink{kinematics__core__unit_8cpp_afd43241933d01af91643a779b829d7a7}{jacobian}}.resize(6, \mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.numJoints());}
+\DoxyCodeLine{300 }
+\DoxyCodeLine{301   \mbox{\hyperlink{namespacetesseract__common_a67bde3cb7bb235f0f61c370ef8bc74d8}{tesseract\_common::TransformMap}} poses = \mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.calcFwdKin(jvals);}
+\DoxyCodeLine{302   \{  \textcolor{comment}{// Test with all information}}
+\DoxyCodeLine{303     \mbox{\hyperlink{kinematics__core__unit_8cpp_afd43241933d01af91643a779b829d7a7}{jacobian}} = \mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.calcJacobian(jvals, link\_name, link\_point);}
+\DoxyCodeLine{304 }
+\DoxyCodeLine{305     numerical\_jacobian.resize(6, \mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.numJoints());}
+\DoxyCodeLine{306     \mbox{\hyperlink{namespacetesseract__kinematics_a43f562948ca86e1cd531b12a92191334}{tesseract\_kinematics::numericalJacobian}}(numerical\_jacobian, \mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}, jvals, link\_name, link\_point);}
+\DoxyCodeLine{307 }
+\DoxyCodeLine{308     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 6; ++i)}
+\DoxyCodeLine{309     \{}
+\DoxyCodeLine{310       \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}} = 0; j < static\_cast<int>(\mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.numJoints()); ++\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}})}
+\DoxyCodeLine{311       \{}
+\DoxyCodeLine{312         \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(numerical\_jacobian(i, \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}), \mbox{\hyperlink{kinematics__core__unit_8cpp_afd43241933d01af91643a779b829d7a7}{jacobian}}(i, \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}), 1e-\/3);}
+\DoxyCodeLine{313       \}}
+\DoxyCodeLine{314     \}}
+\DoxyCodeLine{315   \}}
+\DoxyCodeLine{316 }
+\DoxyCodeLine{317   \{  \textcolor{comment}{// Test don't use link\_point}}
+\DoxyCodeLine{318     \mbox{\hyperlink{kinematics__core__unit_8cpp_afd43241933d01af91643a779b829d7a7}{jacobian}} = \mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.calcJacobian(jvals, link\_name);}
+\DoxyCodeLine{319 }
+\DoxyCodeLine{320     numerical\_jacobian.resize(6, \mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.numJoints());}
+\DoxyCodeLine{321     \mbox{\hyperlink{namespacetesseract__kinematics_a43f562948ca86e1cd531b12a92191334}{tesseract\_kinematics::numericalJacobian}}(numerical\_jacobian, \mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}, jvals, link\_name, Eigen::Vector3d::Zero());}
+\DoxyCodeLine{322 }
+\DoxyCodeLine{323     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 6; ++i)}
+\DoxyCodeLine{324     \{}
+\DoxyCodeLine{325       \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}} = 0; j < static\_cast<int>(\mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.numJoints()); ++\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}})}
+\DoxyCodeLine{326       \{}
+\DoxyCodeLine{327         \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(numerical\_jacobian(i, \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}), \mbox{\hyperlink{kinematics__core__unit_8cpp_afd43241933d01af91643a779b829d7a7}{jacobian}}(i, \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_aa1fb310d8ace4891c0b2e65083602936}{j}}), 1e-\/3);}
+\DoxyCodeLine{328       \}}
+\DoxyCodeLine{329     \}}
+\DoxyCodeLine{330   \}}
+\DoxyCodeLine{331 \}}
+\DoxyCodeLine{332 }
+\DoxyCodeLine{338 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a7fda0bc187fee5ea0e8e251e9a776922}{runKinJointLimitsTest}}(\textcolor{keyword}{const} \mbox{\hyperlink{structtesseract__common_1_1KinematicLimits}{tesseract\_common::KinematicLimits}}\& \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{limits}},}
+\DoxyCodeLine{339                                   \textcolor{keyword}{const} \mbox{\hyperlink{structtesseract__common_1_1KinematicLimits}{tesseract\_common::KinematicLimits}}\& \mbox{\hyperlink{rep__kinematics__unit_8cpp_ab272cf06bc15b5b72e1508a1508389a0}{target\_limits}})}
+\DoxyCodeLine{340 \{}
+\DoxyCodeLine{342   \textcolor{comment}{// Test forward kinematics joint limits}}
+\DoxyCodeLine{344 \textcolor{comment}{}  \mbox{\hyperlink{collision__core__unit_8cpp_a6759a6545be66625356c6f193741efb0}{EXPECT\_EQ}}(\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{limits}}.joint\_limits.rows(), \mbox{\hyperlink{rep__kinematics__unit_8cpp_ab272cf06bc15b5b72e1508a1508389a0}{target\_limits}}.\mbox{\hyperlink{structtesseract__common_1_1KinematicLimits_a04641308fcc1e182fca0d85d80d25c68}{joint\_limits}}.rows());}
+\DoxyCodeLine{345   \mbox{\hyperlink{collision__core__unit_8cpp_a6759a6545be66625356c6f193741efb0}{EXPECT\_EQ}}(\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{limits}}.velocity\_limits.rows(), \mbox{\hyperlink{rep__kinematics__unit_8cpp_ab272cf06bc15b5b72e1508a1508389a0}{target\_limits}}.\mbox{\hyperlink{structtesseract__common_1_1KinematicLimits_aef6ca9124185f5b366bccbbba3242d6e}{velocity\_limits}}.rows());}
+\DoxyCodeLine{346   \mbox{\hyperlink{collision__core__unit_8cpp_a6759a6545be66625356c6f193741efb0}{EXPECT\_EQ}}(\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{limits}}.acceleration\_limits.rows(), \mbox{\hyperlink{rep__kinematics__unit_8cpp_ab272cf06bc15b5b72e1508a1508389a0}{target\_limits}}.\mbox{\hyperlink{structtesseract__common_1_1KinematicLimits_a609b65f616f248719082654c9a8a51c6}{acceleration\_limits}}.rows());}
+\DoxyCodeLine{347 }
+\DoxyCodeLine{348   \textcolor{comment}{// Check limits}}
+\DoxyCodeLine{349   \textcolor{keywordflow}{for} (Eigen::Index i = 0; i < \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{limits}}.joint\_limits.rows(); ++i)}
+\DoxyCodeLine{350   \{}
+\DoxyCodeLine{351     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{limits}}.joint\_limits(i, 0), \mbox{\hyperlink{rep__kinematics__unit_8cpp_ab272cf06bc15b5b72e1508a1508389a0}{target\_limits}}.\mbox{\hyperlink{structtesseract__common_1_1KinematicLimits_a04641308fcc1e182fca0d85d80d25c68}{joint\_limits}}(i, 0), 1e-\/6);}
+\DoxyCodeLine{352     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{limits}}.joint\_limits(i, 1), \mbox{\hyperlink{rep__kinematics__unit_8cpp_ab272cf06bc15b5b72e1508a1508389a0}{target\_limits}}.\mbox{\hyperlink{structtesseract__common_1_1KinematicLimits_a04641308fcc1e182fca0d85d80d25c68}{joint\_limits}}(i, 1), 1e-\/6);}
+\DoxyCodeLine{353     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{limits}}.velocity\_limits(i), \mbox{\hyperlink{rep__kinematics__unit_8cpp_ab272cf06bc15b5b72e1508a1508389a0}{target\_limits}}.\mbox{\hyperlink{structtesseract__common_1_1KinematicLimits_aef6ca9124185f5b366bccbbba3242d6e}{velocity\_limits}}(i), 1e-\/6);}
+\DoxyCodeLine{354     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{limits}}.acceleration\_limits(i), \mbox{\hyperlink{rep__kinematics__unit_8cpp_ab272cf06bc15b5b72e1508a1508389a0}{target\_limits}}.\mbox{\hyperlink{structtesseract__common_1_1KinematicLimits_a609b65f616f248719082654c9a8a51c6}{acceleration\_limits}}(i), 1e-\/6);}
+\DoxyCodeLine{355   \}}
+\DoxyCodeLine{356 \}}
+\DoxyCodeLine{357 }
+\DoxyCodeLine{362 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a46a7b72b224c483bbb43eb34f47eaa09}{runKinSetJointLimitsTest}}(\mbox{\hyperlink{classtesseract__kinematics_1_1KinematicGroup}{tesseract\_kinematics::KinematicGroup}}\& \mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}})}
+\DoxyCodeLine{363 \{}
+\DoxyCodeLine{365   \textcolor{comment}{// Test setting kinematic group joint limits}}
+\DoxyCodeLine{367 \textcolor{comment}{}  \mbox{\hyperlink{structtesseract__common_1_1KinematicLimits}{tesseract\_common::KinematicLimits}} \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{limits}} = \mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.getLimits();}
+\DoxyCodeLine{368   \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{limits}}.joint\_limits.rows() > 0);}
+\DoxyCodeLine{369   \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{limits}}.velocity\_limits.rows() > 0);}
+\DoxyCodeLine{370   \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{limits}}.acceleration\_limits.rows() > 0);}
+\DoxyCodeLine{371 }
+\DoxyCodeLine{372   \textcolor{comment}{// Check limits}}
+\DoxyCodeLine{373   \textcolor{keywordflow}{for} (Eigen::Index i = 0; i < \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{limits}}.joint\_limits.rows(); ++i)}
+\DoxyCodeLine{374   \{}
+\DoxyCodeLine{375     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{limits}}.joint\_limits(i, 0) = -\/5.0 -\/ double(i);}
+\DoxyCodeLine{376     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{limits}}.joint\_limits(i, 1) = 5.0 + double(i);}
+\DoxyCodeLine{377     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{limits}}.velocity\_limits(i) = 10.0 + double(i);}
+\DoxyCodeLine{378     \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{limits}}.acceleration\_limits(i) = 5.0 + double(i);}
+\DoxyCodeLine{379   \}}
+\DoxyCodeLine{380 }
+\DoxyCodeLine{381   \mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.setLimits(\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{limits}});}
+\DoxyCodeLine{382   \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a7fda0bc187fee5ea0e8e251e9a776922}{runKinJointLimitsTest}}(\mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.getLimits(), \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_a0be90f4a70bf84d8470599423bd3157b}{limits}});}
+\DoxyCodeLine{383 }
+\DoxyCodeLine{384   \textcolor{comment}{// Test failure}}
+\DoxyCodeLine{385   \mbox{\hyperlink{structtesseract__common_1_1KinematicLimits}{tesseract\_common::KinematicLimits}} limits\_empty;}
+\DoxyCodeLine{386   \mbox{\hyperlink{contact__managers__factory__unit_8cpp_a661c1538a925c80d6bbd9ba3c7665c19}{EXPECT\_ANY\_THROW}}(\mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.setLimits(limits\_empty));  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{387 \}}
+\DoxyCodeLine{388 }
+\DoxyCodeLine{394 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a143c590cd9b8ba73b52c46f5f775a318}{runStringVectorEqualTest}}(\textcolor{keyword}{const} std::vector<std::string>\& names,}
+\DoxyCodeLine{395                                      \textcolor{keyword}{const} std::vector<std::string>\& target\_names)}
+\DoxyCodeLine{396 \{}
+\DoxyCodeLine{397   \mbox{\hyperlink{collision__core__unit_8cpp_a6759a6545be66625356c6f193741efb0}{EXPECT\_EQ}}(names.size(), target\_names.size());}
+\DoxyCodeLine{398   \mbox{\hyperlink{collision__core__unit_8cpp_aa784f8de129e0ce90854ab7b6a043468}{EXPECT\_FALSE}}(names.empty());}
+\DoxyCodeLine{399   \mbox{\hyperlink{collision__core__unit_8cpp_aa784f8de129e0ce90854ab7b6a043468}{EXPECT\_FALSE}}(target\_names.empty());}
+\DoxyCodeLine{400 }
+\DoxyCodeLine{401   std::vector<std::string> \mbox{\hyperlink{tesseract__common__unit_8cpp_a78e1cc09f129a731d55ed82bc47956a7}{v1}} = names;}
+\DoxyCodeLine{402   std::vector<std::string> \mbox{\hyperlink{tesseract__common__unit_8cpp_a23dd5e7fffd5f8400cbed32a5071f236}{v2}} = target\_names;}
+\DoxyCodeLine{403   std::sort(\mbox{\hyperlink{tesseract__common__unit_8cpp_a78e1cc09f129a731d55ed82bc47956a7}{v1}}.begin(), \mbox{\hyperlink{tesseract__common__unit_8cpp_a78e1cc09f129a731d55ed82bc47956a7}{v1}}.end());}
+\DoxyCodeLine{404   std::sort(\mbox{\hyperlink{tesseract__common__unit_8cpp_a23dd5e7fffd5f8400cbed32a5071f236}{v2}}.begin(), \mbox{\hyperlink{tesseract__common__unit_8cpp_a23dd5e7fffd5f8400cbed32a5071f236}{v2}}.end());}
+\DoxyCodeLine{405   \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(std::equal(\mbox{\hyperlink{tesseract__common__unit_8cpp_a78e1cc09f129a731d55ed82bc47956a7}{v1}}.begin(), \mbox{\hyperlink{tesseract__common__unit_8cpp_a78e1cc09f129a731d55ed82bc47956a7}{v1}}.end(), \mbox{\hyperlink{tesseract__common__unit_8cpp_a23dd5e7fffd5f8400cbed32a5071f236}{v2}}.begin()));}
+\DoxyCodeLine{406   \textcolor{comment}{//  EXPECT\_TRUE(tesseract\_common::isIdentical(names, target\_names, false));}}
+\DoxyCodeLine{407 \}}
+\DoxyCodeLine{408 }
+\DoxyCodeLine{416 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a483b6dc73708396dd47902969d18459f}{runInvKinTest}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__kinematics_1_1InverseKinematics}{tesseract\_kinematics::InverseKinematics}}\& \mbox{\hyperlink{ikfast__kinematics__unit_8cpp_a0b6eafb1eec9d96fe3214af2a8c5f07a}{inv\_kin}},}
+\DoxyCodeLine{417                           \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__kinematics_1_1ForwardKinematics}{tesseract\_kinematics::ForwardKinematics}}\& \mbox{\hyperlink{kinematics__factory__unit_8cpp_a03f92050745365182f793372b058e30a}{fwd\_kin}},}
+\DoxyCodeLine{418                           \textcolor{keyword}{const} Eigen::Isometry3d\& target\_pose,}
+\DoxyCodeLine{419                           \textcolor{keyword}{const} std::string\& \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a84ec666153aae97620f98bc6b719bb37}{tip\_link\_name}},}
+\DoxyCodeLine{420                           \textcolor{keyword}{const} Eigen::VectorXd\& \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a113a9f110b7848f55fd8f5367a019304}{seed}})}
+\DoxyCodeLine{421 \{}
+\DoxyCodeLine{423   \textcolor{comment}{// Test Inverse kinematics}}
+\DoxyCodeLine{425 \textcolor{comment}{}  \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(\mbox{\hyperlink{ikfast__kinematics__unit_8cpp_a0b6eafb1eec9d96fe3214af2a8c5f07a}{inv\_kin}}.getBaseLinkName() == \mbox{\hyperlink{kinematics__factory__unit_8cpp_a03f92050745365182f793372b058e30a}{fwd\_kin}}.getBaseLinkName());  \textcolor{comment}{// This only works if they are equal}}
+\DoxyCodeLine{426   \mbox{\hyperlink{namespacetesseract__common_a67bde3cb7bb235f0f61c370ef8bc74d8}{tesseract\_common::TransformMap}} input\{ std::make\_pair(\mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a84ec666153aae97620f98bc6b719bb37}{tip\_link\_name}}, target\_pose) \};}
+\DoxyCodeLine{427   \mbox{\hyperlink{namespacetesseract__kinematics_af12a01d2264e3371dc9bc7db2a7b59ac}{IKSolutions}} solutions = \mbox{\hyperlink{ikfast__kinematics__unit_8cpp_a0b6eafb1eec9d96fe3214af2a8c5f07a}{inv\_kin}}.calcInvKin(input, \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a113a9f110b7848f55fd8f5367a019304}{seed}});}
+\DoxyCodeLine{428   \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(!solutions.empty());}
+\DoxyCodeLine{429 }
+\DoxyCodeLine{430   \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& sol : solutions)}
+\DoxyCodeLine{431   \{}
+\DoxyCodeLine{432     \mbox{\hyperlink{namespacetesseract__common_a67bde3cb7bb235f0f61c370ef8bc74d8}{tesseract\_common::TransformMap}} result\_poses = \mbox{\hyperlink{kinematics__factory__unit_8cpp_a03f92050745365182f793372b058e30a}{fwd\_kin}}.calcFwdKin(sol);}
+\DoxyCodeLine{433     Eigen::Isometry3d result = result\_poses[\mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a84ec666153aae97620f98bc6b719bb37}{tip\_link\_name}}];}
+\DoxyCodeLine{434     \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(target\_pose.translation().isApprox(result.translation(), 1e-\/4));}
+\DoxyCodeLine{435 }
+\DoxyCodeLine{436     Eigen::Quaterniond rot\_pose(target\_pose.rotation());}
+\DoxyCodeLine{437     Eigen::Quaterniond rot\_result(result.rotation());}
+\DoxyCodeLine{438     \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(rot\_pose.isApprox(rot\_result, 1e-\/3));}
+\DoxyCodeLine{439   \}}
+\DoxyCodeLine{440 \}}
+\DoxyCodeLine{441 }
+\DoxyCodeLine{448 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a483b6dc73708396dd47902969d18459f}{runInvKinTest}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicGroup}{tesseract\_kinematics::KinematicGroup}}\& \mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}},}
+\DoxyCodeLine{449                           \textcolor{keyword}{const} Eigen::Isometry3d\& target\_pose,}
+\DoxyCodeLine{450                           \textcolor{keyword}{const} std::string\& \mbox{\hyperlink{tesseract__common__unit_8cpp_a31cbe04fca1c58fab22cefda8cbf6353}{working\_frame}},}
+\DoxyCodeLine{451                           \textcolor{keyword}{const} std::string\& \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a84ec666153aae97620f98bc6b719bb37}{tip\_link\_name}},}
+\DoxyCodeLine{452                           \textcolor{keyword}{const} Eigen::VectorXd\& \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a113a9f110b7848f55fd8f5367a019304}{seed}})}
+\DoxyCodeLine{453 \{}
+\DoxyCodeLine{455   \textcolor{comment}{// Test Inverse kinematics}}
+\DoxyCodeLine{457 \textcolor{comment}{}  \mbox{\hyperlink{namespacetesseract__kinematics_ae5941af5d420d5b756e9d3d1fcaa1c5d}{KinGroupIKInputs}} inputs\{ \mbox{\hyperlink{structtesseract__kinematics_1_1KinGroupIKInput}{KinGroupIKInput}}(target\_pose, \mbox{\hyperlink{tesseract__common__unit_8cpp_a31cbe04fca1c58fab22cefda8cbf6353}{working\_frame}}, \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a84ec666153aae97620f98bc6b719bb37}{tip\_link\_name}}) \};}
+\DoxyCodeLine{458   \mbox{\hyperlink{namespacetesseract__kinematics_af12a01d2264e3371dc9bc7db2a7b59ac}{IKSolutions}} solutions = \mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.calcInvKin(inputs, \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a113a9f110b7848f55fd8f5367a019304}{seed}});}
+\DoxyCodeLine{459   \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(!solutions.empty());}
+\DoxyCodeLine{460 }
+\DoxyCodeLine{461   \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& sol : solutions)}
+\DoxyCodeLine{462   \{}
+\DoxyCodeLine{463     \mbox{\hyperlink{namespacetesseract__common_a67bde3cb7bb235f0f61c370ef8bc74d8}{tesseract\_common::TransformMap}} result\_poses = \mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.calcFwdKin(sol);}
+\DoxyCodeLine{464     Eigen::Isometry3d result = result\_poses.at(\mbox{\hyperlink{tesseract__common__unit_8cpp_a31cbe04fca1c58fab22cefda8cbf6353}{working\_frame}}).inverse() * result\_poses[\mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a84ec666153aae97620f98bc6b719bb37}{tip\_link\_name}}];}
+\DoxyCodeLine{465     \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(target\_pose.translation().isApprox(result.translation(), 1e-\/4));}
+\DoxyCodeLine{466 }
+\DoxyCodeLine{467     Eigen::Quaterniond rot\_pose(target\_pose.rotation());}
+\DoxyCodeLine{468     Eigen::Quaterniond rot\_result(result.rotation());}
+\DoxyCodeLine{469     \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(rot\_pose.isApprox(rot\_result, 1e-\/3));}
+\DoxyCodeLine{470   \}}
+\DoxyCodeLine{471 }
+\DoxyCodeLine{472   \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(\mbox{\hyperlink{namespacetesseract__kinematics_ad7331d401c8c7f0780dcd728e77b64d9}{checkKinematics}}(\mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}));}
+\DoxyCodeLine{473 \}}
+\DoxyCodeLine{474 }
+\DoxyCodeLine{475 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a90c75a53e78426f6e513470bfbd9afb1}{runFwdKinIIWATest}}(\mbox{\hyperlink{classtesseract__kinematics_1_1ForwardKinematics}{tesseract\_kinematics::ForwardKinematics}}\& \mbox{\hyperlink{kinematics__factory__unit_8cpp_a898342b32b9a46004fe36efea9777fc6}{kin}})}
+\DoxyCodeLine{476 \{}
+\DoxyCodeLine{478   \textcolor{comment}{// Test forward kinematics when tip link is the base of the chain}}
+\DoxyCodeLine{480 \textcolor{comment}{}}
+\DoxyCodeLine{481   Eigen::VectorXd jvals;}
+\DoxyCodeLine{482   jvals.resize(7);}
+\DoxyCodeLine{483   jvals.setZero();}
+\DoxyCodeLine{484 }
+\DoxyCodeLine{485   \mbox{\hyperlink{namespacetesseract__common_a67bde3cb7bb235f0f61c370ef8bc74d8}{tesseract\_common::TransformMap}} poses = \mbox{\hyperlink{kinematics__factory__unit_8cpp_a898342b32b9a46004fe36efea9777fc6}{kin}}.calcFwdKin(jvals);}
+\DoxyCodeLine{486 }
+\DoxyCodeLine{487   \mbox{\hyperlink{collision__core__unit_8cpp_a6759a6545be66625356c6f193741efb0}{EXPECT\_EQ}}(poses.size(), 1);}
+\DoxyCodeLine{488   Eigen::Isometry3d \mbox{\hyperlink{tesseract__environment__collision_8cpp_a7272862bfe9e301a87918b3d560aebc3}{pose}} = poses.at(\textcolor{stringliteral}{"{}tool0"{}});}
+\DoxyCodeLine{489   Eigen::Isometry3d result;}
+\DoxyCodeLine{490   result.setIdentity();}
+\DoxyCodeLine{491   result.translation()[0] = 0;}
+\DoxyCodeLine{492   result.translation()[1] = 0;}
+\DoxyCodeLine{493   result.translation()[2] = 1.306;}
+\DoxyCodeLine{494   \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(\mbox{\hyperlink{tesseract__environment__collision_8cpp_a7272862bfe9e301a87918b3d560aebc3}{pose}}.isApprox(result));}
+\DoxyCodeLine{495 \}}
+\DoxyCodeLine{496 }
+\DoxyCodeLine{497 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a7e071ebe013f2904b08806ca8ed0b1a5}{runJacobianIIWATest}}(\mbox{\hyperlink{classtesseract__kinematics_1_1ForwardKinematics}{tesseract\_kinematics::ForwardKinematics}}\& \mbox{\hyperlink{kinematics__factory__unit_8cpp_a898342b32b9a46004fe36efea9777fc6}{kin}}, \textcolor{keywordtype}{bool} is\_kin\_tree = \textcolor{keyword}{false})}
+\DoxyCodeLine{498 \{}
+\DoxyCodeLine{499   \mbox{\hyperlink{VHACD_8cpp_a86d500a34c624c2cae56bc25a31b12f3}{UNUSED}}(is\_kin\_tree);}
+\DoxyCodeLine{500   std::string tip\_link = \textcolor{stringliteral}{"{}tool0"{}};}
+\DoxyCodeLine{501   std::string \mbox{\hyperlink{tesseract__srdf__unit_8cpp_aee5b629e3fb068773c7b70ad756616cc}{base\_link}} = \textcolor{stringliteral}{"{}base\_link"{}};}
+\DoxyCodeLine{502 }
+\DoxyCodeLine{504   \textcolor{comment}{// Test forward kinematics when tip link is the base of the chain}}
+\DoxyCodeLine{506 \textcolor{comment}{}  Eigen::VectorXd jvals;}
+\DoxyCodeLine{507   jvals.resize(7);}
+\DoxyCodeLine{508 }
+\DoxyCodeLine{509   jvals(0) = -\/0.785398;}
+\DoxyCodeLine{510   jvals(1) = 0.785398;}
+\DoxyCodeLine{511   jvals(2) = -\/0.785398;}
+\DoxyCodeLine{512   jvals(3) = 0.785398;}
+\DoxyCodeLine{513   jvals(4) = -\/0.785398;}
+\DoxyCodeLine{514   jvals(5) = 0.785398;}
+\DoxyCodeLine{515   jvals(6) = -\/0.785398;}
+\DoxyCodeLine{516 }
+\DoxyCodeLine{518   \textcolor{comment}{// Test Jacobian}}
+\DoxyCodeLine{520 \textcolor{comment}{}  Eigen::Vector3d link\_point(0, 0, 0);}
+\DoxyCodeLine{521   \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a74590ea1a69437948e3ac53c7979006f}{runJacobianTest}}(\mbox{\hyperlink{kinematics__factory__unit_8cpp_a898342b32b9a46004fe36efea9777fc6}{kin}}, jvals, tip\_link, link\_point, Eigen::Isometry3d::Identity());}
+\DoxyCodeLine{522 }
+\DoxyCodeLine{523   \mbox{\hyperlink{contact__managers__factory__unit_8cpp_a661c1538a925c80d6bbd9ba3c7665c19}{EXPECT\_ANY\_THROW}}(\mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a74590ea1a69437948e3ac53c7979006f}{runJacobianTest}}(\mbox{\hyperlink{kinematics__factory__unit_8cpp_a898342b32b9a46004fe36efea9777fc6}{kin}}, jvals, \textcolor{stringliteral}{"{}"{}}, link\_point, Eigen::Isometry3d::Identity()));  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{524 }
+\DoxyCodeLine{526   \textcolor{comment}{// Test Jacobian at Point}}
+\DoxyCodeLine{528 \textcolor{comment}{}  \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} k = 0; k < 3; ++k)}
+\DoxyCodeLine{529   \{}
+\DoxyCodeLine{530     Eigen::Vector3d link\_point(0, 0, 0);}
+\DoxyCodeLine{531     link\_point[k] = 1;}
+\DoxyCodeLine{532 }
+\DoxyCodeLine{533     \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a74590ea1a69437948e3ac53c7979006f}{runJacobianTest}}(\mbox{\hyperlink{kinematics__factory__unit_8cpp_a898342b32b9a46004fe36efea9777fc6}{kin}}, jvals, tip\_link, link\_point, Eigen::Isometry3d::Identity());}
+\DoxyCodeLine{534 }
+\DoxyCodeLine{535     \mbox{\hyperlink{contact__managers__factory__unit_8cpp_a661c1538a925c80d6bbd9ba3c7665c19}{EXPECT\_ANY\_THROW}}(\mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a74590ea1a69437948e3ac53c7979006f}{runJacobianTest}}(\mbox{\hyperlink{kinematics__factory__unit_8cpp_a898342b32b9a46004fe36efea9777fc6}{kin}}, jvals, \textcolor{stringliteral}{"{}"{}}, link\_point, Eigen::Isometry3d::Identity()));  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{536   \}}
+\DoxyCodeLine{537 }
+\DoxyCodeLine{539   \textcolor{comment}{// Test Jacobian with change base}}
+\DoxyCodeLine{541 \textcolor{comment}{}  \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} k = 0; k < 3; ++k)}
+\DoxyCodeLine{542   \{}
+\DoxyCodeLine{543     link\_point = Eigen::Vector3d(0, 0, 0);}
+\DoxyCodeLine{544     Eigen::Isometry3d change\_base;}
+\DoxyCodeLine{545     change\_base.setIdentity();}
+\DoxyCodeLine{546     change\_base(0, 0) = 0;}
+\DoxyCodeLine{547     change\_base(1, 0) = 1;}
+\DoxyCodeLine{548     change\_base(0, 1) = -\/1;}
+\DoxyCodeLine{549     change\_base(1, 1) = 0;}
+\DoxyCodeLine{550     change\_base.translation() = Eigen::Vector3d(0, 0, 0);}
+\DoxyCodeLine{551     change\_base.translation()[k] = 1;}
+\DoxyCodeLine{552 }
+\DoxyCodeLine{553     \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a74590ea1a69437948e3ac53c7979006f}{runJacobianTest}}(\mbox{\hyperlink{kinematics__factory__unit_8cpp_a898342b32b9a46004fe36efea9777fc6}{kin}}, jvals, tip\_link, link\_point, change\_base);}
+\DoxyCodeLine{554 }
+\DoxyCodeLine{555     \mbox{\hyperlink{contact__managers__factory__unit_8cpp_a661c1538a925c80d6bbd9ba3c7665c19}{EXPECT\_ANY\_THROW}}(\mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a74590ea1a69437948e3ac53c7979006f}{runJacobianTest}}(\mbox{\hyperlink{kinematics__factory__unit_8cpp_a898342b32b9a46004fe36efea9777fc6}{kin}}, jvals, \textcolor{stringliteral}{"{}"{}}, link\_point, change\_base));  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{556   \}}
+\DoxyCodeLine{557 }
+\DoxyCodeLine{559   \textcolor{comment}{// Test Jacobian at point with change base}}
+\DoxyCodeLine{561 \textcolor{comment}{}  \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} k = 0; k < 3; ++k)}
+\DoxyCodeLine{562   \{}
+\DoxyCodeLine{563     Eigen::Vector3d link\_point(0, 0, 0);}
+\DoxyCodeLine{564     link\_point[k] = 1;}
+\DoxyCodeLine{565 }
+\DoxyCodeLine{566     Eigen::Isometry3d change\_base;}
+\DoxyCodeLine{567     change\_base.setIdentity();}
+\DoxyCodeLine{568     change\_base(0, 0) = 0;}
+\DoxyCodeLine{569     change\_base(1, 0) = 1;}
+\DoxyCodeLine{570     change\_base(0, 1) = -\/1;}
+\DoxyCodeLine{571     change\_base(1, 1) = 0;}
+\DoxyCodeLine{572     change\_base.translation() = link\_point;}
+\DoxyCodeLine{573 }
+\DoxyCodeLine{574     \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a74590ea1a69437948e3ac53c7979006f}{runJacobianTest}}(\mbox{\hyperlink{kinematics__factory__unit_8cpp_a898342b32b9a46004fe36efea9777fc6}{kin}}, jvals, tip\_link, link\_point, change\_base);}
+\DoxyCodeLine{575 }
+\DoxyCodeLine{576     \mbox{\hyperlink{contact__managers__factory__unit_8cpp_a661c1538a925c80d6bbd9ba3c7665c19}{EXPECT\_ANY\_THROW}}(\mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a74590ea1a69437948e3ac53c7979006f}{runJacobianTest}}(\mbox{\hyperlink{kinematics__factory__unit_8cpp_a898342b32b9a46004fe36efea9777fc6}{kin}}, jvals, \textcolor{stringliteral}{"{}"{}}, link\_point, change\_base));  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{577   \}}
+\DoxyCodeLine{578 \}}
+\DoxyCodeLine{579 }
+\DoxyCodeLine{580 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_ab44f1dc4d8ee55b058f0c667cf5f2c8c}{runKinGroupJacobianIIWATest}}(\mbox{\hyperlink{classtesseract__kinematics_1_1KinematicGroup}{tesseract\_kinematics::KinematicGroup}}\& \mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}})}
+\DoxyCodeLine{581 \{}
+\DoxyCodeLine{582   std::string \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a7e2549355d7bca95ea407c633fe469c4}{base\_link\_name}} = \textcolor{stringliteral}{"{}base\_link"{}};}
+\DoxyCodeLine{583   std::vector<std::string> \mbox{\hyperlink{collision__core__unit_8cpp_a464caf777ea79db067179ebe2bd7ecc7}{link\_names}} = \{ \textcolor{stringliteral}{"{}base\_link"{}}, \textcolor{stringliteral}{"{}link\_1"{}}, \textcolor{stringliteral}{"{}link\_2"{}}, \textcolor{stringliteral}{"{}link\_3"{}}, \textcolor{stringliteral}{"{}link\_4"{}},}
+\DoxyCodeLine{584                                           \textcolor{stringliteral}{"{}link\_5"{}},    \textcolor{stringliteral}{"{}link\_6"{}}, \textcolor{stringliteral}{"{}link\_7"{}}, \textcolor{stringliteral}{"{}tool0"{}} \};}
+\DoxyCodeLine{585 }
+\DoxyCodeLine{587   \textcolor{comment}{// Test forward kinematics when tip link is the base of the chain}}
+\DoxyCodeLine{589 \textcolor{comment}{}  Eigen::VectorXd jvals;}
+\DoxyCodeLine{590   jvals.resize(7);}
+\DoxyCodeLine{591 }
+\DoxyCodeLine{592   jvals(0) = -\/0.785398;}
+\DoxyCodeLine{593   jvals(1) = 0.785398;}
+\DoxyCodeLine{594   jvals(2) = -\/0.785398;}
+\DoxyCodeLine{595   jvals(3) = 0.785398;}
+\DoxyCodeLine{596   jvals(4) = -\/0.785398;}
+\DoxyCodeLine{597   jvals(5) = 0.785398;}
+\DoxyCodeLine{598   jvals(6) = -\/0.785398;}
+\DoxyCodeLine{599 }
+\DoxyCodeLine{601   \textcolor{comment}{// Test Jacobian at Point}}
+\DoxyCodeLine{602   \textcolor{comment}{// This also runs a test without the link point}}
+\DoxyCodeLine{604 \textcolor{comment}{}  \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} k = 0; k < 3; ++k)}
+\DoxyCodeLine{605   \{}
+\DoxyCodeLine{606     Eigen::Vector3d link\_point(0, 0, 0);}
+\DoxyCodeLine{607     link\_point[k] = 1;}
+\DoxyCodeLine{608 }
+\DoxyCodeLine{609     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& link\_name : \mbox{\hyperlink{collision__core__unit_8cpp_a464caf777ea79db067179ebe2bd7ecc7}{link\_names}})}
+\DoxyCodeLine{610       \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a74590ea1a69437948e3ac53c7979006f}{runJacobianTest}}(\mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}, jvals, link\_name, link\_point);}
+\DoxyCodeLine{611 }
+\DoxyCodeLine{612     \textcolor{comment}{// NOLINTNEXTLINE}}
+\DoxyCodeLine{613     \mbox{\hyperlink{contact__managers__factory__unit_8cpp_a661c1538a925c80d6bbd9ba3c7665c19}{EXPECT\_ANY\_THROW}}(\mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a74590ea1a69437948e3ac53c7979006f}{runJacobianTest}}(\mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}, jvals, \textcolor{stringliteral}{"{}"{}}, link\_point));}
+\DoxyCodeLine{614   \}}
+\DoxyCodeLine{615 \}}
+\DoxyCodeLine{616 }
+\DoxyCodeLine{617 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a71a775c38a4da1be2e88d4b91a823c41}{runActiveLinkNamesIIWATest}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicGroup}{tesseract\_kinematics::KinematicGroup}}\& \mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}})}
+\DoxyCodeLine{618 \{}
+\DoxyCodeLine{619   \mbox{\hyperlink{collision__core__unit_8cpp_aa784f8de129e0ce90854ab7b6a043468}{EXPECT\_FALSE}}(\mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.checkJoints(Eigen::VectorXd::Zero(8)));}
+\DoxyCodeLine{620   \mbox{\hyperlink{collision__core__unit_8cpp_aa784f8de129e0ce90854ab7b6a043468}{EXPECT\_FALSE}}(\mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.checkJoints(Eigen::VectorXd::Constant(7, std::numeric\_limits<double>::max())));}
+\DoxyCodeLine{621   \mbox{\hyperlink{collision__core__unit_8cpp_aa784f8de129e0ce90854ab7b6a043468}{EXPECT\_FALSE}}(\mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.checkJoints(Eigen::VectorXd::Constant(7, -\/std::numeric\_limits<double>::max())));}
+\DoxyCodeLine{622   \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(\mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.checkJoints(Eigen::VectorXd::Zero(7)));}
+\DoxyCodeLine{623 }
+\DoxyCodeLine{624   std::vector<std::string> target\_active\_link\_names = \{ \textcolor{stringliteral}{"{}link\_1"{}}, \textcolor{stringliteral}{"{}link\_2"{}}, \textcolor{stringliteral}{"{}link\_3"{}}, \textcolor{stringliteral}{"{}link\_4"{}},}
+\DoxyCodeLine{625                                                         \textcolor{stringliteral}{"{}link\_5"{}}, \textcolor{stringliteral}{"{}link\_6"{}}, \textcolor{stringliteral}{"{}link\_7"{}}, \textcolor{stringliteral}{"{}tool0"{}} \};}
+\DoxyCodeLine{626 }
+\DoxyCodeLine{627   std::vector<std::string> target\_static\_link\_names = \{ \textcolor{stringliteral}{"{}base\_link"{}}, \textcolor{stringliteral}{"{}base"{}} \};}
+\DoxyCodeLine{628 }
+\DoxyCodeLine{629   std::vector<std::string> target\_link\_names = target\_active\_link\_names;}
+\DoxyCodeLine{630   target\_link\_names.insert(target\_link\_names.end(), target\_static\_link\_names.begin(), target\_static\_link\_names.end());}
+\DoxyCodeLine{631 }
+\DoxyCodeLine{632   \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6beaaeb1309516fc3ded4de3c433ba94}{l}} : target\_active\_link\_names)}
+\DoxyCodeLine{633   \{}
+\DoxyCodeLine{634     \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(\mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.isActiveLinkName(\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6beaaeb1309516fc3ded4de3c433ba94}{l}}));}
+\DoxyCodeLine{635   \}}
+\DoxyCodeLine{636 }
+\DoxyCodeLine{637   \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6beaaeb1309516fc3ded4de3c433ba94}{l}} : target\_link\_names)}
+\DoxyCodeLine{638   \{}
+\DoxyCodeLine{639     \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(\mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.hasLinkName(\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6beaaeb1309516fc3ded4de3c433ba94}{l}}));}
+\DoxyCodeLine{640   \}}
+\DoxyCodeLine{641 }
+\DoxyCodeLine{642   \{}
+\DoxyCodeLine{643     std::vector<std::string> \mbox{\hyperlink{collision__core__unit_8cpp_a464caf777ea79db067179ebe2bd7ecc7}{link\_names}} = \mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.getActiveLinkNames();}
+\DoxyCodeLine{644     \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a143c590cd9b8ba73b52c46f5f775a318}{runStringVectorEqualTest}}(\mbox{\hyperlink{collision__core__unit_8cpp_a464caf777ea79db067179ebe2bd7ecc7}{link\_names}}, target\_active\_link\_names);}
+\DoxyCodeLine{645   \}}
+\DoxyCodeLine{646 }
+\DoxyCodeLine{647   \{}
+\DoxyCodeLine{648     std::vector<std::string> \mbox{\hyperlink{collision__core__unit_8cpp_a464caf777ea79db067179ebe2bd7ecc7}{link\_names}} = \mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.getStaticLinkNames();}
+\DoxyCodeLine{649     \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a143c590cd9b8ba73b52c46f5f775a318}{runStringVectorEqualTest}}(\mbox{\hyperlink{collision__core__unit_8cpp_a464caf777ea79db067179ebe2bd7ecc7}{link\_names}}, target\_static\_link\_names);}
+\DoxyCodeLine{650   \}}
+\DoxyCodeLine{651 }
+\DoxyCodeLine{652   \{}
+\DoxyCodeLine{653     std::vector<std::string> \mbox{\hyperlink{collision__core__unit_8cpp_a464caf777ea79db067179ebe2bd7ecc7}{link\_names}} = \mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.getLinkNames();}
+\DoxyCodeLine{654     \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a143c590cd9b8ba73b52c46f5f775a318}{runStringVectorEqualTest}}(\mbox{\hyperlink{collision__core__unit_8cpp_a464caf777ea79db067179ebe2bd7ecc7}{link\_names}}, target\_link\_names);}
+\DoxyCodeLine{655   \}}
+\DoxyCodeLine{656 \}}
+\DoxyCodeLine{657 }
+\DoxyCodeLine{658 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_acf55b0edd18c5204226ca3ac95e1a3fd}{runActiveLinkNamesABBTest}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicGroup}{tesseract\_kinematics::KinematicGroup}}\& \mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}})}
+\DoxyCodeLine{659 \{}
+\DoxyCodeLine{660   \mbox{\hyperlink{collision__core__unit_8cpp_aa784f8de129e0ce90854ab7b6a043468}{EXPECT\_FALSE}}(\mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.checkJoints(Eigen::VectorXd::Zero(7)));}
+\DoxyCodeLine{661   \mbox{\hyperlink{collision__core__unit_8cpp_aa784f8de129e0ce90854ab7b6a043468}{EXPECT\_FALSE}}(\mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.checkJoints(Eigen::VectorXd::Constant(6, std::numeric\_limits<double>::max())));}
+\DoxyCodeLine{662   \mbox{\hyperlink{collision__core__unit_8cpp_aa784f8de129e0ce90854ab7b6a043468}{EXPECT\_FALSE}}(\mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.checkJoints(Eigen::VectorXd::Constant(6, -\/std::numeric\_limits<double>::max())));}
+\DoxyCodeLine{663   \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(\mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.checkJoints(Eigen::VectorXd::Zero(6)));}
+\DoxyCodeLine{664 }
+\DoxyCodeLine{665   std::vector<std::string> target\_active\_link\_names = \{ \textcolor{stringliteral}{"{}link\_1"{}}, \textcolor{stringliteral}{"{}link\_2"{}}, \textcolor{stringliteral}{"{}link\_3"{}}, \textcolor{stringliteral}{"{}link\_4"{}},}
+\DoxyCodeLine{666                                                         \textcolor{stringliteral}{"{}link\_5"{}}, \textcolor{stringliteral}{"{}link\_6"{}}, \textcolor{stringliteral}{"{}tool0"{}} \};}
+\DoxyCodeLine{667 }
+\DoxyCodeLine{668   std::vector<std::string> target\_static\_link\_names = \{ \textcolor{stringliteral}{"{}base\_link"{}} \};}
+\DoxyCodeLine{669 }
+\DoxyCodeLine{670   std::vector<std::string> target\_link\_names = target\_active\_link\_names;}
+\DoxyCodeLine{671   target\_link\_names.insert(target\_link\_names.end(), target\_static\_link\_names.begin(), target\_static\_link\_names.end());}
+\DoxyCodeLine{672 }
+\DoxyCodeLine{673   \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6beaaeb1309516fc3ded4de3c433ba94}{l}} : target\_active\_link\_names)}
+\DoxyCodeLine{674   \{}
+\DoxyCodeLine{675     \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(\mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.isActiveLinkName(\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6beaaeb1309516fc3ded4de3c433ba94}{l}}));}
+\DoxyCodeLine{676   \}}
+\DoxyCodeLine{677 }
+\DoxyCodeLine{678   \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6beaaeb1309516fc3ded4de3c433ba94}{l}} : target\_link\_names)}
+\DoxyCodeLine{679   \{}
+\DoxyCodeLine{680     \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(\mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.hasLinkName(\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6beaaeb1309516fc3ded4de3c433ba94}{l}}));}
+\DoxyCodeLine{681   \}}
+\DoxyCodeLine{682 }
+\DoxyCodeLine{683   \{}
+\DoxyCodeLine{684     std::vector<std::string> \mbox{\hyperlink{collision__core__unit_8cpp_a464caf777ea79db067179ebe2bd7ecc7}{link\_names}} = \mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.getActiveLinkNames();}
+\DoxyCodeLine{685     \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a143c590cd9b8ba73b52c46f5f775a318}{runStringVectorEqualTest}}(\mbox{\hyperlink{collision__core__unit_8cpp_a464caf777ea79db067179ebe2bd7ecc7}{link\_names}}, target\_active\_link\_names);}
+\DoxyCodeLine{686   \}}
+\DoxyCodeLine{687 }
+\DoxyCodeLine{688   \{}
+\DoxyCodeLine{689     std::vector<std::string> \mbox{\hyperlink{collision__core__unit_8cpp_a464caf777ea79db067179ebe2bd7ecc7}{link\_names}} = \mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.getStaticLinkNames();}
+\DoxyCodeLine{690     \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a143c590cd9b8ba73b52c46f5f775a318}{runStringVectorEqualTest}}(\mbox{\hyperlink{collision__core__unit_8cpp_a464caf777ea79db067179ebe2bd7ecc7}{link\_names}}, target\_static\_link\_names);}
+\DoxyCodeLine{691   \}}
+\DoxyCodeLine{692 }
+\DoxyCodeLine{693   \{}
+\DoxyCodeLine{694     std::vector<std::string> \mbox{\hyperlink{collision__core__unit_8cpp_a464caf777ea79db067179ebe2bd7ecc7}{link\_names}} = \mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.getLinkNames();}
+\DoxyCodeLine{695     \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a143c590cd9b8ba73b52c46f5f775a318}{runStringVectorEqualTest}}(\mbox{\hyperlink{collision__core__unit_8cpp_a464caf777ea79db067179ebe2bd7ecc7}{link\_names}}, target\_link\_names);}
+\DoxyCodeLine{696   \}}
+\DoxyCodeLine{697 \}}
+\DoxyCodeLine{698 }
+\DoxyCodeLine{699 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a4c8ecaff5f9c670cfda20a25fda10f0b}{runActiveLinkNamesURTest}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicGroup}{tesseract\_kinematics::KinematicGroup}}\& \mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}})}
+\DoxyCodeLine{700 \{}
+\DoxyCodeLine{701   \mbox{\hyperlink{collision__core__unit_8cpp_aa784f8de129e0ce90854ab7b6a043468}{EXPECT\_FALSE}}(\mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.checkJoints(Eigen::VectorXd::Zero(7)));}
+\DoxyCodeLine{702   \mbox{\hyperlink{collision__core__unit_8cpp_aa784f8de129e0ce90854ab7b6a043468}{EXPECT\_FALSE}}(\mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.checkJoints(Eigen::VectorXd::Constant(6, std::numeric\_limits<double>::max())));}
+\DoxyCodeLine{703   \mbox{\hyperlink{collision__core__unit_8cpp_aa784f8de129e0ce90854ab7b6a043468}{EXPECT\_FALSE}}(\mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.checkJoints(Eigen::VectorXd::Constant(6, -\/std::numeric\_limits<double>::max())));}
+\DoxyCodeLine{704   \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(\mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.checkJoints(Eigen::VectorXd::Zero(6)));}
+\DoxyCodeLine{705 }
+\DoxyCodeLine{706   std::vector<std::string> target\_active\_link\_names = \{ \textcolor{stringliteral}{"{}shoulder\_link"{}}, \textcolor{stringliteral}{"{}upper\_arm\_link"{}}, \textcolor{stringliteral}{"{}forearm\_link"{}},}
+\DoxyCodeLine{707                                                         \textcolor{stringliteral}{"{}wrist\_1\_link"{}},  \textcolor{stringliteral}{"{}wrist\_2\_link"{}},   \textcolor{stringliteral}{"{}wrist\_3\_link"{}},}
+\DoxyCodeLine{708                                                         \textcolor{stringliteral}{"{}tool0"{}} \};}
+\DoxyCodeLine{709 }
+\DoxyCodeLine{710   std::vector<std::string> target\_static\_link\_names = \{ \textcolor{stringliteral}{"{}base\_link"{}} \};}
+\DoxyCodeLine{711 }
+\DoxyCodeLine{712   std::vector<std::string> target\_link\_names = target\_active\_link\_names;}
+\DoxyCodeLine{713   target\_link\_names.insert(target\_link\_names.end(), target\_static\_link\_names.begin(), target\_static\_link\_names.end());}
+\DoxyCodeLine{714 }
+\DoxyCodeLine{715   \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6beaaeb1309516fc3ded4de3c433ba94}{l}} : target\_active\_link\_names)}
+\DoxyCodeLine{716   \{}
+\DoxyCodeLine{717     \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(\mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.isActiveLinkName(\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6beaaeb1309516fc3ded4de3c433ba94}{l}}));}
+\DoxyCodeLine{718   \}}
+\DoxyCodeLine{719 }
+\DoxyCodeLine{720   \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6beaaeb1309516fc3ded4de3c433ba94}{l}} : target\_link\_names)}
+\DoxyCodeLine{721   \{}
+\DoxyCodeLine{722     \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(\mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.hasLinkName(\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6beaaeb1309516fc3ded4de3c433ba94}{l}}));}
+\DoxyCodeLine{723   \}}
+\DoxyCodeLine{724 }
+\DoxyCodeLine{725   \{}
+\DoxyCodeLine{726     std::vector<std::string> \mbox{\hyperlink{collision__core__unit_8cpp_a464caf777ea79db067179ebe2bd7ecc7}{link\_names}} = \mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.getActiveLinkNames();}
+\DoxyCodeLine{727     \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a143c590cd9b8ba73b52c46f5f775a318}{runStringVectorEqualTest}}(\mbox{\hyperlink{collision__core__unit_8cpp_a464caf777ea79db067179ebe2bd7ecc7}{link\_names}}, target\_active\_link\_names);}
+\DoxyCodeLine{728   \}}
+\DoxyCodeLine{729 }
+\DoxyCodeLine{730   \{}
+\DoxyCodeLine{731     std::vector<std::string> \mbox{\hyperlink{collision__core__unit_8cpp_a464caf777ea79db067179ebe2bd7ecc7}{link\_names}} = \mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.getStaticLinkNames();}
+\DoxyCodeLine{732     \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a143c590cd9b8ba73b52c46f5f775a318}{runStringVectorEqualTest}}(\mbox{\hyperlink{collision__core__unit_8cpp_a464caf777ea79db067179ebe2bd7ecc7}{link\_names}}, target\_static\_link\_names);}
+\DoxyCodeLine{733   \}}
+\DoxyCodeLine{734 }
+\DoxyCodeLine{735   \{}
+\DoxyCodeLine{736     std::vector<std::string> \mbox{\hyperlink{collision__core__unit_8cpp_a464caf777ea79db067179ebe2bd7ecc7}{link\_names}} = \mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.getLinkNames();}
+\DoxyCodeLine{737     \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a143c590cd9b8ba73b52c46f5f775a318}{runStringVectorEqualTest}}(\mbox{\hyperlink{collision__core__unit_8cpp_a464caf777ea79db067179ebe2bd7ecc7}{link\_names}}, target\_link\_names);}
+\DoxyCodeLine{738   \}}
+\DoxyCodeLine{739 \}}
+\DoxyCodeLine{740 }
+\DoxyCodeLine{741 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a2b6df2c132a13729b8828ede88a832c6}{runKinGroupJacobianABBOnPositionerTest}}(\mbox{\hyperlink{classtesseract__kinematics_1_1KinematicGroup}{tesseract\_kinematics::KinematicGroup}}\& \mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}})}
+\DoxyCodeLine{742 \{}
+\DoxyCodeLine{743   std::string \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a7e2549355d7bca95ea407c633fe469c4}{base\_link\_name}} = \textcolor{stringliteral}{"{}positioner\_base\_link"{}};}
+\DoxyCodeLine{744   std::vector<std::string> \mbox{\hyperlink{collision__core__unit_8cpp_a464caf777ea79db067179ebe2bd7ecc7}{link\_names}}\{ \textcolor{stringliteral}{"{}positioner\_base\_link"{}},}
+\DoxyCodeLine{745                                        \textcolor{stringliteral}{"{}positioner\_tool0"{}},}
+\DoxyCodeLine{746                                        \textcolor{stringliteral}{"{}base"{}},}
+\DoxyCodeLine{747                                        \textcolor{stringliteral}{"{}base\_link"{}},}
+\DoxyCodeLine{748                                        \textcolor{stringliteral}{"{}link\_1"{}},}
+\DoxyCodeLine{749                                        \textcolor{stringliteral}{"{}link\_2"{}},}
+\DoxyCodeLine{750                                        \textcolor{stringliteral}{"{}link\_3"{}},}
+\DoxyCodeLine{751                                        \textcolor{stringliteral}{"{}link\_4"{}},}
+\DoxyCodeLine{752                                        \textcolor{stringliteral}{"{}link\_5"{}},}
+\DoxyCodeLine{753                                        \textcolor{stringliteral}{"{}link\_6"{}},}
+\DoxyCodeLine{754                                        \textcolor{stringliteral}{"{}tool0"{}} \};}
+\DoxyCodeLine{755 }
+\DoxyCodeLine{757   \textcolor{comment}{// Test forward kinematics when tip link is the base of the chain}}
+\DoxyCodeLine{759 \textcolor{comment}{}  Eigen::MatrixXd \mbox{\hyperlink{kinematics__core__unit_8cpp_afd43241933d01af91643a779b829d7a7}{jacobian}}, numerical\_jacobian;}
+\DoxyCodeLine{760   Eigen::VectorXd jvals;}
+\DoxyCodeLine{761   jvals.resize(7);}
+\DoxyCodeLine{762 }
+\DoxyCodeLine{763   jvals(0) = -\/0.785398;}
+\DoxyCodeLine{764   jvals(1) = 0.785398;}
+\DoxyCodeLine{765   jvals(2) = -\/0.785398;}
+\DoxyCodeLine{766   jvals(3) = 0.785398;}
+\DoxyCodeLine{767   jvals(4) = -\/0.785398;}
+\DoxyCodeLine{768   jvals(5) = 0.785398;}
+\DoxyCodeLine{769   jvals(6) = -\/0.785398;}
+\DoxyCodeLine{770 }
+\DoxyCodeLine{772   \textcolor{comment}{// Test Jacobian at Point}}
+\DoxyCodeLine{773   \textcolor{comment}{// Note: Also tests without the link point}}
+\DoxyCodeLine{775 \textcolor{comment}{}  \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} k = 0; k < 3; ++k)}
+\DoxyCodeLine{776   \{}
+\DoxyCodeLine{777     Eigen::Vector3d link\_point(0, 0, 0);}
+\DoxyCodeLine{778     link\_point[k] = 1;}
+\DoxyCodeLine{779 }
+\DoxyCodeLine{780     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& link\_name : \mbox{\hyperlink{collision__core__unit_8cpp_a464caf777ea79db067179ebe2bd7ecc7}{link\_names}})}
+\DoxyCodeLine{781       \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a74590ea1a69437948e3ac53c7979006f}{runJacobianTest}}(\mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}, jvals, link\_name, link\_point);}
+\DoxyCodeLine{782 }
+\DoxyCodeLine{783     \textcolor{comment}{// NOLINTNEXTLINE}}
+\DoxyCodeLine{784     \mbox{\hyperlink{contact__managers__factory__unit_8cpp_a661c1538a925c80d6bbd9ba3c7665c19}{EXPECT\_ANY\_THROW}}(\mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a74590ea1a69437948e3ac53c7979006f}{runJacobianTest}}(\mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}, jvals, \textcolor{stringliteral}{"{}"{}}, link\_point));}
+\DoxyCodeLine{785   \}}
+\DoxyCodeLine{786 \}}
+\DoxyCodeLine{787 }
+\DoxyCodeLine{788 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a524661cf9aed35b927456c99c048eebf}{runActiveLinkNamesABBOnPositionerTest}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicGroup}{tesseract\_kinematics::KinematicGroup}}\& \mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}})}
+\DoxyCodeLine{789 \{}
+\DoxyCodeLine{790   \mbox{\hyperlink{collision__core__unit_8cpp_aa784f8de129e0ce90854ab7b6a043468}{EXPECT\_FALSE}}(\mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.checkJoints(Eigen::VectorXd::Zero(8)));}
+\DoxyCodeLine{791   \mbox{\hyperlink{collision__core__unit_8cpp_aa784f8de129e0ce90854ab7b6a043468}{EXPECT\_FALSE}}(\mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.checkJoints(Eigen::VectorXd::Constant(7, std::numeric\_limits<double>::max())));}
+\DoxyCodeLine{792   \mbox{\hyperlink{collision__core__unit_8cpp_aa784f8de129e0ce90854ab7b6a043468}{EXPECT\_FALSE}}(\mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.checkJoints(Eigen::VectorXd::Constant(7, -\/std::numeric\_limits<double>::max())));}
+\DoxyCodeLine{793   \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(\mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.checkJoints(Eigen::VectorXd::Zero(7)));}
+\DoxyCodeLine{794 }
+\DoxyCodeLine{795   std::vector<std::string> target\_active\_link\_names = \{ \textcolor{stringliteral}{"{}positioner\_tool0"{}}, \textcolor{stringliteral}{"{}base\_link"{}}, \textcolor{stringliteral}{"{}base"{}},   \textcolor{stringliteral}{"{}link\_1"{}}, \textcolor{stringliteral}{"{}link\_2"{}},}
+\DoxyCodeLine{796                                                         \textcolor{stringliteral}{"{}link\_3"{}},           \textcolor{stringliteral}{"{}link\_4"{}},    \textcolor{stringliteral}{"{}link\_5"{}}, \textcolor{stringliteral}{"{}link\_6"{}}, \textcolor{stringliteral}{"{}tool0"{}} \};}
+\DoxyCodeLine{797 }
+\DoxyCodeLine{798   std::vector<std::string> target\_static\_link\_names = \{ \textcolor{stringliteral}{"{}positioner\_base\_link"{}} \};}
+\DoxyCodeLine{799 }
+\DoxyCodeLine{800   std::vector<std::string> target\_link\_names = target\_active\_link\_names;}
+\DoxyCodeLine{801   target\_link\_names.insert(target\_link\_names.end(), target\_static\_link\_names.begin(), target\_static\_link\_names.end());}
+\DoxyCodeLine{802 }
+\DoxyCodeLine{803   \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6beaaeb1309516fc3ded4de3c433ba94}{l}} : target\_active\_link\_names)}
+\DoxyCodeLine{804   \{}
+\DoxyCodeLine{805     \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(\mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.isActiveLinkName(\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6beaaeb1309516fc3ded4de3c433ba94}{l}}));}
+\DoxyCodeLine{806   \}}
+\DoxyCodeLine{807 }
+\DoxyCodeLine{808   \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6beaaeb1309516fc3ded4de3c433ba94}{l}} : target\_link\_names)}
+\DoxyCodeLine{809   \{}
+\DoxyCodeLine{810     \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(\mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.hasLinkName(\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6beaaeb1309516fc3ded4de3c433ba94}{l}}));}
+\DoxyCodeLine{811   \}}
+\DoxyCodeLine{812 }
+\DoxyCodeLine{813   \{}
+\DoxyCodeLine{814     std::vector<std::string> \mbox{\hyperlink{collision__core__unit_8cpp_a464caf777ea79db067179ebe2bd7ecc7}{link\_names}} = \mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.getActiveLinkNames();}
+\DoxyCodeLine{815     \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a143c590cd9b8ba73b52c46f5f775a318}{runStringVectorEqualTest}}(\mbox{\hyperlink{collision__core__unit_8cpp_a464caf777ea79db067179ebe2bd7ecc7}{link\_names}}, target\_active\_link\_names);}
+\DoxyCodeLine{816   \}}
+\DoxyCodeLine{817 }
+\DoxyCodeLine{818   \{}
+\DoxyCodeLine{819     std::vector<std::string> \mbox{\hyperlink{collision__core__unit_8cpp_a464caf777ea79db067179ebe2bd7ecc7}{link\_names}} = \mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.getStaticLinkNames();}
+\DoxyCodeLine{820     \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a143c590cd9b8ba73b52c46f5f775a318}{runStringVectorEqualTest}}(\mbox{\hyperlink{collision__core__unit_8cpp_a464caf777ea79db067179ebe2bd7ecc7}{link\_names}}, target\_static\_link\_names);}
+\DoxyCodeLine{821   \}}
+\DoxyCodeLine{822 }
+\DoxyCodeLine{823   \{}
+\DoxyCodeLine{824     std::vector<std::string> \mbox{\hyperlink{collision__core__unit_8cpp_a464caf777ea79db067179ebe2bd7ecc7}{link\_names}} = \mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.getLinkNames();}
+\DoxyCodeLine{825     \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a143c590cd9b8ba73b52c46f5f775a318}{runStringVectorEqualTest}}(\mbox{\hyperlink{collision__core__unit_8cpp_a464caf777ea79db067179ebe2bd7ecc7}{link\_names}}, target\_link\_names);}
+\DoxyCodeLine{826   \}}
+\DoxyCodeLine{827 \}}
+\DoxyCodeLine{828 }
+\DoxyCodeLine{829 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a1e8ba35fa749001d5842e879824fbf12}{runKinGroupJacobianABBExternalPositionerTest}}(\mbox{\hyperlink{classtesseract__kinematics_1_1KinematicGroup}{tesseract\_kinematics::KinematicGroup}}\& \mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}})}
+\DoxyCodeLine{830 \{}
+\DoxyCodeLine{831   std::string \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a7e2549355d7bca95ea407c633fe469c4}{base\_link\_name}} = \textcolor{stringliteral}{"{}positioner\_base\_link"{}};}
+\DoxyCodeLine{832   std::vector<std::string> \mbox{\hyperlink{collision__core__unit_8cpp_a464caf777ea79db067179ebe2bd7ecc7}{link\_names}}\{ \textcolor{stringliteral}{"{}positioner\_base\_link"{}},}
+\DoxyCodeLine{833                                        \textcolor{stringliteral}{"{}positioner\_tool0"{}},}
+\DoxyCodeLine{834                                        \textcolor{stringliteral}{"{}positioner\_link\_1"{}},}
+\DoxyCodeLine{835                                        \textcolor{stringliteral}{"{}base\_link"{}},}
+\DoxyCodeLine{836                                        \textcolor{stringliteral}{"{}link\_1"{}},}
+\DoxyCodeLine{837                                        \textcolor{stringliteral}{"{}link\_2"{}},}
+\DoxyCodeLine{838                                        \textcolor{stringliteral}{"{}link\_3"{}},}
+\DoxyCodeLine{839                                        \textcolor{stringliteral}{"{}link\_4"{}},}
+\DoxyCodeLine{840                                        \textcolor{stringliteral}{"{}link\_5"{}},}
+\DoxyCodeLine{841                                        \textcolor{stringliteral}{"{}link\_6"{}},}
+\DoxyCodeLine{842                                        \textcolor{stringliteral}{"{}tool0"{}} \};}
+\DoxyCodeLine{843 }
+\DoxyCodeLine{845   \textcolor{comment}{// Test forward kinematics when tip link is the base of the chain}}
+\DoxyCodeLine{847 \textcolor{comment}{}  Eigen::MatrixXd \mbox{\hyperlink{kinematics__core__unit_8cpp_afd43241933d01af91643a779b829d7a7}{jacobian}}, numerical\_jacobian;}
+\DoxyCodeLine{848   Eigen::VectorXd jvals;}
+\DoxyCodeLine{849   jvals.resize(8);}
+\DoxyCodeLine{850 }
+\DoxyCodeLine{851   jvals(0) = -\/0.785398;}
+\DoxyCodeLine{852   jvals(1) = 0.785398;}
+\DoxyCodeLine{853   jvals(2) = -\/0.785398;}
+\DoxyCodeLine{854   jvals(3) = 0.785398;}
+\DoxyCodeLine{855   jvals(4) = -\/0.785398;}
+\DoxyCodeLine{856   jvals(5) = 0.785398;}
+\DoxyCodeLine{857   jvals(6) = -\/0.785398;}
+\DoxyCodeLine{858   jvals(7) = 0.785398;}
+\DoxyCodeLine{859 }
+\DoxyCodeLine{861   \textcolor{comment}{// Test Jacobian at Point}}
+\DoxyCodeLine{862   \textcolor{comment}{// Note: Also tests without the link point}}
+\DoxyCodeLine{864 \textcolor{comment}{}  \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} k = 0; k < 3; ++k)}
+\DoxyCodeLine{865   \{}
+\DoxyCodeLine{866     Eigen::Vector3d link\_point(0, 0, 0);}
+\DoxyCodeLine{867     link\_point[k] = 1;}
+\DoxyCodeLine{868 }
+\DoxyCodeLine{869     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& link\_name : \mbox{\hyperlink{collision__core__unit_8cpp_a464caf777ea79db067179ebe2bd7ecc7}{link\_names}})}
+\DoxyCodeLine{870       \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a74590ea1a69437948e3ac53c7979006f}{runJacobianTest}}(\mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}, jvals, link\_name, link\_point);}
+\DoxyCodeLine{871 }
+\DoxyCodeLine{872     \textcolor{comment}{// NOLINTNEXTLINE}}
+\DoxyCodeLine{873     \mbox{\hyperlink{contact__managers__factory__unit_8cpp_a661c1538a925c80d6bbd9ba3c7665c19}{EXPECT\_ANY\_THROW}}(\mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a74590ea1a69437948e3ac53c7979006f}{runJacobianTest}}(\mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}, jvals, \textcolor{stringliteral}{"{}"{}}, link\_point));}
+\DoxyCodeLine{874   \}}
+\DoxyCodeLine{875 \}}
+\DoxyCodeLine{876 }
+\DoxyCodeLine{877 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a25b4b7fa141e56ae34978c430e812d0f}{runActiveLinkNamesABBExternalPositionerTest}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicGroup}{tesseract\_kinematics::KinematicGroup}}\& \mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}})}
+\DoxyCodeLine{878 \{}
+\DoxyCodeLine{879   \mbox{\hyperlink{collision__core__unit_8cpp_aa784f8de129e0ce90854ab7b6a043468}{EXPECT\_FALSE}}(\mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.checkJoints(Eigen::VectorXd::Zero(9)));}
+\DoxyCodeLine{880   \mbox{\hyperlink{collision__core__unit_8cpp_aa784f8de129e0ce90854ab7b6a043468}{EXPECT\_FALSE}}(\mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.checkJoints(Eigen::VectorXd::Constant(8, std::numeric\_limits<double>::max())));}
+\DoxyCodeLine{881   \mbox{\hyperlink{collision__core__unit_8cpp_aa784f8de129e0ce90854ab7b6a043468}{EXPECT\_FALSE}}(\mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.checkJoints(Eigen::VectorXd::Constant(8, -\/std::numeric\_limits<double>::max())));}
+\DoxyCodeLine{882   \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(\mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.checkJoints(Eigen::VectorXd::Zero(8)));}
+\DoxyCodeLine{883 }
+\DoxyCodeLine{884   std::vector<std::string> target\_active\_link\_names = \{}
+\DoxyCodeLine{885     \textcolor{stringliteral}{"{}positioner\_tool0"{}}, \textcolor{stringliteral}{"{}positioner\_link\_1"{}}, \textcolor{stringliteral}{"{}link\_1"{}}, \textcolor{stringliteral}{"{}link\_2"{}}, \textcolor{stringliteral}{"{}link\_3"{}}, \textcolor{stringliteral}{"{}link\_4"{}}, \textcolor{stringliteral}{"{}link\_5"{}}, \textcolor{stringliteral}{"{}link\_6"{}}, \textcolor{stringliteral}{"{}tool0"{}}}
+\DoxyCodeLine{886   \};}
+\DoxyCodeLine{887 }
+\DoxyCodeLine{888   std::vector<std::string> target\_static\_link\_names = \{ \textcolor{stringliteral}{"{}world"{}}, \textcolor{stringliteral}{"{}base\_link"{}}, \textcolor{stringliteral}{"{}base"{}}, \textcolor{stringliteral}{"{}positioner\_base\_link"{}} \};}
+\DoxyCodeLine{889 }
+\DoxyCodeLine{890   std::vector<std::string> target\_link\_names = target\_active\_link\_names;}
+\DoxyCodeLine{891   target\_link\_names.insert(target\_link\_names.end(), target\_static\_link\_names.begin(), target\_static\_link\_names.end());}
+\DoxyCodeLine{892 }
+\DoxyCodeLine{893   \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6beaaeb1309516fc3ded4de3c433ba94}{l}} : target\_active\_link\_names)}
+\DoxyCodeLine{894   \{}
+\DoxyCodeLine{895     \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(\mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.isActiveLinkName(\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6beaaeb1309516fc3ded4de3c433ba94}{l}}));}
+\DoxyCodeLine{896   \}}
+\DoxyCodeLine{897 }
+\DoxyCodeLine{898   \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6beaaeb1309516fc3ded4de3c433ba94}{l}} : target\_link\_names)}
+\DoxyCodeLine{899   \{}
+\DoxyCodeLine{900     \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(\mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.hasLinkName(\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6beaaeb1309516fc3ded4de3c433ba94}{l}}));}
+\DoxyCodeLine{901   \}}
+\DoxyCodeLine{902 }
+\DoxyCodeLine{903   \{}
+\DoxyCodeLine{904     std::vector<std::string> \mbox{\hyperlink{collision__core__unit_8cpp_a464caf777ea79db067179ebe2bd7ecc7}{link\_names}} = \mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.getActiveLinkNames();}
+\DoxyCodeLine{905     \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a143c590cd9b8ba73b52c46f5f775a318}{runStringVectorEqualTest}}(\mbox{\hyperlink{collision__core__unit_8cpp_a464caf777ea79db067179ebe2bd7ecc7}{link\_names}}, target\_active\_link\_names);}
+\DoxyCodeLine{906   \}}
+\DoxyCodeLine{907 }
+\DoxyCodeLine{908   \{}
+\DoxyCodeLine{909     std::vector<std::string> \mbox{\hyperlink{collision__core__unit_8cpp_a464caf777ea79db067179ebe2bd7ecc7}{link\_names}} = \mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.getStaticLinkNames();}
+\DoxyCodeLine{910     \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a143c590cd9b8ba73b52c46f5f775a318}{runStringVectorEqualTest}}(\mbox{\hyperlink{collision__core__unit_8cpp_a464caf777ea79db067179ebe2bd7ecc7}{link\_names}}, target\_static\_link\_names);}
+\DoxyCodeLine{911   \}}
+\DoxyCodeLine{912 }
+\DoxyCodeLine{913   \{}
+\DoxyCodeLine{914     std::vector<std::string> \mbox{\hyperlink{collision__core__unit_8cpp_a464caf777ea79db067179ebe2bd7ecc7}{link\_names}} = \mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.getLinkNames();}
+\DoxyCodeLine{915     \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a143c590cd9b8ba73b52c46f5f775a318}{runStringVectorEqualTest}}(\mbox{\hyperlink{collision__core__unit_8cpp_a464caf777ea79db067179ebe2bd7ecc7}{link\_names}}, target\_link\_names);}
+\DoxyCodeLine{916   \}}
+\DoxyCodeLine{917 \}}
+\DoxyCodeLine{918 }
+\DoxyCodeLine{919 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_ae1cf8afcfafb9178dcd536bb963c86ea}{runInvKinIIWATest}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory}{tesseract\_kinematics::KinematicsPluginFactory}}\& \mbox{\hyperlink{contact__managers__factory__static__unit_8cpp_a08617937c106907314690deaf7abb4c1}{factory}},}
+\DoxyCodeLine{920                               \textcolor{keyword}{const} std::string\& inv\_factory\_name,}
+\DoxyCodeLine{921                               \textcolor{keyword}{const} std::string\& fwd\_factory\_name)}
+\DoxyCodeLine{922 \{}
+\DoxyCodeLine{923   \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph_a4421b8568bd664cf203613a054e1847b}{tesseract\_scene\_graph::SceneGraph::Ptr}} \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a8d4d0dc3a6b9a7030970bf9ed3764756}{scene\_graph}} = \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_af21376adb5aa48be102cd8036777cefa}{getSceneGraphIIWA}}();}
+\DoxyCodeLine{924   std::string \mbox{\hyperlink{ikfast__kinematics__unit_8cpp_a573c37a8dfd18d3ef1e61e8ff733bfa4}{manip\_name}} = \textcolor{stringliteral}{"{}manip"{}};}
+\DoxyCodeLine{925   std::string \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a7e2549355d7bca95ea407c633fe469c4}{base\_link\_name}} = \textcolor{stringliteral}{"{}base\_link"{}};}
+\DoxyCodeLine{926   std::string \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a84ec666153aae97620f98bc6b719bb37}{tip\_link\_name}} = \textcolor{stringliteral}{"{}tool0"{}};}
+\DoxyCodeLine{927   std::vector<std::string> \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_ae55b39adb52b29eeefd7d128c4b56f2a}{joint\_names}}\{ \textcolor{stringliteral}{"{}joint\_a1"{}}, \textcolor{stringliteral}{"{}joint\_a2"{}}, \textcolor{stringliteral}{"{}joint\_a3"{}}, \textcolor{stringliteral}{"{}joint\_a4"{}},}
+\DoxyCodeLine{928                                         \textcolor{stringliteral}{"{}joint\_a5"{}}, \textcolor{stringliteral}{"{}joint\_a6"{}}, \textcolor{stringliteral}{"{}joint\_a7"{}} \};}
+\DoxyCodeLine{929   std::vector<std::string> joint\_link\_names\{ \textcolor{stringliteral}{"{}link\_1"{}}, \textcolor{stringliteral}{"{}link\_2"{}}, \textcolor{stringliteral}{"{}link\_3"{}}, \textcolor{stringliteral}{"{}link\_4"{}}, \textcolor{stringliteral}{"{}link\_5"{}}, \textcolor{stringliteral}{"{}link\_6"{}}, \textcolor{stringliteral}{"{}link\_7"{}} \};}
+\DoxyCodeLine{930   \mbox{\hyperlink{structtesseract__common_1_1KinematicLimits}{tesseract\_common::KinematicLimits}} \mbox{\hyperlink{rep__kinematics__unit_8cpp_ab272cf06bc15b5b72e1508a1508389a0}{target\_limits}} = \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a9ad0cc4390e9818177c5fcd320740344}{getTargetLimits}}(*\mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a8d4d0dc3a6b9a7030970bf9ed3764756}{scene\_graph}}, \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_ae55b39adb52b29eeefd7d128c4b56f2a}{joint\_names}});}
+\DoxyCodeLine{931 }
+\DoxyCodeLine{932   \mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver}{tesseract\_scene\_graph::KDLStateSolver}} state\_solver(*\mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a8d4d0dc3a6b9a7030970bf9ed3764756}{scene\_graph}});}
+\DoxyCodeLine{933   \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{tesseract\_scene\_graph::SceneState}} \mbox{\hyperlink{kinematics__factory__unit_8cpp_a918c8faa92717caa3ba8aef1b4ef8163}{scene\_state}} = state\_solver.\mbox{\hyperlink{classtesseract__scene__graph_1_1KDLStateSolver_afddbdb08c03bd03f2885386ac63011b1}{getState}}();}
+\DoxyCodeLine{934 }
+\DoxyCodeLine{935   \mbox{\hyperlink{structtesseract__common_1_1PluginInfo}{tesseract\_common::PluginInfo}} fwd\_plugin\_info;}
+\DoxyCodeLine{936   fwd\_plugin\_info.\mbox{\hyperlink{structtesseract__common_1_1PluginInfo_a799c037060abd59bb3475f16ef19ef6b}{class\_name}} = fwd\_factory\_name;}
+\DoxyCodeLine{937   fwd\_plugin\_info.\mbox{\hyperlink{structtesseract__common_1_1PluginInfo_a94f240db508f5cc8080598142254ba37}{config}}[\textcolor{stringliteral}{"{}base\_link"{}}] = \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a7e2549355d7bca95ea407c633fe469c4}{base\_link\_name}};}
+\DoxyCodeLine{938   fwd\_plugin\_info.\mbox{\hyperlink{structtesseract__common_1_1PluginInfo_a94f240db508f5cc8080598142254ba37}{config}}[\textcolor{stringliteral}{"{}tip\_link"{}}] = \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a84ec666153aae97620f98bc6b719bb37}{tip\_link\_name}};}
+\DoxyCodeLine{939 }
+\DoxyCodeLine{940   \mbox{\hyperlink{structtesseract__common_1_1PluginInfo}{tesseract\_common::PluginInfo}} inv\_plugin\_info;}
+\DoxyCodeLine{941   inv\_plugin\_info.\mbox{\hyperlink{structtesseract__common_1_1PluginInfo_a799c037060abd59bb3475f16ef19ef6b}{class\_name}} = inv\_factory\_name;}
+\DoxyCodeLine{942   inv\_plugin\_info.\mbox{\hyperlink{structtesseract__common_1_1PluginInfo_a94f240db508f5cc8080598142254ba37}{config}} = fwd\_plugin\_info.\mbox{\hyperlink{structtesseract__common_1_1PluginInfo_a94f240db508f5cc8080598142254ba37}{config}};}
+\DoxyCodeLine{943 }
+\DoxyCodeLine{944   \textcolor{comment}{// Inverse target pose and seed}}
+\DoxyCodeLine{945   Eigen::Isometry3d \mbox{\hyperlink{tesseract__environment__collision_8cpp_a7272862bfe9e301a87918b3d560aebc3}{pose}};}
+\DoxyCodeLine{946   \mbox{\hyperlink{tesseract__environment__collision_8cpp_a7272862bfe9e301a87918b3d560aebc3}{pose}}.setIdentity();}
+\DoxyCodeLine{947   \mbox{\hyperlink{tesseract__environment__collision_8cpp_a7272862bfe9e301a87918b3d560aebc3}{pose}}.translation()[0] = 0;}
+\DoxyCodeLine{948   \mbox{\hyperlink{tesseract__environment__collision_8cpp_a7272862bfe9e301a87918b3d560aebc3}{pose}}.translation()[1] = 0;}
+\DoxyCodeLine{949   \mbox{\hyperlink{tesseract__environment__collision_8cpp_a7272862bfe9e301a87918b3d560aebc3}{pose}}.translation()[2] = 1.306;}
+\DoxyCodeLine{950 }
+\DoxyCodeLine{951   Eigen::VectorXd \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a113a9f110b7848f55fd8f5367a019304}{seed}};}
+\DoxyCodeLine{952   \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a113a9f110b7848f55fd8f5367a019304}{seed}}.resize(7);}
+\DoxyCodeLine{953   \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a113a9f110b7848f55fd8f5367a019304}{seed}}(0) = -\/0.785398;}
+\DoxyCodeLine{954   \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a113a9f110b7848f55fd8f5367a019304}{seed}}(1) = 0.785398;}
+\DoxyCodeLine{955   \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a113a9f110b7848f55fd8f5367a019304}{seed}}(2) = -\/0.785398;}
+\DoxyCodeLine{956   \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a113a9f110b7848f55fd8f5367a019304}{seed}}(3) = 0.785398;}
+\DoxyCodeLine{957   \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a113a9f110b7848f55fd8f5367a019304}{seed}}(4) = -\/0.785398;}
+\DoxyCodeLine{958   \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a113a9f110b7848f55fd8f5367a019304}{seed}}(5) = 0.785398;}
+\DoxyCodeLine{959   \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a113a9f110b7848f55fd8f5367a019304}{seed}}(6) = -\/0.785398;}
+\DoxyCodeLine{960 }
+\DoxyCodeLine{961   \textcolor{comment}{// Check create method with empty scene graph}}
+\DoxyCodeLine{962   \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph}{tesseract\_scene\_graph::SceneGraph}} scene\_graph\_empty;}
+\DoxyCodeLine{963   \textcolor{keyword}{auto} kin\_empty = \mbox{\hyperlink{contact__managers__factory__static__unit_8cpp_a08617937c106907314690deaf7abb4c1}{factory}}.createInvKin(inv\_factory\_name, inv\_plugin\_info, scene\_graph\_empty, \mbox{\hyperlink{kinematics__factory__unit_8cpp_a918c8faa92717caa3ba8aef1b4ef8163}{scene\_state}});}
+\DoxyCodeLine{964   \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(kin\_empty == \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{965 }
+\DoxyCodeLine{966   \{  \textcolor{comment}{// Check create method using base\_link and tool0}}
+\DoxyCodeLine{967     \textcolor{keyword}{auto} \mbox{\hyperlink{kinematics__factory__unit_8cpp_a03f92050745365182f793372b058e30a}{fwd\_kin}} = \mbox{\hyperlink{contact__managers__factory__static__unit_8cpp_a08617937c106907314690deaf7abb4c1}{factory}}.createFwdKin(fwd\_factory\_name, fwd\_plugin\_info, *\mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a8d4d0dc3a6b9a7030970bf9ed3764756}{scene\_graph}}, \mbox{\hyperlink{kinematics__factory__unit_8cpp_a918c8faa92717caa3ba8aef1b4ef8163}{scene\_state}});}
+\DoxyCodeLine{968     \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(\mbox{\hyperlink{kinematics__factory__unit_8cpp_a03f92050745365182f793372b058e30a}{fwd\_kin}} != \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{969     \textcolor{comment}{//    EXPECT\_EQ(fwd\_kin-\/>getSolverName(), fwd\_solver\_name);}}
+\DoxyCodeLine{970     \mbox{\hyperlink{collision__core__unit_8cpp_a6759a6545be66625356c6f193741efb0}{EXPECT\_EQ}}(\mbox{\hyperlink{kinematics__factory__unit_8cpp_a03f92050745365182f793372b058e30a}{fwd\_kin}}-\/>numJoints(), 7);}
+\DoxyCodeLine{971     \mbox{\hyperlink{collision__core__unit_8cpp_a6759a6545be66625356c6f193741efb0}{EXPECT\_EQ}}(\mbox{\hyperlink{kinematics__factory__unit_8cpp_a03f92050745365182f793372b058e30a}{fwd\_kin}}-\/>getBaseLinkName(), \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a7e2549355d7bca95ea407c633fe469c4}{base\_link\_name}});}
+\DoxyCodeLine{972     \mbox{\hyperlink{collision__core__unit_8cpp_a6759a6545be66625356c6f193741efb0}{EXPECT\_EQ}}(\mbox{\hyperlink{kinematics__factory__unit_8cpp_a03f92050745365182f793372b058e30a}{fwd\_kin}}-\/>getTipLinkNames().size(), 1);}
+\DoxyCodeLine{973     \mbox{\hyperlink{collision__core__unit_8cpp_a6759a6545be66625356c6f193741efb0}{EXPECT\_EQ}}(\mbox{\hyperlink{kinematics__factory__unit_8cpp_a03f92050745365182f793372b058e30a}{fwd\_kin}}-\/>getTipLinkNames()[0], \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a84ec666153aae97620f98bc6b719bb37}{tip\_link\_name}});}
+\DoxyCodeLine{974     \mbox{\hyperlink{collision__core__unit_8cpp_a6759a6545be66625356c6f193741efb0}{EXPECT\_EQ}}(\mbox{\hyperlink{kinematics__factory__unit_8cpp_a03f92050745365182f793372b058e30a}{fwd\_kin}}-\/>getJointNames(), \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_ae55b39adb52b29eeefd7d128c4b56f2a}{joint\_names}});}
+\DoxyCodeLine{975 }
+\DoxyCodeLine{976     \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a7e071ebe013f2904b08806ca8ed0b1a5}{runJacobianIIWATest}}(*\mbox{\hyperlink{kinematics__factory__unit_8cpp_a03f92050745365182f793372b058e30a}{fwd\_kin}});}
+\DoxyCodeLine{977     \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a90c75a53e78426f6e513470bfbd9afb1}{runFwdKinIIWATest}}(*\mbox{\hyperlink{kinematics__factory__unit_8cpp_a03f92050745365182f793372b058e30a}{fwd\_kin}});}
+\DoxyCodeLine{978 }
+\DoxyCodeLine{979     \textcolor{keyword}{auto} \mbox{\hyperlink{ikfast__kinematics__unit_8cpp_a0b6eafb1eec9d96fe3214af2a8c5f07a}{inv\_kin}} = \mbox{\hyperlink{contact__managers__factory__static__unit_8cpp_a08617937c106907314690deaf7abb4c1}{factory}}.createInvKin(inv\_factory\_name, inv\_plugin\_info, *\mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a8d4d0dc3a6b9a7030970bf9ed3764756}{scene\_graph}}, \mbox{\hyperlink{kinematics__factory__unit_8cpp_a918c8faa92717caa3ba8aef1b4ef8163}{scene\_state}});}
+\DoxyCodeLine{980     \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(\mbox{\hyperlink{ikfast__kinematics__unit_8cpp_a0b6eafb1eec9d96fe3214af2a8c5f07a}{inv\_kin}} != \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{981     \textcolor{comment}{//    EXPECT\_EQ(inv\_kin-\/>getSolverName(), inv\_solver\_name);}}
+\DoxyCodeLine{982     \mbox{\hyperlink{collision__core__unit_8cpp_a6759a6545be66625356c6f193741efb0}{EXPECT\_EQ}}(\mbox{\hyperlink{ikfast__kinematics__unit_8cpp_a0b6eafb1eec9d96fe3214af2a8c5f07a}{inv\_kin}}-\/>numJoints(), 7);}
+\DoxyCodeLine{983     \mbox{\hyperlink{collision__core__unit_8cpp_a6759a6545be66625356c6f193741efb0}{EXPECT\_EQ}}(\mbox{\hyperlink{ikfast__kinematics__unit_8cpp_a0b6eafb1eec9d96fe3214af2a8c5f07a}{inv\_kin}}-\/>getBaseLinkName(), \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a7e2549355d7bca95ea407c633fe469c4}{base\_link\_name}});}
+\DoxyCodeLine{984     \mbox{\hyperlink{collision__core__unit_8cpp_a6759a6545be66625356c6f193741efb0}{EXPECT\_EQ}}(\mbox{\hyperlink{ikfast__kinematics__unit_8cpp_a0b6eafb1eec9d96fe3214af2a8c5f07a}{inv\_kin}}-\/>getWorkingFrame(), \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a7e2549355d7bca95ea407c633fe469c4}{base\_link\_name}});}
+\DoxyCodeLine{985     \mbox{\hyperlink{collision__core__unit_8cpp_a6759a6545be66625356c6f193741efb0}{EXPECT\_EQ}}(\mbox{\hyperlink{ikfast__kinematics__unit_8cpp_a0b6eafb1eec9d96fe3214af2a8c5f07a}{inv\_kin}}-\/>getTipLinkNames().size(), 1);}
+\DoxyCodeLine{986     \mbox{\hyperlink{collision__core__unit_8cpp_a6759a6545be66625356c6f193741efb0}{EXPECT\_EQ}}(\mbox{\hyperlink{ikfast__kinematics__unit_8cpp_a0b6eafb1eec9d96fe3214af2a8c5f07a}{inv\_kin}}-\/>getTipLinkNames()[0], \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a84ec666153aae97620f98bc6b719bb37}{tip\_link\_name}});}
+\DoxyCodeLine{987     \mbox{\hyperlink{collision__core__unit_8cpp_a6759a6545be66625356c6f193741efb0}{EXPECT\_EQ}}(\mbox{\hyperlink{ikfast__kinematics__unit_8cpp_a0b6eafb1eec9d96fe3214af2a8c5f07a}{inv\_kin}}-\/>getJointNames(), \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_ae55b39adb52b29eeefd7d128c4b56f2a}{joint\_names}});}
+\DoxyCodeLine{988 }
+\DoxyCodeLine{989     \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a483b6dc73708396dd47902969d18459f}{runInvKinTest}}(*\mbox{\hyperlink{ikfast__kinematics__unit_8cpp_a0b6eafb1eec9d96fe3214af2a8c5f07a}{inv\_kin}}, *\mbox{\hyperlink{kinematics__factory__unit_8cpp_a03f92050745365182f793372b058e30a}{fwd\_kin}}, \mbox{\hyperlink{tesseract__environment__collision_8cpp_a7272862bfe9e301a87918b3d560aebc3}{pose}}, \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a84ec666153aae97620f98bc6b719bb37}{tip\_link\_name}}, \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a113a9f110b7848f55fd8f5367a019304}{seed}});}
+\DoxyCodeLine{990 }
+\DoxyCodeLine{991     \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicGroup}{KinematicGroup}} \mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}(\mbox{\hyperlink{ikfast__kinematics__unit_8cpp_a573c37a8dfd18d3ef1e61e8ff733bfa4}{manip\_name}}, \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_ae55b39adb52b29eeefd7d128c4b56f2a}{joint\_names}}, std::move(\mbox{\hyperlink{ikfast__kinematics__unit_8cpp_a0b6eafb1eec9d96fe3214af2a8c5f07a}{inv\_kin}}), *\mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a8d4d0dc3a6b9a7030970bf9ed3764756}{scene\_graph}}, \mbox{\hyperlink{kinematics__factory__unit_8cpp_a918c8faa92717caa3ba8aef1b4ef8163}{scene\_state}});}
+\DoxyCodeLine{992     \mbox{\hyperlink{collision__core__unit_8cpp_a6759a6545be66625356c6f193741efb0}{EXPECT\_EQ}}(\mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.getBaseLinkName(), \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a8d4d0dc3a6b9a7030970bf9ed3764756}{scene\_graph}}-\/>getRoot());}
+\DoxyCodeLine{993     \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a483b6dc73708396dd47902969d18459f}{runInvKinTest}}(\mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}, \mbox{\hyperlink{tesseract__environment__collision_8cpp_a7272862bfe9e301a87918b3d560aebc3}{pose}}, \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a7e2549355d7bca95ea407c633fe469c4}{base\_link\_name}}, \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a84ec666153aae97620f98bc6b719bb37}{tip\_link\_name}}, \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a113a9f110b7848f55fd8f5367a019304}{seed}});}
+\DoxyCodeLine{994     \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_ab44f1dc4d8ee55b058f0c667cf5f2c8c}{runKinGroupJacobianIIWATest}}(\mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}});}
+\DoxyCodeLine{995     \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a71a775c38a4da1be2e88d4b91a823c41}{runActiveLinkNamesIIWATest}}(\mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}});}
+\DoxyCodeLine{996     \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a7fda0bc187fee5ea0e8e251e9a776922}{runKinJointLimitsTest}}(\mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.getLimits(), \mbox{\hyperlink{rep__kinematics__unit_8cpp_ab272cf06bc15b5b72e1508a1508389a0}{target\_limits}});}
+\DoxyCodeLine{997     \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a46a7b72b224c483bbb43eb34f47eaa09}{runKinSetJointLimitsTest}}(\mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}});}
+\DoxyCodeLine{998   \}}
+\DoxyCodeLine{999 }
+\DoxyCodeLine{1000   \{  \textcolor{comment}{// Check cloned}}
+\DoxyCodeLine{1001     \textcolor{keyword}{auto} \mbox{\hyperlink{kinematics__factory__unit_8cpp_a03f92050745365182f793372b058e30a}{fwd\_kin}} = \mbox{\hyperlink{contact__managers__factory__static__unit_8cpp_a08617937c106907314690deaf7abb4c1}{factory}}.createFwdKin(fwd\_factory\_name, fwd\_plugin\_info, *\mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a8d4d0dc3a6b9a7030970bf9ed3764756}{scene\_graph}}, \mbox{\hyperlink{kinematics__factory__unit_8cpp_a918c8faa92717caa3ba8aef1b4ef8163}{scene\_state}});}
+\DoxyCodeLine{1002     \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(\mbox{\hyperlink{kinematics__factory__unit_8cpp_a03f92050745365182f793372b058e30a}{fwd\_kin}} != \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{1003     \textcolor{keyword}{auto} fwd\_kin3 = \mbox{\hyperlink{kinematics__factory__unit_8cpp_a03f92050745365182f793372b058e30a}{fwd\_kin}}-\/>clone();}
+\DoxyCodeLine{1004     \textcolor{comment}{//    EXPECT\_EQ(fwd\_kin3-\/>getSolverName(), fwd\_solver\_name);}}
+\DoxyCodeLine{1005     \mbox{\hyperlink{collision__core__unit_8cpp_a6759a6545be66625356c6f193741efb0}{EXPECT\_EQ}}(fwd\_kin3-\/>numJoints(), 7);}
+\DoxyCodeLine{1006     \mbox{\hyperlink{collision__core__unit_8cpp_a6759a6545be66625356c6f193741efb0}{EXPECT\_EQ}}(fwd\_kin3-\/>getBaseLinkName(), \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a7e2549355d7bca95ea407c633fe469c4}{base\_link\_name}});}
+\DoxyCodeLine{1007     \mbox{\hyperlink{collision__core__unit_8cpp_a6759a6545be66625356c6f193741efb0}{EXPECT\_EQ}}(fwd\_kin3-\/>getTipLinkNames().size(), 1);}
+\DoxyCodeLine{1008     \mbox{\hyperlink{collision__core__unit_8cpp_a6759a6545be66625356c6f193741efb0}{EXPECT\_EQ}}(fwd\_kin3-\/>getTipLinkNames()[0], \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a84ec666153aae97620f98bc6b719bb37}{tip\_link\_name}});}
+\DoxyCodeLine{1009     \mbox{\hyperlink{collision__core__unit_8cpp_a6759a6545be66625356c6f193741efb0}{EXPECT\_EQ}}(fwd\_kin3-\/>getJointNames(), \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_ae55b39adb52b29eeefd7d128c4b56f2a}{joint\_names}});}
+\DoxyCodeLine{1010 }
+\DoxyCodeLine{1011     \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a7e071ebe013f2904b08806ca8ed0b1a5}{runJacobianIIWATest}}(*fwd\_kin3);}
+\DoxyCodeLine{1012     \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a90c75a53e78426f6e513470bfbd9afb1}{runFwdKinIIWATest}}(*fwd\_kin3);}
+\DoxyCodeLine{1013 }
+\DoxyCodeLine{1014     \textcolor{keyword}{auto} \mbox{\hyperlink{ikfast__kinematics__unit_8cpp_a0b6eafb1eec9d96fe3214af2a8c5f07a}{inv\_kin}} = \mbox{\hyperlink{contact__managers__factory__static__unit_8cpp_a08617937c106907314690deaf7abb4c1}{factory}}.createInvKin(inv\_factory\_name, inv\_plugin\_info, *\mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a8d4d0dc3a6b9a7030970bf9ed3764756}{scene\_graph}}, \mbox{\hyperlink{kinematics__factory__unit_8cpp_a918c8faa92717caa3ba8aef1b4ef8163}{scene\_state}});}
+\DoxyCodeLine{1015     \textcolor{keyword}{auto} inv\_kin3 = \mbox{\hyperlink{ikfast__kinematics__unit_8cpp_a0b6eafb1eec9d96fe3214af2a8c5f07a}{inv\_kin}}-\/>clone();}
+\DoxyCodeLine{1016     \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(inv\_kin3 != \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{1017     \textcolor{comment}{//    EXPECT\_EQ(inv\_kin3-\/>getSolverName(), inv\_solver\_name);}}
+\DoxyCodeLine{1018     \mbox{\hyperlink{collision__core__unit_8cpp_a6759a6545be66625356c6f193741efb0}{EXPECT\_EQ}}(inv\_kin3-\/>numJoints(), 7);}
+\DoxyCodeLine{1019     \mbox{\hyperlink{collision__core__unit_8cpp_a6759a6545be66625356c6f193741efb0}{EXPECT\_EQ}}(inv\_kin3-\/>getBaseLinkName(), \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a7e2549355d7bca95ea407c633fe469c4}{base\_link\_name}});}
+\DoxyCodeLine{1020     \mbox{\hyperlink{collision__core__unit_8cpp_a6759a6545be66625356c6f193741efb0}{EXPECT\_EQ}}(inv\_kin3-\/>getWorkingFrame(), \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a7e2549355d7bca95ea407c633fe469c4}{base\_link\_name}});}
+\DoxyCodeLine{1021     \mbox{\hyperlink{collision__core__unit_8cpp_a6759a6545be66625356c6f193741efb0}{EXPECT\_EQ}}(inv\_kin3-\/>getTipLinkNames().size(), 1);}
+\DoxyCodeLine{1022     \mbox{\hyperlink{collision__core__unit_8cpp_a6759a6545be66625356c6f193741efb0}{EXPECT\_EQ}}(inv\_kin3-\/>getTipLinkNames()[0], \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a84ec666153aae97620f98bc6b719bb37}{tip\_link\_name}});}
+\DoxyCodeLine{1023     \mbox{\hyperlink{collision__core__unit_8cpp_a6759a6545be66625356c6f193741efb0}{EXPECT\_EQ}}(inv\_kin3-\/>getJointNames(), \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_ae55b39adb52b29eeefd7d128c4b56f2a}{joint\_names}});}
+\DoxyCodeLine{1024 }
+\DoxyCodeLine{1025     \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a483b6dc73708396dd47902969d18459f}{runInvKinTest}}(*inv\_kin3, *fwd\_kin3, \mbox{\hyperlink{tesseract__environment__collision_8cpp_a7272862bfe9e301a87918b3d560aebc3}{pose}}, \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a84ec666153aae97620f98bc6b719bb37}{tip\_link\_name}}, \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a113a9f110b7848f55fd8f5367a019304}{seed}});}
+\DoxyCodeLine{1026 }
+\DoxyCodeLine{1027     \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicGroup}{KinematicGroup}} \mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}(\mbox{\hyperlink{ikfast__kinematics__unit_8cpp_a573c37a8dfd18d3ef1e61e8ff733bfa4}{manip\_name}}, \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_ae55b39adb52b29eeefd7d128c4b56f2a}{joint\_names}}, std::move(inv\_kin3), *\mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a8d4d0dc3a6b9a7030970bf9ed3764756}{scene\_graph}}, \mbox{\hyperlink{kinematics__factory__unit_8cpp_a918c8faa92717caa3ba8aef1b4ef8163}{scene\_state}});}
+\DoxyCodeLine{1028     \mbox{\hyperlink{collision__core__unit_8cpp_a6759a6545be66625356c6f193741efb0}{EXPECT\_EQ}}(\mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.getBaseLinkName(), \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a8d4d0dc3a6b9a7030970bf9ed3764756}{scene\_graph}}-\/>getRoot());}
+\DoxyCodeLine{1029     \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a483b6dc73708396dd47902969d18459f}{runInvKinTest}}(\mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}, \mbox{\hyperlink{tesseract__environment__collision_8cpp_a7272862bfe9e301a87918b3d560aebc3}{pose}}, \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a7e2549355d7bca95ea407c633fe469c4}{base\_link\_name}}, \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a84ec666153aae97620f98bc6b719bb37}{tip\_link\_name}}, \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a113a9f110b7848f55fd8f5367a019304}{seed}});}
+\DoxyCodeLine{1030     \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_ab44f1dc4d8ee55b058f0c667cf5f2c8c}{runKinGroupJacobianIIWATest}}(\mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}});}
+\DoxyCodeLine{1031     \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a71a775c38a4da1be2e88d4b91a823c41}{runActiveLinkNamesIIWATest}}(\mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}});}
+\DoxyCodeLine{1032     \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a7fda0bc187fee5ea0e8e251e9a776922}{runKinJointLimitsTest}}(\mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}}.getLimits(), \mbox{\hyperlink{rep__kinematics__unit_8cpp_ab272cf06bc15b5b72e1508a1508389a0}{target\_limits}});}
+\DoxyCodeLine{1033     \mbox{\hyperlink{namespacetesseract__kinematics_1_1test__suite_a46a7b72b224c483bbb43eb34f47eaa09}{runKinSetJointLimitsTest}}(\mbox{\hyperlink{rep__kinematics__unit_8cpp_adbda05fbb448810951efc38fb469e91d}{kin\_group}});}
+\DoxyCodeLine{1034   \}}
+\DoxyCodeLine{1035 }
+\DoxyCodeLine{1036   fwd\_plugin\_info.\mbox{\hyperlink{structtesseract__common_1_1PluginInfo_a94f240db508f5cc8080598142254ba37}{config}}[\textcolor{stringliteral}{"{}base\_link"{}}] = \textcolor{stringliteral}{"{}missing\_link"{}};}
+\DoxyCodeLine{1037   fwd\_plugin\_info.\mbox{\hyperlink{structtesseract__common_1_1PluginInfo_a94f240db508f5cc8080598142254ba37}{config}}[\textcolor{stringliteral}{"{}tip\_link"{}}] = \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a84ec666153aae97620f98bc6b719bb37}{tip\_link\_name}};}
+\DoxyCodeLine{1038   inv\_plugin\_info.\mbox{\hyperlink{structtesseract__common_1_1PluginInfo_a94f240db508f5cc8080598142254ba37}{config}} = fwd\_plugin\_info.\mbox{\hyperlink{structtesseract__common_1_1PluginInfo_a94f240db508f5cc8080598142254ba37}{config}};}
+\DoxyCodeLine{1039 }
+\DoxyCodeLine{1040   \{  \textcolor{comment}{// Test forward kinematics failure}}
+\DoxyCodeLine{1041 }
+\DoxyCodeLine{1042     \textcolor{keyword}{auto} \mbox{\hyperlink{kinematics__factory__unit_8cpp_a03f92050745365182f793372b058e30a}{fwd\_kin}} = \mbox{\hyperlink{contact__managers__factory__static__unit_8cpp_a08617937c106907314690deaf7abb4c1}{factory}}.createFwdKin(fwd\_factory\_name, fwd\_plugin\_info, *\mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a8d4d0dc3a6b9a7030970bf9ed3764756}{scene\_graph}}, \mbox{\hyperlink{kinematics__factory__unit_8cpp_a918c8faa92717caa3ba8aef1b4ef8163}{scene\_state}});}
+\DoxyCodeLine{1043     \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(\mbox{\hyperlink{kinematics__factory__unit_8cpp_a03f92050745365182f793372b058e30a}{fwd\_kin}} == \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{1044   \}}
+\DoxyCodeLine{1045 }
+\DoxyCodeLine{1046   \{  \textcolor{comment}{// Inverse Kinematics Test failure}}
+\DoxyCodeLine{1047     \textcolor{keyword}{auto} \mbox{\hyperlink{ikfast__kinematics__unit_8cpp_a0b6eafb1eec9d96fe3214af2a8c5f07a}{inv\_kin}} = \mbox{\hyperlink{contact__managers__factory__static__unit_8cpp_a08617937c106907314690deaf7abb4c1}{factory}}.createInvKin(inv\_factory\_name, inv\_plugin\_info, *\mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a8d4d0dc3a6b9a7030970bf9ed3764756}{scene\_graph}}, \mbox{\hyperlink{kinematics__factory__unit_8cpp_a918c8faa92717caa3ba8aef1b4ef8163}{scene\_state}});}
+\DoxyCodeLine{1048     \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(\mbox{\hyperlink{ikfast__kinematics__unit_8cpp_a0b6eafb1eec9d96fe3214af2a8c5f07a}{inv\_kin}} == \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{1049   \}}
+\DoxyCodeLine{1050 \}}
+\DoxyCodeLine{1051 }
+\DoxyCodeLine{1052 \}  \textcolor{comment}{// namespace tesseract\_kinematics::test\_suite}}
+\DoxyCodeLine{1053 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_KINEMATICS\_KIN\_TEST\_SUITE\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,56 @@
+\hypertarget{scene__state_8h_source}{}\doxysection{scene\+\_\+state.\+h}
+\label{scene__state_8h_source}\index{tesseract\_scene\_graph/include/tesseract\_scene\_graph/scene\_state.h@{tesseract\_scene\_graph/include/tesseract\_scene\_graph/scene\_state.h}}
+\mbox{\hyperlink{scene__state_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#ifndef TESSERACT\_SCENE\_GRAPH\_SCENE\_STATE\_H}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#define TESSERACT\_SCENE\_GRAPH\_SCENE\_STATE\_H}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{macros_8h}{tesseract\_common/macros.h}}>}}
+\DoxyCodeLine{34 \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include <boost/serialization/access.hpp>}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include <Eigen/Core>}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#include <unordered\_map>}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{40 \mbox{\hyperlink{namespaceTESSERACT__COMMON__IGNORE__WARNINGS__POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{tesseract__common_2include_2tesseract__common_2types_8h}{tesseract\_common/types.h}}>}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__scene__graph}{tesseract\_scene\_graph}}}
+\DoxyCodeLine{45 \{}
+\DoxyCodeLine{53 \textcolor{keyword}{struct }\mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{SceneState}}}
+\DoxyCodeLine{54 \{}
+\DoxyCodeLine{55   \textcolor{comment}{// LCOV\_EXCL\_START}}
+\DoxyCodeLine{56   EIGEN\_MAKE\_ALIGNED\_OPERATOR\_NEW}
+\DoxyCodeLine{57   \textcolor{comment}{// LCOV\_EXCL\_STOP}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59   \textcolor{keyword}{using }\mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState_af3793fa857fb39b579d59fa670fb8555}{Ptr}} = std::shared\_ptr<SceneState>;}
+\DoxyCodeLine{60   \textcolor{keyword}{using }\mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState_a9d3f7b2ff642506643281d15581bf136}{ConstPtr}} = std::shared\_ptr<const SceneState>;}
+\DoxyCodeLine{61   \textcolor{keyword}{using }\mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState_afc925ce3a6bcb101aff683df3af26c6b}{UPtr}} = std::unique\_ptr<SceneState>;}
+\DoxyCodeLine{62   \textcolor{keyword}{using }\mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState_a1282cbbf6aea782a5e931bb4deb9e575}{ConstUPtr}} = std::unique\_ptr<const SceneState>;}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{65   std::unordered\_map<std::string, double> \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState_ad1218286967403d66726653bfb00dea8}{joints}};}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{68   \mbox{\hyperlink{namespacetesseract__common_a67bde3cb7bb235f0f61c370ef8bc74d8}{tesseract\_common::TransformMap}} \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState_a65525289756c29897a86bc6ea3451264}{link\_transforms}};}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{71   \mbox{\hyperlink{namespacetesseract__common_a67bde3cb7bb235f0f61c370ef8bc74d8}{tesseract\_common::TransformMap}} \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState_af28a4f8515dd7435cdb59d3dc2ed7714}{joint\_transforms}};}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73   Eigen::VectorXd \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState_a94222597d59b4efab8e693e49bb49b9d}{getJointValues}}(\textcolor{keyword}{const} std::vector<std::string>\& \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_ae55b39adb52b29eeefd7d128c4b56f2a}{joint\_names}}) \textcolor{keyword}{const};}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75   \textcolor{keywordtype}{bool} \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState_aa172a1cd7377d539725a07bee19caf75}{operator==}}(\textcolor{keyword}{const} \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{SceneState}}\& rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{76   \textcolor{keywordtype}{bool} \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState_af0e879954ccfa1fbe8b1a7bd5c60bec3}{operator!=}}(\textcolor{keyword}{const} \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{SceneState}}\& rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 \textcolor{keyword}{private}:}
+\DoxyCodeLine{79   \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState_ac98d07dd8f7b70e16ccb9a01abf56b9c}{boost::serialization::access}};}
+\DoxyCodeLine{80   \textcolor{keyword}{template} <\textcolor{keyword}{class} Archive>}
+\DoxyCodeLine{81   \textcolor{keywordtype}{void} \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState_a38719c4e177327994e6ed217cff7a1e2}{serialize}}(Archive\& ar, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} version);  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{82 \};}
+\DoxyCodeLine{83 \}  \textcolor{comment}{// namespace tesseract\_scene\_graph}}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#include <boost/serialization/export.hpp>}}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#include <boost/serialization/tracking.hpp>}}
+\DoxyCodeLine{87 BOOST\_CLASS\_EXPORT\_KEY2(\mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{tesseract\_scene\_graph::SceneState}}, \textcolor{stringliteral}{"{}SceneState"{}})}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_SCENE\_GRAPH\_SCENE\_STATE\_H}}
+
+\end{DoxyCode}

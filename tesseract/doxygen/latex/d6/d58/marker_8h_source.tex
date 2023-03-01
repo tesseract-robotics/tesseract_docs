@@ -1,0 +1,111 @@
+\hypertarget{marker_8h_source}{}\doxysection{marker.\+h}
+\label{marker_8h_source}\index{tesseract\_visualization/include/tesseract\_visualization/markers/marker.h@{tesseract\_visualization/include/tesseract\_visualization/markers/marker.h}}
+\mbox{\hyperlink{marker_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * Copyright (C) 2019 Open Source Robotics Foundation}}
+\DoxyCodeLine{3 \textcolor{comment}{ *}}
+\DoxyCodeLine{4 \textcolor{comment}{ * Licensed under the Apache License, Version 2.0 (the "{}License"{});}}
+\DoxyCodeLine{5 \textcolor{comment}{ * you may not use this file except in compliance with the License.}}
+\DoxyCodeLine{6 \textcolor{comment}{ * You may obtain a copy of the License at}}
+\DoxyCodeLine{7 \textcolor{comment}{ *}}
+\DoxyCodeLine{8 \textcolor{comment}{ *     http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{9 \textcolor{comment}{ *}}
+\DoxyCodeLine{10 \textcolor{comment}{ * Unless required by applicable law or agreed to in writing, software}}
+\DoxyCodeLine{11 \textcolor{comment}{ * distributed under the License is distributed on an "{}AS IS"{} BASIS,}}
+\DoxyCodeLine{12 \textcolor{comment}{ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.}}
+\DoxyCodeLine{13 \textcolor{comment}{ * See the License for the specific language governing permissions and}}
+\DoxyCodeLine{14 \textcolor{comment}{ * limitations under the License.}}
+\DoxyCodeLine{15 \textcolor{comment}{ *}}
+\DoxyCodeLine{16 \textcolor{comment}{ */}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#ifndef TESSERACT\_VISUALIZATION\_MARKERS\_MARKER\_H}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define TESSERACT\_VISUALIZATION\_MARKERS\_MARKER\_H}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{macros_8h}{tesseract\_common/macros.h}}>}}
+\DoxyCodeLine{21 \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include <chrono>}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include <Eigen/Geometry>}}
+\DoxyCodeLine{25 \mbox{\hyperlink{namespaceTESSERACT__COMMON__IGNORE__WARNINGS__POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__visualization}{tesseract\_visualization}}}
+\DoxyCodeLine{28 \{}
+\DoxyCodeLine{29 \textcolor{keyword}{enum class} \mbox{\hyperlink{namespacetesseract__visualization_ac8e02d8f51fc302b5ea1fb8c3b1abc01}{MarkerType}} : \textcolor{keywordtype}{int}}
+\DoxyCodeLine{30 \{}
+\DoxyCodeLine{32   \mbox{\hyperlink{namespacetesseract__visualization_ac8e02d8f51fc302b5ea1fb8c3b1abc01ab50339a10e1de285ac99d4c3990b8693}{NONE}} = 0,}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{35   \mbox{\hyperlink{namespacetesseract__visualization_ac8e02d8f51fc302b5ea1fb8c3b1abc01ab22957ad8078e8d73de61aef53d13a74}{GEOMETRY}} = 1,}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{38   \mbox{\hyperlink{namespacetesseract__visualization_ac8e02d8f51fc302b5ea1fb8c3b1abc01a9e388340c6d15a821c4f93dfb9f1bd9c}{AXIS}} = 2,}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{41   \mbox{\hyperlink{namespacetesseract__visualization_ac8e02d8f51fc302b5ea1fb8c3b1abc01aca2dc0c55b6e8d70bafcb4d84f5a9544}{ARROW}} = 3,}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{44   \mbox{\hyperlink{namespacetesseract__visualization_ac8e02d8f51fc302b5ea1fb8c3b1abc01ae64a4d2159ed46d077e21a505575c814}{LINE\_STRIP}} = 4,}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{47   \mbox{\hyperlink{namespacetesseract__visualization_ac8e02d8f51fc302b5ea1fb8c3b1abc01a195d93c98c5e94cad21509e910f65fae}{LINE\_LIST}} = 5,}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{50   \mbox{\hyperlink{namespacetesseract__visualization_ac8e02d8f51fc302b5ea1fb8c3b1abc01a70b71cabeeaf8c2bf473c896d5442ddb}{POINTS}} = 6,}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{53   \mbox{\hyperlink{namespacetesseract__visualization_ac8e02d8f51fc302b5ea1fb8c3b1abc01a61a96ffcb251bb9bf0abf8fec19d0ea8}{TEXT}} = 7,}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{56   \mbox{\hyperlink{namespacetesseract__visualization_ac8e02d8f51fc302b5ea1fb8c3b1abc01aa9f047dff7e4cd4d8d3bdeafc4029d47}{TRIANGLE\_FAN}} = 8,}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{59   \mbox{\hyperlink{namespacetesseract__visualization_ac8e02d8f51fc302b5ea1fb8c3b1abc01a14d20da17f6d27fc43c5f311c17eb912}{TRIANGLE\_LIST}} = 9,}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{62   \mbox{\hyperlink{namespacetesseract__visualization_ac8e02d8f51fc302b5ea1fb8c3b1abc01a708de017e3b83ccba21dfc9f6367d46f}{TRIANGLE\_STRIP}} = 10,}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{65   \mbox{\hyperlink{namespacetesseract__visualization_ac8e02d8f51fc302b5ea1fb8c3b1abc01a2b3d5b10f124341f75a903cfa57a392a}{TOOLPATH}} = 11,}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{68   \mbox{\hyperlink{namespacetesseract__visualization_ac8e02d8f51fc302b5ea1fb8c3b1abc01ae8c9f70bfc69a0ac89c3c32c2b91c90f}{CONTACT\_RESULTS}} = 12,}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70   \textcolor{comment}{// User defined types must be larger than this}}
+\DoxyCodeLine{71   \mbox{\hyperlink{namespacetesseract__visualization_ac8e02d8f51fc302b5ea1fb8c3b1abc01a5123cb514ff95a726922950380866e00}{USER\_DEFINED}} = 1000}
+\DoxyCodeLine{72 \};}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__visualization_1_1Marker}{Marker}}}
+\DoxyCodeLine{75 \{}
+\DoxyCodeLine{76 \textcolor{keyword}{public}:}
+\DoxyCodeLine{77   EIGEN\_MAKE\_ALIGNED\_OPERATOR\_NEW}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__visualization_1_1Marker_a3b34b1bd0031dfb6d3404cf1788553a2}{Ptr}} = std::shared\_ptr<Marker>;}
+\DoxyCodeLine{80   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__visualization_1_1Marker_a63453ce719d88f737ce1e4b01808c972}{ConstPtr}} = std::shared\_ptr<const Marker>;}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82   \mbox{\hyperlink{classtesseract__visualization_1_1Marker_afdc57ef2b52133caaa872e1d8953284a}{Marker}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{83   \textcolor{keyword}{virtual} \mbox{\hyperlink{classtesseract__visualization_1_1Marker_a3e448a1136be4681c39e104e9ba03eb2}{\string~Marker}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{84   \mbox{\hyperlink{classtesseract__visualization_1_1Marker_a4b7ea7da6d1f065baef7827be86e31d9}{Marker}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__visualization_1_1Marker}{Marker}}\&) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{85   \mbox{\hyperlink{classtesseract__visualization_1_1Marker}{Marker}}\& \mbox{\hyperlink{classtesseract__visualization_1_1Marker_ae6981bd0c31e2bb8b8f78bd897a14dcc}{operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__visualization_1_1Marker}{Marker}}\&) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{86   \mbox{\hyperlink{classtesseract__visualization_1_1Marker_a1412c8c7e2beb97081f8536794f7ffdd}{Marker}}(\mbox{\hyperlink{classtesseract__visualization_1_1Marker}{Marker}}\&\&) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{87   \mbox{\hyperlink{classtesseract__visualization_1_1Marker}{Marker}}\& \mbox{\hyperlink{classtesseract__visualization_1_1Marker_abb243ad7ed92a2dfa9f988449bf96337}{operator=}}(\mbox{\hyperlink{classtesseract__visualization_1_1Marker}{Marker}}\&\&) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{93   \textcolor{keyword}{virtual} \textcolor{keywordtype}{int} \mbox{\hyperlink{classtesseract__visualization_1_1Marker_a10dbf29eaa471871cdf6aac7c2d80d64}{getType}}() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{99   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__visualization_1_1Marker_a3dbbb153b85c572fb1e4d45799b6763d}{setParentLink}}(std::string parent\_link);}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{105   \textcolor{keyword}{virtual} \textcolor{keyword}{const} std::string\& \mbox{\hyperlink{classtesseract__visualization_1_1Marker_ae4f83458e648dd31a97e6b498dd5f854}{getParentLink}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{111   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__visualization_1_1Marker_a0b67f6da1550ecc0f42d9cc19b4d63ce}{setLifetime}}(\textcolor{keyword}{const} std::chrono::steady\_clock::duration\& lifetime);}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{117   \textcolor{keyword}{virtual} std::chrono::steady\_clock::duration \mbox{\hyperlink{classtesseract__visualization_1_1Marker_a17cf50f698cd0364bff835eb8df1b523}{getLifetime}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{123   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__visualization_1_1Marker_afc27da1054efce5e45c73476ed9abd4a}{setLayer}}(\textcolor{keywordtype}{int} layer);}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{129   \textcolor{keyword}{virtual} \textcolor{keywordtype}{int} \mbox{\hyperlink{classtesseract__visualization_1_1Marker_afbf3a3ed2907fce3c5f6d487876f540f}{getLayer}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{135   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__visualization_1_1Marker_ae6f535f39351836c91045ceb65071c62}{setScale}}(\textcolor{keyword}{const} Eigen::Vector3d\& \mbox{\hyperlink{collision__margin__data__unit_8cpp_a80d402d10e8341004c0caf10133b80ab}{scale}});}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{141   \textcolor{keyword}{virtual} \textcolor{keyword}{const} Eigen::Vector3d\& \mbox{\hyperlink{classtesseract__visualization_1_1Marker_afbd7992bc88fca948b99d67fde6be029}{getScale}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{145   std::chrono::steady\_clock::duration \mbox{\hyperlink{classtesseract__visualization_1_1Marker_a194057fe9d033b25a3038396cc53eb21}{lifetime\_}}\{ 0 \};}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{148   std::string \mbox{\hyperlink{classtesseract__visualization_1_1Marker_a5d9c381e3fc557129efc155cbbf538f8}{parent\_link\_}};}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{151   \textcolor{keywordtype}{int} \mbox{\hyperlink{classtesseract__visualization_1_1Marker_a88b7e9ef9984e26c0f5705c510376207}{layer\_}}\{ 0 \};}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{154   Eigen::Vector3d \mbox{\hyperlink{classtesseract__visualization_1_1Marker_a900dd7a15ec2e1f9dabf66c391700370}{scale\_}}\{ Eigen::Vector3d(1, 1, 1) \};}
+\DoxyCodeLine{155 \};}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{157 \}  \textcolor{comment}{// namespace tesseract\_visualization}}
+\DoxyCodeLine{158 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_VISUALIZATION\_MARKERS\_MARKER\_H}}
+
+\end{DoxyCode}

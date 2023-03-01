@@ -1,0 +1,122 @@
+\hypertarget{vhacdTimer_8h_source}{}\doxysection{vhacd\+Timer.\+h}
+\label{vhacdTimer_8h_source}\index{tesseract\_collision/vhacd/include/tesseract\_collision/vhacd/inc/vhacdTimer.h@{tesseract\_collision/vhacd/include/tesseract\_collision/vhacd/inc/vhacdTimer.h}}
+\mbox{\hyperlink{vhacdTimer_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* Copyright (c) 2011 Khaled Mamou (kmamou at gmail dot com)}}
+\DoxyCodeLine{2 \textcolor{comment}{ All rights reserved.}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{ Redistribution and use in source and binary forms, with or without modification, are permitted provided that the}}
+\DoxyCodeLine{6 \textcolor{comment}{ following conditions are met:}}
+\DoxyCodeLine{7 \textcolor{comment}{}}
+\DoxyCodeLine{8 \textcolor{comment}{ 1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following}}
+\DoxyCodeLine{9 \textcolor{comment}{ disclaimer.}}
+\DoxyCodeLine{10 \textcolor{comment}{}}
+\DoxyCodeLine{11 \textcolor{comment}{ 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following}}
+\DoxyCodeLine{12 \textcolor{comment}{ disclaimer in the documentation and/or other materials provided with the distribution.}}
+\DoxyCodeLine{13 \textcolor{comment}{}}
+\DoxyCodeLine{14 \textcolor{comment}{ 3. The names of the contributors may not be used to endorse or promote products derived from this software without}}
+\DoxyCodeLine{15 \textcolor{comment}{ specific prior written permission.}}
+\DoxyCodeLine{16 \textcolor{comment}{}}
+\DoxyCodeLine{17 \textcolor{comment}{ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES,}}
+\DoxyCodeLine{18 \textcolor{comment}{ INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE}}
+\DoxyCodeLine{19 \textcolor{comment}{ DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,}}
+\DoxyCodeLine{20 \textcolor{comment}{ SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR}}
+\DoxyCodeLine{21 \textcolor{comment}{ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,}}
+\DoxyCodeLine{22 \textcolor{comment}{ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF}}
+\DoxyCodeLine{23 \textcolor{comment}{ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{24 \textcolor{comment}{ */}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{macros_8h}{tesseract\_common/macros.h}}>}}
+\DoxyCodeLine{28 \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#ifdef \_WIN32}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#ifndef WIN32\_LEAN\_AND\_MEAN}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#define WIN32\_LEAN\_AND\_MEAN  }\textcolor{comment}{// Exclude rarely-\/used stuff from Windows headers}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include <windows.h>}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#elif \_\_MACH\_\_}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include <mach/clock.h>}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#include <mach/mach.h>}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#include <sys/time.h>}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#include <time.h>}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__collision}{tesseract\_collision}}}
+\DoxyCodeLine{44 \{}
+\DoxyCodeLine{45 \textcolor{keyword}{namespace }VHACD}
+\DoxyCodeLine{46 \{}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#ifdef \_WIN32}}
+\DoxyCodeLine{48 \textcolor{keyword}{class }Timer}
+\DoxyCodeLine{49 \{}
+\DoxyCodeLine{50 \textcolor{keyword}{public}:}
+\DoxyCodeLine{51   \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Timer_a735850a94d8ac855181eaba380da41c0}{Timer}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{52   \{}
+\DoxyCodeLine{53     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Timer_ab7ffb7ef11e2d808fe3362b5ea529b22}{m\_start}}.QuadPart = 0;}
+\DoxyCodeLine{54     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Timer_a64f867ba7928173e045d35b148312257}{m\_stop}}.QuadPart = 0;}
+\DoxyCodeLine{55     QueryPerformanceFrequency(\&m\_freq);}
+\DoxyCodeLine{56   \};}
+\DoxyCodeLine{57   \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Timer_a8aceaac0df4d6550b019aa94d847e7b6}{\string~Timer}}(\textcolor{keywordtype}{void})\{\};}
+\DoxyCodeLine{58   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Timer_ab9517b7be9af5fbba4cc1e3c1ed01c8c}{Tic}}() \{ QueryPerformanceCounter(\&\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Timer_ab7ffb7ef11e2d808fe3362b5ea529b22}{m\_start}}); \}}
+\DoxyCodeLine{59   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Timer_aabcb23d9e93e48ac3112c9ed93860a32}{Toc}}() \{ QueryPerformanceCounter(\&\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Timer_a64f867ba7928173e045d35b148312257}{m\_stop}}); \}}
+\DoxyCodeLine{60   \textcolor{keywordtype}{double} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Timer_a278ccda8973d26e1125d07df1c8152f0}{GetElapsedTime}}()  \textcolor{comment}{// in ms}}
+\DoxyCodeLine{61   \{}
+\DoxyCodeLine{62     LARGE\_INTEGER delta;}
+\DoxyCodeLine{63     delta.QuadPart = \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Timer_a64f867ba7928173e045d35b148312257}{m\_stop}}.QuadPart -\/ \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Timer_ab7ffb7ef11e2d808fe3362b5ea529b22}{m\_start}}.QuadPart;}
+\DoxyCodeLine{64     \textcolor{keywordflow}{return} (1000.0 * delta.QuadPart) / (double)m\_freq.QuadPart;}
+\DoxyCodeLine{65   \}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{keyword}{private}:}
+\DoxyCodeLine{68   LARGE\_INTEGER \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Timer_ab7ffb7ef11e2d808fe3362b5ea529b22}{m\_start}};}
+\DoxyCodeLine{69   LARGE\_INTEGER \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Timer_a64f867ba7928173e045d35b148312257}{m\_stop}};}
+\DoxyCodeLine{70   LARGE\_INTEGER m\_freq;}
+\DoxyCodeLine{71 \};}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#elif \_\_MACH\_\_}}
+\DoxyCodeLine{74 \textcolor{keyword}{class }Timer}
+\DoxyCodeLine{75 \{}
+\DoxyCodeLine{76 \textcolor{keyword}{public}:}
+\DoxyCodeLine{77   \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Timer_a735850a94d8ac855181eaba380da41c0}{Timer}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{78   \{}
+\DoxyCodeLine{79     memset(\textcolor{keyword}{this}, 0, \textcolor{keyword}{sizeof}(\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Timer_a735850a94d8ac855181eaba380da41c0}{Timer}}));}
+\DoxyCodeLine{80     host\_get\_clock\_service(mach\_host\_self(), CALENDAR\_CLOCK, \&m\_cclock);}
+\DoxyCodeLine{81   \};}
+\DoxyCodeLine{82   \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Timer_a8aceaac0df4d6550b019aa94d847e7b6}{\string~Timer}}(\textcolor{keywordtype}{void}) \{ mach\_port\_deallocate(mach\_task\_self(), m\_cclock); \};}
+\DoxyCodeLine{83   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Timer_ab9517b7be9af5fbba4cc1e3c1ed01c8c}{Tic}}() \{ clock\_get\_time(m\_cclock, \&\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Timer_ab7ffb7ef11e2d808fe3362b5ea529b22}{m\_start}}); \}}
+\DoxyCodeLine{84   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Timer_aabcb23d9e93e48ac3112c9ed93860a32}{Toc}}() \{ clock\_get\_time(m\_cclock, \&\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Timer_a64f867ba7928173e045d35b148312257}{m\_stop}}); \}}
+\DoxyCodeLine{85   \textcolor{keywordtype}{double} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Timer_a278ccda8973d26e1125d07df1c8152f0}{GetElapsedTime}}()  \textcolor{comment}{// in ms}}
+\DoxyCodeLine{86   \{}
+\DoxyCodeLine{87     \textcolor{keywordflow}{return} 1000.0 * (\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Timer_a64f867ba7928173e045d35b148312257}{m\_stop}}.tv\_sec -\/ \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Timer_ab7ffb7ef11e2d808fe3362b5ea529b22}{m\_start}}.tv\_sec + (1.0E-\/9) * (\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Timer_a64f867ba7928173e045d35b148312257}{m\_stop}}.tv\_nsec -\/ \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Timer_ab7ffb7ef11e2d808fe3362b5ea529b22}{m\_start}}.tv\_nsec));}
+\DoxyCodeLine{88   \}}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90 \textcolor{keyword}{private}:}
+\DoxyCodeLine{91   clock\_serv\_t m\_cclock;}
+\DoxyCodeLine{92   mach\_timespec\_t \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Timer_ab7ffb7ef11e2d808fe3362b5ea529b22}{m\_start}};}
+\DoxyCodeLine{93   mach\_timespec\_t \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Timer_a64f867ba7928173e045d35b148312257}{m\_stop}};}
+\DoxyCodeLine{94 \};}
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{96 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Timer}{Timer}}}
+\DoxyCodeLine{97 \{}
+\DoxyCodeLine{98 \textcolor{keyword}{public}:}
+\DoxyCodeLine{99   \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Timer_a735850a94d8ac855181eaba380da41c0}{Timer}}(\textcolor{keywordtype}{void}) \{ memset(\textcolor{keyword}{this}, 0, \textcolor{keyword}{sizeof}(\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Timer}{Timer}})); \}}
+\DoxyCodeLine{100   \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Timer_a8aceaac0df4d6550b019aa94d847e7b6}{\string~Timer}}(\textcolor{keywordtype}{void}) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{101   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Timer_ab9517b7be9af5fbba4cc1e3c1ed01c8c}{Tic}}() \{ clock\_gettime(CLOCK\_REALTIME, \&\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Timer_ab7ffb7ef11e2d808fe3362b5ea529b22}{m\_start}}); \}}
+\DoxyCodeLine{102   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Timer_aabcb23d9e93e48ac3112c9ed93860a32}{Toc}}() \{ clock\_gettime(CLOCK\_REALTIME, \&\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Timer_a64f867ba7928173e045d35b148312257}{m\_stop}}); \}}
+\DoxyCodeLine{103   \textcolor{keywordtype}{double} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Timer_a278ccda8973d26e1125d07df1c8152f0}{GetElapsedTime}}()  \textcolor{comment}{// in ms}}
+\DoxyCodeLine{104   \{}
+\DoxyCodeLine{105     \textcolor{keywordflow}{return} 1000.0 * (\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Timer_a64f867ba7928173e045d35b148312257}{m\_stop}}.tv\_sec -\/ \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Timer_ab7ffb7ef11e2d808fe3362b5ea529b22}{m\_start}}.tv\_sec + (1.0E-\/9) * (\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Timer_a64f867ba7928173e045d35b148312257}{m\_stop}}.tv\_nsec -\/ \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Timer_ab7ffb7ef11e2d808fe3362b5ea529b22}{m\_start}}.tv\_nsec));}
+\DoxyCodeLine{106   \}}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108 \textcolor{keyword}{private}:}
+\DoxyCodeLine{109   \textcolor{keyword}{struct }timespec \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Timer_ab7ffb7ef11e2d808fe3362b5ea529b22}{m\_start}};}
+\DoxyCodeLine{110   \textcolor{keyword}{struct }timespec \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Timer_a64f867ba7928173e045d35b148312257}{m\_stop}};}
+\DoxyCodeLine{111 \};}
+\DoxyCodeLine{112 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{113 \}  \textcolor{comment}{// namespace VHACD}}
+\DoxyCodeLine{114 \}  \textcolor{comment}{// namespace tesseract\_collision}}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116 \mbox{\hyperlink{namespaceTESSERACT__COMMON__IGNORE__WARNINGS__POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}}
+
+\end{DoxyCode}

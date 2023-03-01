@@ -1,0 +1,499 @@
+\hypertarget{tesseract__geometry__unit_8cpp}{}\doxysection{tesseract\+\_\+geometry/test/tesseract\+\_\+geometry\+\_\+unit.cpp File Reference}
+\label{tesseract__geometry__unit_8cpp}\index{tesseract\_geometry/test/tesseract\_geometry\_unit.cpp@{tesseract\_geometry/test/tesseract\_geometry\_unit.cpp}}
+{\ttfamily \#include $<$tesseract\+\_\+common/macros.\+h$>$}\newline
+{\ttfamily \#include $<$gtest/gtest.\+h$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$octomap/octomap.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+geometry/geometries.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+geometry/mesh\+\_\+parser.\+h$>$}\newline
+Include dependency graph for tesseract\+\_\+geometry\+\_\+unit.\+cpp\+:
+% FIG 0
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structTestPointCloud}{Test\+Point\+Cloud}}
+\item 
+struct \mbox{\hyperlink{structTestPointCloud_1_1point}{Test\+Point\+Cloud\+::point}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} = \mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{tesseract\+\_\+geometry\+::\+Polygon\+Mesh}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a3f25ed8d5e1ab8d4d1350023eb1ad47f}{EXPECT\+\_\+\+NEAR}} (\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}}-\/$>$getX(), 1, 1e-\/5)
+\item 
+\mbox{\hyperlink{tesseract__geometry__unit_8cpp_af55bd50f2e5ca225b414dffe99390371}{EXPECT\+\_\+\+NEAR}} (std\+::static\+\_\+pointer\+\_\+cast$<$ \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$(\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7097a7352e9fbf73dc8347ec88113c8b}{geom\+\_\+clone}}) -\/$>$getX(), 1, 1e-\/5)
+\item 
+\mbox{\hyperlink{tesseract__geometry__unit_8cpp_ae73d936dbfe69072c010bdaa4741c85d}{EXPECT\+\_\+\+NEAR}} (std\+::static\+\_\+pointer\+\_\+cast$<$ \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$(\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7097a7352e9fbf73dc8347ec88113c8b}{geom\+\_\+clone}}) -\/$>$getY(), 1, 1e-\/5)
+\item 
+\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a5fd272e61c9e48cd82074f2e68e88728}{EXPECT\+\_\+\+NEAR}} (std\+::static\+\_\+pointer\+\_\+cast$<$ \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$(\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7097a7352e9fbf73dc8347ec88113c8b}{geom\+\_\+clone}}) -\/$>$getZ(), 1, 1e-\/5)
+\item 
+\mbox{\hyperlink{tesseract__geometry__unit_8cpp_adc37502886fb2840ed614a8e76b0adbe}{EXPECT\+\_\+\+NEAR}} (std\+::static\+\_\+pointer\+\_\+cast$<$ \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$(\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7097a7352e9fbf73dc8347ec88113c8b}{geom\+\_\+clone}}) -\/$>$get\+Radius(), 1, 1e-\/5)
+\item 
+\mbox{\hyperlink{tesseract__geometry__unit_8cpp_ad0690b353f41e04998fd4090a0fb33a2}{EXPECT\+\_\+\+NEAR}} (std\+::static\+\_\+pointer\+\_\+cast$<$ \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$(\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7097a7352e9fbf73dc8347ec88113c8b}{geom\+\_\+clone}}) -\/$>$get\+Length(), 1, 1e-\/5)
+\item 
+\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a6f2d83f104456fa4acbfdc204db9a4cc}{EXPECT\+\_\+\+NEAR}} (std\+::static\+\_\+pointer\+\_\+cast$<$ \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$(\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7097a7352e9fbf73dc8347ec88113c8b}{geom\+\_\+clone}}) -\/$>$getA(), 1, 1e-\/5)
+\item 
+\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a6a98e14b660a026a8a794e1cf777e273}{EXPECT\+\_\+\+NEAR}} (std\+::static\+\_\+pointer\+\_\+cast$<$ \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$(\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7097a7352e9fbf73dc8347ec88113c8b}{geom\+\_\+clone}}) -\/$>$getB(), 1, 1e-\/5)
+\item 
+\mbox{\hyperlink{tesseract__geometry__unit_8cpp_ab4e3f3f5ec66c988c478edd88ba09a8e}{EXPECT\+\_\+\+NEAR}} (std\+::static\+\_\+pointer\+\_\+cast$<$ \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$(\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7097a7352e9fbf73dc8347ec88113c8b}{geom\+\_\+clone}}) -\/$>$getC(), 1, 1e-\/5)
+\item 
+\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a430d4468bfb60206c99b7764ce831cc3}{EXPECT\+\_\+\+NEAR}} (std\+::static\+\_\+pointer\+\_\+cast$<$ \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$(\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7097a7352e9fbf73dc8347ec88113c8b}{geom\+\_\+clone}}) -\/$>$getD(), 1, 1e-\/5)
+\item 
+vertices \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a658f31167bc827d392b4b5c79a108c27}{emplace\+\_\+back}} (1, 1, 0)
+\item 
+vertices \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a5928080df7b36aef7ae49ff0e4beccba}{emplace\+\_\+back}} (1, -\/1, 0)
+\item 
+vertices \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a2820dd00524cc3ce155ddfce645a94c5}{emplace\+\_\+back}} (-\/1, -\/1, 0)
+\item 
+\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a514cb3f9f33e20ac314c8c0b3abd248b}{faces}} \mbox{\hyperlink{tesseract__geometry__unit_8cpp_ad887f702ed7d1f3c9ac253b8904bdbc2}{resize}} (5)
+\item 
+\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a255eb25c10226a81a5834e37c78bafad}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}}-\/$>$get\+Vertices() !=nullptr)
+\item 
+\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a56aa300105fb9bed2450a68eac5b8a3a}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}}-\/$>$get\+Faces() !=nullptr)
+\item 
+\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a5cf4ef79f8f8c8f74956315d5310df58}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}}-\/$>$get\+Vertex\+Count()==4)
+\item 
+\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a60a936caae74b53f65c06b1197e151ec}{EXPECT\+\_\+\+TRUE}} (std\+::static\+\_\+pointer\+\_\+cast$<$ \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$(\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7097a7352e9fbf73dc8347ec88113c8b}{geom\+\_\+clone}}) -\/$>$get\+Vertices() !=nullptr)
+\item 
+\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a06e04758785b5bdb9f9cdebd527e1b76}{EXPECT\+\_\+\+TRUE}} (std\+::static\+\_\+pointer\+\_\+cast$<$ \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$(\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7097a7352e9fbf73dc8347ec88113c8b}{geom\+\_\+clone}}) -\/$>$get\+Faces() !=nullptr)
+\item 
+\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a139ce6b333eafdbd326ff7be412b36b1}{EXPECT\+\_\+\+TRUE}} (std\+::static\+\_\+pointer\+\_\+cast$<$ \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$(\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7097a7352e9fbf73dc8347ec88113c8b}{geom\+\_\+clone}}) -\/$>$get\+Vertex\+Count()==4)
+\item 
+\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a1f056c43cb21159a81b8ca1505ff6e0f}{EXPECT\+\_\+\+TRUE}} (std\+::static\+\_\+pointer\+\_\+cast$<$ \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$(\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7097a7352e9fbf73dc8347ec88113c8b}{geom\+\_\+clone}}) -\/$>$get\+Face\+Count()==1)
+\item 
+\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a514cb3f9f33e20ac314c8c0b3abd248b}{faces}} \mbox{\hyperlink{tesseract__geometry__unit_8cpp_aa5062c238e7f7859e3898f2462edb435}{resize}} (8)
+\item 
+\mbox{\hyperlink{tesseract__geometry__unit_8cpp_aa07e31855f0b3228509b657a22790fc0}{EXPECT\+\_\+\+TRUE}} (std\+::static\+\_\+pointer\+\_\+cast$<$ \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$(\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7097a7352e9fbf73dc8347ec88113c8b}{geom\+\_\+clone}}) -\/$>$get\+Material()==nullptr)
+\item 
+\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a911ed9fab6b4deb223c067e67485496c}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}}-\/$>$get\+Material() !=nullptr)
+\item 
+\mbox{\hyperlink{tesseract__geometry__unit_8cpp_ab54f467777f44081668782d24242c6f9}{EXPECT\+\_\+\+TRUE}} (std\+::static\+\_\+pointer\+\_\+cast$<$ \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$(\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7097a7352e9fbf73dc8347ec88113c8b}{geom\+\_\+clone}}) -\/$>$get\+Material() !=nullptr)
+\item 
+\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a299f77586b5c73b13e03fe687df75a9c}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}}-\/$>$get\+Octree() !=nullptr)
+\item 
+\mbox{\hyperlink{tesseract__geometry__unit_8cpp_ad08a75eb5fccf9db912263cdfcc657ee}{EXPECT\+\_\+\+TRUE}} (std\+::static\+\_\+pointer\+\_\+cast$<$ \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$(\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7097a7352e9fbf73dc8347ec88113c8b}{geom\+\_\+clone}}) -\/$>$get\+Octree() !=nullptr)
+\item 
+\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a05f41618639670de0c2bc3d0aca45955}{EXPECT\+\_\+\+TRUE}} (std\+::static\+\_\+pointer\+\_\+cast$<$ \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$(\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7097a7352e9fbf73dc8347ec88113c8b}{geom\+\_\+clone}}) -\/$>$get\+Sub\+Type()==\mbox{\hyperlink{classtesseract__geometry_1_1Octree_a50b534fbd4a871cd257ac52d6009af00a35ed5bb4d02016adb5d4d839524348eb}{tesseract\+\_\+geometry\+::\+Octree\+::\+Sub\+Type\+::\+BOX}})
+\item 
+\mbox{\hyperlink{tesseract__geometry__unit_8cpp_abf65a0864a048ec2fc1b82d981e30ad1}{EXPECT\+\_\+\+TRUE}} (meshes.\+size()==1)
+\item 
+\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a15ccff5cada3bf5f21cf322d92f9b50f}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a5428deecfa188d28deb2a96fe29066e8}{meshes}}\mbox{[}0\mbox{]}-\/$>$get\+Face\+Count()==80)
+\item 
+\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a96034f98b4dbe35439b8e620d7de63a7}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a5428deecfa188d28deb2a96fe29066e8}{meshes}}\mbox{[}1\mbox{]}-\/$>$get\+Face\+Count()==80)
+\item 
+\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7e7190182102ba2d23d0fe455fca1d99}{EXPECT\+\_\+\+TRUE}} (convex\+\_\+meshes.\+size()==1)
+\item 
+\mbox{\hyperlink{tesseract__geometry__unit_8cpp_afd9a38193d0afaa57b58e03bdc0fde47}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a53580dc62997d76e87d750087abdec3e}{convex\+\_\+meshes}}\mbox{[}0\mbox{]}-\/$>$get\+Face\+Count()==6)
+\item 
+int \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\+\_\+\+COMMON\+\_\+\+IGNORE\+\_\+\+WARNINGS\+\_\+\+PUSH}} \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a2733ace18b4e650b36b176083d0f9c42}{TESSERACT\+\_\+\+COMMON\+\_\+\+IGNORE\+\_\+\+WARNINGS\+\_\+\+POP}}
+\item 
+std\+::shared\+\_\+ptr$<$ const Eigen\+::\+Vector\+Xi $>$ \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a514cb3f9f33e20ac314c8c0b3abd248b}{faces}} = std\+::make\+\_\+shared$<$const Eigen\+::\+Vector\+Xi$>$()
+\item 
+\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a395d31593a673a3b0efd30ad8d2bba78}{auto}} \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a78f639043a4f58691eb1a91bf3af3a0d}{box}} = std\+::make\+\_\+shared$<$\mbox{\hyperlink{classtesseract__geometry_1_1Box}{tesseract\+\_\+geometry\+::\+Box}}$>$(1, 1, 1)
+\item 
+\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a395d31593a673a3b0efd30ad8d2bba78}{auto}} \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a4779e02f6a30e2fd3215b9927b0d84fd}{cone}} = std\+::make\+\_\+shared$<$\mbox{\hyperlink{classtesseract__geometry_1_1Cone}{tesseract\+\_\+geometry\+::\+Cone}}$>$(1, 1)
+\item 
+\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a395d31593a673a3b0efd30ad8d2bba78}{auto}} \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a2770ab41408313386410a66b83481cda}{cylinder}} = std\+::make\+\_\+shared$<$\mbox{\hyperlink{classtesseract__geometry_1_1Cylinder}{tesseract\+\_\+geometry\+::\+Cylinder}}$>$(1, 1)
+\item 
+\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a395d31593a673a3b0efd30ad8d2bba78}{auto}} \mbox{\hyperlink{tesseract__geometry__unit_8cpp_ac6845ff0cf514c325d424744fa6f1f82}{capsule}} = std\+::make\+\_\+shared$<$\mbox{\hyperlink{classtesseract__geometry_1_1Capsule}{tesseract\+\_\+geometry\+::\+Capsule}}$>$(1, 1)
+\item 
+\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a395d31593a673a3b0efd30ad8d2bba78}{auto}} \mbox{\hyperlink{tesseract__geometry__unit_8cpp_aa68ded2b3844964c96a0a41e241156e3}{plane}} = std\+::make\+\_\+shared$<$\mbox{\hyperlink{classtesseract__geometry_1_1Plane}{tesseract\+\_\+geometry\+::\+Plane}}$>$(1, 1, 1, 1)
+\item 
+\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a395d31593a673a3b0efd30ad8d2bba78}{auto}} \mbox{\hyperlink{tesseract__geometry__unit_8cpp_aa5ee5d1c0ede4b143e2eb3d9b6d96ac8}{sphere}} = std\+::make\+\_\+shared$<$\mbox{\hyperlink{classtesseract__geometry_1_1Sphere}{tesseract\+\_\+geometry\+::\+Sphere}}$>$(1)
+\item 
+\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a395d31593a673a3b0efd30ad8d2bba78}{auto}} \mbox{\hyperlink{tesseract__geometry__unit_8cpp_ab5816b1921eb6da200b2c6d7b032de65}{convex\+\_\+mesh}} = std\+::make\+\_\+shared$<$\mbox{\hyperlink{classtesseract__geometry_1_1ConvexMesh}{tesseract\+\_\+geometry\+::\+Convex\+Mesh}}$>$(vertices, \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a514cb3f9f33e20ac314c8c0b3abd248b}{faces}})
+\item 
+\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a395d31593a673a3b0efd30ad8d2bba78}{auto}} \mbox{\hyperlink{tesseract__geometry__unit_8cpp_ae8d539a4d41d4864a6a5452e33eebc31}{mesh}} = std\+::make\+\_\+shared$<$\mbox{\hyperlink{classtesseract__geometry_1_1Mesh}{tesseract\+\_\+geometry\+::\+Mesh}}$>$(vertices, \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a514cb3f9f33e20ac314c8c0b3abd248b}{faces}})
+\item 
+\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a395d31593a673a3b0efd30ad8d2bba78}{auto}} \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a84bba8529aa7eabad71455e8f8b330df}{sdf\+\_\+mesh}} = std\+::make\+\_\+shared$<$\mbox{\hyperlink{classtesseract__geometry_1_1SDFMesh}{tesseract\+\_\+geometry\+::\+SDFMesh}}$>$(vertices, \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a514cb3f9f33e20ac314c8c0b3abd248b}{faces}})
+\item 
+\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a395d31593a673a3b0efd30ad8d2bba78}{auto}} \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a09b6910ca5fb38efe18604a65810e175}{octree}} = std\+::make\+\_\+shared$<$\mbox{\hyperlink{classtesseract__geometry_1_1Octree}{tesseract\+\_\+geometry\+::\+Octree}}$>$(nullptr, \mbox{\hyperlink{classtesseract__geometry_1_1Octree_a50b534fbd4a871cd257ac52d6009af00a35ed5bb4d02016adb5d4d839524348eb}{tesseract\+\_\+geometry\+::\+Octree\+::\+Sub\+Type\+::\+BOX}})
+\item 
+\mbox{\hyperlink{structTestPointCloud}{Test\+Point\+Cloud}} \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a3b0a6f48e82e32b45c8fecfd986746b5}{pc}}
+\item 
+\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a395d31593a673a3b0efd30ad8d2bba78}{auto}} \mbox{\hyperlink{tesseract__geometry__unit_8cpp_ac6328bf3a9ac9574cfa213f2fda65aa3}{octree\+\_\+pc}}
+\item 
+\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a395d31593a673a3b0efd30ad8d2bba78}{auto}} \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}} = std\+::make\+\_\+shared$<$\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}}$>$(1, 1, 1)
+\item 
+\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a395d31593a673a3b0efd30ad8d2bba78}{auto}} \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7097a7352e9fbf73dc8347ec88113c8b}{geom\+\_\+clone}} = \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}}-\/$>$\mbox{\hyperlink{clone__cache__unit_8cpp_a468102a14fab28bb8303ea654a9b891b}{clone}}()
+\item 
+std\+::string \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a79e080fa8b37bad77dfda49a1e2e36be}{mesh\+\_\+file}} = std\+::string(TESSERACT\+\_\+\+SUPPORT\+\_\+\+DIR) + \char`\"{}/meshes/sphere\+\_\+p25m.\+stl\char`\"{}
+\item 
+std\+::vector$<$ Mesh\+::\+Ptr $>$ \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a5428deecfa188d28deb2a96fe29066e8}{meshes}} = create\+Mesh\+From\+Path$<$Mesh$>$(\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a79e080fa8b37bad77dfda49a1e2e36be}{mesh\+\_\+file}})
+\item 
+std\+::vector$<$ Convex\+Mesh\+::\+Ptr $>$ \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a53580dc62997d76e87d750087abdec3e}{convex\+\_\+meshes}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}\label{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}} 
+\index{tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}!T@{T}}
+\index{T@{T}!tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{T}{T}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{classtesseract__geometry_1_1SDFMesh}{tesseract\+\_\+geometry\+::\+SDFMesh}} \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{tesseract__geometry__unit_8cpp_a2820dd00524cc3ce155ddfce645a94c5}\label{tesseract__geometry__unit_8cpp_a2820dd00524cc3ce155ddfce645a94c5}} 
+\index{tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}!emplace\_back@{emplace\_back}}
+\index{emplace\_back@{emplace\_back}!tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{emplace\_back()}{emplace\_back()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily vertices emplace\+\_\+back (\begin{DoxyParamCaption}\item[{-\/}]{1,  }\item[{-\/}]{1,  }\item[{0}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__geometry__unit_8cpp_a5928080df7b36aef7ae49ff0e4beccba}\label{tesseract__geometry__unit_8cpp_a5928080df7b36aef7ae49ff0e4beccba}} 
+\index{tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}!emplace\_back@{emplace\_back}}
+\index{emplace\_back@{emplace\_back}!tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{emplace\_back()}{emplace\_back()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily vertices emplace\+\_\+back (\begin{DoxyParamCaption}\item[{1}]{,  }\item[{-\/}]{1,  }\item[{0}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__geometry__unit_8cpp_a658f31167bc827d392b4b5c79a108c27}\label{tesseract__geometry__unit_8cpp_a658f31167bc827d392b4b5c79a108c27}} 
+\index{tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}!emplace\_back@{emplace\_back}}
+\index{emplace\_back@{emplace\_back}!tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{emplace\_back()}{emplace\_back()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily vertices emplace\+\_\+back (\begin{DoxyParamCaption}\item[{1}]{,  }\item[{1}]{,  }\item[{0}]{ }\end{DoxyParamCaption})}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  \textcolor{keyword}{auto} vertices = std::make\_shared<tesseract\_common::VectorVector3d>()}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{tesseract__geometry__unit_8cpp_a3f25ed8d5e1ab8d4d1350023eb1ad47f}\label{tesseract__geometry__unit_8cpp_a3f25ed8d5e1ab8d4d1350023eb1ad47f}} 
+\index{tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}!EXPECT\_NEAR@{EXPECT\_NEAR}}
+\index{EXPECT\_NEAR@{EXPECT\_NEAR}!tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_NEAR()}{EXPECT\_NEAR()}\hspace{0.1cm}{\footnotesize\ttfamily [1/10]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+NEAR (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}}-\/$>$}]{getX(),  }\item[{1}]{,  }\item[{1e-\/}]{5 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__geometry__unit_8cpp_a6f2d83f104456fa4acbfdc204db9a4cc}\label{tesseract__geometry__unit_8cpp_a6f2d83f104456fa4acbfdc204db9a4cc}} 
+\index{tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}!EXPECT\_NEAR@{EXPECT\_NEAR}}
+\index{EXPECT\_NEAR@{EXPECT\_NEAR}!tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_NEAR()}{EXPECT\_NEAR()}\hspace{0.1cm}{\footnotesize\ttfamily [2/10]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+NEAR (\begin{DoxyParamCaption}\item[{std\+::static\+\_\+pointer\+\_\+cast$<$ \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$}]{geom\+\_\+clone) -\/$>$get\+A(,  }\item[{1}]{,  }\item[{1e-\/}]{5 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__geometry__unit_8cpp_a6a98e14b660a026a8a794e1cf777e273}\label{tesseract__geometry__unit_8cpp_a6a98e14b660a026a8a794e1cf777e273}} 
+\index{tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}!EXPECT\_NEAR@{EXPECT\_NEAR}}
+\index{EXPECT\_NEAR@{EXPECT\_NEAR}!tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_NEAR()}{EXPECT\_NEAR()}\hspace{0.1cm}{\footnotesize\ttfamily [3/10]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+NEAR (\begin{DoxyParamCaption}\item[{std\+::static\+\_\+pointer\+\_\+cast$<$ \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$}]{geom\+\_\+clone) -\/$>$get\+B(,  }\item[{1}]{,  }\item[{1e-\/}]{5 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__geometry__unit_8cpp_ab4e3f3f5ec66c988c478edd88ba09a8e}\label{tesseract__geometry__unit_8cpp_ab4e3f3f5ec66c988c478edd88ba09a8e}} 
+\index{tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}!EXPECT\_NEAR@{EXPECT\_NEAR}}
+\index{EXPECT\_NEAR@{EXPECT\_NEAR}!tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_NEAR()}{EXPECT\_NEAR()}\hspace{0.1cm}{\footnotesize\ttfamily [4/10]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+NEAR (\begin{DoxyParamCaption}\item[{std\+::static\+\_\+pointer\+\_\+cast$<$ \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$}]{geom\+\_\+clone) -\/$>$get\+C(,  }\item[{1}]{,  }\item[{1e-\/}]{5 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__geometry__unit_8cpp_a430d4468bfb60206c99b7764ce831cc3}\label{tesseract__geometry__unit_8cpp_a430d4468bfb60206c99b7764ce831cc3}} 
+\index{tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}!EXPECT\_NEAR@{EXPECT\_NEAR}}
+\index{EXPECT\_NEAR@{EXPECT\_NEAR}!tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_NEAR()}{EXPECT\_NEAR()}\hspace{0.1cm}{\footnotesize\ttfamily [5/10]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+NEAR (\begin{DoxyParamCaption}\item[{std\+::static\+\_\+pointer\+\_\+cast$<$ \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$}]{geom\+\_\+clone) -\/$>$get\+D(,  }\item[{1}]{,  }\item[{1e-\/}]{5 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__geometry__unit_8cpp_ad0690b353f41e04998fd4090a0fb33a2}\label{tesseract__geometry__unit_8cpp_ad0690b353f41e04998fd4090a0fb33a2}} 
+\index{tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}!EXPECT\_NEAR@{EXPECT\_NEAR}}
+\index{EXPECT\_NEAR@{EXPECT\_NEAR}!tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_NEAR()}{EXPECT\_NEAR()}\hspace{0.1cm}{\footnotesize\ttfamily [6/10]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+NEAR (\begin{DoxyParamCaption}\item[{std\+::static\+\_\+pointer\+\_\+cast$<$ \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$}]{geom\+\_\+clone) -\/$>$get\+Length(,  }\item[{1}]{,  }\item[{1e-\/}]{5 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__geometry__unit_8cpp_adc37502886fb2840ed614a8e76b0adbe}\label{tesseract__geometry__unit_8cpp_adc37502886fb2840ed614a8e76b0adbe}} 
+\index{tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}!EXPECT\_NEAR@{EXPECT\_NEAR}}
+\index{EXPECT\_NEAR@{EXPECT\_NEAR}!tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_NEAR()}{EXPECT\_NEAR()}\hspace{0.1cm}{\footnotesize\ttfamily [7/10]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+NEAR (\begin{DoxyParamCaption}\item[{std\+::static\+\_\+pointer\+\_\+cast$<$ \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$}]{geom\+\_\+clone) -\/$>$get\+Radius(,  }\item[{1}]{,  }\item[{1e-\/}]{5 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__geometry__unit_8cpp_af55bd50f2e5ca225b414dffe99390371}\label{tesseract__geometry__unit_8cpp_af55bd50f2e5ca225b414dffe99390371}} 
+\index{tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}!EXPECT\_NEAR@{EXPECT\_NEAR}}
+\index{EXPECT\_NEAR@{EXPECT\_NEAR}!tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_NEAR()}{EXPECT\_NEAR()}\hspace{0.1cm}{\footnotesize\ttfamily [8/10]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+NEAR (\begin{DoxyParamCaption}\item[{std\+::static\+\_\+pointer\+\_\+cast$<$ \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$}]{geom\+\_\+clone) -\/$>$get\+X(,  }\item[{1}]{,  }\item[{1e-\/}]{5 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__geometry__unit_8cpp_ae73d936dbfe69072c010bdaa4741c85d}\label{tesseract__geometry__unit_8cpp_ae73d936dbfe69072c010bdaa4741c85d}} 
+\index{tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}!EXPECT\_NEAR@{EXPECT\_NEAR}}
+\index{EXPECT\_NEAR@{EXPECT\_NEAR}!tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_NEAR()}{EXPECT\_NEAR()}\hspace{0.1cm}{\footnotesize\ttfamily [9/10]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+NEAR (\begin{DoxyParamCaption}\item[{std\+::static\+\_\+pointer\+\_\+cast$<$ \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$}]{geom\+\_\+clone) -\/$>$get\+Y(,  }\item[{1}]{,  }\item[{1e-\/}]{5 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__geometry__unit_8cpp_a5fd272e61c9e48cd82074f2e68e88728}\label{tesseract__geometry__unit_8cpp_a5fd272e61c9e48cd82074f2e68e88728}} 
+\index{tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}!EXPECT\_NEAR@{EXPECT\_NEAR}}
+\index{EXPECT\_NEAR@{EXPECT\_NEAR}!tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_NEAR()}{EXPECT\_NEAR()}\hspace{0.1cm}{\footnotesize\ttfamily [10/10]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+NEAR (\begin{DoxyParamCaption}\item[{std\+::static\+\_\+pointer\+\_\+cast$<$ \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$}]{geom\+\_\+clone) -\/$>$get\+Z(,  }\item[{1}]{,  }\item[{1e-\/}]{5 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__geometry__unit_8cpp_a7e7190182102ba2d23d0fe455fca1d99}\label{tesseract__geometry__unit_8cpp_a7e7190182102ba2d23d0fe455fca1d99}} 
+\index{tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [1/18]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{convex\+\_\+meshes.}]{size() = {\ttfamily =1} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__geometry__unit_8cpp_afd9a38193d0afaa57b58e03bdc0fde47}\label{tesseract__geometry__unit_8cpp_afd9a38193d0afaa57b58e03bdc0fde47}} 
+\index{tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [2/18]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a53580dc62997d76e87d750087abdec3e}{convex\+\_\+meshes}}-\/$>$}]{get\+Face\+Count()\mbox{[}0\mbox{]} = {\ttfamily =6} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__geometry__unit_8cpp_a56aa300105fb9bed2450a68eac5b8a3a}\label{tesseract__geometry__unit_8cpp_a56aa300105fb9bed2450a68eac5b8a3a}} 
+\index{tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [3/18]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}}-\/$>$get\+Faces() !}]{ = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__geometry__unit_8cpp_a911ed9fab6b4deb223c067e67485496c}\label{tesseract__geometry__unit_8cpp_a911ed9fab6b4deb223c067e67485496c}} 
+\index{tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [4/18]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}}-\/$>$get\+Material() !}]{ = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__geometry__unit_8cpp_a299f77586b5c73b13e03fe687df75a9c}\label{tesseract__geometry__unit_8cpp_a299f77586b5c73b13e03fe687df75a9c}} 
+\index{tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [5/18]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}}-\/$>$get\+Octree() !}]{ = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__geometry__unit_8cpp_a5cf4ef79f8f8c8f74956315d5310df58}\label{tesseract__geometry__unit_8cpp_a5cf4ef79f8f8c8f74956315d5310df58}} 
+\index{tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [6/18]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}}-\/$>$}]{get\+Vertex\+Count() = {\ttfamily =4} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__geometry__unit_8cpp_a255eb25c10226a81a5834e37c78bafad}\label{tesseract__geometry__unit_8cpp_a255eb25c10226a81a5834e37c78bafad}} 
+\index{tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [7/18]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}}-\/$>$get\+Vertices() !}]{ = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{keyword}{auto} \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}} = std::make\_shared<T>(vertices, \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a514cb3f9f33e20ac314c8c0b3abd248b}{faces}})}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{tesseract__geometry__unit_8cpp_abf65a0864a048ec2fc1b82d981e30ad1}\label{tesseract__geometry__unit_8cpp_abf65a0864a048ec2fc1b82d981e30ad1}} 
+\index{tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [8/18]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{meshes.}]{size() = {\ttfamily =1} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__geometry__unit_8cpp_a15ccff5cada3bf5f21cf322d92f9b50f}\label{tesseract__geometry__unit_8cpp_a15ccff5cada3bf5f21cf322d92f9b50f}} 
+\index{tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [9/18]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a5428deecfa188d28deb2a96fe29066e8}{meshes}}-\/$>$}]{get\+Face\+Count()\mbox{[}0\mbox{]} = {\ttfamily =80} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__geometry__unit_8cpp_a96034f98b4dbe35439b8e620d7de63a7}\label{tesseract__geometry__unit_8cpp_a96034f98b4dbe35439b8e620d7de63a7}} 
+\index{tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [10/18]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a5428deecfa188d28deb2a96fe29066e8}{meshes}}-\/$>$}]{get\+Face\+Count()\mbox{[}1\mbox{]} = {\ttfamily =80} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__geometry__unit_8cpp_a1f056c43cb21159a81b8ca1505ff6e0f}\label{tesseract__geometry__unit_8cpp_a1f056c43cb21159a81b8ca1505ff6e0f}} 
+\index{tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [11/18]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{std\+::static\+\_\+pointer\+\_\+cast$<$ \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$}]{geom\+\_\+clone) -\/$>$get\+Face\+Count( = {\ttfamily =1} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__geometry__unit_8cpp_a06e04758785b5bdb9f9cdebd527e1b76}\label{tesseract__geometry__unit_8cpp_a06e04758785b5bdb9f9cdebd527e1b76}} 
+\index{tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [12/18]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{std\+::static\+\_\+pointer\+\_\+cast$<$ \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$(\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7097a7352e9fbf73dc8347ec88113c8b}{geom\+\_\+clone}}) -\/$>$get\+Faces() !}]{ = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__geometry__unit_8cpp_ab54f467777f44081668782d24242c6f9}\label{tesseract__geometry__unit_8cpp_ab54f467777f44081668782d24242c6f9}} 
+\index{tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [13/18]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{std\+::static\+\_\+pointer\+\_\+cast$<$ \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$(\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7097a7352e9fbf73dc8347ec88113c8b}{geom\+\_\+clone}}) -\/$>$get\+Material() !}]{ = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__geometry__unit_8cpp_aa07e31855f0b3228509b657a22790fc0}\label{tesseract__geometry__unit_8cpp_aa07e31855f0b3228509b657a22790fc0}} 
+\index{tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [14/18]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{std\+::static\+\_\+pointer\+\_\+cast$<$ \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$}]{geom\+\_\+clone) -\/$>$get\+Material( = {\ttfamily =nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__geometry__unit_8cpp_ad08a75eb5fccf9db912263cdfcc657ee}\label{tesseract__geometry__unit_8cpp_ad08a75eb5fccf9db912263cdfcc657ee}} 
+\index{tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [15/18]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{std\+::static\+\_\+pointer\+\_\+cast$<$ \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$(\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7097a7352e9fbf73dc8347ec88113c8b}{geom\+\_\+clone}}) -\/$>$get\+Octree() !}]{ = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__geometry__unit_8cpp_a05f41618639670de0c2bc3d0aca45955}\label{tesseract__geometry__unit_8cpp_a05f41618639670de0c2bc3d0aca45955}} 
+\index{tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [16/18]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{std\+::static\+\_\+pointer\+\_\+cast$<$ \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$}]{geom\+\_\+clone) -\/$>$get\+Sub\+Type( = {\ttfamily =\mbox{\hyperlink{classtesseract__geometry_1_1Octree_a50b534fbd4a871cd257ac52d6009af00a35ed5bb4d02016adb5d4d839524348eb}{tesseract\+\_\+geometry\+::\+Octree\+::\+Sub\+Type\+::\+BOX}}} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__geometry__unit_8cpp_a139ce6b333eafdbd326ff7be412b36b1}\label{tesseract__geometry__unit_8cpp_a139ce6b333eafdbd326ff7be412b36b1}} 
+\index{tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [17/18]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{std\+::static\+\_\+pointer\+\_\+cast$<$ \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$}]{geom\+\_\+clone) -\/$>$get\+Vertex\+Count( = {\ttfamily =4} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__geometry__unit_8cpp_a60a936caae74b53f65c06b1197e151ec}\label{tesseract__geometry__unit_8cpp_a60a936caae74b53f65c06b1197e151ec}} 
+\index{tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [18/18]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{std\+::static\+\_\+pointer\+\_\+cast$<$ \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}} $>$(\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7097a7352e9fbf73dc8347ec88113c8b}{geom\+\_\+clone}}) -\/$>$get\+Vertices() !}]{ = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__geometry__unit_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{tesseract__geometry__unit_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}!main@{main}}
+\index{main@{main}!tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__geometry__unit_8cpp_ad887f702ed7d1f3c9ac253b8904bdbc2}\label{tesseract__geometry__unit_8cpp_ad887f702ed7d1f3c9ac253b8904bdbc2}} 
+\index{tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}!resize@{resize}}
+\index{resize@{resize}!tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{resize()}{resize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a514cb3f9f33e20ac314c8c0b3abd248b}{faces}} resize (\begin{DoxyParamCaption}\item[{5}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__geometry__unit_8cpp_aa5062c238e7f7859e3898f2462edb435}\label{tesseract__geometry__unit_8cpp_aa5062c238e7f7859e3898f2462edb435}} 
+\index{tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}!resize@{resize}}
+\index{resize@{resize}!tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{resize()}{resize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a514cb3f9f33e20ac314c8c0b3abd248b}{faces}} resize (\begin{DoxyParamCaption}\item[{8}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{tesseract__geometry__unit_8cpp_a78f639043a4f58691eb1a91bf3af3a0d}\label{tesseract__geometry__unit_8cpp_a78f639043a4f58691eb1a91bf3af3a0d}} 
+\index{tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}!box@{box}}
+\index{box@{box}!tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{box}{box}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a395d31593a673a3b0efd30ad8d2bba78}{auto}} box = std\+::make\+\_\+shared$<$\mbox{\hyperlink{classtesseract__geometry_1_1Box}{tesseract\+\_\+geometry\+::\+Box}}$>$(1, 1, 1)}
+
+\mbox{\Hypertarget{tesseract__geometry__unit_8cpp_ac6845ff0cf514c325d424744fa6f1f82}\label{tesseract__geometry__unit_8cpp_ac6845ff0cf514c325d424744fa6f1f82}} 
+\index{tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}!capsule@{capsule}}
+\index{capsule@{capsule}!tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{capsule}{capsule}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a395d31593a673a3b0efd30ad8d2bba78}{auto}} capsule = std\+::make\+\_\+shared$<$\mbox{\hyperlink{classtesseract__geometry_1_1Capsule}{tesseract\+\_\+geometry\+::\+Capsule}}$>$(1, 1)}
+
+\mbox{\Hypertarget{tesseract__geometry__unit_8cpp_a4779e02f6a30e2fd3215b9927b0d84fd}\label{tesseract__geometry__unit_8cpp_a4779e02f6a30e2fd3215b9927b0d84fd}} 
+\index{tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}!cone@{cone}}
+\index{cone@{cone}!tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{cone}{cone}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a395d31593a673a3b0efd30ad8d2bba78}{auto}} cone = std\+::make\+\_\+shared$<$\mbox{\hyperlink{classtesseract__geometry_1_1Cone}{tesseract\+\_\+geometry\+::\+Cone}}$>$(1, 1)}
+
+\mbox{\Hypertarget{tesseract__geometry__unit_8cpp_ab5816b1921eb6da200b2c6d7b032de65}\label{tesseract__geometry__unit_8cpp_ab5816b1921eb6da200b2c6d7b032de65}} 
+\index{tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}!convex\_mesh@{convex\_mesh}}
+\index{convex\_mesh@{convex\_mesh}!tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{convex\_mesh}{convex\_mesh}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a395d31593a673a3b0efd30ad8d2bba78}{auto}} convex\+\_\+mesh = std\+::make\+\_\+shared$<$\mbox{\hyperlink{classtesseract__geometry_1_1ConvexMesh}{tesseract\+\_\+geometry\+::\+Convex\+Mesh}}$>$(vertices, \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a514cb3f9f33e20ac314c8c0b3abd248b}{faces}})}
+
+\mbox{\Hypertarget{tesseract__geometry__unit_8cpp_a53580dc62997d76e87d750087abdec3e}\label{tesseract__geometry__unit_8cpp_a53580dc62997d76e87d750087abdec3e}} 
+\index{tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}!convex\_meshes@{convex\_meshes}}
+\index{convex\_meshes@{convex\_meshes}!tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{convex\_meshes}{convex\_meshes}}
+{\footnotesize\ttfamily std\+::vector$<$Convex\+Mesh\+::\+Ptr$>$ convex\+\_\+meshes}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{      createMeshFromPath<ConvexMesh>(\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a79e080fa8b37bad77dfda49a1e2e36be}{mesh\_file}}, Eigen::Vector3d(1, 1, 1), \textcolor{keyword}{false}, \textcolor{keyword}{false})}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{tesseract__geometry__unit_8cpp_a2770ab41408313386410a66b83481cda}\label{tesseract__geometry__unit_8cpp_a2770ab41408313386410a66b83481cda}} 
+\index{tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}!cylinder@{cylinder}}
+\index{cylinder@{cylinder}!tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{cylinder}{cylinder}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a395d31593a673a3b0efd30ad8d2bba78}{auto}} cylinder = std\+::make\+\_\+shared$<$\mbox{\hyperlink{classtesseract__geometry_1_1Cylinder}{tesseract\+\_\+geometry\+::\+Cylinder}}$>$(1, 1)}
+
+\mbox{\Hypertarget{tesseract__geometry__unit_8cpp_a514cb3f9f33e20ac314c8c0b3abd248b}\label{tesseract__geometry__unit_8cpp_a514cb3f9f33e20ac314c8c0b3abd248b}} 
+\index{tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}!faces@{faces}}
+\index{faces@{faces}!tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{faces}{faces}}
+{\footnotesize\ttfamily ($\ast$ faces)(7) = std\+::make\+\_\+shared$<$const Eigen\+::\+Vector\+Xi$>$()}
+
+\mbox{\Hypertarget{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}\label{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}} 
+\index{tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}!geom@{geom}}
+\index{geom@{geom}!tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{geom}{geom}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classtesseract__geometry_1_1SDFMesh_a3a25630031ffb011ac7c2c35cd89d688}{tesseract\+\_\+geometry\+::\+SDFMesh\+::\+Ptr}} $>$ geom = std\+::make\+\_\+shared$<$\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a7a165b7657b19d70c1ab512ebd7a7669}{T}}$>$(1, 1, 1)}
+
+\mbox{\Hypertarget{tesseract__geometry__unit_8cpp_a7097a7352e9fbf73dc8347ec88113c8b}\label{tesseract__geometry__unit_8cpp_a7097a7352e9fbf73dc8347ec88113c8b}} 
+\index{tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}!geom\_clone@{geom\_clone}}
+\index{geom\_clone@{geom\_clone}!tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{geom\_clone}{geom\_clone}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a395d31593a673a3b0efd30ad8d2bba78}{auto}} geom\+\_\+clone = \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}}-\/$>$\mbox{\hyperlink{clone__cache__unit_8cpp_a468102a14fab28bb8303ea654a9b891b}{clone}}()}
+
+\mbox{\Hypertarget{tesseract__geometry__unit_8cpp_ae8d539a4d41d4864a6a5452e33eebc31}\label{tesseract__geometry__unit_8cpp_ae8d539a4d41d4864a6a5452e33eebc31}} 
+\index{tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}!mesh@{mesh}}
+\index{mesh@{mesh}!tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{mesh}{mesh}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a395d31593a673a3b0efd30ad8d2bba78}{auto}} mesh = std\+::make\+\_\+shared$<$\mbox{\hyperlink{classtesseract__geometry_1_1Mesh}{tesseract\+\_\+geometry\+::\+Mesh}}$>$(vertices, \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a514cb3f9f33e20ac314c8c0b3abd248b}{faces}})}
+
+\mbox{\Hypertarget{tesseract__geometry__unit_8cpp_a79e080fa8b37bad77dfda49a1e2e36be}\label{tesseract__geometry__unit_8cpp_a79e080fa8b37bad77dfda49a1e2e36be}} 
+\index{tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}!mesh\_file@{mesh\_file}}
+\index{mesh\_file@{mesh\_file}!tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{mesh\_file}{mesh\_file}}
+{\footnotesize\ttfamily mesh\+\_\+file = std\+::string(TESSERACT\+\_\+\+SUPPORT\+\_\+\+DIR) + \char`\"{}/meshes/sphere\+\_\+p25m.\+stl\char`\"{}}
+
+\mbox{\Hypertarget{tesseract__geometry__unit_8cpp_a5428deecfa188d28deb2a96fe29066e8}\label{tesseract__geometry__unit_8cpp_a5428deecfa188d28deb2a96fe29066e8}} 
+\index{tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}!meshes@{meshes}}
+\index{meshes@{meshes}!tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{meshes}{meshes}}
+{\footnotesize\ttfamily meshes = create\+Mesh\+From\+Path$<$Mesh$>$(\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a79e080fa8b37bad77dfda49a1e2e36be}{mesh\+\_\+file}})}
+
+\mbox{\Hypertarget{tesseract__geometry__unit_8cpp_a09b6910ca5fb38efe18604a65810e175}\label{tesseract__geometry__unit_8cpp_a09b6910ca5fb38efe18604a65810e175}} 
+\index{tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}!octree@{octree}}
+\index{octree@{octree}!tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{octree}{octree}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a395d31593a673a3b0efd30ad8d2bba78}{auto}} octree = std\+::make\+\_\+shared$<$\mbox{\hyperlink{classtesseract__geometry_1_1Octree}{tesseract\+\_\+geometry\+::\+Octree}}$>$(nullptr, \mbox{\hyperlink{classtesseract__geometry_1_1Octree_a50b534fbd4a871cd257ac52d6009af00a35ed5bb4d02016adb5d4d839524348eb}{tesseract\+\_\+geometry\+::\+Octree\+::\+Sub\+Type\+::\+BOX}})}
+
+\mbox{\Hypertarget{tesseract__geometry__unit_8cpp_ac6328bf3a9ac9574cfa213f2fda65aa3}\label{tesseract__geometry__unit_8cpp_ac6328bf3a9ac9574cfa213f2fda65aa3}} 
+\index{tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}!octree\_pc@{octree\_pc}}
+\index{octree\_pc@{octree\_pc}!tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{octree\_pc}{octree\_pc}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a395d31593a673a3b0efd30ad8d2bba78}{auto}} octree\+\_\+pc}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{      std::make\_shared<tesseract\_geometry::Octree>(\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a3b0a6f48e82e32b45c8fecfd986746b5}{pc}}, 0.01, \mbox{\hyperlink{classtesseract__geometry_1_1Octree_a50b534fbd4a871cd257ac52d6009af00a35ed5bb4d02016adb5d4d839524348eb}{tesseract\_geometry::Octree::SubType::BOX}}, \textcolor{keyword}{false})}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{tesseract__geometry__unit_8cpp_a3b0a6f48e82e32b45c8fecfd986746b5}\label{tesseract__geometry__unit_8cpp_a3b0a6f48e82e32b45c8fecfd986746b5}} 
+\index{tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}!pc@{pc}}
+\index{pc@{pc}!tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{pc}{pc}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structTestPointCloud}{Test\+Point\+Cloud}} pc}
+
+\mbox{\Hypertarget{tesseract__geometry__unit_8cpp_aa68ded2b3844964c96a0a41e241156e3}\label{tesseract__geometry__unit_8cpp_aa68ded2b3844964c96a0a41e241156e3}} 
+\index{tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}!plane@{plane}}
+\index{plane@{plane}!tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{plane}{plane}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a395d31593a673a3b0efd30ad8d2bba78}{auto}} plane = std\+::make\+\_\+shared$<$\mbox{\hyperlink{classtesseract__geometry_1_1Plane}{tesseract\+\_\+geometry\+::\+Plane}}$>$(1, 1, 1, 1)}
+
+\mbox{\Hypertarget{tesseract__geometry__unit_8cpp_a84bba8529aa7eabad71455e8f8b330df}\label{tesseract__geometry__unit_8cpp_a84bba8529aa7eabad71455e8f8b330df}} 
+\index{tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}!sdf\_mesh@{sdf\_mesh}}
+\index{sdf\_mesh@{sdf\_mesh}!tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{sdf\_mesh}{sdf\_mesh}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a395d31593a673a3b0efd30ad8d2bba78}{auto}} sdf\+\_\+mesh = std\+::make\+\_\+shared$<$\mbox{\hyperlink{classtesseract__geometry_1_1SDFMesh}{tesseract\+\_\+geometry\+::\+SDFMesh}}$>$(vertices, \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a514cb3f9f33e20ac314c8c0b3abd248b}{faces}})}
+
+\mbox{\Hypertarget{tesseract__geometry__unit_8cpp_aa5ee5d1c0ede4b143e2eb3d9b6d96ac8}\label{tesseract__geometry__unit_8cpp_aa5ee5d1c0ede4b143e2eb3d9b6d96ac8}} 
+\index{tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}!sphere@{sphere}}
+\index{sphere@{sphere}!tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{sphere}{sphere}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a395d31593a673a3b0efd30ad8d2bba78}{auto}} sphere = std\+::make\+\_\+shared$<$\mbox{\hyperlink{classtesseract__geometry_1_1Sphere}{tesseract\+\_\+geometry\+::\+Sphere}}$>$(1)}
+
+\mbox{\Hypertarget{tesseract__geometry__unit_8cpp_a2733ace18b4e650b36b176083d0f9c42}\label{tesseract__geometry__unit_8cpp_a2733ace18b4e650b36b176083d0f9c42}} 
+\index{tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}!TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP@{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}
+\index{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP@{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}!tesseract\_geometry\_unit.cpp@{tesseract\_geometry\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}
+{\footnotesize\ttfamily \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\+\_\+\+COMMON\+\_\+\+IGNORE\+\_\+\+WARNINGS\+\_\+\+PUSH}} TESSERACT\+\_\+\+COMMON\+\_\+\+IGNORE\+\_\+\+WARNINGS\+\_\+\+POP}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  std::shared\_ptr<const tesseract\_common::VectorVector3d> vertices =}
+\DoxyCodeLine{      std::make\_shared<const tesseract\_common::VectorVector3d>()}
+
+\end{DoxyCode}

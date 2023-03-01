@@ -1,0 +1,346 @@
+\hypertarget{bullet__utils_8h_source}{}\doxysection{bullet\+\_\+utils.\+h}
+\label{bullet__utils_8h_source}\index{tesseract\_collision/bullet/include/tesseract\_collision/bullet/bullet\_utils.h@{tesseract\_collision/bullet/include/tesseract\_collision/bullet/bullet\_utils.h}}
+\mbox{\hyperlink{bullet__utils_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#ifndef TESSERACT\_COLLISION\_BULLET\_UTILS\_H}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#define TESSERACT\_COLLISION\_BULLET\_UTILS\_H}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{macros_8h}{tesseract\_common/macros.h}}>}}
+\DoxyCodeLine{47 \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#include <BulletCollision/CollisionShapes/btCollisionShape.h>}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#include <BulletCollision/CollisionDispatch/btManifoldResult.h>}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#include <btBulletCollisionCommon.h>}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#include <console\_bridge/console.h>}}
+\DoxyCodeLine{52 \mbox{\hyperlink{namespaceTESSERACT__COMMON__IGNORE__WARNINGS__POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{tesseract__collision_2core_2include_2tesseract__collision_2core_2types_8h}{tesseract\_collision/core/types.h}}>}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{common_8h}{tesseract\_collision/core/common.h}}>}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet}{tesseract\_collision::tesseract\_collision\_bullet}}}
+\DoxyCodeLine{58 \{}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#define METERS}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{keyword}{const} btScalar \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_a28ba097170846ac0d72e460405f51898}{BULLET\_MARGIN}} = btScalar(0.0);}
+\DoxyCodeLine{62 \textcolor{keyword}{const} btScalar \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_a97bfd73cacd135c11ff3c49bc72ed4e1}{BULLET\_SUPPORT\_FUNC\_TOLERANCE}} = btScalar(0.01) \mbox{\hyperlink{bullet__utils_8h_aa2d1ce652c65764c67dcca938d0aca3e}{METERS}};}
+\DoxyCodeLine{63 const btScalar \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_a05205b4124342db952ef29e48a0c2ca2}{BULLET\_LENGTH\_TOLERANCE}} = btScalar(0.001) \mbox{\hyperlink{bullet__utils_8h_aa2d1ce652c65764c67dcca938d0aca3e}{METERS}};}
+\DoxyCodeLine{64 const btScalar \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_aab006a26f46e1adf705e5cc9bdd2da7d}{BULLET\_EPSILON}} = btScalar(1e-\/3);}
+\DoxyCodeLine{65 const btScalar \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_a679faf14058610e42a5f1b9ad4565704}{BULLET\_DEFAULT\_CONTACT\_DISTANCE}} = btScalar(0.05);}
+\DoxyCodeLine{66 const \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_abf8e31c75d660acbd10fa17f38ed4b9c}{BULLET\_COMPOUND\_USE\_DYNAMIC\_AABB}} = true;}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 btVector3 \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_ab6260ffd652e88e821a535c8ef362788}{convertEigenToBt}}(const Eigen::Vector3d\& \mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}});}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 Eigen::Vector3d \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_a69baa807981c7c67f8deaf70c775a569}{convertBtToEigen}}(const btVector3\& \mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}});}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 btQuaternion \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_ab6260ffd652e88e821a535c8ef362788}{convertEigenToBt}}(const Eigen::Quaterniond\& \mbox{\hyperlink{kinematics__core__unit_8cpp_af1c133f4166e08b7a95ddebfeef08de9}{q}});}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 btMatrix3x3 \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_ab6260ffd652e88e821a535c8ef362788}{convertEigenToBt}}(const Eigen::Matrix3d\& r);}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 Eigen::Matrix3d \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_a69baa807981c7c67f8deaf70c775a569}{convertBtToEigen}}(const btMatrix3x3\& r);}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 btTransform \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_ab6260ffd652e88e821a535c8ef362788}{convertEigenToBt}}(const Eigen::Isometry3d\& t);}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 Eigen::Isometry3d \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_a69baa807981c7c67f8deaf70c775a569}{convertBtToEigen}}(const btTransform\& t);}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{88 class \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1CollisionObjectWrapper}{CollisionObjectWrapper}} : public btCollisionObject}
+\DoxyCodeLine{89 \{}
+\DoxyCodeLine{90 \textcolor{keyword}{public}:}
+\DoxyCodeLine{91   \textcolor{comment}{// LCOV\_EXCL\_START}}
+\DoxyCodeLine{92   EIGEN\_MAKE\_ALIGNED\_OPERATOR\_NEW}
+\DoxyCodeLine{93   \textcolor{comment}{// LCOV\_EXCL\_STOP}}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1CollisionObjectWrapper_a3d926f2c776673c5e9719e010936600a}{Ptr}} = std::shared\_ptr<CollisionObjectWrapper>;}
+\DoxyCodeLine{96   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1CollisionObjectWrapper_ae1ff47c5b19d5d37066a2c68f3313c3d}{ConstPtr}} = std::shared\_ptr<const CollisionObjectWrapper>;}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98   \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1CollisionObjectWrapper_a1f994976936388f2829820b95218b7aa}{CollisionObjectWrapper}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{99   \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1CollisionObjectWrapper}{CollisionObjectWrapper}}(std::string \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}},}
+\DoxyCodeLine{100                          \textcolor{keyword}{const} \textcolor{keywordtype}{int}\& \mbox{\hyperlink{collision__core__unit_8cpp_abd5b6e2207f4ef754f27366b9589816e}{type\_id}},}
+\DoxyCodeLine{101                          \mbox{\hyperlink{namespacetesseract__collision_a2472107aae8174a30873bb0a955c3cb4}{CollisionShapesConst}} shapes,}
+\DoxyCodeLine{102                          \mbox{\hyperlink{namespacetesseract__common_a94d9921fc7ed323609ac57d06f939cb6}{tesseract\_common::VectorIsometry3d}} shape\_poses);}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104   \textcolor{keywordtype}{short} \textcolor{keywordtype}{int} m\_collisionFilterGroup\{ btBroadphaseProxy::KinematicFilter \};}
+\DoxyCodeLine{105   \textcolor{keywordtype}{short} \textcolor{keywordtype}{int} m\_collisionFilterMask\{ btBroadphaseProxy::StaticFilter | btBroadphaseProxy::KinematicFilter \};}
+\DoxyCodeLine{106   \textcolor{keywordtype}{bool} m\_enabled\{ \textcolor{keyword}{true} \};}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{109   \textcolor{keyword}{const} std::string\& getName() \textcolor{keyword}{const};}
+\DoxyCodeLine{111   \textcolor{keyword}{const} \textcolor{keywordtype}{int}\& getTypeID() \textcolor{keyword}{const};}
+\DoxyCodeLine{113   \textcolor{keywordtype}{bool} sameObject(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1CollisionObjectWrapper}{CollisionObjectWrapper}}\& other) \textcolor{keyword}{const};}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115   \textcolor{keyword}{const} \mbox{\hyperlink{namespacetesseract__collision_a2472107aae8174a30873bb0a955c3cb4}{CollisionShapesConst}}\& getCollisionGeometries() \textcolor{keyword}{const};}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117   \textcolor{keyword}{const} \mbox{\hyperlink{namespacetesseract__common_a94d9921fc7ed323609ac57d06f939cb6}{tesseract\_common::VectorIsometry3d}}\& getCollisionGeometriesTransforms() \textcolor{keyword}{const};}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{124   \textcolor{keywordtype}{void} getAABB(btVector3\& aabb\_min, btVector3\& aabb\_max) \textcolor{keyword}{const};}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{130   std::shared\_ptr<CollisionObjectWrapper> \mbox{\hyperlink{clone__cache__unit_8cpp_a468102a14fab28bb8303ea654a9b891b}{clone}}();}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132   \textcolor{keywordtype}{void} manage(\textcolor{keyword}{const} std::shared\_ptr<btCollisionShape>\& t);}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134   \textcolor{keywordtype}{void} manageReserve(std::size\_t \mbox{\hyperlink{plugin__loader__unit_8cpp_aa0d75bebf90ce49ae839876d1d62e199}{s}});}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{138   std::string \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1CollisionObjectWrapper_a3e7b8010f943830140a6d866e84eb077}{m\_name}};}
+\DoxyCodeLine{140   \textcolor{keywordtype}{int} m\_type\_id\{ -\/1 \};}
+\DoxyCodeLine{141   \textcolor{comment}{/* @brief The shapes that define the collision object */}}
+\DoxyCodeLine{142   \mbox{\hyperlink{namespacetesseract__collision_a2472107aae8174a30873bb0a955c3cb4}{CollisionShapesConst}} m\_shapes\{\};}
+\DoxyCodeLine{144   \mbox{\hyperlink{namespacetesseract__common_a94d9921fc7ed323609ac57d06f939cb6}{tesseract\_common::VectorIsometry3d}} m\_shape\_poses\{\};}
+\DoxyCodeLine{146   std::vector<std::shared\_ptr<btCollisionShape>> m\_data\{\};}
+\DoxyCodeLine{147 \};}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149 \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1CollisionObjectWrapper}{COW}} = \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1CollisionObjectWrapper}{CollisionObjectWrapper}};}
+\DoxyCodeLine{150 \textcolor{keyword}{using }\mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_a6bdaed18a18bda60c2af7da1a2202bef}{Link2Cow}} = std::map<std::string, COW::Ptr>;}
+\DoxyCodeLine{151 \textcolor{keyword}{using }\mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_ac2c34b48bdb15d7b05af36ea34477bb9}{Link2ConstCow}} = std::map<std::string, COW::ConstPtr>;}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{154 \textcolor{keyword}{struct }\mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1CastHullShape}{CastHullShape}} : \textcolor{keyword}{public} btConvexShape}
+\DoxyCodeLine{155 \{}
+\DoxyCodeLine{156 \textcolor{keyword}{public}:}
+\DoxyCodeLine{157   btConvexShape* \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1CastHullShape_a338cc12c22af4ca5a8ea7e09aa7c6d64}{m\_shape}};}
+\DoxyCodeLine{158   btTransform \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1CastHullShape_a7cc5a2db45a4006af83c21d61dc62fbe}{m\_t01}};}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160   \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1CastHullShape}{CastHullShape}}(btConvexShape* shape, \textcolor{keyword}{const} btTransform\& t01);}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{162   \textcolor{keywordtype}{void} \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1CastHullShape_aa8bdb28ba2e7a302861bdcf57c2018da}{updateCastTransform}}(\textcolor{keyword}{const} btTransform\& t01);}
+\DoxyCodeLine{163   btVector3 \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1CastHullShape_a61f66ad87a63240efd8bf4f67dc49186}{localGetSupportingVertex}}(\textcolor{keyword}{const} btVector3\& vec) \textcolor{keyword}{const override};}
+\DoxyCodeLine{164 }
+\DoxyCodeLine{166   \textcolor{keywordtype}{void} \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1CastHullShape_a82085e332ec1687314b64b19f7715df8}{getAabb}}(\textcolor{keyword}{const} btTransform\& t\_w0, btVector3\& aabbMin, btVector3\& aabbMax) \textcolor{keyword}{const override};}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{168   \textcolor{keyword}{const} \textcolor{keywordtype}{char}* \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1CastHullShape_aaa071d6efde2687dad1394da8d58e374}{getName}}() \textcolor{keyword}{const override};}
+\DoxyCodeLine{169   btVector3 \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1CastHullShape_a462c1c65713a84b12d1b102c3a87ef25}{localGetSupportingVertexWithoutMargin}}(\textcolor{keyword}{const} btVector3\& \mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}}) \textcolor{keyword}{const override};}
+\DoxyCodeLine{170 }
+\DoxyCodeLine{171   \textcolor{comment}{// LCOV\_EXCL\_START}}
+\DoxyCodeLine{172   \textcolor{comment}{// notice that the vectors should be unit length}}
+\DoxyCodeLine{173   \textcolor{keywordtype}{void} \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1CastHullShape_af871674981e1e78d303387fc4edd70d7}{batchedUnitVectorGetSupportingVertexWithoutMargin}}(\textcolor{keyword}{const} btVector3* vectors,}
+\DoxyCodeLine{174                                                          btVector3* supportVerticesOut,}
+\DoxyCodeLine{175                                                          \textcolor{keywordtype}{int} numVectors) \textcolor{keyword}{const override};}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{177   \textcolor{keywordtype}{void} \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1CastHullShape_a88564b44d217d5e56f3165c77f7db84d}{getAabbSlow}}(\textcolor{keyword}{const} btTransform\& t, btVector3\& aabbMin, btVector3\& aabbMax) \textcolor{keyword}{const override};}
+\DoxyCodeLine{178 }
+\DoxyCodeLine{179   \textcolor{keywordtype}{void} \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1CastHullShape_a66d5ae9b95a3d6031cfc8d27e6f1096d}{setLocalScaling}}(\textcolor{keyword}{const} btVector3\& scaling) \textcolor{keyword}{override};}
+\DoxyCodeLine{180 }
+\DoxyCodeLine{181   \textcolor{keyword}{const} btVector3\& \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1CastHullShape_a0bf20cbf71216ef4f8feea417ada45ff}{getLocalScaling}}() \textcolor{keyword}{const override};}
+\DoxyCodeLine{182 }
+\DoxyCodeLine{183   \textcolor{keywordtype}{void} \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1CastHullShape_afcdea488b890c6003dd9b94cbfc86959}{setMargin}}(btScalar margin) \textcolor{keyword}{override};}
+\DoxyCodeLine{184 }
+\DoxyCodeLine{185   btScalar \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1CastHullShape_a651f22cb8e66f9e41d3d36c1198fe7ce}{getMargin}}() \textcolor{keyword}{const override};}
+\DoxyCodeLine{186 }
+\DoxyCodeLine{187   \textcolor{keywordtype}{int} \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1CastHullShape_a75c9f6867e886c7f54809e55eddeac13}{getNumPreferredPenetrationDirections}}() \textcolor{keyword}{const override};}
+\DoxyCodeLine{188 }
+\DoxyCodeLine{189   \textcolor{keywordtype}{void} \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1CastHullShape_a1e44e0f9e8ccb6915e902ba034741e57}{getPreferredPenetrationDirection}}(\textcolor{keywordtype}{int} index, btVector3\& penetrationVector) \textcolor{keyword}{const override};}
+\DoxyCodeLine{190 }
+\DoxyCodeLine{191   \textcolor{keywordtype}{void} \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1CastHullShape_a50a12d20eea144fa9fe93f0198b1f092}{calculateLocalInertia}}(btScalar, btVector3\&) \textcolor{keyword}{const override};}
+\DoxyCodeLine{192   \textcolor{comment}{// LCOV\_EXCL\_STOP}}
+\DoxyCodeLine{193 \};}
+\DoxyCodeLine{194 }
+\DoxyCodeLine{195 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_a51292eb04f12dbe924dd89888641c11e}{GetAverageSupport}}(\textcolor{keyword}{const} btConvexShape* shape,}
+\DoxyCodeLine{196                        \textcolor{keyword}{const} btVector3\& localNormal,}
+\DoxyCodeLine{197                        btScalar\& outsupport,}
+\DoxyCodeLine{198                        btVector3\& outpt);}
+\DoxyCodeLine{199 }
+\DoxyCodeLine{206 btTransform \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_a913156c9424f8b201c5e754e67f117bb}{getLinkTransformFromCOW}}(\textcolor{keyword}{const} btCollisionObjectWrapper* cow);}
+\DoxyCodeLine{207 }
+\DoxyCodeLine{216 \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_a53bb16a8ea8e89c25099ec490dec0ab3}{needsCollisionCheck}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1CollisionObjectWrapper}{COW}}\& cow1, \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1CollisionObjectWrapper}{COW}}\& cow2, \textcolor{keyword}{const} \mbox{\hyperlink{namespacetesseract__collision_abe7752ce161fbd1139533ac566fec1cb}{IsContactAllowedFn}}\& \mbox{\hyperlink{collision__core__unit_8cpp_a714392901b0c74193a9659fc77891a60}{acm}}, \textcolor{keywordtype}{bool} verbose = \textcolor{keyword}{false});}
+\DoxyCodeLine{217 }
+\DoxyCodeLine{218 btScalar \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_a944725e709ae64de91e9b04a2fda3c3f}{addDiscreteSingleResult}}(btManifoldPoint\& cp,}
+\DoxyCodeLine{219                                  \textcolor{keyword}{const} btCollisionObjectWrapper* colObj0Wrap,}
+\DoxyCodeLine{220                                  \textcolor{keyword}{const} btCollisionObjectWrapper* colObj1Wrap,}
+\DoxyCodeLine{221                                  \mbox{\hyperlink{structtesseract__collision_1_1ContactTestData}{ContactTestData}}\& collisions);}
+\DoxyCodeLine{222 }
+\DoxyCodeLine{232 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_af7c6dd578ec01e9c79a65f4f5e7a65d4}{calculateContinuousData}}(\mbox{\hyperlink{structtesseract__collision_1_1ContactResult}{ContactResult}}* \mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a38407d2402d784852b9c0094464765ef}{col}},}
+\DoxyCodeLine{233                              \textcolor{keyword}{const} btCollisionObjectWrapper* cow,}
+\DoxyCodeLine{234                              \textcolor{keyword}{const} btVector3\& pt\_world,}
+\DoxyCodeLine{235                              \textcolor{keyword}{const} btVector3\& normal\_world,}
+\DoxyCodeLine{236                              \textcolor{keyword}{const} btTransform\& link\_tf\_inv,}
+\DoxyCodeLine{237                              \textcolor{keywordtype}{size\_t} link\_index);}
+\DoxyCodeLine{238 }
+\DoxyCodeLine{239 btScalar \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_a023472eb7c78f445fefbfb2d085f5407}{addCastSingleResult}}(btManifoldPoint\& cp,}
+\DoxyCodeLine{240                              \textcolor{keyword}{const} btCollisionObjectWrapper* colObj0Wrap,}
+\DoxyCodeLine{241                              \textcolor{keywordtype}{int} index0,}
+\DoxyCodeLine{242                              \textcolor{keyword}{const} btCollisionObjectWrapper* colObj1Wrap,}
+\DoxyCodeLine{243                              \textcolor{keywordtype}{int} index1,}
+\DoxyCodeLine{244                              \mbox{\hyperlink{structtesseract__collision_1_1ContactTestData}{ContactTestData}}\& collisions);}
+\DoxyCodeLine{245 }
+\DoxyCodeLine{247 \textcolor{keyword}{struct }\mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractBridgedManifoldResult}{TesseractBridgedManifoldResult}} : \textcolor{keyword}{public} btManifoldResult}
+\DoxyCodeLine{248 \{}
+\DoxyCodeLine{249   btCollisionWorld::ContactResultCallback\& \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractBridgedManifoldResult_a7f21053ec21062241fdbc52a82eef001}{m\_resultCallback}};}
+\DoxyCodeLine{250 }
+\DoxyCodeLine{251   \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractBridgedManifoldResult}{TesseractBridgedManifoldResult}}(\textcolor{keyword}{const} btCollisionObjectWrapper* obj0Wrap,}
+\DoxyCodeLine{252                                  \textcolor{keyword}{const} btCollisionObjectWrapper* obj1Wrap,}
+\DoxyCodeLine{253                                  btCollisionWorld::ContactResultCallback\& resultCallback);}
+\DoxyCodeLine{254 }
+\DoxyCodeLine{255   \textcolor{keywordtype}{void} \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractBridgedManifoldResult_afab68fe57185ecf96e4cbe674f2f7ac1}{addContactPoint}}(\textcolor{keyword}{const} btVector3\& normalOnBInWorld, \textcolor{keyword}{const} btVector3\& pointInWorld, btScalar depth) \textcolor{keyword}{override};}
+\DoxyCodeLine{256 \};}
+\DoxyCodeLine{257 }
+\DoxyCodeLine{259 \textcolor{keyword}{struct }\mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1BroadphaseContactResultCallback}{BroadphaseContactResultCallback}}}
+\DoxyCodeLine{260 \{}
+\DoxyCodeLine{261   \mbox{\hyperlink{structtesseract__collision_1_1ContactTestData}{ContactTestData}}\& \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1BroadphaseContactResultCallback_a19baa52f8a205a3ac29ed218a04d20b2}{collisions\_}};}
+\DoxyCodeLine{262   \textcolor{keywordtype}{double} \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1BroadphaseContactResultCallback_a388e5b919cd68bb0d745826c64b99df0}{contact\_distance\_}};}
+\DoxyCodeLine{263   \textcolor{keywordtype}{bool} \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1BroadphaseContactResultCallback_ab3576ff24508330951e311c0d3842d25}{verbose\_}};}
+\DoxyCodeLine{264 }
+\DoxyCodeLine{265   \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1BroadphaseContactResultCallback}{BroadphaseContactResultCallback}}(\mbox{\hyperlink{structtesseract__collision_1_1ContactTestData}{ContactTestData}}\& collisions, \textcolor{keywordtype}{double} contact\_distance, \textcolor{keywordtype}{bool} verbose = \textcolor{keyword}{false});}
+\DoxyCodeLine{266 }
+\DoxyCodeLine{267   \textcolor{keyword}{virtual} \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1BroadphaseContactResultCallback_a45c7d6a5062df4e8d885c8791170b9d9}{\string~BroadphaseContactResultCallback}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{268   \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1BroadphaseContactResultCallback_a52f7e57bd9a943aaf47e0b8bd1c1ba45}{BroadphaseContactResultCallback}}(\textcolor{keyword}{const} \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1BroadphaseContactResultCallback}{BroadphaseContactResultCallback}}\&) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{269   \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1BroadphaseContactResultCallback}{BroadphaseContactResultCallback}}\& \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1BroadphaseContactResultCallback_ac92ee9cfc3647f2610d0f3eb665bc208}{operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1BroadphaseContactResultCallback}{BroadphaseContactResultCallback}}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{270   \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1BroadphaseContactResultCallback_a944fe0becd986bc3509b87228d6bfa77}{BroadphaseContactResultCallback}}(\mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1BroadphaseContactResultCallback}{BroadphaseContactResultCallback}}\&\&) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{271   \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1BroadphaseContactResultCallback}{BroadphaseContactResultCallback}}\& \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1BroadphaseContactResultCallback_a5999c8b8ff1d2232a6079434303d97b9}{operator=}}(\mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1BroadphaseContactResultCallback}{BroadphaseContactResultCallback}}\&\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{272 }
+\DoxyCodeLine{273   \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1BroadphaseContactResultCallback_a7710d3e23f115ee26ca89a491ef326b2}{needsCollision}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1CollisionObjectWrapper}{CollisionObjectWrapper}}* cow0, \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1CollisionObjectWrapper}{CollisionObjectWrapper}}* cow1) \textcolor{keyword}{const};}
+\DoxyCodeLine{274 }
+\DoxyCodeLine{275   \textcolor{keyword}{virtual} btScalar \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1BroadphaseContactResultCallback_aca1aabab7ff15ccb4aaa229aad8f65e8}{addSingleResult}}(btManifoldPoint\& cp,}
+\DoxyCodeLine{276                                    \textcolor{keyword}{const} btCollisionObjectWrapper* colObj0Wrap,}
+\DoxyCodeLine{277                                    \textcolor{keywordtype}{int} partId0,}
+\DoxyCodeLine{278                                    \textcolor{keywordtype}{int} index0,}
+\DoxyCodeLine{279                                    \textcolor{keyword}{const} btCollisionObjectWrapper* colObj1Wrap,}
+\DoxyCodeLine{280                                    \textcolor{keywordtype}{int} partId1,}
+\DoxyCodeLine{281                                    \textcolor{keywordtype}{int} index1) = 0;}
+\DoxyCodeLine{282 \};}
+\DoxyCodeLine{283 }
+\DoxyCodeLine{284 \textcolor{keyword}{struct }\mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1DiscreteBroadphaseContactResultCallback}{DiscreteBroadphaseContactResultCallback}} : \textcolor{keyword}{public} \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1BroadphaseContactResultCallback}{BroadphaseContactResultCallback}}}
+\DoxyCodeLine{285 \{}
+\DoxyCodeLine{286   \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1DiscreteBroadphaseContactResultCallback}{DiscreteBroadphaseContactResultCallback}}(\mbox{\hyperlink{structtesseract__collision_1_1ContactTestData}{ContactTestData}}\& collisions, \textcolor{keywordtype}{double} contact\_distance, \textcolor{keywordtype}{bool} verbose = \textcolor{keyword}{false});}
+\DoxyCodeLine{287 }
+\DoxyCodeLine{288   btScalar \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1DiscreteBroadphaseContactResultCallback_ac47f519646c298a347d579ff5cf88a19}{addSingleResult}}(btManifoldPoint\& cp,}
+\DoxyCodeLine{289                            \textcolor{keyword}{const} btCollisionObjectWrapper* colObj0Wrap,}
+\DoxyCodeLine{290                            \textcolor{keywordtype}{int} partId0,}
+\DoxyCodeLine{291                            \textcolor{keywordtype}{int} index0,}
+\DoxyCodeLine{292                            \textcolor{keyword}{const} btCollisionObjectWrapper* colObj1Wrap,}
+\DoxyCodeLine{293                            \textcolor{keywordtype}{int} partId1,}
+\DoxyCodeLine{294                            \textcolor{keywordtype}{int} index1) \textcolor{keyword}{override};}
+\DoxyCodeLine{295 \};}
+\DoxyCodeLine{296 }
+\DoxyCodeLine{297 \textcolor{keyword}{struct }\mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1CastBroadphaseContactResultCallback}{CastBroadphaseContactResultCallback}} : \textcolor{keyword}{public} \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1BroadphaseContactResultCallback}{BroadphaseContactResultCallback}}}
+\DoxyCodeLine{298 \{}
+\DoxyCodeLine{299   \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1CastBroadphaseContactResultCallback}{CastBroadphaseContactResultCallback}}(\mbox{\hyperlink{structtesseract__collision_1_1ContactTestData}{ContactTestData}}\& collisions, \textcolor{keywordtype}{double} contact\_distance, \textcolor{keywordtype}{bool} verbose = \textcolor{keyword}{false});}
+\DoxyCodeLine{300 }
+\DoxyCodeLine{301   btScalar \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1CastBroadphaseContactResultCallback_aa06e1610cb2e31bda727cded2d7cf3f5}{addSingleResult}}(btManifoldPoint\& cp,}
+\DoxyCodeLine{302                            \textcolor{keyword}{const} btCollisionObjectWrapper* colObj0Wrap,}
+\DoxyCodeLine{303                            \textcolor{keywordtype}{int} partId0,}
+\DoxyCodeLine{304                            \textcolor{keywordtype}{int} index0,}
+\DoxyCodeLine{305                            \textcolor{keyword}{const} btCollisionObjectWrapper* colObj1Wrap,}
+\DoxyCodeLine{306                            \textcolor{keywordtype}{int} partId1,}
+\DoxyCodeLine{307                            \textcolor{keywordtype}{int} index1) \textcolor{keyword}{override};}
+\DoxyCodeLine{308 \};}
+\DoxyCodeLine{309 }
+\DoxyCodeLine{310 \textcolor{keyword}{struct }\mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractBroadphaseBridgedManifoldResult}{TesseractBroadphaseBridgedManifoldResult}} : \textcolor{keyword}{public} btManifoldResult}
+\DoxyCodeLine{311 \{}
+\DoxyCodeLine{312   \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1BroadphaseContactResultCallback}{BroadphaseContactResultCallback}}\& \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractBroadphaseBridgedManifoldResult_a6e37067767f2acee9ba8c5c7dd67af9d}{result\_callback\_}};}
+\DoxyCodeLine{313 }
+\DoxyCodeLine{314   \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractBroadphaseBridgedManifoldResult}{TesseractBroadphaseBridgedManifoldResult}}(\textcolor{keyword}{const} btCollisionObjectWrapper* obj0Wrap,}
+\DoxyCodeLine{315                                            \textcolor{keyword}{const} btCollisionObjectWrapper* obj1Wrap,}
+\DoxyCodeLine{316                                            \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1BroadphaseContactResultCallback}{BroadphaseContactResultCallback}}\& result\_callback);}
+\DoxyCodeLine{317 }
+\DoxyCodeLine{318   \textcolor{keywordtype}{void} \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractBroadphaseBridgedManifoldResult_aa0e8849d28999249c16c67a916a10487}{addContactPoint}}(\textcolor{keyword}{const} btVector3\& normalOnBInWorld, \textcolor{keyword}{const} btVector3\& pointInWorld, btScalar depth) \textcolor{keyword}{override};}
+\DoxyCodeLine{319 \};}
+\DoxyCodeLine{320 }
+\DoxyCodeLine{327 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback}{TesseractCollisionPairCallback}} : \textcolor{keyword}{public} btOverlapCallback}
+\DoxyCodeLine{328 \{}
+\DoxyCodeLine{329   \textcolor{keyword}{const} btDispatcherInfo\& \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback_a93fa8ae4cd3901c188221f96e4522a52}{dispatch\_info\_}};}
+\DoxyCodeLine{330   btCollisionDispatcher* \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback_a1a1b3b9509cd75b5f50d95add730beb5}{dispatcher\_}};}
+\DoxyCodeLine{331   \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1BroadphaseContactResultCallback}{BroadphaseContactResultCallback}}\& \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback_a7fc9b170d41c98359851f69eb769e323}{results\_callback\_}};}
+\DoxyCodeLine{332 }
+\DoxyCodeLine{333 \textcolor{keyword}{public}:}
+\DoxyCodeLine{334   \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback}{TesseractCollisionPairCallback}}(\textcolor{keyword}{const} btDispatcherInfo\& dispatchInfo,}
+\DoxyCodeLine{335                                  btCollisionDispatcher* dispatcher,}
+\DoxyCodeLine{336                                  \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1BroadphaseContactResultCallback}{BroadphaseContactResultCallback}}\& results\_callback);}
+\DoxyCodeLine{337 }
+\DoxyCodeLine{338   \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback_affb40cbb305203f1bd3a9249107ad4b6}{\string~TesseractCollisionPairCallback}}() \textcolor{keyword}{override} = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{339   \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback_a9a56eee1204e37f417dadafa8521a3cc}{TesseractCollisionPairCallback}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback}{TesseractCollisionPairCallback}}\&) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{340   \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback}{TesseractCollisionPairCallback}}\& \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback_a30f3c4e6d315f1e6e979ee9dffc8c99d}{operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback}{TesseractCollisionPairCallback}}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{341   \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback_a2a5705d98eeab1a6bf3a670716c30810}{TesseractCollisionPairCallback}}(\mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback}{TesseractCollisionPairCallback}}\&\&) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{342   \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback}{TesseractCollisionPairCallback}}\& \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback_a3f27598cefceeb3f8b3275d09170a184}{operator=}}(\mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback}{TesseractCollisionPairCallback}}\&\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{343 }
+\DoxyCodeLine{344   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback_a79792b3e80c5e3e156fd797d8049a930}{processOverlap}}(btBroadphasePair\& pair) \textcolor{keyword}{override};}
+\DoxyCodeLine{345 \};}
+\DoxyCodeLine{346 }
+\DoxyCodeLine{348 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractOverlapFilterCallback}{TesseractOverlapFilterCallback}} : \textcolor{keyword}{public} btOverlapFilterCallback}
+\DoxyCodeLine{349 \{}
+\DoxyCodeLine{350 \textcolor{keyword}{public}:}
+\DoxyCodeLine{351   \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractOverlapFilterCallback}{TesseractOverlapFilterCallback}}(\textcolor{keywordtype}{bool} verbose = \textcolor{keyword}{false});}
+\DoxyCodeLine{352 }
+\DoxyCodeLine{353   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractOverlapFilterCallback_a9bdc0c02b66130480ac32eb562989ce1}{needBroadphaseCollision}}(btBroadphaseProxy* proxy0, btBroadphaseProxy* proxy1) \textcolor{keyword}{const override};}
+\DoxyCodeLine{354 }
+\DoxyCodeLine{355 \textcolor{keyword}{private}:}
+\DoxyCodeLine{356   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractOverlapFilterCallback_a0bce89586fad1289c086899879a2feb9}{verbose\_}}\{ \textcolor{keyword}{false} \};}
+\DoxyCodeLine{357 \};}
+\DoxyCodeLine{358 }
+\DoxyCodeLine{367 std::shared\_ptr<btCollisionShape> \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_adb87ec9db8f5ae1e636887a432379af4}{createShapePrimitive}}(\textcolor{keyword}{const} \mbox{\hyperlink{namespacetesseract__collision_a0ba6c3df4805b8c865cb45f6571486c0}{CollisionShapeConstPtr}}\& \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}},}
+\DoxyCodeLine{368                                                        CollisionObjectWrapper* cow,}
+\DoxyCodeLine{369                                                        \textcolor{keywordtype}{int} shape\_index);}
+\DoxyCodeLine{370 }
+\DoxyCodeLine{376 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_aee49da084e6dd86cc7e384434c6a06f8}{updateCollisionObjectFilters}}(\textcolor{keyword}{const} std::vector<std::string>\& active, \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1CollisionObjectWrapper_a3d926f2c776673c5e9719e010936600a}{COW::Ptr}}\& cow);}
+\DoxyCodeLine{377 }
+\DoxyCodeLine{378 \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1CollisionObjectWrapper_a3d926f2c776673c5e9719e010936600a}{COW::Ptr}} \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_a9c284b5169360d33f83fc08b41cca03c}{createCollisionObject}}(\textcolor{keyword}{const} std::string\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}},}
+\DoxyCodeLine{379                                \textcolor{keyword}{const} \textcolor{keywordtype}{int}\& \mbox{\hyperlink{collision__core__unit_8cpp_abd5b6e2207f4ef754f27366b9589816e}{type\_id}},}
+\DoxyCodeLine{380                                \textcolor{keyword}{const} \mbox{\hyperlink{namespacetesseract__collision_a2472107aae8174a30873bb0a955c3cb4}{CollisionShapesConst}}\& shapes,}
+\DoxyCodeLine{381                                \textcolor{keyword}{const} \mbox{\hyperlink{namespacetesseract__common_a94d9921fc7ed323609ac57d06f939cb6}{tesseract\_common::VectorIsometry3d}}\& shape\_poses,}
+\DoxyCodeLine{382                                \textcolor{keywordtype}{bool} enabled = \textcolor{keyword}{true});}
+\DoxyCodeLine{383 }
+\DoxyCodeLine{384 \textcolor{keyword}{struct }\mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1DiscreteCollisionCollector}{DiscreteCollisionCollector}} : \textcolor{keyword}{public} btCollisionWorld::ContactResultCallback}
+\DoxyCodeLine{385 \{}
+\DoxyCodeLine{386   \mbox{\hyperlink{structtesseract__collision_1_1ContactTestData}{ContactTestData}}\& \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1DiscreteCollisionCollector_a15373b8c9bbc3921c0f1a9b77fe5ce75}{collisions\_}};}
+\DoxyCodeLine{387   \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1CollisionObjectWrapper_a3d926f2c776673c5e9719e010936600a}{COW::Ptr}} \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1DiscreteCollisionCollector_a3a0e13a76bb8dd14912903b1fe90cc08}{cow\_}};}
+\DoxyCodeLine{388   \textcolor{keywordtype}{double} \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1DiscreteCollisionCollector_a9d0fa596d10bc6f345b977eb7b4227d4}{contact\_distance\_}};}
+\DoxyCodeLine{389   \textcolor{keywordtype}{bool} \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1DiscreteCollisionCollector_af0088e6b1786b8d3bf8b68245a128d00}{verbose\_}};}
+\DoxyCodeLine{390 }
+\DoxyCodeLine{391   \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1DiscreteCollisionCollector}{DiscreteCollisionCollector}}(\mbox{\hyperlink{structtesseract__collision_1_1ContactTestData}{ContactTestData}}\& collisions,}
+\DoxyCodeLine{392                              \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1CollisionObjectWrapper_a3d926f2c776673c5e9719e010936600a}{COW::Ptr}} cow,}
+\DoxyCodeLine{393                              btScalar contact\_distance,}
+\DoxyCodeLine{394                              \textcolor{keywordtype}{bool} verbose = \textcolor{keyword}{false});}
+\DoxyCodeLine{395 }
+\DoxyCodeLine{396   btScalar \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1DiscreteCollisionCollector_a230b50fec6c882b7444a16a2eafac84b}{addSingleResult}}(btManifoldPoint\& cp,}
+\DoxyCodeLine{397                            \textcolor{keyword}{const} btCollisionObjectWrapper* colObj0Wrap,}
+\DoxyCodeLine{398                            \textcolor{keywordtype}{int} partId0,}
+\DoxyCodeLine{399                            \textcolor{keywordtype}{int} index0,}
+\DoxyCodeLine{400                            \textcolor{keyword}{const} btCollisionObjectWrapper* colObj1Wrap,}
+\DoxyCodeLine{401                            \textcolor{keywordtype}{int} partId1,}
+\DoxyCodeLine{402                            \textcolor{keywordtype}{int} index1) \textcolor{keyword}{override};}
+\DoxyCodeLine{403 }
+\DoxyCodeLine{404   \textcolor{keywordtype}{bool} \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1DiscreteCollisionCollector_a1ceab4e4aa526f4a2b6cd09a1d50f825}{needsCollision}}(btBroadphaseProxy* proxy0) \textcolor{keyword}{const override};}
+\DoxyCodeLine{405 \};}
+\DoxyCodeLine{406 }
+\DoxyCodeLine{407 \textcolor{keyword}{struct }\mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1CastCollisionCollector}{CastCollisionCollector}} : \textcolor{keyword}{public} btCollisionWorld::ContactResultCallback}
+\DoxyCodeLine{408 \{}
+\DoxyCodeLine{409   \mbox{\hyperlink{structtesseract__collision_1_1ContactTestData}{ContactTestData}}\& \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1CastCollisionCollector_a02f92034c0af103cac93bbde3c115145}{collisions\_}};}
+\DoxyCodeLine{410   \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1CollisionObjectWrapper_a3d926f2c776673c5e9719e010936600a}{COW::Ptr}} \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1CastCollisionCollector_aceb872eb09f816e70bab1fae829e6a41}{cow\_}};}
+\DoxyCodeLine{411   \textcolor{keywordtype}{double} \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1CastCollisionCollector_a81d16d591c128765eb587bae6db72495}{contact\_distance\_}};}
+\DoxyCodeLine{412   \textcolor{keywordtype}{bool} \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1CastCollisionCollector_a12bbec0ed6358d6082629b36fb4fcef0}{verbose\_}};}
+\DoxyCodeLine{413 }
+\DoxyCodeLine{414   \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1CastCollisionCollector}{CastCollisionCollector}}(\mbox{\hyperlink{structtesseract__collision_1_1ContactTestData}{ContactTestData}}\& collisions, \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1CollisionObjectWrapper_a3d926f2c776673c5e9719e010936600a}{COW::Ptr}} cow, \textcolor{keywordtype}{double} contact\_distance, \textcolor{keywordtype}{bool} verbose = \textcolor{keyword}{false});}
+\DoxyCodeLine{415 }
+\DoxyCodeLine{416   btScalar \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1CastCollisionCollector_a2c55f28c47037df5f510e6bc9c7c0c72}{addSingleResult}}(btManifoldPoint\& cp,}
+\DoxyCodeLine{417                            \textcolor{keyword}{const} btCollisionObjectWrapper* colObj0Wrap,}
+\DoxyCodeLine{418                            \textcolor{keywordtype}{int} partId0,}
+\DoxyCodeLine{419                            \textcolor{keywordtype}{int} index0,}
+\DoxyCodeLine{420                            \textcolor{keyword}{const} btCollisionObjectWrapper* colObj1Wrap,}
+\DoxyCodeLine{421                            \textcolor{keywordtype}{int} partId1,}
+\DoxyCodeLine{422                            \textcolor{keywordtype}{int} index1) \textcolor{keyword}{override};}
+\DoxyCodeLine{423 }
+\DoxyCodeLine{424   \textcolor{keywordtype}{bool} \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1CastCollisionCollector_aebdb38ab435d218722c5f89792d5bc8f}{needsCollision}}(btBroadphaseProxy* proxy0) \textcolor{keyword}{const override};}
+\DoxyCodeLine{425 \};}
+\DoxyCodeLine{426 }
+\DoxyCodeLine{427 \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1CollisionObjectWrapper_a3d926f2c776673c5e9719e010936600a}{COW::Ptr}} \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_a5133b6061af8da1565519e1caab79ac7}{makeCastCollisionObject}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1CollisionObjectWrapper_a3d926f2c776673c5e9719e010936600a}{COW::Ptr}}\& cow);}
+\DoxyCodeLine{428 }
+\DoxyCodeLine{435 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_ac32d8ab2b4e2177ce1a8d964cea67803}{updateBroadphaseAABB}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1CollisionObjectWrapper_a3d926f2c776673c5e9719e010936600a}{COW::Ptr}}\& cow,}
+\DoxyCodeLine{436                           \textcolor{keyword}{const} std::unique\_ptr<btBroadphaseInterface>\& broadphase,}
+\DoxyCodeLine{437                           \textcolor{keyword}{const} std::unique\_ptr<btCollisionDispatcher>\& dispatcher);}
+\DoxyCodeLine{438 }
+\DoxyCodeLine{445 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_acf22e0c89fd2ec0a19a2c54f3c0ec01f}{removeCollisionObjectFromBroadphase}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1CollisionObjectWrapper_a3d926f2c776673c5e9719e010936600a}{COW::Ptr}}\& cow,}
+\DoxyCodeLine{446                                          \textcolor{keyword}{const} std::unique\_ptr<btBroadphaseInterface>\& broadphase,}
+\DoxyCodeLine{447                                          \textcolor{keyword}{const} std::unique\_ptr<btCollisionDispatcher>\& dispatcher);}
+\DoxyCodeLine{448 }
+\DoxyCodeLine{455 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_a6bfba14c0d54bc649688202fe589397e}{addCollisionObjectToBroadphase}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1CollisionObjectWrapper_a3d926f2c776673c5e9719e010936600a}{COW::Ptr}}\& cow,}
+\DoxyCodeLine{456                                     \textcolor{keyword}{const} std::unique\_ptr<btBroadphaseInterface>\& broadphase,}
+\DoxyCodeLine{457                                     \textcolor{keyword}{const} std::unique\_ptr<btCollisionDispatcher>\& dispatcher);}
+\DoxyCodeLine{458 }
+\DoxyCodeLine{466 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_aee49da084e6dd86cc7e384434c6a06f8}{updateCollisionObjectFilters}}(\textcolor{keyword}{const} std::vector<std::string>\& active,}
+\DoxyCodeLine{467                                   \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1CollisionObjectWrapper_a3d926f2c776673c5e9719e010936600a}{COW::Ptr}}\& cow,}
+\DoxyCodeLine{468                                   \textcolor{keyword}{const} std::unique\_ptr<btBroadphaseInterface>\& broadphase,}
+\DoxyCodeLine{469                                   \textcolor{keyword}{const} std::unique\_ptr<btCollisionDispatcher>\& dispatcher);}
+\DoxyCodeLine{470 }
+\DoxyCodeLine{480 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_ab00adc9a4c830a572b3ee17e153e88ef}{refreshBroadphaseProxy}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1CollisionObjectWrapper_a3d926f2c776673c5e9719e010936600a}{COW::Ptr}}\& cow,}
+\DoxyCodeLine{481                             \textcolor{keyword}{const} std::unique\_ptr<btBroadphaseInterface>\& broadphase,}
+\DoxyCodeLine{482                             \textcolor{keyword}{const} std::unique\_ptr<btCollisionDispatcher>\& dispatcher);}
+\DoxyCodeLine{483 \}  \textcolor{comment}{// namespace tesseract\_collision::tesseract\_collision\_bullet}}
+\DoxyCodeLine{484 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_COLLISION\_BULLET\_UTILS\_H}}
+
+\end{DoxyCode}

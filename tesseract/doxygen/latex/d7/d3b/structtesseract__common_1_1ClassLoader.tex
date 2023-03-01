@@ -1,0 +1,159 @@
+\hypertarget{structtesseract__common_1_1ClassLoader}{}\doxysection{tesseract\+\_\+common\+::Class\+Loader Struct Reference}
+\label{structtesseract__common_1_1ClassLoader}\index{tesseract\_common::ClassLoader@{tesseract\_common::ClassLoader}}
+
+
+This is a wrapper around Boost DLL for loading plugins within Tesseract.  
+
+
+
+
+{\ttfamily \#include $<$class\+\_\+loader.\+h$>$}
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class Class\+Base $>$ }\\static std\+::shared\+\_\+ptr$<$ Class\+Base $>$ \mbox{\hyperlink{structtesseract__common_1_1ClassLoader_ad1933611b2e5247267c29b146fb3054e}{create\+Shared\+Instance}} (const std\+::string \&\mbox{\hyperlink{plugin__loader__unit_8cpp_a0f96facbec34815c2e03d89aac11b2f5}{symbol\+\_\+name}}, const std\+::string \&library\+\_\+name, const std\+::string \&library\+\_\+directory=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Create a shared instance for the provided symbol\+\_\+name loaded from the library\+\_\+name searching system folders for library. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{structtesseract__common_1_1ClassLoader_a0bc9e092d94b12566d67e5a5ee0de337}{is\+Class\+Available}} (const std\+::string \&\mbox{\hyperlink{plugin__loader__unit_8cpp_a0f96facbec34815c2e03d89aac11b2f5}{symbol\+\_\+name}}, const std\+::string \&library\+\_\+name, const std\+::string \&library\+\_\+directory=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Check if the symbol is available in the library\+\_\+name searching system folders for library. \end{DoxyCompactList}\item 
+static std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{structtesseract__common_1_1ClassLoader_a8d2d1f0b2f092748c0b0450955a8d9e0}{get\+Available\+Symbols}} (const std\+::string \&section, const std\+::string \&library\+\_\+name, const std\+::string \&library\+\_\+directory=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Get a list of available symbols under the provided section. \end{DoxyCompactList}\item 
+static std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{structtesseract__common_1_1ClassLoader_a816ec5cb50eb1a7011b561dd0d789494}{get\+Available\+Sections}} (const std\+::string \&library\+\_\+name, const std\+::string \&library\+\_\+directory=\char`\"{}\char`\"{}, bool include\+\_\+hidden=false)
+\begin{DoxyCompactList}\small\item\em Get a list of available sections. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{structtesseract__common_1_1ClassLoader_af2749622fe3be804a464ce5d5ea62ca9}{decorate}} (const std\+::string \&library\+\_\+name, const std\+::string \&library\+\_\+directory=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Give library name without prefix and suffix it will return the library name with the prefix and suffix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This is a wrapper around Boost DLL for loading plugins within Tesseract. 
+
+The library\+\_\+name should not include the prefix \textquotesingle{}lib\textquotesingle{} or suffix \textquotesingle{}.so\textquotesingle{}. It will add the correct prefix and suffix based on the OS.
+
+The plugin must be exported using the macro TESSERACT\+\_\+\+ADD\+\_\+\+PLUGIN. In the example below, the first parameter is the derived object and the second is the assigned symbol name which is used for looding Example\+: \mbox{\hyperlink{class__loader_8h_a97c9d4061ddaef2cc923033180af020f}{TESSERACT\+\_\+\+ADD\+\_\+\+PLUGIN(my\+\_\+namespace\+::\+My\+Plugin, plugin)}}
+
+auto p = \mbox{\hyperlink{structtesseract__common_1_1ClassLoader_ad1933611b2e5247267c29b146fb3054e}{Class\+Loader\+::create\+Shared\+Instance$<$my\+\_\+namespace\+::\+My\+Plugin\+Base$>$}}(\char`\"{}my\+\_\+plugin\char`\"{}, \char`\"{}plugin\char`\"{}); 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtesseract__common_1_1ClassLoader_ad1933611b2e5247267c29b146fb3054e}\label{structtesseract__common_1_1ClassLoader_ad1933611b2e5247267c29b146fb3054e}} 
+\index{tesseract\_common::ClassLoader@{tesseract\_common::ClassLoader}!createSharedInstance@{createSharedInstance}}
+\index{createSharedInstance@{createSharedInstance}!tesseract\_common::ClassLoader@{tesseract\_common::ClassLoader}}
+\doxysubsubsection{\texorpdfstring{createSharedInstance()}{createSharedInstance()}}
+{\footnotesize\ttfamily template$<$class Class\+Base $>$ \\
+std\+::shared\+\_\+ptr$<$ Class\+Base $>$ tesseract\+\_\+common\+::\+Class\+Loader\+::create\+Shared\+Instance (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{symbol\+\_\+name,  }\item[{const std\+::string \&}]{library\+\_\+name,  }\item[{const std\+::string \&}]{library\+\_\+directory = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create a shared instance for the provided symbol\+\_\+name loaded from the library\+\_\+name searching system folders for library. 
+
+The symbol name is the alias provide when calling TESSERACT\+\_\+\+ADD\+\_\+\+PLUGIN 
+\begin{DoxyParams}{Parameters}
+{\em symbol\+\_\+name} & The symbol to create a shared instance of \\
+\hline
+{\em library\+\_\+name} & The library name to load which does not include the prefix \textquotesingle{}lib\textquotesingle{} or suffix \textquotesingle{}.so\textquotesingle{} \\
+\hline
+{\em library\+\_\+directory} & The library directory, if empty it will enable search system directories \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A shared pointer of the object with the symbol name located in library\+\_\+name\+\_\+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structtesseract__common_1_1ClassLoader_af2749622fe3be804a464ce5d5ea62ca9}\label{structtesseract__common_1_1ClassLoader_af2749622fe3be804a464ce5d5ea62ca9}} 
+\index{tesseract\_common::ClassLoader@{tesseract\_common::ClassLoader}!decorate@{decorate}}
+\index{decorate@{decorate}!tesseract\_common::ClassLoader@{tesseract\_common::ClassLoader}}
+\doxysubsubsection{\texorpdfstring{decorate()}{decorate()}}
+{\footnotesize\ttfamily std\+::string tesseract\+\_\+common\+::\+Class\+Loader\+::decorate (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{library\+\_\+name,  }\item[{const std\+::string \&}]{library\+\_\+directory = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Give library name without prefix and suffix it will return the library name with the prefix and suffix. 
+
+
+\begin{DoxyItemize}
+\item For instance, for a library\+\_\+name like \char`\"{}boost\char`\"{} it returns \+:
+\item path/to/libboost.\+so on posix platforms
+\item path/to/libboost.\+dylib on OSX
+\item path/to/boost.\+dll on Windows
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000002}{Todo}}]When support is dropped for 18.\+04 switch to using boost\+::dll\+::shared\+\_\+library\+::decorate \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em library\+\_\+name} & The library name without prefix and suffix \\
+\hline
+{\em library\+\_\+directory} & The library directory, if empty it just returns the decorated library name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The library name or path with prefix and suffix 
+\end{DoxyReturn}
+
+\end{DoxyItemize}\mbox{\Hypertarget{structtesseract__common_1_1ClassLoader_a816ec5cb50eb1a7011b561dd0d789494}\label{structtesseract__common_1_1ClassLoader_a816ec5cb50eb1a7011b561dd0d789494}} 
+\index{tesseract\_common::ClassLoader@{tesseract\_common::ClassLoader}!getAvailableSections@{getAvailableSections}}
+\index{getAvailableSections@{getAvailableSections}!tesseract\_common::ClassLoader@{tesseract\_common::ClassLoader}}
+\doxysubsubsection{\texorpdfstring{getAvailableSections()}{getAvailableSections()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ tesseract\+\_\+common\+::\+Class\+Loader\+::get\+Available\+Sections (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{library\+\_\+name,  }\item[{const std\+::string \&}]{library\+\_\+directory = {\ttfamily \char`\"{}\char`\"{}},  }\item[{bool}]{include\+\_\+hidden = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Get a list of available sections. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em library\+\_\+name} & The library name to load which does not include the prefix \textquotesingle{}lib\textquotesingle{} or suffix \textquotesingle{}.so\textquotesingle{} \\
+\hline
+{\em library\+\_\+directory} & The library directory, if empty it will enable search system directories \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A list of sections if they exist. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structtesseract__common_1_1ClassLoader_a8d2d1f0b2f092748c0b0450955a8d9e0}\label{structtesseract__common_1_1ClassLoader_a8d2d1f0b2f092748c0b0450955a8d9e0}} 
+\index{tesseract\_common::ClassLoader@{tesseract\_common::ClassLoader}!getAvailableSymbols@{getAvailableSymbols}}
+\index{getAvailableSymbols@{getAvailableSymbols}!tesseract\_common::ClassLoader@{tesseract\_common::ClassLoader}}
+\doxysubsubsection{\texorpdfstring{getAvailableSymbols()}{getAvailableSymbols()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ tesseract\+\_\+common\+::\+Class\+Loader\+::get\+Available\+Symbols (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{section,  }\item[{const std\+::string \&}]{library\+\_\+name,  }\item[{const std\+::string \&}]{library\+\_\+directory = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Get a list of available symbols under the provided section. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em section} & The section to search for available symbols \\
+\hline
+{\em library\+\_\+name} & The library name to load which does not include the prefix \textquotesingle{}lib\textquotesingle{} or suffix \textquotesingle{}.so\textquotesingle{} \\
+\hline
+{\em library\+\_\+directory} & The library directory, if empty it will enable search system directories \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A list of symbols if they exist. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structtesseract__common_1_1ClassLoader_a0bc9e092d94b12566d67e5a5ee0de337}\label{structtesseract__common_1_1ClassLoader_a0bc9e092d94b12566d67e5a5ee0de337}} 
+\index{tesseract\_common::ClassLoader@{tesseract\_common::ClassLoader}!isClassAvailable@{isClassAvailable}}
+\index{isClassAvailable@{isClassAvailable}!tesseract\_common::ClassLoader@{tesseract\_common::ClassLoader}}
+\doxysubsubsection{\texorpdfstring{isClassAvailable()}{isClassAvailable()}}
+{\footnotesize\ttfamily bool tesseract\+\_\+common\+::\+Class\+Loader\+::is\+Class\+Available (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{symbol\+\_\+name,  }\item[{const std\+::string \&}]{library\+\_\+name,  }\item[{const std\+::string \&}]{library\+\_\+directory = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Check if the symbol is available in the library\+\_\+name searching system folders for library. 
+
+The symbol name is the alias provide when calling TESSERACT\+\_\+\+ADD\+\_\+\+PLUGIN 
+\begin{DoxyParams}{Parameters}
+{\em symbol\+\_\+name} & The symbol to create a shared instance of \\
+\hline
+{\em library\+\_\+name} & The library name to load which does not include the prefix \textquotesingle{}lib\textquotesingle{} or suffix \textquotesingle{}.so\textquotesingle{} \\
+\hline
+{\em library\+\_\+directory} & The library directory, if empty it will enable search system directories \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the symbol exists, otherwise false 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+tesseract\+\_\+common/include/tesseract\+\_\+common/\mbox{\hyperlink{class__loader_8h}{class\+\_\+loader.\+h}}\item 
+tesseract\+\_\+common/include/tesseract\+\_\+common/\mbox{\hyperlink{class__loader_8hpp}{class\+\_\+loader.\+hpp}}\end{DoxyCompactItemize}

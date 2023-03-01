@@ -1,0 +1,50 @@
+\hypertarget{tesseract__collision_2core_2include_2tesseract__collision_2core_2utils_8h_source}{}\doxysection{utils.\+h}
+\label{tesseract__collision_2core_2include_2tesseract__collision_2core_2utils_8h_source}\index{tesseract\_collision/core/include/tesseract\_collision/core/utils.h@{tesseract\_collision/core/include/tesseract\_collision/core/utils.h}}
+\mbox{\hyperlink{tesseract__collision_2core_2include_2tesseract__collision_2core_2utils_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#ifndef TESSERACT\_COLLISION\_CORE\_UTILS\_H}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#define TESSERACT\_COLLISION\_CORE\_UTILS\_H}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{macros_8h}{tesseract\_common/macros.h}}>}}
+\DoxyCodeLine{29 \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{tesseract__collision_2core_2include_2tesseract__collision_2core_2types_8h}{tesseract\_collision/core/types.h}}>}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{continuous__contact__manager_8h}{tesseract\_collision/core/continuous\_contact\_manager.h}}>}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{discrete__contact__manager_8h}{tesseract\_collision/core/discrete\_contact\_manager.h}}>}}
+\DoxyCodeLine{33 \mbox{\hyperlink{namespaceTESSERACT__COMMON__IGNORE__WARNINGS__POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__collision}{tesseract\_collision}}}
+\DoxyCodeLine{36 \{}
+\DoxyCodeLine{44 \mbox{\hyperlink{namespacetesseract__collision_abe7752ce161fbd1139533ac566fec1cb}{IsContactAllowedFn}} \mbox{\hyperlink{namespacetesseract__collision_aad4f0e4f914b130332a1de2e10f62f23}{combineContactAllowedFn}}(\textcolor{keyword}{const} \mbox{\hyperlink{namespacetesseract__collision_abe7752ce161fbd1139533ac566fec1cb}{IsContactAllowedFn}}\& original,}
+\DoxyCodeLine{45                                            \textcolor{keyword}{const} \mbox{\hyperlink{namespacetesseract__collision_abe7752ce161fbd1139533ac566fec1cb}{IsContactAllowedFn}}\& \textcolor{keyword}{override},}
+\DoxyCodeLine{46                                            \mbox{\hyperlink{namespacetesseract__collision_ab4aafe369f7930ea6a356f0b578c16af}{ACMOverrideType}} \mbox{\hyperlink{tesseract__environment__collision_8cpp_a30f93ee2d6b54c870d5c8295071072ac}{type}} = \mbox{\hyperlink{namespacetesseract__collision_ab4aafe369f7930ea6a356f0b578c16afa1d00e7dce692e8dc3f6877f035e3a616}{ACMOverrideType::OR}});}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{54 \textcolor{keyword}{template} <\textcolor{keyword}{typename} ManagerType>}
+\DoxyCodeLine{55 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_aa9ae658359b35f57bc35258fb31d2404}{applyIsContactAllowedFnOverride}}(ManagerType\& \mbox{\hyperlink{tesseract__environment__collision_8cpp_ab55f99a09f7331ded7b0bfc5d06b92d4}{manager}},}
+\DoxyCodeLine{56                                             \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix}{tesseract\_common::AllowedCollisionMatrix}}\& \mbox{\hyperlink{collision__core__unit_8cpp_a714392901b0c74193a9659fc77891a60}{acm}},}
+\DoxyCodeLine{57                                             \mbox{\hyperlink{namespacetesseract__collision_ab4aafe369f7930ea6a356f0b578c16af}{ACMOverrideType}} \mbox{\hyperlink{tesseract__environment__collision_8cpp_a30f93ee2d6b54c870d5c8295071072ac}{type}})}
+\DoxyCodeLine{58 \{}
+\DoxyCodeLine{59   \mbox{\hyperlink{namespacetesseract__collision_abe7752ce161fbd1139533ac566fec1cb}{IsContactAllowedFn}} original = \mbox{\hyperlink{tesseract__environment__collision_8cpp_ab55f99a09f7331ded7b0bfc5d06b92d4}{manager}}.getIsContactAllowedFn();}
+\DoxyCodeLine{60   \mbox{\hyperlink{namespacetesseract__collision_abe7752ce161fbd1139533ac566fec1cb}{IsContactAllowedFn}} \textcolor{keyword}{override} = [\mbox{\hyperlink{collision__core__unit_8cpp_a714392901b0c74193a9659fc77891a60}{acm}}](\textcolor{keyword}{const} std::string\& str1, \textcolor{keyword}{const} std::string\& str2) \{}
+\DoxyCodeLine{61     \textcolor{keywordflow}{return} \mbox{\hyperlink{collision__core__unit_8cpp_a714392901b0c74193a9659fc77891a60}{acm}}.isCollisionAllowed(str1, str2);}
+\DoxyCodeLine{62   \};}
+\DoxyCodeLine{63   \mbox{\hyperlink{tesseract__environment__collision_8cpp_ab55f99a09f7331ded7b0bfc5d06b92d4}{manager}}.setIsContactAllowedFn(\mbox{\hyperlink{namespacetesseract__collision_aad4f0e4f914b130332a1de2e10f62f23}{combineContactAllowedFn}}(original, \textcolor{keyword}{override}, \mbox{\hyperlink{tesseract__environment__collision_8cpp_a30f93ee2d6b54c870d5c8295071072ac}{type}}));}
+\DoxyCodeLine{64 \}}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{72 \textcolor{keyword}{template} <\textcolor{keyword}{typename} ManagerType>}
+\DoxyCodeLine{73 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_ab3fcf1e185d880f2ac9f1ad911a736ec}{applyModifyObjectEnabled}}(ManagerType\& \mbox{\hyperlink{tesseract__environment__collision_8cpp_ab55f99a09f7331ded7b0bfc5d06b92d4}{manager}},}
+\DoxyCodeLine{74                                      \textcolor{keyword}{const} std::unordered\_map<std::string, bool>\& modify\_object\_enabled)}
+\DoxyCodeLine{75 \{}
+\DoxyCodeLine{76   \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& entry : modify\_object\_enabled)}
+\DoxyCodeLine{77   \{}
+\DoxyCodeLine{78     \textcolor{keywordflow}{if} (entry.second)}
+\DoxyCodeLine{79       \mbox{\hyperlink{tesseract__environment__collision_8cpp_ab55f99a09f7331ded7b0bfc5d06b92d4}{manager}}.enableCollisionObject(entry.first);}
+\DoxyCodeLine{80     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{81       \mbox{\hyperlink{tesseract__environment__collision_8cpp_ab55f99a09f7331ded7b0bfc5d06b92d4}{manager}}.disableCollisionObject(entry.first);}
+\DoxyCodeLine{82   \}}
+\DoxyCodeLine{83 \}}
+\DoxyCodeLine{84 \}  \textcolor{comment}{// namespace tesseract\_collision}}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_COLLISION\_TYPES\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,72 @@
+\hypertarget{vhacdRaycastMesh_8cpp}{}\doxysection{tesseract\+\_\+collision/vhacd/src/vhacd/vhacd\+Raycast\+Mesh.cpp File Reference}
+\label{vhacdRaycastMesh_8cpp}\index{tesseract\_collision/vhacd/src/vhacd/vhacdRaycastMesh.cpp@{tesseract\_collision/vhacd/src/vhacd/vhacdRaycastMesh.cpp}}
+{\ttfamily \#include $<$tesseract\+\_\+collision/vhacd/inc/vhacd\+Raycast\+Mesh.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+Include dependency graph for vhacd\+Raycast\+Mesh.\+cpp\+:
+% FIG 0
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classtesseract__collision_1_1RAYCAST__MESH_1_1MyRaycastMesh}{tesseract\+\_\+collision\+::\+RAYCAST\+\_\+\+MESH\+::\+My\+Raycast\+Mesh}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacetesseract__collision}{tesseract\+\_\+collision}}
+\item 
+namespace \mbox{\hyperlink{namespacetesseract__collision_1_1RAYCAST__MESH}{tesseract\+\_\+collision\+::\+RAYCAST\+\_\+\+MESH}}
+\item 
+namespace \mbox{\hyperlink{namespacetesseract__collision_1_1VHACD}{tesseract\+\_\+collision\+::\+VHACD}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{vhacdRaycastMesh_8cpp_adcf134d50025cc52907d0c8ac798d89d}{vector}}(a,  b,  \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a53803beb6b02f370f4ff75b865341455}{c}})
+\item 
+\#define \mbox{\hyperlink{vhacdRaycastMesh_8cpp_a23b2e267e31cb67a5d17fcd11281c9f6}{inner\+Product}}(\mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}},  \mbox{\hyperlink{kinematics__core__unit_8cpp_af1c133f4166e08b7a95ddebfeef08de9}{q}})~((\mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}})\mbox{[}0\mbox{]} $\ast$ (\mbox{\hyperlink{kinematics__core__unit_8cpp_af1c133f4166e08b7a95ddebfeef08de9}{q}})\mbox{[}0\mbox{]} + (\mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}})\mbox{[}1\mbox{]} $\ast$ (\mbox{\hyperlink{kinematics__core__unit_8cpp_af1c133f4166e08b7a95ddebfeef08de9}{q}})\mbox{[}1\mbox{]} + (\mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}})\mbox{[}2\mbox{]} $\ast$ (\mbox{\hyperlink{kinematics__core__unit_8cpp_af1c133f4166e08b7a95ddebfeef08de9}{q}})\mbox{[}2\mbox{]})
+\item 
+\#define \mbox{\hyperlink{vhacdRaycastMesh_8cpp_a19889eb1f97bfa240ab1c732d83c0fc9}{cross\+Product}}(a,  b,  \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a53803beb6b02f370f4ff75b865341455}{c}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{namespacetesseract__collision_1_1RAYCAST__MESH_a552f93bf48c9acfae1defbe800ddbbf6}{tesseract\+\_\+collision\+::\+RAYCAST\+\_\+\+MESH\+::ray\+Intersects\+Triangle}} (const double $\ast$p, const double $\ast$d, const double $\ast$v0, const double $\ast$\mbox{\hyperlink{tesseract__common__unit_8cpp_a78e1cc09f129a731d55ed82bc47956a7}{v1}}, const double $\ast$\mbox{\hyperlink{tesseract__common__unit_8cpp_a23dd5e7fffd5f8400cbed32a5071f236}{v2}}, double \&t)
+\item 
+static double \mbox{\hyperlink{namespacetesseract__collision_1_1RAYCAST__MESH_af69e97719e03541751a5dc2fa9bb3a5c}{tesseract\+\_\+collision\+::\+RAYCAST\+\_\+\+MESH\+::get\+Point\+Distance}} (const double $\ast$p1, const double $\ast$p2)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{vhacdRaycastMesh_8cpp_a19889eb1f97bfa240ab1c732d83c0fc9}\label{vhacdRaycastMesh_8cpp_a19889eb1f97bfa240ab1c732d83c0fc9}} 
+\index{vhacdRaycastMesh.cpp@{vhacdRaycastMesh.cpp}!crossProduct@{crossProduct}}
+\index{crossProduct@{crossProduct}!vhacdRaycastMesh.cpp@{vhacdRaycastMesh.cpp}}
+\doxysubsubsection{\texorpdfstring{crossProduct}{crossProduct}}
+{\footnotesize\ttfamily \#define cross\+Product(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b,  }\item[{}]{\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a53803beb6b02f370f4ff75b865341455}{c}} }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  (a)[0] = (b)[1] * (\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a53803beb6b02f370f4ff75b865341455}{c}})[2] -\/ (\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a53803beb6b02f370f4ff75b865341455}{c}})[1] * (b)[2];                                                                          \(\backslash\)}
+\DoxyCodeLine{  (a)[1] = (b)[2] * (\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a53803beb6b02f370f4ff75b865341455}{c}})[0] -\/ (\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a53803beb6b02f370f4ff75b865341455}{c}})[2] * (b)[0];                                                                          \(\backslash\)}
+\DoxyCodeLine{  (a)[2] = (b)[0] * (\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a53803beb6b02f370f4ff75b865341455}{c}})[1] -\/ (\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a53803beb6b02f370f4ff75b865341455}{c}})[0] * (b)[1];}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{vhacdRaycastMesh_8cpp_a23b2e267e31cb67a5d17fcd11281c9f6}\label{vhacdRaycastMesh_8cpp_a23b2e267e31cb67a5d17fcd11281c9f6}} 
+\index{vhacdRaycastMesh.cpp@{vhacdRaycastMesh.cpp}!innerProduct@{innerProduct}}
+\index{innerProduct@{innerProduct}!vhacdRaycastMesh.cpp@{vhacdRaycastMesh.cpp}}
+\doxysubsubsection{\texorpdfstring{innerProduct}{innerProduct}}
+{\footnotesize\ttfamily \#define inner\+Product(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}},  }\item[{}]{\mbox{\hyperlink{kinematics__core__unit_8cpp_af1c133f4166e08b7a95ddebfeef08de9}{q}} }\end{DoxyParamCaption})~((\mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}})\mbox{[}0\mbox{]} $\ast$ (\mbox{\hyperlink{kinematics__core__unit_8cpp_af1c133f4166e08b7a95ddebfeef08de9}{q}})\mbox{[}0\mbox{]} + (\mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}})\mbox{[}1\mbox{]} $\ast$ (\mbox{\hyperlink{kinematics__core__unit_8cpp_af1c133f4166e08b7a95ddebfeef08de9}{q}})\mbox{[}1\mbox{]} + (\mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}})\mbox{[}2\mbox{]} $\ast$ (\mbox{\hyperlink{kinematics__core__unit_8cpp_af1c133f4166e08b7a95ddebfeef08de9}{q}})\mbox{[}2\mbox{]})}
+
+\mbox{\Hypertarget{vhacdRaycastMesh_8cpp_adcf134d50025cc52907d0c8ac798d89d}\label{vhacdRaycastMesh_8cpp_adcf134d50025cc52907d0c8ac798d89d}} 
+\index{vhacdRaycastMesh.cpp@{vhacdRaycastMesh.cpp}!vector@{vector}}
+\index{vector@{vector}!vhacdRaycastMesh.cpp@{vhacdRaycastMesh.cpp}}
+\doxysubsubsection{\texorpdfstring{vector}{vector}}
+{\footnotesize\ttfamily \#define vector(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b,  }\item[{}]{\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a53803beb6b02f370f4ff75b865341455}{c}} }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  (a)[0] = (b)[0] -\/ (\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a53803beb6b02f370f4ff75b865341455}{c}})[0];                                                                                            \(\backslash\)}
+\DoxyCodeLine{  (a)[1] = (b)[1] -\/ (\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a53803beb6b02f370f4ff75b865341455}{c}})[1];                                                                                            \(\backslash\)}
+\DoxyCodeLine{  (a)[2] = (b)[2] -\/ (\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a53803beb6b02f370f4ff75b865341455}{c}})[2];}
+
+\end{DoxyCode}

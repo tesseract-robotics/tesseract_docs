@@ -1,0 +1,542 @@
+\hypertarget{classtesseract__kinematics_1_1KinematicsPluginFactory}{}\doxysection{tesseract\+\_\+kinematics\+::Kinematics\+Plugin\+Factory Class Reference}
+\label{classtesseract__kinematics_1_1KinematicsPluginFactory}\index{tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}}
+
+
+{\ttfamily \#include $<$kinematics\+\_\+plugin\+\_\+factory.\+h$>$}
+
+
+
+Collaboration diagram for tesseract\+\_\+kinematics\+::Kinematics\+Plugin\+Factory\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_acbaf4ecd2f5406b4fc85a0c92ef3ac0e}{Kinematics\+Plugin\+Factory}} ()
+\item 
+\mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_abf4e004c661d548c4dbb27acecbf1e23}{$\sim$\+Kinematics\+Plugin\+Factory}} ()
+\item 
+\mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_aca45cb9c8cae4b75f6a99529332ca329}{Kinematics\+Plugin\+Factory}} (const \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory}{Kinematics\+Plugin\+Factory}} \&)=default
+\item 
+\mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory}{Kinematics\+Plugin\+Factory}} \& \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_a81e6ed801070849d4d4cb6ed16dca247}{operator=}} (const \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory}{Kinematics\+Plugin\+Factory}} \&)=default
+\item 
+\mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_acd20567002f426c7f5e5164ba4558ffc}{Kinematics\+Plugin\+Factory}} (\mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory}{Kinematics\+Plugin\+Factory}} \&\&)=default
+\item 
+\mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory}{Kinematics\+Plugin\+Factory}} \& \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_a18d8c54a972392cb858a533ea5128d4d}{operator=}} (\mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory}{Kinematics\+Plugin\+Factory}} \&\&)=default
+\item 
+\mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_a9c6ec370a642a65f57d8a21b2be39967}{Kinematics\+Plugin\+Factory}} (YAML\+::\+Node \mbox{\hyperlink{collision__core__unit_8cpp_a2013c60ebd4a63f15fafe2287736ae37}{config}})
+\begin{DoxyCompactList}\small\item\em Load plugins from yaml node. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_abffdfb823dc19f73754f034a79329264}{Kinematics\+Plugin\+Factory}} (const tesseract\+\_\+common\+::fs\+::path \&\mbox{\hyperlink{collision__core__unit_8cpp_a2013c60ebd4a63f15fafe2287736ae37}{config}})
+\begin{DoxyCompactList}\small\item\em Load plugins from file path. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_a1e11b88ecec8111f509c7ea20acefb88}{Kinematics\+Plugin\+Factory}} (const std\+::string \&\mbox{\hyperlink{collision__core__unit_8cpp_a2013c60ebd4a63f15fafe2287736ae37}{config}})
+\begin{DoxyCompactList}\small\item\em Load plugins from string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_aeb07fcaa4315b3e754e226f2bc58f785}{add\+Search\+Path}} (const std\+::string \&path)
+\begin{DoxyCompactList}\small\item\em Add location for the plugin loader to search. \end{DoxyCompactList}\item 
+std\+::set$<$ std\+::string $>$ \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_a415a55fe39900f9f4a39547e9eb86f2e}{get\+Search\+Paths}} () const
+\begin{DoxyCompactList}\small\item\em Get the plugin search paths. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_aecf6c6b04198b8d594e0a132a343bdb0}{add\+Search\+Library}} (const std\+::string \&library\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Add a library to search for plugin name. \end{DoxyCompactList}\item 
+std\+::set$<$ std\+::string $>$ \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_a37ac50baa5ddbf0617ff6002a30858ab}{get\+Search\+Libraries}} () const
+\begin{DoxyCompactList}\small\item\em Get the plugin search libraries. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_a745991b12ee4d6a75e8272a7d1f9af51}{add\+Fwd\+Kin\+Plugin}} (const std\+::string \&group\+\_\+name, const std\+::string \&solver\+\_\+name, \mbox{\hyperlink{structtesseract__common_1_1PluginInfo}{tesseract\+\_\+common\+::\+Plugin\+Info}} \mbox{\hyperlink{contact__managers__factory__unit_8cpp_aa85411aa79e8b65adf666700a5a44add}{plugin\+\_\+info}})
+\begin{DoxyCompactList}\small\item\em Add a forward kinematics plugin to the manager. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{structtesseract__common_1_1PluginInfoContainer}{tesseract\+\_\+common\+::\+Plugin\+Info\+Container}} $>$ \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_a195c0c53ece00d51d977d1ddd3bd8418}{get\+Fwd\+Kin\+Plugins}} () const
+\begin{DoxyCompactList}\small\item\em Get the map of forward kinematic plugins. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_ad49ae6ea890eb83c98abff5d0b2b0b2b}{remove\+Fwd\+Kin\+Plugin}} (const std\+::string \&group\+\_\+name, const std\+::string \&solver\+\_\+name)
+\begin{DoxyCompactList}\small\item\em remove forward kinematics plugin from the manager \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_a7fdbebeb4500741d93886fb3a6ce3c79}{set\+Default\+Fwd\+Kin\+Plugin}} (const std\+::string \&group\+\_\+name, const std\+::string \&solver\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Set a groups default forward kinematics solver. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_aedc79793e0b0c049501881e2cca1cae2}{get\+Default\+Fwd\+Kin\+Plugin}} (const std\+::string \&group\+\_\+name) const
+\begin{DoxyCompactList}\small\item\em Get the default forward kinematics solver for a group. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_a035ed0751892a914c73f0fef28648d95}{add\+Inv\+Kin\+Plugin}} (const std\+::string \&group\+\_\+name, const std\+::string \&solver\+\_\+name, \mbox{\hyperlink{structtesseract__common_1_1PluginInfo}{tesseract\+\_\+common\+::\+Plugin\+Info}} \mbox{\hyperlink{contact__managers__factory__unit_8cpp_aa85411aa79e8b65adf666700a5a44add}{plugin\+\_\+info}})
+\begin{DoxyCompactList}\small\item\em Add a inverse kinematics plugin to the manager. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{structtesseract__common_1_1PluginInfoContainer}{tesseract\+\_\+common\+::\+Plugin\+Info\+Container}} $>$ \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_aaf3b1a4cf7c88e9d31f931b9ff4610f9}{get\+Inv\+Kin\+Plugins}} () const
+\begin{DoxyCompactList}\small\item\em Get the map of inverse kinematic plugins. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_acf1a5652934dc1560d7a916fd11db5de}{remove\+Inv\+Kin\+Plugin}} (const std\+::string \&group\+\_\+name, const std\+::string \&solver\+\_\+name)
+\begin{DoxyCompactList}\small\item\em remove inverse kinematics plugin from the manager \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_a0ae2a3a9f1719337c9240fb33bec0a2e}{set\+Default\+Inv\+Kin\+Plugin}} (const std\+::string \&group\+\_\+name, const std\+::string \&solver\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Set a groups default inverse kinematics solver. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_af823a28249382f44dad87f7db6f64e8e}{get\+Default\+Inv\+Kin\+Plugin}} (const std\+::string \&group\+\_\+name) const
+\begin{DoxyCompactList}\small\item\em Get the default forward inverse solver for a group. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtesseract__kinematics_1_1ForwardKinematics_a53cb5fab19798d5afc20c259d4ffe1e3}{Forward\+Kinematics\+::\+UPtr}} \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_ad40092590da9f40ce3da0aa570044444}{create\+Fwd\+Kin}} (const std\+::string \&group\+\_\+name, const std\+::string \&solver\+\_\+name, const \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph}{tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+Graph}} \&\mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a8d4d0dc3a6b9a7030970bf9ed3764756}{scene\+\_\+graph}}, const \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+State}} \&\mbox{\hyperlink{kinematics__factory__unit_8cpp_a918c8faa92717caa3ba8aef1b4ef8163}{scene\+\_\+state}}) const
+\begin{DoxyCompactList}\small\item\em Get forward kinematics object given group name and solver name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtesseract__kinematics_1_1InverseKinematics_a68e526591337b0781c9ec91618d1d5f0}{Inverse\+Kinematics\+::\+UPtr}} \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_a6a396e48c2c7350f114f7d6856b6cd5a}{create\+Inv\+Kin}} (const std\+::string \&group\+\_\+name, const std\+::string \&solver\+\_\+name, const \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph}{tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+Graph}} \&\mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a8d4d0dc3a6b9a7030970bf9ed3764756}{scene\+\_\+graph}}, const \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+State}} \&\mbox{\hyperlink{kinematics__factory__unit_8cpp_a918c8faa92717caa3ba8aef1b4ef8163}{scene\+\_\+state}}) const
+\begin{DoxyCompactList}\small\item\em Get inverse kinematics object given group name and solver name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtesseract__kinematics_1_1ForwardKinematics_a53cb5fab19798d5afc20c259d4ffe1e3}{Forward\+Kinematics\+::\+UPtr}} \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_a34890654362ea8da029e6132ec0f7a45}{create\+Fwd\+Kin}} (const std\+::string \&solver\+\_\+name, const \mbox{\hyperlink{structtesseract__common_1_1PluginInfo}{tesseract\+\_\+common\+::\+Plugin\+Info}} \&\mbox{\hyperlink{contact__managers__factory__unit_8cpp_aa85411aa79e8b65adf666700a5a44add}{plugin\+\_\+info}}, const \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph}{tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+Graph}} \&\mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a8d4d0dc3a6b9a7030970bf9ed3764756}{scene\+\_\+graph}}, const \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+State}} \&\mbox{\hyperlink{kinematics__factory__unit_8cpp_a918c8faa92717caa3ba8aef1b4ef8163}{scene\+\_\+state}}) const
+\begin{DoxyCompactList}\small\item\em Get forward kinematics object given plugin info. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtesseract__kinematics_1_1InverseKinematics_a68e526591337b0781c9ec91618d1d5f0}{Inverse\+Kinematics\+::\+UPtr}} \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_a66eb85b9f7ac8ddaae75afef612ab758}{create\+Inv\+Kin}} (const std\+::string \&solver\+\_\+name, const \mbox{\hyperlink{structtesseract__common_1_1PluginInfo}{tesseract\+\_\+common\+::\+Plugin\+Info}} \&\mbox{\hyperlink{contact__managers__factory__unit_8cpp_aa85411aa79e8b65adf666700a5a44add}{plugin\+\_\+info}}, const \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph}{tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+Graph}} \&\mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a8d4d0dc3a6b9a7030970bf9ed3764756}{scene\+\_\+graph}}, const \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+State}} \&\mbox{\hyperlink{kinematics__factory__unit_8cpp_a918c8faa92717caa3ba8aef1b4ef8163}{scene\+\_\+state}}) const
+\begin{DoxyCompactList}\small\item\em Get inverse kinematics object given plugin info. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_afda6142fda8ba142cd54a0b0b26a7c87}{save\+Config}} (const tesseract\+\_\+common\+::fs\+::path \&\mbox{\hyperlink{resource__locator__unit_8cpp_a803157d97edf460a9f115ca41b182e73}{file\+\_\+path}}) const
+\begin{DoxyCompactList}\small\item\em Save the plugin information to a yaml config file. \end{DoxyCompactList}\item 
+YAML\+::\+Node \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_a6783a0e8fdbed45371ff762226131649}{get\+Config}} () const
+\begin{DoxyCompactList}\small\item\em Get the plugin information config as a yaml node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{classtesseract__kinematics_1_1FwdKinFactory_a27d2e728623b6eb6b87a3632fbf76fe3}{Fwd\+Kin\+Factory\+::\+Ptr}} $>$ \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_a79c70b16860ac216f430be4f822273ea}{fwd\+\_\+kin\+\_\+factories\+\_\+}}
+\item 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{classtesseract__kinematics_1_1InvKinFactory_a84b64f875adaf807f1ab26868bb4ccdd}{Inv\+Kin\+Factory\+::\+Ptr}} $>$ \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_a176c6186887335db29e217845960117a}{inv\+\_\+kin\+\_\+factories\+\_\+}}
+\item 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{structtesseract__common_1_1PluginInfoContainer}{tesseract\+\_\+common\+::\+Plugin\+Info\+Container}} $>$ \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_a336a23752987a7f92eeb25fe4315a4de}{fwd\+\_\+plugin\+\_\+info\+\_\+}}
+\item 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{structtesseract__common_1_1PluginInfoContainer}{tesseract\+\_\+common\+::\+Plugin\+Info\+Container}} $>$ \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_a22571a36b7f6b31372943de2ed97bb4e}{inv\+\_\+plugin\+\_\+info\+\_\+}}
+\item 
+\mbox{\hyperlink{classtesseract__common_1_1PluginLoader}{tesseract\+\_\+common\+::\+Plugin\+Loader}} \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_adf365c52f4c84e7728ec883138742dda}{plugin\+\_\+loader\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtesseract__kinematics_1_1KinematicsPluginFactory_acbaf4ecd2f5406b4fc85a0c92ef3ac0e}\label{classtesseract__kinematics_1_1KinematicsPluginFactory_acbaf4ecd2f5406b4fc85a0c92ef3ac0e}} 
+\index{tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}!KinematicsPluginFactory@{KinematicsPluginFactory}}
+\index{KinematicsPluginFactory@{KinematicsPluginFactory}!tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}}
+\doxysubsubsection{\texorpdfstring{KinematicsPluginFactory()}{KinematicsPluginFactory()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily tesseract\+\_\+kinematics\+::\+Kinematics\+Plugin\+Factory\+::\+Kinematics\+Plugin\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classtesseract__kinematics_1_1KinematicsPluginFactory_abf4e004c661d548c4dbb27acecbf1e23}\label{classtesseract__kinematics_1_1KinematicsPluginFactory_abf4e004c661d548c4dbb27acecbf1e23}} 
+\index{tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}!````~KinematicsPluginFactory@{$\sim$KinematicsPluginFactory}}
+\index{````~KinematicsPluginFactory@{$\sim$KinematicsPluginFactory}!tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}}
+\doxysubsubsection{\texorpdfstring{$\sim$KinematicsPluginFactory()}{~KinematicsPluginFactory()}}
+{\footnotesize\ttfamily tesseract\+\_\+kinematics\+::\+Kinematics\+Plugin\+Factory\+::$\sim$\+Kinematics\+Plugin\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{classtesseract__kinematics_1_1KinematicsPluginFactory_aca45cb9c8cae4b75f6a99529332ca329}\label{classtesseract__kinematics_1_1KinematicsPluginFactory_aca45cb9c8cae4b75f6a99529332ca329}} 
+\index{tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}!KinematicsPluginFactory@{KinematicsPluginFactory}}
+\index{KinematicsPluginFactory@{KinematicsPluginFactory}!tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}}
+\doxysubsubsection{\texorpdfstring{KinematicsPluginFactory()}{KinematicsPluginFactory()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily tesseract\+\_\+kinematics\+::\+Kinematics\+Plugin\+Factory\+::\+Kinematics\+Plugin\+Factory (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory}{Kinematics\+Plugin\+Factory}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{classtesseract__kinematics_1_1KinematicsPluginFactory_acd20567002f426c7f5e5164ba4558ffc}\label{classtesseract__kinematics_1_1KinematicsPluginFactory_acd20567002f426c7f5e5164ba4558ffc}} 
+\index{tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}!KinematicsPluginFactory@{KinematicsPluginFactory}}
+\index{KinematicsPluginFactory@{KinematicsPluginFactory}!tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}}
+\doxysubsubsection{\texorpdfstring{KinematicsPluginFactory()}{KinematicsPluginFactory()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily tesseract\+\_\+kinematics\+::\+Kinematics\+Plugin\+Factory\+::\+Kinematics\+Plugin\+Factory (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory}{Kinematics\+Plugin\+Factory}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{classtesseract__kinematics_1_1KinematicsPluginFactory_a9c6ec370a642a65f57d8a21b2be39967}\label{classtesseract__kinematics_1_1KinematicsPluginFactory_a9c6ec370a642a65f57d8a21b2be39967}} 
+\index{tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}!KinematicsPluginFactory@{KinematicsPluginFactory}}
+\index{KinematicsPluginFactory@{KinematicsPluginFactory}!tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}}
+\doxysubsubsection{\texorpdfstring{KinematicsPluginFactory()}{KinematicsPluginFactory()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily tesseract\+\_\+kinematics\+::\+Kinematics\+Plugin\+Factory\+::\+Kinematics\+Plugin\+Factory (\begin{DoxyParamCaption}\item[{YAML\+::\+Node}]{config }\end{DoxyParamCaption})}
+
+
+
+Load plugins from yaml node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em config} & The config node \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__kinematics_1_1KinematicsPluginFactory_abffdfb823dc19f73754f034a79329264}\label{classtesseract__kinematics_1_1KinematicsPluginFactory_abffdfb823dc19f73754f034a79329264}} 
+\index{tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}!KinematicsPluginFactory@{KinematicsPluginFactory}}
+\index{KinematicsPluginFactory@{KinematicsPluginFactory}!tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}}
+\doxysubsubsection{\texorpdfstring{KinematicsPluginFactory()}{KinematicsPluginFactory()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily tesseract\+\_\+kinematics\+::\+Kinematics\+Plugin\+Factory\+::\+Kinematics\+Plugin\+Factory (\begin{DoxyParamCaption}\item[{const tesseract\+\_\+common\+::fs\+::path \&}]{config }\end{DoxyParamCaption})}
+
+
+
+Load plugins from file path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em config} & The config file path \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__kinematics_1_1KinematicsPluginFactory_a1e11b88ecec8111f509c7ea20acefb88}\label{classtesseract__kinematics_1_1KinematicsPluginFactory_a1e11b88ecec8111f509c7ea20acefb88}} 
+\index{tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}!KinematicsPluginFactory@{KinematicsPluginFactory}}
+\index{KinematicsPluginFactory@{KinematicsPluginFactory}!tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}}
+\doxysubsubsection{\texorpdfstring{KinematicsPluginFactory()}{KinematicsPluginFactory()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily tesseract\+\_\+kinematics\+::\+Kinematics\+Plugin\+Factory\+::\+Kinematics\+Plugin\+Factory (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{config }\end{DoxyParamCaption})}
+
+
+
+Load plugins from string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em config} & The config string \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtesseract__kinematics_1_1KinematicsPluginFactory_a745991b12ee4d6a75e8272a7d1f9af51}\label{classtesseract__kinematics_1_1KinematicsPluginFactory_a745991b12ee4d6a75e8272a7d1f9af51}} 
+\index{tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}!addFwdKinPlugin@{addFwdKinPlugin}}
+\index{addFwdKinPlugin@{addFwdKinPlugin}!tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}}
+\doxysubsubsection{\texorpdfstring{addFwdKinPlugin()}{addFwdKinPlugin()}}
+{\footnotesize\ttfamily void tesseract\+\_\+kinematics\+::\+Kinematics\+Plugin\+Factory\+::add\+Fwd\+Kin\+Plugin (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{group\+\_\+name,  }\item[{const std\+::string \&}]{solver\+\_\+name,  }\item[{\mbox{\hyperlink{structtesseract__common_1_1PluginInfo}{tesseract\+\_\+common\+::\+Plugin\+Info}}}]{plugin\+\_\+info }\end{DoxyParamCaption})}
+
+
+
+Add a forward kinematics plugin to the manager. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em group\+\_\+name} & The group name \\
+\hline
+{\em solver\+\_\+name} & The solver name \\
+\hline
+{\em plugin\+\_\+info} & The plugin information \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__kinematics_1_1KinematicsPluginFactory_a035ed0751892a914c73f0fef28648d95}\label{classtesseract__kinematics_1_1KinematicsPluginFactory_a035ed0751892a914c73f0fef28648d95}} 
+\index{tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}!addInvKinPlugin@{addInvKinPlugin}}
+\index{addInvKinPlugin@{addInvKinPlugin}!tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}}
+\doxysubsubsection{\texorpdfstring{addInvKinPlugin()}{addInvKinPlugin()}}
+{\footnotesize\ttfamily void tesseract\+\_\+kinematics\+::\+Kinematics\+Plugin\+Factory\+::add\+Inv\+Kin\+Plugin (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{group\+\_\+name,  }\item[{const std\+::string \&}]{solver\+\_\+name,  }\item[{\mbox{\hyperlink{structtesseract__common_1_1PluginInfo}{tesseract\+\_\+common\+::\+Plugin\+Info}}}]{plugin\+\_\+info }\end{DoxyParamCaption})}
+
+
+
+Add a inverse kinematics plugin to the manager. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em group\+\_\+name} & The group name \\
+\hline
+{\em solver\+\_\+name} & The solver name \\
+\hline
+{\em plugin\+\_\+info} & The plugin information \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__kinematics_1_1KinematicsPluginFactory_aecf6c6b04198b8d594e0a132a343bdb0}\label{classtesseract__kinematics_1_1KinematicsPluginFactory_aecf6c6b04198b8d594e0a132a343bdb0}} 
+\index{tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}!addSearchLibrary@{addSearchLibrary}}
+\index{addSearchLibrary@{addSearchLibrary}!tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}}
+\doxysubsubsection{\texorpdfstring{addSearchLibrary()}{addSearchLibrary()}}
+{\footnotesize\ttfamily void tesseract\+\_\+kinematics\+::\+Kinematics\+Plugin\+Factory\+::add\+Search\+Library (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{library\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Add a library to search for plugin name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em library\+\_\+name} & The library name without the prefix or suffix \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__kinematics_1_1KinematicsPluginFactory_aeb07fcaa4315b3e754e226f2bc58f785}\label{classtesseract__kinematics_1_1KinematicsPluginFactory_aeb07fcaa4315b3e754e226f2bc58f785}} 
+\index{tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}!addSearchPath@{addSearchPath}}
+\index{addSearchPath@{addSearchPath}!tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}}
+\doxysubsubsection{\texorpdfstring{addSearchPath()}{addSearchPath()}}
+{\footnotesize\ttfamily void tesseract\+\_\+kinematics\+::\+Kinematics\+Plugin\+Factory\+::add\+Search\+Path (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})}
+
+
+
+Add location for the plugin loader to search. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The full path to the directory \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__kinematics_1_1KinematicsPluginFactory_ad40092590da9f40ce3da0aa570044444}\label{classtesseract__kinematics_1_1KinematicsPluginFactory_ad40092590da9f40ce3da0aa570044444}} 
+\index{tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}!createFwdKin@{createFwdKin}}
+\index{createFwdKin@{createFwdKin}!tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}}
+\doxysubsubsection{\texorpdfstring{createFwdKin()}{createFwdKin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__kinematics_1_1ForwardKinematics_a53cb5fab19798d5afc20c259d4ffe1e3}{Forward\+Kinematics\+::\+UPtr}} tesseract\+\_\+kinematics\+::\+Kinematics\+Plugin\+Factory\+::create\+Fwd\+Kin (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{group\+\_\+name,  }\item[{const std\+::string \&}]{solver\+\_\+name,  }\item[{const \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph}{tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+Graph}} \&}]{scene\+\_\+graph,  }\item[{const \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+State}} \&}]{scene\+\_\+state }\end{DoxyParamCaption}) const}
+
+
+
+Get forward kinematics object given group name and solver name. 
+
+This looks for kinematics plugin info added using add\+Fwd\+Kin\+Plugin. If not found nullptr is returned. 
+\begin{DoxyParams}{Parameters}
+{\em group\+\_\+name} & The group name \\
+\hline
+{\em solver\+\_\+name} & The solver \\
+\hline
+{\em scene\+\_\+graph} & The scene graph \\
+\hline
+{\em scene\+\_\+state} & The scene state \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__kinematics_1_1KinematicsPluginFactory_a34890654362ea8da029e6132ec0f7a45}\label{classtesseract__kinematics_1_1KinematicsPluginFactory_a34890654362ea8da029e6132ec0f7a45}} 
+\index{tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}!createFwdKin@{createFwdKin}}
+\index{createFwdKin@{createFwdKin}!tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}}
+\doxysubsubsection{\texorpdfstring{createFwdKin()}{createFwdKin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__kinematics_1_1ForwardKinematics_a53cb5fab19798d5afc20c259d4ffe1e3}{Forward\+Kinematics\+::\+UPtr}} tesseract\+\_\+kinematics\+::\+Kinematics\+Plugin\+Factory\+::create\+Fwd\+Kin (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{solver\+\_\+name,  }\item[{const \mbox{\hyperlink{structtesseract__common_1_1PluginInfo}{tesseract\+\_\+common\+::\+Plugin\+Info}} \&}]{plugin\+\_\+info,  }\item[{const \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph}{tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+Graph}} \&}]{scene\+\_\+graph,  }\item[{const \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+State}} \&}]{scene\+\_\+state }\end{DoxyParamCaption}) const}
+
+
+
+Get forward kinematics object given plugin info. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plugin\+\_\+info} & The plugin information to create kinematics object \\
+\hline
+{\em scene\+\_\+graph} & The scene graph \\
+\hline
+{\em scene\+\_\+state} & The scene state \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__kinematics_1_1KinematicsPluginFactory_a6a396e48c2c7350f114f7d6856b6cd5a}\label{classtesseract__kinematics_1_1KinematicsPluginFactory_a6a396e48c2c7350f114f7d6856b6cd5a}} 
+\index{tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}!createInvKin@{createInvKin}}
+\index{createInvKin@{createInvKin}!tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}}
+\doxysubsubsection{\texorpdfstring{createInvKin()}{createInvKin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__kinematics_1_1InverseKinematics_a68e526591337b0781c9ec91618d1d5f0}{Inverse\+Kinematics\+::\+UPtr}} tesseract\+\_\+kinematics\+::\+Kinematics\+Plugin\+Factory\+::create\+Inv\+Kin (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{group\+\_\+name,  }\item[{const std\+::string \&}]{solver\+\_\+name,  }\item[{const \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph}{tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+Graph}} \&}]{scene\+\_\+graph,  }\item[{const \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+State}} \&}]{scene\+\_\+state }\end{DoxyParamCaption}) const}
+
+
+
+Get inverse kinematics object given group name and solver name. 
+
+This looks for kinematics plugin info added using add\+Inv\+Kin\+Plugin. If not found nullptr is returned. 
+\begin{DoxyParams}{Parameters}
+{\em group\+\_\+name} & The group name \\
+\hline
+{\em solver\+\_\+name} & The solver \\
+\hline
+{\em scene\+\_\+graph} & The scene graph \\
+\hline
+{\em scene\+\_\+state} & The scene state \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__kinematics_1_1KinematicsPluginFactory_a66eb85b9f7ac8ddaae75afef612ab758}\label{classtesseract__kinematics_1_1KinematicsPluginFactory_a66eb85b9f7ac8ddaae75afef612ab758}} 
+\index{tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}!createInvKin@{createInvKin}}
+\index{createInvKin@{createInvKin}!tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}}
+\doxysubsubsection{\texorpdfstring{createInvKin()}{createInvKin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__kinematics_1_1InverseKinematics_a68e526591337b0781c9ec91618d1d5f0}{Inverse\+Kinematics\+::\+UPtr}} tesseract\+\_\+kinematics\+::\+Kinematics\+Plugin\+Factory\+::create\+Inv\+Kin (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{solver\+\_\+name,  }\item[{const \mbox{\hyperlink{structtesseract__common_1_1PluginInfo}{tesseract\+\_\+common\+::\+Plugin\+Info}} \&}]{plugin\+\_\+info,  }\item[{const \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph}{tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+Graph}} \&}]{scene\+\_\+graph,  }\item[{const \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+State}} \&}]{scene\+\_\+state }\end{DoxyParamCaption}) const}
+
+
+
+Get inverse kinematics object given plugin info. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plugin\+\_\+info} & The plugin information to create kinematics object \\
+\hline
+{\em scene\+\_\+graph} & The scene graph \\
+\hline
+{\em scene\+\_\+state} & The scene state \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__kinematics_1_1KinematicsPluginFactory_a6783a0e8fdbed45371ff762226131649}\label{classtesseract__kinematics_1_1KinematicsPluginFactory_a6783a0e8fdbed45371ff762226131649}} 
+\index{tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}!getConfig@{getConfig}}
+\index{getConfig@{getConfig}!tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}}
+\doxysubsubsection{\texorpdfstring{getConfig()}{getConfig()}}
+{\footnotesize\ttfamily YAML\+::\+Node tesseract\+\_\+kinematics\+::\+Kinematics\+Plugin\+Factory\+::get\+Config (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the plugin information config as a yaml node. 
+
+\begin{DoxyReturn}{Returns}
+The plugin information config yaml node/ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__kinematics_1_1KinematicsPluginFactory_aedc79793e0b0c049501881e2cca1cae2}\label{classtesseract__kinematics_1_1KinematicsPluginFactory_aedc79793e0b0c049501881e2cca1cae2}} 
+\index{tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}!getDefaultFwdKinPlugin@{getDefaultFwdKinPlugin}}
+\index{getDefaultFwdKinPlugin@{getDefaultFwdKinPlugin}!tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}}
+\doxysubsubsection{\texorpdfstring{getDefaultFwdKinPlugin()}{getDefaultFwdKinPlugin()}}
+{\footnotesize\ttfamily std\+::string tesseract\+\_\+kinematics\+::\+Kinematics\+Plugin\+Factory\+::get\+Default\+Fwd\+Kin\+Plugin (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{group\+\_\+name }\end{DoxyParamCaption}) const}
+
+
+
+Get the default forward kinematics solver for a group. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em group\+\_\+name} & The group \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The default solver name 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__kinematics_1_1KinematicsPluginFactory_af823a28249382f44dad87f7db6f64e8e}\label{classtesseract__kinematics_1_1KinematicsPluginFactory_af823a28249382f44dad87f7db6f64e8e}} 
+\index{tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}!getDefaultInvKinPlugin@{getDefaultInvKinPlugin}}
+\index{getDefaultInvKinPlugin@{getDefaultInvKinPlugin}!tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}}
+\doxysubsubsection{\texorpdfstring{getDefaultInvKinPlugin()}{getDefaultInvKinPlugin()}}
+{\footnotesize\ttfamily std\+::string tesseract\+\_\+kinematics\+::\+Kinematics\+Plugin\+Factory\+::get\+Default\+Inv\+Kin\+Plugin (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{group\+\_\+name }\end{DoxyParamCaption}) const}
+
+
+
+Get the default forward inverse solver for a group. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em group\+\_\+name} & The group \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The default solver name 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__kinematics_1_1KinematicsPluginFactory_a195c0c53ece00d51d977d1ddd3bd8418}\label{classtesseract__kinematics_1_1KinematicsPluginFactory_a195c0c53ece00d51d977d1ddd3bd8418}} 
+\index{tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}!getFwdKinPlugins@{getFwdKinPlugins}}
+\index{getFwdKinPlugins@{getFwdKinPlugins}!tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}}
+\doxysubsubsection{\texorpdfstring{getFwdKinPlugins()}{getFwdKinPlugins()}}
+{\footnotesize\ttfamily std\+::map$<$ std\+::string, \mbox{\hyperlink{structtesseract__common_1_1PluginInfoContainer}{tesseract\+\_\+common\+::\+Plugin\+Info\+Container}} $>$ tesseract\+\_\+kinematics\+::\+Kinematics\+Plugin\+Factory\+::get\+Fwd\+Kin\+Plugins (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the map of forward kinematic plugins. 
+
+\begin{DoxyReturn}{Returns}
+A map of plugins 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__kinematics_1_1KinematicsPluginFactory_aaf3b1a4cf7c88e9d31f931b9ff4610f9}\label{classtesseract__kinematics_1_1KinematicsPluginFactory_aaf3b1a4cf7c88e9d31f931b9ff4610f9}} 
+\index{tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}!getInvKinPlugins@{getInvKinPlugins}}
+\index{getInvKinPlugins@{getInvKinPlugins}!tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}}
+\doxysubsubsection{\texorpdfstring{getInvKinPlugins()}{getInvKinPlugins()}}
+{\footnotesize\ttfamily std\+::map$<$ std\+::string, \mbox{\hyperlink{structtesseract__common_1_1PluginInfoContainer}{tesseract\+\_\+common\+::\+Plugin\+Info\+Container}} $>$ tesseract\+\_\+kinematics\+::\+Kinematics\+Plugin\+Factory\+::get\+Inv\+Kin\+Plugins (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the map of inverse kinematic plugins. 
+
+\begin{DoxyReturn}{Returns}
+A map of plugins 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__kinematics_1_1KinematicsPluginFactory_a37ac50baa5ddbf0617ff6002a30858ab}\label{classtesseract__kinematics_1_1KinematicsPluginFactory_a37ac50baa5ddbf0617ff6002a30858ab}} 
+\index{tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}!getSearchLibraries@{getSearchLibraries}}
+\index{getSearchLibraries@{getSearchLibraries}!tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}}
+\doxysubsubsection{\texorpdfstring{getSearchLibraries()}{getSearchLibraries()}}
+{\footnotesize\ttfamily std\+::set$<$ std\+::string $>$ tesseract\+\_\+kinematics\+::\+Kinematics\+Plugin\+Factory\+::get\+Search\+Libraries (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the plugin search libraries. 
+
+\begin{DoxyReturn}{Returns}
+The search libraries 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__kinematics_1_1KinematicsPluginFactory_a415a55fe39900f9f4a39547e9eb86f2e}\label{classtesseract__kinematics_1_1KinematicsPluginFactory_a415a55fe39900f9f4a39547e9eb86f2e}} 
+\index{tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}!getSearchPaths@{getSearchPaths}}
+\index{getSearchPaths@{getSearchPaths}!tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}}
+\doxysubsubsection{\texorpdfstring{getSearchPaths()}{getSearchPaths()}}
+{\footnotesize\ttfamily std\+::set$<$ std\+::string $>$ tesseract\+\_\+kinematics\+::\+Kinematics\+Plugin\+Factory\+::get\+Search\+Paths (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the plugin search paths. 
+
+\begin{DoxyReturn}{Returns}
+The search paths 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__kinematics_1_1KinematicsPluginFactory_a81e6ed801070849d4d4cb6ed16dca247}\label{classtesseract__kinematics_1_1KinematicsPluginFactory_a81e6ed801070849d4d4cb6ed16dca247}} 
+\index{tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}!operator=@{operator=}}
+\index{operator=@{operator=}!tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory}{Kinematics\+Plugin\+Factory}} \& tesseract\+\_\+kinematics\+::\+Kinematics\+Plugin\+Factory\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory}{Kinematics\+Plugin\+Factory}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{classtesseract__kinematics_1_1KinematicsPluginFactory_a18d8c54a972392cb858a533ea5128d4d}\label{classtesseract__kinematics_1_1KinematicsPluginFactory_a18d8c54a972392cb858a533ea5128d4d}} 
+\index{tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}!operator=@{operator=}}
+\index{operator=@{operator=}!tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory}{Kinematics\+Plugin\+Factory}} \& tesseract\+\_\+kinematics\+::\+Kinematics\+Plugin\+Factory\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory}{Kinematics\+Plugin\+Factory}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{classtesseract__kinematics_1_1KinematicsPluginFactory_ad49ae6ea890eb83c98abff5d0b2b0b2b}\label{classtesseract__kinematics_1_1KinematicsPluginFactory_ad49ae6ea890eb83c98abff5d0b2b0b2b}} 
+\index{tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}!removeFwdKinPlugin@{removeFwdKinPlugin}}
+\index{removeFwdKinPlugin@{removeFwdKinPlugin}!tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}}
+\doxysubsubsection{\texorpdfstring{removeFwdKinPlugin()}{removeFwdKinPlugin()}}
+{\footnotesize\ttfamily void tesseract\+\_\+kinematics\+::\+Kinematics\+Plugin\+Factory\+::remove\+Fwd\+Kin\+Plugin (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{group\+\_\+name,  }\item[{const std\+::string \&}]{solver\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+remove forward kinematics plugin from the manager 
+
+
+\begin{DoxyParams}{Parameters}
+{\em group\+\_\+name} & The group name \\
+\hline
+{\em solver\+\_\+name} & The solver name \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__kinematics_1_1KinematicsPluginFactory_acf1a5652934dc1560d7a916fd11db5de}\label{classtesseract__kinematics_1_1KinematicsPluginFactory_acf1a5652934dc1560d7a916fd11db5de}} 
+\index{tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}!removeInvKinPlugin@{removeInvKinPlugin}}
+\index{removeInvKinPlugin@{removeInvKinPlugin}!tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}}
+\doxysubsubsection{\texorpdfstring{removeInvKinPlugin()}{removeInvKinPlugin()}}
+{\footnotesize\ttfamily void tesseract\+\_\+kinematics\+::\+Kinematics\+Plugin\+Factory\+::remove\+Inv\+Kin\+Plugin (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{group\+\_\+name,  }\item[{const std\+::string \&}]{solver\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+remove inverse kinematics plugin from the manager 
+
+
+\begin{DoxyParams}{Parameters}
+{\em group\+\_\+name} & The group name \\
+\hline
+{\em solver\+\_\+name} & The solver name \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__kinematics_1_1KinematicsPluginFactory_afda6142fda8ba142cd54a0b0b26a7c87}\label{classtesseract__kinematics_1_1KinematicsPluginFactory_afda6142fda8ba142cd54a0b0b26a7c87}} 
+\index{tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}!saveConfig@{saveConfig}}
+\index{saveConfig@{saveConfig}!tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}}
+\doxysubsubsection{\texorpdfstring{saveConfig()}{saveConfig()}}
+{\footnotesize\ttfamily void tesseract\+\_\+kinematics\+::\+Kinematics\+Plugin\+Factory\+::save\+Config (\begin{DoxyParamCaption}\item[{const tesseract\+\_\+common\+::fs\+::path \&}]{file\+\_\+path }\end{DoxyParamCaption}) const}
+
+
+
+Save the plugin information to a yaml config file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+path} & The file path \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__kinematics_1_1KinematicsPluginFactory_a7fdbebeb4500741d93886fb3a6ce3c79}\label{classtesseract__kinematics_1_1KinematicsPluginFactory_a7fdbebeb4500741d93886fb3a6ce3c79}} 
+\index{tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}!setDefaultFwdKinPlugin@{setDefaultFwdKinPlugin}}
+\index{setDefaultFwdKinPlugin@{setDefaultFwdKinPlugin}!tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}}
+\doxysubsubsection{\texorpdfstring{setDefaultFwdKinPlugin()}{setDefaultFwdKinPlugin()}}
+{\footnotesize\ttfamily void tesseract\+\_\+kinematics\+::\+Kinematics\+Plugin\+Factory\+::set\+Default\+Fwd\+Kin\+Plugin (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{group\+\_\+name,  }\item[{const std\+::string \&}]{solver\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Set a groups default forward kinematics solver. 
+
+A group can have multiple inverse kinematics solvers 
+\begin{DoxyParams}{Parameters}
+{\em group\+\_\+name} & The group name \\
+\hline
+{\em solver\+\_\+name} & The solver name \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtesseract__kinematics_1_1KinematicsPluginFactory_a0ae2a3a9f1719337c9240fb33bec0a2e}\label{classtesseract__kinematics_1_1KinematicsPluginFactory_a0ae2a3a9f1719337c9240fb33bec0a2e}} 
+\index{tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}!setDefaultInvKinPlugin@{setDefaultInvKinPlugin}}
+\index{setDefaultInvKinPlugin@{setDefaultInvKinPlugin}!tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}}
+\doxysubsubsection{\texorpdfstring{setDefaultInvKinPlugin()}{setDefaultInvKinPlugin()}}
+{\footnotesize\ttfamily void tesseract\+\_\+kinematics\+::\+Kinematics\+Plugin\+Factory\+::set\+Default\+Inv\+Kin\+Plugin (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{group\+\_\+name,  }\item[{const std\+::string \&}]{solver\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Set a groups default inverse kinematics solver. 
+
+A group can have multiple inverse kinematics solvers 
+\begin{DoxyParams}{Parameters}
+{\em group\+\_\+name} & The group name \\
+\hline
+{\em solver\+\_\+name} & The solver name \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classtesseract__kinematics_1_1KinematicsPluginFactory_a79c70b16860ac216f430be4f822273ea}\label{classtesseract__kinematics_1_1KinematicsPluginFactory_a79c70b16860ac216f430be4f822273ea}} 
+\index{tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}!fwd\_kin\_factories\_@{fwd\_kin\_factories\_}}
+\index{fwd\_kin\_factories\_@{fwd\_kin\_factories\_}!tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}}
+\doxysubsubsection{\texorpdfstring{fwd\_kin\_factories\_}{fwd\_kin\_factories\_}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, \mbox{\hyperlink{classtesseract__kinematics_1_1FwdKinFactory_a27d2e728623b6eb6b87a3632fbf76fe3}{Fwd\+Kin\+Factory\+::\+Ptr}}$>$ tesseract\+\_\+kinematics\+::\+Kinematics\+Plugin\+Factory\+::fwd\+\_\+kin\+\_\+factories\+\_\+\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__kinematics_1_1KinematicsPluginFactory_a336a23752987a7f92eeb25fe4315a4de}\label{classtesseract__kinematics_1_1KinematicsPluginFactory_a336a23752987a7f92eeb25fe4315a4de}} 
+\index{tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}!fwd\_plugin\_info\_@{fwd\_plugin\_info\_}}
+\index{fwd\_plugin\_info\_@{fwd\_plugin\_info\_}!tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}}
+\doxysubsubsection{\texorpdfstring{fwd\_plugin\_info\_}{fwd\_plugin\_info\_}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, \mbox{\hyperlink{structtesseract__common_1_1PluginInfoContainer}{tesseract\+\_\+common\+::\+Plugin\+Info\+Container}}$>$ tesseract\+\_\+kinematics\+::\+Kinematics\+Plugin\+Factory\+::fwd\+\_\+plugin\+\_\+info\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__kinematics_1_1KinematicsPluginFactory_a176c6186887335db29e217845960117a}\label{classtesseract__kinematics_1_1KinematicsPluginFactory_a176c6186887335db29e217845960117a}} 
+\index{tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}!inv\_kin\_factories\_@{inv\_kin\_factories\_}}
+\index{inv\_kin\_factories\_@{inv\_kin\_factories\_}!tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}}
+\doxysubsubsection{\texorpdfstring{inv\_kin\_factories\_}{inv\_kin\_factories\_}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, \mbox{\hyperlink{classtesseract__kinematics_1_1InvKinFactory_a84b64f875adaf807f1ab26868bb4ccdd}{Inv\+Kin\+Factory\+::\+Ptr}}$>$ tesseract\+\_\+kinematics\+::\+Kinematics\+Plugin\+Factory\+::inv\+\_\+kin\+\_\+factories\+\_\+\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__kinematics_1_1KinematicsPluginFactory_a22571a36b7f6b31372943de2ed97bb4e}\label{classtesseract__kinematics_1_1KinematicsPluginFactory_a22571a36b7f6b31372943de2ed97bb4e}} 
+\index{tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}!inv\_plugin\_info\_@{inv\_plugin\_info\_}}
+\index{inv\_plugin\_info\_@{inv\_plugin\_info\_}!tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}}
+\doxysubsubsection{\texorpdfstring{inv\_plugin\_info\_}{inv\_plugin\_info\_}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, \mbox{\hyperlink{structtesseract__common_1_1PluginInfoContainer}{tesseract\+\_\+common\+::\+Plugin\+Info\+Container}}$>$ tesseract\+\_\+kinematics\+::\+Kinematics\+Plugin\+Factory\+::inv\+\_\+plugin\+\_\+info\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classtesseract__kinematics_1_1KinematicsPluginFactory_adf365c52f4c84e7728ec883138742dda}\label{classtesseract__kinematics_1_1KinematicsPluginFactory_adf365c52f4c84e7728ec883138742dda}} 
+\index{tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}!plugin\_loader\_@{plugin\_loader\_}}
+\index{plugin\_loader\_@{plugin\_loader\_}!tesseract\_kinematics::KinematicsPluginFactory@{tesseract\_kinematics::KinematicsPluginFactory}}
+\doxysubsubsection{\texorpdfstring{plugin\_loader\_}{plugin\_loader\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__common_1_1PluginLoader}{tesseract\+\_\+common\+::\+Plugin\+Loader}} tesseract\+\_\+kinematics\+::\+Kinematics\+Plugin\+Factory\+::plugin\+\_\+loader\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+tesseract\+\_\+kinematics/core/include/tesseract\+\_\+kinematics/core/\mbox{\hyperlink{kinematics__plugin__factory_8h}{kinematics\+\_\+plugin\+\_\+factory.\+h}}\item 
+tesseract\+\_\+kinematics/core/src/\mbox{\hyperlink{kinematics__plugin__factory_8cpp}{kinematics\+\_\+plugin\+\_\+factory.\+cpp}}\end{DoxyCompactItemize}

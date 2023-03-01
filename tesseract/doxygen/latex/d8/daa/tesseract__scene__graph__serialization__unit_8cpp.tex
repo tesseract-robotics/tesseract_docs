@@ -1,0 +1,369 @@
+\hypertarget{tesseract__scene__graph__serialization__unit_8cpp}{}\doxysection{tesseract\+\_\+scene\+\_\+graph/test/tesseract\+\_\+scene\+\_\+graph\+\_\+serialization\+\_\+unit.cpp File Reference}
+\label{tesseract__scene__graph__serialization__unit_8cpp}\index{tesseract\_scene\_graph/test/tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph/test/tesseract\_scene\_graph\_serialization\_unit.cpp}}
+
+
+Tests serialization of \mbox{\hyperlink{namespacetesseract__scene__graph}{tesseract\+\_\+scene\+\_\+graph}}.  
+
+
+{\ttfamily \#include $<$tesseract\+\_\+common/macros.\+h$>$}\newline
+{\ttfamily \#include $<$gtest/gtest.\+h$>$}\newline
+{\ttfamily \#include $<$boost/serialization/shared\+\_\+ptr.\+hpp$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+common/serialization.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+common/unit\+\_\+test\+\_\+utils.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+common/utils.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+geometry/geometries.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+scene\+\_\+graph/graph.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+scene\+\_\+graph/joint.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+scene\+\_\+graph/link.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+scene\+\_\+graph/scene\+\_\+state.\+h$>$}\newline
+Include dependency graph for tesseract\+\_\+scene\+\_\+graph\+\_\+serialization\+\_\+unit.\+cpp\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}} parent\+\_\+to\+\_\+joint\+\_\+origin\+\_\+transform \mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_ad5931fc8e6d8f0840ca136d9d5ff2256}{translate}} (Eigen\+::\+Vector3d(5.\+5, 6.\+6, 7.\+7))
+\item 
+\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}} origin \mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a4e76acb2fb00f7f2fba67efe2fbe7e28}{translate}} (Eigen\+::\+Vector3d(5.\+6, 7.\+8, -\/1.\+7))
+\item 
+\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}} visual \mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_aefd863a670cef8c78297cc7afa4acda4}{push\+\_\+back}} (std\+::make\+\_\+shared$<$ \mbox{\hyperlink{classtesseract__scene__graph_1_1Visual}{Visual}} $>$())
+\item 
+\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}} visual \mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a4c99f8906ca6317715db8020ba2e1df4}{push\+\_\+back}} (\mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a38039e2c592ffc51123229893cca2181}{vis}})
+\item 
+\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}} \mbox{\hyperlink{tesseract__environment__collision_8cpp_a3be2fbb575121a66cac4f4cb4b2e9987}{collision}} \mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a14341687be45291612fb96d144463f5b}{push\+\_\+back}} (std\+::make\+\_\+shared$<$ \mbox{\hyperlink{classtesseract__scene__graph_1_1Collision}{Collision}} $>$())
+\item 
+\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}} \mbox{\hyperlink{tesseract__environment__collision_8cpp_a3be2fbb575121a66cac4f4cb4b2e9987}{collision}} \mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_ade53bfbe6d7841907aac1bab27a4ea7b}{push\+\_\+back}} (\mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a38407d2402d784852b9c0094464765ef}{col}})
+\item 
+\mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph}{tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+Graph}} \mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_ae3c5d136c1a7167198e8ddb07247c9db}{create\+Test\+Scene\+Graph}} ()
+\item 
+\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}} link\+\_\+transforms\mbox{[}\char`\"{}link\+\_\+transforms\+\_\+key\char`\"{}\mbox{]} \mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a872d2c0d30c5367f5d6647c4107c7072}{set\+Identity}} ()
+\item 
+\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}} link\+\_\+transforms\mbox{[}\char`\"{}link\+\_\+transforms\+\_\+key\char`\"{}\mbox{]} \mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_afb70553c7183bb23e1293bb4fedf1797}{translate}} (Eigen\+::\+Vector3d(1, 2, 3))
+\item 
+\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}} joint\+\_\+transforms\mbox{[}\char`\"{}joint\+\_\+transforms\+\_\+key\char`\"{}\mbox{]} \mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a183a8c3d20cbfdaa0e34c739de524970}{translate}} (Eigen\+::\+Vector3d(5, 6, 7))
+\item 
+int \mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacetesseract__common_a5330a58c8c79cce5559a316e76118558}{tesseract\+\_\+common\+::test\+Serialization}}$<$ \mbox{\hyperlink{classtesseract__scene__graph_1_1JointDynamics}{Joint\+Dynamics}} $>$ $\ast$ \mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a50ba9656de4eec4cd464a964477735e7}{object}}
+\item 
+\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}} \mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a03d94dcd5a8c6b2fe1f4dc7f3abc5c66}{type}} = Joint\+Type\+::\+PLANAR
+\item 
+\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}} \mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a2a94595a4fd1b33d563dc7921da1bc7d}{axis}} = Eigen\+::\+Vector3d(1.\+1, 2.\+2, 3.\+3)
+\item 
+\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}} \mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a0ee2553dcc3b0f52bcf8c8e552ef733d}{child\+\_\+link\+\_\+name}} = \char`\"{}child\+\_\+name\char`\"{}
+\item 
+\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}} \mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a1c8a54acf8831080b86833add3e01e16}{parent\+\_\+link\+\_\+name}} = \char`\"{}parent\+\_\+name\char`\"{}
+\item 
+\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}} \mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a68c10fa070763f88c082f3e3c711928d}{dynamics}} = std\+::make\+\_\+shared$<$\mbox{\hyperlink{classtesseract__scene__graph_1_1JointDynamics}{Joint\+Dynamics}}$>$(1.\+1, 2.\+2)
+\item 
+\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}} \mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a44411c09f49d48ffe02bcdbce2438b96}{limits}} = std\+::make\+\_\+shared$<$\mbox{\hyperlink{classtesseract__scene__graph_1_1JointLimits}{Joint\+Limits}}$>$(1.\+1, 2.\+2, 3.\+3, 4.\+4, 5.\+5)
+\item 
+\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}} \mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a76f1cad70ee470c5efe65485351c071c}{safety}} = std\+::make\+\_\+shared$<$\mbox{\hyperlink{classtesseract__scene__graph_1_1JointSafety}{Joint\+Safety}}$>$(1.\+1, 2.\+2, 3.\+3, 4.\+4)
+\item 
+\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}} \mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a6734e1fbc359fe5a436f5877d733b6fb}{calibration}} = std\+::make\+\_\+shared$<$\mbox{\hyperlink{classtesseract__scene__graph_1_1JointCalibration}{Joint\+Calibration}}$>$(1.\+1, 2.\+2, 3.\+3)
+\item 
+\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}} \mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a98296011067f93e70c7940ac88eacd01}{mimic}} = std\+::make\+\_\+shared$<$\mbox{\hyperlink{classtesseract__scene__graph_1_1JointMimic}{Joint\+Mimic}}$>$(1.\+1, 2.\+2, \char`\"{}mimic\+\_\+name\char`\"{})
+\item 
+\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}} \mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a691644e71df158948019a1d7dafa35ae}{color}} = Eigen\+::\+Vector4d(0.\+1, 0.\+2, 0.\+3, 1.\+0)
+\item 
+\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}} \mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a625dec466672ecb76a4153d421b621a6}{texture\+\_\+filename}} = \char`\"{}test\+\_\+filename\char`\"{}
+\item 
+\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}} \mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a3c1e0fe0fedcbd5ae45465b830348b44}{mass}} = 1.\+2
+\item 
+\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}} \mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_ad482e5442d4b6454ce475c94fb131ced}{ixx}} = 2.\+3
+\item 
+\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}} \mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a46ffb27374f060387cc2d0013d4d7e59}{ixy}} = 3.\+4
+\item 
+\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}} \mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a8978673f5f8384514d0e09e2d310cea0}{ixz}} = 4.\+5
+\item 
+\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}} \mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a0dedaf02dfe78118a0e449e32555655c}{iyy}} = 5.\+6
+\item 
+\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}} \mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a691e0d4a5a66e44884c4effa7a1d90ff}{iyz}} = 6.\+7
+\item 
+\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}} \mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a9f7021daf9a09fc51a6f9b4375121609}{izz}} = 7.\+8
+\item 
+\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}} \mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_ae1583d97141eaa2e1873965983e20ad7}{geometry}} = std\+::make\+\_\+shared$<$\mbox{\hyperlink{classtesseract__geometry_1_1Cone}{tesseract\+\_\+geometry\+::\+Cone}}$>$(1.\+1, 2.\+2)
+\item 
+\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}} \mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_abd1ae0faf8b8ed36ee5c62dd1c259a59}{material}} = std\+::make\+\_\+shared$<$\mbox{\hyperlink{classtesseract__scene__graph_1_1Material}{Material}}$>$(\char`\"{}test\+\_\+name\char`\"{})
+\item 
+\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}} \mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}} = \char`\"{}visual\+\_\+name\char`\"{}
+\item 
+\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}} \mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a2cb96a593b04d3de3af0e869fe8fe371}{inertial}} = std\+::make\+\_\+shared$<$\mbox{\hyperlink{classtesseract__scene__graph_1_1Inertial}{Inertial}}$>$()
+\item 
+\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a395d31593a673a3b0efd30ad8d2bba78}{auto}} \mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a38039e2c592ffc51123229893cca2181}{vis}} = std\+::make\+\_\+shared$<$\mbox{\hyperlink{classtesseract__scene__graph_1_1Visual}{Visual}}$>$()
+\item 
+\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a395d31593a673a3b0efd30ad8d2bba78}{auto}} \mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a38407d2402d784852b9c0094464765ef}{col}} = std\+::make\+\_\+shared$<$\mbox{\hyperlink{classtesseract__scene__graph_1_1Collision}{Collision}}$>$()
+\item 
+\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}} \mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_ae41993a59637cf36532d3620b8203555}{joints}} \mbox{[}\char`\"{}j\+\_\+1\char`\"{}\mbox{]} = 12.\+3
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Tests serialization of \mbox{\hyperlink{namespacetesseract__scene__graph}{tesseract\+\_\+scene\+\_\+graph}}. 
+
+\begin{DoxyAuthor}{Author}
+Levi Armstrong 
+
+Matthew Powelson 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+March 18, 2022 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+TODO 
+\end{DoxyVersion}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000214}{Bug}}]No known bugs\end{DoxyRefDesc}
+
+
+\begin{DoxyParagraph}{License}
+Software License Agreement (Apache License) 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+Licensed under the Apache License, Version 2.\+0 (the \char`\"{}\+License\char`\"{}); you may not use this file except in compliance with the License. You may obtain a copy of the License at \href{http://www.apache.org/licenses/LICENSE-2.0}{\texttt{ http\+://www.\+apache.\+org/licenses/\+LICENSE-\/2.\+0}} 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \char`\"{}\+AS IS\char`\"{} BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License. 
+\end{DoxyParagraph}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{tesseract__scene__graph__serialization__unit_8cpp_ae3c5d136c1a7167198e8ddb07247c9db}\label{tesseract__scene__graph__serialization__unit_8cpp_ae3c5d136c1a7167198e8ddb07247c9db}} 
+\index{tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}!createTestSceneGraph@{createTestSceneGraph}}
+\index{createTestSceneGraph@{createTestSceneGraph}!tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{createTestSceneGraph()}{createTestSceneGraph()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph}{tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+Graph}} create\+Test\+Scene\+Graph (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__scene__graph__serialization__unit_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{tesseract__scene__graph__serialization__unit_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}!main@{main}}
+\index{main@{main}!tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__scene__graph__serialization__unit_8cpp_ade53bfbe6d7841907aac1bab27a4ea7b}\label{tesseract__scene__graph__serialization__unit_8cpp_ade53bfbe6d7841907aac1bab27a4ea7b}} 
+\index{tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}!push\_back@{push\_back}}
+\index{push\_back@{push\_back}!tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{push\_back()}{push\_back()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}} \mbox{\hyperlink{tesseract__environment__collision_8cpp_a3be2fbb575121a66cac4f4cb4b2e9987}{collision}} push\+\_\+back (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a38407d2402d784852b9c0094464765ef}{col}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__scene__graph__serialization__unit_8cpp_a14341687be45291612fb96d144463f5b}\label{tesseract__scene__graph__serialization__unit_8cpp_a14341687be45291612fb96d144463f5b}} 
+\index{tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}!push\_back@{push\_back}}
+\index{push\_back@{push\_back}!tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{push\_back()}{push\_back()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}} \mbox{\hyperlink{tesseract__environment__collision_8cpp_a3be2fbb575121a66cac4f4cb4b2e9987}{collision}} push\+\_\+back (\begin{DoxyParamCaption}\item[{std\+::make\+\_\+shared$<$ \mbox{\hyperlink{classtesseract__scene__graph_1_1Collision}{Collision}} $>$}]{() }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__scene__graph__serialization__unit_8cpp_aefd863a670cef8c78297cc7afa4acda4}\label{tesseract__scene__graph__serialization__unit_8cpp_aefd863a670cef8c78297cc7afa4acda4}} 
+\index{tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}!push\_back@{push\_back}}
+\index{push\_back@{push\_back}!tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{push\_back()}{push\_back()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}} visual push\+\_\+back (\begin{DoxyParamCaption}\item[{std\+::make\+\_\+shared$<$ \mbox{\hyperlink{classtesseract__scene__graph_1_1Visual}{Visual}} $>$}]{() }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__scene__graph__serialization__unit_8cpp_a4c99f8906ca6317715db8020ba2e1df4}\label{tesseract__scene__graph__serialization__unit_8cpp_a4c99f8906ca6317715db8020ba2e1df4}} 
+\index{tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}!push\_back@{push\_back}}
+\index{push\_back@{push\_back}!tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{push\_back()}{push\_back()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}} visual push\+\_\+back (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a38039e2c592ffc51123229893cca2181}{vis}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__scene__graph__serialization__unit_8cpp_a872d2c0d30c5367f5d6647c4107c7072}\label{tesseract__scene__graph__serialization__unit_8cpp_a872d2c0d30c5367f5d6647c4107c7072}} 
+\index{tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}!setIdentity@{setIdentity}}
+\index{setIdentity@{setIdentity}!tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{setIdentity()}{setIdentity()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}} link\+\_\+transforms\mbox{[}\char`\"{}link\+\_\+transforms\+\_\+key\char`\"{}\mbox{]} set\+Identity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__scene__graph__serialization__unit_8cpp_afb70553c7183bb23e1293bb4fedf1797}\label{tesseract__scene__graph__serialization__unit_8cpp_afb70553c7183bb23e1293bb4fedf1797}} 
+\index{tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}!translate@{translate}}
+\index{translate@{translate}!tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{translate()}{translate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}} link\+\_\+transforms\mbox{[}\char`\"{}link\+\_\+transforms\+\_\+key\char`\"{}\mbox{]} translate (\begin{DoxyParamCaption}\item[{Eigen\+::\+Vector3d(1, 2, 3)}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__scene__graph__serialization__unit_8cpp_a183a8c3d20cbfdaa0e34c739de524970}\label{tesseract__scene__graph__serialization__unit_8cpp_a183a8c3d20cbfdaa0e34c739de524970}} 
+\index{tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}!translate@{translate}}
+\index{translate@{translate}!tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{translate()}{translate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}} joint\+\_\+transforms\mbox{[}\char`\"{}joint\+\_\+transforms\+\_\+key\char`\"{}\mbox{]} translate (\begin{DoxyParamCaption}\item[{Eigen\+::\+Vector3d(5, 6, 7)}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tesseract__scene__graph__serialization__unit_8cpp_ad5931fc8e6d8f0840ca136d9d5ff2256}\label{tesseract__scene__graph__serialization__unit_8cpp_ad5931fc8e6d8f0840ca136d9d5ff2256}} 
+\index{tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}!translate@{translate}}
+\index{translate@{translate}!tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{translate()}{translate()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a38039e2c592ffc51123229893cca2181}{vis}} origin translate (\begin{DoxyParamCaption}\item[{Eigen\+::\+Vector3d(5.\+5, 6.\+6, 7.\+7)}]{ }\end{DoxyParamCaption})}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  \textcolor{keyword}{auto} \textcolor{keywordtype}{object} = std::make\_shared<Inertial>()}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{tesseract__scene__graph__serialization__unit_8cpp_a4e76acb2fb00f7f2fba67efe2fbe7e28}\label{tesseract__scene__graph__serialization__unit_8cpp_a4e76acb2fb00f7f2fba67efe2fbe7e28}} 
+\index{tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}!translate@{translate}}
+\index{translate@{translate}!tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{translate()}{translate()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a38407d2402d784852b9c0094464765ef}{col}} origin translate (\begin{DoxyParamCaption}\item[{Eigen\+::\+Vector3d(5.\+6, 7.\+8, -\/1.\+7)}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{tesseract__scene__graph__serialization__unit_8cpp_a2a94595a4fd1b33d563dc7921da1bc7d}\label{tesseract__scene__graph__serialization__unit_8cpp_a2a94595a4fd1b33d563dc7921da1bc7d}} 
+\index{tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}!axis@{axis}}
+\index{axis@{axis}!tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{axis}{axis}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}} axis = Eigen\+::\+Vector3d(1.\+1, 2.\+2, 3.\+3)}
+
+\mbox{\Hypertarget{tesseract__scene__graph__serialization__unit_8cpp_a6734e1fbc359fe5a436f5877d733b6fb}\label{tesseract__scene__graph__serialization__unit_8cpp_a6734e1fbc359fe5a436f5877d733b6fb}} 
+\index{tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}!calibration@{calibration}}
+\index{calibration@{calibration}!tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{calibration}{calibration}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}} calibration = std\+::make\+\_\+shared$<$\mbox{\hyperlink{classtesseract__scene__graph_1_1JointCalibration}{Joint\+Calibration}}$>$(1.\+1, 2.\+2, 3.\+3)}
+
+\mbox{\Hypertarget{tesseract__scene__graph__serialization__unit_8cpp_a0ee2553dcc3b0f52bcf8c8e552ef733d}\label{tesseract__scene__graph__serialization__unit_8cpp_a0ee2553dcc3b0f52bcf8c8e552ef733d}} 
+\index{tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}!child\_link\_name@{child\_link\_name}}
+\index{child\_link\_name@{child\_link\_name}!tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{child\_link\_name}{child\_link\_name}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__srdf__unit_8cpp_ae311a0687feecb613889177ee5f34409}{joint\+\_\+tool0}} child\+\_\+link\+\_\+name = \char`\"{}child\+\_\+name\char`\"{}}
+
+\mbox{\Hypertarget{tesseract__scene__graph__serialization__unit_8cpp_a38407d2402d784852b9c0094464765ef}\label{tesseract__scene__graph__serialization__unit_8cpp_a38407d2402d784852b9c0094464765ef}} 
+\index{tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}!col@{col}}
+\index{col@{col}!tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{col}{col}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a395d31593a673a3b0efd30ad8d2bba78}{auto}} col = std\+::make\+\_\+shared$<$\mbox{\hyperlink{classtesseract__scene__graph_1_1Collision}{Collision}}$>$()}
+
+\mbox{\Hypertarget{tesseract__scene__graph__serialization__unit_8cpp_a691644e71df158948019a1d7dafa35ae}\label{tesseract__scene__graph__serialization__unit_8cpp_a691644e71df158948019a1d7dafa35ae}} 
+\index{tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}!color@{color}}
+\index{color@{color}!tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{color}{color}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}} color = Eigen\+::\+Vector4d(0.\+1, 0.\+2, 0.\+3, 1.\+0)}
+
+\mbox{\Hypertarget{tesseract__scene__graph__serialization__unit_8cpp_a68c10fa070763f88c082f3e3c711928d}\label{tesseract__scene__graph__serialization__unit_8cpp_a68c10fa070763f88c082f3e3c711928d}} 
+\index{tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}!dynamics@{dynamics}}
+\index{dynamics@{dynamics}!tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{dynamics}{dynamics}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}} dynamics = std\+::make\+\_\+shared$<$\mbox{\hyperlink{classtesseract__scene__graph_1_1JointDynamics}{Joint\+Dynamics}}$>$(1.\+1, 2.\+2)}
+
+\mbox{\Hypertarget{tesseract__scene__graph__serialization__unit_8cpp_ae1583d97141eaa2e1873965983e20ad7}\label{tesseract__scene__graph__serialization__unit_8cpp_ae1583d97141eaa2e1873965983e20ad7}} 
+\index{tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}!geometry@{geometry}}
+\index{geometry@{geometry}!tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{geometry}{geometry}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a38407d2402d784852b9c0094464765ef}{col}} geometry = std\+::make\+\_\+shared$<$\mbox{\hyperlink{classtesseract__geometry_1_1Cone}{tesseract\+\_\+geometry\+::\+Cone}}$>$(1.\+1, 2.\+2)}
+
+\mbox{\Hypertarget{tesseract__scene__graph__serialization__unit_8cpp_a2cb96a593b04d3de3af0e869fe8fe371}\label{tesseract__scene__graph__serialization__unit_8cpp_a2cb96a593b04d3de3af0e869fe8fe371}} 
+\index{tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}!inertial@{inertial}}
+\index{inertial@{inertial}!tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{inertial}{inertial}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}} inertial = std\+::make\+\_\+shared$<$\mbox{\hyperlink{classtesseract__scene__graph_1_1Inertial}{Inertial}}$>$()}
+
+\mbox{\Hypertarget{tesseract__scene__graph__serialization__unit_8cpp_ad482e5442d4b6454ce475c94fb131ced}\label{tesseract__scene__graph__serialization__unit_8cpp_ad482e5442d4b6454ce475c94fb131ced}} 
+\index{tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}!ixx@{ixx}}
+\index{ixx@{ixx}!tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{ixx}{ixx}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}} ixx = 2.\+3}
+
+\mbox{\Hypertarget{tesseract__scene__graph__serialization__unit_8cpp_a46ffb27374f060387cc2d0013d4d7e59}\label{tesseract__scene__graph__serialization__unit_8cpp_a46ffb27374f060387cc2d0013d4d7e59}} 
+\index{tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}!ixy@{ixy}}
+\index{ixy@{ixy}!tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{ixy}{ixy}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}} ixy = 3.\+4}
+
+\mbox{\Hypertarget{tesseract__scene__graph__serialization__unit_8cpp_a8978673f5f8384514d0e09e2d310cea0}\label{tesseract__scene__graph__serialization__unit_8cpp_a8978673f5f8384514d0e09e2d310cea0}} 
+\index{tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}!ixz@{ixz}}
+\index{ixz@{ixz}!tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{ixz}{ixz}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}} ixz = 4.\+5}
+
+\mbox{\Hypertarget{tesseract__scene__graph__serialization__unit_8cpp_a0dedaf02dfe78118a0e449e32555655c}\label{tesseract__scene__graph__serialization__unit_8cpp_a0dedaf02dfe78118a0e449e32555655c}} 
+\index{tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}!iyy@{iyy}}
+\index{iyy@{iyy}!tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{iyy}{iyy}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}} iyy = 5.\+6}
+
+\mbox{\Hypertarget{tesseract__scene__graph__serialization__unit_8cpp_a691e0d4a5a66e44884c4effa7a1d90ff}\label{tesseract__scene__graph__serialization__unit_8cpp_a691e0d4a5a66e44884c4effa7a1d90ff}} 
+\index{tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}!iyz@{iyz}}
+\index{iyz@{iyz}!tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{iyz}{iyz}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}} iyz = 6.\+7}
+
+\mbox{\Hypertarget{tesseract__scene__graph__serialization__unit_8cpp_a9f7021daf9a09fc51a6f9b4375121609}\label{tesseract__scene__graph__serialization__unit_8cpp_a9f7021daf9a09fc51a6f9b4375121609}} 
+\index{tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}!izz@{izz}}
+\index{izz@{izz}!tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{izz}{izz}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}} izz = 7.\+8}
+
+\mbox{\Hypertarget{tesseract__scene__graph__serialization__unit_8cpp_ae41993a59637cf36532d3620b8203555}\label{tesseract__scene__graph__serialization__unit_8cpp_ae41993a59637cf36532d3620b8203555}} 
+\index{tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}!joints@{joints}}
+\index{joints@{joints}!tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{joints}{joints}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}} joints = 12.\+3}
+
+\mbox{\Hypertarget{tesseract__scene__graph__serialization__unit_8cpp_a44411c09f49d48ffe02bcdbce2438b96}\label{tesseract__scene__graph__serialization__unit_8cpp_a44411c09f49d48ffe02bcdbce2438b96}} 
+\index{tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}!limits@{limits}}
+\index{limits@{limits}!tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{limits}{limits}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}} limits = std\+::make\+\_\+shared$<$\mbox{\hyperlink{classtesseract__scene__graph_1_1JointLimits}{Joint\+Limits}}$>$(1.\+1, 2.\+2, 3.\+3, 4.\+4, 5.\+5)}
+
+\mbox{\Hypertarget{tesseract__scene__graph__serialization__unit_8cpp_a3c1e0fe0fedcbd5ae45465b830348b44}\label{tesseract__scene__graph__serialization__unit_8cpp_a3c1e0fe0fedcbd5ae45465b830348b44}} 
+\index{tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}!mass@{mass}}
+\index{mass@{mass}!tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{mass}{mass}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}} mass = 1.\+2}
+
+\mbox{\Hypertarget{tesseract__scene__graph__serialization__unit_8cpp_abd1ae0faf8b8ed36ee5c62dd1c259a59}\label{tesseract__scene__graph__serialization__unit_8cpp_abd1ae0faf8b8ed36ee5c62dd1c259a59}} 
+\index{tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}!material@{material}}
+\index{material@{material}!tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{material}{material}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a38039e2c592ffc51123229893cca2181}{vis}} material = std\+::make\+\_\+shared$<$\mbox{\hyperlink{classtesseract__scene__graph_1_1Material}{Material}}$>$(\char`\"{}test\+\_\+name\char`\"{})}
+
+\mbox{\Hypertarget{tesseract__scene__graph__serialization__unit_8cpp_a98296011067f93e70c7940ac88eacd01}\label{tesseract__scene__graph__serialization__unit_8cpp_a98296011067f93e70c7940ac88eacd01}} 
+\index{tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}!mimic@{mimic}}
+\index{mimic@{mimic}!tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{mimic}{mimic}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}} mimic = std\+::make\+\_\+shared$<$\mbox{\hyperlink{classtesseract__scene__graph_1_1JointMimic}{Joint\+Mimic}}$>$(1.\+1, 2.\+2, \char`\"{}mimic\+\_\+name\char`\"{})}
+
+\mbox{\Hypertarget{tesseract__scene__graph__serialization__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}\label{tesseract__scene__graph__serialization__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}} 
+\index{tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}!name@{name}}
+\index{name@{name}!tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__scene__graph__serialization__unit_8cpp_a38407d2402d784852b9c0094464765ef}{col}} name = \char`\"{}visual\+\_\+name\char`\"{}}
+
+\mbox{\Hypertarget{tesseract__scene__graph__serialization__unit_8cpp_a50ba9656de4eec4cd464a964477735e7}\label{tesseract__scene__graph__serialization__unit_8cpp_a50ba9656de4eec4cd464a964477735e7}} 
+\index{tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}!object@{object}}
+\index{object@{object}!tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{object}{object}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacetesseract__common_a5330a58c8c79cce5559a316e76118558}{tesseract\+\_\+common\+::test\+Serialization}}$<$\mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{Scene\+State}}$>$$\ast$ object}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  \textcolor{keyword}{auto} \textcolor{keywordtype}{object} = std::make\_shared<JointDynamics>(1.1, 2.2)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{tesseract__scene__graph__serialization__unit_8cpp_a1c8a54acf8831080b86833add3e01e16}\label{tesseract__scene__graph__serialization__unit_8cpp_a1c8a54acf8831080b86833add3e01e16}} 
+\index{tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}!parent\_link\_name@{parent\_link\_name}}
+\index{parent\_link\_name@{parent\_link\_name}!tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{parent\_link\_name}{parent\_link\_name}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__srdf__unit_8cpp_ae311a0687feecb613889177ee5f34409}{joint\+\_\+tool0}} parent\+\_\+link\+\_\+name = \char`\"{}parent\+\_\+name\char`\"{}}
+
+\mbox{\Hypertarget{tesseract__scene__graph__serialization__unit_8cpp_a76f1cad70ee470c5efe65485351c071c}\label{tesseract__scene__graph__serialization__unit_8cpp_a76f1cad70ee470c5efe65485351c071c}} 
+\index{tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}!safety@{safety}}
+\index{safety@{safety}!tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{safety}{safety}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}} safety = std\+::make\+\_\+shared$<$\mbox{\hyperlink{classtesseract__scene__graph_1_1JointSafety}{Joint\+Safety}}$>$(1.\+1, 2.\+2, 3.\+3, 4.\+4)}
+
+\mbox{\Hypertarget{tesseract__scene__graph__serialization__unit_8cpp_a625dec466672ecb76a4153d421b621a6}\label{tesseract__scene__graph__serialization__unit_8cpp_a625dec466672ecb76a4153d421b621a6}} 
+\index{tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}!texture\_filename@{texture\_filename}}
+\index{texture\_filename@{texture\_filename}!tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{texture\_filename}{texture\_filename}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}} texture\+\_\+filename = \char`\"{}test\+\_\+filename\char`\"{}}
+
+\mbox{\Hypertarget{tesseract__scene__graph__serialization__unit_8cpp_a03d94dcd5a8c6b2fe1f4dc7f3abc5c66}\label{tesseract__scene__graph__serialization__unit_8cpp_a03d94dcd5a8c6b2fe1f4dc7f3abc5c66}} 
+\index{tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}!type@{type}}
+\index{type@{type}!tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}} type = Joint\+Type\+::\+PLANAR}
+
+\mbox{\Hypertarget{tesseract__scene__graph__serialization__unit_8cpp_a38039e2c592ffc51123229893cca2181}\label{tesseract__scene__graph__serialization__unit_8cpp_a38039e2c592ffc51123229893cca2181}} 
+\index{tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}!vis@{vis}}
+\index{vis@{vis}!tesseract\_scene\_graph\_serialization\_unit.cpp@{tesseract\_scene\_graph\_serialization\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{vis}{vis}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a395d31593a673a3b0efd30ad8d2bba78}{auto}} vis = std\+::make\+\_\+shared$<$\mbox{\hyperlink{classtesseract__scene__graph_1_1Visual}{Visual}}$>$()}
+

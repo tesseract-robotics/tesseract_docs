@@ -1,0 +1,48 @@
+\hypertarget{tesseract__urdf_2include_2tesseract__urdf_2convex__mesh_8h_source}{}\doxysection{convex\+\_\+mesh.\+h}
+\label{tesseract__urdf_2include_2tesseract__urdf_2convex__mesh_8h_source}\index{tesseract\_urdf/include/tesseract\_urdf/convex\_mesh.h@{tesseract\_urdf/include/tesseract\_urdf/convex\_mesh.h}}
+\mbox{\hyperlink{tesseract__urdf_2include_2tesseract__urdf_2convex__mesh_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#ifndef TESSERACT\_URDF\_CONVEX\_MESH\_H}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define TESSERACT\_URDF\_CONVEX\_MESH\_H}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{macros_8h}{tesseract\_common/macros.h}}>}}
+\DoxyCodeLine{30 \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{33 \mbox{\hyperlink{namespaceTESSERACT__COMMON__IGNORE__WARNINGS__POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetinyxml2}{tinyxml2}}}
+\DoxyCodeLine{36 \{}
+\DoxyCodeLine{37 \textcolor{keyword}{class }XMLElement;  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{38 \textcolor{keyword}{class }XMLDocument;}
+\DoxyCodeLine{39 \}  \textcolor{comment}{// namespace tinyxml2}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__common}{tesseract\_common}}}
+\DoxyCodeLine{42 \{}
+\DoxyCodeLine{43 \textcolor{keyword}{class }ResourceLocator;}
+\DoxyCodeLine{44 \}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__geometry}{tesseract\_geometry}}}
+\DoxyCodeLine{47 \{}
+\DoxyCodeLine{48 \textcolor{keyword}{class }ConvexMesh;}
+\DoxyCodeLine{49 \}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__urdf}{tesseract\_urdf}}}
+\DoxyCodeLine{52 \{}
+\DoxyCodeLine{61 std::vector<std::shared\_ptr<tesseract\_geometry::ConvexMesh>>}
+\DoxyCodeLine{62 \mbox{\hyperlink{namespacetesseract__urdf_a92d6122ed4cafefd0f74d89547c4488c}{parseConvexMesh}}(\textcolor{keyword}{const} tinyxml2::XMLElement* xml\_element,}
+\DoxyCodeLine{63                 \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__common_1_1ResourceLocator}{tesseract\_common::ResourceLocator}}\& \mbox{\hyperlink{resource__locator__unit_8cpp_ad889712fa094e762b2a887aec9001270}{locator}},}
+\DoxyCodeLine{64                 \textcolor{keywordtype}{bool} visual,}
+\DoxyCodeLine{65                 \textcolor{keywordtype}{int} version);}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{77 tinyxml2::XMLElement* \mbox{\hyperlink{namespacetesseract__urdf_a5ca579f3821880ac08583fcfbe8576e7}{writeConvexMesh}}(\textcolor{keyword}{const} std::shared\_ptr<const tesseract\_geometry::ConvexMesh>\& \mbox{\hyperlink{tesseract__geometry__unit_8cpp_ae8d539a4d41d4864a6a5452e33eebc31}{mesh}},}
+\DoxyCodeLine{78                                       tinyxml2::XMLDocument\& doc,}
+\DoxyCodeLine{79                                       \textcolor{keyword}{const} std::string\& \mbox{\hyperlink{resource__locator__unit_8cpp_a314de485e4a4b5454ffba827efda6480}{package\_path}},}
+\DoxyCodeLine{80                                       \textcolor{keyword}{const} std::string\& filename);}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82 \}  \textcolor{comment}{// namespace tesseract\_urdf}}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_URDF\_CONVEX\_MESH\_H}}
+
+\end{DoxyCode}

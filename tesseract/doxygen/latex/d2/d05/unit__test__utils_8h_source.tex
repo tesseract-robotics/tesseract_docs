@@ -1,0 +1,128 @@
+\hypertarget{unit__test__utils_8h_source}{}\doxysection{unit\+\_\+test\+\_\+utils.\+h}
+\label{unit__test__utils_8h_source}\index{tesseract\_common/include/tesseract\_common/unit\_test\_utils.h@{tesseract\_common/include/tesseract\_common/unit\_test\_utils.h}}
+\mbox{\hyperlink{unit__test__utils_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#ifndef TESSERACT\_COMMON\_UNIT\_TEST\_UTILS\_H}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#define TESSERACT\_COMMON\_UNIT\_TEST\_UTILS\_H}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{macros_8h}{tesseract\_common/macros.h}}>}}
+\DoxyCodeLine{29 \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include <gtest/gtest.h>}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include <boost/serialization/shared\_ptr.hpp>}}
+\DoxyCodeLine{32 \mbox{\hyperlink{namespaceTESSERACT__COMMON__IGNORE__WARNINGS__POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{serialization_8h}{tesseract\_common/serialization.h}}>}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{tesseract__common_2include_2tesseract__common_2utils_8h}{tesseract\_common/utils.h}}>}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__common}{tesseract\_common}}}
+\DoxyCodeLine{38 \{}
+\DoxyCodeLine{46 \textcolor{keyword}{template} <\textcolor{keyword}{typename} SerializableType>}
+\DoxyCodeLine{47 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__common_a5330a58c8c79cce5559a316e76118558}{testSerialization}}(\textcolor{keyword}{const} SerializableType\& \textcolor{keywordtype}{object}, \textcolor{keyword}{const} std::string\& typename\_string)}
+\DoxyCodeLine{48 \{}
+\DoxyCodeLine{49   \{  \textcolor{comment}{// Archive program to XML file}}
+\DoxyCodeLine{50     std::string \mbox{\hyperlink{resource__locator__unit_8cpp_a803157d97edf460a9f115ca41b182e73}{file\_path}} = \mbox{\hyperlink{namespacetesseract__common_a58ecad04db85855fa9e4de21084598ca}{tesseract\_common::getTempPath}}() + typename\_string + \textcolor{stringliteral}{"{}.xml"{}};}
+\DoxyCodeLine{51     \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(tesseract\_common::Serialization::toArchiveFileXML<SerializableType>(\textcolor{keywordtype}{object}, \mbox{\hyperlink{resource__locator__unit_8cpp_a803157d97edf460a9f115ca41b182e73}{file\_path}}));}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53     SerializableType nobject\{ tesseract\_common::Serialization::fromArchiveFileXML<SerializableType>(\mbox{\hyperlink{resource__locator__unit_8cpp_a803157d97edf460a9f115ca41b182e73}{file\_path}}) \};}
+\DoxyCodeLine{54     \mbox{\hyperlink{collision__core__unit_8cpp_aa784f8de129e0ce90854ab7b6a043468}{EXPECT\_FALSE}}(\textcolor{keywordtype}{object} != nobject);  \textcolor{comment}{// Using != because it call == for code coverage}}
+\DoxyCodeLine{55   \}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57   \{  \textcolor{comment}{// Archive program to binary file}}
+\DoxyCodeLine{58     std::string \mbox{\hyperlink{resource__locator__unit_8cpp_a803157d97edf460a9f115ca41b182e73}{file\_path}} = \mbox{\hyperlink{namespacetesseract__common_a58ecad04db85855fa9e4de21084598ca}{tesseract\_common::getTempPath}}() + typename\_string + \textcolor{stringliteral}{"{}.binary"{}};}
+\DoxyCodeLine{59     \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(tesseract\_common::Serialization::toArchiveFileBinary<SerializableType>(\textcolor{keywordtype}{object}, \mbox{\hyperlink{resource__locator__unit_8cpp_a803157d97edf460a9f115ca41b182e73}{file\_path}}));}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61     SerializableType nobject\{ tesseract\_common::Serialization::fromArchiveFileBinary<SerializableType>(\mbox{\hyperlink{resource__locator__unit_8cpp_a803157d97edf460a9f115ca41b182e73}{file\_path}}) \};}
+\DoxyCodeLine{62     \mbox{\hyperlink{collision__core__unit_8cpp_aa784f8de129e0ce90854ab7b6a043468}{EXPECT\_FALSE}}(\textcolor{keywordtype}{object} != nobject);  \textcolor{comment}{// Using != because it call == for code coverage}}
+\DoxyCodeLine{63   \}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65   \{  \textcolor{comment}{// Archive program to string}}
+\DoxyCodeLine{66     std::string object\_string =}
+\DoxyCodeLine{67         tesseract\_common::Serialization::toArchiveStringXML<SerializableType>(\textcolor{keywordtype}{object}, typename\_string);}
+\DoxyCodeLine{68     \mbox{\hyperlink{collision__core__unit_8cpp_aa784f8de129e0ce90854ab7b6a043468}{EXPECT\_FALSE}}(object\_string.empty());}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70     SerializableType nobject\{ tesseract\_common::Serialization::fromArchiveStringXML<SerializableType>(object\_string) \};}
+\DoxyCodeLine{71     \mbox{\hyperlink{collision__core__unit_8cpp_aa784f8de129e0ce90854ab7b6a043468}{EXPECT\_FALSE}}(\textcolor{keywordtype}{object} != nobject);  \textcolor{comment}{// Using != because it call == for code coverage}}
+\DoxyCodeLine{72   \}}
+\DoxyCodeLine{73 \}}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{82 \textcolor{keyword}{template} <\textcolor{keyword}{typename} SerializableType>}
+\DoxyCodeLine{83 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__common_a1b449b344d06caa397190a9a82dd507a}{testSerializationPtr}}(\textcolor{keyword}{const} std::shared\_ptr<SerializableType>\& \textcolor{keywordtype}{object}, \textcolor{keyword}{const} std::string\& typename\_string)}
+\DoxyCodeLine{84 \{}
+\DoxyCodeLine{85   \{  \textcolor{comment}{// Archive program to XML file}}
+\DoxyCodeLine{86     std::string \mbox{\hyperlink{resource__locator__unit_8cpp_a803157d97edf460a9f115ca41b182e73}{file\_path}} = \mbox{\hyperlink{namespacetesseract__common_a58ecad04db85855fa9e4de21084598ca}{tesseract\_common::getTempPath}}() + typename\_string + \textcolor{stringliteral}{"{}.xml"{}};}
+\DoxyCodeLine{87     \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(}
+\DoxyCodeLine{88         \mbox{\hyperlink{structtesseract__common_1_1Serialization_a07a0927a3734ee3cb3ce76bc6a0ac1be}{tesseract\_common::Serialization::toArchiveFileXML}}<std::shared\_ptr<SerializableType>>(\textcolor{keywordtype}{object}, \mbox{\hyperlink{resource__locator__unit_8cpp_a803157d97edf460a9f115ca41b182e73}{file\_path}}));}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90     \textcolor{keyword}{auto} nobject = tesseract\_common::Serialization::fromArchiveFileXML<std::shared\_ptr<SerializableType>>(\mbox{\hyperlink{resource__locator__unit_8cpp_a803157d97edf460a9f115ca41b182e73}{file\_path}});}
+\DoxyCodeLine{91     \mbox{\hyperlink{collision__core__unit_8cpp_aa784f8de129e0ce90854ab7b6a043468}{EXPECT\_FALSE}}(*\textcolor{keywordtype}{object} != *nobject);  \textcolor{comment}{// Using != because it call == for code coverage}}
+\DoxyCodeLine{92   \}}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94   \{  \textcolor{comment}{// Archive program to binary file}}
+\DoxyCodeLine{95     std::string \mbox{\hyperlink{resource__locator__unit_8cpp_a803157d97edf460a9f115ca41b182e73}{file\_path}} = \mbox{\hyperlink{namespacetesseract__common_a58ecad04db85855fa9e4de21084598ca}{tesseract\_common::getTempPath}}() + typename\_string + \textcolor{stringliteral}{"{}.binary"{}};}
+\DoxyCodeLine{96     \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(}
+\DoxyCodeLine{97         \mbox{\hyperlink{structtesseract__common_1_1Serialization_af37efc32e11c2e18238a176d3b101afb}{tesseract\_common::Serialization::toArchiveFileBinary}}<std::shared\_ptr<SerializableType>>(\textcolor{keywordtype}{object}, \mbox{\hyperlink{resource__locator__unit_8cpp_a803157d97edf460a9f115ca41b182e73}{file\_path}}));}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99     \textcolor{keyword}{auto} nobject = tesseract\_common::Serialization::fromArchiveFileBinary<std::shared\_ptr<SerializableType>>(\mbox{\hyperlink{resource__locator__unit_8cpp_a803157d97edf460a9f115ca41b182e73}{file\_path}});}
+\DoxyCodeLine{100     \mbox{\hyperlink{collision__core__unit_8cpp_aa784f8de129e0ce90854ab7b6a043468}{EXPECT\_FALSE}}(*\textcolor{keywordtype}{object} != *nobject);  \textcolor{comment}{// Using != because it call == for code coverage}}
+\DoxyCodeLine{101   \}}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103   \{  \textcolor{comment}{// Archive program to string}}
+\DoxyCodeLine{104     std::string object\_string =}
+\DoxyCodeLine{105         tesseract\_common::Serialization::toArchiveStringXML<std::shared\_ptr<SerializableType>>(\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}}, typename\_string);}
+\DoxyCodeLine{106     \mbox{\hyperlink{collision__core__unit_8cpp_aa784f8de129e0ce90854ab7b6a043468}{EXPECT\_FALSE}}(object\_string.empty());}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108     \textcolor{keyword}{auto} nobject =}
+\DoxyCodeLine{109         tesseract\_common::Serialization::fromArchiveStringXML<std::shared\_ptr<SerializableType>>(object\_string);}
+\DoxyCodeLine{110     \mbox{\hyperlink{collision__core__unit_8cpp_aa784f8de129e0ce90854ab7b6a043468}{EXPECT\_FALSE}}(*\textcolor{keywordtype}{object} != *nobject);  \textcolor{comment}{// Using != because it call == for code coverage}}
+\DoxyCodeLine{111   \}}
+\DoxyCodeLine{112 \}}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{121 \textcolor{keyword}{template} <\textcolor{keyword}{typename} SerializableTypeBase, \textcolor{keyword}{typename} SerializableTypeDerived>}
+\DoxyCodeLine{122 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__common_aa8cf5fe962e9933b44d1f8248f0ab2fb}{testSerializationDerivedClass}}(\textcolor{keyword}{const} std::shared\_ptr<SerializableTypeBase>\& \textcolor{keywordtype}{object},}
+\DoxyCodeLine{123                                    \textcolor{keyword}{const} std::string\& typename\_string)}
+\DoxyCodeLine{124 \{}
+\DoxyCodeLine{125   \{  \textcolor{comment}{// Archive program to XML file}}
+\DoxyCodeLine{126     std::string \mbox{\hyperlink{resource__locator__unit_8cpp_a803157d97edf460a9f115ca41b182e73}{file\_path}} = \mbox{\hyperlink{namespacetesseract__common_a58ecad04db85855fa9e4de21084598ca}{tesseract\_common::getTempPath}}() + typename\_string + \textcolor{stringliteral}{"{}.xml"{}};}
+\DoxyCodeLine{127     \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(}
+\DoxyCodeLine{128         \mbox{\hyperlink{structtesseract__common_1_1Serialization_a07a0927a3734ee3cb3ce76bc6a0ac1be}{tesseract\_common::Serialization::toArchiveFileXML}}<std::shared\_ptr<SerializableTypeBase>>(\textcolor{keywordtype}{object}, \mbox{\hyperlink{resource__locator__unit_8cpp_a803157d97edf460a9f115ca41b182e73}{file\_path}}));}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130     \textcolor{keyword}{auto} nobject =}
+\DoxyCodeLine{131         tesseract\_common::Serialization::fromArchiveFileXML<std::shared\_ptr<SerializableTypeBase>>(\mbox{\hyperlink{resource__locator__unit_8cpp_a803157d97edf460a9f115ca41b182e73}{file\_path}});}
+\DoxyCodeLine{132     \textcolor{keyword}{auto} nobject\_derived = std::dynamic\_pointer\_cast<SerializableTypeDerived>(nobject);}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134     \textcolor{keyword}{auto} object\_derived = std::dynamic\_pointer\_cast<SerializableTypeDerived>(\textcolor{keywordtype}{object});}
+\DoxyCodeLine{135     \mbox{\hyperlink{collision__core__unit_8cpp_aa784f8de129e0ce90854ab7b6a043468}{EXPECT\_FALSE}}(*object\_derived != *nobject\_derived);  \textcolor{comment}{// Using != because it call == for code coverage}}
+\DoxyCodeLine{136   \}}
+\DoxyCodeLine{137 }
+\DoxyCodeLine{138   \{  \textcolor{comment}{// Archive program to binary file}}
+\DoxyCodeLine{139     std::string \mbox{\hyperlink{resource__locator__unit_8cpp_a803157d97edf460a9f115ca41b182e73}{file\_path}} = \mbox{\hyperlink{namespacetesseract__common_a58ecad04db85855fa9e4de21084598ca}{tesseract\_common::getTempPath}}() + typename\_string + \textcolor{stringliteral}{"{}.binary"{}};}
+\DoxyCodeLine{140     \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(}
+\DoxyCodeLine{141         \mbox{\hyperlink{structtesseract__common_1_1Serialization_af37efc32e11c2e18238a176d3b101afb}{tesseract\_common::Serialization::toArchiveFileBinary}}<std::shared\_ptr<SerializableTypeBase>>(\textcolor{keywordtype}{object}, \mbox{\hyperlink{resource__locator__unit_8cpp_a803157d97edf460a9f115ca41b182e73}{file\_path}}));}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143     \textcolor{keyword}{auto} nobject =}
+\DoxyCodeLine{144         tesseract\_common::Serialization::fromArchiveFileBinary<std::shared\_ptr<SerializableTypeBase>>(\mbox{\hyperlink{resource__locator__unit_8cpp_a803157d97edf460a9f115ca41b182e73}{file\_path}});}
+\DoxyCodeLine{145     \textcolor{keyword}{auto} nobject\_derived = std::dynamic\_pointer\_cast<SerializableTypeDerived>(nobject);}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147     \textcolor{keyword}{auto} object\_derived = std::dynamic\_pointer\_cast<SerializableTypeDerived>(\textcolor{keywordtype}{object});}
+\DoxyCodeLine{148     \mbox{\hyperlink{collision__core__unit_8cpp_aa784f8de129e0ce90854ab7b6a043468}{EXPECT\_FALSE}}(*object\_derived != *nobject\_derived);  \textcolor{comment}{// Using != because it call == for code coverage}}
+\DoxyCodeLine{149   \}}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151   \{  \textcolor{comment}{// Archive program to string}}
+\DoxyCodeLine{152     std::string object\_string =}
+\DoxyCodeLine{153         tesseract\_common::Serialization::toArchiveStringXML<std::shared\_ptr<SerializableTypeBase>>(\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}},}
+\DoxyCodeLine{154                                                                                                    typename\_string);}
+\DoxyCodeLine{155     \mbox{\hyperlink{collision__core__unit_8cpp_aa784f8de129e0ce90854ab7b6a043468}{EXPECT\_FALSE}}(object\_string.empty());}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{157     \textcolor{keyword}{auto} nobject =}
+\DoxyCodeLine{158         tesseract\_common::Serialization::fromArchiveStringXML<std::shared\_ptr<SerializableTypeBase>>(object\_string);}
+\DoxyCodeLine{159     \textcolor{keyword}{auto} nobject\_derived = std::dynamic\_pointer\_cast<SerializableTypeDerived>(nobject);}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{161     \textcolor{keyword}{auto} object\_derived = std::dynamic\_pointer\_cast<SerializableTypeDerived>(\textcolor{keywordtype}{object});}
+\DoxyCodeLine{162     \mbox{\hyperlink{collision__core__unit_8cpp_aa784f8de129e0ce90854ab7b6a043468}{EXPECT\_FALSE}}(*object\_derived != *nobject\_derived);  \textcolor{comment}{// Using != because it call == for code coverage}}
+\DoxyCodeLine{163   \}}
+\DoxyCodeLine{164 \}}
+\DoxyCodeLine{165 \}  \textcolor{comment}{// namespace tesseract\_common}}
+\DoxyCodeLine{166 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_COMMON\_UTILS\_H}}
+
+\end{DoxyCode}

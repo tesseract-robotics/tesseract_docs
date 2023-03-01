@@ -1,0 +1,191 @@
+\hypertarget{clone__cache_8h_source}{}\doxysection{clone\+\_\+cache.\+h}
+\label{clone__cache_8h_source}\index{tesseract\_common/include/tesseract\_common/clone\_cache.h@{tesseract\_common/include/tesseract\_common/clone\_cache.h}}
+\mbox{\hyperlink{clone__cache_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#ifndef TESSERACT\_COMMON\_OBJECT\_CACHE\_H}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#define TESSERACT\_COMMON\_OBJECT\_CACHE\_H}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{macros_8h}{tesseract\_common/macros.h}}>}}
+\DoxyCodeLine{31 \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include <deque>}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include <algorithm>}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include <mutex>}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include <console\_bridge/console.h>}}
+\DoxyCodeLine{37 \mbox{\hyperlink{namespaceTESSERACT__COMMON__IGNORE__WARNINGS__POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{sfinae__utils_8h}{tesseract\_common/sfinae\_utils.h}}>}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__common}{tesseract\_common}}}
+\DoxyCodeLine{42 \{}
+\DoxyCodeLine{50 \textcolor{keyword}{template} <\textcolor{keyword}{typename} CacheType>}
+\DoxyCodeLine{51 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__common_1_1CloneCache}{CloneCache}}}
+\DoxyCodeLine{52 \{}
+\DoxyCodeLine{53 \textcolor{keyword}{public}:}
+\DoxyCodeLine{54   \mbox{\hyperlink{sfinae__utils_8h_ae4346ab46e4c15e532c077c4ce735873}{CREATE\_MEMBER\_FUNC\_SIGNATURE\_CHECK}}(update, \textcolor{keywordtype}{bool}, \textcolor{keyword}{const} std::shared\_ptr<const CacheType>\&)}
+\DoxyCodeLine{55   \mbox{\hyperlink{sfinae__utils_8h_adb3d1d45a0c6ead71dda4be85bcc508c}{CREATE\_MEMBER\_FUNC\_SIGNATURE\_NOARGS\_CHECK}}(getRevision, \textcolor{keywordtype}{int})}
+\DoxyCodeLine{56   \mbox{\hyperlink{sfinae__utils_8h_adb3d1d45a0c6ead71dda4be85bcc508c}{CREATE\_MEMBER\_FUNC\_SIGNATURE\_NOARGS\_CHECK}}(\mbox{\hyperlink{classtesseract__common_1_1CloneCache_a1d2b2e39d266e3864054aaf7c18390e4}{clone}}, std::shared\_ptr<CacheType>)}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58   \mbox{\hyperlink{classtesseract__common_1_1CloneCache}{CloneCache}}(std::shared\_ptr<CacheType> original, const \textcolor{keywordtype}{long}\& cache\_size = 5)}
+\DoxyCodeLine{59     : \mbox{\hyperlink{classtesseract__common_1_1CloneCache_a88bb74b89e3a432547b7273402caeb17}{supports\_update}}(has\_member\_func\_signature\_update<CacheType>::\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a767de28b215ddaceb31188034a0838c0}{value}})}
+\DoxyCodeLine{60     , \mbox{\hyperlink{classtesseract__common_1_1CloneCache_a6f76221f6e493f96e46dd088358070d6}{original\_}}(std::move(original))}
+\DoxyCodeLine{61     , \mbox{\hyperlink{classtesseract__common_1_1CloneCache_ae402a65c0828425f28936c1a872f1127}{cache\_size\_}}(static\_cast<std::\textcolor{keywordtype}{size\_t}>(cache\_size))}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63   \{}
+\DoxyCodeLine{64     \textcolor{comment}{// These methods are required}}
+\DoxyCodeLine{65     \textcolor{keyword}{static\_assert}(has\_member\_func\_signature\_getRevision<CacheType>::value,}
+\DoxyCodeLine{66                   \textcolor{stringliteral}{"{}Class 'getRevision' function has incorrect signature"{}});}
+\DoxyCodeLine{67     \textcolor{keyword}{static\_assert}(has\_member\_func\_signature\_clone<CacheType>::value, \textcolor{stringliteral}{"{}Class 'clone' function has incorrect signature"{}});}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{long} i = 0; i < cache\_size; i++)}
+\DoxyCodeLine{70       \mbox{\hyperlink{classtesseract__common_1_1CloneCache_aff32dea42001242cb52343dc9b9afb30}{createClone}}();}
+\DoxyCodeLine{71   \}}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73   \textcolor{keyword}{const} std::shared\_ptr<CacheType>\& \mbox{\hyperlink{classtesseract__common_1_1CloneCache_a3fe183cceae47d4fdf786a6d904e1f55}{operator-\/>}}() \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classtesseract__common_1_1CloneCache_a6f76221f6e493f96e46dd088358070d6}{original\_}}; \}}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{79   std::shared\_ptr<CacheType> \mbox{\hyperlink{classtesseract__common_1_1CloneCache_a1d2b2e39d266e3864054aaf7c18390e4}{clone}}()}
+\DoxyCodeLine{80   \{}
+\DoxyCodeLine{81     \textcolor{keywordflow}{if} (!\mbox{\hyperlink{classtesseract__common_1_1CloneCache_a6f76221f6e493f96e46dd088358070d6}{original\_}})}
+\DoxyCodeLine{82       \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classtesseract__common_1_1CloneCache_a3032f7e35dc80f2869b6fe57fcbc582f}{cache\_}}.empty())}
+\DoxyCodeLine{85     \{}
+\DoxyCodeLine{86       std::shared\_ptr<CacheType> \mbox{\hyperlink{tesseract__environment__cache__unit_8cpp_a6f60f7e4eab608f8f43d9f3acb1df3d4}{cache}} = \mbox{\hyperlink{classtesseract__common_1_1CloneCache_aa95eee9c55f1461af8a215d591ff7c32}{getClone}}();}
+\DoxyCodeLine{87       \textcolor{keywordflow}{if} (\mbox{\hyperlink{tesseract__environment__cache__unit_8cpp_a6f60f7e4eab608f8f43d9f3acb1df3d4}{cache}} == \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{88         \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90       \textcolor{keywordflow}{return} \mbox{\hyperlink{tesseract__environment__cache__unit_8cpp_a6f60f7e4eab608f8f43d9f3acb1df3d4}{cache}};}
+\DoxyCodeLine{91     \}}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93     \textcolor{comment}{// If the cache needs updating, then update it}}
+\DoxyCodeLine{94     std::unique\_lock<std::mutex> lock(\mbox{\hyperlink{classtesseract__common_1_1CloneCache_aedc6bafd48f1d915941847fbb33ee1a2}{cache\_mutex\_}});}
+\DoxyCodeLine{95     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classtesseract__common_1_1CloneCache_a3032f7e35dc80f2869b6fe57fcbc582f}{cache\_}}.back()-\/>getRevision() != \mbox{\hyperlink{classtesseract__common_1_1CloneCache_a6f76221f6e493f96e46dd088358070d6}{original\_}}-\/>getRevision())}
+\DoxyCodeLine{96     \{}
+\DoxyCodeLine{97       \textcolor{comment}{// Update if possible}}
+\DoxyCodeLine{98       std::shared\_ptr<CacheType> t;}
+\DoxyCodeLine{99       \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (has\_member\_func\_signature\_update<CacheType>::value)}
+\DoxyCodeLine{100       \{}
+\DoxyCodeLine{101         \mbox{\hyperlink{classtesseract__common_1_1CloneCache_a3032f7e35dc80f2869b6fe57fcbc582f}{cache\_}}.back()-\/>update(\mbox{\hyperlink{classtesseract__common_1_1CloneCache_a6f76221f6e493f96e46dd088358070d6}{original\_}});}
+\DoxyCodeLine{102       \}}
+\DoxyCodeLine{103       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{104       \{}
+\DoxyCodeLine{105         std::shared\_ptr<CacheType> \mbox{\hyperlink{tesseract__environment__cache__unit_8cpp_a6f60f7e4eab608f8f43d9f3acb1df3d4}{cache}} = \mbox{\hyperlink{classtesseract__common_1_1CloneCache_aa95eee9c55f1461af8a215d591ff7c32}{getClone}}();}
+\DoxyCodeLine{106         \textcolor{keywordflow}{if} (\mbox{\hyperlink{tesseract__environment__cache__unit_8cpp_a6f60f7e4eab608f8f43d9f3acb1df3d4}{cache}} == \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{107           \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109         \mbox{\hyperlink{classtesseract__common_1_1CloneCache_a3032f7e35dc80f2869b6fe57fcbc582f}{cache\_}}.back() = \mbox{\hyperlink{tesseract__environment__cache__unit_8cpp_a6f60f7e4eab608f8f43d9f3acb1df3d4}{cache}};}
+\DoxyCodeLine{110       \}}
+\DoxyCodeLine{111       t = \mbox{\hyperlink{classtesseract__common_1_1CloneCache_a3032f7e35dc80f2869b6fe57fcbc582f}{cache\_}}.back();}
+\DoxyCodeLine{112       \mbox{\hyperlink{classtesseract__common_1_1CloneCache_a3032f7e35dc80f2869b6fe57fcbc582f}{cache\_}}.pop\_back();}
+\DoxyCodeLine{113       \textcolor{keywordflow}{return} t;}
+\DoxyCodeLine{114     \}}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116     std::shared\_ptr<CacheType> t;}
+\DoxyCodeLine{117     t = \mbox{\hyperlink{classtesseract__common_1_1CloneCache_a3032f7e35dc80f2869b6fe57fcbc582f}{cache\_}}.back();}
+\DoxyCodeLine{118     \mbox{\hyperlink{classtesseract__common_1_1CloneCache_a3032f7e35dc80f2869b6fe57fcbc582f}{cache\_}}.pop\_back();}
+\DoxyCodeLine{119     \textcolor{keywordflow}{return} t;}
+\DoxyCodeLine{120   \}}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{126   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__common_1_1CloneCache_ac7cb1b261cc840b3674dd2cea6e92887}{setCacheSize}}(\textcolor{keywordtype}{long} size)}
+\DoxyCodeLine{127   \{}
+\DoxyCodeLine{128     \{}
+\DoxyCodeLine{129       std::unique\_lock<std::mutex> lock(\mbox{\hyperlink{classtesseract__common_1_1CloneCache_aedc6bafd48f1d915941847fbb33ee1a2}{cache\_mutex\_}});}
+\DoxyCodeLine{130       \mbox{\hyperlink{classtesseract__common_1_1CloneCache_ae402a65c0828425f28936c1a872f1127}{cache\_size\_}} = \textcolor{keyword}{static\_cast<}std::size\_t\textcolor{keyword}{>}(size);}
+\DoxyCodeLine{131     \}}
+\DoxyCodeLine{132     \mbox{\hyperlink{classtesseract__common_1_1CloneCache_a5637528e042ab9beaf6a21ad74b595f8}{updateCache}}();}
+\DoxyCodeLine{133   \}}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{139   \textcolor{keywordtype}{long} \mbox{\hyperlink{classtesseract__common_1_1CloneCache_a5185b2c35a8cc058b40209422bedfa35}{getCacheSize}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{long}\textcolor{keyword}{>}(\mbox{\hyperlink{classtesseract__common_1_1CloneCache_ae402a65c0828425f28936c1a872f1127}{cache\_size\_}}); \}}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{145   \textcolor{keywordtype}{long} \mbox{\hyperlink{classtesseract__common_1_1CloneCache_a8f7c577704d6655df29ea2244fd52735}{getCurrentCacheSize}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{146 \textcolor{keyword}{  }\{}
+\DoxyCodeLine{147     std::unique\_lock<std::mutex> lock(\mbox{\hyperlink{classtesseract__common_1_1CloneCache_aedc6bafd48f1d915941847fbb33ee1a2}{cache\_mutex\_}});}
+\DoxyCodeLine{148     \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{long}\textcolor{keyword}{>}(\mbox{\hyperlink{classtesseract__common_1_1CloneCache_a3032f7e35dc80f2869b6fe57fcbc582f}{cache\_}}.size());}
+\DoxyCodeLine{149   \}}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{152   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__common_1_1CloneCache_a5637528e042ab9beaf6a21ad74b595f8}{updateCache}}()}
+\DoxyCodeLine{153   \{}
+\DoxyCodeLine{154     std::unique\_lock<std::mutex> lock(\mbox{\hyperlink{classtesseract__common_1_1CloneCache_aedc6bafd48f1d915941847fbb33ee1a2}{cache\_mutex\_}});}
+\DoxyCodeLine{155     \textcolor{keywordflow}{if} (!\mbox{\hyperlink{classtesseract__common_1_1CloneCache_a6f76221f6e493f96e46dd088358070d6}{original\_}})}
+\DoxyCodeLine{156       \textcolor{keywordflow}{return};}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{158     std::shared\_ptr<CacheType> t;}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160     \textcolor{comment}{// Update all cached objects}}
+\DoxyCodeLine{161     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto}\& \mbox{\hyperlink{tesseract__environment__cache__unit_8cpp_a6f60f7e4eab608f8f43d9f3acb1df3d4}{cache}} : \mbox{\hyperlink{classtesseract__common_1_1CloneCache_a3032f7e35dc80f2869b6fe57fcbc582f}{cache\_}})}
+\DoxyCodeLine{162     \{}
+\DoxyCodeLine{163       \textcolor{keywordflow}{if} (\mbox{\hyperlink{tesseract__environment__cache__unit_8cpp_a6f60f7e4eab608f8f43d9f3acb1df3d4}{cache}}-\/>getRevision() != \mbox{\hyperlink{classtesseract__common_1_1CloneCache_a6f76221f6e493f96e46dd088358070d6}{original\_}}-\/>getRevision())}
+\DoxyCodeLine{164       \{}
+\DoxyCodeLine{165         \textcolor{comment}{// Update if possible}}
+\DoxyCodeLine{166         \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (has\_member\_func\_signature\_update<CacheType>::value)}
+\DoxyCodeLine{167         \{}
+\DoxyCodeLine{168           \mbox{\hyperlink{tesseract__environment__cache__unit_8cpp_a6f60f7e4eab608f8f43d9f3acb1df3d4}{cache}}-\/>update(\mbox{\hyperlink{classtesseract__common_1_1CloneCache_a6f76221f6e493f96e46dd088358070d6}{original\_}});}
+\DoxyCodeLine{169         \}}
+\DoxyCodeLine{170         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{171         \{  \textcolor{comment}{// Update is not available to assign new clone}}
+\DoxyCodeLine{172           \mbox{\hyperlink{tesseract__environment__cache__unit_8cpp_a6f60f7e4eab608f8f43d9f3acb1df3d4}{cache}} = \mbox{\hyperlink{classtesseract__common_1_1CloneCache_aa95eee9c55f1461af8a215d591ff7c32}{getClone}}();}
+\DoxyCodeLine{173         \}}
+\DoxyCodeLine{174       \}}
+\DoxyCodeLine{175     \}}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{177     \textcolor{comment}{// Prune nullptr}}
+\DoxyCodeLine{178     \mbox{\hyperlink{classtesseract__common_1_1CloneCache_a3032f7e35dc80f2869b6fe57fcbc582f}{cache\_}}.erase(std::remove\_if(\mbox{\hyperlink{classtesseract__common_1_1CloneCache_a3032f7e35dc80f2869b6fe57fcbc582f}{cache\_}}.begin(),}
+\DoxyCodeLine{179                                 \mbox{\hyperlink{classtesseract__common_1_1CloneCache_a3032f7e35dc80f2869b6fe57fcbc582f}{cache\_}}.end(),}
+\DoxyCodeLine{180                                 [](\textcolor{keyword}{const} std::shared\_ptr<CacheType>\& \mbox{\hyperlink{tesseract__environment__cache__unit_8cpp_a6f60f7e4eab608f8f43d9f3acb1df3d4}{cache}}) \{ return (cache == nullptr); \}),}
+\DoxyCodeLine{181                  \mbox{\hyperlink{classtesseract__common_1_1CloneCache_a3032f7e35dc80f2869b6fe57fcbc582f}{cache\_}}.end());}
+\DoxyCodeLine{182 }
+\DoxyCodeLine{183     \textcolor{keywordflow}{while} (\mbox{\hyperlink{classtesseract__common_1_1CloneCache_a3032f7e35dc80f2869b6fe57fcbc582f}{cache\_}}.size() < \mbox{\hyperlink{classtesseract__common_1_1CloneCache_ae402a65c0828425f28936c1a872f1127}{cache\_size\_}})}
+\DoxyCodeLine{184     \{}
+\DoxyCodeLine{185       CONSOLE\_BRIDGE\_logDebug(\textcolor{stringliteral}{"{}Adding clone to the cache. Current cache size: \%i"{}}, \mbox{\hyperlink{classtesseract__common_1_1CloneCache_a3032f7e35dc80f2869b6fe57fcbc582f}{cache\_}}.size());}
+\DoxyCodeLine{186       std::shared\_ptr<CacheType> \mbox{\hyperlink{classtesseract__common_1_1CloneCache_a1d2b2e39d266e3864054aaf7c18390e4}{clone}} = \mbox{\hyperlink{classtesseract__common_1_1CloneCache_aa95eee9c55f1461af8a215d591ff7c32}{getClone}}();}
+\DoxyCodeLine{187       \textcolor{keywordflow}{if} (\mbox{\hyperlink{classtesseract__common_1_1CloneCache_a1d2b2e39d266e3864054aaf7c18390e4}{clone}} != \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{188         \mbox{\hyperlink{classtesseract__common_1_1CloneCache_a3032f7e35dc80f2869b6fe57fcbc582f}{cache\_}}.push\_back(\mbox{\hyperlink{classtesseract__common_1_1CloneCache_a1d2b2e39d266e3864054aaf7c18390e4}{clone}});}
+\DoxyCodeLine{189     \}}
+\DoxyCodeLine{190   \}}
+\DoxyCodeLine{191 }
+\DoxyCodeLine{192   \textcolor{keyword}{const} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__common_1_1CloneCache_a88bb74b89e3a432547b7273402caeb17}{supports\_update}};}
+\DoxyCodeLine{193 }
+\DoxyCodeLine{194 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{195   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__common_1_1CloneCache_aff32dea42001242cb52343dc9b9afb30}{createClone}}()}
+\DoxyCodeLine{196   \{}
+\DoxyCodeLine{197     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classtesseract__common_1_1CloneCache_a6f76221f6e493f96e46dd088358070d6}{original\_}} == \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{198       \textcolor{keywordflow}{return};}
+\DoxyCodeLine{199 }
+\DoxyCodeLine{200     std::shared\_ptr<CacheType> \mbox{\hyperlink{classtesseract__common_1_1CloneCache_a1d2b2e39d266e3864054aaf7c18390e4}{clone}} = \mbox{\hyperlink{classtesseract__common_1_1CloneCache_aa95eee9c55f1461af8a215d591ff7c32}{getClone}}();}
+\DoxyCodeLine{201     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classtesseract__common_1_1CloneCache_a1d2b2e39d266e3864054aaf7c18390e4}{clone}} == \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{202       \textcolor{keywordflow}{return};}
+\DoxyCodeLine{203 }
+\DoxyCodeLine{204     \textcolor{comment}{// Lock cache}}
+\DoxyCodeLine{205     std::unique\_lock<std::mutex> lock(\mbox{\hyperlink{classtesseract__common_1_1CloneCache_aedc6bafd48f1d915941847fbb33ee1a2}{cache\_mutex\_}});}
+\DoxyCodeLine{206     \mbox{\hyperlink{classtesseract__common_1_1CloneCache_a3032f7e35dc80f2869b6fe57fcbc582f}{cache\_}}.push\_back(\mbox{\hyperlink{classtesseract__common_1_1CloneCache_a1d2b2e39d266e3864054aaf7c18390e4}{clone}});}
+\DoxyCodeLine{207   \}}
+\DoxyCodeLine{208 }
+\DoxyCodeLine{209   std::shared\_ptr<CacheType> \mbox{\hyperlink{classtesseract__common_1_1CloneCache_aa95eee9c55f1461af8a215d591ff7c32}{getClone}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{210 \textcolor{keyword}{  }\{}
+\DoxyCodeLine{211     std::shared\_ptr<CacheType> \mbox{\hyperlink{classtesseract__common_1_1CloneCache_a1d2b2e39d266e3864054aaf7c18390e4}{clone}};}
+\DoxyCodeLine{212     \textcolor{keywordflow}{try}}
+\DoxyCodeLine{213     \{}
+\DoxyCodeLine{214       \mbox{\hyperlink{classtesseract__common_1_1CloneCache_a1d2b2e39d266e3864054aaf7c18390e4}{clone}} = \mbox{\hyperlink{classtesseract__common_1_1CloneCache_a6f76221f6e493f96e46dd088358070d6}{original\_}}-\/>clone();}
+\DoxyCodeLine{215     \}}
+\DoxyCodeLine{216     \textcolor{keywordflow}{catch} (std::exception\& e)}
+\DoxyCodeLine{217     \{}
+\DoxyCodeLine{218       CONSOLE\_BRIDGE\_logError(\textcolor{stringliteral}{"{}Clone Cache failed to update cache with the following exception: \%s"{}}, e.what());}
+\DoxyCodeLine{219       \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{220     \}}
+\DoxyCodeLine{221     \textcolor{keywordflow}{return} \mbox{\hyperlink{classtesseract__common_1_1CloneCache_a1d2b2e39d266e3864054aaf7c18390e4}{clone}};}
+\DoxyCodeLine{222   \}}
+\DoxyCodeLine{223 }
+\DoxyCodeLine{224   std::shared\_ptr<CacheType> \mbox{\hyperlink{classtesseract__common_1_1CloneCache_a6f76221f6e493f96e46dd088358070d6}{original\_}};}
+\DoxyCodeLine{225 }
+\DoxyCodeLine{227   std::size\_t \mbox{\hyperlink{classtesseract__common_1_1CloneCache_ae402a65c0828425f28936c1a872f1127}{cache\_size\_}}\{ 5 \};}
+\DoxyCodeLine{228 }
+\DoxyCodeLine{230   std::deque<std::shared\_ptr<CacheType>> \mbox{\hyperlink{classtesseract__common_1_1CloneCache_a3032f7e35dc80f2869b6fe57fcbc582f}{cache\_}};}
+\DoxyCodeLine{231 }
+\DoxyCodeLine{233   \textcolor{keyword}{mutable} std::mutex \mbox{\hyperlink{classtesseract__common_1_1CloneCache_aedc6bafd48f1d915941847fbb33ee1a2}{cache\_mutex\_}};}
+\DoxyCodeLine{234 \};}
+\DoxyCodeLine{235 }
+\DoxyCodeLine{236 \}  \textcolor{comment}{// namespace tesseract\_common}}
+\DoxyCodeLine{237 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

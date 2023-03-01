@@ -1,0 +1,84 @@
+\hypertarget{command_8h_source}{}\doxysection{command.\+h}
+\label{command_8h_source}\index{tesseract\_environment/include/tesseract\_environment/command.h@{tesseract\_environment/include/tesseract\_environment/command.h}}
+\mbox{\hyperlink{command_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#ifndef TESSERACT\_ENVIRONMENT\_COMMAND\_H}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#define TESSERACT\_ENVIRONMENT\_COMMAND\_H}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{macros_8h}{tesseract\_common/macros.h}}>}}
+\DoxyCodeLine{32 \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include <boost/serialization/access.hpp>}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{36 \mbox{\hyperlink{namespaceTESSERACT__COMMON__IGNORE__WARNINGS__POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__environment}{tesseract\_environment}}}
+\DoxyCodeLine{39 \{}
+\DoxyCodeLine{40 \textcolor{keyword}{enum class} \mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029}{CommandType}}}
+\DoxyCodeLine{41 \{}
+\DoxyCodeLine{42   \mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029add652546039b18970b8dcf2cff824268}{UNINITIALIZED}} = -\/1,}
+\DoxyCodeLine{43   \mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029a83bca506d8f37c1e0d096e2683d691e4}{ADD\_LINK}} = 0,}
+\DoxyCodeLine{44   \mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029a0c4617d6ea17eb456b514b9bc9ddaaec}{MOVE\_LINK}} = 1,}
+\DoxyCodeLine{45   \mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029a4ca2d320bdf40df7e6f465d21e268ec4}{MOVE\_JOINT}} = 2,}
+\DoxyCodeLine{46   \mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029afff7bebecead86441476e38b94b3bc05}{REMOVE\_LINK}} = 3,}
+\DoxyCodeLine{47   \mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029a6721b27017cd21a598f1740481167224}{REMOVE\_JOINT}} = 4,}
+\DoxyCodeLine{48   \mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029a5556c1986a9b58c054c0038a8c73cab9}{CHANGE\_LINK\_ORIGIN}} = 5,}
+\DoxyCodeLine{49   \mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029a9e520d728925baf2b87146d99a20d8ba}{CHANGE\_JOINT\_ORIGIN}} = 6,}
+\DoxyCodeLine{50   \mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029a12a8518522948e345cab8fefd0235008}{CHANGE\_LINK\_COLLISION\_ENABLED}} = 7,}
+\DoxyCodeLine{51   \mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029aaa5732dcc51c06b4e9af6373e937e4a1}{CHANGE\_LINK\_VISIBILITY}} = 8,}
+\DoxyCodeLine{52   \mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029a353c1770ebb1dad74d191125de6bb12f}{MODIFY\_ALLOWED\_COLLISIONS}} = 9,}
+\DoxyCodeLine{53   \mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029ac40ca000ef4f65a27cf7998ef4f020a0}{REMOVE\_ALLOWED\_COLLISION\_LINK}} = 10,}
+\DoxyCodeLine{54   \mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029abad512ee301f85596f24ccb211411856}{ADD\_SCENE\_GRAPH}} = 11,}
+\DoxyCodeLine{55   \mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029a45b7ca4cbdf3997ccbb8e81e45c25c0f}{CHANGE\_JOINT\_POSITION\_LIMITS}} = 12,}
+\DoxyCodeLine{56   \mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029aea4ee03591d62742fc798bd6d07914dd}{CHANGE\_JOINT\_VELOCITY\_LIMITS}} = 13,}
+\DoxyCodeLine{57   \mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029a0e622edebb918e58a2e50f37f48ec6be}{CHANGE\_JOINT\_ACCELERATION\_LIMITS}} = 14,}
+\DoxyCodeLine{58   \mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029a6f820e76663d877e0103c6aea1616b1b}{ADD\_KINEMATICS\_INFORMATION}} = 15,}
+\DoxyCodeLine{59   \mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029ae487d29b5345ebdfa13433bc11a99e7c}{REPLACE\_JOINT}} = 16,}
+\DoxyCodeLine{60   \mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029af0867a1a81a0112b16ae983214515c28}{CHANGE\_COLLISION\_MARGINS}} = 17,}
+\DoxyCodeLine{61   \mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029a888e6375965550fe9f245043026d8490}{ADD\_CONTACT\_MANAGERS\_PLUGIN\_INFO}} = 18,}
+\DoxyCodeLine{62   \mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029a2fdc8f6309f2bdd8cd403be451510841}{SET\_ACTIVE\_DISCRETE\_CONTACT\_MANAGER}} = 19,}
+\DoxyCodeLine{63   \mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029af02976086409570e5906a7339e95a026}{SET\_ACTIVE\_CONTINUOUS\_CONTACT\_MANAGER}} = 20}
+\DoxyCodeLine{64 \};}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 \textcolor{keyword}{template} <\textcolor{keyword}{class} Archive>}
+\DoxyCodeLine{67 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__environment_a1819f1cc367734bc71df537ac9a34035}{save}}(Archive\& ar, \textcolor{keyword}{const} \mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029}{CommandType}}\& \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a41309b4c659a8ee4246e23a5c741c8e8}{g}}, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} version);  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \textcolor{keyword}{template} <\textcolor{keyword}{class} Archive>}
+\DoxyCodeLine{70 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__environment_ae63659e18dd6e60700378ff689c1778d}{load}}(Archive\& ar, \mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029}{CommandType}}\& \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a41309b4c659a8ee4246e23a5c741c8e8}{g}}, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} version);  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 \textcolor{keyword}{template} <\textcolor{keyword}{class} Archive>}
+\DoxyCodeLine{73 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__environment_ab1656df70f5d4e2213365591079ea8c3}{serialize}}(Archive\& ar, \mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029}{CommandType}}\& \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a41309b4c659a8ee4246e23a5c741c8e8}{g}}, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} version);  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__environment_1_1Command}{Command}}}
+\DoxyCodeLine{76 \{}
+\DoxyCodeLine{77 \textcolor{keyword}{public}:}
+\DoxyCodeLine{78   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__environment_1_1Command_a26e9088280770d9887b52cef37e731db}{Ptr}} = std::shared\_ptr<Command>;}
+\DoxyCodeLine{79   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__environment_1_1Command_a71f41840ff091003233e7ddaff1c4081}{ConstPtr}} = std::shared\_ptr<const Command>;}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81   \mbox{\hyperlink{classtesseract__environment_1_1Command}{Command}}(\mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029}{CommandType}} \mbox{\hyperlink{tesseract__environment__collision_8cpp_a30f93ee2d6b54c870d5c8295071072ac}{type}} = \mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029add652546039b18970b8dcf2cff824268}{CommandType::UNINITIALIZED}});}
+\DoxyCodeLine{82   \textcolor{keyword}{virtual} \mbox{\hyperlink{classtesseract__environment_1_1Command_a1228c671e014e4b40b74f929d9051c38}{\string~Command}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{83   \mbox{\hyperlink{classtesseract__environment_1_1Command_acb24939b851d4169fe2426df67c2fe3a}{Command}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__environment_1_1Command}{Command}}\&) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{84   \mbox{\hyperlink{classtesseract__environment_1_1Command}{Command}}\& \mbox{\hyperlink{classtesseract__environment_1_1Command_ac1c7f7d82b12e6a93a996ee325fe2ca7}{operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__environment_1_1Command}{Command}}\&) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{85   \mbox{\hyperlink{classtesseract__environment_1_1Command_a2e738875d4ced142cce621243dc1e5e4}{Command}}(\mbox{\hyperlink{classtesseract__environment_1_1Command}{Command}}\&\&) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{86   \mbox{\hyperlink{classtesseract__environment_1_1Command}{Command}}\& \mbox{\hyperlink{classtesseract__environment_1_1Command_a79e6541b2251b9cbcfb7a45a97d6e5d5}{operator=}}(\mbox{\hyperlink{classtesseract__environment_1_1Command}{Command}}\&\&) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88   \mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029}{CommandType}} \mbox{\hyperlink{classtesseract__environment_1_1Command_aa633b4ea6fabacad3d79adcff4f7a7e2}{getType}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classtesseract__environment_1_1Command_addb847e98e2e0d11018ddd1f2aca2256}{type\_}}; \}}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1Command_aece17d37485ccd9a7ca268e86740b339}{operator==}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__environment_1_1Command}{Command}}\& rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{91   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__environment_1_1Command_adbc2e72a768f0615b2070cc923ea9312}{operator!=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__environment_1_1Command}{Command}}\& rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93 \textcolor{keyword}{private}:}
+\DoxyCodeLine{94   \mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029}{CommandType}} \mbox{\hyperlink{classtesseract__environment_1_1Command_addb847e98e2e0d11018ddd1f2aca2256}{type\_}};}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96   \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__environment_1_1Command_ac98d07dd8f7b70e16ccb9a01abf56b9c}{boost::serialization::access}};}
+\DoxyCodeLine{97   \textcolor{keyword}{template} <\textcolor{keyword}{class} Archive>}
+\DoxyCodeLine{98   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__environment_1_1Command_a1766fc49d175e3b08dce985a92b6a229}{serialize}}(Archive\& ar, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} version);  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{99 \};}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101 \textcolor{keyword}{using }\mbox{\hyperlink{namespacetesseract__environment_acb95740502ec41d80a94a7631d4b7a3c}{Commands}} = std::vector<Command::ConstPtr>;}
+\DoxyCodeLine{102 \}  \textcolor{comment}{// namespace tesseract\_environment}}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// COMMAND\_H}}
+
+\end{DoxyCode}

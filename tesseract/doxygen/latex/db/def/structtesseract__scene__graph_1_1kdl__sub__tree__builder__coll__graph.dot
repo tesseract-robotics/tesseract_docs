@@ -1,0 +1,50 @@
+digraph "tesseract_scene_graph::kdl_sub_tree_builder"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [label="tesseract_scene_graph\l::kdl_sub_tree_builder",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Every time a vertex is visited for the first time add a new segment to the KDL Tree;."];
+  Node2 -> Node1 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="boost::dfs_visitor\<\>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+  Node3 -> Node1 [dir="back",color="darkorchid3",style="dashed",label=" data_" ];
+  Node3 [label="tesseract_scene_graph\l::KDLTreeData",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$dc/d32/structtesseract__scene__graph_1_1KDLTreeData.html",tooltip="The KDLTreeData populated when parsing scene graph."];
+  Node4 -> Node3 [dir="back",color="darkorchid3",style="dashed",label=" base_link_name" ];
+  Node4 [label="std::string",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+  Node5 -> Node4 [dir="back",color="steelblue1",style="solid"];
+  Node5 [label="std::basic_string\<\l Char \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+  Node6 -> Node3 [dir="back",color="darkorchid3",style="dashed",label=" active_joint_names\nactive_link_names\njoint_names\nlink_names\nstatic_link_names" ];
+  Node6 [label="std::vector\< std::string \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+  Node7 -> Node6 [dir="back",color="darkorchid3",style="dashed",label=" elements" ];
+  Node7 [label="tesseract_geometry\l::PolygonMesh",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$d8/dc9/classtesseract__geometry_1_1PolygonMesh.html",tooltip=" "];
+  Node8 -> Node7 [dir="back",color="steelblue1",style="solid"];
+  Node8 [label="tesseract_geometry\l::Geometry",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$df/d1a/classtesseract__geometry_1_1Geometry.html",tooltip=" "];
+  Node9 -> Node7 [dir="back",color="darkorchid3",style="dashed",label=" normals_\nvertices_" ];
+  Node9 [label="std::shared_ptr\< const\l tesseract_common::VectorVector3d \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+  Node7 -> Node9 [dir="back",color="darkorchid3",style="dashed",label=" ptr" ];
+  Node10 -> Node7 [dir="back",color="darkorchid3",style="dashed",label=" faces_" ];
+  Node10 [label="std::shared_ptr\< const\l Eigen::VectorXi \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+  Node7 -> Node10 [dir="back",color="darkorchid3",style="dashed",label=" ptr" ];
+  Node11 -> Node7 [dir="back",color="darkorchid3",style="dashed",label=" resource_" ];
+  Node11 [label="std::shared_ptr\< const\l Resource \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+  Node7 -> Node11 [dir="back",color="darkorchid3",style="dashed",label=" ptr" ];
+  Node12 -> Node7 [dir="back",color="darkorchid3",style="dashed",label=" vertex_colors_" ];
+  Node12 [label="std::shared_ptr\< const\l tesseract_common::VectorVector4d \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+  Node7 -> Node12 [dir="back",color="darkorchid3",style="dashed",label=" ptr" ];
+  Node13 -> Node7 [dir="back",color="darkorchid3",style="dashed",label=" mesh_material_" ];
+  Node13 [label="std::shared_ptr\< MeshMaterial \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+  Node7 -> Node13 [dir="back",color="darkorchid3",style="dashed",label=" ptr" ];
+  Node14 -> Node7 [dir="back",color="darkorchid3",style="dashed",label=" mesh_textures_" ];
+  Node14 [label="std::shared_ptr\< const\l std::vector\< MeshTexture\l::Ptr \> \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+  Node7 -> Node14 [dir="back",color="darkorchid3",style="dashed",label=" ptr" ];
+  Node15 -> Node1 [dir="back",color="darkorchid3",style="dashed",label=" segment_transforms_" ];
+  Node15 [label="std::map\< std::string,\l KDL::Frame \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+  Node4 -> Node15 [dir="back",color="darkorchid3",style="dashed",label=" keys" ];
+  Node7 -> Node15 [dir="back",color="darkorchid3",style="dashed",label=" elements" ];
+  Node6 -> Node1 [dir="back",color="darkorchid3",style="dashed",label=" joint_names_\nlink_names_" ];
+  Node16 -> Node1 [dir="back",color="darkorchid3",style="dashed",label=" joint_values_" ];
+  Node16 [label="std::unordered_map\l\< std::string, double \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+  Node4 -> Node16 [dir="back",color="darkorchid3",style="dashed",label=" keys" ];
+  Node7 -> Node16 [dir="back",color="darkorchid3",style="dashed",label=" elements" ];
+}

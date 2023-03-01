@@ -1,0 +1,54 @@
+\hypertarget{plane_8h_source}{}\doxysection{plane.\+h}
+\label{plane_8h_source}\index{tesseract\_geometry/include/tesseract\_geometry/impl/plane.h@{tesseract\_geometry/include/tesseract\_geometry/impl/plane.h}}
+\mbox{\hyperlink{plane_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#ifndef TESSERACT\_GEOMETRY\_PLANE\_H}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define TESSERACT\_GEOMETRY\_PLANE\_H}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{macros_8h}{tesseract\_common/macros.h}}>}}
+\DoxyCodeLine{30 \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include <boost/serialization/access.hpp>}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include <boost/serialization/export.hpp>}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{34 \mbox{\hyperlink{namespaceTESSERACT__COMMON__IGNORE__WARNINGS__POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{tesseract__geometry_2include_2tesseract__geometry_2geometry_8h}{tesseract\_geometry/geometry.h}}>}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__geometry}{tesseract\_geometry}}}
+\DoxyCodeLine{39 \{}
+\DoxyCodeLine{40 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__geometry_1_1Plane}{Plane}} : \textcolor{keyword}{public} \mbox{\hyperlink{classtesseract__geometry_1_1Geometry}{Geometry}}}
+\DoxyCodeLine{41 \{}
+\DoxyCodeLine{42 \textcolor{keyword}{public}:}
+\DoxyCodeLine{43   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__geometry_1_1Plane_a98f7d57e2ffc6722be729dda1880c607}{Ptr}} = std::shared\_ptr<Plane>;}
+\DoxyCodeLine{44   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__geometry_1_1Plane_adf8d58c9a8d3b0cb962e807d8ef2d428}{ConstPtr}} = std::shared\_ptr<const Plane>;}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46   \mbox{\hyperlink{classtesseract__geometry_1_1Plane_af20287b853394e752ea6233363c3b1e1}{Plane}}(\textcolor{keywordtype}{double} a, \textcolor{keywordtype}{double} b, \textcolor{keywordtype}{double} \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a53803beb6b02f370f4ff75b865341455}{c}}, \textcolor{keywordtype}{double} d) : \mbox{\hyperlink{classtesseract__geometry_1_1Geometry}{Geometry}}(\mbox{\hyperlink{namespacetesseract__geometry_a7543d6c1dc8947a3274abdd21fb56feb}{GeometryType}}::\mbox{\hyperlink{namespacetesseract__geometry_a7543d6c1dc8947a3274abdd21fb56feba67f39b6bb359d38675adb7dfab65fdb6}{PLANE}}), \mbox{\hyperlink{classtesseract__geometry_1_1Plane_a2afce1c120ae3fabb48a45744ed6089d}{a\_}}(a), \mbox{\hyperlink{classtesseract__geometry_1_1Plane_ab77961eee6949733c05375ebcbd9210c}{b\_}}(b), \mbox{\hyperlink{classtesseract__geometry_1_1Plane_af0b631cb98eb1975c6f1760ca12b4f40}{c\_}}(\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a53803beb6b02f370f4ff75b865341455}{c}}), \mbox{\hyperlink{classtesseract__geometry_1_1Plane_aefb45ce9be7f2bbecba37713eb169381}{d\_}}(d) \{\}}
+\DoxyCodeLine{47   \mbox{\hyperlink{classtesseract__geometry_1_1Plane_a6705cc7eb5a057661d804df55efa1e19}{Plane}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{48   \mbox{\hyperlink{classtesseract__geometry_1_1Plane_ad27c4e4b97f8b5933fa5fa40d46ff3ba}{\string~Plane}}() \textcolor{keyword}{override} = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50   \textcolor{keywordtype}{double} \mbox{\hyperlink{classtesseract__geometry_1_1Plane_a6f1ff19b59116602fd9971cfaac4a6b5}{getA}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classtesseract__geometry_1_1Plane_a2afce1c120ae3fabb48a45744ed6089d}{a\_}}; \}}
+\DoxyCodeLine{51   \textcolor{keywordtype}{double} \mbox{\hyperlink{classtesseract__geometry_1_1Plane_a50983fedbd7f43ce23ad3241b4cd03fc}{getB}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classtesseract__geometry_1_1Plane_ab77961eee6949733c05375ebcbd9210c}{b\_}}; \}}
+\DoxyCodeLine{52   \textcolor{keywordtype}{double} \mbox{\hyperlink{classtesseract__geometry_1_1Plane_ac0dae2b2c6a5a1174d02426a1c994ffd}{getC}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classtesseract__geometry_1_1Plane_af0b631cb98eb1975c6f1760ca12b4f40}{c\_}}; \}}
+\DoxyCodeLine{53   \textcolor{keywordtype}{double} \mbox{\hyperlink{classtesseract__geometry_1_1Plane_a6b01ed126f677e60d351a9807bb3d5dd}{getD}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classtesseract__geometry_1_1Plane_aefb45ce9be7f2bbecba37713eb169381}{d\_}}; \}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55   \mbox{\hyperlink{classtesseract__geometry_1_1Geometry_acd91c55fb9604ed374446c029b6f2d08}{Geometry::Ptr}} \mbox{\hyperlink{classtesseract__geometry_1_1Plane_a046acfb6dfd5f6f3a4a7b97d6f027e5d}{clone}}() const override final \{ \textcolor{keywordflow}{return} std::make\_shared<Plane>(\mbox{\hyperlink{classtesseract__geometry_1_1Plane_a2afce1c120ae3fabb48a45744ed6089d}{a\_}}, \mbox{\hyperlink{classtesseract__geometry_1_1Plane_ab77961eee6949733c05375ebcbd9210c}{b\_}}, \mbox{\hyperlink{classtesseract__geometry_1_1Plane_af0b631cb98eb1975c6f1760ca12b4f40}{c\_}}, \mbox{\hyperlink{classtesseract__geometry_1_1Plane_aefb45ce9be7f2bbecba37713eb169381}{d\_}}); \}}
+\DoxyCodeLine{56   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__geometry_1_1Plane_aabe901606036f60bf1aee6061f05c368}{operator==}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__geometry_1_1Plane}{Plane}}\& rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{57   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__geometry_1_1Plane_af08e46f59732e3a9067d275ebc2f68f3}{operator!=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__geometry_1_1Plane}{Plane}}\& rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{keyword}{private}:}
+\DoxyCodeLine{60   \textcolor{keywordtype}{double} \mbox{\hyperlink{classtesseract__geometry_1_1Plane_a2afce1c120ae3fabb48a45744ed6089d}{a\_}}\{ 0 \};}
+\DoxyCodeLine{61   \textcolor{keywordtype}{double} \mbox{\hyperlink{classtesseract__geometry_1_1Plane_ab77961eee6949733c05375ebcbd9210c}{b\_}}\{ 0 \};}
+\DoxyCodeLine{62   \textcolor{keywordtype}{double} \mbox{\hyperlink{classtesseract__geometry_1_1Plane_af0b631cb98eb1975c6f1760ca12b4f40}{c\_}}\{ 0 \};}
+\DoxyCodeLine{63   \textcolor{keywordtype}{double} \mbox{\hyperlink{classtesseract__geometry_1_1Plane_aefb45ce9be7f2bbecba37713eb169381}{d\_}}\{ 0 \};}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65   \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__geometry_1_1Plane_ac98d07dd8f7b70e16ccb9a01abf56b9c}{boost::serialization::access}};}
+\DoxyCodeLine{66   \textcolor{keyword}{template} <\textcolor{keyword}{class} Archive>}
+\DoxyCodeLine{67   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__geometry_1_1Plane_aa247814bd729b982db7323cad9672424}{serialize}}(Archive\& ar, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} version);  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{68 \};}
+\DoxyCodeLine{69 \}  \textcolor{comment}{// namespace tesseract\_geometry}}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 BOOST\_CLASS\_EXPORT\_KEY2(\mbox{\hyperlink{classtesseract__geometry_1_1Plane}{tesseract\_geometry::Plane}}, \textcolor{stringliteral}{"{}Plane"{}})}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

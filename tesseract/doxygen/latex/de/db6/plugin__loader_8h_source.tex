@@ -1,0 +1,57 @@
+\hypertarget{plugin__loader_8h_source}{}\doxysection{plugin\+\_\+loader.\+h}
+\label{plugin__loader_8h_source}\index{tesseract\_common/include/tesseract\_common/plugin\_loader.h@{tesseract\_common/include/tesseract\_common/plugin\_loader.h}}
+\mbox{\hyperlink{plugin__loader_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#ifndef TESSERACT\_COMMON\_PLUGIN\_LOADER\_H}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define TESSERACT\_COMMON\_PLUGIN\_LOADER\_H}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{macros_8h}{tesseract\_common/macros.h}}>}}
+\DoxyCodeLine{30 \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include <set>}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include <unordered\_map>}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{36 \mbox{\hyperlink{namespaceTESSERACT__COMMON__IGNORE__WARNINGS__POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__common}{tesseract\_common}}}
+\DoxyCodeLine{39 \{}
+\DoxyCodeLine{56 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__common_1_1PluginLoader}{PluginLoader}}}
+\DoxyCodeLine{57 \{}
+\DoxyCodeLine{58 \textcolor{keyword}{public}:}
+\DoxyCodeLine{60   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__common_1_1PluginLoader_aff0d53be8344f1875acd112f698cc117}{search\_system\_folders}}\{ \textcolor{keyword}{true} \};}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{63   std::set<std::string> \mbox{\hyperlink{classtesseract__common_1_1PluginLoader_a0708204dd34adfdec1a7506df07cd30a}{search\_paths}};}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{66   std::set<std::string> \mbox{\hyperlink{classtesseract__common_1_1PluginLoader_ac21baef3ac5e035e5d6604c48dce293c}{search\_libraries}};}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{69   std::string \mbox{\hyperlink{classtesseract__common_1_1PluginLoader_a07ad5f9ed665a443296650ba4cf74ac2}{search\_paths\_env}};}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{77   std::string \mbox{\hyperlink{classtesseract__common_1_1PluginLoader_af3929c97ee7a2ca0865c616397c1caba}{search\_libraries\_env}};}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{84   \textcolor{keyword}{template} <\textcolor{keyword}{class} PluginBase>}
+\DoxyCodeLine{85   std::shared\_ptr<PluginBase> \mbox{\hyperlink{classtesseract__common_1_1PluginLoader_a453681a0572061cdfdefb561c9c084f2}{instantiate}}(\textcolor{keyword}{const} std::string\& plugin\_name) \textcolor{keyword}{const};}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{92   \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__common_1_1PluginLoader_ae73347144bf79b795ed17959370f0559}{isPluginAvailable}}(\textcolor{keyword}{const} std::string\& plugin\_name) \textcolor{keyword}{const};}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{100   \textcolor{keyword}{template} <\textcolor{keyword}{class} PluginBase>}
+\DoxyCodeLine{101   std::vector<std::string> \mbox{\hyperlink{classtesseract__common_1_1PluginLoader_af2804966fad2fe792f75dd24cd593531}{getAvailablePlugins}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{108   \textcolor{keyword}{inline} std::vector<std::string> \mbox{\hyperlink{classtesseract__common_1_1PluginLoader_af2804966fad2fe792f75dd24cd593531}{getAvailablePlugins}}(\textcolor{keyword}{const} std::string\& section) \textcolor{keyword}{const};}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{114   \textcolor{keyword}{inline} std::vector<std::string> \mbox{\hyperlink{classtesseract__common_1_1PluginLoader_a6f7905ef925785966dfba57db217da85}{getAvailableSections}}(\textcolor{keywordtype}{bool} include\_hidden = \textcolor{keyword}{false}) \textcolor{keyword}{const};}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{120   \textcolor{keyword}{inline} \textcolor{keywordtype}{int} \mbox{\hyperlink{classtesseract__common_1_1PluginLoader_a8f0b1bf448293e184888f791baba0341}{count}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{133   \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__common_1_1PluginLoader_a06b109e7bcab52ea618544b1e6695c9a}{addSymbolLibraryToSearchLibrariesEnv}}(\textcolor{keyword}{const} \textcolor{keywordtype}{void}* symbol\_ptr,}
+\DoxyCodeLine{134                                                           \textcolor{keyword}{const} std::string\& \mbox{\hyperlink{classtesseract__common_1_1PluginLoader_af3929c97ee7a2ca0865c616397c1caba}{search\_libraries\_env}});}
+\DoxyCodeLine{135 \};}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137 \}  \textcolor{comment}{// namespace tesseract\_common}}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{plugin__loader_8hpp}{tesseract\_common/plugin\_loader.hpp}}>}}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{141 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_COMMON\_PLUGIN\_LOADER\_H}}
+
+\end{DoxyCode}

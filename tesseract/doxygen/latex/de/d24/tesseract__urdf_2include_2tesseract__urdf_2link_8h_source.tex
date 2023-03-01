@@ -1,0 +1,46 @@
+\hypertarget{tesseract__urdf_2include_2tesseract__urdf_2link_8h_source}{}\doxysection{link.\+h}
+\label{tesseract__urdf_2include_2tesseract__urdf_2link_8h_source}\index{tesseract\_urdf/include/tesseract\_urdf/link.h@{tesseract\_urdf/include/tesseract\_urdf/link.h}}
+\mbox{\hyperlink{tesseract__urdf_2include_2tesseract__urdf_2link_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#ifndef TESSERACT\_URDF\_LINK\_H}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define TESSERACT\_URDF\_LINK\_H}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{macros_8h}{tesseract\_common/macros.h}}>}}
+\DoxyCodeLine{30 \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include <unordered\_map>}}
+\DoxyCodeLine{33 \mbox{\hyperlink{namespaceTESSERACT__COMMON__IGNORE__WARNINGS__POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetinyxml2}{tinyxml2}}}
+\DoxyCodeLine{36 \{}
+\DoxyCodeLine{37 \textcolor{keyword}{class }XMLElement;  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{38 \textcolor{keyword}{class }XMLDocument;}
+\DoxyCodeLine{39 \}  \textcolor{comment}{// namespace tinyxml2}}
+\DoxyCodeLine{40 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__scene__graph}{tesseract\_scene\_graph}}}
+\DoxyCodeLine{41 \{}
+\DoxyCodeLine{42 \textcolor{keyword}{class }Link;}
+\DoxyCodeLine{43 \textcolor{keyword}{class }Material;}
+\DoxyCodeLine{44 \}  \textcolor{comment}{// namespace tesseract\_scene\_graph}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__common}{tesseract\_common}}}
+\DoxyCodeLine{47 \{}
+\DoxyCodeLine{48 \textcolor{keyword}{class }ResourceLocator;}
+\DoxyCodeLine{49 \}  \textcolor{comment}{// namespace tesseract\_common}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__urdf}{tesseract\_urdf}}}
+\DoxyCodeLine{52 \{}
+\DoxyCodeLine{61 std::shared\_ptr<tesseract\_scene\_graph::Link>}
+\DoxyCodeLine{62 \mbox{\hyperlink{namespacetesseract__urdf_a5e0ce0a914b59745c8b3be4f94611dbc}{parseLink}}(\textcolor{keyword}{const} tinyxml2::XMLElement* xml\_element,}
+\DoxyCodeLine{63           \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__common_1_1ResourceLocator}{tesseract\_common::ResourceLocator}}\& \mbox{\hyperlink{resource__locator__unit_8cpp_ad889712fa094e762b2a887aec9001270}{locator}},}
+\DoxyCodeLine{64           std::unordered\_map<std::string, std::shared\_ptr<tesseract\_scene\_graph::Material>>\& \mbox{\hyperlink{tesseract__urdf__material__unit_8cpp_aa47adcca74578cb21708dc72cb1a4e2c}{available\_materials}},}
+\DoxyCodeLine{65           \textcolor{keywordtype}{int} version);}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{75 tinyxml2::XMLElement* \mbox{\hyperlink{namespacetesseract__urdf_a6a89ba9313d15f089c3c7575f5b44836}{writeLink}}(\textcolor{keyword}{const} std::shared\_ptr<const tesseract\_scene\_graph::Link>\& link,}
+\DoxyCodeLine{76                                 tinyxml2::XMLDocument\& doc,}
+\DoxyCodeLine{77                                 \textcolor{keyword}{const} std::string\& \mbox{\hyperlink{resource__locator__unit_8cpp_a314de485e4a4b5454ffba827efda6480}{package\_path}});}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 \}  \textcolor{comment}{// namespace tesseract\_urdf}}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_URDF\_LINK\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,104 @@
+\hypertarget{any__poly_8h}{}\doxysection{tesseract\+\_\+common/include/tesseract\+\_\+common/any\+\_\+poly.h File Reference}
+\label{any__poly_8h}\index{tesseract\_common/include/tesseract\_common/any\_poly.h@{tesseract\_common/include/tesseract\_common/any\_poly.h}}
+{\ttfamily \#include $<$tesseract\+\_\+common/macros.\+h$>$}\newline
+{\ttfamily \#include $<$boost/serialization/base\+\_\+object.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/serialization/export.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/concept\+\_\+check.\+hpp$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+common/serialization.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+common/type\+\_\+erasure.\+h$>$}\newline
+Include dependency graph for any\+\_\+poly.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structtesseract__common_1_1detail__any_1_1AnyConcept}{tesseract\+\_\+common\+::detail\+\_\+any\+::\+Any\+Concept$<$ A $>$}}
+\item 
+struct \mbox{\hyperlink{structtesseract__common_1_1detail__any_1_1AnyInstance}{tesseract\+\_\+common\+::detail\+\_\+any\+::\+Any\+Instance$<$ T $>$}}
+\item 
+struct \mbox{\hyperlink{structtesseract__common_1_1AnyPoly}{tesseract\+\_\+common\+::\+Any\+Poly}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacetesseract__common}{tesseract\+\_\+common}}
+\item 
+namespace \mbox{\hyperlink{namespacetesseract__common_1_1detail__any}{tesseract\+\_\+common\+::detail\+\_\+any}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{any__poly_8h_a9f5e5ab6ee1af81eeb946b62544166a1}{TESSERACT\+\_\+\+ANY\+\_\+\+EXPORT\+\_\+\+KEY}}(N,  C)
+\begin{DoxyCompactList}\small\item\em If shared library, this must go in the header after the class definition. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{any__poly_8h_af87d32132341a610a62a772e8e189805}{TESSERACT\+\_\+\+ANY\+\_\+\+EXPORT\+\_\+\+IMPLEMENT}}(inst)
+\begin{DoxyCompactList}\small\item\em If shared library, this must go in the cpp after the implicit instantiation of the serialize function. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{any__poly_8h_a11dcfdd497b73cf33451be9e60f5a0c1}{TESSERACT\+\_\+\+ANY\+\_\+\+EXPORT}}(N,  C)
+\begin{DoxyCompactList}\small\item\em This should not be used within shared libraries use the two above. If not in a shared library it can go in header or cpp. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{namespacetesseract__common_a5b0272abd157d81a79f04aad1a6ddd01}{tesseract\+\_\+common\+::\+Any\+Poly\+Base}} = \mbox{\hyperlink{structtesseract__common_1_1TypeErasureBase}{tesseract\+\_\+common\+::\+Type\+Erasure\+Base}}$<$ Type\+Erasure\+Interface, detail\+\_\+any\+::\+Any\+Instance $>$
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{any__poly_8h_a11dcfdd497b73cf33451be9e60f5a0c1}\label{any__poly_8h_a11dcfdd497b73cf33451be9e60f5a0c1}} 
+\index{any\_poly.h@{any\_poly.h}!TESSERACT\_ANY\_EXPORT@{TESSERACT\_ANY\_EXPORT}}
+\index{TESSERACT\_ANY\_EXPORT@{TESSERACT\_ANY\_EXPORT}!any\_poly.h@{any\_poly.h}}
+\doxysubsubsection{\texorpdfstring{TESSERACT\_ANY\_EXPORT}{TESSERACT\_ANY\_EXPORT}}
+{\footnotesize\ttfamily \#define TESSERACT\+\_\+\+ANY\+\_\+\+EXPORT(\begin{DoxyParamCaption}\item[{}]{N,  }\item[{}]{C }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  \mbox{\hyperlink{any__poly_8h_a9f5e5ab6ee1af81eeb946b62544166a1}{TESSERACT\_ANY\_EXPORT\_KEY}}(N, C)                                                                                       \(\backslash\)}
+\DoxyCodeLine{  TESSERACT\_ANY\_EXPORT\_IMPLEMENT(N::C)}
+
+\end{DoxyCode}
+
+
+This should not be used within shared libraries use the two above. If not in a shared library it can go in header or cpp. 
+
+\mbox{\Hypertarget{any__poly_8h_af87d32132341a610a62a772e8e189805}\label{any__poly_8h_af87d32132341a610a62a772e8e189805}} 
+\index{any\_poly.h@{any\_poly.h}!TESSERACT\_ANY\_EXPORT\_IMPLEMENT@{TESSERACT\_ANY\_EXPORT\_IMPLEMENT}}
+\index{TESSERACT\_ANY\_EXPORT\_IMPLEMENT@{TESSERACT\_ANY\_EXPORT\_IMPLEMENT}!any\_poly.h@{any\_poly.h}}
+\doxysubsubsection{\texorpdfstring{TESSERACT\_ANY\_EXPORT\_IMPLEMENT}{TESSERACT\_ANY\_EXPORT\_IMPLEMENT}}
+{\footnotesize\ttfamily \#define TESSERACT\+\_\+\+ANY\+\_\+\+EXPORT\+\_\+\+IMPLEMENT(\begin{DoxyParamCaption}\item[{}]{inst }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  BOOST\_CLASS\_EXPORT\_IMPLEMENT(inst\#\#AnyInstanceBase)                                                                  \(\backslash\)}
+\DoxyCodeLine{  BOOST\_CLASS\_EXPORT\_IMPLEMENT(inst\#\#AnyInstance)                                                                      \(\backslash\)}
+\DoxyCodeLine{  BOOST\_CLASS\_EXPORT\_IMPLEMENT(inst\#\#AnyInstanceWrapper)}
+
+\end{DoxyCode}
+
+
+If shared library, this must go in the cpp after the implicit instantiation of the serialize function. 
+
+\mbox{\Hypertarget{any__poly_8h_a9f5e5ab6ee1af81eeb946b62544166a1}\label{any__poly_8h_a9f5e5ab6ee1af81eeb946b62544166a1}} 
+\index{any\_poly.h@{any\_poly.h}!TESSERACT\_ANY\_EXPORT\_KEY@{TESSERACT\_ANY\_EXPORT\_KEY}}
+\index{TESSERACT\_ANY\_EXPORT\_KEY@{TESSERACT\_ANY\_EXPORT\_KEY}!any\_poly.h@{any\_poly.h}}
+\doxysubsubsection{\texorpdfstring{TESSERACT\_ANY\_EXPORT\_KEY}{TESSERACT\_ANY\_EXPORT\_KEY}}
+{\footnotesize\ttfamily \#define TESSERACT\+\_\+\+ANY\+\_\+\+EXPORT\+\_\+\+KEY(\begin{DoxyParamCaption}\item[{}]{N,  }\item[{}]{C }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  \textcolor{keyword}{namespace }N                                                                                                          \(\backslash\)}
+\DoxyCodeLine{  \{                                                                                                                    \(\backslash\)}
+\DoxyCodeLine{  \textcolor{keyword}{using }C\#\#AnyInstanceBase = \mbox{\hyperlink{structtesseract__common_1_1TypeErasureInstance}{tesseract\_common::TypeErasureInstance<C, tesseract\_common::TypeErasureInterface>}};         \(\backslash\)}
+\DoxyCodeLine{  \textcolor{keyword}{using }C\#\#AnyInstance = \mbox{\hyperlink{structtesseract__common_1_1detail__any_1_1AnyInstance}{tesseract\_common::detail\_any::AnyInstance<C>}};                                                 \(\backslash\)}
+\DoxyCodeLine{  \textcolor{keyword}{using }C\#\#AnyInstanceWrapper = \mbox{\hyperlink{structtesseract__common_1_1TypeErasureInstanceWrapper}{tesseract\_common::TypeErasureInstanceWrapper<C\#\#AnyInstance>}};                          \(\backslash\)}
+\DoxyCodeLine{  \}                                                                                                                    \(\backslash\)}
+\DoxyCodeLine{  BOOST\_CLASS\_EXPORT\_KEY(N::C\#\#AnyInstanceBase)                                                                        \(\backslash\)}
+\DoxyCodeLine{  BOOST\_CLASS\_EXPORT\_KEY(N::C\#\#AnyInstance)                                                                            \(\backslash\)}
+\DoxyCodeLine{  BOOST\_CLASS\_EXPORT\_KEY(N::C\#\#AnyInstanceWrapper)                                                                     \(\backslash\)}
+\DoxyCodeLine{  BOOST\_CLASS\_TRACKING(N::C\#\#AnyInstanceBase, boost::serialization::track\_never)                                       \(\backslash\)}
+\DoxyCodeLine{  BOOST\_CLASS\_TRACKING(N::C\#\#AnyInstance, boost::serialization::track\_never)                                           \(\backslash\)}
+\DoxyCodeLine{  BOOST\_CLASS\_TRACKING(N::C\#\#AnyInstanceWrapper, boost::serialization::track\_never)}
+
+\end{DoxyCode}
+
+
+If shared library, this must go in the header after the class definition. 
+

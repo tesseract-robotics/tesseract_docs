@@ -1,0 +1,157 @@
+\hypertarget{kinematics__plugin__factory_8h_source}{}\doxysection{kinematics\+\_\+plugin\+\_\+factory.\+h}
+\label{kinematics__plugin__factory_8h_source}\index{tesseract\_kinematics/core/include/tesseract\_kinematics/core/kinematics\_plugin\_factory.h@{tesseract\_kinematics/core/include/tesseract\_kinematics/core/kinematics\_plugin\_factory.h}}
+\mbox{\hyperlink{kinematics__plugin__factory_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#ifndef TESSERACT\_KINEMATICS\_KINEMATICS\_PLUGIN\_FACTORY\_H}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define TESSERACT\_KINEMATICS\_KINEMATICS\_PLUGIN\_FACTORY\_H}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{macros_8h}{tesseract\_common/macros.h}}>}}
+\DoxyCodeLine{30 \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include <yaml-\/cpp/yaml.h>}}
+\DoxyCodeLine{35 \mbox{\hyperlink{namespaceTESSERACT__COMMON__IGNORE__WARNINGS__POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{inverse__kinematics_8h}{tesseract\_kinematics/core/inverse\_kinematics.h}}>}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{forward__kinematics_8h}{tesseract\_kinematics/core/forward\_kinematics.h}}>}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{graph_8h}{tesseract\_scene\_graph/graph.h}}>}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{scene__state_8h}{tesseract\_scene\_graph/scene\_state.h}}>}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{plugin__loader_8h}{tesseract\_common/plugin\_loader.h}}>}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{tesseract__common_2include_2tesseract__common_2types_8h}{tesseract\_common/types.h}}>}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{comment}{// clang-\/format off}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define TESSERACT\_ADD\_FWD\_KIN\_PLUGIN(DERIVED\_CLASS, ALIAS)                                                             \(\backslash\)}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{  TESSERACT\_ADD\_PLUGIN\_SECTIONED(DERIVED\_CLASS, ALIAS, FwdKin)}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#define TESSERACT\_ADD\_INV\_KIN\_PLUGIN(DERIVED\_CLASS, ALIAS)                                                             \(\backslash\)}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{  TESSERACT\_ADD\_PLUGIN\_SECTIONED(DERIVED\_CLASS, ALIAS, InvKin)}}
+\DoxyCodeLine{50 \textcolor{comment}{// clang-\/format on}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__kinematics}{tesseract\_kinematics}}}
+\DoxyCodeLine{53 \{}
+\DoxyCodeLine{55 \textcolor{keyword}{class }KinematicsPluginFactory;}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{58 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__kinematics_1_1InvKinFactory}{InvKinFactory}}}
+\DoxyCodeLine{59 \{}
+\DoxyCodeLine{60 \textcolor{keyword}{public}:}
+\DoxyCodeLine{61   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__kinematics_1_1InvKinFactory_a84b64f875adaf807f1ab26868bb4ccdd}{Ptr}} = std::shared\_ptr<InvKinFactory>;}
+\DoxyCodeLine{62   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__kinematics_1_1InvKinFactory_a62e7dd5c872023d1e02094e9dd5ad77b}{ConstPtr}} = std::shared\_ptr<const InvKinFactory>;}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64   \textcolor{keyword}{virtual} \mbox{\hyperlink{classtesseract__kinematics_1_1InvKinFactory_a86292d1e6e299789837fdc3c8249dc62}{\string~InvKinFactory}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{74   \textcolor{keyword}{virtual} \mbox{\hyperlink{classtesseract__kinematics_1_1InverseKinematics_a68e526591337b0781c9ec91618d1d5f0}{InverseKinematics::UPtr}} \mbox{\hyperlink{classtesseract__kinematics_1_1InvKinFactory_aa2c9a34f4ec22bfeadca08bd5f62cf63}{create}}(\textcolor{keyword}{const} std::string\& solver\_name,}
+\DoxyCodeLine{75                                          \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph}{tesseract\_scene\_graph::SceneGraph}}\& \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a8d4d0dc3a6b9a7030970bf9ed3764756}{scene\_graph}},}
+\DoxyCodeLine{76                                          \textcolor{keyword}{const} \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{tesseract\_scene\_graph::SceneState}}\& \mbox{\hyperlink{kinematics__factory__unit_8cpp_a918c8faa92717caa3ba8aef1b4ef8163}{scene\_state}},}
+\DoxyCodeLine{77                                          \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory}{KinematicsPluginFactory}}\& plugin\_factory,}
+\DoxyCodeLine{78                                          \textcolor{keyword}{const} YAML::Node\& \mbox{\hyperlink{collision__core__unit_8cpp_a2013c60ebd4a63f15fafe2287736ae37}{config}}) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{81   \textcolor{keyword}{static} \textcolor{keyword}{const} std::string \mbox{\hyperlink{classtesseract__kinematics_1_1InvKinFactory_adcd49e25e500bee360ede0afecb5909c}{SECTION\_NAME}};}
+\DoxyCodeLine{82   \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__kinematics_1_1InvKinFactory_a7935fed495dc747e3ee24e005a4439eb}{PluginLoader}};}
+\DoxyCodeLine{83 \};}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{86 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__kinematics_1_1FwdKinFactory}{FwdKinFactory}}}
+\DoxyCodeLine{87 \{}
+\DoxyCodeLine{88 \textcolor{keyword}{public}:}
+\DoxyCodeLine{89   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__kinematics_1_1FwdKinFactory_a27d2e728623b6eb6b87a3632fbf76fe3}{Ptr}} = std::shared\_ptr<FwdKinFactory>;}
+\DoxyCodeLine{90   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__kinematics_1_1FwdKinFactory_afc349cd47acf510b3ebb9328c6dd8d74}{ConstPtr}} = std::shared\_ptr<const FwdKinFactory>;}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92   \textcolor{keyword}{virtual} \mbox{\hyperlink{classtesseract__kinematics_1_1FwdKinFactory_acfeb7448b2e5368a6f8a23d261ea27fd}{\string~FwdKinFactory}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{102   \textcolor{keyword}{virtual} \mbox{\hyperlink{classtesseract__kinematics_1_1ForwardKinematics_a53cb5fab19798d5afc20c259d4ffe1e3}{ForwardKinematics::UPtr}} \mbox{\hyperlink{classtesseract__kinematics_1_1FwdKinFactory_a65937de7ff46f36c3684b46ee084638f}{create}}(\textcolor{keyword}{const} std::string\& solver\_name,}
+\DoxyCodeLine{103                                          \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph}{tesseract\_scene\_graph::SceneGraph}}\& \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a8d4d0dc3a6b9a7030970bf9ed3764756}{scene\_graph}},}
+\DoxyCodeLine{104                                          \textcolor{keyword}{const} \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{tesseract\_scene\_graph::SceneState}}\& \mbox{\hyperlink{kinematics__factory__unit_8cpp_a918c8faa92717caa3ba8aef1b4ef8163}{scene\_state}},}
+\DoxyCodeLine{105                                          \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory}{KinematicsPluginFactory}}\& plugin\_factory,}
+\DoxyCodeLine{106                                          \textcolor{keyword}{const} YAML::Node\& \mbox{\hyperlink{collision__core__unit_8cpp_a2013c60ebd4a63f15fafe2287736ae37}{config}}) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{109   \textcolor{keyword}{static} \textcolor{keyword}{const} std::string \mbox{\hyperlink{classtesseract__kinematics_1_1FwdKinFactory_a611c12b0896b2be6f28051d633993696}{SECTION\_NAME}};}
+\DoxyCodeLine{110   \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__kinematics_1_1FwdKinFactory_a7935fed495dc747e3ee24e005a4439eb}{PluginLoader}};}
+\DoxyCodeLine{111 \};}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory}{KinematicsPluginFactory}}}
+\DoxyCodeLine{114 \{}
+\DoxyCodeLine{115 \textcolor{keyword}{public}:}
+\DoxyCodeLine{116   \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_acbaf4ecd2f5406b4fc85a0c92ef3ac0e}{KinematicsPluginFactory}}();}
+\DoxyCodeLine{117   \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_abf4e004c661d548c4dbb27acecbf1e23}{\string~KinematicsPluginFactory}}();}
+\DoxyCodeLine{118   \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_aca45cb9c8cae4b75f6a99529332ca329}{KinematicsPluginFactory}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory}{KinematicsPluginFactory}}\&) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{119   \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory}{KinematicsPluginFactory}}\& \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_a81e6ed801070849d4d4cb6ed16dca247}{operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory}{KinematicsPluginFactory}}\&) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{120   \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_acd20567002f426c7f5e5164ba4558ffc}{KinematicsPluginFactory}}(\mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory}{KinematicsPluginFactory}}\&\&) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{121   \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory}{KinematicsPluginFactory}}\& \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_a18d8c54a972392cb858a533ea5128d4d}{operator=}}(\mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory}{KinematicsPluginFactory}}\&\&) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{127   \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_acbaf4ecd2f5406b4fc85a0c92ef3ac0e}{KinematicsPluginFactory}}(YAML::Node \mbox{\hyperlink{collision__core__unit_8cpp_a2013c60ebd4a63f15fafe2287736ae37}{config}});}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{133   \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_acbaf4ecd2f5406b4fc85a0c92ef3ac0e}{KinematicsPluginFactory}}(\textcolor{keyword}{const} tesseract\_common::fs::path\& \mbox{\hyperlink{collision__core__unit_8cpp_a2013c60ebd4a63f15fafe2287736ae37}{config}});}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{139   \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_acbaf4ecd2f5406b4fc85a0c92ef3ac0e}{KinematicsPluginFactory}}(\textcolor{keyword}{const} std::string\& \mbox{\hyperlink{collision__core__unit_8cpp_a2013c60ebd4a63f15fafe2287736ae37}{config}});}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{145   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_aeb07fcaa4315b3e754e226f2bc58f785}{addSearchPath}}(\textcolor{keyword}{const} std::string\& path);}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{151   std::set<std::string> \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_a415a55fe39900f9f4a39547e9eb86f2e}{getSearchPaths}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{157   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_aecf6c6b04198b8d594e0a132a343bdb0}{addSearchLibrary}}(\textcolor{keyword}{const} std::string\& library\_name);}
+\DoxyCodeLine{158 }
+\DoxyCodeLine{163   std::set<std::string> \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_a37ac50baa5ddbf0617ff6002a30858ab}{getSearchLibraries}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{164 }
+\DoxyCodeLine{171   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_a745991b12ee4d6a75e8272a7d1f9af51}{addFwdKinPlugin}}(\textcolor{keyword}{const} std::string\& group\_name,}
+\DoxyCodeLine{172                        \textcolor{keyword}{const} std::string\& solver\_name,}
+\DoxyCodeLine{173                        \mbox{\hyperlink{structtesseract__common_1_1PluginInfo}{tesseract\_common::PluginInfo}} \mbox{\hyperlink{contact__managers__factory__unit_8cpp_aa85411aa79e8b65adf666700a5a44add}{plugin\_info}});}
+\DoxyCodeLine{174 }
+\DoxyCodeLine{179   std::map<std::string, tesseract\_common::PluginInfoContainer> \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_a195c0c53ece00d51d977d1ddd3bd8418}{getFwdKinPlugins}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{180 }
+\DoxyCodeLine{186   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_ad49ae6ea890eb83c98abff5d0b2b0b2b}{removeFwdKinPlugin}}(\textcolor{keyword}{const} std::string\& group\_name, \textcolor{keyword}{const} std::string\& solver\_name);}
+\DoxyCodeLine{187 }
+\DoxyCodeLine{194   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_a7fdbebeb4500741d93886fb3a6ce3c79}{setDefaultFwdKinPlugin}}(\textcolor{keyword}{const} std::string\& group\_name, \textcolor{keyword}{const} std::string\& solver\_name);}
+\DoxyCodeLine{195 }
+\DoxyCodeLine{201   std::string \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_aedc79793e0b0c049501881e2cca1cae2}{getDefaultFwdKinPlugin}}(\textcolor{keyword}{const} std::string\& group\_name) \textcolor{keyword}{const};}
+\DoxyCodeLine{202 }
+\DoxyCodeLine{209   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_a035ed0751892a914c73f0fef28648d95}{addInvKinPlugin}}(\textcolor{keyword}{const} std::string\& group\_name,}
+\DoxyCodeLine{210                        \textcolor{keyword}{const} std::string\& solver\_name,}
+\DoxyCodeLine{211                        \mbox{\hyperlink{structtesseract__common_1_1PluginInfo}{tesseract\_common::PluginInfo}} \mbox{\hyperlink{contact__managers__factory__unit_8cpp_aa85411aa79e8b65adf666700a5a44add}{plugin\_info}});}
+\DoxyCodeLine{212 }
+\DoxyCodeLine{217   std::map<std::string, tesseract\_common::PluginInfoContainer> \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_aaf3b1a4cf7c88e9d31f931b9ff4610f9}{getInvKinPlugins}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{218 }
+\DoxyCodeLine{224   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_acf1a5652934dc1560d7a916fd11db5de}{removeInvKinPlugin}}(\textcolor{keyword}{const} std::string\& group\_name, \textcolor{keyword}{const} std::string\& solver\_name);}
+\DoxyCodeLine{225 }
+\DoxyCodeLine{232   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_a0ae2a3a9f1719337c9240fb33bec0a2e}{setDefaultInvKinPlugin}}(\textcolor{keyword}{const} std::string\& group\_name, \textcolor{keyword}{const} std::string\& solver\_name);}
+\DoxyCodeLine{233 }
+\DoxyCodeLine{239   std::string \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_af823a28249382f44dad87f7db6f64e8e}{getDefaultInvKinPlugin}}(\textcolor{keyword}{const} std::string\& group\_name) \textcolor{keyword}{const};}
+\DoxyCodeLine{240 }
+\DoxyCodeLine{249   \mbox{\hyperlink{classtesseract__kinematics_1_1ForwardKinematics_a53cb5fab19798d5afc20c259d4ffe1e3}{ForwardKinematics::UPtr}} \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_ad40092590da9f40ce3da0aa570044444}{createFwdKin}}(\textcolor{keyword}{const} std::string\& group\_name,}
+\DoxyCodeLine{250                                        \textcolor{keyword}{const} std::string\& solver\_name,}
+\DoxyCodeLine{251                                        \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph}{tesseract\_scene\_graph::SceneGraph}}\& \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a8d4d0dc3a6b9a7030970bf9ed3764756}{scene\_graph}},}
+\DoxyCodeLine{252                                        \textcolor{keyword}{const} \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{tesseract\_scene\_graph::SceneState}}\& \mbox{\hyperlink{kinematics__factory__unit_8cpp_a918c8faa92717caa3ba8aef1b4ef8163}{scene\_state}}) \textcolor{keyword}{const};}
+\DoxyCodeLine{253 }
+\DoxyCodeLine{262   \mbox{\hyperlink{classtesseract__kinematics_1_1InverseKinematics_a68e526591337b0781c9ec91618d1d5f0}{InverseKinematics::UPtr}} \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_a6a396e48c2c7350f114f7d6856b6cd5a}{createInvKin}}(\textcolor{keyword}{const} std::string\& group\_name,}
+\DoxyCodeLine{263                                        \textcolor{keyword}{const} std::string\& solver\_name,}
+\DoxyCodeLine{264                                        \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph}{tesseract\_scene\_graph::SceneGraph}}\& \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a8d4d0dc3a6b9a7030970bf9ed3764756}{scene\_graph}},}
+\DoxyCodeLine{265                                        \textcolor{keyword}{const} \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{tesseract\_scene\_graph::SceneState}}\& \mbox{\hyperlink{kinematics__factory__unit_8cpp_a918c8faa92717caa3ba8aef1b4ef8163}{scene\_state}}) \textcolor{keyword}{const};}
+\DoxyCodeLine{266 }
+\DoxyCodeLine{273   \mbox{\hyperlink{classtesseract__kinematics_1_1ForwardKinematics_a53cb5fab19798d5afc20c259d4ffe1e3}{ForwardKinematics::UPtr}} \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_ad40092590da9f40ce3da0aa570044444}{createFwdKin}}(\textcolor{keyword}{const} std::string\& solver\_name,}
+\DoxyCodeLine{274                                        \textcolor{keyword}{const} \mbox{\hyperlink{structtesseract__common_1_1PluginInfo}{tesseract\_common::PluginInfo}}\& \mbox{\hyperlink{contact__managers__factory__unit_8cpp_aa85411aa79e8b65adf666700a5a44add}{plugin\_info}},}
+\DoxyCodeLine{275                                        \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph}{tesseract\_scene\_graph::SceneGraph}}\& \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a8d4d0dc3a6b9a7030970bf9ed3764756}{scene\_graph}},}
+\DoxyCodeLine{276                                        \textcolor{keyword}{const} \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{tesseract\_scene\_graph::SceneState}}\& \mbox{\hyperlink{kinematics__factory__unit_8cpp_a918c8faa92717caa3ba8aef1b4ef8163}{scene\_state}}) \textcolor{keyword}{const};}
+\DoxyCodeLine{277 }
+\DoxyCodeLine{284   \mbox{\hyperlink{classtesseract__kinematics_1_1InverseKinematics_a68e526591337b0781c9ec91618d1d5f0}{InverseKinematics::UPtr}} \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_a6a396e48c2c7350f114f7d6856b6cd5a}{createInvKin}}(\textcolor{keyword}{const} std::string\& solver\_name,}
+\DoxyCodeLine{285                                        \textcolor{keyword}{const} \mbox{\hyperlink{structtesseract__common_1_1PluginInfo}{tesseract\_common::PluginInfo}}\& \mbox{\hyperlink{contact__managers__factory__unit_8cpp_aa85411aa79e8b65adf666700a5a44add}{plugin\_info}},}
+\DoxyCodeLine{286                                        \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph}{tesseract\_scene\_graph::SceneGraph}}\& \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a8d4d0dc3a6b9a7030970bf9ed3764756}{scene\_graph}},}
+\DoxyCodeLine{287                                        \textcolor{keyword}{const} \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{tesseract\_scene\_graph::SceneState}}\& \mbox{\hyperlink{kinematics__factory__unit_8cpp_a918c8faa92717caa3ba8aef1b4ef8163}{scene\_state}}) \textcolor{keyword}{const};}
+\DoxyCodeLine{288 }
+\DoxyCodeLine{293   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_afda6142fda8ba142cd54a0b0b26a7c87}{saveConfig}}(\textcolor{keyword}{const} tesseract\_common::fs::path\& \mbox{\hyperlink{resource__locator__unit_8cpp_a803157d97edf460a9f115ca41b182e73}{file\_path}}) \textcolor{keyword}{const};}
+\DoxyCodeLine{294 }
+\DoxyCodeLine{299   YAML::Node \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_a6783a0e8fdbed45371ff762226131649}{getConfig}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{300 }
+\DoxyCodeLine{301 \textcolor{keyword}{private}:}
+\DoxyCodeLine{302   \textcolor{keyword}{mutable} std::map<std::string, FwdKinFactory::Ptr> \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_a79c70b16860ac216f430be4f822273ea}{fwd\_kin\_factories\_}};}
+\DoxyCodeLine{303   \textcolor{keyword}{mutable} std::map<std::string, InvKinFactory::Ptr> \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_a176c6186887335db29e217845960117a}{inv\_kin\_factories\_}};}
+\DoxyCodeLine{304   std::map<std::string, tesseract\_common::PluginInfoContainer> \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_a336a23752987a7f92eeb25fe4315a4de}{fwd\_plugin\_info\_}};}
+\DoxyCodeLine{305   std::map<std::string, tesseract\_common::PluginInfoContainer> \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_a22571a36b7f6b31372943de2ed97bb4e}{inv\_plugin\_info\_}};}
+\DoxyCodeLine{306   \mbox{\hyperlink{classtesseract__common_1_1PluginLoader}{tesseract\_common::PluginLoader}} \mbox{\hyperlink{classtesseract__kinematics_1_1KinematicsPluginFactory_adf365c52f4c84e7728ec883138742dda}{plugin\_loader\_}};}
+\DoxyCodeLine{307 \};}
+\DoxyCodeLine{308 }
+\DoxyCodeLine{309 \}  \textcolor{comment}{// namespace tesseract\_kinematics}}
+\DoxyCodeLine{310 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_KINEMATICS\_KINEMATICS\_PLUGIN\_FACTORY\_H}}
+
+\end{DoxyCode}

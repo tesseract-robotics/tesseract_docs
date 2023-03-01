@@ -1,0 +1,710 @@
+\hypertarget{collision__core__unit_8cpp}{}\doxysection{tesseract\+\_\+collision/test/collision\+\_\+core\+\_\+unit.cpp File Reference}
+\label{collision__core__unit_8cpp}\index{tesseract\_collision/test/collision\_core\_unit.cpp@{tesseract\_collision/test/collision\_core\_unit.cpp}}
+{\ttfamily \#include $<$tesseract\+\_\+common/macros.\+h$>$}\newline
+{\ttfamily \#include $<$gtest/gtest.\+h$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+collision/core/common.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+common/utils.\+h$>$}\newline
+Include dependency graph for collision\+\_\+core\+\_\+unit.\+cpp\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{collision__core__unit_8cpp_a156048d95754df2a4cd6bc24db0e16f2}{check\+\_\+pairs}} \mbox{\hyperlink{collision__core__unit_8cpp_a666ee12f630967925eca8bf94ebaaa50}{push\+\_\+back}} (\mbox{\hyperlink{namespacetesseract__collision_a0876bd0182505440236643eb5bade1c7}{tesseract\+\_\+collision\+::get\+Object\+Pair\+Key}}(\char`\"{}link\+\_\+1\char`\"{}, \char`\"{}link\+\_\+2\char`\"{}))
+\item 
+\mbox{\hyperlink{collision__core__unit_8cpp_a156048d95754df2a4cd6bc24db0e16f2}{check\+\_\+pairs}} \mbox{\hyperlink{collision__core__unit_8cpp_a7911cbb046cbaeabbaf87c1725018268}{push\+\_\+back}} (\mbox{\hyperlink{namespacetesseract__collision_a0876bd0182505440236643eb5bade1c7}{tesseract\+\_\+collision\+::get\+Object\+Pair\+Key}}(\char`\"{}link\+\_\+1\char`\"{}, \char`\"{}link\+\_\+3\char`\"{}))
+\item 
+\mbox{\hyperlink{collision__core__unit_8cpp_a156048d95754df2a4cd6bc24db0e16f2}{check\+\_\+pairs}} \mbox{\hyperlink{collision__core__unit_8cpp_aa629a422c8e60e91d3c2934df62f25b8}{push\+\_\+back}} (\mbox{\hyperlink{namespacetesseract__collision_a0876bd0182505440236643eb5bade1c7}{tesseract\+\_\+collision\+::get\+Object\+Pair\+Key}}(\char`\"{}link\+\_\+2\char`\"{}, \char`\"{}link\+\_\+3\char`\"{}))
+\item 
+\mbox{\hyperlink{collision__core__unit_8cpp_a156048d95754df2a4cd6bc24db0e16f2}{check\+\_\+pairs}} \mbox{\hyperlink{collision__core__unit_8cpp_aa8c49f24abeb7b9abfe9a36c20da8847}{push\+\_\+back}} (\mbox{\hyperlink{namespacetesseract__collision_a0876bd0182505440236643eb5bade1c7}{tesseract\+\_\+collision\+::get\+Object\+Pair\+Key}}(\char`\"{}base\+\_\+link\char`\"{}, \char`\"{}link\+\_\+1\char`\"{}))
+\item 
+\mbox{\hyperlink{collision__core__unit_8cpp_a156048d95754df2a4cd6bc24db0e16f2}{check\+\_\+pairs}} \mbox{\hyperlink{collision__core__unit_8cpp_aac2a9b06ed3142ac0acd671282000711}{push\+\_\+back}} (\mbox{\hyperlink{namespacetesseract__collision_a0876bd0182505440236643eb5bade1c7}{tesseract\+\_\+collision\+::get\+Object\+Pair\+Key}}(\char`\"{}base\+\_\+link\char`\"{}, \char`\"{}link\+\_\+2\char`\"{}))
+\item 
+\mbox{\hyperlink{collision__core__unit_8cpp_a156048d95754df2a4cd6bc24db0e16f2}{check\+\_\+pairs}} \mbox{\hyperlink{collision__core__unit_8cpp_a2bffbc5588209f87fcfa612e6ffed46d}{push\+\_\+back}} (\mbox{\hyperlink{namespacetesseract__collision_a0876bd0182505440236643eb5bade1c7}{tesseract\+\_\+collision\+::get\+Object\+Pair\+Key}}(\char`\"{}base\+\_\+link\char`\"{}, \char`\"{}link\+\_\+3\char`\"{}))
+\item 
+\mbox{\hyperlink{collision__core__unit_8cpp_a156048d95754df2a4cd6bc24db0e16f2}{check\+\_\+pairs}} \mbox{\hyperlink{collision__core__unit_8cpp_a6b1587d9341e52ca4950f2121aa852ad}{push\+\_\+back}} (\mbox{\hyperlink{namespacetesseract__collision_a0876bd0182505440236643eb5bade1c7}{tesseract\+\_\+collision\+::get\+Object\+Pair\+Key}}(\char`\"{}part\+\_\+link\char`\"{}, \char`\"{}link\+\_\+1\char`\"{}))
+\item 
+\mbox{\hyperlink{collision__core__unit_8cpp_a156048d95754df2a4cd6bc24db0e16f2}{check\+\_\+pairs}} \mbox{\hyperlink{collision__core__unit_8cpp_afec294989e32a56de7434ef746af1a97}{push\+\_\+back}} (\mbox{\hyperlink{namespacetesseract__collision_a0876bd0182505440236643eb5bade1c7}{tesseract\+\_\+collision\+::get\+Object\+Pair\+Key}}(\char`\"{}part\+\_\+link\char`\"{}, \char`\"{}link\+\_\+2\char`\"{}))
+\item 
+\mbox{\hyperlink{collision__core__unit_8cpp_a156048d95754df2a4cd6bc24db0e16f2}{check\+\_\+pairs}} \mbox{\hyperlink{collision__core__unit_8cpp_a5f212b9725f39a8b6258565a6495eab6}{push\+\_\+back}} (\mbox{\hyperlink{namespacetesseract__collision_a0876bd0182505440236643eb5bade1c7}{tesseract\+\_\+collision\+::get\+Object\+Pair\+Key}}(\char`\"{}part\+\_\+link\char`\"{}, \char`\"{}link\+\_\+3\char`\"{}))
+\item 
+\mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{namespacetesseract__common_a34d98b9f0df320e12b9f9686761f5b1e}{tesseract\+\_\+common\+::is\+Identical}}$<$ \mbox{\hyperlink{namespacetesseract__collision_af5926355228f0196ddf51e6951dbe491}{tesseract\+\_\+collision\+::\+Object\+Pair\+Key}} $>$(\mbox{\hyperlink{collision__core__unit_8cpp_a8b16b1e1994f9c318702b801bd3b8420}{pairs}}, \mbox{\hyperlink{collision__core__unit_8cpp_a156048d95754df2a4cd6bc24db0e16f2}{check\+\_\+pairs}}, false))
+\item 
+\mbox{\hyperlink{collision__core__unit_8cpp_a156048d95754df2a4cd6bc24db0e16f2}{check\+\_\+pairs}} \mbox{\hyperlink{collision__core__unit_8cpp_a25cfe818c9392cc6e2e552e5b8d44e02}{clear}} ()
+\item 
+\mbox{\hyperlink{collision__core__unit_8cpp_a4719454c65b9e7d57dabaff1a6dd9eca}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{namespacetesseract__collision_a1d5b1daf53ea0152f87f4ab565643478}{tesseract\+\_\+collision\+::is\+Contact\+Allowed}}(\char`\"{}base\+\_\+link\char`\"{}, \char`\"{}base\+\_\+link\char`\"{}, \mbox{\hyperlink{collision__core__unit_8cpp_a714392901b0c74193a9659fc77891a60}{acm}}, false))
+\item 
+\mbox{\hyperlink{collision__core__unit_8cpp_aa784f8de129e0ce90854ab7b6a043468}{EXPECT\+\_\+\+FALSE}} (\mbox{\hyperlink{namespacetesseract__collision_a1d5b1daf53ea0152f87f4ab565643478}{tesseract\+\_\+collision\+::is\+Contact\+Allowed}}(\char`\"{}base\+\_\+link\char`\"{}, \char`\"{}link\+\_\+2\char`\"{}, \mbox{\hyperlink{collision__core__unit_8cpp_a714392901b0c74193a9659fc77891a60}{acm}}, false))
+\item 
+\mbox{\hyperlink{collision__core__unit_8cpp_addee19895ea247c01416d4a4285989ec}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{namespacetesseract__collision_a1d5b1daf53ea0152f87f4ab565643478}{tesseract\+\_\+collision\+::is\+Contact\+Allowed}}(\char`\"{}base\+\_\+link\char`\"{}, \char`\"{}link\+\_\+1\char`\"{}, \mbox{\hyperlink{collision__core__unit_8cpp_a714392901b0c74193a9659fc77891a60}{acm}}, true))
+\item 
+base\+\_\+vertices \mbox{\hyperlink{collision__core__unit_8cpp_a56abcadb42971c1eef1d673d4f45a082}{push\+\_\+back}} (Eigen\+::\+Vector3d(0, 0, 0))
+\item 
+base\+\_\+vertices \mbox{\hyperlink{collision__core__unit_8cpp_a5694e130fd23638e12154aca917d7ad9}{push\+\_\+back}} (Eigen\+::\+Vector3d(0, 0, 1))
+\item 
+base\+\_\+vertices \mbox{\hyperlink{collision__core__unit_8cpp_ab6f87321b6eab4562764d75533a793cd}{push\+\_\+back}} (Eigen\+::\+Vector3d(0, 1, 1))
+\item 
+base\+\_\+vertices \mbox{\hyperlink{collision__core__unit_8cpp_a9bbf2742897b1a9aa24315d60b41138e}{push\+\_\+back}} (Eigen\+::\+Vector3d(0, 1, 0))
+\item 
+base\+\_\+vertices \mbox{\hyperlink{collision__core__unit_8cpp_ad334b8dbb0428dcc06403cf9e11eeb65}{push\+\_\+back}} (Eigen\+::\+Vector3d(1, 0, 0))
+\item 
+base\+\_\+vertices \mbox{\hyperlink{collision__core__unit_8cpp_a2a97f3d82fa46ae8706523035c27fbb0}{push\+\_\+back}} (Eigen\+::\+Vector3d(1, 0, 1))
+\item 
+base\+\_\+vertices \mbox{\hyperlink{collision__core__unit_8cpp_ab031e5f2994474ead9bad611482bd966}{push\+\_\+back}} (Eigen\+::\+Vector3d(1, 1, 1))
+\item 
+base\+\_\+vertices \mbox{\hyperlink{collision__core__unit_8cpp_ab5f842c9f392cc282dca5cff5dc3d9b2}{push\+\_\+back}} (Eigen\+::\+Vector3d(1, 1, 0))
+\item 
+\mbox{\hyperlink{collision__core__unit_8cpp_a39ea9a46c9b7993c6f6cda29af3c163b}{for}} (std\+::size\+\_\+t i=0;i$<$ 8;++i)
+\item 
+\mbox{\hyperlink{collision__core__unit_8cpp_a92aca36f7d04eb3677a57b5e6e155307}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{collision__core__unit_8cpp_aad5380afc832eaccafa75bc5e2b9bdd2}{test\+\_\+vertices}}\mbox{[}0\mbox{]}.is\+Approx(Eigen\+::\+Vector3d(-\/4.\+5, -\/4.\+5, -\/4.\+5)))
+\item 
+\mbox{\hyperlink{collision__core__unit_8cpp_a10d3d62f75694d5776944b1470ce967c}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{collision__core__unit_8cpp_aad5380afc832eaccafa75bc5e2b9bdd2}{test\+\_\+vertices}}\mbox{[}1\mbox{]}.is\+Approx(Eigen\+::\+Vector3d(-\/4.\+5, -\/4.\+5, 5.\+5)))
+\item 
+\mbox{\hyperlink{collision__core__unit_8cpp_acb83bc2e999cb43ada48d1180501b59f}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{collision__core__unit_8cpp_aad5380afc832eaccafa75bc5e2b9bdd2}{test\+\_\+vertices}}\mbox{[}2\mbox{]}.is\+Approx(Eigen\+::\+Vector3d(-\/4.\+5, 5.\+5, 5.\+5)))
+\item 
+\mbox{\hyperlink{collision__core__unit_8cpp_aef6c6ac957ff81a29a4a83763fa2daea}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{collision__core__unit_8cpp_aad5380afc832eaccafa75bc5e2b9bdd2}{test\+\_\+vertices}}\mbox{[}3\mbox{]}.is\+Approx(Eigen\+::\+Vector3d(-\/4.\+5, 5.\+5, -\/4.\+5)))
+\item 
+\mbox{\hyperlink{collision__core__unit_8cpp_a3a876b7e001614226dbdd663130c731a}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{collision__core__unit_8cpp_aad5380afc832eaccafa75bc5e2b9bdd2}{test\+\_\+vertices}}\mbox{[}4\mbox{]}.is\+Approx(Eigen\+::\+Vector3d(5.\+5, -\/4.\+5, -\/4.\+5)))
+\item 
+\mbox{\hyperlink{collision__core__unit_8cpp_a45591dfe5297266ea2520256ffb17385}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{collision__core__unit_8cpp_aad5380afc832eaccafa75bc5e2b9bdd2}{test\+\_\+vertices}}\mbox{[}5\mbox{]}.is\+Approx(Eigen\+::\+Vector3d(5.\+5, -\/4.\+5, 5.\+5)))
+\item 
+\mbox{\hyperlink{collision__core__unit_8cpp_a03f18787fddfde0efb88975442fd2fb3}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{collision__core__unit_8cpp_aad5380afc832eaccafa75bc5e2b9bdd2}{test\+\_\+vertices}}\mbox{[}6\mbox{]}.is\+Approx(Eigen\+::\+Vector3d(5.\+5, 5.\+5, 5.\+5)))
+\item 
+\mbox{\hyperlink{collision__core__unit_8cpp_a4f8e37ecc8d5be1059aaad2957a21872}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{collision__core__unit_8cpp_aad5380afc832eaccafa75bc5e2b9bdd2}{test\+\_\+vertices}}\mbox{[}7\mbox{]}.is\+Approx(Eigen\+::\+Vector3d(5.\+5, 5.\+5, -\/4.\+5)))
+\item 
+\mbox{\hyperlink{collision__core__unit_8cpp_a210d83513665c3239db709f24b8caf3d}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{collision__core__unit_8cpp_aad5380afc832eaccafa75bc5e2b9bdd2}{test\+\_\+vertices}}\mbox{[}0\mbox{]}.is\+Approx(Eigen\+::\+Vector3d(0, 0, 0)))
+\item 
+\mbox{\hyperlink{collision__core__unit_8cpp_a3b05a21fb4cd350ca104fa410db0abce}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{collision__core__unit_8cpp_aad5380afc832eaccafa75bc5e2b9bdd2}{test\+\_\+vertices}}\mbox{[}1\mbox{]}.is\+Approx(Eigen\+::\+Vector3d(0, 0, 10)))
+\item 
+\mbox{\hyperlink{collision__core__unit_8cpp_abd97cdf760e6e8e149e004b030878356}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{collision__core__unit_8cpp_aad5380afc832eaccafa75bc5e2b9bdd2}{test\+\_\+vertices}}\mbox{[}2\mbox{]}.is\+Approx(Eigen\+::\+Vector3d(0, 10, 10)))
+\item 
+\mbox{\hyperlink{collision__core__unit_8cpp_a0483e4776dd8e2be7e7d9909b0db20a3}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{collision__core__unit_8cpp_aad5380afc832eaccafa75bc5e2b9bdd2}{test\+\_\+vertices}}\mbox{[}3\mbox{]}.is\+Approx(Eigen\+::\+Vector3d(0, 10, 0)))
+\item 
+\mbox{\hyperlink{collision__core__unit_8cpp_a6dca4fce2d685f91b33dc6321f7c7005}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{collision__core__unit_8cpp_aad5380afc832eaccafa75bc5e2b9bdd2}{test\+\_\+vertices}}\mbox{[}4\mbox{]}.is\+Approx(Eigen\+::\+Vector3d(10, 0, 0)))
+\item 
+\mbox{\hyperlink{collision__core__unit_8cpp_a056867f30e958f7250742a67ce0b8d63}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{collision__core__unit_8cpp_aad5380afc832eaccafa75bc5e2b9bdd2}{test\+\_\+vertices}}\mbox{[}5\mbox{]}.is\+Approx(Eigen\+::\+Vector3d(10, 0, 10)))
+\item 
+\mbox{\hyperlink{collision__core__unit_8cpp_a0d3c31df278eabf4f244459f768ffd15}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{collision__core__unit_8cpp_aad5380afc832eaccafa75bc5e2b9bdd2}{test\+\_\+vertices}}\mbox{[}6\mbox{]}.is\+Approx(Eigen\+::\+Vector3d(10, 10, 10)))
+\item 
+\mbox{\hyperlink{collision__core__unit_8cpp_adf773bad0849ab4a5be74c12843fbd72}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{collision__core__unit_8cpp_aad5380afc832eaccafa75bc5e2b9bdd2}{test\+\_\+vertices}}\mbox{[}7\mbox{]}.is\+Approx(Eigen\+::\+Vector3d(10, 10, 0)))
+\item 
+\mbox{\hyperlink{collision__core__unit_8cpp_a6759a6545be66625356c6f193741efb0}{EXPECT\+\_\+\+EQ}} (\mbox{\hyperlink{collision__core__unit_8cpp_a1ceb8bb3849a05a320b82729fd3681bb}{results.\+distance}}, std\+::numeric\+\_\+limits$<$ double $>$\+::max())
+\item 
+\mbox{\hyperlink{collision__core__unit_8cpp_a88b3306e9717934e4216f9b848dbeefe}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{results.\+nearest\+\_\+points}}\mbox{[}0\mbox{]}.is\+Approx(Eigen\+::\+Vector3d\+::\+Zero()))
+\item 
+\mbox{\hyperlink{collision__core__unit_8cpp_a82641e71a1618b1a68016130506bb02c}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{results.\+nearest\+\_\+points}}\mbox{[}1\mbox{]}.is\+Approx(Eigen\+::\+Vector3d\+::\+Zero()))
+\item 
+\mbox{\hyperlink{collision__core__unit_8cpp_a69eeef10985d81fe0bcf6a366c843135}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{collision__core__unit_8cpp_acb052c14bdfa9dfc0b0962ccbeb27996}{results.\+nearest\+\_\+points\+\_\+local}}\mbox{[}0\mbox{]}.is\+Approx(Eigen\+::\+Vector3d\+::\+Zero()))
+\item 
+\mbox{\hyperlink{collision__core__unit_8cpp_a075e50765df556281c7ed33c956fd6c8}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{collision__core__unit_8cpp_acb052c14bdfa9dfc0b0962ccbeb27996}{results.\+nearest\+\_\+points\+\_\+local}}\mbox{[}1\mbox{]}.is\+Approx(Eigen\+::\+Vector3d\+::\+Zero()))
+\item 
+\mbox{\hyperlink{collision__core__unit_8cpp_a5687dc76370df4d79d4c0a7d8cda89d3}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{collision__core__unit_8cpp_a0711277889ece6b8e49c8ad05d361167}{results.\+transform}}\mbox{[}0\mbox{]}.is\+Approx(Eigen\+::\+Isometry3d\+::\+Identity()))
+\item 
+\mbox{\hyperlink{collision__core__unit_8cpp_a690535c56dbaf556c40208cce0c5f645}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{collision__core__unit_8cpp_a0711277889ece6b8e49c8ad05d361167}{results.\+transform}}\mbox{[}1\mbox{]}.is\+Approx(Eigen\+::\+Isometry3d\+::\+Identity()))
+\item 
+\mbox{\hyperlink{collision__core__unit_8cpp_a5efff8f4b210b9785bb1bc6a21ada58d}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{collision__core__unit_8cpp_a464caf777ea79db067179ebe2bd7ecc7}{results.\+link\+\_\+names}}\mbox{[}0\mbox{]}.empty())
+\item 
+\mbox{\hyperlink{collision__core__unit_8cpp_a93657bfd17d33d07d24933a9a4b93c28}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{collision__core__unit_8cpp_a464caf777ea79db067179ebe2bd7ecc7}{results.\+link\+\_\+names}}\mbox{[}1\mbox{]}.empty())
+\item 
+\mbox{\hyperlink{collision__core__unit_8cpp_aed0a4dee4699fa4989bcd04e188eca12}{EXPECT\+\_\+\+EQ}} (\mbox{\hyperlink{collision__core__unit_8cpp_afd1dbc15398c9c5e72af8f0d71fe07a4}{results.\+shape\+\_\+id}}\mbox{[}0\mbox{]}, -\/1)
+\item 
+\mbox{\hyperlink{collision__core__unit_8cpp_a3e1e95511b67003560b479750b7e7c2d}{EXPECT\+\_\+\+EQ}} (\mbox{\hyperlink{collision__core__unit_8cpp_afd1dbc15398c9c5e72af8f0d71fe07a4}{results.\+shape\+\_\+id}}\mbox{[}1\mbox{]}, -\/1)
+\item 
+\mbox{\hyperlink{collision__core__unit_8cpp_a30975c037326c005df0b3a384e5167ab}{EXPECT\+\_\+\+EQ}} (\mbox{\hyperlink{collision__core__unit_8cpp_abd5b6e2207f4ef754f27366b9589816e}{results.\+type\+\_\+id}}\mbox{[}0\mbox{]}, 0)
+\item 
+\mbox{\hyperlink{collision__core__unit_8cpp_ab60b9c1e0cfb859b736a9b27b17e113f}{EXPECT\+\_\+\+EQ}} (\mbox{\hyperlink{collision__core__unit_8cpp_abd5b6e2207f4ef754f27366b9589816e}{results.\+type\+\_\+id}}\mbox{[}1\mbox{]}, 0)
+\item 
+\mbox{\hyperlink{collision__core__unit_8cpp_a3cfd4c38b0be2ecbfe42aef7c5ba2a84}{EXPECT\+\_\+\+TRUE}} (results.\+normal.\+is\+Approx(Eigen\+::\+Vector3d\+::\+Zero()))
+\item 
+\mbox{\hyperlink{collision__core__unit_8cpp_ab342cdf292aaeda2b8af30b9243f6279}{EXPECT\+\_\+\+EQ}} (\mbox{\hyperlink{collision__core__unit_8cpp_a770424cc0f23956d5f338e52a7c4fb95}{results.\+cc\+\_\+type}}\mbox{[}0\mbox{]}, \mbox{\hyperlink{namespacetesseract__collision_a267c740fd3b446222ba19cbaa56dab5ea79e497b3f5d3d8b23ea29c9370354bb6}{tesseract\+\_\+collision\+::\+Continuous\+Collision\+Type\+::\+CCType\+\_\+\+None}})
+\item 
+\mbox{\hyperlink{collision__core__unit_8cpp_a9fc3040eccb7b1be23c65fe0e8811c2a}{EXPECT\+\_\+\+EQ}} (\mbox{\hyperlink{collision__core__unit_8cpp_a770424cc0f23956d5f338e52a7c4fb95}{results.\+cc\+\_\+type}}\mbox{[}1\mbox{]}, \mbox{\hyperlink{namespacetesseract__collision_a267c740fd3b446222ba19cbaa56dab5ea79e497b3f5d3d8b23ea29c9370354bb6}{tesseract\+\_\+collision\+::\+Continuous\+Collision\+Type\+::\+CCType\+\_\+\+None}})
+\item 
+\mbox{\hyperlink{collision__core__unit_8cpp_a02a91c949466b5e42daa7f3d1f3ee04d}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{collision__core__unit_8cpp_ac76d376ca30af942ec296b6d247c201d}{results.\+cc\+\_\+transform}}\mbox{[}0\mbox{]}.is\+Approx(Eigen\+::\+Isometry3d\+::\+Identity()))
+\item 
+\mbox{\hyperlink{collision__core__unit_8cpp_ac4c708c9c5592f83ba7f463d8325c778}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{collision__core__unit_8cpp_ac76d376ca30af942ec296b6d247c201d}{results.\+cc\+\_\+transform}}\mbox{[}1\mbox{]}.is\+Approx(Eigen\+::\+Isometry3d\+::\+Identity()))
+\item 
+\mbox{\hyperlink{collision__core__unit_8cpp_a935e40cb0bb9fdb468771785160188c7}{EXPECT\+\_\+\+EQ}} (\mbox{\hyperlink{collision__core__unit_8cpp_aef0b0de8aead4d0c192bfbc1665bdca1}{results.\+single\+\_\+contact\+\_\+point}}, false)
+\item 
+\mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\+\_\+\+NEAR}} (config.\+contact\+\_\+manager\+\_\+config.\+margin\+\_\+data.\+get\+Default\+Collision\+Margin(), 5, 1e-\/6)
+\item 
+\mbox{\hyperlink{collision__core__unit_8cpp_a21d6acaa727c3651dc4484f92ca3411b}{EXPECT\+\_\+\+EQ}} (\mbox{\hyperlink{tesseract__environment__collision_8cpp_a30f93ee2d6b54c870d5c8295071072ac}{config.\+type}}, \mbox{\hyperlink{namespacetesseract__collision_af17e8ee8632a40cf4b6ed1ba1aec41aca4afe53b9adb97f1374fa3e05dd7a1be1}{tesseract\+\_\+collision\+::\+Collision\+Evaluator\+Type\+::\+LVS\+\_\+\+DISCRETE}})
+\item 
+\mbox{\hyperlink{collision__core__unit_8cpp_a66b0c7203e3936c84f0a7f34c62b1a71}{EXPECT\+\_\+\+NEAR}} (\mbox{\hyperlink{tesseract__environment__collision_8cpp_a4c381f928b8f3270af436a8fc1e7eb48}{config.\+longest\+\_\+valid\+\_\+segment\+\_\+length}}, 0.\+5, 1e-\/6)
+\item 
+int \mbox{\hyperlink{collision__core__unit_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\+\_\+\+COMMON\+\_\+\+IGNORE\+\_\+\+WARNINGS\+\_\+\+PUSH}} \mbox{\hyperlink{collision__core__unit_8cpp_a2733ace18b4e650b36b176083d0f9c42}{TESSERACT\+\_\+\+COMMON\+\_\+\+IGNORE\+\_\+\+WARNINGS\+\_\+\+POP}}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{collision__core__unit_8cpp_a20f995abd2d70f9febd34141caf91491}{static\+\_\+links}} \{ \char`\"{}base\+\_\+link\char`\"{}, \char`\"{}part\+\_\+link\char`\"{} \}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{namespacetesseract__collision_af5926355228f0196ddf51e6951dbe491}{tesseract\+\_\+collision\+::\+Object\+Pair\+Key}} $>$ \mbox{\hyperlink{collision__core__unit_8cpp_a156048d95754df2a4cd6bc24db0e16f2}{check\+\_\+pairs}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{namespacetesseract__collision_af5926355228f0196ddf51e6951dbe491}{tesseract\+\_\+collision\+::\+Object\+Pair\+Key}} $>$ \mbox{\hyperlink{collision__core__unit_8cpp_a8b16b1e1994f9c318702b801bd3b8420}{pairs}}
+\item 
+\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a395d31593a673a3b0efd30ad8d2bba78}{auto}} \mbox{\hyperlink{collision__core__unit_8cpp_a714392901b0c74193a9659fc77891a60}{acm}}
+\item 
+\mbox{\hyperlink{namespacetesseract__common_af89ed6517f4c84bdb2b037bb40f7d9d9}{tesseract\+\_\+common\+::\+Vector\+Vector3d}} \mbox{\hyperlink{collision__core__unit_8cpp_aad5380afc832eaccafa75bc5e2b9bdd2}{test\+\_\+vertices}} \{ base\+\_\+vertices \}
+\item 
+results \mbox{\hyperlink{collision__core__unit_8cpp_a1ceb8bb3849a05a320b82729fd3681bb}{distance}} = 10
+\item 
+results \mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\+\_\+points}} \mbox{[}0\mbox{]} = Eigen\+::\+Vector3d(1, 2, 3)
+\item 
+results \mbox{\hyperlink{collision__core__unit_8cpp_acb052c14bdfa9dfc0b0962ccbeb27996}{nearest\+\_\+points\+\_\+local}} \mbox{[}0\mbox{]} = Eigen\+::\+Vector3d(1, 2, 3)
+\item 
+results \mbox{\hyperlink{collision__core__unit_8cpp_a0711277889ece6b8e49c8ad05d361167}{transform}} \mbox{[}0\mbox{]} = Eigen\+::\+Isometry3d\+::\+Identity() $\ast$ Eigen\+::\+Translation3d(1, 2, 3)
+\item 
+results \mbox{\hyperlink{collision__core__unit_8cpp_a464caf777ea79db067179ebe2bd7ecc7}{link\+\_\+names}} \mbox{[}0\mbox{]} = \char`\"{}notempty\char`\"{}
+\item 
+results \mbox{\hyperlink{collision__core__unit_8cpp_afd1dbc15398c9c5e72af8f0d71fe07a4}{shape\+\_\+id}} \mbox{[}0\mbox{]} = 5
+\item 
+results \mbox{\hyperlink{collision__core__unit_8cpp_ae52d87adcd42f0a8d4439fd2015f500c}{subshape\+\_\+id}} \mbox{[}0\mbox{]} = 10
+\item 
+results \mbox{\hyperlink{collision__core__unit_8cpp_abd5b6e2207f4ef754f27366b9589816e}{type\+\_\+id}} \mbox{[}0\mbox{]} = 3
+\item 
+results \mbox{\hyperlink{collision__core__unit_8cpp_a7589b8c9c1397d28b5974168ee72f0a8}{normal}} = Eigen\+::\+Vector3d(1, 2, 3)
+\item 
+results \mbox{\hyperlink{collision__core__unit_8cpp_a82e552c530507c8221d4633abe52a700}{cc\+\_\+time}} \mbox{[}0\mbox{]} = 7
+\item 
+results \mbox{\hyperlink{collision__core__unit_8cpp_a770424cc0f23956d5f338e52a7c4fb95}{cc\+\_\+type}} \mbox{[}0\mbox{]} = \mbox{\hyperlink{namespacetesseract__collision_a267c740fd3b446222ba19cbaa56dab5ea1101988a82b0cd8a2e2c5ee5fda455eb}{tesseract\+\_\+collision\+::\+Continuous\+Collision\+Type\+::\+CCType\+\_\+\+Between}}
+\item 
+results \mbox{\hyperlink{collision__core__unit_8cpp_ac76d376ca30af942ec296b6d247c201d}{cc\+\_\+transform}} \mbox{[}0\mbox{]} = Eigen\+::\+Isometry3d\+::\+Identity() $\ast$ Eigen\+::\+Translation3d(1, 2, 3)
+\item 
+results \mbox{\hyperlink{collision__core__unit_8cpp_aef0b0de8aead4d0c192bfbc1665bdca1}{single\+\_\+contact\+\_\+point}} = true
+\item 
+\mbox{\hyperlink{structtesseract__collision_1_1CollisionCheckConfig}{tesseract\+\_\+collision\+::\+Collision\+Check\+Config}} \mbox{\hyperlink{collision__core__unit_8cpp_a2013c60ebd4a63f15fafe2287736ae37}{config}} (5, request, \mbox{\hyperlink{namespacetesseract__collision_af17e8ee8632a40cf4b6ed1ba1aec41aca4afe53b9adb97f1374fa3e05dd7a1be1}{tesseract\+\_\+collision\+::\+Collision\+Evaluator\+Type\+::\+LVS\+\_\+\+DISCRETE}}, 0.\+5)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{collision__core__unit_8cpp_a25cfe818c9392cc6e2e552e5b8d44e02}\label{collision__core__unit_8cpp_a25cfe818c9392cc6e2e552e5b8d44e02}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!clear@{clear}}
+\index{clear@{clear}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6beaaeb1309516fc3ded4de3c433ba94}{l}} clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_a21d6acaa727c3651dc4484f92ca3411b}\label{collision__core__unit_8cpp_a21d6acaa727c3651dc4484f92ca3411b}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!EXPECT\_EQ@{EXPECT\_EQ}}
+\index{EXPECT\_EQ@{EXPECT\_EQ}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_EQ()}{EXPECT\_EQ()}\hspace{0.1cm}{\footnotesize\ttfamily [1/9]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+EQ (\begin{DoxyParamCaption}\item[{config.}]{type,  }\item[{\mbox{\hyperlink{namespacetesseract__collision_af17e8ee8632a40cf4b6ed1ba1aec41aca4afe53b9adb97f1374fa3e05dd7a1be1}{tesseract\+\_\+collision\+::\+Collision\+Evaluator\+Type\+::\+LVS\+\_\+\+DISCRETE}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_ab342cdf292aaeda2b8af30b9243f6279}\label{collision__core__unit_8cpp_ab342cdf292aaeda2b8af30b9243f6279}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!EXPECT\_EQ@{EXPECT\_EQ}}
+\index{EXPECT\_EQ@{EXPECT\_EQ}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_EQ()}{EXPECT\_EQ()}\hspace{0.1cm}{\footnotesize\ttfamily [2/9]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+EQ (\begin{DoxyParamCaption}\item[{results.}]{cc\+\_\+type\mbox{[}0\mbox{]},  }\item[{\mbox{\hyperlink{namespacetesseract__collision_a267c740fd3b446222ba19cbaa56dab5ea79e497b3f5d3d8b23ea29c9370354bb6}{tesseract\+\_\+collision\+::\+Continuous\+Collision\+Type\+::\+CCType\+\_\+\+None}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_a9fc3040eccb7b1be23c65fe0e8811c2a}\label{collision__core__unit_8cpp_a9fc3040eccb7b1be23c65fe0e8811c2a}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!EXPECT\_EQ@{EXPECT\_EQ}}
+\index{EXPECT\_EQ@{EXPECT\_EQ}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_EQ()}{EXPECT\_EQ()}\hspace{0.1cm}{\footnotesize\ttfamily [3/9]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+EQ (\begin{DoxyParamCaption}\item[{results.}]{cc\+\_\+type\mbox{[}1\mbox{]},  }\item[{\mbox{\hyperlink{namespacetesseract__collision_a267c740fd3b446222ba19cbaa56dab5ea79e497b3f5d3d8b23ea29c9370354bb6}{tesseract\+\_\+collision\+::\+Continuous\+Collision\+Type\+::\+CCType\+\_\+\+None}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_a6759a6545be66625356c6f193741efb0}\label{collision__core__unit_8cpp_a6759a6545be66625356c6f193741efb0}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!EXPECT\_EQ@{EXPECT\_EQ}}
+\index{EXPECT\_EQ@{EXPECT\_EQ}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_EQ()}{EXPECT\_EQ()}\hspace{0.1cm}{\footnotesize\ttfamily [4/9]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+EQ (\begin{DoxyParamCaption}\item[{results.}]{distance,  }\item[{std\+::numeric\+\_\+limits$<$ double $>$}]{\+::max() }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_aed0a4dee4699fa4989bcd04e188eca12}\label{collision__core__unit_8cpp_aed0a4dee4699fa4989bcd04e188eca12}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!EXPECT\_EQ@{EXPECT\_EQ}}
+\index{EXPECT\_EQ@{EXPECT\_EQ}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_EQ()}{EXPECT\_EQ()}\hspace{0.1cm}{\footnotesize\ttfamily [5/9]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+EQ (\begin{DoxyParamCaption}\item[{results.}]{shape\+\_\+id\mbox{[}0\mbox{]},  }\item[{-\/}]{1 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_a3e1e95511b67003560b479750b7e7c2d}\label{collision__core__unit_8cpp_a3e1e95511b67003560b479750b7e7c2d}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!EXPECT\_EQ@{EXPECT\_EQ}}
+\index{EXPECT\_EQ@{EXPECT\_EQ}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_EQ()}{EXPECT\_EQ()}\hspace{0.1cm}{\footnotesize\ttfamily [6/9]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+EQ (\begin{DoxyParamCaption}\item[{results.}]{shape\+\_\+id\mbox{[}1\mbox{]},  }\item[{-\/}]{1 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_a935e40cb0bb9fdb468771785160188c7}\label{collision__core__unit_8cpp_a935e40cb0bb9fdb468771785160188c7}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!EXPECT\_EQ@{EXPECT\_EQ}}
+\index{EXPECT\_EQ@{EXPECT\_EQ}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_EQ()}{EXPECT\_EQ()}\hspace{0.1cm}{\footnotesize\ttfamily [7/9]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+EQ (\begin{DoxyParamCaption}\item[{results.}]{single\+\_\+contact\+\_\+point,  }\item[{false}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_a30975c037326c005df0b3a384e5167ab}\label{collision__core__unit_8cpp_a30975c037326c005df0b3a384e5167ab}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!EXPECT\_EQ@{EXPECT\_EQ}}
+\index{EXPECT\_EQ@{EXPECT\_EQ}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_EQ()}{EXPECT\_EQ()}\hspace{0.1cm}{\footnotesize\ttfamily [8/9]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+EQ (\begin{DoxyParamCaption}\item[{results.}]{type\+\_\+id\mbox{[}0\mbox{]},  }\item[{0}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_ab60b9c1e0cfb859b736a9b27b17e113f}\label{collision__core__unit_8cpp_ab60b9c1e0cfb859b736a9b27b17e113f}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!EXPECT\_EQ@{EXPECT\_EQ}}
+\index{EXPECT\_EQ@{EXPECT\_EQ}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_EQ()}{EXPECT\_EQ()}\hspace{0.1cm}{\footnotesize\ttfamily [9/9]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+EQ (\begin{DoxyParamCaption}\item[{results.}]{type\+\_\+id\mbox{[}1\mbox{]},  }\item[{0}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_aa784f8de129e0ce90854ab7b6a043468}\label{collision__core__unit_8cpp_aa784f8de129e0ce90854ab7b6a043468}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!EXPECT\_FALSE@{EXPECT\_FALSE}}
+\index{EXPECT\_FALSE@{EXPECT\_FALSE}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_FALSE()}{EXPECT\_FALSE()}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+FALSE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacetesseract__collision_a1d5b1daf53ea0152f87f4ab565643478}{tesseract\+\_\+collision\+::is\+Contact\+Allowed}}(\char`\"{}base\+\_\+link\char`\"{}, \char`\"{}link\+\_\+2\char`\"{}, \mbox{\hyperlink{collision__core__unit_8cpp_a714392901b0c74193a9659fc77891a60}{acm}}, false)}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}\label{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!EXPECT\_NEAR@{EXPECT\_NEAR}}
+\index{EXPECT\_NEAR@{EXPECT\_NEAR}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_NEAR()}{EXPECT\_NEAR()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+NEAR (\begin{DoxyParamCaption}\item[{config.\+contact\+\_\+manager\+\_\+config.\+margin\+\_\+data.}]{get\+Default\+Collision\+Margin(),  }\item[{5}]{,  }\item[{1e-\/}]{6 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_a66b0c7203e3936c84f0a7f34c62b1a71}\label{collision__core__unit_8cpp_a66b0c7203e3936c84f0a7f34c62b1a71}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!EXPECT\_NEAR@{EXPECT\_NEAR}}
+\index{EXPECT\_NEAR@{EXPECT\_NEAR}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_NEAR()}{EXPECT\_NEAR()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+NEAR (\begin{DoxyParamCaption}\item[{config.}]{longest\+\_\+valid\+\_\+segment\+\_\+length,  }\item[{0.}]{5,  }\item[{1e-\/}]{6 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_a02a91c949466b5e42daa7f3d1f3ee04d}\label{collision__core__unit_8cpp_a02a91c949466b5e42daa7f3d1f3ee04d}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [1/30]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{results.\+cc\+\_\+transform.}]{is\+Approx(\+Eigen\+::\+Isometry3d\+::\+Identity())\mbox{[}0\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_ac4c708c9c5592f83ba7f463d8325c778}\label{collision__core__unit_8cpp_ac4c708c9c5592f83ba7f463d8325c778}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [2/30]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{results.\+cc\+\_\+transform.}]{is\+Approx(\+Eigen\+::\+Isometry3d\+::\+Identity())\mbox{[}1\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_a5efff8f4b210b9785bb1bc6a21ada58d}\label{collision__core__unit_8cpp_a5efff8f4b210b9785bb1bc6a21ada58d}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [3/30]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{results.\+link\+\_\+names.}]{empty()\mbox{[}0\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_a93657bfd17d33d07d24933a9a4b93c28}\label{collision__core__unit_8cpp_a93657bfd17d33d07d24933a9a4b93c28}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [4/30]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{results.\+link\+\_\+names.}]{empty()\mbox{[}1\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_a88b3306e9717934e4216f9b848dbeefe}\label{collision__core__unit_8cpp_a88b3306e9717934e4216f9b848dbeefe}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [5/30]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{results.\+nearest\+\_\+points.}]{is\+Approx(\+Eigen\+::\+Vector3d\+::\+Zero())\mbox{[}0\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_a82641e71a1618b1a68016130506bb02c}\label{collision__core__unit_8cpp_a82641e71a1618b1a68016130506bb02c}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [6/30]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{results.\+nearest\+\_\+points.}]{is\+Approx(\+Eigen\+::\+Vector3d\+::\+Zero())\mbox{[}1\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_a69eeef10985d81fe0bcf6a366c843135}\label{collision__core__unit_8cpp_a69eeef10985d81fe0bcf6a366c843135}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [7/30]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{results.\+nearest\+\_\+points\+\_\+local.}]{is\+Approx(\+Eigen\+::\+Vector3d\+::\+Zero())\mbox{[}0\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_a075e50765df556281c7ed33c956fd6c8}\label{collision__core__unit_8cpp_a075e50765df556281c7ed33c956fd6c8}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [8/30]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{results.\+nearest\+\_\+points\+\_\+local.}]{is\+Approx(\+Eigen\+::\+Vector3d\+::\+Zero())\mbox{[}1\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_a3cfd4c38b0be2ecbfe42aef7c5ba2a84}\label{collision__core__unit_8cpp_a3cfd4c38b0be2ecbfe42aef7c5ba2a84}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [9/30]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{results.\+normal.}]{is\+ApproxEigen\+::\+Vector3d\+::\+Zero() }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_a5687dc76370df4d79d4c0a7d8cda89d3}\label{collision__core__unit_8cpp_a5687dc76370df4d79d4c0a7d8cda89d3}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [10/30]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{results.\+transform.}]{is\+Approx(\+Eigen\+::\+Isometry3d\+::\+Identity())\mbox{[}0\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_a690535c56dbaf556c40208cce0c5f645}\label{collision__core__unit_8cpp_a690535c56dbaf556c40208cce0c5f645}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [11/30]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{results.\+transform.}]{is\+Approx(\+Eigen\+::\+Isometry3d\+::\+Identity())\mbox{[}1\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_a4719454c65b9e7d57dabaff1a6dd9eca}\label{collision__core__unit_8cpp_a4719454c65b9e7d57dabaff1a6dd9eca}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [12/30]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacetesseract__collision_a1d5b1daf53ea0152f87f4ab565643478}{tesseract\+\_\+collision\+::is\+Contact\+Allowed}}(\char`\"{}base\+\_\+link\char`\"{}, \char`\"{}base\+\_\+link\char`\"{}, \mbox{\hyperlink{collision__core__unit_8cpp_a714392901b0c74193a9659fc77891a60}{acm}}, false)}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_addee19895ea247c01416d4a4285989ec}\label{collision__core__unit_8cpp_addee19895ea247c01416d4a4285989ec}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [13/30]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacetesseract__collision_a1d5b1daf53ea0152f87f4ab565643478}{tesseract\+\_\+collision\+::is\+Contact\+Allowed}}(\char`\"{}base\+\_\+link\char`\"{}, \char`\"{}link\+\_\+1\char`\"{}, \mbox{\hyperlink{collision__core__unit_8cpp_a714392901b0c74193a9659fc77891a60}{acm}}, true)}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}\label{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [14/30]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacetesseract__common_a34d98b9f0df320e12b9f9686761f5b1e}{tesseract\+\_\+common\+::is\+Identical}}$<$ \mbox{\hyperlink{namespacetesseract__collision_af5926355228f0196ddf51e6951dbe491}{tesseract\+\_\+collision\+::\+Object\+Pair\+Key}} $>$}]{pairs, check\+\_\+pairs, false }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_a92aca36f7d04eb3677a57b5e6e155307}\label{collision__core__unit_8cpp_a92aca36f7d04eb3677a57b5e6e155307}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [15/30]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{test\+\_\+vertices.}]{is\+Approx(\+Eigen\+::\+Vector3d(-\/4.\+5, -\/4.\+5, -\/4.\+5))\mbox{[}0\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_a210d83513665c3239db709f24b8caf3d}\label{collision__core__unit_8cpp_a210d83513665c3239db709f24b8caf3d}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [16/30]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{test\+\_\+vertices.}]{is\+Approx(\+Eigen\+::\+Vector3d(0, 0, 0))\mbox{[}0\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_a10d3d62f75694d5776944b1470ce967c}\label{collision__core__unit_8cpp_a10d3d62f75694d5776944b1470ce967c}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [17/30]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{test\+\_\+vertices.}]{is\+Approx(\+Eigen\+::\+Vector3d(-\/4.\+5, -\/4.\+5, 5.\+5))\mbox{[}1\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_a3b05a21fb4cd350ca104fa410db0abce}\label{collision__core__unit_8cpp_a3b05a21fb4cd350ca104fa410db0abce}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [18/30]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{test\+\_\+vertices.}]{is\+Approx(\+Eigen\+::\+Vector3d(0, 0, 10))\mbox{[}1\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_acb83bc2e999cb43ada48d1180501b59f}\label{collision__core__unit_8cpp_acb83bc2e999cb43ada48d1180501b59f}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [19/30]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{test\+\_\+vertices.}]{is\+Approx(\+Eigen\+::\+Vector3d(-\/4.\+5, 5.\+5, 5.\+5))\mbox{[}2\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_abd97cdf760e6e8e149e004b030878356}\label{collision__core__unit_8cpp_abd97cdf760e6e8e149e004b030878356}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [20/30]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{test\+\_\+vertices.}]{is\+Approx(\+Eigen\+::\+Vector3d(0, 10, 10))\mbox{[}2\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_aef6c6ac957ff81a29a4a83763fa2daea}\label{collision__core__unit_8cpp_aef6c6ac957ff81a29a4a83763fa2daea}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [21/30]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{test\+\_\+vertices.}]{is\+Approx(\+Eigen\+::\+Vector3d(-\/4.\+5, 5.\+5, -\/4.\+5))\mbox{[}3\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_a0483e4776dd8e2be7e7d9909b0db20a3}\label{collision__core__unit_8cpp_a0483e4776dd8e2be7e7d9909b0db20a3}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [22/30]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{test\+\_\+vertices.}]{is\+Approx(\+Eigen\+::\+Vector3d(0, 10, 0))\mbox{[}3\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_a6dca4fce2d685f91b33dc6321f7c7005}\label{collision__core__unit_8cpp_a6dca4fce2d685f91b33dc6321f7c7005}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [23/30]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{test\+\_\+vertices.}]{is\+Approx(\+Eigen\+::\+Vector3d(10, 0, 0))\mbox{[}4\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_a3a876b7e001614226dbdd663130c731a}\label{collision__core__unit_8cpp_a3a876b7e001614226dbdd663130c731a}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [24/30]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{test\+\_\+vertices.}]{is\+Approx(\+Eigen\+::\+Vector3d(5.\+5, -\/4.\+5, -\/4.\+5))\mbox{[}4\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_a056867f30e958f7250742a67ce0b8d63}\label{collision__core__unit_8cpp_a056867f30e958f7250742a67ce0b8d63}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [25/30]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{test\+\_\+vertices.}]{is\+Approx(\+Eigen\+::\+Vector3d(10, 0, 10))\mbox{[}5\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_a45591dfe5297266ea2520256ffb17385}\label{collision__core__unit_8cpp_a45591dfe5297266ea2520256ffb17385}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [26/30]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{test\+\_\+vertices.}]{is\+Approx(\+Eigen\+::\+Vector3d(5.\+5, -\/4.\+5, 5.\+5))\mbox{[}5\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_a0d3c31df278eabf4f244459f768ffd15}\label{collision__core__unit_8cpp_a0d3c31df278eabf4f244459f768ffd15}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [27/30]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{test\+\_\+vertices.}]{is\+Approx(\+Eigen\+::\+Vector3d(10, 10, 10))\mbox{[}6\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_a03f18787fddfde0efb88975442fd2fb3}\label{collision__core__unit_8cpp_a03f18787fddfde0efb88975442fd2fb3}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [28/30]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{test\+\_\+vertices.}]{is\+Approx(\+Eigen\+::\+Vector3d(5.\+5, 5.\+5, 5.\+5))\mbox{[}6\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_adf773bad0849ab4a5be74c12843fbd72}\label{collision__core__unit_8cpp_adf773bad0849ab4a5be74c12843fbd72}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [29/30]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{test\+\_\+vertices.}]{is\+Approx(\+Eigen\+::\+Vector3d(10, 10, 0))\mbox{[}7\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_a4f8e37ecc8d5be1059aaad2957a21872}\label{collision__core__unit_8cpp_a4f8e37ecc8d5be1059aaad2957a21872}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}\hspace{0.1cm}{\footnotesize\ttfamily [30/30]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{test\+\_\+vertices.}]{is\+Approx(\+Eigen\+::\+Vector3d(5.\+5, 5.\+5, -\/4.\+5))\mbox{[}7\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_a39ea9a46c9b7993c6f6cda29af3c163b}\label{collision__core__unit_8cpp_a39ea9a46c9b7993c6f6cda29af3c163b}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!for@{for}}
+\index{for@{for}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{for()}{for()}}
+{\footnotesize\ttfamily for (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  std::vector<uint8\_t> \mbox{\hyperlink{collision__margin__data__unit_8cpp_a0992235f6cab11fba6116193c7f42b8b}{data}}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{collision__core__unit_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{collision__core__unit_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!main@{main}}
+\index{main@{main}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_a56abcadb42971c1eef1d673d4f45a082}\label{collision__core__unit_8cpp_a56abcadb42971c1eef1d673d4f45a082}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!push\_back@{push\_back}}
+\index{push\_back@{push\_back}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{push\_back()}{push\_back()}\hspace{0.1cm}{\footnotesize\ttfamily [1/17]}}
+{\footnotesize\ttfamily base\+\_\+vertices push\+\_\+back (\begin{DoxyParamCaption}\item[{Eigen\+::\+Vector3d(0, 0, 0)}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_a5694e130fd23638e12154aca917d7ad9}\label{collision__core__unit_8cpp_a5694e130fd23638e12154aca917d7ad9}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!push\_back@{push\_back}}
+\index{push\_back@{push\_back}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{push\_back()}{push\_back()}\hspace{0.1cm}{\footnotesize\ttfamily [2/17]}}
+{\footnotesize\ttfamily base\+\_\+vertices push\+\_\+back (\begin{DoxyParamCaption}\item[{Eigen\+::\+Vector3d(0, 0, 1)}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_a9bbf2742897b1a9aa24315d60b41138e}\label{collision__core__unit_8cpp_a9bbf2742897b1a9aa24315d60b41138e}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!push\_back@{push\_back}}
+\index{push\_back@{push\_back}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{push\_back()}{push\_back()}\hspace{0.1cm}{\footnotesize\ttfamily [3/17]}}
+{\footnotesize\ttfamily base\+\_\+vertices push\+\_\+back (\begin{DoxyParamCaption}\item[{Eigen\+::\+Vector3d(0, 1, 0)}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_ab6f87321b6eab4562764d75533a793cd}\label{collision__core__unit_8cpp_ab6f87321b6eab4562764d75533a793cd}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!push\_back@{push\_back}}
+\index{push\_back@{push\_back}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{push\_back()}{push\_back()}\hspace{0.1cm}{\footnotesize\ttfamily [4/17]}}
+{\footnotesize\ttfamily base\+\_\+vertices push\+\_\+back (\begin{DoxyParamCaption}\item[{Eigen\+::\+Vector3d(0, 1, 1)}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_ad334b8dbb0428dcc06403cf9e11eeb65}\label{collision__core__unit_8cpp_ad334b8dbb0428dcc06403cf9e11eeb65}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!push\_back@{push\_back}}
+\index{push\_back@{push\_back}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{push\_back()}{push\_back()}\hspace{0.1cm}{\footnotesize\ttfamily [5/17]}}
+{\footnotesize\ttfamily base\+\_\+vertices push\+\_\+back (\begin{DoxyParamCaption}\item[{Eigen\+::\+Vector3d(1, 0, 0)}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_a2a97f3d82fa46ae8706523035c27fbb0}\label{collision__core__unit_8cpp_a2a97f3d82fa46ae8706523035c27fbb0}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!push\_back@{push\_back}}
+\index{push\_back@{push\_back}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{push\_back()}{push\_back()}\hspace{0.1cm}{\footnotesize\ttfamily [6/17]}}
+{\footnotesize\ttfamily base\+\_\+vertices push\+\_\+back (\begin{DoxyParamCaption}\item[{Eigen\+::\+Vector3d(1, 0, 1)}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_ab5f842c9f392cc282dca5cff5dc3d9b2}\label{collision__core__unit_8cpp_ab5f842c9f392cc282dca5cff5dc3d9b2}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!push\_back@{push\_back}}
+\index{push\_back@{push\_back}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{push\_back()}{push\_back()}\hspace{0.1cm}{\footnotesize\ttfamily [7/17]}}
+{\footnotesize\ttfamily base\+\_\+vertices push\+\_\+back (\begin{DoxyParamCaption}\item[{Eigen\+::\+Vector3d(1, 1, 0)}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_ab031e5f2994474ead9bad611482bd966}\label{collision__core__unit_8cpp_ab031e5f2994474ead9bad611482bd966}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!push\_back@{push\_back}}
+\index{push\_back@{push\_back}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{push\_back()}{push\_back()}\hspace{0.1cm}{\footnotesize\ttfamily [8/17]}}
+{\footnotesize\ttfamily base\+\_\+vertices push\+\_\+back (\begin{DoxyParamCaption}\item[{Eigen\+::\+Vector3d(1, 1, 1)}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_aa8c49f24abeb7b9abfe9a36c20da8847}\label{collision__core__unit_8cpp_aa8c49f24abeb7b9abfe9a36c20da8847}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!push\_back@{push\_back}}
+\index{push\_back@{push\_back}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{push\_back()}{push\_back()}\hspace{0.1cm}{\footnotesize\ttfamily [9/17]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{collision__core__unit_8cpp_a156048d95754df2a4cd6bc24db0e16f2}{check\+\_\+pairs}} push\+\_\+back (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacetesseract__collision_a0876bd0182505440236643eb5bade1c7}{tesseract\+\_\+collision\+::get\+Object\+Pair\+Key}}(\char`\"{}base\+\_\+link\char`\"{}, \char`\"{}link\+\_\+1\char`\"{})}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_aac2a9b06ed3142ac0acd671282000711}\label{collision__core__unit_8cpp_aac2a9b06ed3142ac0acd671282000711}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!push\_back@{push\_back}}
+\index{push\_back@{push\_back}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{push\_back()}{push\_back()}\hspace{0.1cm}{\footnotesize\ttfamily [10/17]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{collision__core__unit_8cpp_a156048d95754df2a4cd6bc24db0e16f2}{check\+\_\+pairs}} push\+\_\+back (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacetesseract__collision_a0876bd0182505440236643eb5bade1c7}{tesseract\+\_\+collision\+::get\+Object\+Pair\+Key}}(\char`\"{}base\+\_\+link\char`\"{}, \char`\"{}link\+\_\+2\char`\"{})}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_a2bffbc5588209f87fcfa612e6ffed46d}\label{collision__core__unit_8cpp_a2bffbc5588209f87fcfa612e6ffed46d}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!push\_back@{push\_back}}
+\index{push\_back@{push\_back}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{push\_back()}{push\_back()}\hspace{0.1cm}{\footnotesize\ttfamily [11/17]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{collision__core__unit_8cpp_a156048d95754df2a4cd6bc24db0e16f2}{check\+\_\+pairs}} push\+\_\+back (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacetesseract__collision_a0876bd0182505440236643eb5bade1c7}{tesseract\+\_\+collision\+::get\+Object\+Pair\+Key}}(\char`\"{}base\+\_\+link\char`\"{}, \char`\"{}link\+\_\+3\char`\"{})}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_a666ee12f630967925eca8bf94ebaaa50}\label{collision__core__unit_8cpp_a666ee12f630967925eca8bf94ebaaa50}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!push\_back@{push\_back}}
+\index{push\_back@{push\_back}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{push\_back()}{push\_back()}\hspace{0.1cm}{\footnotesize\ttfamily [12/17]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{collision__core__unit_8cpp_a156048d95754df2a4cd6bc24db0e16f2}{check\+\_\+pairs}} push\+\_\+back (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacetesseract__collision_a0876bd0182505440236643eb5bade1c7}{tesseract\+\_\+collision\+::get\+Object\+Pair\+Key}}(\char`\"{}link\+\_\+1\char`\"{}, \char`\"{}link\+\_\+2\char`\"{})}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_a7911cbb046cbaeabbaf87c1725018268}\label{collision__core__unit_8cpp_a7911cbb046cbaeabbaf87c1725018268}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!push\_back@{push\_back}}
+\index{push\_back@{push\_back}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{push\_back()}{push\_back()}\hspace{0.1cm}{\footnotesize\ttfamily [13/17]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{collision__core__unit_8cpp_a156048d95754df2a4cd6bc24db0e16f2}{check\+\_\+pairs}} push\+\_\+back (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacetesseract__collision_a0876bd0182505440236643eb5bade1c7}{tesseract\+\_\+collision\+::get\+Object\+Pair\+Key}}(\char`\"{}link\+\_\+1\char`\"{}, \char`\"{}link\+\_\+3\char`\"{})}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_aa629a422c8e60e91d3c2934df62f25b8}\label{collision__core__unit_8cpp_aa629a422c8e60e91d3c2934df62f25b8}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!push\_back@{push\_back}}
+\index{push\_back@{push\_back}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{push\_back()}{push\_back()}\hspace{0.1cm}{\footnotesize\ttfamily [14/17]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{collision__core__unit_8cpp_a156048d95754df2a4cd6bc24db0e16f2}{check\+\_\+pairs}} push\+\_\+back (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacetesseract__collision_a0876bd0182505440236643eb5bade1c7}{tesseract\+\_\+collision\+::get\+Object\+Pair\+Key}}(\char`\"{}link\+\_\+2\char`\"{}, \char`\"{}link\+\_\+3\char`\"{})}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_a6b1587d9341e52ca4950f2121aa852ad}\label{collision__core__unit_8cpp_a6b1587d9341e52ca4950f2121aa852ad}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!push\_back@{push\_back}}
+\index{push\_back@{push\_back}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{push\_back()}{push\_back()}\hspace{0.1cm}{\footnotesize\ttfamily [15/17]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{collision__core__unit_8cpp_a156048d95754df2a4cd6bc24db0e16f2}{check\+\_\+pairs}} push\+\_\+back (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacetesseract__collision_a0876bd0182505440236643eb5bade1c7}{tesseract\+\_\+collision\+::get\+Object\+Pair\+Key}}(\char`\"{}part\+\_\+link\char`\"{}, \char`\"{}link\+\_\+1\char`\"{})}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_afec294989e32a56de7434ef746af1a97}\label{collision__core__unit_8cpp_afec294989e32a56de7434ef746af1a97}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!push\_back@{push\_back}}
+\index{push\_back@{push\_back}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{push\_back()}{push\_back()}\hspace{0.1cm}{\footnotesize\ttfamily [16/17]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{collision__core__unit_8cpp_a156048d95754df2a4cd6bc24db0e16f2}{check\+\_\+pairs}} push\+\_\+back (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacetesseract__collision_a0876bd0182505440236643eb5bade1c7}{tesseract\+\_\+collision\+::get\+Object\+Pair\+Key}}(\char`\"{}part\+\_\+link\char`\"{}, \char`\"{}link\+\_\+2\char`\"{})}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_a5f212b9725f39a8b6258565a6495eab6}\label{collision__core__unit_8cpp_a5f212b9725f39a8b6258565a6495eab6}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!push\_back@{push\_back}}
+\index{push\_back@{push\_back}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{push\_back()}{push\_back()}\hspace{0.1cm}{\footnotesize\ttfamily [17/17]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{collision__core__unit_8cpp_a156048d95754df2a4cd6bc24db0e16f2}{check\+\_\+pairs}} push\+\_\+back (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacetesseract__collision_a0876bd0182505440236643eb5bade1c7}{tesseract\+\_\+collision\+::get\+Object\+Pair\+Key}}(\char`\"{}part\+\_\+link\char`\"{}, \char`\"{}link\+\_\+3\char`\"{})}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{collision__core__unit_8cpp_a714392901b0c74193a9659fc77891a60}\label{collision__core__unit_8cpp_a714392901b0c74193a9659fc77891a60}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!acm@{acm}}
+\index{acm@{acm}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{acm}{acm}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix}{tesseract\+\_\+common\+::\+Allowed\+Collision\+Matrix}} acm}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} std::string\& \mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_ab9634b1786a9b4b6051c685518ee5b15}{s1}}, \textcolor{keyword}{const} std::string\& s2) \{}
+\DoxyCodeLine{    \textcolor{keywordflow}{return} (\mbox{\hyperlink{namespacetesseract__collision_a0876bd0182505440236643eb5bade1c7}{tesseract\_collision::getObjectPairKey}}(\textcolor{stringliteral}{"{}base\_link"{}}, \textcolor{stringliteral}{"{}link\_1"{}}) ==}
+\DoxyCodeLine{            \mbox{\hyperlink{namespacetesseract__collision_a0876bd0182505440236643eb5bade1c7}{tesseract\_collision::getObjectPairKey}}(\mbox{\hyperlink{tesseract__scene__graph__joint__unit_8cpp_ab9634b1786a9b4b6051c685518ee5b15}{s1}}, s2));}
+\DoxyCodeLine{  \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{collision__core__unit_8cpp_a82e552c530507c8221d4633abe52a700}\label{collision__core__unit_8cpp_a82e552c530507c8221d4633abe52a700}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!cc\_time@{cc\_time}}
+\index{cc\_time@{cc\_time}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{cc\_time}{cc\_time}}
+{\footnotesize\ttfamily results cc\+\_\+time = 7}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_ac76d376ca30af942ec296b6d247c201d}\label{collision__core__unit_8cpp_ac76d376ca30af942ec296b6d247c201d}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!cc\_transform@{cc\_transform}}
+\index{cc\_transform@{cc\_transform}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{cc\_transform}{cc\_transform}}
+{\footnotesize\ttfamily results cc\+\_\+transform = Eigen\+::\+Isometry3d\+::\+Identity() $\ast$ Eigen\+::\+Translation3d(1, 2, 3)}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_a770424cc0f23956d5f338e52a7c4fb95}\label{collision__core__unit_8cpp_a770424cc0f23956d5f338e52a7c4fb95}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!cc\_type@{cc\_type}}
+\index{cc\_type@{cc\_type}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{cc\_type}{cc\_type}}
+{\footnotesize\ttfamily results cc\+\_\+type = \mbox{\hyperlink{namespacetesseract__collision_a267c740fd3b446222ba19cbaa56dab5ea1101988a82b0cd8a2e2c5ee5fda455eb}{tesseract\+\_\+collision\+::\+Continuous\+Collision\+Type\+::\+CCType\+\_\+\+Between}}}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_a156048d95754df2a4cd6bc24db0e16f2}\label{collision__core__unit_8cpp_a156048d95754df2a4cd6bc24db0e16f2}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!check\_pairs@{check\_pairs}}
+\index{check\_pairs@{check\_pairs}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{check\_pairs}{check\_pairs}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{namespacetesseract__collision_af5926355228f0196ddf51e6951dbe491}{tesseract\+\_\+collision\+::\+Object\+Pair\+Key}}$>$ check\+\_\+pairs}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_a2013c60ebd4a63f15fafe2287736ae37}\label{collision__core__unit_8cpp_a2013c60ebd4a63f15fafe2287736ae37}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!config@{config}}
+\index{config@{config}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{config}{config}}
+{\footnotesize\ttfamily \mbox{\hyperlink{plugin__loader__unit_8cpp_af34747f68f9b0963dea6e8f3c659659c}{plugin}} config (\begin{DoxyParamCaption}\item[{5}]{,  }\item[{request}]{,  }\item[{\mbox{\hyperlink{namespacetesseract__collision_af17e8ee8632a40cf4b6ed1ba1aec41aca4afe53b9adb97f1374fa3e05dd7a1be1}{tesseract\+\_\+collision\+::\+Collision\+Evaluator\+Type\+::\+LVS\+\_\+\+DISCRETE}}}]{,  }\item[{0.}]{5 }\end{DoxyParamCaption})}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  \mbox{\hyperlink{structtesseract__collision_1_1ContactRequest}{tesseract\_collision::ContactRequest}} request}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{collision__core__unit_8cpp_a1ceb8bb3849a05a320b82729fd3681bb}\label{collision__core__unit_8cpp_a1ceb8bb3849a05a320b82729fd3681bb}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!distance@{distance}}
+\index{distance@{distance}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{distance}{distance}}
+{\footnotesize\ttfamily results distance = 10}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_a464caf777ea79db067179ebe2bd7ecc7}\label{collision__core__unit_8cpp_a464caf777ea79db067179ebe2bd7ecc7}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!link\_names@{link\_names}}
+\index{link\_names@{link\_names}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{link\_names}{link\_names}}
+{\footnotesize\ttfamily results link\+\_\+names = \char`\"{}notempty\char`\"{}}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}\label{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!nearest\_points@{nearest\_points}}
+\index{nearest\_points@{nearest\_points}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{nearest\_points}{nearest\_points}}
+{\footnotesize\ttfamily results nearest\+\_\+points = Eigen\+::\+Vector3d(1, 2, 3)}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_acb052c14bdfa9dfc0b0962ccbeb27996}\label{collision__core__unit_8cpp_acb052c14bdfa9dfc0b0962ccbeb27996}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!nearest\_points\_local@{nearest\_points\_local}}
+\index{nearest\_points\_local@{nearest\_points\_local}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{nearest\_points\_local}{nearest\_points\_local}}
+{\footnotesize\ttfamily results nearest\+\_\+points\+\_\+local = Eigen\+::\+Vector3d(1, 2, 3)}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_a7589b8c9c1397d28b5974168ee72f0a8}\label{collision__core__unit_8cpp_a7589b8c9c1397d28b5974168ee72f0a8}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!normal@{normal}}
+\index{normal@{normal}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{normal}{normal}}
+{\footnotesize\ttfamily results normal = Eigen\+::\+Vector3d(1, 2, 3)}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_a8b16b1e1994f9c318702b801bd3b8420}\label{collision__core__unit_8cpp_a8b16b1e1994f9c318702b801bd3b8420}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!pairs@{pairs}}
+\index{pairs@{pairs}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{pairs}{pairs}}
+{\footnotesize\ttfamily pairs}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{      \mbox{\hyperlink{namespacetesseract__collision_ac37834bbb711cf5148c4b3a00faf6162}{tesseract\_collision::getCollisionObjectPairs}}(\mbox{\hyperlink{tesseract__environment__collision_8cpp_a63bb2774cedec88326bab0804f03d82f}{active\_links}}, \mbox{\hyperlink{collision__core__unit_8cpp_a20f995abd2d70f9febd34141caf91491}{static\_links}})}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{collision__core__unit_8cpp_afd1dbc15398c9c5e72af8f0d71fe07a4}\label{collision__core__unit_8cpp_afd1dbc15398c9c5e72af8f0d71fe07a4}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!shape\_id@{shape\_id}}
+\index{shape\_id@{shape\_id}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{shape\_id}{shape\_id}}
+{\footnotesize\ttfamily results shape\+\_\+id = 5}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_aef0b0de8aead4d0c192bfbc1665bdca1}\label{collision__core__unit_8cpp_aef0b0de8aead4d0c192bfbc1665bdca1}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!single\_contact\_point@{single\_contact\_point}}
+\index{single\_contact\_point@{single\_contact\_point}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{single\_contact\_point}{single\_contact\_point}}
+{\footnotesize\ttfamily results single\+\_\+contact\+\_\+point = true}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_a20f995abd2d70f9febd34141caf91491}\label{collision__core__unit_8cpp_a20f995abd2d70f9febd34141caf91491}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!static\_links@{static\_links}}
+\index{static\_links@{static\_links}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{static\_links}{static\_links}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ static\+\_\+links \{ \char`\"{}base\+\_\+link\char`\"{}, \char`\"{}part\+\_\+link\char`\"{} \}}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_ae52d87adcd42f0a8d4439fd2015f500c}\label{collision__core__unit_8cpp_ae52d87adcd42f0a8d4439fd2015f500c}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!subshape\_id@{subshape\_id}}
+\index{subshape\_id@{subshape\_id}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{subshape\_id}{subshape\_id}}
+{\footnotesize\ttfamily results subshape\+\_\+id = 10}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_a2733ace18b4e650b36b176083d0f9c42}\label{collision__core__unit_8cpp_a2733ace18b4e650b36b176083d0f9c42}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP@{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}
+\index{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP@{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}
+{\footnotesize\ttfamily \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\+\_\+\+COMMON\+\_\+\+IGNORE\+\_\+\+WARNINGS\+\_\+\+PUSH}} TESSERACT\+\_\+\+COMMON\+\_\+\+IGNORE\+\_\+\+WARNINGS\+\_\+\+POP}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  std::vector<std::string> \mbox{\hyperlink{tesseract__environment__collision_8cpp_a63bb2774cedec88326bab0804f03d82f}{active\_links}}\{ \textcolor{stringliteral}{"{}link\_1"{}}, \textcolor{stringliteral}{"{}link\_2"{}}, \textcolor{stringliteral}{"{}link\_3"{}} \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{collision__core__unit_8cpp_aad5380afc832eaccafa75bc5e2b9bdd2}\label{collision__core__unit_8cpp_aad5380afc832eaccafa75bc5e2b9bdd2}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!test\_vertices@{test\_vertices}}
+\index{test\_vertices@{test\_vertices}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{test\_vertices}{test\_vertices}}
+{\footnotesize\ttfamily test\+\_\+vertices \{ base\+\_\+vertices \}}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_a0711277889ece6b8e49c8ad05d361167}\label{collision__core__unit_8cpp_a0711277889ece6b8e49c8ad05d361167}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!transform@{transform}}
+\index{transform@{transform}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{transform}{transform}}
+{\footnotesize\ttfamily results transform = Eigen\+::\+Isometry3d\+::\+Identity() $\ast$ Eigen\+::\+Translation3d(1, 2, 3)}
+
+\mbox{\Hypertarget{collision__core__unit_8cpp_abd5b6e2207f4ef754f27366b9589816e}\label{collision__core__unit_8cpp_abd5b6e2207f4ef754f27366b9589816e}} 
+\index{collision\_core\_unit.cpp@{collision\_core\_unit.cpp}!type\_id@{type\_id}}
+\index{type\_id@{type\_id}!collision\_core\_unit.cpp@{collision\_core\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{type\_id}{type\_id}}
+{\footnotesize\ttfamily results type\+\_\+id = 3}
+

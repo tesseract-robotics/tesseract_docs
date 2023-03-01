@@ -1,0 +1,82 @@
+\hypertarget{collision__profile_8cpp}{}\doxysection{tesseract\+\_\+collision/test/benchmarks/collision\+\_\+profile.cpp File Reference}
+\label{collision__profile_8cpp}\index{tesseract\_collision/test/benchmarks/collision\_profile.cpp@{tesseract\_collision/test/benchmarks/collision\_profile.cpp}}
+{\ttfamily \#include $<$tesseract\+\_\+common/macros.\+h$>$}\newline
+{\ttfamily \#include $<$random$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+collision/bullet/bullet\+\_\+discrete\+\_\+simple\+\_\+manager.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+collision/bullet/bullet\+\_\+discrete\+\_\+bvh\+\_\+manager.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+collision/bullet/bullet\+\_\+cast\+\_\+simple\+\_\+manager.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+collision/bullet/bullet\+\_\+cast\+\_\+bvh\+\_\+manager.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+collision/bullet/convex\+\_\+hull\+\_\+utils.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+collision/fcl/fcl\+\_\+discrete\+\_\+managers.\+h$>$}\newline
+Include dependency graph for collision\+\_\+profile.\+cpp\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{collision__profile_8cpp_ae13c1b5c6362e622db03368e9e012094}{add\+Collision\+Objects}} (\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager}{Discrete\+Contact\+Manager}} \&checker, bool use\+\_\+single\+\_\+link, bool use\+\_\+convex\+\_\+mesh)
+\item 
+void \mbox{\hyperlink{collision__profile_8cpp_a4a1974da2bb0eab8e9a1d7888d8b4a89}{add\+Collision\+Objects}} (\mbox{\hyperlink{classtesseract__collision_1_1ContinuousContactManager}{Continuous\+Contact\+Manager}} \&checker, bool use\+\_\+single\+\_\+link, bool use\+\_\+convex\+\_\+mesh)
+\item 
+std\+::vector$<$ Eigen\+::\+Isometry3d $>$ \mbox{\hyperlink{collision__profile_8cpp_ac688d682ad24dddd89ca98b5e11b485a}{get\+Transforms}} (std\+::size\+\_\+t num\+\_\+poses)
+\item 
+void \mbox{\hyperlink{collision__profile_8cpp_ab473889c72a8c520850128f5b279f50c}{run\+Discrete\+Profile}} (bool use\+\_\+single\+\_\+link, bool use\+\_\+convex\+\_\+mesh, double contact\+\_\+distance)
+\item 
+void \mbox{\hyperlink{collision__profile_8cpp_afe55f146331b1a04e4963c60b739f18d}{run\+Continuous\+Profile}} (bool use\+\_\+single\+\_\+link, bool use\+\_\+convex\+\_\+mesh, double contact\+\_\+distance)
+\item 
+int \mbox{\hyperlink{collision__profile_8cpp_a2c3f6775325c30275d11c6abee2db6a0}{main}} (int, char $\ast$$\ast$)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\+\_\+\+COMMON\+\_\+\+IGNORE\+\_\+\+WARNINGS\+\_\+\+PUSH}} static \mbox{\hyperlink{macros_8h_a7af8561cf52519e9896b0697095c1b8b}{TESSERACT\+\_\+\+COMMON\+\_\+\+IGNORE\+\_\+\+WARNINGS\+\_\+\+POP}} const std\+::size\+\_\+t \mbox{\hyperlink{collision__profile_8cpp_adbae0877c4c14b7669b48b0289b0f607}{DIM}} = 10
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{collision__profile_8cpp_a4a1974da2bb0eab8e9a1d7888d8b4a89}\label{collision__profile_8cpp_a4a1974da2bb0eab8e9a1d7888d8b4a89}} 
+\index{collision\_profile.cpp@{collision\_profile.cpp}!addCollisionObjects@{addCollisionObjects}}
+\index{addCollisionObjects@{addCollisionObjects}!collision\_profile.cpp@{collision\_profile.cpp}}
+\doxysubsubsection{\texorpdfstring{addCollisionObjects()}{addCollisionObjects()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void add\+Collision\+Objects (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtesseract__collision_1_1ContinuousContactManager}{Continuous\+Contact\+Manager}} \&}]{checker,  }\item[{bool}]{use\+\_\+single\+\_\+link,  }\item[{bool}]{use\+\_\+convex\+\_\+mesh }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__profile_8cpp_ae13c1b5c6362e622db03368e9e012094}\label{collision__profile_8cpp_ae13c1b5c6362e622db03368e9e012094}} 
+\index{collision\_profile.cpp@{collision\_profile.cpp}!addCollisionObjects@{addCollisionObjects}}
+\index{addCollisionObjects@{addCollisionObjects}!collision\_profile.cpp@{collision\_profile.cpp}}
+\doxysubsubsection{\texorpdfstring{addCollisionObjects()}{addCollisionObjects()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void add\+Collision\+Objects (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager}{Discrete\+Contact\+Manager}} \&}]{checker,  }\item[{bool}]{use\+\_\+single\+\_\+link,  }\item[{bool}]{use\+\_\+convex\+\_\+mesh }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__profile_8cpp_ac688d682ad24dddd89ca98b5e11b485a}\label{collision__profile_8cpp_ac688d682ad24dddd89ca98b5e11b485a}} 
+\index{collision\_profile.cpp@{collision\_profile.cpp}!getTransforms@{getTransforms}}
+\index{getTransforms@{getTransforms}!collision\_profile.cpp@{collision\_profile.cpp}}
+\doxysubsubsection{\texorpdfstring{getTransforms()}{getTransforms()}}
+{\footnotesize\ttfamily std\+::vector$<$ Eigen\+::\+Isometry3d $>$ get\+Transforms (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{num\+\_\+poses }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__profile_8cpp_a2c3f6775325c30275d11c6abee2db6a0}\label{collision__profile_8cpp_a2c3f6775325c30275d11c6abee2db6a0}} 
+\index{collision\_profile.cpp@{collision\_profile.cpp}!main@{main}}
+\index{main@{main}!collision\_profile.cpp@{collision\_profile.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{char $\ast$$\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__profile_8cpp_afe55f146331b1a04e4963c60b739f18d}\label{collision__profile_8cpp_afe55f146331b1a04e4963c60b739f18d}} 
+\index{collision\_profile.cpp@{collision\_profile.cpp}!runContinuousProfile@{runContinuousProfile}}
+\index{runContinuousProfile@{runContinuousProfile}!collision\_profile.cpp@{collision\_profile.cpp}}
+\doxysubsubsection{\texorpdfstring{runContinuousProfile()}{runContinuousProfile()}}
+{\footnotesize\ttfamily void run\+Continuous\+Profile (\begin{DoxyParamCaption}\item[{bool}]{use\+\_\+single\+\_\+link,  }\item[{bool}]{use\+\_\+convex\+\_\+mesh,  }\item[{double}]{contact\+\_\+distance }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{collision__profile_8cpp_ab473889c72a8c520850128f5b279f50c}\label{collision__profile_8cpp_ab473889c72a8c520850128f5b279f50c}} 
+\index{collision\_profile.cpp@{collision\_profile.cpp}!runDiscreteProfile@{runDiscreteProfile}}
+\index{runDiscreteProfile@{runDiscreteProfile}!collision\_profile.cpp@{collision\_profile.cpp}}
+\doxysubsubsection{\texorpdfstring{runDiscreteProfile()}{runDiscreteProfile()}}
+{\footnotesize\ttfamily void run\+Discrete\+Profile (\begin{DoxyParamCaption}\item[{bool}]{use\+\_\+single\+\_\+link,  }\item[{bool}]{use\+\_\+convex\+\_\+mesh,  }\item[{double}]{contact\+\_\+distance }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{collision__profile_8cpp_adbae0877c4c14b7669b48b0289b0f607}\label{collision__profile_8cpp_adbae0877c4c14b7669b48b0289b0f607}} 
+\index{collision\_profile.cpp@{collision\_profile.cpp}!DIM@{DIM}}
+\index{DIM@{DIM}!collision\_profile.cpp@{collision\_profile.cpp}}
+\doxysubsubsection{\texorpdfstring{DIM}{DIM}}
+{\footnotesize\ttfamily \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\+\_\+\+COMMON\+\_\+\+IGNORE\+\_\+\+WARNINGS\+\_\+\+PUSH}} static \mbox{\hyperlink{macros_8h_a7af8561cf52519e9896b0697095c1b8b}{TESSERACT\+\_\+\+COMMON\+\_\+\+IGNORE\+\_\+\+WARNINGS\+\_\+\+POP}} const std\+::size\+\_\+t DIM = 10\hspace{0.3cm}{\ttfamily [static]}}
+

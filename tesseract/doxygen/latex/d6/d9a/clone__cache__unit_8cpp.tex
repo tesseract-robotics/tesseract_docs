@@ -1,0 +1,188 @@
+\hypertarget{clone__cache__unit_8cpp}{}\doxysection{tesseract\+\_\+common/test/clone\+\_\+cache\+\_\+unit.cpp File Reference}
+\label{clone__cache__unit_8cpp}\index{tesseract\_common/test/clone\_cache\_unit.cpp@{tesseract\_common/test/clone\_cache\_unit.cpp}}
+{\ttfamily \#include $<$tesseract\+\_\+common/macros.\+h$>$}\newline
+{\ttfamily \#include $<$gtest/gtest.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+common/clone\+\_\+cache.\+h$>$}\newline
+Include dependency graph for clone\+\_\+cache\+\_\+unit.\+cpp\+:
+% FIG 0
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classTestObject}{Test\+Object}}
+\begin{DoxyCompactList}\small\item\em Object used to test the Clone\+Cache. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTestObjectSupportsUpdate}{Test\+Object\+Supports\+Update}}
+\item 
+class \mbox{\hyperlink{classTestObjectSupportsUpdateFailure}{Test\+Object\+Supports\+Update\+Failure}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{clone__cache__unit_8cpp_ac72d68f35ddad69baa10eee9688a80fa}{EXPECT\+\_\+\+EQ}} (\mbox{\hyperlink{clone__cache__unit_8cpp_ab48e93ddf296c546fd3ad7c5b17034fd}{clone\+\_\+cache}}-\/$>$get\+Cache\+Size(), 3)
+\item 
+\mbox{\hyperlink{clone__cache__unit_8cpp_a2a908e04eec8e28b5d48f485d0fd4fb5}{EXPECT\+\_\+\+EQ}} (original-\/$>$\mbox{\hyperlink{clone__cache__unit_8cpp_ae12bb060689094c347e4ffbadf7ec8e9}{val\+\_\+1}}, \mbox{\hyperlink{clone__cache__unit_8cpp_a468102a14fab28bb8303ea654a9b891b}{clone}}-\/$>$\mbox{\hyperlink{clone__cache__unit_8cpp_ae12bb060689094c347e4ffbadf7ec8e9}{val\+\_\+1}})
+\item 
+\mbox{\hyperlink{clone__cache__unit_8cpp_a9b61f50e082cabaa73b161f46f69e318}{EXPECT\+\_\+\+NE}} (original-\/$>$\mbox{\hyperlink{clone__cache__unit_8cpp_ae12bb060689094c347e4ffbadf7ec8e9}{val\+\_\+1}}, \mbox{\hyperlink{clone__cache__unit_8cpp_a468102a14fab28bb8303ea654a9b891b}{clone}}-\/$>$\mbox{\hyperlink{clone__cache__unit_8cpp_ae12bb060689094c347e4ffbadf7ec8e9}{val\+\_\+1}})
+\item 
+\mbox{\hyperlink{clone__cache__unit_8cpp_ab48e93ddf296c546fd3ad7c5b17034fd}{clone\+\_\+cache}} \mbox{\hyperlink{clone__cache__unit_8cpp_a163873148d62285904faac5a6b131503}{update\+Cache}} ()
+\item 
+\mbox{\hyperlink{clone__cache__unit_8cpp_a3decdc5bb64bd5ee540f7a662544c1b6}{for}} (int i=0;i$<$ 10;i++)
+\item 
+\mbox{\hyperlink{clone__cache__unit_8cpp_ab48e93ddf296c546fd3ad7c5b17034fd}{clone\+\_\+cache}} \mbox{\hyperlink{clone__cache__unit_8cpp_a21b5f2673aa048db2685c67ff775b880}{set\+Cache\+Size}} (8)
+\item 
+\mbox{\hyperlink{clone__cache__unit_8cpp_a2e9a08f2dffe9ae9679f6e592e572c9c}{EXPECT\+\_\+\+EQ}} (\mbox{\hyperlink{clone__cache__unit_8cpp_ab48e93ddf296c546fd3ad7c5b17034fd}{clone\+\_\+cache}}-\/$>$get\+Cache\+Size(), 8)
+\item 
+\mbox{\hyperlink{clone__cache__unit_8cpp_ad9798ab3e640736a3208fa5abe6b731d}{EXPECT\+\_\+\+EQ}} (original-\/$>$\mbox{\hyperlink{clone__cache__unit_8cpp_ae12bb060689094c347e4ffbadf7ec8e9}{val\+\_\+1}}, \mbox{\hyperlink{clone__cache__unit_8cpp_ab06993b9a32af9141cb8d20c1da09c79}{updated\+\_\+clone}}-\/$>$\mbox{\hyperlink{clone__cache__unit_8cpp_ae12bb060689094c347e4ffbadf7ec8e9}{val\+\_\+1}})
+\item 
+\mbox{\hyperlink{clone__cache__unit_8cpp_a286d89dea4923dd9ce2eb8b062bfe06e}{EXPECT\+\_\+\+EQ}} (\mbox{\hyperlink{clone__cache__unit_8cpp_ab48e93ddf296c546fd3ad7c5b17034fd}{clone\+\_\+cache}}-\/$>$get\+Current\+Cache\+Size(), 0)
+\item 
+\mbox{\hyperlink{clone__cache__unit_8cpp_a4e2ad9eb4b21c265cbd0235bead93fb3}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{clone__cache__unit_8cpp_ab48e93ddf296c546fd3ad7c5b17034fd}{clone\+\_\+cache}}-\/$>$\mbox{\hyperlink{clone__cache__unit_8cpp_a468102a14fab28bb8303ea654a9b891b}{clone}}()==nullptr)
+\item 
+int \mbox{\hyperlink{clone__cache__unit_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+original \mbox{\hyperlink{clone__cache__unit_8cpp_ae12bb060689094c347e4ffbadf7ec8e9}{val\+\_\+1}} = 1
+\item 
+original \mbox{\hyperlink{clone__cache__unit_8cpp_a16db687ab390efb5610bc8c1a9612c0d}{val\+\_\+2}} = 2
+\item 
+\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a395d31593a673a3b0efd30ad8d2bba78}{auto}} \mbox{\hyperlink{clone__cache__unit_8cpp_ab48e93ddf296c546fd3ad7c5b17034fd}{clone\+\_\+cache}} = std\+::make\+\_\+shared$<$\mbox{\hyperlink{classtesseract__common_1_1CloneCache}{Clone\+Cache}}$<$\mbox{\hyperlink{classTestObject}{Test\+Object}}$>$$>$(original, 3)
+\item 
+original \mbox{\hyperlink{clone__cache__unit_8cpp_abb8389ebd0898bdb91b25b49a4c0a66b}{revision\+\_\+}}
+\item 
+\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a395d31593a673a3b0efd30ad8d2bba78}{auto}} \mbox{\hyperlink{clone__cache__unit_8cpp_a468102a14fab28bb8303ea654a9b891b}{clone}} = \mbox{\hyperlink{clone__cache__unit_8cpp_ab48e93ddf296c546fd3ad7c5b17034fd}{clone\+\_\+cache}}-\/$>$clone()
+\item 
+\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a395d31593a673a3b0efd30ad8d2bba78}{auto}} \mbox{\hyperlink{clone__cache__unit_8cpp_ab06993b9a32af9141cb8d20c1da09c79}{updated\+\_\+clone}} = \mbox{\hyperlink{clone__cache__unit_8cpp_ab48e93ddf296c546fd3ad7c5b17034fd}{clone\+\_\+cache}}-\/$>$\mbox{\hyperlink{clone__cache__unit_8cpp_a468102a14fab28bb8303ea654a9b891b}{clone}}()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{clone__cache__unit_8cpp_ac72d68f35ddad69baa10eee9688a80fa}\label{clone__cache__unit_8cpp_ac72d68f35ddad69baa10eee9688a80fa}} 
+\index{clone\_cache\_unit.cpp@{clone\_cache\_unit.cpp}!EXPECT\_EQ@{EXPECT\_EQ}}
+\index{EXPECT\_EQ@{EXPECT\_EQ}!clone\_cache\_unit.cpp@{clone\_cache\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_EQ()}{EXPECT\_EQ()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+EQ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{clone__cache__unit_8cpp_ab48e93ddf296c546fd3ad7c5b17034fd}{clone\+\_\+cache}}-\/$>$}]{get\+Cache\+Size(),  }\item[{3}]{ }\end{DoxyParamCaption})}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \mbox{\hyperlink{clone__cache__unit_8cpp_a4e2ad9eb4b21c265cbd0235bead93fb3}{EXPECT\_TRUE}}(\mbox{\hyperlink{clone__cache__unit_8cpp_ab48e93ddf296c546fd3ad7c5b17034fd}{clone\_cache}}-\/>clone() == \textcolor{keyword}{nullptr})}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{clone__cache__unit_8cpp_a2e9a08f2dffe9ae9679f6e592e572c9c}\label{clone__cache__unit_8cpp_a2e9a08f2dffe9ae9679f6e592e572c9c}} 
+\index{clone\_cache\_unit.cpp@{clone\_cache\_unit.cpp}!EXPECT\_EQ@{EXPECT\_EQ}}
+\index{EXPECT\_EQ@{EXPECT\_EQ}!clone\_cache\_unit.cpp@{clone\_cache\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_EQ()}{EXPECT\_EQ()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+EQ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{clone__cache__unit_8cpp_ab48e93ddf296c546fd3ad7c5b17034fd}{clone\+\_\+cache}}-\/$>$}]{get\+Cache\+Size(),  }\item[{8}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{clone__cache__unit_8cpp_a286d89dea4923dd9ce2eb8b062bfe06e}\label{clone__cache__unit_8cpp_a286d89dea4923dd9ce2eb8b062bfe06e}} 
+\index{clone\_cache\_unit.cpp@{clone\_cache\_unit.cpp}!EXPECT\_EQ@{EXPECT\_EQ}}
+\index{EXPECT\_EQ@{EXPECT\_EQ}!clone\_cache\_unit.cpp@{clone\_cache\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_EQ()}{EXPECT\_EQ()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+EQ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{clone__cache__unit_8cpp_ab48e93ddf296c546fd3ad7c5b17034fd}{clone\+\_\+cache}}-\/$>$}]{get\+Current\+Cache\+Size(),  }\item[{0}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{clone__cache__unit_8cpp_a2a908e04eec8e28b5d48f485d0fd4fb5}\label{clone__cache__unit_8cpp_a2a908e04eec8e28b5d48f485d0fd4fb5}} 
+\index{clone\_cache\_unit.cpp@{clone\_cache\_unit.cpp}!EXPECT\_EQ@{EXPECT\_EQ}}
+\index{EXPECT\_EQ@{EXPECT\_EQ}!clone\_cache\_unit.cpp@{clone\_cache\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_EQ()}{EXPECT\_EQ()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+EQ (\begin{DoxyParamCaption}\item[{original-\/$>$}]{val\+\_\+1,  }\item[{\mbox{\hyperlink{clone__cache__unit_8cpp_a468102a14fab28bb8303ea654a9b891b}{clone}}-\/$>$}]{val\+\_\+1 }\end{DoxyParamCaption})}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{keyword}{auto} \mbox{\hyperlink{clone__cache__unit_8cpp_a468102a14fab28bb8303ea654a9b891b}{clone}} = \mbox{\hyperlink{clone__cache__unit_8cpp_ab48e93ddf296c546fd3ad7c5b17034fd}{clone\_cache}}-\/>clone()}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{clone__cache__unit_8cpp_ad9798ab3e640736a3208fa5abe6b731d}\label{clone__cache__unit_8cpp_ad9798ab3e640736a3208fa5abe6b731d}} 
+\index{clone\_cache\_unit.cpp@{clone\_cache\_unit.cpp}!EXPECT\_EQ@{EXPECT\_EQ}}
+\index{EXPECT\_EQ@{EXPECT\_EQ}!clone\_cache\_unit.cpp@{clone\_cache\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_EQ()}{EXPECT\_EQ()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+EQ (\begin{DoxyParamCaption}\item[{original-\/$>$}]{val\+\_\+1,  }\item[{\mbox{\hyperlink{clone__cache__unit_8cpp_ab06993b9a32af9141cb8d20c1da09c79}{updated\+\_\+clone}}-\/$>$}]{val\+\_\+1 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{clone__cache__unit_8cpp_a9b61f50e082cabaa73b161f46f69e318}\label{clone__cache__unit_8cpp_a9b61f50e082cabaa73b161f46f69e318}} 
+\index{clone\_cache\_unit.cpp@{clone\_cache\_unit.cpp}!EXPECT\_NE@{EXPECT\_NE}}
+\index{EXPECT\_NE@{EXPECT\_NE}!clone\_cache\_unit.cpp@{clone\_cache\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_NE()}{EXPECT\_NE()}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+NE (\begin{DoxyParamCaption}\item[{original-\/$>$}]{val\+\_\+1,  }\item[{\mbox{\hyperlink{clone__cache__unit_8cpp_a468102a14fab28bb8303ea654a9b891b}{clone}}-\/$>$}]{val\+\_\+1 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{clone__cache__unit_8cpp_a4e2ad9eb4b21c265cbd0235bead93fb3}\label{clone__cache__unit_8cpp_a4e2ad9eb4b21c265cbd0235bead93fb3}} 
+\index{clone\_cache\_unit.cpp@{clone\_cache\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!clone\_cache\_unit.cpp@{clone\_cache\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{clone__cache__unit_8cpp_ab48e93ddf296c546fd3ad7c5b17034fd}{clone\+\_\+cache}}-\/$>$}]{clone() = {\ttfamily =nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{clone__cache__unit_8cpp_a3decdc5bb64bd5ee540f7a662544c1b6}\label{clone__cache__unit_8cpp_a3decdc5bb64bd5ee540f7a662544c1b6}} 
+\index{clone\_cache\_unit.cpp@{clone\_cache\_unit.cpp}!for@{for}}
+\index{for@{for}!clone\_cache\_unit.cpp@{clone\_cache\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{for()}{for()}}
+{\footnotesize\ttfamily for (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{clone__cache__unit_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{clone__cache__unit_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{clone\_cache\_unit.cpp@{clone\_cache\_unit.cpp}!main@{main}}
+\index{main@{main}!clone\_cache\_unit.cpp@{clone\_cache\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{clone__cache__unit_8cpp_a21b5f2673aa048db2685c67ff775b880}\label{clone__cache__unit_8cpp_a21b5f2673aa048db2685c67ff775b880}} 
+\index{clone\_cache\_unit.cpp@{clone\_cache\_unit.cpp}!setCacheSize@{setCacheSize}}
+\index{setCacheSize@{setCacheSize}!clone\_cache\_unit.cpp@{clone\_cache\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{setCacheSize()}{setCacheSize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{clone__cache__unit_8cpp_ab48e93ddf296c546fd3ad7c5b17034fd}{clone\+\_\+cache}} set\+Cache\+Size (\begin{DoxyParamCaption}\item[{8}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{clone__cache__unit_8cpp_a163873148d62285904faac5a6b131503}\label{clone__cache__unit_8cpp_a163873148d62285904faac5a6b131503}} 
+\index{clone\_cache\_unit.cpp@{clone\_cache\_unit.cpp}!updateCache@{updateCache}}
+\index{updateCache@{updateCache}!clone\_cache\_unit.cpp@{clone\_cache\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{updateCache()}{updateCache()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{clone__cache__unit_8cpp_ab48e93ddf296c546fd3ad7c5b17034fd}{clone\+\_\+cache}} update\+Cache (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \mbox{\hyperlink{clone__cache__unit_8cpp_ac72d68f35ddad69baa10eee9688a80fa}{EXPECT\_EQ}}(\mbox{\hyperlink{clone__cache__unit_8cpp_ab48e93ddf296c546fd3ad7c5b17034fd}{clone\_cache}}-\/>getCurrentCacheSize(), 0)}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{clone__cache__unit_8cpp_a468102a14fab28bb8303ea654a9b891b}\label{clone__cache__unit_8cpp_a468102a14fab28bb8303ea654a9b891b}} 
+\index{clone\_cache\_unit.cpp@{clone\_cache\_unit.cpp}!clone@{clone}}
+\index{clone@{clone}!clone\_cache\_unit.cpp@{clone\_cache\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{clone}{clone}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a395d31593a673a3b0efd30ad8d2bba78}{auto}} clone = \mbox{\hyperlink{clone__cache__unit_8cpp_ab48e93ddf296c546fd3ad7c5b17034fd}{clone\+\_\+cache}}-\/$>$clone()}
+
+\mbox{\Hypertarget{clone__cache__unit_8cpp_ab48e93ddf296c546fd3ad7c5b17034fd}\label{clone__cache__unit_8cpp_ab48e93ddf296c546fd3ad7c5b17034fd}} 
+\index{clone\_cache\_unit.cpp@{clone\_cache\_unit.cpp}!clone\_cache@{clone\_cache}}
+\index{clone\_cache@{clone\_cache}!clone\_cache\_unit.cpp@{clone\_cache\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{clone\_cache}{clone\_cache}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a395d31593a673a3b0efd30ad8d2bba78}{auto}} clone\+\_\+cache = std\+::make\+\_\+shared$<$\mbox{\hyperlink{classtesseract__common_1_1CloneCache}{Clone\+Cache}}$<$\mbox{\hyperlink{classTestObject}{Test\+Object}}$>$$>$(original, 3)}
+
+\mbox{\Hypertarget{clone__cache__unit_8cpp_abb8389ebd0898bdb91b25b49a4c0a66b}\label{clone__cache__unit_8cpp_abb8389ebd0898bdb91b25b49a4c0a66b}} 
+\index{clone\_cache\_unit.cpp@{clone\_cache\_unit.cpp}!revision\_@{revision\_}}
+\index{revision\_@{revision\_}!clone\_cache\_unit.cpp@{clone\_cache\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{revision\_}{revision\_}}
+{\footnotesize\ttfamily original revision\+\_\+}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{keyword}{auto} \mbox{\hyperlink{clone__cache__unit_8cpp_a468102a14fab28bb8303ea654a9b891b}{clone}} = \mbox{\hyperlink{clone__cache__unit_8cpp_ab48e93ddf296c546fd3ad7c5b17034fd}{clone\_cache}}-\/>clone()}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{clone__cache__unit_8cpp_ab06993b9a32af9141cb8d20c1da09c79}\label{clone__cache__unit_8cpp_ab06993b9a32af9141cb8d20c1da09c79}} 
+\index{clone\_cache\_unit.cpp@{clone\_cache\_unit.cpp}!updated\_clone@{updated\_clone}}
+\index{updated\_clone@{updated\_clone}!clone\_cache\_unit.cpp@{clone\_cache\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{updated\_clone}{updated\_clone}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a395d31593a673a3b0efd30ad8d2bba78}{auto}} updated\+\_\+clone = \mbox{\hyperlink{clone__cache__unit_8cpp_ab48e93ddf296c546fd3ad7c5b17034fd}{clone\+\_\+cache}}-\/$>$\mbox{\hyperlink{clone__cache__unit_8cpp_a468102a14fab28bb8303ea654a9b891b}{clone}}()}
+
+\mbox{\Hypertarget{clone__cache__unit_8cpp_ae12bb060689094c347e4ffbadf7ec8e9}\label{clone__cache__unit_8cpp_ae12bb060689094c347e4ffbadf7ec8e9}} 
+\index{clone\_cache\_unit.cpp@{clone\_cache\_unit.cpp}!val\_1@{val\_1}}
+\index{val\_1@{val\_1}!clone\_cache\_unit.cpp@{clone\_cache\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{val\_1}{val\_1}}
+{\footnotesize\ttfamily original val\+\_\+1 = 1}
+
+\mbox{\Hypertarget{clone__cache__unit_8cpp_a16db687ab390efb5610bc8c1a9612c0d}\label{clone__cache__unit_8cpp_a16db687ab390efb5610bc8c1a9612c0d}} 
+\index{clone\_cache\_unit.cpp@{clone\_cache\_unit.cpp}!val\_2@{val\_2}}
+\index{val\_2@{val\_2}!clone\_cache\_unit.cpp@{clone\_cache\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{val\_2}{val\_2}}
+{\footnotesize\ttfamily original val\+\_\+2 = 2}
+

@@ -1,0 +1,390 @@
+\hypertarget{vhacdVHACD_8h_source}{}\doxysection{vhacd\+VHACD.\+h}
+\label{vhacdVHACD_8h_source}\index{tesseract\_collision/vhacd/include/tesseract\_collision/vhacd/inc/vhacdVHACD.h@{tesseract\_collision/vhacd/include/tesseract\_collision/vhacd/inc/vhacdVHACD.h}}
+\mbox{\hyperlink{vhacdVHACD_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* Copyright (c) 2011 Khaled Mamou (kmamou at gmail dot com)}}
+\DoxyCodeLine{2 \textcolor{comment}{All rights reserved.}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{Redistribution and use in source and binary forms, with or without modification, are permitted provided that the}}
+\DoxyCodeLine{6 \textcolor{comment}{following conditions are met:}}
+\DoxyCodeLine{7 \textcolor{comment}{}}
+\DoxyCodeLine{8 \textcolor{comment}{1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following}}
+\DoxyCodeLine{9 \textcolor{comment}{disclaimer.}}
+\DoxyCodeLine{10 \textcolor{comment}{}}
+\DoxyCodeLine{11 \textcolor{comment}{2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following}}
+\DoxyCodeLine{12 \textcolor{comment}{disclaimer in the documentation and/or other materials provided with the distribution.}}
+\DoxyCodeLine{13 \textcolor{comment}{}}
+\DoxyCodeLine{14 \textcolor{comment}{3. The names of the contributors may not be used to endorse or promote products derived from this software without}}
+\DoxyCodeLine{15 \textcolor{comment}{specific prior written permission.}}
+\DoxyCodeLine{16 \textcolor{comment}{}}
+\DoxyCodeLine{17 \textcolor{comment}{THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES,}}
+\DoxyCodeLine{18 \textcolor{comment}{INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE}}
+\DoxyCodeLine{19 \textcolor{comment}{DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,}}
+\DoxyCodeLine{20 \textcolor{comment}{SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR}}
+\DoxyCodeLine{21 \textcolor{comment}{SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,}}
+\DoxyCodeLine{22 \textcolor{comment}{WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF}}
+\DoxyCodeLine{23 \textcolor{comment}{THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{24 \textcolor{comment}{*/}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{macros_8h}{tesseract\_common/macros.h}}>}}
+\DoxyCodeLine{28 \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#ifdef OPENCL\_FOUND}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#ifdef \_\_MACH\_\_}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include <OpenCL/cl.h>}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include <CL/cl.h>}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// OPENCL\_FOUND}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{vhacdMutex_8h}{tesseract\_collision/vhacd/inc/vhacdMutex.h}}>}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{vhacdVolume_8h}{tesseract\_collision/vhacd/inc/vhacdVolume.h}}>}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{vhacdRaycastMesh_8h}{tesseract\_collision/vhacd/inc/vhacdRaycastMesh.h}}>}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#include <array>}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#define USE\_THREAD 1}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define OCL\_MIN\_NUM\_PRIMITIVES 4096}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define CH\_APP\_MIN\_NUM\_PRIMITIVES 64000}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__collision}{tesseract\_collision}}}
+\DoxyCodeLine{49 \{}
+\DoxyCodeLine{50 \textcolor{keyword}{namespace }VHACD}
+\DoxyCodeLine{51 \{}
+\DoxyCodeLine{52 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD}{VHACD}} : \textcolor{keyword}{public} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD}{IVHACD}}}
+\DoxyCodeLine{53 \{}
+\DoxyCodeLine{54 \textcolor{keyword}{public}:}
+\DoxyCodeLine{56   \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_aefb28803078126d162ddfc280f6b3e4b}{VHACD}}()}
+\DoxyCodeLine{57   \{}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#if USE\_THREAD == 1 \&\& \_OPENMP}}
+\DoxyCodeLine{59     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_abde159111d4261315552acde47077ece}{m\_ompNumProcessors}} = 2 * omp\_get\_num\_procs();}
+\DoxyCodeLine{60     omp\_set\_num\_threads(\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_abde159111d4261315552acde47077ece}{m\_ompNumProcessors}});}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#else   }\textcolor{comment}{// USE\_THREAD == 1 \&\& \_OPENMP}}
+\DoxyCodeLine{62     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_abde159111d4261315552acde47077ece}{m\_ompNumProcessors}} = 1;}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// USE\_THREAD == 1 \&\& \_OPENMP}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#ifdef CL\_VERSION\_1\_1}}
+\DoxyCodeLine{65     m\_oclWorkGroupSize = 0;}
+\DoxyCodeLine{66     m\_oclDevice = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{67     m\_oclQueue = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{68     m\_oclKernelComputePartialVolumes = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{69     m\_oclKernelComputeSum = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// CL\_VERSION\_1\_1}}
+\DoxyCodeLine{71     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_ae6cb35d36bdee18fd08b8947b7d48891}{Init}}();}
+\DoxyCodeLine{72   \}}
+\DoxyCodeLine{73   uint32\_t \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a8e304ee46f974e621ec0751093c658b5}{GetNConvexHulls}}()\textcolor{keyword}{ const override }\{ \textcolor{keywordflow}{return} (uint32\_t)\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_aa55709991616e116710ba56e52dbeae9}{m\_convexHulls}}.Size(); \}}
+\DoxyCodeLine{74   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_aa0065955820f10836abc7f2b15c85b98}{Cancel}}()\textcolor{keyword}{ override }\{ \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a7423a51c9d998f9614187650f2c7b33c}{SetCancel}}(\textcolor{keyword}{true}); \}}
+\DoxyCodeLine{75   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a6dde9e721a7e8f97ed9cc44a3b641781}{GetConvexHull}}(uint32\_t index, \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1ConvexHull}{ConvexHull}}\& ch)\textcolor{keyword}{ const override}}
+\DoxyCodeLine{76 \textcolor{keyword}{  }\{}
+\DoxyCodeLine{77     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Mesh}{Mesh}}* \mbox{\hyperlink{tesseract__geometry__unit_8cpp_ae8d539a4d41d4864a6a5452e33eebc31}{mesh}} = \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_aa55709991616e116710ba56e52dbeae9}{m\_convexHulls}}[index];}
+\DoxyCodeLine{78     ch.\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1ConvexHull_abc345d16473ccb4863f7468de27ee0c4}{m\_nPoints}} = (uint32\_t)\mbox{\hyperlink{tesseract__geometry__unit_8cpp_ae8d539a4d41d4864a6a5452e33eebc31}{mesh}}-\/>GetNPoints();}
+\DoxyCodeLine{79     ch.\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1ConvexHull_a0a0f7d05ae66c7f35c642f3cc19501f8}{m\_nTriangles}} = (uint32\_t)\mbox{\hyperlink{tesseract__geometry__unit_8cpp_ae8d539a4d41d4864a6a5452e33eebc31}{mesh}}-\/>GetNTriangles();}
+\DoxyCodeLine{80     ch.\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1ConvexHull_aac6345c87471ca2aaf97a38bd0df56ea}{m\_points}} = \mbox{\hyperlink{tesseract__geometry__unit_8cpp_ae8d539a4d41d4864a6a5452e33eebc31}{mesh}}-\/>GetPoints();}
+\DoxyCodeLine{81     ch.\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1ConvexHull_af50a40f7c311ea51faa38696566a9b03}{m\_triangles}} = (uint32\_t*)\mbox{\hyperlink{tesseract__geometry__unit_8cpp_ae8d539a4d41d4864a6a5452e33eebc31}{mesh}}-\/>GetTriangles();}
+\DoxyCodeLine{82     ch.\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1ConvexHull_a1021ca84fb18805689d55f1a9096c1fc}{m\_volume}} = \mbox{\hyperlink{tesseract__geometry__unit_8cpp_ae8d539a4d41d4864a6a5452e33eebc31}{mesh}}-\/>ComputeVolume();}
+\DoxyCodeLine{83     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Vec3}{Vec3<double>}}\& center = \mbox{\hyperlink{tesseract__geometry__unit_8cpp_ae8d539a4d41d4864a6a5452e33eebc31}{mesh}}-\/>ComputeCenter();}
+\DoxyCodeLine{84     ch.\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1ConvexHull_ae35c2bef4906c0d14b252e262ddfee32}{m\_center}}[0] = center.\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Vec3_a679b4283a0370819ce9943e2cf74175b}{X}}();}
+\DoxyCodeLine{85     ch.\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1ConvexHull_ae35c2bef4906c0d14b252e262ddfee32}{m\_center}}[1] = center.\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Vec3_a043dadb7674d6ad41ac9ed26cb7dfb93}{Y}}();}
+\DoxyCodeLine{86     ch.\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1ConvexHull_ae35c2bef4906c0d14b252e262ddfee32}{m\_center}}[2] = center.\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Vec3_ac711d38b3804480158208ee752e77713}{Z}}();}
+\DoxyCodeLine{87   \}}
+\DoxyCodeLine{88   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_af260536d900c302113e876657ca5e694}{Clean}}()\textcolor{keyword}{ override}}
+\DoxyCodeLine{89 \textcolor{keyword}{  }\{}
+\DoxyCodeLine{90     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a47fe798bf9aa8b03d794b2dd14cf89fe}{mRaycastMesh}})}
+\DoxyCodeLine{91     \{}
+\DoxyCodeLine{92       \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a47fe798bf9aa8b03d794b2dd14cf89fe}{mRaycastMesh}}-\/>\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1RaycastMesh_a209d95fb589073219ba0d9c59a145f02}{release}}();}
+\DoxyCodeLine{93       \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a47fe798bf9aa8b03d794b2dd14cf89fe}{mRaycastMesh}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{94     \}}
+\DoxyCodeLine{95     \textcolor{keyword}{delete} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a4f3d2f032daf5e14256d4b3a9f4e806b}{m\_volume}};}
+\DoxyCodeLine{96     \textcolor{keyword}{delete} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_ace36a35b09a2baf26941b704090a41e9}{m\_pset}};}
+\DoxyCodeLine{97     \textcolor{keywordtype}{size\_t} nCH = \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_aa55709991616e116710ba56e52dbeae9}{m\_convexHulls}}.Size();}
+\DoxyCodeLine{98     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} p = 0; p < nCH; ++p)}
+\DoxyCodeLine{99     \{}
+\DoxyCodeLine{100       \textcolor{keyword}{delete} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_aa55709991616e116710ba56e52dbeae9}{m\_convexHulls}}[p];}
+\DoxyCodeLine{101     \}}
+\DoxyCodeLine{102     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_aa55709991616e116710ba56e52dbeae9}{m\_convexHulls}}.Clear();}
+\DoxyCodeLine{103     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_ae6cb35d36bdee18fd08b8947b7d48891}{Init}}();}
+\DoxyCodeLine{104   \}}
+\DoxyCodeLine{105   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a53159f616b33604d24932b0d3c269e61}{Release}}()\textcolor{keyword}{ override }\{ \textcolor{keyword}{delete} \textcolor{keyword}{this}; \}}
+\DoxyCodeLine{106   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a76d500131a5a314b964722f4d116d14b}{Compute}}(\textcolor{keywordtype}{float} \textcolor{keyword}{const}* points,}
+\DoxyCodeLine{107                uint32\_t nPoints,}
+\DoxyCodeLine{108                uint32\_t \textcolor{keyword}{const}* triangles,}
+\DoxyCodeLine{109                uint32\_t nTriangles,}
+\DoxyCodeLine{110                \textcolor{keyword}{const} Parameters\& params) \textcolor{keyword}{override};}
+\DoxyCodeLine{111   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a76d500131a5a314b964722f4d116d14b}{Compute}}(\textcolor{keywordtype}{double} \textcolor{keyword}{const}* points,}
+\DoxyCodeLine{112                uint32\_t nPoints,}
+\DoxyCodeLine{113                uint32\_t \textcolor{keyword}{const}* triangles,}
+\DoxyCodeLine{114                uint32\_t nTriangles,}
+\DoxyCodeLine{115                \textcolor{keyword}{const} Parameters\& params) \textcolor{keyword}{override};}
+\DoxyCodeLine{116   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a233d7265a0a0a6e75c7f8492ff839392}{OCLInit}}(\textcolor{keywordtype}{void} \textcolor{keyword}{const}* oclDevice, \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1IUserLogger}{VHACD::IVHACD::IUserLogger}} \textcolor{keyword}{const}* logger = \textcolor{keyword}{nullptr}) \textcolor{keyword}{override};}
+\DoxyCodeLine{117   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a705fcd3b651b8a0c9c21a0af54ed3e7d}{OCLRelease}}(IUserLogger \textcolor{keyword}{const}* logger = \textcolor{keyword}{nullptr}) \textcolor{keyword}{override};}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119   \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a5841546f0eabfa381383b94c20759f77}{ComputeCenterOfMass}}(std::array<double, 3>\& centerOfMass) \textcolor{keyword}{const override};}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121 \textcolor{keyword}{private}:}
+\DoxyCodeLine{122   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a7423a51c9d998f9614187650f2c7b33c}{SetCancel}}(\textcolor{keywordtype}{bool} cancel)}
+\DoxyCodeLine{123   \{}
+\DoxyCodeLine{124     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a719255b711264d94832c05d41b8f9e2b}{m\_cancelMutex}}.\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Mutex_a9598e8ebf5c604cf2f5abc07199a0fe0}{Lock}}();}
+\DoxyCodeLine{125     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a697690df8525298fa7ead72c24fb5375}{m\_cancel}} = cancel;}
+\DoxyCodeLine{126     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a719255b711264d94832c05d41b8f9e2b}{m\_cancelMutex}}.\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Mutex_a8f23a9f544cce57ed28c7bf3e64e64b2}{Unlock}}();}
+\DoxyCodeLine{127   \}}
+\DoxyCodeLine{128   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_ad08f7ec9d3489add6fb70181e0af5ff6}{GetCancel}}()}
+\DoxyCodeLine{129   \{}
+\DoxyCodeLine{130     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a719255b711264d94832c05d41b8f9e2b}{m\_cancelMutex}}.\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Mutex_a9598e8ebf5c604cf2f5abc07199a0fe0}{Lock}}();}
+\DoxyCodeLine{131     \textcolor{keywordtype}{bool} cancel = \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a697690df8525298fa7ead72c24fb5375}{m\_cancel}};}
+\DoxyCodeLine{132     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a719255b711264d94832c05d41b8f9e2b}{m\_cancelMutex}}.\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Mutex_a8f23a9f544cce57ed28c7bf3e64e64b2}{Unlock}}();}
+\DoxyCodeLine{133     \textcolor{keywordflow}{return} cancel;}
+\DoxyCodeLine{134   \}}
+\DoxyCodeLine{135   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a7709d5e4f458a52fa243bb75776b014d}{Update}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} stageProgress, \textcolor{keyword}{const} \textcolor{keywordtype}{double} operationProgress, \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1Parameters}{Parameters}}\& params)}
+\DoxyCodeLine{136   \{}
+\DoxyCodeLine{137     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_ad4f19cb97e7d3c66481e7bd98c1ebbc1}{m\_stageProgress}} = stageProgress;}
+\DoxyCodeLine{138     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a7ff0f1b582fe03a8312b092cb6dc1784}{m\_operationProgress}} = operationProgress;}
+\DoxyCodeLine{139     \textcolor{keywordflow}{if} (params.\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1Parameters_aa4182adf53126ba05febbcf06cd6779d}{m\_callback}})}
+\DoxyCodeLine{140     \{}
+\DoxyCodeLine{141       params.\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1Parameters_aa4182adf53126ba05febbcf06cd6779d}{m\_callback}}-\/>\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1IUserCallback_a5fb3f21edc9c4d0600f87d694df51b43}{Update}}(}
+\DoxyCodeLine{142           \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_abf4a863d7c4dfcd757fcd5e99511c985}{m\_overallProgress}}, \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_ad4f19cb97e7d3c66481e7bd98c1ebbc1}{m\_stageProgress}}, \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a7ff0f1b582fe03a8312b092cb6dc1784}{m\_operationProgress}}, \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_ad2b50bd138af5f639e4f101e28f1140c}{m\_stage}}.c\_str(), \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a6ed09e92c5bd1bf09fae48ce7d6f346c}{m\_operation}}.c\_str());}
+\DoxyCodeLine{143     \}}
+\DoxyCodeLine{144   \}}
+\DoxyCodeLine{145   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_ae6cb35d36bdee18fd08b8947b7d48891}{Init}}()}
+\DoxyCodeLine{146   \{}
+\DoxyCodeLine{147     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a47fe798bf9aa8b03d794b2dd14cf89fe}{mRaycastMesh}})}
+\DoxyCodeLine{148     \{}
+\DoxyCodeLine{149       \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a47fe798bf9aa8b03d794b2dd14cf89fe}{mRaycastMesh}}-\/>\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1RaycastMesh_a209d95fb589073219ba0d9c59a145f02}{release}}();}
+\DoxyCodeLine{150       \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a47fe798bf9aa8b03d794b2dd14cf89fe}{mRaycastMesh}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{151     \}}
+\DoxyCodeLine{152     memset(\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a3c7dff4f0af3caf395223ff564d52302}{m\_rot}}, 0, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}) * 9);}
+\DoxyCodeLine{153     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a1208f1e90ea933bd1f48399dd97859ce}{m\_dim}} = 64;}
+\DoxyCodeLine{154     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a4f3d2f032daf5e14256d4b3a9f4e806b}{m\_volume}} = 0;}
+\DoxyCodeLine{155     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a654a4b1392fbc7ddc1e57d243f04b2ee}{m\_volumeCH0}} = 0.0;}
+\DoxyCodeLine{156     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_ace36a35b09a2baf26941b704090a41e9}{m\_pset}} = 0;}
+\DoxyCodeLine{157     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_abf4a863d7c4dfcd757fcd5e99511c985}{m\_overallProgress}} = 0.0;}
+\DoxyCodeLine{158     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_ad4f19cb97e7d3c66481e7bd98c1ebbc1}{m\_stageProgress}} = 0.0;}
+\DoxyCodeLine{159     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a7ff0f1b582fe03a8312b092cb6dc1784}{m\_operationProgress}} = 0.0;}
+\DoxyCodeLine{160     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_ad2b50bd138af5f639e4f101e28f1140c}{m\_stage}} = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{161     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a6ed09e92c5bd1bf09fae48ce7d6f346c}{m\_operation}} = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{162     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_aa8ae937f9f9b31e113907fbcdb6d5f84}{m\_barycenter}}[0] = \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_aa8ae937f9f9b31e113907fbcdb6d5f84}{m\_barycenter}}[1] = \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_aa8ae937f9f9b31e113907fbcdb6d5f84}{m\_barycenter}}[2] = 0.0;}
+\DoxyCodeLine{163     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a3c7dff4f0af3caf395223ff564d52302}{m\_rot}}[0][0] = \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a3c7dff4f0af3caf395223ff564d52302}{m\_rot}}[1][1] = \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a3c7dff4f0af3caf395223ff564d52302}{m\_rot}}[2][2] = 1.0;}
+\DoxyCodeLine{164     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a7423a51c9d998f9614187650f2c7b33c}{SetCancel}}(\textcolor{keyword}{false});}
+\DoxyCodeLine{165   \}}
+\DoxyCodeLine{166   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_aaf5f49a3091fdfaa8493dc6280c233ac}{ComputePrimitiveSet}}(\textcolor{keyword}{const} Parameters\& params);}
+\DoxyCodeLine{167   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_abc26a7a09bd91d3aaa048402cda1b1fe}{ComputeACD}}(\textcolor{keyword}{const} Parameters\& params);}
+\DoxyCodeLine{168   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_ade5fa648e8c3a13f9d52c802c4df7ce8}{MergeConvexHulls}}(\textcolor{keyword}{const} Parameters\& params);}
+\DoxyCodeLine{169   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_aebda68eb8828da8f4bdc16eab9e39dfb}{SimplifyConvexHull}}(\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Mesh}{Mesh}}* \textcolor{keyword}{const} ch, \textcolor{keyword}{const} \textcolor{keywordtype}{size\_t} nvertices, \textcolor{keyword}{const} \textcolor{keywordtype}{double} minVolume);}
+\DoxyCodeLine{170   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a680dfe5d573014668d4e9fe7e9b8b52c}{SimplifyConvexHulls}}(\textcolor{keyword}{const} Parameters\& params);}
+\DoxyCodeLine{171   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_ae84a99890f36ae6188b75b8478918d90}{ComputeBestClippingPlane}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1PrimitiveSet}{PrimitiveSet}}* inputPSet,}
+\DoxyCodeLine{172                                 \textcolor{keyword}{const} \textcolor{keywordtype}{double} volume,}
+\DoxyCodeLine{173                                 \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray}{SArray<Plane>}}\& planes,}
+\DoxyCodeLine{174                                 \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Vec3}{Vec3<double>}}\& preferredCuttingDirection,}
+\DoxyCodeLine{175                                 \textcolor{keyword}{const} \textcolor{keywordtype}{double} w,}
+\DoxyCodeLine{176                                 \textcolor{keyword}{const} \textcolor{keywordtype}{double} alpha,}
+\DoxyCodeLine{177                                 \textcolor{keyword}{const} \textcolor{keywordtype}{double} beta,}
+\DoxyCodeLine{178                                 \textcolor{keyword}{const} int32\_t convexhullDownsampling,}
+\DoxyCodeLine{179                                 \textcolor{keyword}{const} \textcolor{keywordtype}{double} progress0,}
+\DoxyCodeLine{180                                 \textcolor{keyword}{const} \textcolor{keywordtype}{double} progress1,}
+\DoxyCodeLine{181                                 \mbox{\hyperlink{structtesseract__collision_1_1VHACD_1_1Plane}{Plane}}\& bestPlane,}
+\DoxyCodeLine{182                                 \textcolor{keywordtype}{double}\& minConcavity,}
+\DoxyCodeLine{183                                 \textcolor{keyword}{const} Parameters\& params);}
+\DoxyCodeLine{184   \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{185   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_aced7e7858030bc8ec46841d94153eaa6}{AlignMesh}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{T}}* \textcolor{keyword}{const} points,}
+\DoxyCodeLine{186                  \textcolor{keyword}{const} uint32\_t stridePoints,}
+\DoxyCodeLine{187                  \textcolor{keyword}{const} uint32\_t nPoints,}
+\DoxyCodeLine{188                  \textcolor{keyword}{const} int32\_t* \textcolor{keyword}{const} triangles,}
+\DoxyCodeLine{189                  \textcolor{keyword}{const} uint32\_t strideTriangles,}
+\DoxyCodeLine{190                  \textcolor{keyword}{const} uint32\_t nTriangles,}
+\DoxyCodeLine{191                  \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1Parameters}{Parameters}}\& params)}
+\DoxyCodeLine{192   \{}
+\DoxyCodeLine{193     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_ad08f7ec9d3489add6fb70181e0af5ff6}{GetCancel}}() || !params.\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1Parameters_a3d94569e725df537f9732fd24ad98b2a}{m\_pca}})}
+\DoxyCodeLine{194     \{}
+\DoxyCodeLine{195       \textcolor{keywordflow}{return};}
+\DoxyCodeLine{196     \}}
+\DoxyCodeLine{197     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_aa0beb1214e4e0d0d19f0dbe53ab93b7b}{m\_timer}}.\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Timer_ab9517b7be9af5fbba4cc1e3c1ed01c8c}{Tic}}();}
+\DoxyCodeLine{198 }
+\DoxyCodeLine{199     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_ad2b50bd138af5f639e4f101e28f1140c}{m\_stage}} = \textcolor{stringliteral}{"{}Align mesh"{}};}
+\DoxyCodeLine{200     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a6ed09e92c5bd1bf09fae48ce7d6f346c}{m\_operation}} = \textcolor{stringliteral}{"{}Voxelization"{}};}
+\DoxyCodeLine{201 }
+\DoxyCodeLine{202     std::ostringstream msg;}
+\DoxyCodeLine{203     \textcolor{keywordflow}{if} (params.\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1Parameters_a11955bc9ca61fb95283ad844641f1f48}{m\_logger}})}
+\DoxyCodeLine{204     \{}
+\DoxyCodeLine{205       msg << \textcolor{stringliteral}{"{}+ "{}} << \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_ad2b50bd138af5f639e4f101e28f1140c}{m\_stage}} << std::endl;}
+\DoxyCodeLine{206       params.\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1Parameters_a11955bc9ca61fb95283ad844641f1f48}{m\_logger}}-\/>\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1IUserLogger_ac8f68b7e7c22dc17e18dcd843f43a1e0}{Log}}(msg.str().c\_str());}
+\DoxyCodeLine{207     \}}
+\DoxyCodeLine{208 }
+\DoxyCodeLine{209     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a7709d5e4f458a52fa243bb75776b014d}{Update}}(0.0, 0.0, params);}
+\DoxyCodeLine{210     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_ad08f7ec9d3489add6fb70181e0af5ff6}{GetCancel}}())}
+\DoxyCodeLine{211     \{}
+\DoxyCodeLine{212       \textcolor{keywordflow}{return};}
+\DoxyCodeLine{213     \}}
+\DoxyCodeLine{214     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a1208f1e90ea933bd1f48399dd97859ce}{m\_dim}} = (size\_t)(pow((\textcolor{keywordtype}{double})params.\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1Parameters_a8fd8119ffd1427464918afdb3013585a}{m\_resolution}}, 1.0 / 3.0) + 0.5);}
+\DoxyCodeLine{215     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Volume}{Volume}} volume;}
+\DoxyCodeLine{216     volume.\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Volume_a118bbbebbecdeacc390292193f9bc660}{Voxelize}}(points, stridePoints, nPoints, triangles, strideTriangles, nTriangles, \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a1208f1e90ea933bd1f48399dd97859ce}{m\_dim}}, \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_aa8ae937f9f9b31e113907fbcdb6d5f84}{m\_barycenter}}, \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a3c7dff4f0af3caf395223ff564d52302}{m\_rot}});}
+\DoxyCodeLine{217     \textcolor{keywordtype}{size\_t} n = volume.\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Volume_a00af05ebb4e70c034e538c63dddcc238}{GetNPrimitivesOnSurf}}() + volume.\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Volume_ab35f34f00f6071110a2945f3ad16ba50}{GetNPrimitivesInsideSurf}}();}
+\DoxyCodeLine{218     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a7709d5e4f458a52fa243bb75776b014d}{Update}}(50.0, 100.0, params);}
+\DoxyCodeLine{219 }
+\DoxyCodeLine{220     \textcolor{keywordflow}{if} (params.\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1Parameters_a11955bc9ca61fb95283ad844641f1f48}{m\_logger}})}
+\DoxyCodeLine{221     \{}
+\DoxyCodeLine{222       msg.str(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{223       msg << \textcolor{stringliteral}{"{}\(\backslash\)t dim = "{}} << \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a1208f1e90ea933bd1f48399dd97859ce}{m\_dim}} << \textcolor{stringliteral}{"{}\(\backslash\)t-\/> "{}} << n << \textcolor{stringliteral}{"{} voxels"{}} << std::endl;}
+\DoxyCodeLine{224       params.\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1Parameters_a11955bc9ca61fb95283ad844641f1f48}{m\_logger}}-\/>\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1IUserLogger_ac8f68b7e7c22dc17e18dcd843f43a1e0}{Log}}(msg.str().c\_str());}
+\DoxyCodeLine{225     \}}
+\DoxyCodeLine{226     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_ad08f7ec9d3489add6fb70181e0af5ff6}{GetCancel}}())}
+\DoxyCodeLine{227     \{}
+\DoxyCodeLine{228       \textcolor{keywordflow}{return};}
+\DoxyCodeLine{229     \}}
+\DoxyCodeLine{230     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a6ed09e92c5bd1bf09fae48ce7d6f346c}{m\_operation}} = \textcolor{stringliteral}{"{}PCA"{}};}
+\DoxyCodeLine{231     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a7709d5e4f458a52fa243bb75776b014d}{Update}}(50.0, 0.0, params);}
+\DoxyCodeLine{232     volume.\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Volume_a3500e53e7a368f45ae4ad2ed61711fce}{AlignToPrincipalAxes}}(\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a3c7dff4f0af3caf395223ff564d52302}{m\_rot}});}
+\DoxyCodeLine{233     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_abf4a863d7c4dfcd757fcd5e99511c985}{m\_overallProgress}} = 1.0;}
+\DoxyCodeLine{234     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a7709d5e4f458a52fa243bb75776b014d}{Update}}(100.0, 100.0, params);}
+\DoxyCodeLine{235 }
+\DoxyCodeLine{236     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_aa0beb1214e4e0d0d19f0dbe53ab93b7b}{m\_timer}}.\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Timer_aabcb23d9e93e48ac3112c9ed93860a32}{Toc}}();}
+\DoxyCodeLine{237     \textcolor{keywordflow}{if} (params.\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1Parameters_a11955bc9ca61fb95283ad844641f1f48}{m\_logger}})}
+\DoxyCodeLine{238     \{}
+\DoxyCodeLine{239       msg.str(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{240       msg << \textcolor{stringliteral}{"{}\(\backslash\)t time "{}} << \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_aa0beb1214e4e0d0d19f0dbe53ab93b7b}{m\_timer}}.\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Timer_a278ccda8973d26e1125d07df1c8152f0}{GetElapsedTime}}() / 1000.0 << \textcolor{stringliteral}{"{}s"{}} << std::endl;}
+\DoxyCodeLine{241       params.\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1Parameters_a11955bc9ca61fb95283ad844641f1f48}{m\_logger}}-\/>\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1IUserLogger_ac8f68b7e7c22dc17e18dcd843f43a1e0}{Log}}(msg.str().c\_str());}
+\DoxyCodeLine{242     \}}
+\DoxyCodeLine{243   \}}
+\DoxyCodeLine{244   \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{245   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a5cabf81f93bfe5a114b5229fba393ac1}{VoxelizeMesh}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{T}}* \textcolor{keyword}{const} points,}
+\DoxyCodeLine{246                     \textcolor{keyword}{const} uint32\_t stridePoints,}
+\DoxyCodeLine{247                     \textcolor{keyword}{const} uint32\_t nPoints,}
+\DoxyCodeLine{248                     \textcolor{keyword}{const} int32\_t* \textcolor{keyword}{const} triangles,}
+\DoxyCodeLine{249                     \textcolor{keyword}{const} uint32\_t strideTriangles,}
+\DoxyCodeLine{250                     \textcolor{keyword}{const} uint32\_t nTriangles,}
+\DoxyCodeLine{251                     \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1Parameters}{Parameters}}\& params)}
+\DoxyCodeLine{252   \{}
+\DoxyCodeLine{253     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_ad08f7ec9d3489add6fb70181e0af5ff6}{GetCancel}}())}
+\DoxyCodeLine{254     \{}
+\DoxyCodeLine{255       \textcolor{keywordflow}{return};}
+\DoxyCodeLine{256     \}}
+\DoxyCodeLine{257 }
+\DoxyCodeLine{258     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_aa0beb1214e4e0d0d19f0dbe53ab93b7b}{m\_timer}}.\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Timer_ab9517b7be9af5fbba4cc1e3c1ed01c8c}{Tic}}();}
+\DoxyCodeLine{259     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_ad2b50bd138af5f639e4f101e28f1140c}{m\_stage}} = \textcolor{stringliteral}{"{}Voxelization"{}};}
+\DoxyCodeLine{260 }
+\DoxyCodeLine{261     std::ostringstream msg;}
+\DoxyCodeLine{262     \textcolor{keywordflow}{if} (params.\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1Parameters_a11955bc9ca61fb95283ad844641f1f48}{m\_logger}})}
+\DoxyCodeLine{263     \{}
+\DoxyCodeLine{264       msg << \textcolor{stringliteral}{"{}+ "{}} << \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_ad2b50bd138af5f639e4f101e28f1140c}{m\_stage}} << std::endl;}
+\DoxyCodeLine{265       params.\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1Parameters_a11955bc9ca61fb95283ad844641f1f48}{m\_logger}}-\/>\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1IUserLogger_ac8f68b7e7c22dc17e18dcd843f43a1e0}{Log}}(msg.str().c\_str());}
+\DoxyCodeLine{266     \}}
+\DoxyCodeLine{267 }
+\DoxyCodeLine{268     \textcolor{keyword}{delete} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a4f3d2f032daf5e14256d4b3a9f4e806b}{m\_volume}};}
+\DoxyCodeLine{269     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a4f3d2f032daf5e14256d4b3a9f4e806b}{m\_volume}} = 0;}
+\DoxyCodeLine{270     int32\_t iteration = 0;}
+\DoxyCodeLine{271     \textcolor{keyword}{const} int32\_t maxIteration = 5;}
+\DoxyCodeLine{272     \textcolor{keywordtype}{double} progress = 0.0;}
+\DoxyCodeLine{273     \textcolor{keywordflow}{while} (iteration++ < maxIteration \&\& !\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a697690df8525298fa7ead72c24fb5375}{m\_cancel}})}
+\DoxyCodeLine{274     \{}
+\DoxyCodeLine{275       msg.str(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{276       msg << \textcolor{stringliteral}{"{}Iteration "{}} << iteration;}
+\DoxyCodeLine{277       \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a6ed09e92c5bd1bf09fae48ce7d6f346c}{m\_operation}} = msg.str();}
+\DoxyCodeLine{278 }
+\DoxyCodeLine{279       progress = iteration * 100.0 / maxIteration;}
+\DoxyCodeLine{280       \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a7709d5e4f458a52fa243bb75776b014d}{Update}}(progress, 0.0, params);}
+\DoxyCodeLine{281 }
+\DoxyCodeLine{282       \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a4f3d2f032daf5e14256d4b3a9f4e806b}{m\_volume}} = \textcolor{keyword}{new} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Volume}{Volume}};}
+\DoxyCodeLine{283       \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a4f3d2f032daf5e14256d4b3a9f4e806b}{m\_volume}}-\/>\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Volume_a118bbbebbecdeacc390292193f9bc660}{Voxelize}}(}
+\DoxyCodeLine{284           points, stridePoints, nPoints, triangles, strideTriangles, nTriangles, \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a1208f1e90ea933bd1f48399dd97859ce}{m\_dim}}, \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_aa8ae937f9f9b31e113907fbcdb6d5f84}{m\_barycenter}}, \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a3c7dff4f0af3caf395223ff564d52302}{m\_rot}});}
+\DoxyCodeLine{285 }
+\DoxyCodeLine{286       \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a7709d5e4f458a52fa243bb75776b014d}{Update}}(progress, 100.0, params);}
+\DoxyCodeLine{287 }
+\DoxyCodeLine{288       \textcolor{keywordtype}{size\_t} n = \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a4f3d2f032daf5e14256d4b3a9f4e806b}{m\_volume}}-\/>\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Volume_a00af05ebb4e70c034e538c63dddcc238}{GetNPrimitivesOnSurf}}() + \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a4f3d2f032daf5e14256d4b3a9f4e806b}{m\_volume}}-\/>\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Volume_ab35f34f00f6071110a2945f3ad16ba50}{GetNPrimitivesInsideSurf}}();}
+\DoxyCodeLine{289       \textcolor{keywordflow}{if} (params.\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1Parameters_a11955bc9ca61fb95283ad844641f1f48}{m\_logger}})}
+\DoxyCodeLine{290       \{}
+\DoxyCodeLine{291         msg.str(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{292         msg << \textcolor{stringliteral}{"{}\(\backslash\)t dim = "{}} << \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a1208f1e90ea933bd1f48399dd97859ce}{m\_dim}} << \textcolor{stringliteral}{"{}\(\backslash\)t-\/> "{}} << n << \textcolor{stringliteral}{"{} voxels"{}} << std::endl;}
+\DoxyCodeLine{293         params.\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1Parameters_a11955bc9ca61fb95283ad844641f1f48}{m\_logger}}-\/>\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1IUserLogger_ac8f68b7e7c22dc17e18dcd843f43a1e0}{Log}}(msg.str().c\_str());}
+\DoxyCodeLine{294       \}}
+\DoxyCodeLine{295 }
+\DoxyCodeLine{296       \textcolor{keywordtype}{double} a = pow((\textcolor{keywordtype}{double})(params.\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1Parameters_a8fd8119ffd1427464918afdb3013585a}{m\_resolution}}) / n, 0.33);}
+\DoxyCodeLine{297       \textcolor{keywordtype}{size\_t} dim\_next = (size\_t)(\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a1208f1e90ea933bd1f48399dd97859ce}{m\_dim}} * a + 0.5);}
+\DoxyCodeLine{298       \textcolor{keywordflow}{if} (n < params.\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1Parameters_a8fd8119ffd1427464918afdb3013585a}{m\_resolution}} \&\& iteration < maxIteration \&\&}
+\DoxyCodeLine{299           \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a4f3d2f032daf5e14256d4b3a9f4e806b}{m\_volume}}-\/>\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Volume_a00af05ebb4e70c034e538c63dddcc238}{GetNPrimitivesOnSurf}}() < params.\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1Parameters_a8fd8119ffd1427464918afdb3013585a}{m\_resolution}} / 8 \&\& \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a1208f1e90ea933bd1f48399dd97859ce}{m\_dim}} != dim\_next)}
+\DoxyCodeLine{300       \{}
+\DoxyCodeLine{301         \textcolor{keyword}{delete} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a4f3d2f032daf5e14256d4b3a9f4e806b}{m\_volume}};}
+\DoxyCodeLine{302         \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a4f3d2f032daf5e14256d4b3a9f4e806b}{m\_volume}} = 0;}
+\DoxyCodeLine{303         \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a1208f1e90ea933bd1f48399dd97859ce}{m\_dim}} = dim\_next;}
+\DoxyCodeLine{304       \}}
+\DoxyCodeLine{305       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{306       \{}
+\DoxyCodeLine{307         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{308       \}}
+\DoxyCodeLine{309     \}}
+\DoxyCodeLine{310     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_abf4a863d7c4dfcd757fcd5e99511c985}{m\_overallProgress}} = 10.0;}
+\DoxyCodeLine{311     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a7709d5e4f458a52fa243bb75776b014d}{Update}}(100.0, 100.0, params);}
+\DoxyCodeLine{312 }
+\DoxyCodeLine{313     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_aa0beb1214e4e0d0d19f0dbe53ab93b7b}{m\_timer}}.\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Timer_aabcb23d9e93e48ac3112c9ed93860a32}{Toc}}();}
+\DoxyCodeLine{314     \textcolor{keywordflow}{if} (params.\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1Parameters_a11955bc9ca61fb95283ad844641f1f48}{m\_logger}})}
+\DoxyCodeLine{315     \{}
+\DoxyCodeLine{316       msg.str(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{317       msg << \textcolor{stringliteral}{"{}\(\backslash\)t time "{}} << \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_aa0beb1214e4e0d0d19f0dbe53ab93b7b}{m\_timer}}.\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Timer_a278ccda8973d26e1125d07df1c8152f0}{GetElapsedTime}}() / 1000.0 << \textcolor{stringliteral}{"{}s"{}} << std::endl;}
+\DoxyCodeLine{318       params.\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1Parameters_a11955bc9ca61fb95283ad844641f1f48}{m\_logger}}-\/>\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1IUserLogger_ac8f68b7e7c22dc17e18dcd843f43a1e0}{Log}}(msg.str().c\_str());}
+\DoxyCodeLine{319     \}}
+\DoxyCodeLine{320   \}}
+\DoxyCodeLine{321   \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{322   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_abd3b1e194c371d9116cf2d0cbc3d4889}{ComputeACD}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{T}}* \textcolor{keyword}{const} points,}
+\DoxyCodeLine{323                   \textcolor{keyword}{const} uint32\_t nPoints,}
+\DoxyCodeLine{324                   \textcolor{keyword}{const} uint32\_t* \textcolor{keyword}{const} triangles,}
+\DoxyCodeLine{325                   \textcolor{keyword}{const} uint32\_t nTriangles,}
+\DoxyCodeLine{326                   \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1Parameters}{Parameters}}\& params)}
+\DoxyCodeLine{327   \{}
+\DoxyCodeLine{328     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_ae6cb35d36bdee18fd08b8947b7d48891}{Init}}();}
+\DoxyCodeLine{329     \textcolor{keywordflow}{if} (params.\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1Parameters_a38e3cbfd353353d58ab6815a8ff3c8a3}{m\_projectHullVertices}})}
+\DoxyCodeLine{330     \{}
+\DoxyCodeLine{331       \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a47fe798bf9aa8b03d794b2dd14cf89fe}{mRaycastMesh}} = \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1RaycastMesh_a8606b61fbbd5e62a7571688bdce2a91e}{RaycastMesh::createRaycastMesh}}(nPoints, points, nTriangles, (\textcolor{keyword}{const} uint32\_t*)triangles);}
+\DoxyCodeLine{332     \}}
+\DoxyCodeLine{333     \textcolor{keywordflow}{if} (params.\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1Parameters_ab3123e37ceccd223c0a8f2e25afb0115}{m\_oclAcceleration}})}
+\DoxyCodeLine{334     \{}
+\DoxyCodeLine{335       \textcolor{comment}{// build kernels}}
+\DoxyCodeLine{336     \}}
+\DoxyCodeLine{337     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_aced7e7858030bc8ec46841d94153eaa6}{AlignMesh}}(points, 3, nPoints, (int32\_t*)triangles, 3, nTriangles, params);}
+\DoxyCodeLine{338     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a5cabf81f93bfe5a114b5229fba393ac1}{VoxelizeMesh}}(points, 3, nPoints, (int32\_t*)triangles, 3, nTriangles, params);}
+\DoxyCodeLine{339     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_aaf5f49a3091fdfaa8493dc6280c233ac}{ComputePrimitiveSet}}(params);}
+\DoxyCodeLine{340     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_abc26a7a09bd91d3aaa048402cda1b1fe}{ComputeACD}}(params);}
+\DoxyCodeLine{341     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_ade5fa648e8c3a13f9d52c802c4df7ce8}{MergeConvexHulls}}(params);}
+\DoxyCodeLine{342     \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a680dfe5d573014668d4e9fe7e9b8b52c}{SimplifyConvexHulls}}(params);}
+\DoxyCodeLine{343     \textcolor{keywordflow}{if} (params.\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1IVHACD_1_1Parameters_ab3123e37ceccd223c0a8f2e25afb0115}{m\_oclAcceleration}})}
+\DoxyCodeLine{344     \{}
+\DoxyCodeLine{345       \textcolor{comment}{// Release kernels}}
+\DoxyCodeLine{346     \}}
+\DoxyCodeLine{347     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_ad08f7ec9d3489add6fb70181e0af5ff6}{GetCancel}}())}
+\DoxyCodeLine{348     \{}
+\DoxyCodeLine{349       \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_af260536d900c302113e876657ca5e694}{Clean}}();}
+\DoxyCodeLine{350       \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{351     \}}
+\DoxyCodeLine{352     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{353   \}}
+\DoxyCodeLine{354 }
+\DoxyCodeLine{355 \textcolor{keyword}{private}:}
+\DoxyCodeLine{356   \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1RaycastMesh}{RaycastMesh}}* \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a47fe798bf9aa8b03d794b2dd14cf89fe}{mRaycastMesh}}\{ \textcolor{keyword}{nullptr} \};}
+\DoxyCodeLine{357   \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1SArray}{SArray<Mesh*>}} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_aa55709991616e116710ba56e52dbeae9}{m\_convexHulls}};}
+\DoxyCodeLine{358   std::string \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_ad2b50bd138af5f639e4f101e28f1140c}{m\_stage}};}
+\DoxyCodeLine{359   std::string \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a6ed09e92c5bd1bf09fae48ce7d6f346c}{m\_operation}};}
+\DoxyCodeLine{360   \textcolor{keywordtype}{double} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_abf4a863d7c4dfcd757fcd5e99511c985}{m\_overallProgress}};}
+\DoxyCodeLine{361   \textcolor{keywordtype}{double} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_ad4f19cb97e7d3c66481e7bd98c1ebbc1}{m\_stageProgress}};}
+\DoxyCodeLine{362   \textcolor{keywordtype}{double} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a7ff0f1b582fe03a8312b092cb6dc1784}{m\_operationProgress}};}
+\DoxyCodeLine{363   \textcolor{keywordtype}{double} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a3c7dff4f0af3caf395223ff564d52302}{m\_rot}}[3][3];}
+\DoxyCodeLine{364   \textcolor{keywordtype}{double} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a654a4b1392fbc7ddc1e57d243f04b2ee}{m\_volumeCH0}};}
+\DoxyCodeLine{365   \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Vec3}{Vec3<double>}} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_aa8ae937f9f9b31e113907fbcdb6d5f84}{m\_barycenter}};}
+\DoxyCodeLine{366   \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Timer}{Timer}} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_aa0beb1214e4e0d0d19f0dbe53ab93b7b}{m\_timer}};}
+\DoxyCodeLine{367   \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a1208f1e90ea933bd1f48399dd97859ce}{m\_dim}};}
+\DoxyCodeLine{368   \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Volume}{Volume}}* \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a4f3d2f032daf5e14256d4b3a9f4e806b}{m\_volume}};}
+\DoxyCodeLine{369   \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1PrimitiveSet}{PrimitiveSet}}* \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_ace36a35b09a2baf26941b704090a41e9}{m\_pset}};}
+\DoxyCodeLine{370   \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1Mutex}{Mutex}} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a719255b711264d94832c05d41b8f9e2b}{m\_cancelMutex}};}
+\DoxyCodeLine{371   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_a697690df8525298fa7ead72c24fb5375}{m\_cancel}};}
+\DoxyCodeLine{372   int32\_t \mbox{\hyperlink{classtesseract__collision_1_1VHACD_1_1VHACD_abde159111d4261315552acde47077ece}{m\_ompNumProcessors}};}
+\DoxyCodeLine{373 \textcolor{preprocessor}{\#ifdef CL\_VERSION\_1\_1}}
+\DoxyCodeLine{374   cl\_device\_id* m\_oclDevice;}
+\DoxyCodeLine{375   cl\_context m\_oclContext;}
+\DoxyCodeLine{376   cl\_program m\_oclProgram;}
+\DoxyCodeLine{377   cl\_command\_queue* m\_oclQueue;}
+\DoxyCodeLine{378   cl\_kernel* m\_oclKernelComputePartialVolumes;}
+\DoxyCodeLine{379   cl\_kernel* m\_oclKernelComputeSum;}
+\DoxyCodeLine{380   \textcolor{keywordtype}{size\_t} m\_oclWorkGroupSize;}
+\DoxyCodeLine{381 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// CL\_VERSION\_1\_1}}
+\DoxyCodeLine{382 \};}
+\DoxyCodeLine{383 \}  \textcolor{comment}{// namespace VHACD}}
+\DoxyCodeLine{384 \}  \textcolor{comment}{// namespace tesseract\_collision}}
+\DoxyCodeLine{385 \mbox{\hyperlink{namespaceTESSERACT__COMMON__IGNORE__WARNINGS__POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}}
+
+\end{DoxyCode}

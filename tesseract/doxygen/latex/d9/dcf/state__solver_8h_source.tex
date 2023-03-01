@@ -1,0 +1,96 @@
+\hypertarget{state__solver_8h_source}{}\doxysection{state\+\_\+solver.\+h}
+\label{state__solver_8h_source}\index{tesseract\_state\_solver/include/tesseract\_state\_solver/state\_solver.h@{tesseract\_state\_solver/include/tesseract\_state\_solver/state\_solver.h}}
+\mbox{\hyperlink{state__solver_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#ifndef TESSERACT\_STATE\_SOLVER\_STATE\_SOLVER\_H}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define TESSERACT\_STATE\_SOLVER\_STATE\_SOLVER\_H}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{macros_8h}{tesseract\_common/macros.h}}>}}
+\DoxyCodeLine{30 \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include <unordered\_map>}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include <Eigen/Geometry>}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include <Eigen/Core>}}
+\DoxyCodeLine{37 \mbox{\hyperlink{namespaceTESSERACT__COMMON__IGNORE__WARNINGS__POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{graph_8h}{tesseract\_scene\_graph/graph.h}}>}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{scene__state_8h}{tesseract\_scene\_graph/scene\_state.h}}>}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{tesseract__common_2include_2tesseract__common_2types_8h}{tesseract\_common/types.h}}>}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__scene__graph}{tesseract\_scene\_graph}}}
+\DoxyCodeLine{44 \{}
+\DoxyCodeLine{45 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver}{StateSolver}}}
+\DoxyCodeLine{46 \{}
+\DoxyCodeLine{47 \textcolor{keyword}{public}:}
+\DoxyCodeLine{48   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a5beb5d8f099e0d4bc7b45b9be7c94318}{Ptr}} = std::shared\_ptr<StateSolver>;}
+\DoxyCodeLine{49   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a124eeb9936fc63843cf91c5622bfa562}{ConstPtr}} = std::shared\_ptr<const StateSolver>;}
+\DoxyCodeLine{50   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a0834c4abefbc5b7da4e66cd26619a9ba}{UPtr}} = std::unique\_ptr<StateSolver>;}
+\DoxyCodeLine{51   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a2d8dfe9eb71c080dae1ec06fe9221d2b}{ConstUPtr}} = std::unique\_ptr<const StateSolver>;}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53   \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a7febf125130ff54f459bd217ee965795}{StateSolver}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{54   \textcolor{keyword}{virtual} \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a8e8508d806080d90f6e9e9aa733e4d76}{\string~StateSolver}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{55   \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_afbc122e1f17c397af7132b2ef37d4808}{StateSolver}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver}{StateSolver}}\&) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{56   \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver}{StateSolver}}\& \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_ac12fad746d3efa39cfbd0b497fb53a45}{operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver}{StateSolver}}\&) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{57   \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a76b4c6a95f88d1e7a6b986125f610823}{StateSolver}}(\mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver}{StateSolver}}\&\&) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{58   \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver}{StateSolver}}\& \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_ab482d41ca977952225274ea616c8d25f}{operator=}}(\mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver}{StateSolver}}\&\&) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{65   \textcolor{keyword}{virtual} \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a0834c4abefbc5b7da4e66cd26619a9ba}{StateSolver::UPtr}} \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_ad88a0e40214e35d5de7fa47074499ba0}{clone}}() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{72   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_ae2d6ddc4de2aa1dcdf89dcf3d4d4a7ab}{setState}}(\textcolor{keyword}{const} Eigen::Ref<const Eigen::VectorXd>\& joint\_values) = 0;}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{81   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a34cc5ed4d42c8ebe3a91a8ab624f7a55}{setState}}(\textcolor{keyword}{const} std::unordered\_map<std::string, double>\& joint\_values) = 0;}
+\DoxyCodeLine{82   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a928eadfb2ddfd041245968697d11b77e}{setState}}(\textcolor{keyword}{const} std::vector<std::string>\& \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_ae55b39adb52b29eeefd7d128c4b56f2a}{joint\_names}},}
+\DoxyCodeLine{83                         \textcolor{keyword}{const} Eigen::Ref<const Eigen::VectorXd>\& joint\_values) = 0;}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{90   \textcolor{keyword}{virtual} \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{SceneState}} \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a795683cd30c399f5723bbbbe50b6c919}{getState}}(\textcolor{keyword}{const} Eigen::Ref<const Eigen::VectorXd>\& joint\_values) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{100   \textcolor{keyword}{virtual} \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{SceneState}} \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a6a9e3e62ce768aaddbefd713a3be2115}{getState}}(\textcolor{keyword}{const} std::unordered\_map<std::string, double>\& joint\_values) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{101   \textcolor{keyword}{virtual} \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{SceneState}} \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a9979c4d7269be1902e0dcb64b9b61ed0}{getState}}(\textcolor{keyword}{const} std::vector<std::string>\& \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_ae55b39adb52b29eeefd7d128c4b56f2a}{joint\_names}},}
+\DoxyCodeLine{102                               \textcolor{keyword}{const} Eigen::Ref<const Eigen::VectorXd>\& joint\_values) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{108   \textcolor{keyword}{virtual} \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{SceneState}} \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a8ee5f78843e293c4d9cd0d8b71372519}{getState}}() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{116   \textcolor{keyword}{virtual} Eigen::MatrixXd \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a07bf9d73c4f6b3885e72ac696e71f6cb}{getJacobian}}(\textcolor{keyword}{const} Eigen::Ref<const Eigen::VectorXd>\& joint\_values,}
+\DoxyCodeLine{117                                       \textcolor{keyword}{const} std::string\& link\_name) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{131   \textcolor{keyword}{virtual} Eigen::MatrixXd \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a3d858fad85dd1d7e6be45a477f11ed12}{getJacobian}}(\textcolor{keyword}{const} std::unordered\_map<std::string, double>\& joint\_values,}
+\DoxyCodeLine{132                                       \textcolor{keyword}{const} std::string\& link\_name) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{133   \textcolor{keyword}{virtual} Eigen::MatrixXd \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a9148b4305eb045645bfb2a7eac2746dc}{getJacobian}}(\textcolor{keyword}{const} std::vector<std::string>\& \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_ae55b39adb52b29eeefd7d128c4b56f2a}{joint\_names}},}
+\DoxyCodeLine{134                                       \textcolor{keyword}{const} Eigen::Ref<const Eigen::VectorXd>\& joint\_values,}
+\DoxyCodeLine{135                                       \textcolor{keyword}{const} std::string\& link\_name) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{141   \textcolor{keyword}{virtual} \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{SceneState}} \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a15567db8542f473c54b1bfe0a5cb360a}{getRandomState}}() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{147   \textcolor{keyword}{virtual} std::vector<std::string> \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a3dfa78c3dc97ca119571503fca1202ee}{getJointNames}}() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{153   \textcolor{keyword}{virtual} std::vector<std::string> \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a0c6aa138322ecc7eec14d7f0f2f5e84c}{getActiveJointNames}}() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{159   \textcolor{keyword}{virtual} std::string \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_ab29a8aec90d5df565bdb9316280de860}{getBaseLinkName}}() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{165   \textcolor{keyword}{virtual} std::vector<std::string> \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_aa3352d3b6b37bc7af41f087771770b7e}{getLinkNames}}() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{166 }
+\DoxyCodeLine{171   \textcolor{keyword}{virtual} std::vector<std::string> \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_ad0e7aa7260bb4c0e90ab71c8d1a7e3b4}{getActiveLinkNames}}() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{172 }
+\DoxyCodeLine{177   \textcolor{keyword}{virtual} std::vector<std::string> \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_ae46246329da823fd4eaa5c7190409468}{getStaticLinkNames}}() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{178 }
+\DoxyCodeLine{184   \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_aa317e234377772c6c962a5743e299b1a}{isActiveLinkName}}(\textcolor{keyword}{const} std::string\& link\_name) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{185 }
+\DoxyCodeLine{191   \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a6651b931afdb4e5273b7e148c4210f6e}{hasLinkName}}(\textcolor{keyword}{const} std::string\& link\_name) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{192 }
+\DoxyCodeLine{198   \textcolor{keyword}{virtual} \mbox{\hyperlink{namespacetesseract__common_a94d9921fc7ed323609ac57d06f939cb6}{tesseract\_common::VectorIsometry3d}} \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_ac3991a6844bef5d336ddda10ad8e0fe8}{getLinkTransforms}}() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{199 }
+\DoxyCodeLine{204   \textcolor{keyword}{virtual} Eigen::Isometry3d \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a9ac88af6307dfbb281cda21970e96a94}{getLinkTransform}}(\textcolor{keyword}{const} std::string\& link\_name) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{205 }
+\DoxyCodeLine{212   \textcolor{keyword}{virtual} Eigen::Isometry3d \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_aaec713a1c063d905f8c66b011e2884d6}{getRelativeLinkTransform}}(\textcolor{keyword}{const} std::string\& from\_link\_name,}
+\DoxyCodeLine{213                                                      \textcolor{keyword}{const} std::string\& to\_link\_name) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{214 }
+\DoxyCodeLine{219   \textcolor{keyword}{virtual} \mbox{\hyperlink{structtesseract__common_1_1KinematicLimits}{tesseract\_common::KinematicLimits}} \mbox{\hyperlink{classtesseract__scene__graph_1_1StateSolver_a9a6500620632aa09e6f7d3ba06a11203}{getLimits}}() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{220 \};}
+\DoxyCodeLine{221 \}  \textcolor{comment}{// namespace tesseract\_scene\_graph}}
+\DoxyCodeLine{222 }
+\DoxyCodeLine{223 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_STATE\_SOLVER\_STATE\_SOLVER\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,86 @@
+\hypertarget{kdl__fwd__kin__chain_8h_source}{}\doxysection{kdl\+\_\+fwd\+\_\+kin\+\_\+chain.\+h}
+\label{kdl__fwd__kin__chain_8h_source}\index{tesseract\_kinematics/kdl/include/tesseract\_kinematics/kdl/kdl\_fwd\_kin\_chain.h@{tesseract\_kinematics/kdl/include/tesseract\_kinematics/kdl/kdl\_fwd\_kin\_chain.h}}
+\mbox{\hyperlink{kdl__fwd__kin__chain_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#ifndef TESSERACT\_KINEMATICS\_KDL\_FWD\_KINEMATIC\_CHAIN\_H}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define TESSERACT\_KINEMATICS\_KDL\_FWD\_KINEMATIC\_CHAIN\_H}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{macros_8h}{tesseract\_common/macros.h}}>}}
+\DoxyCodeLine{30 \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include <kdl/tree.hpp>}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include <kdl/chain.hpp>}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include <kdl/chainfksolverpos\_recursive.hpp>}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include <kdl/chainjnttojacsolver.hpp>}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include <unordered\_map>}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include <console\_bridge/console.h>}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#include <mutex>}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{graph_8h}{tesseract\_scene\_graph/graph.h}}>}}
+\DoxyCodeLine{40 \mbox{\hyperlink{namespaceTESSERACT__COMMON__IGNORE__WARNINGS__POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{forward__kinematics_8h}{tesseract\_kinematics/core/forward\_kinematics.h}}>}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{kdl__utils_8h}{tesseract\_kinematics/kdl/kdl\_utils.h}}>}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__kinematics}{tesseract\_kinematics}}}
+\DoxyCodeLine{46 \{}
+\DoxyCodeLine{47 \textcolor{keyword}{static} \textcolor{keyword}{const} std::string \mbox{\hyperlink{namespacetesseract__kinematics_a8e876d3d43f95a425ef08ad478bf6003}{KDL\_FWD\_KIN\_CHAIN\_SOLVER\_NAME}} = \textcolor{stringliteral}{"{}KDLFwdKinChain"{}};}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{55 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__kinematics_1_1KDLFwdKinChain}{KDLFwdKinChain}} : \textcolor{keyword}{public} \mbox{\hyperlink{classtesseract__kinematics_1_1ForwardKinematics}{ForwardKinematics}}}
+\DoxyCodeLine{56 \{}
+\DoxyCodeLine{57 \textcolor{keyword}{public}:}
+\DoxyCodeLine{58   \textcolor{comment}{// LCOV\_EXCL\_START}}
+\DoxyCodeLine{59   EIGEN\_MAKE\_ALIGNED\_OPERATOR\_NEW}
+\DoxyCodeLine{60   \textcolor{comment}{// LCOV\_EXCL\_STOP}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__kinematics_1_1KDLFwdKinChain_a4861e97d66d579bba78b26af2ab63f08}{Ptr}} = std::shared\_ptr<KDLFwdKinChain>;}
+\DoxyCodeLine{63   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__kinematics_1_1KDLFwdKinChain_a172d27433df2b90124de155ba4bccfde}{ConstPtr}} = std::shared\_ptr<const KDLFwdKinChain>;}
+\DoxyCodeLine{64   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__kinematics_1_1KDLFwdKinChain_a4443d3995b345f8d205f9df2b7bbc64a}{UPtr}} = std::unique\_ptr<KDLFwdKinChain>;}
+\DoxyCodeLine{65   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__kinematics_1_1KDLFwdKinChain_af7bd75376f94d570d6968bce64181c00}{ConstUPtr}} = std::unique\_ptr<const KDLFwdKinChain>;}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67   \mbox{\hyperlink{classtesseract__kinematics_1_1KDLFwdKinChain_a8b9754cb080461156b67046cc66d4fbd}{\string~KDLFwdKinChain}}() \textcolor{keyword}{override} = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{68   \mbox{\hyperlink{classtesseract__kinematics_1_1KDLFwdKinChain}{KDLFwdKinChain}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__kinematics_1_1KDLFwdKinChain}{KDLFwdKinChain}}\& other);}
+\DoxyCodeLine{69   \mbox{\hyperlink{classtesseract__kinematics_1_1KDLFwdKinChain}{KDLFwdKinChain}}\& \mbox{\hyperlink{classtesseract__kinematics_1_1KDLFwdKinChain_a1e18ddbbca9206f741202d6b6e57f3a3}{operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__kinematics_1_1KDLFwdKinChain}{KDLFwdKinChain}}\& other);}
+\DoxyCodeLine{70   \mbox{\hyperlink{classtesseract__kinematics_1_1KDLFwdKinChain_a77bd5348aa4b65ca6433652925fb4710}{KDLFwdKinChain}}(\mbox{\hyperlink{classtesseract__kinematics_1_1KDLFwdKinChain}{KDLFwdKinChain}}\&\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{71   \mbox{\hyperlink{classtesseract__kinematics_1_1KDLFwdKinChain}{KDLFwdKinChain}}\& \mbox{\hyperlink{classtesseract__kinematics_1_1KDLFwdKinChain_aa843254822b2489ba51966099c287423}{operator=}}(\mbox{\hyperlink{classtesseract__kinematics_1_1KDLFwdKinChain}{KDLFwdKinChain}}\&\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{81   \mbox{\hyperlink{classtesseract__kinematics_1_1KDLFwdKinChain}{KDLFwdKinChain}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph}{tesseract\_scene\_graph::SceneGraph}}\& \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a8d4d0dc3a6b9a7030970bf9ed3764756}{scene\_graph}},}
+\DoxyCodeLine{82                  \textcolor{keyword}{const} std::string\& \mbox{\hyperlink{tesseract__srdf__unit_8cpp_aee5b629e3fb068773c7b70ad756616cc}{base\_link}},}
+\DoxyCodeLine{83                  \textcolor{keyword}{const} std::string\& tip\_link,}
+\DoxyCodeLine{84                  std::string solver\_name = \mbox{\hyperlink{namespacetesseract__kinematics_a8e876d3d43f95a425ef08ad478bf6003}{KDL\_FWD\_KIN\_CHAIN\_SOLVER\_NAME}});}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{93   \mbox{\hyperlink{classtesseract__kinematics_1_1KDLFwdKinChain}{KDLFwdKinChain}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph}{tesseract\_scene\_graph::SceneGraph}}\& \mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a8d4d0dc3a6b9a7030970bf9ed3764756}{scene\_graph}},}
+\DoxyCodeLine{94                  \textcolor{keyword}{const} std::vector<std::pair<std::string, std::string> >\& chains,}
+\DoxyCodeLine{95                  std::string solver\_name = \mbox{\hyperlink{namespacetesseract__kinematics_a8e876d3d43f95a425ef08ad478bf6003}{KDL\_FWD\_KIN\_CHAIN\_SOLVER\_NAME}});}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97   \mbox{\hyperlink{namespacetesseract__common_a67bde3cb7bb235f0f61c370ef8bc74d8}{tesseract\_common::TransformMap}} \mbox{\hyperlink{classtesseract__kinematics_1_1KDLFwdKinChain_afb17d15670555f2539d19a12cf9236ec}{calcFwdKin}}(\textcolor{keyword}{const} Eigen::Ref<const Eigen::VectorXd>\& joint\_angles) \textcolor{keyword}{const} \textcolor{keyword}{override} \textcolor{keyword}{final};}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99   Eigen::MatrixXd \mbox{\hyperlink{classtesseract__kinematics_1_1KDLFwdKinChain_a50288a017358532e49449b11febf8cb6}{calcJacobian}}(\textcolor{keyword}{const} Eigen::Ref<const Eigen::VectorXd>\& joint\_angles,}
+\DoxyCodeLine{100                                \textcolor{keyword}{const} std::string\& joint\_link\_name) \textcolor{keyword}{const} \textcolor{keyword}{override} \textcolor{keyword}{final};}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102   std::string \mbox{\hyperlink{classtesseract__kinematics_1_1KDLFwdKinChain_af516d87cd805acb7cb9ca76ca70eafe9}{getBaseLinkName}}() const override final;}
+\DoxyCodeLine{103   std::\mbox{\hyperlink{FloatMath_8inl_adcf134d50025cc52907d0c8ac798d89d}{vector}}<std::\textcolor{keywordtype}{string}> \mbox{\hyperlink{classtesseract__kinematics_1_1KDLFwdKinChain_ad75175770ef2aef9d50876276ffe1c35}{getJointNames}}() const override final;}
+\DoxyCodeLine{104   std::\mbox{\hyperlink{FloatMath_8inl_adcf134d50025cc52907d0c8ac798d89d}{vector}}<std::\textcolor{keywordtype}{string}> \mbox{\hyperlink{classtesseract__kinematics_1_1KDLFwdKinChain_ac6f53a9a6351c4a63877b34e6def9e91}{getTipLinkNames}}() const override final;}
+\DoxyCodeLine{105   Eigen::Index \mbox{\hyperlink{classtesseract__kinematics_1_1KDLFwdKinChain_aaf1edad98bb0287e8489776c6570ba3b}{numJoints}}() const override final;}
+\DoxyCodeLine{106   std::\textcolor{keywordtype}{string} \mbox{\hyperlink{classtesseract__kinematics_1_1KDLFwdKinChain_a6e35dc7589fe183d30e71d9a934d280f}{getSolverName}}() const override final;}
+\DoxyCodeLine{107   \mbox{\hyperlink{classtesseract__kinematics_1_1ForwardKinematics}{ForwardKinematics}}::\mbox{\hyperlink{classtesseract__kinematics_1_1KDLFwdKinChain_a4443d3995b345f8d205f9df2b7bbc64a}{UPtr}} \mbox{\hyperlink{classtesseract__kinematics_1_1KDLFwdKinChain_aac7e4b91ee6f7fa04f94c94ef3d0353e}{clone}}() const override final;}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109 private:}
+\DoxyCodeLine{110   \mbox{\hyperlink{structtesseract__kinematics_1_1KDLChainData}{KDLChainData}} \mbox{\hyperlink{classtesseract__kinematics_1_1KDLFwdKinChain_a879f421a6896740cab1707a5edf5f5d6}{kdl\_data\_}};                                      }
+\DoxyCodeLine{111   std::\textcolor{keywordtype}{string} \mbox{\hyperlink{classtesseract__kinematics_1_1KDLFwdKinChain_abcf7021bd51b364ccba69c57714c6446}{name\_}};                                           }
+\DoxyCodeLine{112   std::unique\_ptr<KDL::ChainFkSolverPos\_recursive> \mbox{\hyperlink{classtesseract__kinematics_1_1KDLFwdKinChain_a73d3beceabccc612da3d451a34d044d1}{fk\_solver\_}}; }
+\DoxyCodeLine{113   std::unique\_ptr<KDL::ChainJntToJacSolver> \mbox{\hyperlink{classtesseract__kinematics_1_1KDLFwdKinChain_afa9f359d86e925f272b454e72cbc3310}{jac\_solver\_}};       }
+\DoxyCodeLine{114   std::\textcolor{keywordtype}{string} \mbox{\hyperlink{classtesseract__kinematics_1_1KDLFwdKinChain_a30f39a17195c4a1f668be3e429974f22}{solver\_name\_}}\{ \mbox{\hyperlink{namespacetesseract__kinematics_a8e876d3d43f95a425ef08ad478bf6003}{KDL\_FWD\_KIN\_CHAIN\_SOLVER\_NAME}} \};   }
+\DoxyCodeLine{115   \textcolor{keyword}{mutable} std::mutex \mbox{\hyperlink{classtesseract__kinematics_1_1KDLFwdKinChain_a42b063bf2834ce5829ef425f3bb7bec1}{mutex\_}}; }
+\DoxyCodeLine{118   \mbox{\hyperlink{namespacetesseract__common_a67bde3cb7bb235f0f61c370ef8bc74d8}{tesseract\_common::TransformMap}} \mbox{\hyperlink{classtesseract__kinematics_1_1KDLFwdKinChain_af1d4f167fc5083dfb3a36b9a681c517c}{calcFwdKinHelperAll}}(\textcolor{keyword}{const} Eigen::Ref<const Eigen::VectorXd>\& joint\_angles) \textcolor{keyword}{const};}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{121   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__kinematics_1_1KDLFwdKinChain_a09ca5c1015cd99e474a5491cc683d844}{calcJacobianHelper}}(KDL::Jacobian\& \mbox{\hyperlink{kinematics__core__unit_8cpp_afd43241933d01af91643a779b829d7a7}{jacobian}},}
+\DoxyCodeLine{122                           \textcolor{keyword}{const} Eigen::Ref<const Eigen::VectorXd>\& joint\_angles,}
+\DoxyCodeLine{123                           \textcolor{keywordtype}{int} segment\_num = -\/1) \textcolor{keyword}{const};}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125 \};  \textcolor{comment}{// class KDLKinematicChain}}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127 \}  \textcolor{comment}{// namespace tesseract\_kinematics}}
+\DoxyCodeLine{128 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_KDL\_KINEMATIC\_CHAIN\_H}}
+
+\end{DoxyCode}

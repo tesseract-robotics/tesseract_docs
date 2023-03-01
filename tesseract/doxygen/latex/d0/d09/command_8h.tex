@@ -1,0 +1,102 @@
+\hypertarget{command_8h}{}\doxysection{tesseract\+\_\+environment/include/tesseract\+\_\+environment/command.h File Reference}
+\label{command_8h}\index{tesseract\_environment/include/tesseract\_environment/command.h@{tesseract\_environment/include/tesseract\_environment/command.h}}
+
+
+This contains classes for recording operations applied to the environment for tracking changes. This is mainly support distributed systems to keep multiple instances up-\/to-\/date.  
+
+
+{\ttfamily \#include $<$tesseract\+\_\+common/macros.\+h$>$}\newline
+{\ttfamily \#include $<$boost/serialization/access.\+hpp$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+Include dependency graph for command.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classtesseract__environment_1_1Command}{tesseract\+\_\+environment\+::\+Command}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacetesseract__environment}{tesseract\+\_\+environment}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{namespacetesseract__environment_acb95740502ec41d80a94a7631d4b7a3c}{tesseract\+\_\+environment\+::\+Commands}} = std\+::vector$<$ Command\+::\+Const\+Ptr $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029}{tesseract\+\_\+environment\+::\+Command\+Type}} \{ \newline
+\mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029add652546039b18970b8dcf2cff824268}{tesseract\+\_\+environment\+::\+UNINITIALIZED}} = -\/1
+, \mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029a83bca506d8f37c1e0d096e2683d691e4}{tesseract\+\_\+environment\+::\+ADD\+\_\+\+LINK}} = 0
+, \mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029a0c4617d6ea17eb456b514b9bc9ddaaec}{tesseract\+\_\+environment\+::\+MOVE\+\_\+\+LINK}} = 1
+, \mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029a4ca2d320bdf40df7e6f465d21e268ec4}{tesseract\+\_\+environment\+::\+MOVE\+\_\+\+JOINT}} = 2
+, \newline
+\mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029afff7bebecead86441476e38b94b3bc05}{tesseract\+\_\+environment\+::\+REMOVE\+\_\+\+LINK}} = 3
+, \mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029a6721b27017cd21a598f1740481167224}{tesseract\+\_\+environment\+::\+REMOVE\+\_\+\+JOINT}} = 4
+, \mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029a5556c1986a9b58c054c0038a8c73cab9}{tesseract\+\_\+environment\+::\+CHANGE\+\_\+\+LINK\+\_\+\+ORIGIN}} = 5
+, \mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029a9e520d728925baf2b87146d99a20d8ba}{tesseract\+\_\+environment\+::\+CHANGE\+\_\+\+JOINT\+\_\+\+ORIGIN}} = 6
+, \newline
+\mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029a12a8518522948e345cab8fefd0235008}{tesseract\+\_\+environment\+::\+CHANGE\+\_\+\+LINK\+\_\+\+COLLISION\+\_\+\+ENABLED}} = 7
+, \mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029aaa5732dcc51c06b4e9af6373e937e4a1}{tesseract\+\_\+environment\+::\+CHANGE\+\_\+\+LINK\+\_\+\+VISIBILITY}} = 8
+, \mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029a353c1770ebb1dad74d191125de6bb12f}{tesseract\+\_\+environment\+::\+MODIFY\+\_\+\+ALLOWED\+\_\+\+COLLISIONS}} = 9
+, \mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029ac40ca000ef4f65a27cf7998ef4f020a0}{tesseract\+\_\+environment\+::\+REMOVE\+\_\+\+ALLOWED\+\_\+\+COLLISION\+\_\+\+LINK}} = 10
+, \newline
+\mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029abad512ee301f85596f24ccb211411856}{tesseract\+\_\+environment\+::\+ADD\+\_\+\+SCENE\+\_\+\+GRAPH}} = 11
+, \mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029a45b7ca4cbdf3997ccbb8e81e45c25c0f}{tesseract\+\_\+environment\+::\+CHANGE\+\_\+\+JOINT\+\_\+\+POSITION\+\_\+\+LIMITS}} = 12
+, \mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029aea4ee03591d62742fc798bd6d07914dd}{tesseract\+\_\+environment\+::\+CHANGE\+\_\+\+JOINT\+\_\+\+VELOCITY\+\_\+\+LIMITS}} = 13
+, \mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029a0e622edebb918e58a2e50f37f48ec6be}{tesseract\+\_\+environment\+::\+CHANGE\+\_\+\+JOINT\+\_\+\+ACCELERATION\+\_\+\+LIMITS}} = 14
+, \newline
+\mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029a6f820e76663d877e0103c6aea1616b1b}{tesseract\+\_\+environment\+::\+ADD\+\_\+\+KINEMATICS\+\_\+\+INFORMATION}} = 15
+, \mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029ae487d29b5345ebdfa13433bc11a99e7c}{tesseract\+\_\+environment\+::\+REPLACE\+\_\+\+JOINT}} = 16
+, \mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029af0867a1a81a0112b16ae983214515c28}{tesseract\+\_\+environment\+::\+CHANGE\+\_\+\+COLLISION\+\_\+\+MARGINS}} = 17
+, \mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029a888e6375965550fe9f245043026d8490}{tesseract\+\_\+environment\+::\+ADD\+\_\+\+CONTACT\+\_\+\+MANAGERS\+\_\+\+PLUGIN\+\_\+\+INFO}} = 18
+, \newline
+\mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029a2fdc8f6309f2bdd8cd403be451510841}{tesseract\+\_\+environment\+::\+SET\+\_\+\+ACTIVE\+\_\+\+DISCRETE\+\_\+\+CONTACT\+\_\+\+MANAGER}} = 19
+, \mbox{\hyperlink{namespacetesseract__environment_afc00c1aecb519acba3afc24dbd367029af02976086409570e5906a7339e95a026}{tesseract\+\_\+environment\+::\+SET\+\_\+\+ACTIVE\+\_\+\+CONTINUOUS\+\_\+\+CONTACT\+\_\+\+MANAGER}} = 20
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class Archive $>$ }\\void \mbox{\hyperlink{namespacetesseract__environment_a1819f1cc367734bc71df537ac9a34035}{tesseract\+\_\+environment\+::save}} (Archive \&ar, const Command\+Type \&\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a41309b4c659a8ee4246e23a5c741c8e8}{g}}, const unsigned int version)
+\item 
+{\footnotesize template$<$class Archive $>$ }\\void \mbox{\hyperlink{namespacetesseract__environment_ae63659e18dd6e60700378ff689c1778d}{tesseract\+\_\+environment\+::load}} (Archive \&ar, Command\+Type \&\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a41309b4c659a8ee4246e23a5c741c8e8}{g}}, const unsigned int version)
+\item 
+{\footnotesize template$<$class Archive $>$ }\\void \mbox{\hyperlink{namespacetesseract__environment_ab1656df70f5d4e2213365591079ea8c3}{tesseract\+\_\+environment\+::serialize}} (Archive \&ar, Command\+Type \&\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a41309b4c659a8ee4246e23a5c741c8e8}{g}}, const unsigned int version)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This contains classes for recording operations applied to the environment for tracking changes. This is mainly support distributed systems to keep multiple instances up-\/to-\/date. 
+
+\begin{DoxyAuthor}{Author}
+Levi Armstrong 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Dec 18, 2017 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+TODO 
+\end{DoxyVersion}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000081}{Bug}}]No known bugs\end{DoxyRefDesc}
+
+
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2017, Southwest Research Institute
+\end{DoxyCopyright}
+\begin{DoxyParagraph}{License}
+Software License Agreement (Apache License) 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+Licensed under the Apache License, Version 2.\+0 (the \char`\"{}\+License\char`\"{}); you may not use this file except in compliance with the License. You may obtain a copy of the License at \href{http://www.apache.org/licenses/LICENSE-2.0}{\texttt{ http\+://www.\+apache.\+org/licenses/\+LICENSE-\/2.\+0}} 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \char`\"{}\+AS IS\char`\"{} BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License. 
+\end{DoxyParagraph}

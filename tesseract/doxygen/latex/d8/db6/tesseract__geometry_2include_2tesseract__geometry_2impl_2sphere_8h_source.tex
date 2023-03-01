@@ -1,0 +1,48 @@
+\hypertarget{tesseract__geometry_2include_2tesseract__geometry_2impl_2sphere_8h_source}{}\doxysection{sphere.\+h}
+\label{tesseract__geometry_2include_2tesseract__geometry_2impl_2sphere_8h_source}\index{tesseract\_geometry/include/tesseract\_geometry/impl/sphere.h@{tesseract\_geometry/include/tesseract\_geometry/impl/sphere.h}}
+\mbox{\hyperlink{tesseract__geometry_2include_2tesseract__geometry_2impl_2sphere_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#ifndef TESSERACT\_GEOMETRY\_SPHERE\_H}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define TESSERACT\_GEOMETRY\_SPHERE\_H}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{macros_8h}{tesseract\_common/macros.h}}>}}
+\DoxyCodeLine{30 \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include <boost/serialization/access.hpp>}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include <boost/serialization/export.hpp>}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{34 \mbox{\hyperlink{namespaceTESSERACT__COMMON__IGNORE__WARNINGS__POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{tesseract__geometry_2include_2tesseract__geometry_2geometry_8h}{tesseract\_geometry/geometry.h}}>}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__geometry}{tesseract\_geometry}}}
+\DoxyCodeLine{39 \{}
+\DoxyCodeLine{40 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__geometry_1_1Sphere}{Sphere}} : \textcolor{keyword}{public} \mbox{\hyperlink{classtesseract__geometry_1_1Geometry}{Geometry}}}
+\DoxyCodeLine{41 \{}
+\DoxyCodeLine{42 \textcolor{keyword}{public}:}
+\DoxyCodeLine{43   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__geometry_1_1Sphere_a6d08dc13de3a7beb69a453b0cf35889f}{Ptr}} = std::shared\_ptr<Sphere>;}
+\DoxyCodeLine{44   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__geometry_1_1Sphere_ac986cb2217d07320a259ba4277af5b31}{ConstPtr}} = std::shared\_ptr<const Sphere>;}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46   \textcolor{keyword}{explicit} \mbox{\hyperlink{classtesseract__geometry_1_1Sphere_a37d2b78b7398b4cd358cb1c77fde3db0}{Sphere}}(\textcolor{keywordtype}{double} r) : \mbox{\hyperlink{classtesseract__geometry_1_1Geometry}{Geometry}}(\mbox{\hyperlink{namespacetesseract__geometry_a7543d6c1dc8947a3274abdd21fb56feb}{GeometryType}}::\mbox{\hyperlink{namespacetesseract__geometry_a7543d6c1dc8947a3274abdd21fb56febafb20b649d5d1c5441b986a717b632ee3}{SPHERE}}), \mbox{\hyperlink{classtesseract__geometry_1_1Sphere_a1a4ad64029310025b519c0f32053ffe3}{r\_}}(r) \{\}}
+\DoxyCodeLine{47   \mbox{\hyperlink{classtesseract__geometry_1_1Sphere_a17b257d6090c3525da7a79566a5fdbae}{Sphere}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{48   \mbox{\hyperlink{classtesseract__geometry_1_1Sphere_a61f67f35adc02e5ee3deeee56d298b83}{\string~Sphere}}() \textcolor{keyword}{override} = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50   \textcolor{keywordtype}{double} \mbox{\hyperlink{classtesseract__geometry_1_1Sphere_a92f8ccf05a1adc0e48fe9735152fa6bd}{getRadius}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classtesseract__geometry_1_1Sphere_a1a4ad64029310025b519c0f32053ffe3}{r\_}}; \}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52   \mbox{\hyperlink{classtesseract__geometry_1_1Geometry_acd91c55fb9604ed374446c029b6f2d08}{Geometry::Ptr}} \mbox{\hyperlink{classtesseract__geometry_1_1Sphere_a800404f7bd1cd1c559bf8df14339d336}{clone}}() const override final \{ \textcolor{keywordflow}{return} std::make\_shared<Sphere>(\mbox{\hyperlink{classtesseract__geometry_1_1Sphere_a1a4ad64029310025b519c0f32053ffe3}{r\_}}); \}}
+\DoxyCodeLine{53   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__geometry_1_1Sphere_a9e47833d8d929de10d6252f076eec3ed}{operator==}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__geometry_1_1Sphere}{Sphere}}\& rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{54   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__geometry_1_1Sphere_a4d3c3fc01f48657dec6ea3479a2be425}{operator!=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__geometry_1_1Sphere}{Sphere}}\& rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 \textcolor{keyword}{private}:}
+\DoxyCodeLine{57   \textcolor{keywordtype}{double} \mbox{\hyperlink{classtesseract__geometry_1_1Sphere_a1a4ad64029310025b519c0f32053ffe3}{r\_}}\{ 0 \};}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59   \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__geometry_1_1Sphere_ac98d07dd8f7b70e16ccb9a01abf56b9c}{boost::serialization::access}};}
+\DoxyCodeLine{60   \textcolor{keyword}{template} <\textcolor{keyword}{class} Archive>}
+\DoxyCodeLine{61   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__geometry_1_1Sphere_a5db4f63960339f9f123c219631c0003e}{serialize}}(Archive\& ar, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} version);  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{62 \};}
+\DoxyCodeLine{63 \}  \textcolor{comment}{// namespace tesseract\_geometry}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 BOOST\_CLASS\_EXPORT\_KEY2(\mbox{\hyperlink{classtesseract__geometry_1_1Sphere}{tesseract\_geometry::Sphere}}, \textcolor{stringliteral}{"{}Sphere"{}})}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

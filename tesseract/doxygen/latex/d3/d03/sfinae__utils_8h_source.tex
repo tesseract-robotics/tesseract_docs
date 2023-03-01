@@ -1,0 +1,175 @@
+\hypertarget{sfinae__utils_8h_source}{}\doxysection{sfinae\+\_\+utils.\+h}
+\label{sfinae__utils_8h_source}\index{tesseract\_common/include/tesseract\_common/sfinae\_utils.h@{tesseract\_common/include/tesseract\_common/sfinae\_utils.h}}
+\mbox{\hyperlink{sfinae__utils_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef TESSEACT\_COMMON\_SFINAE\_UTILS\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define TESSEACT\_COMMON\_SFINAE\_UTILS\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{macros_8h}{tesseract\_common/macros.h}}>}}
+\DoxyCodeLine{5 \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <type\_traits>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <array>}}
+\DoxyCodeLine{8 \mbox{\hyperlink{namespaceTESSERACT__COMMON__IGNORE__WARNINGS__POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{comment}{/*}}
+\DoxyCodeLine{11 \textcolor{comment}{ *  https://stackoverflow.com/questions/257288/templated-\/check-\/for-\/the-\/existence-\/of-\/a-\/class-\/member-\/function}}
+\DoxyCodeLine{12 \textcolor{comment}{ *}}
+\DoxyCodeLine{13 \textcolor{comment}{ *   -\/ Multiple inheritance forces ambiguity of member names.}}
+\DoxyCodeLine{14 \textcolor{comment}{ *   -\/ SFINAE is used to make aliases to member names.}}
+\DoxyCodeLine{15 \textcolor{comment}{ *   -\/ Expression SFINAE is used in just one generic has\_member that can accept}}
+\DoxyCodeLine{16 \textcolor{comment}{ *     any alias we pass it.}}
+\DoxyCodeLine{17 \textcolor{comment}{ */}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__common}{tesseract\_common}}}
+\DoxyCodeLine{20 \{}
+\DoxyCodeLine{21 \textcolor{comment}{// Variadic to force ambiguity of class members.  C++11 and up.}}
+\DoxyCodeLine{22 \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Args>}
+\DoxyCodeLine{23 \textcolor{keyword}{struct }\mbox{\hyperlink{structtesseract__common_1_1ambiguate}{ambiguate}} : \textcolor{keyword}{public} Args...}
+\DoxyCodeLine{24 \{}
+\DoxyCodeLine{25 \};}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{keyword}{template} <\textcolor{keyword}{typename} A, \textcolor{keyword}{typename} = \textcolor{keywordtype}{void}>}
+\DoxyCodeLine{28 \textcolor{keyword}{struct }\mbox{\hyperlink{structtesseract__common_1_1got__type}{got\_type}} : std::false\_type}
+\DoxyCodeLine{29 \{}
+\DoxyCodeLine{30 \};}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{keyword}{template} <\textcolor{keyword}{typename} A>}
+\DoxyCodeLine{33 \textcolor{keyword}{struct }\mbox{\hyperlink{structtesseract__common_1_1got__type}{got\_type}}<A> : std::true\_type}
+\DoxyCodeLine{34 \{}
+\DoxyCodeLine{35   \textcolor{keyword}{using }\mbox{\hyperlink{structtesseract__common_1_1got__type_3_01A_01_4_a8cf0c4fcc19675c363c393bd2db072ad}{type}} = A;}
+\DoxyCodeLine{36 \};}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, T>}
+\DoxyCodeLine{39 \textcolor{keyword}{struct }\mbox{\hyperlink{structtesseract__common_1_1sig__check}{sig\_check}} : std::true\_type}
+\DoxyCodeLine{40 \{}
+\DoxyCodeLine{41 \};}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{keyword}{template} <\textcolor{keyword}{typename} Alias, \textcolor{keyword}{typename} AmbiguitySeed>}
+\DoxyCodeLine{44 \textcolor{keyword}{struct }\mbox{\hyperlink{structtesseract__common_1_1has__member}{has\_member}}}
+\DoxyCodeLine{45 \{}
+\DoxyCodeLine{46   \textcolor{keyword}{template} <\textcolor{keyword}{typename} C>}
+\DoxyCodeLine{47   \textcolor{keyword}{static} std::array<char, 1>\& \mbox{\hyperlink{structtesseract__common_1_1has__member_a0a9983af965165da056705f6cb49e5d7}{f}}(\textcolor{keyword}{decltype}(\&C::value));}
+\DoxyCodeLine{48   \textcolor{keyword}{template} <\textcolor{keyword}{typename} C>}
+\DoxyCodeLine{49   \textcolor{keyword}{static} std::array<char, 2>\& \mbox{\hyperlink{structtesseract__common_1_1has__member_ad554a7963576df999c74d0ccdd7beff9}{f}}(...);}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51   \textcolor{comment}{// Make sure the member name is consistently spelled the same.}}
+\DoxyCodeLine{52   \textcolor{keyword}{static\_assert}((\textcolor{keyword}{sizeof}(f<AmbiguitySeed>(\textcolor{keyword}{nullptr})) == 1),}
+\DoxyCodeLine{53                 \textcolor{stringliteral}{"{}Member name specified in AmbiguitySeed is different from member name specified in Alias, or wrong "{}}}
+\DoxyCodeLine{54                 \textcolor{stringliteral}{"{}Alias/AmbiguitySeed has been specified."{}});}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56   \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \textcolor{keyword}{const} \mbox{\hyperlink{structtesseract__common_1_1has__member_af849b37e6fb329bdc276aed8b2c11fff}{value}} = \textcolor{keyword}{sizeof}(f<Alias>(\textcolor{keyword}{nullptr})) == 2;}
+\DoxyCodeLine{57 \};}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#define CREATE\_MEMBER\_CHECK(member)                                                                                    \(\backslash\)}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{                                                                                                                       \(\backslash\)}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{  template <typename T, typename = std::true\_type>                                                                     \(\backslash\)}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{  struct Alias\_\#\#member;                                                                                               \(\backslash\)}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{                                                                                                                       \(\backslash\)}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{  template <typename T>                                                                                                \(\backslash\)}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{  struct Alias\_\#\#member<T, std::integral\_constant<bool, tesseract\_common::got\_type<decltype(\&T::member)>::value>>      \(\backslash\)}}
+\DoxyCodeLine{75 \textcolor{preprocessor}{  \{                                                                                                                    \(\backslash\)}}
+\DoxyCodeLine{76 \textcolor{preprocessor}{    static const decltype(\&T::member) value;                                                                           \(\backslash\)}}
+\DoxyCodeLine{77 \textcolor{preprocessor}{  \};                                                                                                                   \(\backslash\)}}
+\DoxyCodeLine{78 \textcolor{preprocessor}{                                                                                                                       \(\backslash\)}}
+\DoxyCodeLine{79 \textcolor{preprocessor}{  struct AmbiguitySeed\_\#\#member                                                                                        \(\backslash\)}}
+\DoxyCodeLine{80 \textcolor{preprocessor}{  \{                                                                                                                    \(\backslash\)}}
+\DoxyCodeLine{81 \textcolor{preprocessor}{    char member; }\textcolor{comment}{/* NOLINT */}\textcolor{preprocessor}{                                                                                          \(\backslash\)}}
+\DoxyCodeLine{82 \textcolor{preprocessor}{  \};                                                                                                                   \(\backslash\)}}
+\DoxyCodeLine{83 \textcolor{preprocessor}{                                                                                                                       \(\backslash\)}}
+\DoxyCodeLine{84 \textcolor{preprocessor}{  template <typename T>                                                                                                \(\backslash\)}}
+\DoxyCodeLine{85 \textcolor{preprocessor}{  struct has\_member\_\#\#member                                                                                           \(\backslash\)}}
+\DoxyCodeLine{86 \textcolor{preprocessor}{  \{                                                                                                                    \(\backslash\)}}
+\DoxyCodeLine{87 \textcolor{preprocessor}{    static const bool value =                                                                                          \(\backslash\)}}
+\DoxyCodeLine{88 \textcolor{preprocessor}{        tesseract\_common::has\_member<Alias\_\#\#member<tesseract\_common::ambiguate<T, AmbiguitySeed\_\#\#member>>,           \(\backslash\)}}
+\DoxyCodeLine{89 \textcolor{preprocessor}{                                     Alias\_\#\#member<AmbiguitySeed\_\#\#member>>::value;                                   \(\backslash\)}}
+\DoxyCodeLine{90 \textcolor{preprocessor}{  \}}}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#define CREATE\_MEMBER\_FUNC\_INVOCABLE\_CHECK(func\_name, ...)                                                             \(\backslash\)}}
+\DoxyCodeLine{100 \textcolor{preprocessor}{                                                                                                                       \(\backslash\)}}
+\DoxyCodeLine{101 \textcolor{preprocessor}{  template <typename T, typename = std::true\_type>                                                                     \(\backslash\)}}
+\DoxyCodeLine{102 \textcolor{preprocessor}{  struct has\_member\_func\_invocable\_\#\#func\_name : std::false\_type                                                       \(\backslash\)}}
+\DoxyCodeLine{103 \textcolor{preprocessor}{  \{                                                                                                                    \(\backslash\)}}
+\DoxyCodeLine{104 \textcolor{preprocessor}{  \};                                                                                                                   \(\backslash\)}}
+\DoxyCodeLine{105 \textcolor{preprocessor}{                                                                                                                       \(\backslash\)}}
+\DoxyCodeLine{106 \textcolor{preprocessor}{  template <typename T>                                                                                                \(\backslash\)}}
+\DoxyCodeLine{107 \textcolor{preprocessor}{  struct has\_member\_func\_invocable\_\#\#func\_name<                                                                        \(\backslash\)}}
+\DoxyCodeLine{108 \textcolor{preprocessor}{      T,                                                                                                               \(\backslash\)}}
+\DoxyCodeLine{109 \textcolor{preprocessor}{      std::integral\_constant<bool, std::is\_invocable<decltype(\&T::func\_name), T, \_\_VA\_ARGS\_\_>::value>>                 \(\backslash\)}}
+\DoxyCodeLine{110 \textcolor{preprocessor}{    : std::true\_type                                                                                                   \(\backslash\)}}
+\DoxyCodeLine{111 \textcolor{preprocessor}{  \{                                                                                                                    \(\backslash\)}}
+\DoxyCodeLine{112 \textcolor{preprocessor}{  \};}}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{121 \textcolor{preprocessor}{\#define CREATE\_MEMBER\_FUNC\_RETURN\_TYPE\_CHECK(func\_name, return\_type, ...)                                              \(\backslash\)}}
+\DoxyCodeLine{122 \textcolor{preprocessor}{                                                                                                                       \(\backslash\)}}
+\DoxyCodeLine{123 \textcolor{preprocessor}{  template <typename T, typename = std::true\_type>                                                                     \(\backslash\)}}
+\DoxyCodeLine{124 \textcolor{preprocessor}{  struct has\_member\_func\_return\_type\_\#\#func\_name : std::false\_type                                                     \(\backslash\)}}
+\DoxyCodeLine{125 \textcolor{preprocessor}{  \{                                                                                                                    \(\backslash\)}}
+\DoxyCodeLine{126 \textcolor{preprocessor}{  \};                                                                                                                   \(\backslash\)}}
+\DoxyCodeLine{127 \textcolor{preprocessor}{                                                                                                                       \(\backslash\)}}
+\DoxyCodeLine{128 \textcolor{preprocessor}{  template <typename T>                                                                                                \(\backslash\)}}
+\DoxyCodeLine{129 \textcolor{preprocessor}{  struct has\_member\_func\_return\_type\_\#\#func\_name<                                                                      \(\backslash\)}}
+\DoxyCodeLine{130 \textcolor{preprocessor}{      T,                                                                                                               \(\backslash\)}}
+\DoxyCodeLine{131 \textcolor{preprocessor}{      std::integral\_constant<bool,                                                                                     \(\backslash\)}}
+\DoxyCodeLine{132 \textcolor{preprocessor}{                             std::is\_same<typename std::invoke\_result<decltype(\&T::func\_name), T, \_\_VA\_ARGS\_\_>::type,  \(\backslash\)}}
+\DoxyCodeLine{133 \textcolor{preprocessor}{                                          return\_type>::value>> : std::true\_type                                       \(\backslash\)}}
+\DoxyCodeLine{134 \textcolor{preprocessor}{  \{                                                                                                                    \(\backslash\)}}
+\DoxyCodeLine{135 \textcolor{preprocessor}{  \};}}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{144 \textcolor{preprocessor}{\#define CREATE\_MEMBER\_FUNC\_RETURN\_TYPE\_NOARGS\_CHECK(func\_name, return\_type)                                            \(\backslash\)}}
+\DoxyCodeLine{145 \textcolor{preprocessor}{                                                                                                                       \(\backslash\)}}
+\DoxyCodeLine{146 \textcolor{preprocessor}{  template <typename T, typename = std::true\_type>                                                                     \(\backslash\)}}
+\DoxyCodeLine{147 \textcolor{preprocessor}{  struct has\_member\_func\_return\_type\_\#\#func\_name : std::false\_type                                                     \(\backslash\)}}
+\DoxyCodeLine{148 \textcolor{preprocessor}{  \{                                                                                                                    \(\backslash\)}}
+\DoxyCodeLine{149 \textcolor{preprocessor}{  \};                                                                                                                   \(\backslash\)}}
+\DoxyCodeLine{150 \textcolor{preprocessor}{                                                                                                                       \(\backslash\)}}
+\DoxyCodeLine{151 \textcolor{preprocessor}{  template <typename T>                                                                                                \(\backslash\)}}
+\DoxyCodeLine{152 \textcolor{preprocessor}{  struct has\_member\_func\_return\_type\_\#\#func\_name<                                                                      \(\backslash\)}}
+\DoxyCodeLine{153 \textcolor{preprocessor}{      T,                                                                                                               \(\backslash\)}}
+\DoxyCodeLine{154 \textcolor{preprocessor}{      std::integral\_constant<                                                                                          \(\backslash\)}}
+\DoxyCodeLine{155 \textcolor{preprocessor}{          bool,                                                                                                        \(\backslash\)}}
+\DoxyCodeLine{156 \textcolor{preprocessor}{          std::is\_same<typename std::invoke\_result<decltype(\&T::func\_name), T>::type, return\_type>::value>>            \(\backslash\)}}
+\DoxyCodeLine{157 \textcolor{preprocessor}{    : std::true\_type                                                                                                   \(\backslash\)}}
+\DoxyCodeLine{158 \textcolor{preprocessor}{  \{                                                                                                                    \(\backslash\)}}
+\DoxyCodeLine{159 \textcolor{preprocessor}{  \};}}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{168 \textcolor{preprocessor}{\#define CREATE\_MEMBER\_FUNC\_SIGNATURE\_CHECK(func\_name, return\_type, ...)                                                \(\backslash\)}}
+\DoxyCodeLine{169 \textcolor{preprocessor}{                                                                                                                       \(\backslash\)}}
+\DoxyCodeLine{170 \textcolor{preprocessor}{  template <typename T, typename = std::true\_type>                                                                     \(\backslash\)}}
+\DoxyCodeLine{171 \textcolor{preprocessor}{  struct has\_member\_func\_signature\_\#\#func\_name : std::false\_type                                                       \(\backslash\)}}
+\DoxyCodeLine{172 \textcolor{preprocessor}{  \{                                                                                                                    \(\backslash\)}}
+\DoxyCodeLine{173 \textcolor{preprocessor}{  \};                                                                                                                   \(\backslash\)}}
+\DoxyCodeLine{174 \textcolor{preprocessor}{                                                                                                                       \(\backslash\)}}
+\DoxyCodeLine{175 \textcolor{preprocessor}{  template <typename T>                                                                                                \(\backslash\)}}
+\DoxyCodeLine{176 \textcolor{preprocessor}{  struct has\_member\_func\_signature\_\#\#func\_name<                                                                        \(\backslash\)}}
+\DoxyCodeLine{177 \textcolor{preprocessor}{      T,                                                                                                               \(\backslash\)}}
+\DoxyCodeLine{178 \textcolor{preprocessor}{      std::integral\_constant<                                                                                          \(\backslash\)}}
+\DoxyCodeLine{179 \textcolor{preprocessor}{          bool,                                                                                                        \(\backslash\)}}
+\DoxyCodeLine{180 \textcolor{preprocessor}{          std::is\_invocable<decltype(\&T::func\_name), T, \_\_VA\_ARGS\_\_>::value \&\&                                         \(\backslash\)}}
+\DoxyCodeLine{181 \textcolor{preprocessor}{              std::is\_same<typename std::invoke\_result<decltype(\&T::func\_name), T, \_\_VA\_ARGS\_\_>::type,                 \(\backslash\)}}
+\DoxyCodeLine{182 \textcolor{preprocessor}{                           return\_type>::value>> : std::true\_type                                                      \(\backslash\)}}
+\DoxyCodeLine{183 \textcolor{preprocessor}{  \{                                                                                                                    \(\backslash\)}}
+\DoxyCodeLine{184 \textcolor{preprocessor}{  \};}}
+\DoxyCodeLine{185 }
+\DoxyCodeLine{193 \textcolor{preprocessor}{\#define CREATE\_MEMBER\_FUNC\_SIGNATURE\_NOARGS\_CHECK(func\_name, return\_type)                                              \(\backslash\)}}
+\DoxyCodeLine{194 \textcolor{preprocessor}{                                                                                                                       \(\backslash\)}}
+\DoxyCodeLine{195 \textcolor{preprocessor}{  template <typename T, typename = std::true\_type>                                                                     \(\backslash\)}}
+\DoxyCodeLine{196 \textcolor{preprocessor}{  struct has\_member\_func\_signature\_\#\#func\_name : std::false\_type                                                       \(\backslash\)}}
+\DoxyCodeLine{197 \textcolor{preprocessor}{  \{                                                                                                                    \(\backslash\)}}
+\DoxyCodeLine{198 \textcolor{preprocessor}{  \};                                                                                                                   \(\backslash\)}}
+\DoxyCodeLine{199 \textcolor{preprocessor}{                                                                                                                       \(\backslash\)}}
+\DoxyCodeLine{200 \textcolor{preprocessor}{  template <typename T>                                                                                                \(\backslash\)}}
+\DoxyCodeLine{201 \textcolor{preprocessor}{  struct has\_member\_func\_signature\_\#\#func\_name<                                                                        \(\backslash\)}}
+\DoxyCodeLine{202 \textcolor{preprocessor}{      T,                                                                                                               \(\backslash\)}}
+\DoxyCodeLine{203 \textcolor{preprocessor}{      std::integral\_constant<                                                                                          \(\backslash\)}}
+\DoxyCodeLine{204 \textcolor{preprocessor}{          bool,                                                                                                        \(\backslash\)}}
+\DoxyCodeLine{205 \textcolor{preprocessor}{          std::is\_invocable<decltype(\&T::func\_name), T>::value \&\&                                                      \(\backslash\)}}
+\DoxyCodeLine{206 \textcolor{preprocessor}{              std::is\_same<typename std::invoke\_result<decltype(\&T::func\_name), T>::type, return\_type>::value>>        \(\backslash\)}}
+\DoxyCodeLine{207 \textcolor{preprocessor}{    : std::true\_type                                                                                                   \(\backslash\)}}
+\DoxyCodeLine{208 \textcolor{preprocessor}{  \{                                                                                                                    \(\backslash\)}}
+\DoxyCodeLine{209 \textcolor{preprocessor}{  \};}}
+\DoxyCodeLine{210 }
+\DoxyCodeLine{211 \}  \textcolor{comment}{// namespace tesseract\_common}}
+\DoxyCodeLine{212 }
+\DoxyCodeLine{213 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSEACT\_COMMON\_SFINAE\_UTILS\_H}}
+
+\end{DoxyCode}

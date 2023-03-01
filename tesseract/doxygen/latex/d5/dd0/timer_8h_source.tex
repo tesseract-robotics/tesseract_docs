@@ -1,0 +1,51 @@
+\hypertarget{timer_8h_source}{}\doxysection{timer.\+h}
+\label{timer_8h_source}\index{tesseract\_common/include/tesseract\_common/timer.h@{tesseract\_common/include/tesseract\_common/timer.h}}
+\mbox{\hyperlink{timer_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#ifndef TESSERACT\_COMMON\_TIMER\_H}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define TESSERACT\_COMMON\_TIMER\_H}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{macros_8h}{tesseract\_common/macros.h}}>}}
+\DoxyCodeLine{30 \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include <chrono>}}
+\DoxyCodeLine{32 \mbox{\hyperlink{namespaceTESSERACT__COMMON__IGNORE__WARNINGS__POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__common}{tesseract\_common}}}
+\DoxyCodeLine{35 \{}
+\DoxyCodeLine{37 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__common_1_1Timer}{Timer}}}
+\DoxyCodeLine{38 \{}
+\DoxyCodeLine{39   \textcolor{keyword}{using }\mbox{\hyperlink{classtesseract__common_1_1Timer_a469fe850e541503b71b32ad7fb223ac8}{Clock}} = std::chrono::high\_resolution\_clock;}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{keyword}{public}:}
+\DoxyCodeLine{43   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__common_1_1Timer_a7cdd88b06037fa766104653fb08448ac}{start}}()}
+\DoxyCodeLine{44   \{}
+\DoxyCodeLine{45     \mbox{\hyperlink{classtesseract__common_1_1Timer_a82fabf6e8f3fc1d83de91c0441bce110}{start\_time\_}} = Clock::now();}
+\DoxyCodeLine{46     \mbox{\hyperlink{classtesseract__common_1_1Timer_affa35df66b64ec03c9088dd3ef15d5aa}{running\_}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{47   \}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{50   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__common_1_1Timer_a290e1a9d727725f877269785aa7155a9}{stop}}()}
+\DoxyCodeLine{51   \{}
+\DoxyCodeLine{52     \mbox{\hyperlink{classtesseract__common_1_1Timer_a3ce5e71a5cfca3e4be8e1bfd43b5e31d}{end\_time\_}} = Clock::now();}
+\DoxyCodeLine{53     \mbox{\hyperlink{classtesseract__common_1_1Timer_affa35df66b64ec03c9088dd3ef15d5aa}{running\_}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{54   \}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{61   \textcolor{keywordtype}{double} \mbox{\hyperlink{classtesseract__common_1_1Timer_a67ff4fdf17553c1be2e9d5f8c0fe067d}{elapsedMilliseconds}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{62 \textcolor{keyword}{  }\{}
+\DoxyCodeLine{63     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classtesseract__common_1_1Timer_affa35df66b64ec03c9088dd3ef15d5aa}{running\_}})}
+\DoxyCodeLine{64       \textcolor{keywordflow}{return} std::chrono::duration<double, std::milli>(Clock::now() -\/ \mbox{\hyperlink{classtesseract__common_1_1Timer_a82fabf6e8f3fc1d83de91c0441bce110}{start\_time\_}}).count();}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66     \textcolor{keywordflow}{return} std::chrono::duration<double, std::milli>(\mbox{\hyperlink{classtesseract__common_1_1Timer_a3ce5e71a5cfca3e4be8e1bfd43b5e31d}{end\_time\_}} -\/ \mbox{\hyperlink{classtesseract__common_1_1Timer_a82fabf6e8f3fc1d83de91c0441bce110}{start\_time\_}}).count();}
+\DoxyCodeLine{67   \}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{74   \textcolor{keywordtype}{double} \mbox{\hyperlink{classtesseract__common_1_1Timer_ae9ac9689c7024b16c6f80fa0f0548222}{elapsedSeconds}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classtesseract__common_1_1Timer_a67ff4fdf17553c1be2e9d5f8c0fe067d}{elapsedMilliseconds}}() / 1000.0); \}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 \textcolor{keyword}{private}:}
+\DoxyCodeLine{77   std::chrono::time\_point<Clock> \mbox{\hyperlink{classtesseract__common_1_1Timer_a82fabf6e8f3fc1d83de91c0441bce110}{start\_time\_}};}
+\DoxyCodeLine{78   std::chrono::time\_point<Clock> \mbox{\hyperlink{classtesseract__common_1_1Timer_a3ce5e71a5cfca3e4be8e1bfd43b5e31d}{end\_time\_}};}
+\DoxyCodeLine{79   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__common_1_1Timer_affa35df66b64ec03c9088dd3ef15d5aa}{running\_}}\{ \textcolor{keyword}{false} \};}
+\DoxyCodeLine{80 \};}
+\DoxyCodeLine{81 \}  \textcolor{comment}{// namespace tesseract\_common}}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_COMMON\_TIMER\_H}}
+
+\end{DoxyCode}

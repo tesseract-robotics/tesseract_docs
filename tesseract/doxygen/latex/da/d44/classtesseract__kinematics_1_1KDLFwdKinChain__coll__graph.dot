@@ -1,0 +1,57 @@
+digraph "tesseract_kinematics::KDLFwdKinChain"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [label="tesseract_kinematics\l::KDLFwdKinChain",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="KDL kinematic chain implementation."];
+  Node2 -> Node1 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="tesseract_kinematics\l::ForwardKinematics",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$da/d70/classtesseract__kinematics_1_1ForwardKinematics.html",tooltip="Forward kinematics functions."];
+  Node3 -> Node1 [dir="back",color="darkorchid3",style="dashed",label=" kdl_data_" ];
+  Node3 [label="tesseract_kinematics\l::KDLChainData",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$df/d78/structtesseract__kinematics_1_1KDLChainData.html",tooltip="The KDLChainData struct."];
+  Node4 -> Node3 [dir="back",color="darkorchid3",style="dashed",label=" joint_names" ];
+  Node4 [label="std::vector\< std::string \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+  Node5 -> Node4 [dir="back",color="darkorchid3",style="dashed",label=" elements" ];
+  Node5 [label="tesseract_geometry\l::PolygonMesh",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$d8/dc9/classtesseract__geometry_1_1PolygonMesh.html",tooltip=" "];
+  Node6 -> Node5 [dir="back",color="steelblue1",style="solid"];
+  Node6 [label="tesseract_geometry\l::Geometry",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$df/d1a/classtesseract__geometry_1_1Geometry.html",tooltip=" "];
+  Node7 -> Node5 [dir="back",color="darkorchid3",style="dashed",label=" normals_\nvertices_" ];
+  Node7 [label="std::shared_ptr\< const\l tesseract_common::VectorVector3d \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+  Node5 -> Node7 [dir="back",color="darkorchid3",style="dashed",label=" ptr" ];
+  Node8 -> Node5 [dir="back",color="darkorchid3",style="dashed",label=" faces_" ];
+  Node8 [label="std::shared_ptr\< const\l Eigen::VectorXi \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+  Node5 -> Node8 [dir="back",color="darkorchid3",style="dashed",label=" ptr" ];
+  Node9 -> Node5 [dir="back",color="darkorchid3",style="dashed",label=" resource_" ];
+  Node9 [label="std::shared_ptr\< const\l Resource \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+  Node5 -> Node9 [dir="back",color="darkorchid3",style="dashed",label=" ptr" ];
+  Node10 -> Node5 [dir="back",color="darkorchid3",style="dashed",label=" vertex_colors_" ];
+  Node10 [label="std::shared_ptr\< const\l tesseract_common::VectorVector4d \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+  Node5 -> Node10 [dir="back",color="darkorchid3",style="dashed",label=" ptr" ];
+  Node11 -> Node5 [dir="back",color="darkorchid3",style="dashed",label=" mesh_material_" ];
+  Node11 [label="std::shared_ptr\< MeshMaterial \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+  Node5 -> Node11 [dir="back",color="darkorchid3",style="dashed",label=" ptr" ];
+  Node12 -> Node5 [dir="back",color="darkorchid3",style="dashed",label=" mesh_textures_" ];
+  Node12 [label="std::shared_ptr\< const\l std::vector\< MeshTexture\l::Ptr \> \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+  Node5 -> Node12 [dir="back",color="darkorchid3",style="dashed",label=" ptr" ];
+  Node13 -> Node3 [dir="back",color="darkorchid3",style="dashed",label=" base_link_name\ntip_link_name" ];
+  Node13 [label="std::string",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+  Node14 -> Node13 [dir="back",color="steelblue1",style="solid"];
+  Node14 [label="std::basic_string\<\l Char \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+  Node15 -> Node3 [dir="back",color="darkorchid3",style="dashed",label=" segment_index" ];
+  Node15 [label="std::map\< std::string,\l int \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+  Node13 -> Node15 [dir="back",color="darkorchid3",style="dashed",label=" keys" ];
+  Node5 -> Node15 [dir="back",color="darkorchid3",style="dashed",label=" elements" ];
+  Node16 -> Node3 [dir="back",color="darkorchid3",style="dashed",label=" chains" ];
+  Node16 [label="std::vector\< std::pair\l\< std::string, std::string \> \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+  Node5 -> Node16 [dir="back",color="darkorchid3",style="dashed",label=" elements" ];
+  Node13 -> Node1 [dir="back",color="darkorchid3",style="dashed",label=" name_\nsolver_name_" ];
+  Node17 -> Node1 [dir="back",color="darkorchid3",style="dashed",label=" fk_solver_" ];
+  Node17 [label="std::unique_ptr\< KDL\l::ChainFkSolverPos_recursive \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+  Node5 -> Node17 [dir="back",color="darkorchid3",style="dashed",label=" ptr" ];
+  Node18 -> Node1 [dir="back",color="darkorchid3",style="dashed",label=" jac_solver_" ];
+  Node18 [label="std::unique_ptr\< KDL\l::ChainJntToJacSolver \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+  Node5 -> Node18 [dir="back",color="darkorchid3",style="dashed",label=" ptr" ];
+  Node19 -> Node1 [dir="back",color="darkorchid3",style="dashed",label=" mutex_" ];
+  Node19 [label="std::mutex",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+}

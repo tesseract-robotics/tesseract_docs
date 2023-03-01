@@ -1,0 +1,58 @@
+\hypertarget{state__solver__test__suite_8h}{}\doxysection{tesseract\+\_\+state\+\_\+solver/test/state\+\_\+solver\+\_\+test\+\_\+suite.h File Reference}
+\label{state__solver__test__suite_8h}\index{tesseract\_state\_solver/test/state\_solver\_test\_suite.h@{tesseract\_state\_solver/test/state\_solver\_test\_suite.h}}
+{\ttfamily \#include $<$tesseract\+\_\+common/macros.\+h$>$}\newline
+{\ttfamily \#include $<$gtest/gtest.\+h$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+urdf/urdf\+\_\+parser.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+geometry/impl/box.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+common/resource\+\_\+locator.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+common/utils.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+state\+\_\+solver/kdl/kdl\+\_\+state\+\_\+solver.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+support/tesseract\+\_\+support\+\_\+resource\+\_\+locator.\+h$>$}\newline
+Include dependency graph for state\+\_\+solver\+\_\+test\+\_\+suite.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacetesseract__scene__graph}{tesseract\+\_\+scene\+\_\+graph}}
+\item 
+namespace \mbox{\hyperlink{namespacetesseract__scene__graph_1_1test__suite}{tesseract\+\_\+scene\+\_\+graph\+::test\+\_\+suite}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Scene\+Graph\+::\+UPtr \mbox{\hyperlink{namespacetesseract__scene__graph_1_1test__suite_a3a503bedb111fb56460cc53f1f18e9a3}{tesseract\+\_\+scene\+\_\+graph\+::test\+\_\+suite\+::get\+Scene\+Graph}} ()
+\item 
+Scene\+Graph\+::\+UPtr \mbox{\hyperlink{namespacetesseract__scene__graph_1_1test__suite_a9913122d8c70e9daca75b9bb5dff5c51}{tesseract\+\_\+scene\+\_\+graph\+::test\+\_\+suite\+::get\+Sub\+Scene\+Graph}} ()
+\item 
+void \mbox{\hyperlink{namespacetesseract__scene__graph_1_1test__suite_a3d5d8f4b8dbca44ba06a562c37fb2a7e}{tesseract\+\_\+scene\+\_\+graph\+::test\+\_\+suite\+::run\+Compare\+Scene\+States}} (const Scene\+State \&base\+\_\+state, const Scene\+State \&compare\+\_\+state)
+\item 
+void \mbox{\hyperlink{namespacetesseract__scene__graph_1_1test__suite_a8f74908077d44f8fa4e9514ba4dcf683}{tesseract\+\_\+scene\+\_\+graph\+::test\+\_\+suite\+::run\+Compare\+State\+Solver}} (const State\+Solver \&base\+\_\+solver, State\+Solver \&comp\+\_\+solver)
+\item 
+void \mbox{\hyperlink{namespacetesseract__scene__graph_1_1test__suite_ad7036e32578fd7d17af26a9c8fd363c8}{tesseract\+\_\+scene\+\_\+graph\+::test\+\_\+suite\+::run\+Compare\+State\+Solver\+Limits}} (const Scene\+Graph \&\mbox{\hyperlink{ikfast__kinematics__7dof__unit_8cpp_a8d4d0dc3a6b9a7030970bf9ed3764756}{scene\+\_\+graph}}, const State\+Solver \&comp\+\_\+solver)
+\item 
+static void \mbox{\hyperlink{namespacetesseract__scene__graph_1_1test__suite_a891db7a005c902c958964c5979ca7600}{tesseract\+\_\+scene\+\_\+graph\+::test\+\_\+suite\+::numerical\+Jacobian}} (Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$ \mbox{\hyperlink{kinematics__core__unit_8cpp_afd43241933d01af91643a779b829d7a7}{jacobian}}, const Eigen\+::\+Isometry3d \&change\+\_\+base, const State\+Solver \&state\+\_\+solver, const std\+::vector$<$ std\+::string $>$ \&\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_ae55b39adb52b29eeefd7d128c4b56f2a}{joint\+\_\+names}}, const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xd $>$ \&joint\+\_\+values, const std\+::string \&link\+\_\+name, const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector3d $>$ \&link\+\_\+point)
+\begin{DoxyCompactList}\small\item\em Numerically calculate a jacobian. This is mainly used for testing. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespacetesseract__scene__graph_1_1test__suite_ac306d55f86c9c0cfbef7d1d2d5d3cdea}{tesseract\+\_\+scene\+\_\+graph\+::test\+\_\+suite\+::run\+Compare\+Jacobian}} (State\+Solver \&state\+\_\+solver, const std\+::vector$<$ std\+::string $>$ \&\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_ae55b39adb52b29eeefd7d128c4b56f2a}{joint\+\_\+names}}, const Eigen\+::\+Vector\+Xd \&jvals, const std\+::string \&link\+\_\+name, const Eigen\+::\+Vector3d \&link\+\_\+point, const Eigen\+::\+Isometry3d \&change\+\_\+base)
+\begin{DoxyCompactList}\small\item\em Run a kinematic jacobian test. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespacetesseract__scene__graph_1_1test__suite_adeedfcc23bc7d1bcdd5b3539918cffa9}{tesseract\+\_\+scene\+\_\+graph\+::test\+\_\+suite\+::run\+Compare\+Jacobian}} (State\+Solver \&state\+\_\+solver, const std\+::unordered\+\_\+map$<$ std\+::string, double $>$ \&joints\+\_\+values, const std\+::string \&link\+\_\+name, const Eigen\+::\+Vector3d \&link\+\_\+point, const Eigen\+::\+Isometry3d \&change\+\_\+base)
+\item 
+{\footnotesize template$<$typename S $>$ }\\void \mbox{\hyperlink{namespacetesseract__scene__graph_1_1test__suite_a644d93582f19b7e356e84c6c7c04615b}{tesseract\+\_\+scene\+\_\+graph\+::test\+\_\+suite\+::run\+Jacobian\+Test}} ()
+\item 
+{\footnotesize template$<$typename S $>$ }\\void \mbox{\hyperlink{namespacetesseract__scene__graph_1_1test__suite_acfa882edab944e020bfbe7e17d5c8c63}{tesseract\+\_\+scene\+\_\+graph\+::test\+\_\+suite\+::run\+Addand\+Remove\+Link\+Test}} ()
+\item 
+{\footnotesize template$<$typename S $>$ }\\void \mbox{\hyperlink{namespacetesseract__scene__graph_1_1test__suite_a0207efebd2c5ce0547b140e907f9dc4b}{tesseract\+\_\+scene\+\_\+graph\+::test\+\_\+suite\+::run\+Add\+Scene\+Graph\+Test}} ()
+\item 
+{\footnotesize template$<$typename S $>$ }\\void \mbox{\hyperlink{namespacetesseract__scene__graph_1_1test__suite_afa2df50411c17b4727a186aea950cdf9}{tesseract\+\_\+scene\+\_\+graph\+::test\+\_\+suite\+::run\+Change\+Joint\+Origin\+Test}} ()
+\item 
+{\footnotesize template$<$typename S $>$ }\\void \mbox{\hyperlink{namespacetesseract__scene__graph_1_1test__suite_a1f456dac84857d7e83707a9fd702ddce}{tesseract\+\_\+scene\+\_\+graph\+::test\+\_\+suite\+::run\+Move\+Joint\+Test}} ()
+\item 
+{\footnotesize template$<$typename S $>$ }\\void \mbox{\hyperlink{namespacetesseract__scene__graph_1_1test__suite_ac80e2cd385b2f9fd13605a84554d72eb}{tesseract\+\_\+scene\+\_\+graph\+::test\+\_\+suite\+::run\+Move\+Link\+Test}} ()
+\item 
+{\footnotesize template$<$typename S $>$ }\\void \mbox{\hyperlink{namespacetesseract__scene__graph_1_1test__suite_abd77bf99e16a5edfc36fedff4f3ce33b}{tesseract\+\_\+scene\+\_\+graph\+::test\+\_\+suite\+::run\+Change\+Joint\+Limits\+Test}} ()
+\item 
+{\footnotesize template$<$typename S $>$ }\\void \mbox{\hyperlink{namespacetesseract__scene__graph_1_1test__suite_a5ca0217ce64feee05d4f19d83824f49d}{tesseract\+\_\+scene\+\_\+graph\+::test\+\_\+suite\+::run\+Replace\+Joint\+Test}} ()
+\end{DoxyCompactItemize}

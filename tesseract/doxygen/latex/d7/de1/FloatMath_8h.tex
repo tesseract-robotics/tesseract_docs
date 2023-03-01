@@ -1,0 +1,525 @@
+\hypertarget{FloatMath_8h}{}\doxysection{tesseract\+\_\+collision/vhacd/include/tesseract\+\_\+collision/vhacd/inc/\+Float\+Math.h File Reference}
+\label{FloatMath_8h}\index{tesseract\_collision/vhacd/include/tesseract\_collision/vhacd/inc/FloatMath.h@{tesseract\_collision/vhacd/include/tesseract\_collision/vhacd/inc/FloatMath.h}}
+{\ttfamily \#include $<$float.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+Include dependency graph for Float\+Math.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classtesseract__collision_1_1FLOAT__MATH_1_1fm__VertexIndex}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+\+Vertex\+Index}}
+\item 
+class \mbox{\hyperlink{classtesseract__collision_1_1FLOAT__MATH_1_1fm__Triangulate}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+\+Triangulate}}
+\item 
+class \mbox{\hyperlink{classtesseract__collision_1_1FLOAT__MATH_1_1fm__Tesselate}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+\+Tesselate}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacetesseract__collision}{tesseract\+\_\+collision}}
+\item 
+namespace \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{FloatMath_8h_a9da2fa07f097e59a3697d603b2c2f541}{FM\+\_\+\+DEFAULT\+\_\+\+GRANULARITY}}~0.\+001f
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a56bde344b52ec01c9fd3ab4f5411e60e}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::\+FM\+\_\+\+Clip\+State}} \{ \newline
+\mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a56bde344b52ec01c9fd3ab4f5411e60ea637e402ff2124e6fa0286026851db5e6}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::\+FMCS\+\_\+\+XMIN}} = (1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0)
+, \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a56bde344b52ec01c9fd3ab4f5411e60ea799fec9fc3011350d0e56a8ee760c32e}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::\+FMCS\+\_\+\+XMAX}} = (1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1)
+, \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a56bde344b52ec01c9fd3ab4f5411e60ea8b62d98a9d3e6ea59b31b54a4858d372}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::\+FMCS\+\_\+\+YMIN}} = (1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2)
+, \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a56bde344b52ec01c9fd3ab4f5411e60eae6e45467a0444974618dc4e154717ecc}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::\+FMCS\+\_\+\+YMAX}} = (1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 3)
+, \newline
+\mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a56bde344b52ec01c9fd3ab4f5411e60eafae4c9d1e1f2475a3b53806cd6aadc03}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::\+FMCS\+\_\+\+ZMIN}} = (1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 4)
+, \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a56bde344b52ec01c9fd3ab4f5411e60eafaa0d9a4dc7384024665872526f7ba1a}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::\+FMCS\+\_\+\+ZMAX}} = (1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 5)
+ \}
+\item 
+enum \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a57b1f0f5d17910cddbf894c6cf4f740c}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::\+FM\+\_\+\+Axis}} \{ \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a57b1f0f5d17910cddbf894c6cf4f740cae6fe6d37fb651c6a99fff7127fbaeedc}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::\+FM\+\_\+\+XAXIS}} = (1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0)
+, \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a57b1f0f5d17910cddbf894c6cf4f740caa54828ada4095bce83b9f350e6fc4a72}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::\+FM\+\_\+\+YAXIS}} = (1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1)
+, \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a57b1f0f5d17910cddbf894c6cf4f740cabf89c72164f14be924c97a71e66b4c81}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::\+FM\+\_\+\+ZAXIS}} = (1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2)
+ \}
+\item 
+enum \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_af42614d2a8c480acd36886830b2e8627}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::\+Line\+Segment\+Type}} \{ \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_af42614d2a8c480acd36886830b2e8627a4b71c1f394283a3c6a6606f06c0ba97c}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::\+LS\+\_\+\+START}}
+, \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_af42614d2a8c480acd36886830b2e8627a02911158a79bca96ea5768cf411e1526}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::\+LS\+\_\+\+MIDDLE}}
+, \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_af42614d2a8c480acd36886830b2e8627ab2c1aa9b30c3f4ba3fbd6c528bf99f86}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::\+LS\+\_\+\+END}}
+ \}
+\item 
+enum \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a19fa38793feab4dd0f29d8b5b9139e5b}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::\+Intersect\+Result}} \{ \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a19fa38793feab4dd0f29d8b5b9139e5baa990ae53ea6616c5537ed7595ad60600}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::\+IR\+\_\+\+DONT\+\_\+\+INTERSECT}}
+, \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a19fa38793feab4dd0f29d8b5b9139e5ba3ae239bad07a491c5a7fce92828e974c}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::\+IR\+\_\+\+DO\+\_\+\+INTERSECT}}
+, \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a19fa38793feab4dd0f29d8b5b9139e5bade4a9bce49f102a655f5394a23059a83}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::\+IR\+\_\+\+COINCIDENT}}
+, \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a19fa38793feab4dd0f29d8b5b9139e5baa05e67169a28b598cf6c8a4e60909863}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::\+IR\+\_\+\+PARALLEL}}
+ \}
+\item 
+enum \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a9dc0f42f1c9368405542eb051348bfdc}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::\+Plane\+Tri\+Result}} \{ \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a9dc0f42f1c9368405542eb051348bfdca1e9392281bdfba368c33c3288aae76bd}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::\+PTR\+\_\+\+ON\+\_\+\+PLANE}}
+, \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a9dc0f42f1c9368405542eb051348bfdca1a97d69ed501cbfaf314778f425ddbd9}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::\+PTR\+\_\+\+FRONT}}
+, \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a9dc0f42f1c9368405542eb051348bfdca274ecaba967ab623c4ccff5b17483ece}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::\+PTR\+\_\+\+BACK}}
+, \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a9dc0f42f1c9368405542eb051348bfdca9347c44aa39e70a4bb10f18b428a835f}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::\+PTR\+\_\+\+SPLIT}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+FM\+\_\+\+Axis \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_acca9414e2eee81d555d6360649718b5c}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+get\+Dominant\+Axis}} (const float \mbox{\hyperlink{collision__core__unit_8cpp_a7589b8c9c1397d28b5974168ee72f0a8}{normal}}\mbox{[}3\mbox{]})
+\item 
+FM\+\_\+\+Axis \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a118022d93505871710bf126dfa28553f}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+get\+Dominant\+Axis}} (const double \mbox{\hyperlink{collision__core__unit_8cpp_a7589b8c9c1397d28b5974168ee72f0a8}{normal}}\mbox{[}3\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a20339cfba18f20f32a1b9b0cf914aa06}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+decompose\+Transform}} (const float local\+\_\+transform\mbox{[}16\mbox{]}, float trans\mbox{[}3\mbox{]}, float rot\mbox{[}4\mbox{]}, float \mbox{\hyperlink{collision__margin__data__unit_8cpp_a80d402d10e8341004c0caf10133b80ab}{scale}}\mbox{[}3\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a9c19b3a605ddd8689685eccffda48e1e}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+decompose\+Transform}} (const double local\+\_\+transform\mbox{[}16\mbox{]}, double trans\mbox{[}3\mbox{]}, double rot\mbox{[}4\mbox{]}, double \mbox{\hyperlink{collision__margin__data__unit_8cpp_a80d402d10e8341004c0caf10133b80ab}{scale}}\mbox{[}3\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a43292e98b3bca2ff079793a6c2b9b9ce}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+multiply\+Transform}} (const float $\ast$pA, const float $\ast$pB, float $\ast$pM)
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a5ec11953d309e7d5ded057908fc135bf}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+multiply\+Transform}} (const double $\ast$pA, const double $\ast$pB, double $\ast$pM)
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a2930e1036d21feaa32072574b52c85cf}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+inverse\+Transform}} (const float matrix\mbox{[}16\mbox{]}, float inverse\+\_\+matrix\mbox{[}16\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a8a4b05fc830415578955aa2bf9ab1c2f}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+inverse\+Transform}} (const double matrix\mbox{[}16\mbox{]}, double inverse\+\_\+matrix\mbox{[}16\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_abdfd34d01be5cf8d25d4b13ac8047dbc}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+identity}} (float matrix\mbox{[}16\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a25510ecb22b24c5c76aa349fe66b12f6}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+identity}} (double matrix\mbox{[}16\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a7a288d3b0ad250d7da5300d5af0c73a3}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+inverse\+RT}} (const float matrix\mbox{[}16\mbox{]}, const float pos\mbox{[}3\mbox{]}, float t\mbox{[}3\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a2366b40d8c53e65d8309aaa4d876dd77}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+inverse\+RT}} (const double matrix\mbox{[}16\mbox{]}, const double pos\mbox{[}3\mbox{]}, double t\mbox{[}3\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ac23b20a81934bc9938d1f132f73cc2b7}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+transform}} (const float matrix\mbox{[}16\mbox{]}, const float pos\mbox{[}3\mbox{]}, float t\mbox{[}3\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ad85401420f7e8e69ee372e15374b974a}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+transform}} (const double matrix\mbox{[}16\mbox{]}, const double pos\mbox{[}3\mbox{]}, double t\mbox{[}3\mbox{]})
+\item 
+float \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ade25e1cef74e40893d61095f962d21bc}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+get\+Determinant}} (const float matrix\mbox{[}16\mbox{]})
+\item 
+double \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a9034bc0203446fbcf85ee092e60b2fe5}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+get\+Determinant}} (const double matrix\mbox{[}16\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a912f7260e26b804296066a4f663b613a}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+get\+Sub\+Matrix}} (int32\+\_\+t ki, int32\+\_\+t kj, float p\+Dst\mbox{[}16\mbox{]}, const float matrix\mbox{[}16\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a0f2f308c76ac2f036ce14f74b6b71685}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+get\+Sub\+Matrix}} (int32\+\_\+t ki, int32\+\_\+t kj, double p\+Dst\mbox{[}16\mbox{]}, const float matrix\mbox{[}16\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a63c5dd64f54c06474941dc6d33b7a7c9}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+rotate}} (const float matrix\mbox{[}16\mbox{]}, const float pos\mbox{[}3\mbox{]}, float t\mbox{[}3\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a168fa7b91725f0c9a9887f534a58d4d7}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+rotate}} (const double matri\mbox{[}16\mbox{]}, const double pos\mbox{[}3\mbox{]}, double t\mbox{[}3\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a639510718199c69fef576249cc62ab5b}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+euler\+To\+Matrix}} (float ax, float ay, float az, float matrix\mbox{[}16\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_af45fcfd8b089fa267a986b46f38b3c2e}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+euler\+To\+Matrix}} (double ax, double ay, double az, double matrix\mbox{[}16\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a26462a27e72af6990c121632428ec2fc}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+get\+AABB}} (uint32\+\_\+t vcount, const float $\ast$points, uint32\+\_\+t pstride, float bmin\mbox{[}3\mbox{]}, float bmax\mbox{[}3\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a42f81d3f224d7b3a357287e1d2a8d5c2}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+get\+AABB}} (uint32\+\_\+t vcount, const double $\ast$points, uint32\+\_\+t pstride, double bmin\mbox{[}3\mbox{]}, double bmax\mbox{[}3\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a26eb44a9dac482873d9708d106074ae7}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+get\+AABBCenter}} (const float bmin\mbox{[}3\mbox{]}, const float bmax\mbox{[}3\mbox{]}, float center\mbox{[}3\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a0901f8b1a049e62050e83bc0b73ebceb}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+get\+AABBCenter}} (const double bmin\mbox{[}3\mbox{]}, const double bmax\mbox{[}3\mbox{]}, double center\mbox{[}3\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_aee2425da19ad647e2e6e07cefab80499}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+transform\+AABB}} (const float bmin\mbox{[}3\mbox{]}, const float bmax\mbox{[}3\mbox{]}, const float matrix\mbox{[}16\mbox{]}, float tbmin\mbox{[}3\mbox{]}, float tbmax\mbox{[}3\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ad8ea1fed61466d898230592947d2dfff}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+transform\+AABB}} (const double bmin\mbox{[}3\mbox{]}, const double bmax\mbox{[}3\mbox{]}, const double matrix\mbox{[}16\mbox{]}, double tbmin\mbox{[}3\mbox{]}, double tbmax\mbox{[}3\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ac1c511904fd0433cb171ebe3074571a6}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+euler\+To\+Quat}} (float x, float y, float z, float quat\mbox{[}4\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a83d59d849b5378429d62a3297e2e0660}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+euler\+To\+Quat}} (double x, double y, double z, double quat\mbox{[}4\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a5cd99876556a82c5afc63506f786f147}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+quat\+To\+Euler}} (const float quat\mbox{[}4\mbox{]}, float \&ax, float \&ay, float \&az)
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a15b6024798b9028dd2e0d085346dd622}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+quat\+To\+Euler}} (const double quat\mbox{[}4\mbox{]}, double \&ax, double \&ay, double \&az)
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_aedd7cba2a55a89d7e5e67faa2f6a75f2}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+euler\+To\+Quat}} (const float euler\mbox{[}3\mbox{]}, float quat\mbox{[}4\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a26665917731e8be98130538ffe4c1f49}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+euler\+To\+Quat}} (const double euler\mbox{[}3\mbox{]}, double quat\mbox{[}4\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ab22d3c67cc3fca43c5a5b85f58f162c5}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+scale}} (float x, float y, float z, float matrix\mbox{[}16\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ac4d930654c63e5ea114e8602515c52b2}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+scale}} (double x, double y, double z, double matrix\mbox{[}16\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a4c37e0fe41f064bf258f2f586e44addc}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+euler\+To\+Quat\+DX}} (float x, float y, float z, float quat\mbox{[}4\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a6351f4e720a0c7e60fd6436ad39ec9cf}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+euler\+To\+Quat\+DX}} (double x, double y, double z, double quat\mbox{[}4\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ad596304cf67a2c552307bafd46dec0c9}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+euler\+To\+Matrix\+DX}} (float x, float y, float z, float matrix\mbox{[}16\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a9147330f6d605c6b6635339137c87e5f}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+euler\+To\+Matrix\+DX}} (double x, double y, double z, double matrix\mbox{[}16\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a118b6cce9f33842be45ad85cfe0769b8}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+quat\+To\+Matrix}} (const float quat\mbox{[}4\mbox{]}, float matrix\mbox{[}16\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a17192fdf7d820f6171b49335b6c07b67}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+quat\+To\+Matrix}} (const double quat\mbox{[}4\mbox{]}, double matrix\mbox{[}16\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a3003c85d794447e983e60a563e3dc89f}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+quat\+Rotate}} (const float quat\mbox{[}4\mbox{]}, const float \mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}}\mbox{[}3\mbox{]}, float r\mbox{[}3\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_acdc6e869373288a4136bb988b3bc33fe}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+quat\+Rotate}} (const double quat\mbox{[}4\mbox{]}, const double \mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}}\mbox{[}3\mbox{]}, double r\mbox{[}3\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_aaf45b7cea3c67c1ea7a9056c8a8a66c2}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+get\+Translation}} (const float matrix\mbox{[}16\mbox{]}, float t\mbox{[}3\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a093ae40b757eb01fba322df1da252eb0}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+get\+Translation}} (const double matrix\mbox{[}16\mbox{]}, double t\mbox{[}3\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a2185a6780c25309ae85acaa443d5e1c3}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+set\+Translation}} (const float $\ast$\mbox{\hyperlink{tesseract__environment__collision_8cpp_a444e5981b9daaa9413df8d049b9ad91c}{translation}}, float matrix\mbox{[}16\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a6d37fd0cbfa4a60fa4842ded2ef494ab}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+set\+Translation}} (const double $\ast$\mbox{\hyperlink{tesseract__environment__collision_8cpp_a444e5981b9daaa9413df8d049b9ad91c}{translation}}, double matrix\mbox{[}16\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ab6c58516f784858ad9cb5309111c4f9d}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+multiply\+Quat}} (const float $\ast$qa, const float $\ast$qb, float $\ast$quat)
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_adb21af1a5860809f1048e92fff9a10f3}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+multiply\+Quat}} (const double $\ast$qa, const double $\ast$qb, double $\ast$quat)
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a3018506776da4e489026206851075a70}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+matrix\+To\+Quat}} (const float matrix\mbox{[}16\mbox{]}, float quat\mbox{[}4\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a5e16c1f976255381127d92dc88a5fcfc}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+matrix\+To\+Quat}} (const double matrix\mbox{[}16\mbox{]}, double quat\mbox{[}4\mbox{]})
+\item 
+float \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a05803dc0d65548b0f9d2356a0e90d058}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+sphere\+Volume}} (float radius)
+\item 
+double \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a8c0c6770ea6a165c87e778b14757bf97}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+sphere\+Volume}} (double radius)
+\item 
+float \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a7ad3a288625be116836cd7a4a211bb3a}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+cylinder\+Volume}} (float radius, float h)
+\item 
+double \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a9081c1cfc8b39e69a5fd505dac352726}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+cylinder\+Volume}} (double radius, double h)
+\item 
+float \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a3a44cd55b62d545286078a1f02d6dbd1}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+capsule\+Volume}} (float radius, float h)
+\item 
+double \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a706b213cad40d1ac69d6553a41be4522}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+capsule\+Volume}} (double radius, double h)
+\item 
+float \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_af4f1b387127147d1ebd4c42f44ac243f}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+distance}} (const float p1\mbox{[}3\mbox{]}, const float p2\mbox{[}3\mbox{]})
+\item 
+double \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a25bb6f3ea67d8d7f5f34405baefdb32f}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+distance}} (const double p1\mbox{[}3\mbox{]}, const double p2\mbox{[}3\mbox{]})
+\item 
+float \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ad272ffe55903faab563db83a7b81fbf8}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+distance\+Squared}} (const float p1\mbox{[}3\mbox{]}, const float p2\mbox{[}3\mbox{]})
+\item 
+double \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a798d36f1daa335787f3110524db3e96e}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+distance\+Squared}} (const double p1\mbox{[}3\mbox{]}, const double p2\mbox{[}3\mbox{]})
+\item 
+float \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a1431de771b28b064253d2345fd2b198b}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+distance\+Squared\+XZ}} (const float p1\mbox{[}3\mbox{]}, const float p2\mbox{[}3\mbox{]})
+\item 
+double \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a1381770619c7a68248b0e1429dcd14fd}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+distance\+Squared\+XZ}} (const double p1\mbox{[}3\mbox{]}, const double p2\mbox{[}3\mbox{]})
+\item 
+float \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_abe52bf3681db3e807970a9aca321d09a}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+compute\+Plane}} (const float p1\mbox{[}3\mbox{]}, const float p2\mbox{[}3\mbox{]}, const float p3\mbox{[}3\mbox{]}, float $\ast$n)
+\item 
+double \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a9c897da6fbeb042817ac971e00df3155}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+compute\+Plane}} (const double p1\mbox{[}3\mbox{]}, const double p2\mbox{[}3\mbox{]}, const double p3\mbox{[}3\mbox{]}, double $\ast$n)
+\item 
+float \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a7e0937990accc4f6c31a0bcfeee7714e}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+dist\+To\+Plane}} (const float \mbox{\hyperlink{tesseract__geometry__unit_8cpp_aa68ded2b3844964c96a0a41e241156e3}{plane}}\mbox{[}4\mbox{]}, const float pos\mbox{[}3\mbox{]})
+\item 
+double \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_aa46020bd5d34fc88ebefa42af874a1ca}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+dist\+To\+Plane}} (const double \mbox{\hyperlink{tesseract__geometry__unit_8cpp_aa68ded2b3844964c96a0a41e241156e3}{plane}}\mbox{[}4\mbox{]}, const double pos\mbox{[}3\mbox{]})
+\item 
+float \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a523efadbf49552c8e2a279f79fcf4ec5}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+dot}} (const float p1\mbox{[}3\mbox{]}, const float p2\mbox{[}3\mbox{]})
+\item 
+double \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a761c3d1e11c5f44b066d57fe3fa94246}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+dot}} (const double p1\mbox{[}3\mbox{]}, const double p2\mbox{[}3\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a654b75169778cad484dbfcfa7338b90b}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+cross}} (float cross\mbox{[}3\mbox{]}, const float a\mbox{[}3\mbox{]}, const float b\mbox{[}3\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_aefd74ce9b6c1534d0346699475d639be}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+cross}} (double cross\mbox{[}3\mbox{]}, const double a\mbox{[}3\mbox{]}, const double b\mbox{[}3\mbox{]})
+\item 
+float \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a44f80cf3be2769070ac93349d98f7c56}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+compute\+Normal\+Vector}} (float n\mbox{[}3\mbox{]}, const float p1\mbox{[}3\mbox{]}, const float p2\mbox{[}3\mbox{]})
+\item 
+double \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a45c609530431013343af754f69d5de65}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+compute\+Normal\+Vector}} (double n\mbox{[}3\mbox{]}, const double p1\mbox{[}3\mbox{]}, const double p2\mbox{[}3\mbox{]})
+\item 
+bool \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a11675f64687ac73efb1d4fddcdde0fdf}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+compute\+Winding\+Order}} (const float p1\mbox{[}3\mbox{]}, const float p2\mbox{[}3\mbox{]}, const float p3\mbox{[}3\mbox{]})
+\item 
+bool \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a74e86eade357818fd0acbd08f9717a95}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+compute\+Winding\+Order}} (const double p1\mbox{[}3\mbox{]}, const double p2\mbox{[}3\mbox{]}, const double p3\mbox{[}3\mbox{]})
+\item 
+float \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a5b91def523c08b1ea05c9f98da9d12f6}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+normalize}} (float n\mbox{[}3\mbox{]})
+\item 
+double \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ac7061055d5338356b913e4f85138390d}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+normalize}} (double n\mbox{[}3\mbox{]})
+\item 
+float \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a7354390b19c4d83a0c7c09518b369c27}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+normalize\+Quat}} (float n\mbox{[}4\mbox{]})
+\item 
+double \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a9b25d0697837048ee4a62464d6393930}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+normalize\+Quat}} (double n\mbox{[}4\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a411db5078229529ffb7c58dcedde7af4}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+matrix\+Multiply}} (const float A\mbox{[}16\mbox{]}, const float B\mbox{[}16\mbox{]}, float dest\mbox{[}16\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ab5f3ec9d83d70ed6f0872b16b9b468df}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+matrix\+Multiply}} (const double A\mbox{[}16\mbox{]}, const double B\mbox{[}16\mbox{]}, double dest\mbox{[}16\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a4ae40dd0a03640674d2385b3945bec27}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+compose\+Transform}} (const float \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_af0c068d080af3059ecb802c9e338bd98}{position}}\mbox{[}3\mbox{]}, const float quat\mbox{[}4\mbox{]}, const float \mbox{\hyperlink{collision__margin__data__unit_8cpp_a80d402d10e8341004c0caf10133b80ab}{scale}}\mbox{[}3\mbox{]}, float matrix\mbox{[}16\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_aefd90370410f83c94c96802c875af7b8}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+compose\+Transform}} (const double \mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_af0c068d080af3059ecb802c9e338bd98}{position}}\mbox{[}3\mbox{]}, const double quat\mbox{[}4\mbox{]}, const double \mbox{\hyperlink{collision__margin__data__unit_8cpp_a80d402d10e8341004c0caf10133b80ab}{scale}}\mbox{[}3\mbox{]}, double matrix\mbox{[}16\mbox{]})
+\item 
+float \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_aa18a44432b79c9a0d8591d2a746a24ea}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+compute\+Area}} (const float p1\mbox{[}3\mbox{]}, const float p2\mbox{[}3\mbox{]}, const float p3\mbox{[}3\mbox{]})
+\item 
+double \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a42b55d8b683c13d939861fe1c8341825}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+compute\+Area}} (const double p1\mbox{[}3\mbox{]}, const double p2\mbox{[}3\mbox{]}, const double p3\mbox{[}3\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a8cb9e6a6ed2b38e0ce39f1d3020d73d5}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+lerp}} (const float p1\mbox{[}3\mbox{]}, const float p2\mbox{[}3\mbox{]}, float dest\mbox{[}3\mbox{]}, float lerp\+Value)
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_af4114471ff184b045a13422c11424901}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+lerp}} (const double p1\mbox{[}3\mbox{]}, const double p2\mbox{[}3\mbox{]}, double dest\mbox{[}3\mbox{]}, double lerp\+Value)
+\item 
+bool \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_af7869088ef074c70504401202befce8e}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+inside\+Triangle\+XZ}} (const float test\mbox{[}3\mbox{]}, const float p1\mbox{[}3\mbox{]}, const float p2\mbox{[}3\mbox{]}, const float p3\mbox{[}3\mbox{]})
+\item 
+bool \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a9a26d5c176cec57b7b3b9503c428340b}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+inside\+Triangle\+XZ}} (const double test\mbox{[}3\mbox{]}, const double p1\mbox{[}3\mbox{]}, const double p2\mbox{[}3\mbox{]}, const double p3\mbox{[}3\mbox{]})
+\item 
+bool \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a6e9812207f1e9d061db2f544fa4bfeee}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+inside\+AABB}} (const float pos\mbox{[}3\mbox{]}, const float bmin\mbox{[}3\mbox{]}, const float bmax\mbox{[}3\mbox{]})
+\item 
+bool \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a07fdb96442a7432f0666bb9d36bd9850}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+inside\+AABB}} (const double pos\mbox{[}3\mbox{]}, const double bmin\mbox{[}3\mbox{]}, const double bmax\mbox{[}3\mbox{]})
+\item 
+bool \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a5d7f17aee0514c34853c358f2b4f4053}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+inside\+AABB}} (const float obmin\mbox{[}3\mbox{]}, const float obmax\mbox{[}3\mbox{]}, const float tbmin\mbox{[}3\mbox{]}, const float tbmax\mbox{[}3\mbox{]})
+\item 
+bool \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_acfe094fbb02a7a9ba0490b029412ed50}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+inside\+AABB}} (const double obmin\mbox{[}3\mbox{]}, const double obmax\mbox{[}3\mbox{]}, const double tbmin\mbox{[}3\mbox{]}, const double tbmax\mbox{[}3\mbox{]})
+\item 
+uint32\+\_\+t \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a061c06eef032983432ea301049120076}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+clip\+Test\+Point}} (const float bmin\mbox{[}3\mbox{]}, const float bmax\mbox{[}3\mbox{]}, const float pos\mbox{[}3\mbox{]})
+\item 
+uint32\+\_\+t \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a797a99f4adc2dc3cd8bcdff46fbf0050}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+clip\+Test\+Point}} (const double bmin\mbox{[}3\mbox{]}, const double bmax\mbox{[}3\mbox{]}, const double pos\mbox{[}3\mbox{]})
+\item 
+uint32\+\_\+t \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a6c23f3e7be112ea36cb26f41427647af}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+clip\+Test\+Point\+XZ}} (const float bmin\mbox{[}3\mbox{]}, const float bmax\mbox{[}3\mbox{]}, const float pos\mbox{[}3\mbox{]})
+\item 
+uint32\+\_\+t \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_accde262a5491b0b1cff0321f2c0c9349}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+clip\+Test\+Point\+XZ}} (const double bmin\mbox{[}3\mbox{]}, const double bmax\mbox{[}3\mbox{]}, const double pos\mbox{[}3\mbox{]})
+\item 
+uint32\+\_\+t \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a4faeeb7586cc8a1b51a6102cc2ff6f12}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+clip\+Test\+AABB}} (const float bmin\mbox{[}3\mbox{]}, const float bmax\mbox{[}3\mbox{]}, const float p1\mbox{[}3\mbox{]}, const float p2\mbox{[}3\mbox{]}, const float p3\mbox{[}3\mbox{]}, uint32\+\_\+t \&and\+Code)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_af6b3f9394b44586dba536ebcf408b2d4}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+clip\+Test\+AABB}} (const double bmin\mbox{[}3\mbox{]}, const double bmax\mbox{[}3\mbox{]}, const double p1\mbox{[}3\mbox{]}, const double p2\mbox{[}3\mbox{]}, const double p3\mbox{[}3\mbox{]}, uint32\+\_\+t \&and\+Code)
+\item 
+bool \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ac505e40a2f78a4f88709ed39657038a0}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+line\+Test\+AABBXZ}} (const float p1\mbox{[}3\mbox{]}, const float p2\mbox{[}3\mbox{]}, const float bmin\mbox{[}3\mbox{]}, const float bmax\mbox{[}3\mbox{]}, float \&\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_ad09056a4bcd52540541e635a0fdf5551}{time}})
+\item 
+bool \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a3e86cb35a2841baaf17a0e1f8d4374d1}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+line\+Test\+AABBXZ}} (const double p1\mbox{[}3\mbox{]}, const double p2\mbox{[}3\mbox{]}, const double bmin\mbox{[}3\mbox{]}, const double bmax\mbox{[}3\mbox{]}, double \&\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_ad09056a4bcd52540541e635a0fdf5551}{time}})
+\item 
+bool \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a28305e65a686d484389270fca9b25e3f}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+line\+Test\+AABB}} (const float p1\mbox{[}3\mbox{]}, const float p2\mbox{[}3\mbox{]}, const float bmin\mbox{[}3\mbox{]}, const float bmax\mbox{[}3\mbox{]}, float \&\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_ad09056a4bcd52540541e635a0fdf5551}{time}})
+\item 
+bool \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a6d411a5d75a7407a8578d44afaef4149}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+line\+Test\+AABB}} (const double p1\mbox{[}3\mbox{]}, const double p2\mbox{[}3\mbox{]}, const double bmin\mbox{[}3\mbox{]}, const double bmax\mbox{[}3\mbox{]}, double \&\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_ad09056a4bcd52540541e635a0fdf5551}{time}})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ab913dc35ab9f5417c775a33fc6b191c4}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+init\+Min\+Max}} (const float p\mbox{[}3\mbox{]}, float bmin\mbox{[}3\mbox{]}, float bmax\mbox{[}3\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_aa12d17fcbd95e0e2d256013be22f0072}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+init\+Min\+Max}} (const double p\mbox{[}3\mbox{]}, double bmin\mbox{[}3\mbox{]}, double bmax\mbox{[}3\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a575186230024130e3212fec89ef7acd6}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+init\+Min\+Max}} (float bmin\mbox{[}3\mbox{]}, float bmax\mbox{[}3\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_af037d696ca5988565c1dba3e189cd8c6}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+init\+Min\+Max}} (double bmin\mbox{[}3\mbox{]}, double bmax\mbox{[}3\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a9fa69c68cfa4591754dc68d95b429044}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+minmax}} (const float p\mbox{[}3\mbox{]}, float bmin\mbox{[}3\mbox{]}, float bmax\mbox{[}3\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a6e05b3047532dfd3fc299ad86b237391}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+minmax}} (const double p\mbox{[}3\mbox{]}, double bmin\mbox{[}3\mbox{]}, double bmax\mbox{[}3\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a22ca324a98916a1bff831c3415434d99}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+inflate\+Min\+Max}} (float bmin\mbox{[}3\mbox{]}, float bmax\mbox{[}3\mbox{]}, float ratio)
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_aaa704fe1bde1335959bed3eed9b259ad}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+inflate\+Min\+Max}} (double bmin\mbox{[}3\mbox{]}, double bmax\mbox{[}3\mbox{]}, double ratio)
+\item 
+float \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_aba158f2cb35cf0f025ac66ba93e30987}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+solveX}} (const float \mbox{\hyperlink{tesseract__geometry__unit_8cpp_aa68ded2b3844964c96a0a41e241156e3}{plane}}\mbox{[}4\mbox{]}, float y, float z)
+\item 
+double \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_aeade3b0e1dc6210537b65630e77342fd}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+solveX}} (const double \mbox{\hyperlink{tesseract__geometry__unit_8cpp_aa68ded2b3844964c96a0a41e241156e3}{plane}}\mbox{[}4\mbox{]}, double y, double z)
+\item 
+float \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a72f066966e7520d677330402cc7cb07c}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+solveY}} (const float \mbox{\hyperlink{tesseract__geometry__unit_8cpp_aa68ded2b3844964c96a0a41e241156e3}{plane}}\mbox{[}4\mbox{]}, float x, float z)
+\item 
+double \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a8e5278a07db41cc8fdc61b8bb71d435b}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+solveY}} (const double \mbox{\hyperlink{tesseract__geometry__unit_8cpp_aa68ded2b3844964c96a0a41e241156e3}{plane}}\mbox{[}4\mbox{]}, double x, double z)
+\item 
+float \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a3b6b4eb4cfebc4f40a1b3bf1f4dda8d9}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+solveZ}} (const float \mbox{\hyperlink{tesseract__geometry__unit_8cpp_aa68ded2b3844964c96a0a41e241156e3}{plane}}\mbox{[}4\mbox{]}, float x, float y)
+\item 
+double \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ae7cc686709d0f791c337f65560b354ca}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+solveZ}} (const double \mbox{\hyperlink{tesseract__geometry__unit_8cpp_aa68ded2b3844964c96a0a41e241156e3}{plane}}\mbox{[}4\mbox{]}, double x, double y)
+\item 
+bool \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_adae42072725a00a07bdcf2fd0060aa6f}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+compute\+Best\+Fit\+Plane}} (uint32\+\_\+t vcount, const float $\ast$points, uint32\+\_\+t vstride, const float $\ast$weights, uint32\+\_\+t wstride, float \mbox{\hyperlink{tesseract__geometry__unit_8cpp_aa68ded2b3844964c96a0a41e241156e3}{plane}}\mbox{[}4\mbox{]}, float center\mbox{[}3\mbox{]})
+\item 
+bool \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_aed755a8d6051eb0863889f12e1fab101}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+compute\+Best\+Fit\+Plane}} (uint32\+\_\+t vcount, const double $\ast$points, uint32\+\_\+t vstride, const double $\ast$weights, uint32\+\_\+t wstride, double \mbox{\hyperlink{tesseract__geometry__unit_8cpp_aa68ded2b3844964c96a0a41e241156e3}{plane}}\mbox{[}4\mbox{]}, double center\mbox{[}3\mbox{]})
+\item 
+bool \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_af55e0c1ce8b86ff4a4dcfbc5c15188c3}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+compute\+Centroid}} (uint32\+\_\+t vcount, const float $\ast$points, float $\ast$center)
+\item 
+bool \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a178f2557f7bca24505cc0273115d8b9d}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+compute\+Centroid}} (uint32\+\_\+t vcount, const double $\ast$points, double $\ast$center)
+\item 
+bool \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_accba89cfec9011061745f450cae82da0}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+compute\+Centroid}} (uint32\+\_\+t vcount, const float $\ast$points, uint32\+\_\+t triangle\+Count, const uint32\+\_\+t $\ast$indices, float $\ast$center)
+\item 
+bool \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a59f363c0667bd7ecb4e0f71fb7ba2000}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+compute\+Centroid}} (uint32\+\_\+t vcount, const double $\ast$points, uint32\+\_\+t triangle\+Count, const uint32\+\_\+t $\ast$indices, double $\ast$center)
+\item 
+float \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_afedb62c5ede472acb1795d716736f4f8}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+compute\+Best\+Fit\+AABB}} (uint32\+\_\+t vcount, const float $\ast$points, uint32\+\_\+t pstride, float bmin\mbox{[}3\mbox{]}, float bmax\mbox{[}3\mbox{]})
+\item 
+double \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a227bb31894d0a86e73c9dee56352335e}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+compute\+Best\+Fit\+AABB}} (uint32\+\_\+t vcount, const double $\ast$points, uint32\+\_\+t pstride, double bmin\mbox{[}3\mbox{]}, double bmax\mbox{[}3\mbox{]})
+\item 
+float \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a66db1edc3aa1c14900ce9486c551fe36}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+compute\+Best\+Fit\+Sphere}} (uint32\+\_\+t vcount, const float $\ast$points, uint32\+\_\+t pstride, float center\mbox{[}3\mbox{]})
+\item 
+double \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a070a9e9ae4fc2360795060e0d1e19a07}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+compute\+Best\+Fit\+Sphere}} (uint32\+\_\+t vcount, const double $\ast$points, uint32\+\_\+t pstride, double center\mbox{[}3\mbox{]})
+\item 
+bool \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_aa9caefd621fed7540cbe780a75fbf90d}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+line\+Sphere\+Intersect}} (const float center\mbox{[}3\mbox{]}, float radius, const float p1\mbox{[}3\mbox{]}, const float p2\mbox{[}3\mbox{]}, float intersect\mbox{[}3\mbox{]})
+\item 
+bool \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ac004d738bd0b315d70ca445c13206b92}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+line\+Sphere\+Intersect}} (const double center\mbox{[}3\mbox{]}, double radius, const double p1\mbox{[}3\mbox{]}, const double p2\mbox{[}3\mbox{]}, double intersect\mbox{[}3\mbox{]})
+\item 
+bool \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a9dd6b0bfd45cd48e6a01b1cd54ad847b}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+intersect\+Ray\+AABB}} (const float bmin\mbox{[}3\mbox{]}, const float bmax\mbox{[}3\mbox{]}, const float pos\mbox{[}3\mbox{]}, const float dir\mbox{[}3\mbox{]}, float intersect\mbox{[}3\mbox{]})
+\item 
+bool \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ac1e3f5b1b3ad9f32eaa72c990043fa4e}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+intersect\+Line\+Segment\+AABB}} (const float bmin\mbox{[}3\mbox{]}, const float bmax\mbox{[}3\mbox{]}, const float p1\mbox{[}3\mbox{]}, const float p2\mbox{[}3\mbox{]}, float intersect\mbox{[}3\mbox{]})
+\item 
+bool \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ac975a8c7174625060b48b2bf5120ee80}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+line\+Intersects\+Triangle}} (const float ray\+Start\mbox{[}3\mbox{]}, const float ray\+End\mbox{[}3\mbox{]}, const float p1\mbox{[}3\mbox{]}, const float p2\mbox{[}3\mbox{]}, const float p3\mbox{[}3\mbox{]}, float sect\mbox{[}3\mbox{]})
+\item 
+bool \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ae7b616f9841fa6cea77fbf8f0c0feff0}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+line\+Intersects\+Triangle}} (const double ray\+Start\mbox{[}3\mbox{]}, const double ray\+End\mbox{[}3\mbox{]}, const double p1\mbox{[}3\mbox{]}, const double p2\mbox{[}3\mbox{]}, const double p3\mbox{[}3\mbox{]}, double sect\mbox{[}3\mbox{]})
+\item 
+bool \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a77b72a25d8c7cdbd8b2b74c7d7ac3d71}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+ray\+Intersects\+Triangle}} (const float origin\mbox{[}3\mbox{]}, const float dir\mbox{[}3\mbox{]}, const float v0\mbox{[}3\mbox{]}, const float \mbox{\hyperlink{tesseract__common__unit_8cpp_a78e1cc09f129a731d55ed82bc47956a7}{v1}}\mbox{[}3\mbox{]}, const float \mbox{\hyperlink{tesseract__common__unit_8cpp_a23dd5e7fffd5f8400cbed32a5071f236}{v2}}\mbox{[}3\mbox{]}, float \&t)
+\item 
+bool \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a9d886487b413e5ad136a8b74398871f8}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+ray\+Intersects\+Triangle}} (const double origin\mbox{[}3\mbox{]}, const double dir\mbox{[}3\mbox{]}, const double v0\mbox{[}3\mbox{]}, const double \mbox{\hyperlink{tesseract__common__unit_8cpp_a78e1cc09f129a731d55ed82bc47956a7}{v1}}\mbox{[}3\mbox{]}, const double \mbox{\hyperlink{tesseract__common__unit_8cpp_a23dd5e7fffd5f8400cbed32a5071f236}{v2}}\mbox{[}3\mbox{]}, double \&t)
+\item 
+bool \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a1a721d3c59fc495c09e3889e939d2a97}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+ray\+Sphere\+Intersect}} (const float center\mbox{[}3\mbox{]}, float radius, const float pos\mbox{[}3\mbox{]}, const float dir\mbox{[}3\mbox{]}, float \mbox{\hyperlink{collision__core__unit_8cpp_a1ceb8bb3849a05a320b82729fd3681bb}{distance}}, float intersect\mbox{[}3\mbox{]})
+\item 
+bool \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a8f9af318ddfd88c87d6266d5673c5a21}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+ray\+Sphere\+Intersect}} (const double center\mbox{[}3\mbox{]}, double radius, const double pos\mbox{[}3\mbox{]}, const double dir\mbox{[}3\mbox{]}, double \mbox{\hyperlink{collision__core__unit_8cpp_a1ceb8bb3849a05a320b82729fd3681bb}{distance}}, double intersect\mbox{[}3\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_aa768928b4fdcbe315c26c0c7fb677aa3}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+catmull\+Rom}} (float out\+\_\+vector\mbox{[}3\mbox{]}, const float p1\mbox{[}3\mbox{]}, const float p2\mbox{[}3\mbox{]}, const float p3\mbox{[}3\mbox{]}, const float $\ast$p4, const float \mbox{\hyperlink{plugin__loader__unit_8cpp_aa0d75bebf90ce49ae839876d1d62e199}{s}})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a2ee99fbf5458f2a1e8f555dd606f0751}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+catmull\+Rom}} (double out\+\_\+vector\mbox{[}3\mbox{]}, const double p1\mbox{[}3\mbox{]}, const double p2\mbox{[}3\mbox{]}, const double p3\mbox{[}3\mbox{]}, const double $\ast$p4, const double \mbox{\hyperlink{plugin__loader__unit_8cpp_aa0d75bebf90ce49ae839876d1d62e199}{s}})
+\item 
+bool \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a968b5a794d7179db59d5415e9fca0716}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+intersect\+AABB}} (const float bmin1\mbox{[}3\mbox{]}, const float bmax1\mbox{[}3\mbox{]}, const float bmin2\mbox{[}3\mbox{]}, const float bmax2\mbox{[}3\mbox{]})
+\item 
+bool \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ab945b18cd82c348c07906f9d9720f91e}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+intersect\+AABB}} (const double bmin1\mbox{[}3\mbox{]}, const double bmax1\mbox{[}3\mbox{]}, const double bmin2\mbox{[}3\mbox{]}, const double bmax2\mbox{[}3\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_abcf78d9ae289e256eea184fd40396edf}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+rotation\+Arc}} (const float v0\mbox{[}3\mbox{]}, const float \mbox{\hyperlink{tesseract__common__unit_8cpp_a78e1cc09f129a731d55ed82bc47956a7}{v1}}\mbox{[}3\mbox{]}, float quat\mbox{[}4\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a1f3040f55f338659931ee688bf233838}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+rotation\+Arc}} (const double v0\mbox{[}3\mbox{]}, const double \mbox{\hyperlink{tesseract__common__unit_8cpp_a78e1cc09f129a731d55ed82bc47956a7}{v1}}\mbox{[}3\mbox{]}, double quat\mbox{[}4\mbox{]})
+\item 
+float \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ab44659190dbf973f9e9e0c09cb165c3e}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+distance\+Point\+Line\+Segment}} (const float Point\mbox{[}3\mbox{]}, const float Line\+Start\mbox{[}3\mbox{]}, const float Line\+End\mbox{[}3\mbox{]}, float intersection\mbox{[}3\mbox{]}, Line\+Segment\+Type \&\mbox{\hyperlink{tesseract__environment__collision_8cpp_a30f93ee2d6b54c870d5c8295071072ac}{type}}, float epsilon)
+\item 
+double \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ae89dd051063e3e77a7b1605a3f83046f}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+distance\+Point\+Line\+Segment}} (const double Point\mbox{[}3\mbox{]}, const double Line\+Start\mbox{[}3\mbox{]}, const double Line\+End\mbox{[}3\mbox{]}, double intersection\mbox{[}3\mbox{]}, Line\+Segment\+Type \&\mbox{\hyperlink{tesseract__environment__collision_8cpp_a30f93ee2d6b54c870d5c8295071072ac}{type}}, double epsilon)
+\item 
+bool \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ac6ee4cf37abdcc4897c74e4e474cfadc}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+colinear}} (const double p1\mbox{[}3\mbox{]}, const double p2\mbox{[}3\mbox{]}, const double p3\mbox{[}3\mbox{]}, double epsilon=0.\+999)
+\item 
+bool \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a9428fe01f3ccb856d7192acb0baa9a99}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+colinear}} (const float p1\mbox{[}3\mbox{]}, const float p2\mbox{[}3\mbox{]}, const float p3\mbox{[}3\mbox{]}, float epsilon=0.\+999f)
+\item 
+bool \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ac3d5dbccb3dbac6791973e5d185532c6}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+colinear}} (const float a1\mbox{[}3\mbox{]}, const float a2\mbox{[}3\mbox{]}, const float b1\mbox{[}3\mbox{]}, const float b2\mbox{[}3\mbox{]}, float epsilon=0.\+999f)
+\item 
+bool \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_af68ec71b83bb16db4e9a20e0a5c0a922}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+colinear}} (const double a1\mbox{[}3\mbox{]}, const double a2\mbox{[}3\mbox{]}, const double b1\mbox{[}3\mbox{]}, const double b2\mbox{[}3\mbox{]}, double epsilon=0.\+999)
+\item 
+Intersect\+Result \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_aa212b2acb27ba6d216c8e9c3ca8e7248}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+intersect\+Line\+Segments2d}} (const float a1\mbox{[}3\mbox{]}, const float a2\mbox{[}3\mbox{]}, const float b1\mbox{[}3\mbox{]}, const float b2\mbox{[}3\mbox{]}, float intersection\+Point\mbox{[}3\mbox{]})
+\item 
+Intersect\+Result \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a59e728ca3580907d98f00cd1413b4cda}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+intersect\+Line\+Segments2d}} (const double a1\mbox{[}3\mbox{]}, const double a2\mbox{[}3\mbox{]}, const double b1\mbox{[}3\mbox{]}, const double b2\mbox{[}3\mbox{]}, double intersection\+Point\mbox{[}3\mbox{]})
+\item 
+Intersect\+Result \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_acab1e2272d7b3533e1aef526a25de169}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+intersect\+Line\+Segments2d\+Time}} (const float a1\mbox{[}3\mbox{]}, const float a2\mbox{[}3\mbox{]}, const float b1\mbox{[}3\mbox{]}, const float b2\mbox{[}3\mbox{]}, float \&t1, float \&t2)
+\item 
+Intersect\+Result \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a98a13fd8fcba38a01a3f8a6d1e37fde2}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+intersect\+Line\+Segments2d\+Time}} (const double a1\mbox{[}3\mbox{]}, const double a2\mbox{[}3\mbox{]}, const double b1\mbox{[}3\mbox{]}, const double b2\mbox{[}3\mbox{]}, double \&t1, double \&t2)
+\item 
+Plane\+Tri\+Result \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a8ad79f9509b1815438554c70a85fd0a9}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+plane\+Tri\+Intersection}} (const float \mbox{\hyperlink{tesseract__geometry__unit_8cpp_aa68ded2b3844964c96a0a41e241156e3}{plane}}\mbox{[}4\mbox{]}, const float $\ast$triangle, uint32\+\_\+t tstride, float epsilon, float $\ast$front, uint32\+\_\+t \&fcount, float $\ast$back, uint32\+\_\+t \&bcount)
+\item 
+Plane\+Tri\+Result \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a118e8b028064293b23a6f2c8ecc2aa44}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+plane\+Tri\+Intersection}} (const double \mbox{\hyperlink{tesseract__geometry__unit_8cpp_aa68ded2b3844964c96a0a41e241156e3}{plane}}\mbox{[}4\mbox{]}, const double $\ast$triangle, uint32\+\_\+t tstride, double epsilon, double $\ast$front, uint32\+\_\+t \&fcount, double $\ast$back, uint32\+\_\+t \&bcount)
+\item 
+bool \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_af8f5334dd541eb37a063972527c82367}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+intersect\+Point\+Plane}} (const float p1\mbox{[}3\mbox{]}, const float p2\mbox{[}3\mbox{]}, float $\ast$split, const float \mbox{\hyperlink{tesseract__geometry__unit_8cpp_aa68ded2b3844964c96a0a41e241156e3}{plane}}\mbox{[}4\mbox{]})
+\item 
+bool \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a764321957604266711cb54cdfb0f0731}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+intersect\+Point\+Plane}} (const double p1\mbox{[}3\mbox{]}, const double p2\mbox{[}3\mbox{]}, double $\ast$split, const double \mbox{\hyperlink{tesseract__geometry__unit_8cpp_aa68ded2b3844964c96a0a41e241156e3}{plane}}\mbox{[}4\mbox{]})
+\item 
+Plane\+Tri\+Result \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_aa0666933aa44e874e489de715c25c9aa}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+get\+Side\+Plane}} (const float p\mbox{[}3\mbox{]}, const float \mbox{\hyperlink{tesseract__geometry__unit_8cpp_aa68ded2b3844964c96a0a41e241156e3}{plane}}\mbox{[}4\mbox{]}, float epsilon)
+\item 
+Plane\+Tri\+Result \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a260b410a827cfab9da338a21447a2ad5}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+get\+Side\+Plane}} (const double p\mbox{[}3\mbox{]}, const double \mbox{\hyperlink{tesseract__geometry__unit_8cpp_aa68ded2b3844964c96a0a41e241156e3}{plane}}\mbox{[}4\mbox{]}, double epsilon)
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ac8212b94b1786b5e013b00a8fcf11c40}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+compute\+Best\+Fit\+OBB}} (uint32\+\_\+t vcount, const float $\ast$points, uint32\+\_\+t pstride, float $\ast$sides, float matrix\mbox{[}16\mbox{]}, bool brute\+Force=true)
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a8a486ea1470fd6671da60825d23217ac}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+compute\+Best\+Fit\+OBB}} (uint32\+\_\+t vcount, const double $\ast$points, uint32\+\_\+t pstride, double $\ast$sides, double matrix\mbox{[}16\mbox{]}, bool brute\+Force=true)
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_aff70ee143ee984cd78ae79fe5724f192}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+compute\+Best\+Fit\+OBB}} (uint32\+\_\+t vcount, const float $\ast$points, uint32\+\_\+t pstride, float $\ast$sides, float pos\mbox{[}3\mbox{]}, float quat\mbox{[}4\mbox{]}, bool brute\+Force=true)
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a08ff4c9c038eb6428aaea5607631c7a7}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+compute\+Best\+Fit\+OBB}} (uint32\+\_\+t vcount, const double $\ast$points, uint32\+\_\+t pstride, double $\ast$sides, double pos\mbox{[}3\mbox{]}, double quat\mbox{[}4\mbox{]}, bool brute\+Force=true)
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_aea16a77195668ae15dadf7771deb24dc}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+compute\+Best\+Fit\+ABB}} (uint32\+\_\+t vcount, const float $\ast$points, uint32\+\_\+t pstride, float $\ast$sides, float pos\mbox{[}3\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_acf160c362b3322b994765e65d46cf4de}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+compute\+Best\+Fit\+ABB}} (uint32\+\_\+t vcount, const double $\ast$points, uint32\+\_\+t pstride, double $\ast$sides, double pos\mbox{[}3\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_acc33a4b22d3c96865a4a3b5cd0256bf6}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+compute\+Best\+Fit\+Capsule}} (uint32\+\_\+t vcount, const float $\ast$points, uint32\+\_\+t pstride, float \&radius, float \&height, float matrix\mbox{[}16\mbox{]}, bool brute\+Force=true)
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ae6c15aff5f4211ce5340e044c4d6719f}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+compute\+Best\+Fit\+Capsule}} (uint32\+\_\+t vcount, const double $\ast$points, uint32\+\_\+t pstride, float \&radius, float \&height, double matrix\mbox{[}16\mbox{]}, bool brute\+Force=true)
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a3462d6dffb7b024eb8aad263ebcae1b9}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+plane\+To\+Matrix}} (const float \mbox{\hyperlink{tesseract__geometry__unit_8cpp_aa68ded2b3844964c96a0a41e241156e3}{plane}}\mbox{[}4\mbox{]}, float matrix\mbox{[}16\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ac66d608df7028937564e83904efb8256}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+plane\+To\+Quat}} (const float \mbox{\hyperlink{tesseract__geometry__unit_8cpp_aa68ded2b3844964c96a0a41e241156e3}{plane}}\mbox{[}4\mbox{]}, float quat\mbox{[}4\mbox{]}, float pos\mbox{[}3\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ae0f2c801d504582e4d994a0dbc15b6fc}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+plane\+To\+Matrix}} (const double \mbox{\hyperlink{tesseract__geometry__unit_8cpp_aa68ded2b3844964c96a0a41e241156e3}{plane}}\mbox{[}4\mbox{]}, double matrix\mbox{[}16\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a753c7455eabc1414a0cab996494f5d50}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+plane\+To\+Quat}} (const double \mbox{\hyperlink{tesseract__geometry__unit_8cpp_aa68ded2b3844964c96a0a41e241156e3}{plane}}\mbox{[}4\mbox{]}, double quat\mbox{[}4\mbox{]}, double pos\mbox{[}3\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a2378d358178470316f60a63ce5e9b88b}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+double\+To\+Float3}} (const double p\mbox{[}3\mbox{]}, float t\mbox{[}3\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ab761185f43b4aea249869881b34cb50c}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+float\+To\+Double3}} (const float p\mbox{[}3\mbox{]}, double t\mbox{[}3\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a9fe6faaed9295f8806740c004a007751}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+euler\+Matrix}} (float ax, float ay, float az, float matrix\mbox{[}16\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_aa71a487128d3fbb0fc7c3c54239a0da1}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+euler\+Matrix}} (double ax, double ay, double az, double matrix\mbox{[}16\mbox{]})
+\item 
+float \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a1a8d5e287fbece676ae228e969b2b8eb}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+compute\+Mesh\+Volume}} (const float $\ast$vertices, uint32\+\_\+t tcount, const uint32\+\_\+t $\ast$indices)
+\item 
+double \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ad2a33ce6b3053c314bf827ff66c40037}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+compute\+Mesh\+Volume}} (const double $\ast$vertices, uint32\+\_\+t tcount, const uint32\+\_\+t $\ast$indices)
+\item 
+fm\+\_\+\+Vertex\+Index $\ast$ \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a5990a68117dee11a9f577cd92f47a859}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+create\+Vertex\+Index}} (double granularity, bool snap\+To\+Grid)
+\item 
+fm\+\_\+\+Vertex\+Index $\ast$ \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a66694f1f8f829fb04024c27f7502be8b}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+create\+Vertex\+Index}} (float granularity, bool snap\+To\+Grid)
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a74fc0d2ecf9a948068424c16e02d693d}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+release\+Vertex\+Index}} (fm\+\_\+\+Vertex\+Index $\ast$vindex)
+\item 
+fm\+\_\+\+Triangulate $\ast$ \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a17d9e0d345b2ffbe1c20d6e8990097c9}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+create\+Triangulate}} (void)
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a90b040824ca516f4585c92e9820e2c63}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+release\+Triangulate}} (fm\+\_\+\+Triangulate $\ast$t)
+\item 
+const float $\ast$ \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_afa52e978320e2a46b68158397d2d631b}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+get\+Point}} (const float $\ast$points, uint32\+\_\+t pstride, uint32\+\_\+t index)
+\item 
+const double $\ast$ \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a636b5d84d8e24c77faff4b9e693025e5}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+get\+Point}} (const double $\ast$points, uint32\+\_\+t pstride, uint32\+\_\+t index)
+\item 
+bool \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ac113f50f691df0d385e77aff2162b628}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+inside\+Triangle}} (float Ax, float Ay, float Bx, float By, float Cx, float Cy, float Px, float Py)
+\item 
+bool \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a95ca1cf69d16ca4a483967d9d1d59ff0}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+inside\+Triangle}} (double Ax, double Ay, double Bx, double By, double Cx, double Cy, double Px, double Py)
+\item 
+float \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ac0da77c9d42fa23c106b1f8eaaae51db}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+area\+Polygon2d}} (uint32\+\_\+t pcount, const float $\ast$points, uint32\+\_\+t pstride)
+\item 
+double \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a8700ccc3ae8ffea2834499d81c70c0f8}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+area\+Polygon2d}} (uint32\+\_\+t pcount, const double $\ast$points, uint32\+\_\+t pstride)
+\item 
+bool \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_aae0c3bedc50b551297fed08fa99baf79}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+point\+Inside\+Polygon2d}} (uint32\+\_\+t pcount, const float $\ast$points, uint32\+\_\+t pstride, const float $\ast$point, uint32\+\_\+t xindex=0, uint32\+\_\+t yindex=1)
+\item 
+bool \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a5592765ac249426689a086c2c9e6a807}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+point\+Inside\+Polygon2d}} (uint32\+\_\+t pcount, const double $\ast$points, uint32\+\_\+t pstride, const double $\ast$point, uint32\+\_\+t xindex=0, uint32\+\_\+t yindex=1)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a8ef47ead47011c4dd42d1bfc68785ca3}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+consolidate\+Polygon}} (uint32\+\_\+t pcount, const float $\ast$points, uint32\+\_\+t pstride, float $\ast$dest, float epsilon=0.\+999999f)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a7bd06a0042624d3ed9899c1eee2f2567}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+consolidate\+Polygon}} (uint32\+\_\+t pcount, const double $\ast$points, uint32\+\_\+t pstride, double $\ast$dest, double epsilon=0.\+999999)
+\item 
+bool \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a9ebe05140e0316eeaa04d606b2a40038}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+compute\+Split\+Plane}} (uint32\+\_\+t vcount, const double $\ast$vertices, uint32\+\_\+t tcount, const uint32\+\_\+t $\ast$indices, double $\ast$\mbox{\hyperlink{tesseract__geometry__unit_8cpp_aa68ded2b3844964c96a0a41e241156e3}{plane}})
+\item 
+bool \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a2d3545a866f766d15dbcc3a6bcc4f37f}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+compute\+Split\+Plane}} (uint32\+\_\+t vcount, const float $\ast$vertices, uint32\+\_\+t tcount, const uint32\+\_\+t $\ast$indices, float $\ast$\mbox{\hyperlink{tesseract__geometry__unit_8cpp_aa68ded2b3844964c96a0a41e241156e3}{plane}})
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a7d719ddc9e7f1c22b3141dd7946dfbc5}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+nearest\+Point\+In\+Triangle}} (const float $\ast$pos, const float $\ast$p1, const float $\ast$p2, const float $\ast$p3, float $\ast$nearest)
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a47b9f2cf2a476de935272ddde20cbbf4}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+nearest\+Point\+In\+Triangle}} (const double $\ast$pos, const double $\ast$p1, const double $\ast$p2, const double $\ast$p3, double $\ast$nearest)
+\item 
+float \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a5c09418bc41ddaa2a4b1287fa993523b}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+area\+Triangle}} (const float $\ast$p1, const float $\ast$p2, const float $\ast$p3)
+\item 
+double \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_afcfb6d174699322cf58224c4227e3932}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+area\+Triangle}} (const double $\ast$p1, const double $\ast$p2, const double $\ast$p3)
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a07bb07bc2575c813ba5d035e34ff18e7}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+subtract}} (const float $\ast$A, const float $\ast$B, float $\ast$diff)
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a21e96dcf9daa7b85f8df1e01332b04cb}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+subtract}} (const double $\ast$A, const double $\ast$B, double $\ast$diff)
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a1198574f1065ed69720858fbacc0118a}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+multiply}} (float $\ast$A, float scaler)
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ae75f55a9326b6964bed65820ef8b57e6}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+multiply}} (double $\ast$A, double scaler)
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a4a83687a649a21c33030d3da58c5acbc}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+add}} (const float $\ast$A, const float $\ast$B, float $\ast$sum)
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_af6be65377158b7de30d5b0b7b168cf7a}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+add}} (const double $\ast$A, const double $\ast$B, double $\ast$sum)
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a93174c89776f38bb70542037cfb48bf6}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+copy3}} (const float $\ast$source, float $\ast$dest)
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a0ec539c567cd8a44494772f8897d3eb5}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+copy3}} (const double $\ast$source, double $\ast$dest)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_af67718fcb9c75ba61662f1c7d7abab5b}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+copy\+Unique\+Vertices}} (uint32\+\_\+t vcount, const float $\ast$input\+\_\+vertices, float $\ast$output\+\_\+vertices, uint32\+\_\+t tcount, const uint32\+\_\+t $\ast$input\+\_\+indices, uint32\+\_\+t $\ast$output\+\_\+indices)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a5779a8d42cb865b68f8be5005113340b}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+copy\+Unique\+Vertices}} (uint32\+\_\+t vcount, const double $\ast$input\+\_\+vertices, double $\ast$output\+\_\+vertices, uint32\+\_\+t tcount, const uint32\+\_\+t $\ast$input\+\_\+indices, uint32\+\_\+t $\ast$output\+\_\+indices)
+\item 
+bool \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a63e9deb1010a2761c25297dbbe750457}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+is\+Mesh\+Coplanar}} (uint32\+\_\+t tcount, const uint32\+\_\+t $\ast$indices, const float $\ast$vertices, bool double\+Sided)
+\item 
+bool \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a16e22c9081ee62f28825c1b7fb5e64c6}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+is\+Mesh\+Coplanar}} (uint32\+\_\+t tcount, const uint32\+\_\+t $\ast$indices, const double $\ast$vertices, bool double\+Sided)
+\item 
+bool \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_add2e513a0c408a76dbd233126fda7293}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+same\+Plane}} (const float p1\mbox{[}4\mbox{]}, const float p2\mbox{[}4\mbox{]}, float normal\+Epsilon=0.\+01f, float d\+Epsilon=0.\+001f, bool double\+Sided=false)
+\item 
+bool \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a8f7abbb543792ff7f91a207b8dd3bd48}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+same\+Plane}} (const double p1\mbox{[}4\mbox{]}, const double p2\mbox{[}4\mbox{]}, double normal\+Epsilon=0.\+01, double d\+Epsilon=0.\+001, bool double\+Sided=false)
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_aa3badc92faec29716b289fc2b4950820}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+\+OBBto\+AABB}} (const float obmin\mbox{[}3\mbox{]}, const float obmax\mbox{[}3\mbox{]}, const float matrix\mbox{[}16\mbox{]}, float abmin\mbox{[}3\mbox{]}, float abmax\mbox{[}3\mbox{]})
+\item 
+fm\+\_\+\+Tesselate $\ast$ \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a0ac23adcc9488c89d4a43b5e04ac0404}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+create\+Tesselate}} (void)
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a0bce09898d85c4ee7ab742125485f149}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+release\+Tesselate}} (fm\+\_\+\+Tesselate $\ast$t)
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ad91befe23689e76db842c8d9b8eee3c7}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+compute\+Mean\+Normals}} (uint32\+\_\+t vcount, const float $\ast$vertices, uint32\+\_\+t vstride, float $\ast$normals, uint32\+\_\+t nstride, uint32\+\_\+t tcount, const uint32\+\_\+t $\ast$indices)
+\item 
+void \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_aaf3060082de60620cecb2df9b8d94c58}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+compute\+Mean\+Normals}} (uint32\+\_\+t vcount, const double $\ast$vertices, uint32\+\_\+t vstride, double $\ast$normals, uint32\+\_\+t nstride, uint32\+\_\+t tcount, const uint32\+\_\+t $\ast$indices)
+\item 
+bool \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a1cf42c81f6353b2edabe1bf6802ef5c2}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+is\+Valid\+Triangle}} (const float $\ast$p1, const float $\ast$p2, const float $\ast$p3, float epsilon=0.\+00001f)
+\item 
+bool \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_adb14ad39ce39cda7f5c6b483631c1cab}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::fm\+\_\+is\+Valid\+Triangle}} (const double $\ast$p1, const double $\ast$p2, const double $\ast$p3, double epsilon=0.\+00001)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const float \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a3192caf02a9c9bb331274a257b59e447}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::\+FM\+\_\+\+PI}} = 3.\+1415926535897932384626433832795028841971693993751f
+\item 
+const float \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_a4179fcfd6dc7320db838f9bf352755b7}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::\+FM\+\_\+\+DEG\+\_\+\+TO\+\_\+\+RAD}} = ((2.\+0f $\ast$ FM\+\_\+\+PI) / 360.\+0f)
+\item 
+const float \mbox{\hyperlink{namespacetesseract__collision_1_1FLOAT__MATH_ad5c319a6607b97b59e2887906207e3be}{tesseract\+\_\+collision\+::\+FLOAT\+\_\+\+MATH\+::\+FM\+\_\+\+RAD\+\_\+\+TO\+\_\+\+DEG}} = (360.\+0f / (2.\+0f $\ast$ FM\+\_\+\+PI))
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{FloatMath_8h_a9da2fa07f097e59a3697d603b2c2f541}\label{FloatMath_8h_a9da2fa07f097e59a3697d603b2c2f541}} 
+\index{FloatMath.h@{FloatMath.h}!FM\_DEFAULT\_GRANULARITY@{FM\_DEFAULT\_GRANULARITY}}
+\index{FM\_DEFAULT\_GRANULARITY@{FM\_DEFAULT\_GRANULARITY}!FloatMath.h@{FloatMath.h}}
+\doxysubsubsection{\texorpdfstring{FM\_DEFAULT\_GRANULARITY}{FM\_DEFAULT\_GRANULARITY}}
+{\footnotesize\ttfamily \#define FM\+\_\+\+DEFAULT\+\_\+\+GRANULARITY~0.\+001f}
+

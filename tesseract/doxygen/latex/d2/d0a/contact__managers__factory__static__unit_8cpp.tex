@@ -1,0 +1,131 @@
+\hypertarget{contact__managers__factory__static__unit_8cpp}{}\doxysection{tesseract\+\_\+collision/test/contact\+\_\+managers\+\_\+factory\+\_\+static\+\_\+unit.cpp File Reference}
+\label{contact__managers__factory__static__unit_8cpp}\index{tesseract\_collision/test/contact\_managers\_factory\_static\_unit.cpp@{tesseract\_collision/test/contact\_managers\_factory\_static\_unit.cpp}}
+{\ttfamily \#include $<$tesseract\+\_\+common/macros.\+h$>$}\newline
+{\ttfamily \#include $<$gtest/gtest.\+h$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+collision/core/contact\+\_\+managers\+\_\+plugin\+\_\+factory.\+h$>$}\newline
+{\ttfamily \#include $<$tesseract\+\_\+collision/bullet/bullet\+\_\+factories.\+h$>$}\newline
+Include dependency graph for contact\+\_\+managers\+\_\+factory\+\_\+static\+\_\+unit.\+cpp\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{contact__managers__factory__static__unit_8cpp_a08617937c106907314690deaf7abb4c1}{factory}} \mbox{\hyperlink{contact__managers__factory__static__unit_8cpp_ac4a8e8a56ba9e12afbb0a498427f8cae}{clear\+Search\+Libraries}} ()
+\item 
+\mbox{\hyperlink{contact__managers__factory__static__unit_8cpp_a08617937c106907314690deaf7abb4c1}{factory}} \mbox{\hyperlink{contact__managers__factory__static__unit_8cpp_a34ad8c692d1e6a8063e8b2dea49eb326}{clear\+Search\+Paths}} ()
+\item 
+\mbox{\hyperlink{contact__managers__factory__static__unit_8cpp_ab1b3ca5763bbdb81a357336e521147d9}{EXPECT\+\_\+\+TRUE}} (\mbox{\hyperlink{contact__managers__factory__static__unit_8cpp_ad6ae11e798d9c7cbdbaa79655bec7120}{cm}} !=nullptr)
+\item 
+int \mbox{\hyperlink{contact__managers__factory__static__unit_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{contact__managers__factory__static__unit_8cpp_a13056efd080ab16304b6f7be0ebf0a61}{config}}
+\item 
+Contact\+Managers\+Plugin\+Factory \mbox{\hyperlink{contact__managers__factory__static__unit_8cpp_a08617937c106907314690deaf7abb4c1}{factory}} (\mbox{\hyperlink{collision__core__unit_8cpp_a2013c60ebd4a63f15fafe2287736ae37}{config}})
+\item 
+YAML\+::\+Node \mbox{\hyperlink{contact__managers__factory__static__unit_8cpp_aa72e379a2b942efbbd6ee85db94ae223}{plugin\+\_\+config}} = YAML\+::\+Load(\mbox{\hyperlink{collision__core__unit_8cpp_a2013c60ebd4a63f15fafe2287736ae37}{config}})
+\item 
+\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a52a7b770e7b6cec875254d7cdea3c314}{Discrete\+Contact\+Manager\+::\+UPtr}} \mbox{\hyperlink{contact__managers__factory__static__unit_8cpp_ad6ae11e798d9c7cbdbaa79655bec7120}{cm}} = factory.\+create\+Discrete\+Contact\+Manager(\char`\"{}Bullet\+Discrete\+BVHManager\char`\"{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{contact__managers__factory__static__unit_8cpp_ac4a8e8a56ba9e12afbb0a498427f8cae}\label{contact__managers__factory__static__unit_8cpp_ac4a8e8a56ba9e12afbb0a498427f8cae}} 
+\index{contact\_managers\_factory\_static\_unit.cpp@{contact\_managers\_factory\_static\_unit.cpp}!clearSearchLibraries@{clearSearchLibraries}}
+\index{clearSearchLibraries@{clearSearchLibraries}!contact\_managers\_factory\_static\_unit.cpp@{contact\_managers\_factory\_static\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{clearSearchLibraries()}{clearSearchLibraries()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{contact__managers__factory__static__unit_8cpp_a08617937c106907314690deaf7abb4c1}{factory}} clear\+Search\+Libraries (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{contact__managers__factory__static__unit_8cpp_a34ad8c692d1e6a8063e8b2dea49eb326}\label{contact__managers__factory__static__unit_8cpp_a34ad8c692d1e6a8063e8b2dea49eb326}} 
+\index{contact\_managers\_factory\_static\_unit.cpp@{contact\_managers\_factory\_static\_unit.cpp}!clearSearchPaths@{clearSearchPaths}}
+\index{clearSearchPaths@{clearSearchPaths}!contact\_managers\_factory\_static\_unit.cpp@{contact\_managers\_factory\_static\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{clearSearchPaths()}{clearSearchPaths()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{contact__managers__factory__static__unit_8cpp_a08617937c106907314690deaf7abb4c1}{factory}} clear\+Search\+Paths (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{contact__managers__factory__static__unit_8cpp_ab1b3ca5763bbdb81a357336e521147d9}\label{contact__managers__factory__static__unit_8cpp_ab1b3ca5763bbdb81a357336e521147d9}} 
+\index{contact\_managers\_factory\_static\_unit.cpp@{contact\_managers\_factory\_static\_unit.cpp}!EXPECT\_TRUE@{EXPECT\_TRUE}}
+\index{EXPECT\_TRUE@{EXPECT\_TRUE}!contact\_managers\_factory\_static\_unit.cpp@{contact\_managers\_factory\_static\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_TRUE()}{EXPECT\_TRUE()}}
+{\footnotesize\ttfamily EXPECT\+\_\+\+TRUE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{contact__managers__factory__static__unit_8cpp_ad6ae11e798d9c7cbdbaa79655bec7120}{cm}} !}]{ = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{contact__managers__factory__static__unit_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{contact__managers__factory__static__unit_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{contact\_managers\_factory\_static\_unit.cpp@{contact\_managers\_factory\_static\_unit.cpp}!main@{main}}
+\index{main@{main}!contact\_managers\_factory\_static\_unit.cpp@{contact\_managers\_factory\_static\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{contact__managers__factory__static__unit_8cpp_ad6ae11e798d9c7cbdbaa79655bec7120}\label{contact__managers__factory__static__unit_8cpp_ad6ae11e798d9c7cbdbaa79655bec7120}} 
+\index{contact\_managers\_factory\_static\_unit.cpp@{contact\_managers\_factory\_static\_unit.cpp}!cm@{cm}}
+\index{cm@{cm}!contact\_managers\_factory\_static\_unit.cpp@{contact\_managers\_factory\_static\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{cm}{cm}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a52a7b770e7b6cec875254d7cdea3c314}{Discrete\+Contact\+Manager\+::\+UPtr}} cm = factory.\+create\+Discrete\+Contact\+Manager(\char`\"{}Bullet\+Discrete\+BVHManager\char`\"{})}
+
+\mbox{\Hypertarget{contact__managers__factory__static__unit_8cpp_a13056efd080ab16304b6f7be0ebf0a61}\label{contact__managers__factory__static__unit_8cpp_a13056efd080ab16304b6f7be0ebf0a61}} 
+\index{contact\_managers\_factory\_static\_unit.cpp@{contact\_managers\_factory\_static\_unit.cpp}!config@{config}}
+\index{config@{config}!contact\_managers\_factory\_static\_unit.cpp@{contact\_managers\_factory\_static\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{config}{config}}
+{\footnotesize\ttfamily std\+::string config}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= R\textcolor{stringliteral}{"{}(contact\_manager\_plugins:}}
+\DoxyCodeLine{\textcolor{stringliteral}{                            search\_paths:}}
+\DoxyCodeLine{\textcolor{stringliteral}{                              -\/ /usr/local/lib}}
+\DoxyCodeLine{\textcolor{stringliteral}{                            search\_libraries:}}
+\DoxyCodeLine{\textcolor{stringliteral}{                              -\/ tesseract\_collision\_bullet\_factories\_not\_there}}
+\DoxyCodeLine{\textcolor{stringliteral}{                              -\/ tesseract\_collision\_fcl\_factories\_not\_there}}
+\DoxyCodeLine{\textcolor{stringliteral}{                            discrete\_plugins:}}
+\DoxyCodeLine{\textcolor{stringliteral}{                              default: BulletDiscreteBVHManager}}
+\DoxyCodeLine{\textcolor{stringliteral}{                              plugins:}}
+\DoxyCodeLine{\textcolor{stringliteral}{                                BulletDiscreteBVHManager:}}
+\DoxyCodeLine{\textcolor{stringliteral}{                                  class: BulletDiscreteBVHManagerFactory}}
+\DoxyCodeLine{\textcolor{stringliteral}{                                BulletDiscreteSimpleManager:}}
+\DoxyCodeLine{\textcolor{stringliteral}{                                  class: BulletDiscreteSimpleManagerFactory}}
+\DoxyCodeLine{\textcolor{stringliteral}{                                FCLDiscreteBVHManager:}}
+\DoxyCodeLine{\textcolor{stringliteral}{                                  class: FCLDiscreteBVHManagerFactory}}
+\DoxyCodeLine{\textcolor{stringliteral}{                            continuous\_plugins:}}
+\DoxyCodeLine{\textcolor{stringliteral}{                              default: BulletCastBVHManager}}
+\DoxyCodeLine{\textcolor{stringliteral}{                              plugins:}}
+\DoxyCodeLine{\textcolor{stringliteral}{                                BulletCastBVHManager:}}
+\DoxyCodeLine{\textcolor{stringliteral}{                                  class: BulletCastBVHManagerFactory}}
+\DoxyCodeLine{\textcolor{stringliteral}{                                BulletCastSimpleManager:}}
+\DoxyCodeLine{\textcolor{stringliteral}{                                  class: BulletCastSimpleManagerFactory)"{}}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{contact__managers__factory__static__unit_8cpp_a08617937c106907314690deaf7abb4c1}\label{contact__managers__factory__static__unit_8cpp_a08617937c106907314690deaf7abb4c1}} 
+\index{contact\_managers\_factory\_static\_unit.cpp@{contact\_managers\_factory\_static\_unit.cpp}!factory@{factory}}
+\index{factory@{factory}!contact\_managers\_factory\_static\_unit.cpp@{contact\_managers\_factory\_static\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{factory}{factory}}
+{\footnotesize\ttfamily Kinematics\+Plugin\+Factory factory (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{collision__core__unit_8cpp_a2013c60ebd4a63f15fafe2287736ae37}{config}}}]{ }\end{DoxyParamCaption})}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  std::string \mbox{\hyperlink{contact__managers__factory__static__unit_8cpp_a13056efd080ab16304b6f7be0ebf0a61}{config}} = R\textcolor{stringliteral}{"{}(contact\_manager\_plugins:}}
+\DoxyCodeLine{\textcolor{stringliteral}{                            search\_paths:}}
+\DoxyCodeLine{\textcolor{stringliteral}{                              -\/ /usr/local/lib}}
+\DoxyCodeLine{\textcolor{stringliteral}{                            search\_libraries:}}
+\DoxyCodeLine{\textcolor{stringliteral}{                              -\/ tesseract\_collision\_bullet\_factories}}
+\DoxyCodeLine{\textcolor{stringliteral}{                              -\/ tesseract\_collision\_fcl\_factories}}
+\DoxyCodeLine{\textcolor{stringliteral}{                            discrete\_plugins:}}
+\DoxyCodeLine{\textcolor{stringliteral}{                              default: BulletDiscreteBVHManager}}
+\DoxyCodeLine{\textcolor{stringliteral}{                              plugins:}}
+\DoxyCodeLine{\textcolor{stringliteral}{                                BulletDiscreteBVHManager:}}
+\DoxyCodeLine{\textcolor{stringliteral}{                                  class: BulletDiscreteBVHManagerFactory}}
+\DoxyCodeLine{\textcolor{stringliteral}{                                BulletDiscreteSimpleManager:}}
+\DoxyCodeLine{\textcolor{stringliteral}{                                  class: BulletDiscreteSimpleManagerFactory}}
+\DoxyCodeLine{\textcolor{stringliteral}{                                FCLDiscreteBVHManager:}}
+\DoxyCodeLine{\textcolor{stringliteral}{                                  class: FCLDiscreteBVHManagerFactory)"{}}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{contact__managers__factory__static__unit_8cpp_aa72e379a2b942efbbd6ee85db94ae223}\label{contact__managers__factory__static__unit_8cpp_aa72e379a2b942efbbd6ee85db94ae223}} 
+\index{contact\_managers\_factory\_static\_unit.cpp@{contact\_managers\_factory\_static\_unit.cpp}!plugin\_config@{plugin\_config}}
+\index{plugin\_config@{plugin\_config}!contact\_managers\_factory\_static\_unit.cpp@{contact\_managers\_factory\_static\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{plugin\_config}{plugin\_config}}
+{\footnotesize\ttfamily YAML\+::\+Node plugin\+\_\+config = YAML\+::\+Load(\mbox{\hyperlink{collision__core__unit_8cpp_a2013c60ebd4a63f15fafe2287736ae37}{config}})}
+

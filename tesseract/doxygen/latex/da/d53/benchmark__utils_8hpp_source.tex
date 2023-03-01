@@ -1,0 +1,48 @@
+\hypertarget{benchmark__utils_8hpp_source}{}\doxysection{benchmark\+\_\+utils.\+hpp}
+\label{benchmark__utils_8hpp_source}\index{tesseract\_collision/core/include/tesseract\_collision/test\_suite/benchmarks/benchmark\_utils.hpp@{tesseract\_collision/core/include/tesseract\_collision/test\_suite/benchmarks/benchmark\_utils.hpp}}
+\mbox{\hyperlink{benchmark__utils_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef TESSERACT\_COLLISION\_BENCHMARK\_UTILS\_HPP}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define TESSERACT\_COLLISION\_BENCHMARK\_UTILS\_HPP}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <benchmark/benchmark.h>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <Eigen/Eigen>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <console\_bridge/console.h>}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{using namespace }\mbox{\hyperlink{namespacetesseract__collision}{tesseract\_collision}};}
+\DoxyCodeLine{9 \textcolor{keyword}{using namespace }test\_suite;}
+\DoxyCodeLine{10 \textcolor{keyword}{using namespace }\mbox{\hyperlink{namespacetesseract__geometry}{tesseract\_geometry}};}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{keyword}{inline} \mbox{\hyperlink{classtesseract__geometry_1_1Geometry_acd91c55fb9604ed374446c029b6f2d08}{tesseract\_geometry::Geometry::Ptr}} \mbox{\hyperlink{benchmark__utils_8hpp_a4851edf72a5dde340c0d67734d830270}{CreateUnitPrimative}}(\textcolor{keyword}{const} \mbox{\hyperlink{namespacetesseract__geometry_a7543d6c1dc8947a3274abdd21fb56feb}{tesseract\_geometry::GeometryType}} \mbox{\hyperlink{tesseract__environment__collision_8cpp_a30f93ee2d6b54c870d5c8295071072ac}{type}},}
+\DoxyCodeLine{13                                                              \textcolor{keyword}{const} \textcolor{keywordtype}{double} \mbox{\hyperlink{collision__margin__data__unit_8cpp_a80d402d10e8341004c0caf10133b80ab}{scale}} = 1.0)}
+\DoxyCodeLine{14 \{}
+\DoxyCodeLine{15   \mbox{\hyperlink{classtesseract__geometry_1_1Geometry_acd91c55fb9604ed374446c029b6f2d08}{tesseract\_geometry::Geometry::Ptr}} \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}};}
+\DoxyCodeLine{16   \textcolor{keywordflow}{switch} (\mbox{\hyperlink{tesseract__environment__collision_8cpp_a30f93ee2d6b54c870d5c8295071072ac}{type}})}
+\DoxyCodeLine{17   \{}
+\DoxyCodeLine{18     \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacetesseract__geometry_a7543d6c1dc8947a3274abdd21fb56feba0d73a200cb122841ab0db4cf1e22be90}{tesseract\_geometry::GeometryType::BOX}}:}
+\DoxyCodeLine{19       \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}} = std::make\_shared<tesseract\_geometry::Box>(\mbox{\hyperlink{collision__margin__data__unit_8cpp_a80d402d10e8341004c0caf10133b80ab}{scale}}, \mbox{\hyperlink{collision__margin__data__unit_8cpp_a80d402d10e8341004c0caf10133b80ab}{scale}}, \mbox{\hyperlink{collision__margin__data__unit_8cpp_a80d402d10e8341004c0caf10133b80ab}{scale}});}
+\DoxyCodeLine{20       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{21     \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacetesseract__geometry_a7543d6c1dc8947a3274abdd21fb56feba27c4f4ab45a9be529e93017bb9b29bed}{tesseract\_geometry::GeometryType::CONE}}:}
+\DoxyCodeLine{22       \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}} = std::make\_shared<tesseract\_geometry::Cone>(\mbox{\hyperlink{collision__margin__data__unit_8cpp_a80d402d10e8341004c0caf10133b80ab}{scale}}, \mbox{\hyperlink{collision__margin__data__unit_8cpp_a80d402d10e8341004c0caf10133b80ab}{scale}});}
+\DoxyCodeLine{23       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{24     \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacetesseract__geometry_a7543d6c1dc8947a3274abdd21fb56feba67f39b6bb359d38675adb7dfab65fdb6}{tesseract\_geometry::GeometryType::PLANE}}:}
+\DoxyCodeLine{25       \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}} = std::make\_shared<tesseract\_geometry::Plane>(\mbox{\hyperlink{collision__margin__data__unit_8cpp_a80d402d10e8341004c0caf10133b80ab}{scale}}, \mbox{\hyperlink{collision__margin__data__unit_8cpp_a80d402d10e8341004c0caf10133b80ab}{scale}}, \mbox{\hyperlink{collision__margin__data__unit_8cpp_a80d402d10e8341004c0caf10133b80ab}{scale}}, \mbox{\hyperlink{collision__margin__data__unit_8cpp_a80d402d10e8341004c0caf10133b80ab}{scale}});}
+\DoxyCodeLine{26       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{27     \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacetesseract__geometry_a7543d6c1dc8947a3274abdd21fb56febafb20b649d5d1c5441b986a717b632ee3}{tesseract\_geometry::GeometryType::SPHERE}}:}
+\DoxyCodeLine{28       \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}} = std::make\_shared<tesseract\_geometry::Sphere>(\mbox{\hyperlink{collision__margin__data__unit_8cpp_a80d402d10e8341004c0caf10133b80ab}{scale}});}
+\DoxyCodeLine{29       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{30     \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacetesseract__geometry_a7543d6c1dc8947a3274abdd21fb56feba0d9f34b1d722a71a18f611f7b63cc37b}{tesseract\_geometry::GeometryType::CAPSULE}}:}
+\DoxyCodeLine{31       \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}} = std::make\_shared<tesseract\_geometry::Capsule>(\mbox{\hyperlink{collision__margin__data__unit_8cpp_a80d402d10e8341004c0caf10133b80ab}{scale}}, \mbox{\hyperlink{collision__margin__data__unit_8cpp_a80d402d10e8341004c0caf10133b80ab}{scale}});}
+\DoxyCodeLine{32       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{33     \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacetesseract__geometry_a7543d6c1dc8947a3274abdd21fb56feba7981168389c1e2bece204752fb30023d}{tesseract\_geometry::GeometryType::CYLINDER}}:}
+\DoxyCodeLine{34       \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}} = std::make\_shared<tesseract\_geometry::Cylinder>(\mbox{\hyperlink{collision__margin__data__unit_8cpp_a80d402d10e8341004c0caf10133b80ab}{scale}}, \mbox{\hyperlink{collision__margin__data__unit_8cpp_a80d402d10e8341004c0caf10133b80ab}{scale}});}
+\DoxyCodeLine{35       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{36     \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{37       CONSOLE\_BRIDGE\_logError(\textcolor{stringliteral}{"{}Invalid Geometry Type. Can only create primatives"{}});}
+\DoxyCodeLine{38       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{39   \}}
+\DoxyCodeLine{40   \textcolor{keywordflow}{return} \mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}};}
+\DoxyCodeLine{41 \};}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
