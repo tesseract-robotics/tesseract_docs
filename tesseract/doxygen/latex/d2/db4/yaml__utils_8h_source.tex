@@ -259,7 +259,7 @@
 \DoxyCodeLine{295       Eigen::AngleAxisd pitchAngle(p, Eigen::Vector3d::UnitY());}
 \DoxyCodeLine{296       Eigen::AngleAxisd yawAngle(y, Eigen::Vector3d::UnitZ());}
 \DoxyCodeLine{297 }
-\DoxyCodeLine{298       Eigen::Quaterniond rpy = yawAngle * pitchAngle * rollAngle;}
+\DoxyCodeLine{298       Eigen::Quaterniond rpy\{ yawAngle * pitchAngle * rollAngle \};}
 \DoxyCodeLine{299 }
 \DoxyCodeLine{300       out.linear() = rpy.toRotationMatrix();}
 \DoxyCodeLine{301     \}}

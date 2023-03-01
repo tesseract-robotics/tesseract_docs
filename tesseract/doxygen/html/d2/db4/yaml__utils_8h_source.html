@@ -337,7 +337,7 @@ $(function() {
 <div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>      Eigen::AngleAxisd pitchAngle(p, Eigen::Vector3d::UnitY());</div>
 <div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>      Eigen::AngleAxisd yawAngle(y, Eigen::Vector3d::UnitZ());</div>
 <div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span> </div>
-<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>      Eigen::Quaterniond rpy = yawAngle * pitchAngle * rollAngle;</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>      Eigen::Quaterniond rpy{ yawAngle * pitchAngle * rollAngle };</div>
 <div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span> </div>
 <div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>      out.linear() = rpy.toRotationMatrix();</div>
 <div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>    }</div>
@@ -832,7 +832,7 @@ $(function() {
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Mar 1 2023 18:41:41 for Tesseract by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Mar 1 2023 18:57:15 for Tesseract by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>
