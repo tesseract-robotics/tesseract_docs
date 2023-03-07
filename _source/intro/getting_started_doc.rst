@@ -62,16 +62,24 @@ Create a workspace (in this case we'll name it `tesseract_ws`): ::
 
   mkdir -p ~/tesseract_ws/src
 
-Cloning Tesseract Planning
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+Cloning Tesseract Repositories
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Move to the source directory: ::
 
   cd ~/tesseract_ws/src
 
+Clone Tesseract repository into your workspace: ::
+
+  git clone https://github.com/tesseract-robotics/tesseract
+  
 Clone Tesseract Planning repository into your workspace: ::
 
   git clone https://github.com/tesseract-robotics/tesseract_planning
+  
+Clone Tesseract Qt repository into your workspace: ::
+
+  git clone https://github.com/tesseract-robotics/tesseract_qt
 
 If you are using the Robot Operating System (ROS), you can also clone the Tesseract ROS repository: ::
 
@@ -79,17 +87,6 @@ If you are using the Robot Operating System (ROS), you can also clone the Tesser
 
 Installing Dependencies
 ^^^^^^^^^^^^^^^^^^^^^^^
-
-Installing Taskflow
--------------------
-
-Taskflow is a general purpose parallel and heterogeneous task programming system.
-
-You can install taskflow by with the following commands: ::
-
-  sudo add-apt-repository ppa:ros-industrial/ppa
-  sudo apt-get update
-  sudo apt-get install taskflow
 
 Cloning Source Dependencies with WSTool
 ---------------------------------------
