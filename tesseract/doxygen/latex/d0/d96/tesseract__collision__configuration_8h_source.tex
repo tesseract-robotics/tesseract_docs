@@ -8,18 +8,33 @@
 \DoxyCodeLine{43 }
 \DoxyCodeLine{44 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{macros_8h}{tesseract\_common/macros.h}}>}}
 \DoxyCodeLine{45 \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}}
-\DoxyCodeLine{46 \textcolor{preprocessor}{\#include <BulletCollision/CollisionDispatch/btDefaultCollisionConfiguration.h>}}
-\DoxyCodeLine{47 \mbox{\hyperlink{namespaceTESSERACT__COMMON__IGNORE__WARNINGS__POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}}
-\DoxyCodeLine{48 }
-\DoxyCodeLine{49 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet}{tesseract\_collision::tesseract\_collision\_bullet}}}
-\DoxyCodeLine{50 \{}
-\DoxyCodeLine{59 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionConfiguration}{TesseractCollisionConfiguration}} : \textcolor{keyword}{public} btDefaultCollisionConfiguration}
-\DoxyCodeLine{60 \{}
-\DoxyCodeLine{61 \textcolor{keyword}{public}:}
-\DoxyCodeLine{62   \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionConfiguration}{TesseractCollisionConfiguration}}(}
-\DoxyCodeLine{63       \textcolor{keyword}{const} btDefaultCollisionConstructionInfo\& constructionInfo = btDefaultCollisionConstructionInfo());}
-\DoxyCodeLine{64 \};}
-\DoxyCodeLine{65 \}  \textcolor{comment}{// namespace tesseract\_collision::tesseract\_collision\_bullet}}
-\DoxyCodeLine{66 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_COLLISION\_TESSERACT\_COLLISION\_CONFIGURATION\_H}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#include <BulletCollision/CollisionDispatch/btDefaultCollisionConfiguration.h>}}
+\DoxyCodeLine{48 \mbox{\hyperlink{namespaceTESSERACT__COMMON__IGNORE__WARNINGS__POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet}{tesseract\_collision::tesseract\_collision\_bullet}}}
+\DoxyCodeLine{51 \{}
+\DoxyCodeLine{52 \textcolor{keyword}{struct }\mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionConfigurationInfo}{TesseractCollisionConfigurationInfo}} : \textcolor{keyword}{public} btDefaultCollisionConstructionInfo}
+\DoxyCodeLine{53 \{}
+\DoxyCodeLine{59   \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionConfigurationInfo}{TesseractCollisionConfigurationInfo}}(\textcolor{keywordtype}{bool} create\_pool\_allocators = \textcolor{keyword}{true}, \textcolor{keywordtype}{bool} share\_pool\_allocators = \textcolor{keyword}{false});}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{62   \textcolor{keywordtype}{void} \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionConfigurationInfo_a3ce366846882dbf2e1c7dfe7841bc7a6}{createPoolAllocators}}();}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{65   \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionConfigurationInfo}{TesseractCollisionConfigurationInfo}} \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionConfigurationInfo_a8fd3d79c22d261285f2069c1901db642}{clone}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{68   \textcolor{keywordtype}{bool} \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionConfigurationInfo_a86d1f70bccd9db2e801fc6b6e2e96711}{share\_pool\_allocators\_}}\{ \textcolor{keyword}{false} \};}
+\DoxyCodeLine{69   std::shared\_ptr<btPoolAllocator> \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionConfigurationInfo_a4271f91d9daea4fffd63b51a30fb3f89}{persistent\_manifold\_pool\_}};}
+\DoxyCodeLine{70   std::shared\_ptr<btPoolAllocator> \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionConfigurationInfo_aa2b81a1c68085fabac13cedd1f046ffb}{collision\_algorithm\_pool\_}};}
+\DoxyCodeLine{71 \};}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{81 \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionConfiguration}{TesseractCollisionConfiguration}} : \textcolor{keyword}{public} btDefaultCollisionConfiguration}
+\DoxyCodeLine{82 \{}
+\DoxyCodeLine{83 \textcolor{keyword}{public}:}
+\DoxyCodeLine{84   \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionConfiguration}{TesseractCollisionConfiguration}}(}
+\DoxyCodeLine{85       \textcolor{keyword}{const} \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionConfigurationInfo}{TesseractCollisionConfigurationInfo}}\& config\_info = \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionConfigurationInfo}{TesseractCollisionConfigurationInfo}}());}
+\DoxyCodeLine{86 \};}
+\DoxyCodeLine{87 \}  \textcolor{comment}{// namespace tesseract\_collision::tesseract\_collision\_bullet}}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_COLLISION\_TESSERACT\_COLLISION\_CONFIGURATION\_H}}
 
 \end{DoxyCode}

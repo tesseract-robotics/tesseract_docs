@@ -22,7 +22,7 @@ class \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet
 class \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManager}{Bullet\+Discrete\+BVHManager}}
 \begin{DoxyCompactList}\small\item\em A BVH implementation of a bullet manager. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteBVHManagerFactory}{Bullet\+Discrete\+BVHManager\+Factory}}
-\item 
+\begin{DoxyCompactList}\small\item\em The yaml config for each of the factories below is the same. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteSimpleManager}{Bullet\+Discrete\+Simple\+Manager}}
 \begin{DoxyCompactList}\small\item\em A simple implementation of a bullet manager which does not use BHV. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1BulletDiscreteSimpleManagerFactory}{Bullet\+Discrete\+Simple\+Manager\+Factory}}
@@ -45,6 +45,8 @@ struct \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bull
 \item 
 class \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionConfiguration}{Tesseract\+Collision\+Configuration}}
 \begin{DoxyCompactList}\small\item\em This is a modified configuration that included the modified Bullet algorithms. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionConfigurationInfo}{Tesseract\+Collision\+Configuration\+Info}}
+\item 
 class \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionPairCallback}{Tesseract\+Collision\+Pair\+Callback}}
 \begin{DoxyCompactList}\small\item\em A callback function that is called as part of the broadphase collision checking. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCompoundCollisionAlgorithm}{Tesseract\+Compound\+Collision\+Algorithm}}
@@ -117,6 +119,8 @@ void \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bul
 \begin{DoxyCompactList}\small\item\em Update a collision objects filters for broadphase. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_ab00adc9a4c830a572b3ee17e153e88ef}{refresh\+Broadphase\+Proxy}} (const \mbox{\hyperlink{classtesseract__collision_1_1tesseract__collision__bullet_1_1CollisionObjectWrapper_a3d926f2c776673c5e9719e010936600a}{COW\+::\+Ptr}} \&cow, const std\+::unique\+\_\+ptr$<$ bt\+Broadphase\+Interface $>$ \&broadphase, const std\+::unique\+\_\+ptr$<$ bt\+Collision\+Dispatcher $>$ \&dispatcher)
 \begin{DoxyCompactList}\small\item\em Refresh the broadphase data structure. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionConfigurationInfo}{Tesseract\+Collision\+Configuration\+Info}} \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_aa59687c650839dec9560f16e0ec3ca14}{get\+Config\+Info}} (const YAML\+::\+Node \&\mbox{\hyperlink{collision__core__unit_8cpp_a2013c60ebd4a63f15fafe2287736ae37}{config}})
+\item 
 std\+::shared\+\_\+ptr$<$ bt\+Collision\+Shape $>$ \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_af850cf877b53cb446316776ccd990598}{create\+Shape\+Primitive}} (const \mbox{\hyperlink{classtesseract__geometry_1_1Box_aec8152cc23a7ad1b16c135240824d161}{tesseract\+\_\+geometry\+::\+Box\+::\+Const\+Ptr}} \&\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}})
 \item 
 std\+::shared\+\_\+ptr$<$ bt\+Collision\+Shape $>$ \mbox{\hyperlink{namespacetesseract__collision_1_1tesseract__collision__bullet_ad2dd7edd44779ad71fff18484ae3fa6b}{create\+Shape\+Primitive}} (const \mbox{\hyperlink{classtesseract__geometry_1_1Sphere_ac986cb2217d07320a259ba4277af5b31}{tesseract\+\_\+geometry\+::\+Sphere\+::\+Const\+Ptr}} \&\mbox{\hyperlink{tesseract__geometry__unit_8cpp_a67ecbbbd125e6b0759413a3f5772b798}{geom}})
@@ -631,6 +635,12 @@ Bullet collision shape.
 \index{GetAverageSupport@{GetAverageSupport}!tesseract\_collision::tesseract\_collision\_bullet@{tesseract\_collision::tesseract\_collision\_bullet}}
 \doxysubsubsection{\texorpdfstring{GetAverageSupport()}{GetAverageSupport()}}
 {\footnotesize\ttfamily void tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::\+Get\+Average\+Support (\begin{DoxyParamCaption}\item[{const bt\+Convex\+Shape $\ast$}]{shape,  }\item[{const bt\+Vector3 \&}]{local\+Normal,  }\item[{bt\+Scalar \&}]{outsupport,  }\item[{bt\+Vector3 \&}]{outpt }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacetesseract__collision_1_1tesseract__collision__bullet_aa59687c650839dec9560f16e0ec3ca14}\label{namespacetesseract__collision_1_1tesseract__collision__bullet_aa59687c650839dec9560f16e0ec3ca14}} 
+\index{tesseract\_collision::tesseract\_collision\_bullet@{tesseract\_collision::tesseract\_collision\_bullet}!getConfigInfo@{getConfigInfo}}
+\index{getConfigInfo@{getConfigInfo}!tesseract\_collision::tesseract\_collision\_bullet@{tesseract\_collision::tesseract\_collision\_bullet}}
+\doxysubsubsection{\texorpdfstring{getConfigInfo()}{getConfigInfo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtesseract__collision_1_1tesseract__collision__bullet_1_1TesseractCollisionConfigurationInfo}{Tesseract\+Collision\+Configuration\+Info}} tesseract\+\_\+collision\+::tesseract\+\_\+collision\+\_\+bullet\+::get\+Config\+Info (\begin{DoxyParamCaption}\item[{const YAML\+::\+Node \&}]{config }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{namespacetesseract__collision_1_1tesseract__collision__bullet_a913156c9424f8b201c5e754e67f117bb}\label{namespacetesseract__collision_1_1tesseract__collision__bullet_a913156c9424f8b201c5e754e67f117bb}} 
 \index{tesseract\_collision::tesseract\_collision\_bullet@{tesseract\_collision::tesseract\_collision\_bullet}!getLinkTransformFromCOW@{getLinkTransformFromCOW}}
