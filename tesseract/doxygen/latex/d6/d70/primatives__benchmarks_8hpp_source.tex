@@ -56,7 +56,7 @@
 \DoxyCodeLine{56   \{}
 \DoxyCodeLine{57     benchmark::DoNotOptimize(\mbox{\hyperlink{clone__cache__unit_8cpp_a468102a14fab28bb8303ea654a9b891b}{clone}} = \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a1be1e7cba5e739fcb7798261b4da47dd}{info}}.contact\_manager\_-\/>clone());}
 \DoxyCodeLine{58   \}}
-\DoxyCodeLine{59 \};}
+\DoxyCodeLine{59 \}}
 \DoxyCodeLine{60 }
 \DoxyCodeLine{62 \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1test__suite_aa65d3801997ee04e6126f1f39b167ddb}{BM\_CONTACT\_TEST}}(benchmark::State\& state, \mbox{\hyperlink{structtesseract__collision_1_1test__suite_1_1DiscreteBenchmarkInfo}{DiscreteBenchmarkInfo}} \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a1be1e7cba5e739fcb7798261b4da47dd}{info}})  \textcolor{comment}{// NOLINT}}
 \DoxyCodeLine{63 \{}
@@ -72,7 +72,7 @@
 \DoxyCodeLine{73     result.clear();}
 \DoxyCodeLine{74     \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a1be1e7cba5e739fcb7798261b4da47dd}{info}}.contact\_manager\_-\/>contactTest(result, \mbox{\hyperlink{structtesseract__collision_1_1ContactRequest}{ContactRequest}}(\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a1be1e7cba5e739fcb7798261b4da47dd}{info}}.contact\_test\_type\_));}
 \DoxyCodeLine{75   \}}
-\DoxyCodeLine{76 \};}
+\DoxyCodeLine{76 \}}
 \DoxyCodeLine{77 }
 \DoxyCodeLine{80 \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1test__suite_a8399698725709484a86712f2bc20c3dc}{BM\_SELECT\_RANDOM\_OBJECT}}(benchmark::State\& state, \textcolor{keywordtype}{int} num\_obj)}
 \DoxyCodeLine{81 \{}
@@ -81,7 +81,7 @@
 \DoxyCodeLine{84   \{}
 \DoxyCodeLine{85     benchmark::DoNotOptimize(selected\_link = rand() \% num\_obj);  \textcolor{comment}{// NOLINT}}
 \DoxyCodeLine{86   \}}
-\DoxyCodeLine{87 \};}
+\DoxyCodeLine{87 \}}
 \DoxyCodeLine{88 }
 \DoxyCodeLine{91 \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1test__suite_a33e2495f2bacf307a24010c12d27ad19}{BM\_SET\_COLLISION\_OBJECTS\_TRANSFORM\_SINGLE}}(benchmark::State\& state,}
 \DoxyCodeLine{92                                                       \mbox{\hyperlink{structtesseract__collision_1_1test__suite_1_1DiscreteBenchmarkInfo}{DiscreteBenchmarkInfo}} \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a1be1e7cba5e739fcb7798261b4da47dd}{info}},}
@@ -106,7 +106,7 @@
 \DoxyCodeLine{111     std::size\_t selected\_link = \textcolor{keyword}{static\_cast<}std::size\_t\textcolor{keyword}{>}(rand()) \% num\_obj;}
 \DoxyCodeLine{112     \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a1be1e7cba5e739fcb7798261b4da47dd}{info}}.contact\_manager\_-\/>setCollisionObjectsTransform(active\_obj[selected\_link], \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a1be1e7cba5e739fcb7798261b4da47dd}{info}}.obj2\_poses[0]);}
 \DoxyCodeLine{113   \}}
-\DoxyCodeLine{114 \};}
+\DoxyCodeLine{114 \}}
 \DoxyCodeLine{115 }
 \DoxyCodeLine{118 \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1test__suite_a0aafa9151158317b54aecd716aabd38d}{BM\_SET\_COLLISION\_OBJECTS\_TRANSFORM\_VECTOR}}(benchmark::State\& state,}
 \DoxyCodeLine{119                                                       \mbox{\hyperlink{structtesseract__collision_1_1test__suite_1_1DiscreteBenchmarkInfo}{DiscreteBenchmarkInfo}} \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a1be1e7cba5e739fcb7798261b4da47dd}{info}},  \textcolor{comment}{// NOLINT}}
@@ -132,7 +132,7 @@
 \DoxyCodeLine{139     selected\_links[0] = active\_obj[\textcolor{keyword}{static\_cast<}std::size\_t\textcolor{keyword}{>}(rand()) \% num\_obj];}
 \DoxyCodeLine{140     \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a1be1e7cba5e739fcb7798261b4da47dd}{info}}.contact\_manager\_-\/>setCollisionObjectsTransform(selected\_links, \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a1be1e7cba5e739fcb7798261b4da47dd}{info}}.obj2\_poses);}
 \DoxyCodeLine{141   \}}
-\DoxyCodeLine{142 \};}
+\DoxyCodeLine{142 \}}
 \DoxyCodeLine{143 }
 \DoxyCodeLine{146 \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1test__suite_ac37def00f90ea69c5c4dbfe45886595a}{BM\_SET\_COLLISION\_OBJECTS\_TRANSFORM\_MAP}}(benchmark::State\& state,}
 \DoxyCodeLine{147                                                    \mbox{\hyperlink{structtesseract__collision_1_1test__suite_1_1DiscreteBenchmarkInfo}{DiscreteBenchmarkInfo}} \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a1be1e7cba5e739fcb7798261b4da47dd}{info}},}
@@ -154,14 +154,15 @@
 \DoxyCodeLine{163   \{}
 \DoxyCodeLine{164     \textcolor{comment}{// Including this seems necessary to insure that a distribution of links is used rather than always searching for}}
 \DoxyCodeLine{165     \textcolor{comment}{// the same one. It might be worth it to manually time these as well if it's really important}}
-\DoxyCodeLine{166     selected\_link[active\_obj[\textcolor{keyword}{static\_cast<}std::size\_t\textcolor{keyword}{>}(rand()) \% num\_obj]] = \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a1be1e7cba5e739fcb7798261b4da47dd}{info}}.obj2\_poses[0];}
-\DoxyCodeLine{167     \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a1be1e7cba5e739fcb7798261b4da47dd}{info}}.contact\_manager\_-\/>setCollisionObjectsTransform(selected\_link);}
-\DoxyCodeLine{168   \}}
-\DoxyCodeLine{169 \};}
-\DoxyCodeLine{170 }
-\DoxyCodeLine{171 \}  \textcolor{comment}{// namespace test\_suite}}
-\DoxyCodeLine{172 \}  \textcolor{comment}{// namespace tesseract\_collision}}
-\DoxyCodeLine{173 }
-\DoxyCodeLine{174 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{166     selected\_link.clear();  \textcolor{comment}{// Need to clear or this grows and is not releastic to compare to vector version}}
+\DoxyCodeLine{167     selected\_link[active\_obj[\textcolor{keyword}{static\_cast<}std::size\_t\textcolor{keyword}{>}(rand()) \% num\_obj]] = \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a1be1e7cba5e739fcb7798261b4da47dd}{info}}.obj2\_poses[0];}
+\DoxyCodeLine{168     \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a1be1e7cba5e739fcb7798261b4da47dd}{info}}.contact\_manager\_-\/>setCollisionObjectsTransform(selected\_link);}
+\DoxyCodeLine{169   \}}
+\DoxyCodeLine{170 \}}
+\DoxyCodeLine{171 }
+\DoxyCodeLine{172 \}  \textcolor{comment}{// namespace test\_suite}}
+\DoxyCodeLine{173 \}  \textcolor{comment}{// namespace tesseract\_collision}}
+\DoxyCodeLine{174 }
+\DoxyCodeLine{175 \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}
