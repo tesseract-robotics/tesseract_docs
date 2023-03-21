@@ -1,0 +1,43 @@
+\hypertarget{tesseract__collision_2core_2include_2tesseract__collision_2core_2serialization_8h_source}{}\doxysection{serialization.\+h}
+\label{tesseract__collision_2core_2include_2tesseract__collision_2core_2serialization_8h_source}\index{tesseract\_collision/core/include/tesseract\_collision/core/serialization.h@{tesseract\_collision/core/include/tesseract\_collision/core/serialization.h}}
+\mbox{\hyperlink{tesseract__collision_2core_2include_2tesseract__collision_2core_2serialization_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#ifndef TESSERACT\_COLLISION\_SERIALIZATION\_H}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define TESSERACT\_COLLISION\_SERIALIZATION\_H}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{macros_8h}{tesseract\_common/macros.h}}>}}
+\DoxyCodeLine{30 \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include <variant>}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include <boost/archive/xml\_oarchive.hpp>}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include <boost/archive/xml\_iarchive.hpp>}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include <boost/archive/binary\_oarchive.hpp>}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#include <boost/archive/binary\_iarchive.hpp>}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#include <boost/serialization/tracking.hpp>}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#include <boost/serialization/tracking\_enum.hpp>}}
+\DoxyCodeLine{40 \mbox{\hyperlink{namespaceTESSERACT__COMMON__IGNORE__WARNINGS__POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{tesseract__collision_2core_2include_2tesseract__collision_2core_2types_8h}{tesseract\_collision/core/types.h}}>}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceboost_1_1serialization}{boost::serialization}}}
+\DoxyCodeLine{45 \{}
+\DoxyCodeLine{46 \textcolor{comment}{/************************************************/}}
+\DoxyCodeLine{47 \textcolor{comment}{/****** tesseract\_collision::ContactResult ******/}}
+\DoxyCodeLine{48 \textcolor{comment}{/************************************************/}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{keyword}{template} <\textcolor{keyword}{class} Archive>}
+\DoxyCodeLine{51 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespaceboost_1_1serialization_a5f3506f66185e6e2b08000d78fb5fd54}{save}}(Archive\& ar, \textcolor{keyword}{const} \mbox{\hyperlink{structtesseract__collision_1_1ContactResult}{tesseract\_collision::ContactResult}}\& \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a41309b4c659a8ee4246e23a5c741c8e8}{g}}, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} version);  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{keyword}{template} <\textcolor{keyword}{class} Archive>}
+\DoxyCodeLine{54 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespaceboost_1_1serialization_a3a753838cab45e62048863077e609171}{load}}(Archive\& ar, \mbox{\hyperlink{structtesseract__collision_1_1ContactResult}{tesseract\_collision::ContactResult}}\& \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a41309b4c659a8ee4246e23a5c741c8e8}{g}}, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} version);  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 \textcolor{keyword}{template} <\textcolor{keyword}{class} Archive>}
+\DoxyCodeLine{57 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespaceboost_1_1serialization_a162d6be32dfd0a467618ea995337951a}{serialize}}(Archive\& ar, \mbox{\hyperlink{structtesseract__collision_1_1ContactResult}{tesseract\_collision::ContactResult}}\& \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a41309b4c659a8ee4246e23a5c741c8e8}{g}}, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} version);  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \}  \textcolor{comment}{// namespace boost::serialization}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_COLLISION\_SERIALIZATION\_H}}
+
+\end{DoxyCode}

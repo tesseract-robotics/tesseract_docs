@@ -1,0 +1,188 @@
+\hypertarget{tesseract__common_2include_2tesseract__common_2serialization_8h_source}{}\doxysection{serialization.\+h}
+\label{tesseract__common_2include_2tesseract__common_2serialization_8h_source}\index{tesseract\_common/include/tesseract\_common/serialization.h@{tesseract\_common/include/tesseract\_common/serialization.h}}
+\mbox{\hyperlink{tesseract__common_2include_2tesseract__common_2serialization_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#ifndef TESSERACT\_COMMON\_SERIALIZATION\_H}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define TESSERACT\_COMMON\_SERIALIZATION\_H}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{macros_8h}{tesseract\_common/macros.h}}>}}
+\DoxyCodeLine{30 \mbox{\hyperlink{macros_8h_a8cc0e3c6a3382c5c0b19eb9e676fc2db}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_PUSH}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include <variant>}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include <Eigen/Dense>}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include <boost/archive/xml\_oarchive.hpp>}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include <boost/archive/xml\_iarchive.hpp>}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#include <boost/archive/binary\_oarchive.hpp>}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#include <boost/archive/binary\_iarchive.hpp>}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#include <boost/serialization/tracking.hpp>}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#include <boost/serialization/tracking\_enum.hpp>}}
+\DoxyCodeLine{41 \mbox{\hyperlink{namespaceTESSERACT__COMMON__IGNORE__WARNINGS__POP}{TESSERACT\_COMMON\_IGNORE\_WARNINGS\_POP}}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{tesseract__common_2include_2tesseract__common_2types_8h}{tesseract\_common/types.h}}>}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{serialization__extensions_8h}{tesseract\_common/serialization\_extensions.h}}>}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{comment}{// Used to replace commas in these macros to avoid them being interpreted as multiple arguments}}
+\DoxyCodeLine{47 \textcolor{comment}{// Example: TESSERACT\_SERIALIZE\_SAVE\_LOAD\_FREE\_ARCHIVES\_INSTANTIATE(std::variant<std::string COMMA Eigen::Isometry3d>)}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#define COMMA ,}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{comment}{// Use this macro for serialization defined using the invasive method inside the class}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#define TESSERACT\_SERIALIZE\_ARCHIVES\_INSTANTIATE(Type)                                                                 \(\backslash\)}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{  template void Type::serialize(boost::archive::xml\_oarchive\& ar, const unsigned int version);                         \(\backslash\)}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{  template void Type::serialize(boost::archive::xml\_iarchive\& ar, const unsigned int version);                         \(\backslash\)}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{  template void Type::serialize(boost::archive::binary\_oarchive\& ar, const unsigned int version);                      \(\backslash\)}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{  template void Type::serialize(boost::archive::binary\_iarchive\& ar, const unsigned int version);}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{comment}{// Use this macro for serialization defined using the invasive method inside the class with custom load/save functions}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#define TESSERACT\_SERIALIZE\_SAVE\_LOAD\_ARCHIVES\_INSTANTIATE(Type)                                                       \(\backslash\)}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{  template void Type::serialize(boost::archive::xml\_oarchive\& ar, const unsigned int version);                         \(\backslash\)}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{  template void Type::serialize(boost::archive::xml\_iarchive\& ar, const unsigned int version);                         \(\backslash\)}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{  template void Type::serialize(boost::archive::binary\_oarchive\& ar, const unsigned int version);                      \(\backslash\)}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{  template void Type::serialize(boost::archive::binary\_iarchive\& ar, const unsigned int version);                      \(\backslash\)}}
+\DoxyCodeLine{63 \textcolor{preprocessor}{  template void Type::save(boost::archive::xml\_oarchive\&, const unsigned int version) const;                           \(\backslash\)}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{  template void Type::load(boost::archive::xml\_iarchive\& ar, const unsigned int version);                              \(\backslash\)}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{  template void Type::save(boost::archive::binary\_oarchive\&, const unsigned int version) const;                        \(\backslash\)}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{  template void Type::load(boost::archive::binary\_iarchive\& ar, const unsigned int version);}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 \textcolor{comment}{// Use this macro for serialization defined using the non-\/invasive free function method outside the class}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#define TESSERACT\_SERIALIZE\_SAVE\_LOAD\_FREE\_ARCHIVES\_INSTANTIATE(Type)                                                  \(\backslash\)}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{  template void boost::serialization::serialize(                                                                       \(\backslash\)}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{      boost::archive::xml\_oarchive\& ar, Type\& g, const unsigned int version); }\textcolor{comment}{/* NOLINT */}\textcolor{preprocessor}{                             \(\backslash\)}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{  template void boost::serialization::serialize(                                                                       \(\backslash\)}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{      boost::archive::xml\_iarchive\& ar, Type\& g, const unsigned int version); }\textcolor{comment}{/* NOLINT */}\textcolor{preprocessor}{                             \(\backslash\)}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{  template void boost::serialization::serialize(                                                                       \(\backslash\)}}
+\DoxyCodeLine{75 \textcolor{preprocessor}{      boost::archive::binary\_oarchive\& ar, Type\& g, const unsigned int version); }\textcolor{comment}{/* NOLINT */}\textcolor{preprocessor}{                          \(\backslash\)}}
+\DoxyCodeLine{76 \textcolor{preprocessor}{  template void boost::serialization::serialize(                                                                       \(\backslash\)}}
+\DoxyCodeLine{77 \textcolor{preprocessor}{      boost::archive::binary\_iarchive\& ar, Type\& g, const unsigned int version); }\textcolor{comment}{/* NOLINT */}\textcolor{preprocessor}{                          \(\backslash\)}}
+\DoxyCodeLine{78 \textcolor{preprocessor}{  template void boost::serialization::save(                                                                            \(\backslash\)}}
+\DoxyCodeLine{79 \textcolor{preprocessor}{      boost::archive::xml\_oarchive\&, const Type\& g, const unsigned int version); }\textcolor{comment}{/* NOLINT */}\textcolor{preprocessor}{                          \(\backslash\)}}
+\DoxyCodeLine{80 \textcolor{preprocessor}{  template void boost::serialization::load(                                                                            \(\backslash\)}}
+\DoxyCodeLine{81 \textcolor{preprocessor}{      boost::archive::xml\_iarchive\& ar, Type\& g, const unsigned int version); }\textcolor{comment}{/* NOLINT */}\textcolor{preprocessor}{                             \(\backslash\)}}
+\DoxyCodeLine{82 \textcolor{preprocessor}{  template void boost::serialization::save(                                                                            \(\backslash\)}}
+\DoxyCodeLine{83 \textcolor{preprocessor}{      boost::archive::binary\_oarchive\&, const Type\& g, const unsigned int version); }\textcolor{comment}{/* NOLINT */}\textcolor{preprocessor}{                       \(\backslash\)}}
+\DoxyCodeLine{84 \textcolor{preprocessor}{  template void boost::serialization::load(                                                                            \(\backslash\)}}
+\DoxyCodeLine{85 \textcolor{preprocessor}{      boost::archive::binary\_iarchive\& ar, Type\& g, const unsigned int version); }\textcolor{comment}{/* NOLINT */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacetesseract__common}{tesseract\_common}}}
+\DoxyCodeLine{88 \{}
+\DoxyCodeLine{89 \textcolor{keyword}{struct }\mbox{\hyperlink{structtesseract__common_1_1Serialization}{Serialization}}}
+\DoxyCodeLine{90 \{}
+\DoxyCodeLine{91   \textcolor{keyword}{template} <\textcolor{keyword}{typename} SerializableType>}
+\DoxyCodeLine{92   \textcolor{keyword}{static} std::string \mbox{\hyperlink{structtesseract__common_1_1Serialization_aa67e1886738f13074407c2ddb558c610}{toArchiveStringXML}}(\textcolor{keyword}{const} SerializableType\& archive\_type, \textcolor{keyword}{const} std::string\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}} = \textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{93   \{}
+\DoxyCodeLine{94     std::stringstream ss;}
+\DoxyCodeLine{95     \{  \textcolor{comment}{// Must be scoped because all data is not written until the oost::archive::xml\_oarchive goes out of scope}}
+\DoxyCodeLine{96       boost::archive::xml\_oarchive \mbox{\hyperlink{tesseract__common__unit_8cpp_abe04210b8e14b2e12819615fb3776327}{oa}}(ss);}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98       \textcolor{comment}{// Boost uses the same function for serialization and deserialization so it requires a non-\/const reference}}
+\DoxyCodeLine{99       \textcolor{comment}{// Because we are only serializing here it is safe to cast away const}}
+\DoxyCodeLine{100       \textcolor{keywordflow}{if} (\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}.empty())}
+\DoxyCodeLine{101         oa << boost::serialization::make\_nvp<SerializableType>(\textcolor{stringliteral}{"{}archive\_type"{}},}
+\DoxyCodeLine{102                                                                \textcolor{keyword}{const\_cast<}SerializableType\&\textcolor{keyword}{>}(archive\_type));  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{103       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{104         oa << boost::serialization::make\_nvp<SerializableType>(\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}.c\_str(),}
+\DoxyCodeLine{105                                                                \textcolor{keyword}{const\_cast<}SerializableType\&\textcolor{keyword}{>}(archive\_type));  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{106     \}}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108     \textcolor{keywordflow}{return} ss.str();}
+\DoxyCodeLine{109   \}}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111   \textcolor{keyword}{template} <\textcolor{keyword}{typename} SerializableType>}
+\DoxyCodeLine{112   \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{structtesseract__common_1_1Serialization_a07a0927a3734ee3cb3ce76bc6a0ac1be}{toArchiveFileXML}}(\textcolor{keyword}{const} SerializableType\& archive\_type,}
+\DoxyCodeLine{113                                \textcolor{keyword}{const} std::string\& \mbox{\hyperlink{resource__locator__unit_8cpp_a803157d97edf460a9f115ca41b182e73}{file\_path}},}
+\DoxyCodeLine{114                                \textcolor{keyword}{const} std::string\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}} = \textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{115   \{}
+\DoxyCodeLine{116     fs::path fp(\mbox{\hyperlink{resource__locator__unit_8cpp_a803157d97edf460a9f115ca41b182e73}{file\_path}});}
+\DoxyCodeLine{117     \textcolor{keywordflow}{if} (!fp.has\_extension())}
+\DoxyCodeLine{118       fp.append(\textcolor{stringliteral}{"{}."{}}).append(\mbox{\hyperlink{structtesseract__common_1_1serialization_1_1xml_1_1extension}{serialization::xml::extension<SerializableType>::value}});}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120     std::ofstream os(fp.string());}
+\DoxyCodeLine{121     \{  \textcolor{comment}{// Must be scoped because all data is not written until the oost::archive::xml\_oarchive goes out of scope}}
+\DoxyCodeLine{122       boost::archive::xml\_oarchive \mbox{\hyperlink{tesseract__common__unit_8cpp_abe04210b8e14b2e12819615fb3776327}{oa}}(os);}
+\DoxyCodeLine{123       \textcolor{comment}{// Boost uses the same function for serialization and deserialization so it requires a non-\/const reference}}
+\DoxyCodeLine{124       \textcolor{comment}{// Because we are only serializing here it is safe to cast away const}}
+\DoxyCodeLine{125       \textcolor{keywordflow}{if} (\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}.empty())}
+\DoxyCodeLine{126         oa << boost::serialization::make\_nvp<SerializableType>(\textcolor{stringliteral}{"{}archive\_type"{}},}
+\DoxyCodeLine{127                                                                \textcolor{keyword}{const\_cast<}SerializableType\&\textcolor{keyword}{>}(archive\_type));  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{128       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{129         oa << boost::serialization::make\_nvp<SerializableType>(\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}.c\_str(),}
+\DoxyCodeLine{130                                                                \textcolor{keyword}{const\_cast<}SerializableType\&\textcolor{keyword}{>}(archive\_type));  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{131     \}}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{134   \}}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136   \textcolor{keyword}{template} <\textcolor{keyword}{typename} SerializableType>}
+\DoxyCodeLine{137   \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{structtesseract__common_1_1Serialization_af37efc32e11c2e18238a176d3b101afb}{toArchiveFileBinary}}(\textcolor{keyword}{const} SerializableType\& archive\_type,}
+\DoxyCodeLine{138                                   \textcolor{keyword}{const} std::string\& \mbox{\hyperlink{resource__locator__unit_8cpp_a803157d97edf460a9f115ca41b182e73}{file\_path}},}
+\DoxyCodeLine{139                                   \textcolor{keyword}{const} std::string\& \mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}} = \textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{140   \{}
+\DoxyCodeLine{141     fs::path fp(\mbox{\hyperlink{resource__locator__unit_8cpp_a803157d97edf460a9f115ca41b182e73}{file\_path}});}
+\DoxyCodeLine{142     \textcolor{keywordflow}{if} (!fp.has\_extension())}
+\DoxyCodeLine{143       fp.append(\textcolor{stringliteral}{"{}."{}}).append(\mbox{\hyperlink{structtesseract__common_1_1serialization_1_1binary_1_1extension}{serialization::binary::extension<SerializableType>::value}});}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145     std::ofstream os(fp.string(), std::ios\_base::binary);}
+\DoxyCodeLine{146     \{  \textcolor{comment}{// Must be scoped because all data is not written until the oost::archive::xml\_oarchive goes out of scope}}
+\DoxyCodeLine{147       boost::archive::binary\_oarchive \mbox{\hyperlink{tesseract__common__unit_8cpp_abe04210b8e14b2e12819615fb3776327}{oa}}(os);}
+\DoxyCodeLine{148       \textcolor{comment}{// Boost uses the same function for serialization and deserialization so it requires a non-\/const reference}}
+\DoxyCodeLine{149       \textcolor{comment}{// Because we are only serializing here it is safe to cast away const}}
+\DoxyCodeLine{150       \textcolor{keywordflow}{if} (\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}.empty())}
+\DoxyCodeLine{151         oa << boost::serialization::make\_nvp<SerializableType>(\textcolor{stringliteral}{"{}archive\_type"{}},}
+\DoxyCodeLine{152                                                                \textcolor{keyword}{const\_cast<}SerializableType\&\textcolor{keyword}{>}(archive\_type));  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{153       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{154         oa << boost::serialization::make\_nvp<SerializableType>(\mbox{\hyperlink{tesseract__scene__graph__link__unit_8cpp_a6192562aa9f016b228bd2775afc64ee7}{name}}.c\_str(),}
+\DoxyCodeLine{155                                                                \textcolor{keyword}{const\_cast<}SerializableType\&\textcolor{keyword}{>}(archive\_type));  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{156     \}}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{158     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{159   \}}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{161   \textcolor{keyword}{template} <\textcolor{keyword}{typename} SerializableType>}
+\DoxyCodeLine{162   \textcolor{keyword}{static} SerializableType \mbox{\hyperlink{structtesseract__common_1_1Serialization_a643e19fe172d0dbd2b8a5d8c623dabe9}{fromArchiveStringXML}}(\textcolor{keyword}{const} std::string\& archive\_xml)}
+\DoxyCodeLine{163   \{}
+\DoxyCodeLine{164     SerializableType archive\_type;}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{166     \{  \textcolor{comment}{// Must be scoped because all data is not written until the oost::archive::xml\_oarchive goes out of scope}}
+\DoxyCodeLine{167       std::stringstream ss(archive\_xml);}
+\DoxyCodeLine{168       boost::archive::xml\_iarchive ia(ss);}
+\DoxyCodeLine{169       ia >> \mbox{\hyperlink{tesseract__common__unit_8cpp_a34841013cb79dee012f2616fed438ff2}{BOOST\_SERIALIZATION\_NVP}}(archive\_type);}
+\DoxyCodeLine{170     \}}
+\DoxyCodeLine{171 }
+\DoxyCodeLine{172     \textcolor{keywordflow}{return} archive\_type;}
+\DoxyCodeLine{173   \}}
+\DoxyCodeLine{174 }
+\DoxyCodeLine{175   \textcolor{keyword}{template} <\textcolor{keyword}{typename} SerializableType>}
+\DoxyCodeLine{176   \textcolor{keyword}{static} SerializableType \mbox{\hyperlink{structtesseract__common_1_1Serialization_aaec903390b21dab3a5d823e58aef7178}{fromArchiveFileXML}}(\textcolor{keyword}{const} std::string\& \mbox{\hyperlink{resource__locator__unit_8cpp_a803157d97edf460a9f115ca41b182e73}{file\_path}})}
+\DoxyCodeLine{177   \{}
+\DoxyCodeLine{178     SerializableType archive\_type;}
+\DoxyCodeLine{179 }
+\DoxyCodeLine{180     \{  \textcolor{comment}{// Must be scoped because all data is not written until the oost::archive::xml\_oarchive goes out of scope}}
+\DoxyCodeLine{181       std::ifstream ifs(\mbox{\hyperlink{resource__locator__unit_8cpp_a803157d97edf460a9f115ca41b182e73}{file\_path}});}
+\DoxyCodeLine{182       assert(ifs.good());}
+\DoxyCodeLine{183       boost::archive::xml\_iarchive ia(ifs);}
+\DoxyCodeLine{184       ia >> \mbox{\hyperlink{tesseract__common__unit_8cpp_a34841013cb79dee012f2616fed438ff2}{BOOST\_SERIALIZATION\_NVP}}(archive\_type);}
+\DoxyCodeLine{185     \}}
+\DoxyCodeLine{186 }
+\DoxyCodeLine{187     \textcolor{keywordflow}{return} archive\_type;}
+\DoxyCodeLine{188   \}}
+\DoxyCodeLine{189 }
+\DoxyCodeLine{190   \textcolor{keyword}{template} <\textcolor{keyword}{typename} SerializableType>}
+\DoxyCodeLine{191   \textcolor{keyword}{static} SerializableType \mbox{\hyperlink{structtesseract__common_1_1Serialization_a26736551741fd8b511dacbab955da159}{fromArchiveFileBinary}}(\textcolor{keyword}{const} std::string\& \mbox{\hyperlink{resource__locator__unit_8cpp_a803157d97edf460a9f115ca41b182e73}{file\_path}})}
+\DoxyCodeLine{192   \{}
+\DoxyCodeLine{193     SerializableType archive\_type;}
+\DoxyCodeLine{194 }
+\DoxyCodeLine{195     \{  \textcolor{comment}{// Must be scoped because all data is not written until the oost::archive::xml\_oarchive goes out of scope}}
+\DoxyCodeLine{196       std::ifstream ifs(\mbox{\hyperlink{resource__locator__unit_8cpp_a803157d97edf460a9f115ca41b182e73}{file\_path}}, std::ios\_base::binary);}
+\DoxyCodeLine{197       assert(ifs.good());}
+\DoxyCodeLine{198       boost::archive::binary\_iarchive ia(ifs);}
+\DoxyCodeLine{199       ia >> \mbox{\hyperlink{tesseract__common__unit_8cpp_a34841013cb79dee012f2616fed438ff2}{BOOST\_SERIALIZATION\_NVP}}(archive\_type);}
+\DoxyCodeLine{200     \}}
+\DoxyCodeLine{201 }
+\DoxyCodeLine{202     \textcolor{keywordflow}{return} archive\_type;}
+\DoxyCodeLine{203   \}}
+\DoxyCodeLine{204 \};}
+\DoxyCodeLine{205 \}  \textcolor{comment}{// namespace tesseract\_common}}
+\DoxyCodeLine{206 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_COMMON\_SERIALIZATION\_H}}
+
+\end{DoxyCode}
