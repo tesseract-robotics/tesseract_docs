@@ -153,6 +153,8 @@ std\+::set$<$ std\+::string $>$ \mbox{\hyperlink{namespacetesseract__common_ad10
 \begin{DoxyCompactList}\small\item\em This will remove libraries with full path in the provided library\+\_\+names and return them. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{namespacetesseract__common_a5b28b7ae665b374a7ca166d496f648ce}{Link\+Names\+Pair}} \mbox{\hyperlink{namespacetesseract__common_a11bc9620a27eede3300420410e0b4a7a}{make\+Ordered\+Link\+Pair}} (const std\+::string \&link\+\_\+name1, const std\+::string \&link\+\_\+name2)
 \begin{DoxyCompactList}\small\item\em Create a pair of strings, where the pair.\+first is always \texorpdfstring{$<$}{<}= pair.\+second. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespacetesseract__common_a608064e370135b34db9cf81432777759}{make\+Ordered\+Link\+Pair}} (\mbox{\hyperlink{namespacetesseract__common_a5b28b7ae665b374a7ca166d496f648ce}{Link\+Names\+Pair}} \&pair, const std\+::string \&link\+\_\+name1, const std\+::string \&link\+\_\+name2)
+\begin{DoxyCompactList}\small\item\em Populate a pair of strings, where the pair.\+first is always \texorpdfstring{$<$}{<}= pair.\+second. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Serializable\+Type $>$ }\\void \mbox{\hyperlink{namespacetesseract__common_a5330a58c8c79cce5559a316e76118558}{test\+Serialization}} (const Serializable\+Type \&\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}}, const std\+::string \&typename\+\_\+string)
 \begin{DoxyCompactList}\small\item\em Tests Boost serialization for a serializable type. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Serializable\+Type $>$ }\\void \mbox{\hyperlink{namespacetesseract__common_a1b449b344d06caa397190a9a82dd507a}{test\+Serialization\+Ptr}} (const std\+::shared\+\_\+ptr$<$ Serializable\+Type $>$ \&\mbox{\hyperlink{tesseract__common__serialization__unit_8cpp_a374f34993cc4a656388815cc9b64fa63}{object}}, const std\+::string \&typename\+\_\+string)
@@ -988,7 +990,7 @@ Left trim string.
 \mbox{\Hypertarget{namespacetesseract__common_a11bc9620a27eede3300420410e0b4a7a}\label{namespacetesseract__common_a11bc9620a27eede3300420410e0b4a7a}} 
 \index{tesseract\_common@{tesseract\_common}!makeOrderedLinkPair@{makeOrderedLinkPair}}
 \index{makeOrderedLinkPair@{makeOrderedLinkPair}!tesseract\_common@{tesseract\_common}}
-\doxysubsubsection{\texorpdfstring{makeOrderedLinkPair()}{makeOrderedLinkPair()}}
+\doxysubsubsection{\texorpdfstring{makeOrderedLinkPair()}{makeOrderedLinkPair()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily \mbox{\hyperlink{namespacetesseract__common_a5b28b7ae665b374a7ca166d496f648ce}{Link\+Names\+Pair}} tesseract\+\_\+common\+::make\+Ordered\+Link\+Pair (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{link\+\_\+name1,  }\item[{const std\+::string \&}]{link\+\_\+name2 }\end{DoxyParamCaption})}
 
 
@@ -1005,6 +1007,29 @@ This is commonly used along with \mbox{\hyperlink{structtesseract__common_1_1Pai
 \begin{DoxyReturn}{Returns}
 Link\+Names\+Pair a lexicographically sorted pair of strings 
 \end{DoxyReturn}
+\mbox{\Hypertarget{namespacetesseract__common_a608064e370135b34db9cf81432777759}\label{namespacetesseract__common_a608064e370135b34db9cf81432777759}} 
+\index{tesseract\_common@{tesseract\_common}!makeOrderedLinkPair@{makeOrderedLinkPair}}
+\index{makeOrderedLinkPair@{makeOrderedLinkPair}!tesseract\_common@{tesseract\_common}}
+\doxysubsubsection{\texorpdfstring{makeOrderedLinkPair()}{makeOrderedLinkPair()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void tesseract\+\_\+common\+::make\+Ordered\+Link\+Pair (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacetesseract__common_a5b28b7ae665b374a7ca166d496f648ce}{Link\+Names\+Pair}} \&}]{pair,  }\item[{const std\+::string \&}]{link\+\_\+name1,  }\item[{const std\+::string \&}]{link\+\_\+name2 }\end{DoxyParamCaption})}
+
+
+
+Populate a pair of strings, where the pair.\+first is always \texorpdfstring{$<$}{<}= pair.\+second. 
+
+This is used to avoid multiple memory application throughout the code base
+
+This is commonly used along with \mbox{\hyperlink{structtesseract__common_1_1PairHash}{Pair\+Hash}} as the key to an unordered\+\_\+map$<$\+Link\+Names\+Pair, Type, Pair\+Hash$>$
+
+
+\begin{DoxyParams}{Parameters}
+{\em pair} & The link name pair to load a lexicographically sorted pair of strings \\
+\hline
+{\em link\+\_\+name1} & First link name \\
+\hline
+{\em link\+\_\+name2} & Second link nam \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{namespacetesseract__common_a713dad4aa33bbdae5fb5aec8e83466e2}\label{namespacetesseract__common_a713dad4aa33bbdae5fb5aec8e83466e2}} 
 \index{tesseract\_common@{tesseract\_common}!my\_rethrow\_if\_nested@{my\_rethrow\_if\_nested}}
 \index{my\_rethrow\_if\_nested@{my\_rethrow\_if\_nested}!tesseract\_common@{tesseract\_common}}

@@ -79,7 +79,7 @@
 \DoxyCodeLine{75   checker.setCollisionObjectsTransform(location);}
 \DoxyCodeLine{76 }
 \DoxyCodeLine{77   \textcolor{keywordtype}{long} num\_threads = 4;}
-\DoxyCodeLine{78   std::vector<ContactResultVector> result\_vector(\textcolor{keyword}{static\_cast<}std::size\_t\textcolor{keyword}{>}(num\_threads));}
+\DoxyCodeLine{78   std::vector<ContactResultVector> \mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}(\textcolor{keyword}{static\_cast<}std::size\_t\textcolor{keyword}{>}(num\_threads));}
 \DoxyCodeLine{79   std::vector<DiscreteContactManager::Ptr> contact\_manager(\textcolor{keyword}{static\_cast<}std::size\_t\textcolor{keyword}{>}(num\_threads));}
 \DoxyCodeLine{80   contact\_manager[0] = checker.clone();}
 \DoxyCodeLine{81   contact\_manager[1] = checker.clone();}
@@ -126,9 +126,9 @@
 \DoxyCodeLine{122       \}}
 \DoxyCodeLine{123     \}}
 \DoxyCodeLine{124 }
-\DoxyCodeLine{125     \mbox{\hyperlink{namespacetesseract__collision_a1eeace4cc41027dbde8e7dbeb77ca7cf}{ContactResultMap}} result;}
+\DoxyCodeLine{125     ContactResultMap result;}
 \DoxyCodeLine{126     \mbox{\hyperlink{tesseract__environment__collision_8cpp_ab55f99a09f7331ded7b0bfc5d06b92d4}{manager}}-\/>contactTest(result, ContactRequest(\mbox{\hyperlink{namespacetesseract__collision_ac3da4f46ae16e86ba4f1dfd2935eb80ca5fb1f955b45e38e31789286a1790398d}{ContactTestType::ALL}}));}
-\DoxyCodeLine{127     \mbox{\hyperlink{namespacetesseract__collision_a1e54919ee87e54445b7926d0b2880882}{flattenMoveResults}}(std::move(result), result\_vector[\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(tn)]);}
+\DoxyCodeLine{127     result.flattenMoveResults(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(tn)]);}
 \DoxyCodeLine{128   \}}
 \DoxyCodeLine{129   \textcolor{keyword}{auto} end\_time = std::chrono::high\_resolution\_clock::now();}
 \DoxyCodeLine{130 }
@@ -136,7 +136,7 @@
 \DoxyCodeLine{132 }
 \DoxyCodeLine{133   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{long} i = 0; i < num\_threads; ++i)}
 \DoxyCodeLine{134   \{}
-\DoxyCodeLine{135     \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(result\_vector[\textcolor{keyword}{static\_cast<}std::size\_t\textcolor{keyword}{>}(i)].size() == 2700);}
+\DoxyCodeLine{135     \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[\textcolor{keyword}{static\_cast<}std::size\_t\textcolor{keyword}{>}(i)].size() == 2700);}
 \DoxyCodeLine{136   \}}
 \DoxyCodeLine{137 \}}
 \DoxyCodeLine{138 \}  \textcolor{comment}{// namespace tesseract\_collision::test\_suite}}

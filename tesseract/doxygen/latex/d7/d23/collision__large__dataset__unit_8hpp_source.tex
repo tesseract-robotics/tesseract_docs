@@ -79,28 +79,29 @@
 \DoxyCodeLine{75   \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_abd2686026229a788a0e6836d20ea7008}{getCollisionMarginData}}().\mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_a8b73bd2450f2c9215e67bba3c048fe4b}{getMaxCollisionMargin}}(), 0.1, 1e-\/5);}
 \DoxyCodeLine{76   checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a21d038a9836cdb5a3b44ad527fd93a5b}{setCollisionObjectsTransform}}(location);}
 \DoxyCodeLine{77 }
-\DoxyCodeLine{78   \mbox{\hyperlink{namespacetesseract__collision_a96d77f62b7c26962d1090f0a2f00419b}{ContactResultVector}} result\_vector;}
-\DoxyCodeLine{79 }
-\DoxyCodeLine{80   \textcolor{keyword}{auto} start\_time = std::chrono::high\_resolution\_clock::now();}
-\DoxyCodeLine{81   num\_interations = 1;}
-\DoxyCodeLine{82   \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} i = 0; i < num\_interations; ++i)}
-\DoxyCodeLine{83   \{}
-\DoxyCodeLine{84     \mbox{\hyperlink{namespacetesseract__collision_a1eeace4cc41027dbde8e7dbeb77ca7cf}{ContactResultMap}} result;}
-\DoxyCodeLine{85     result\_vector.clear();}
-\DoxyCodeLine{86     checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a1ddfa181400941e093c76a852df72425}{contactTest}}(result, \mbox{\hyperlink{structtesseract__collision_1_1ContactRequest}{ContactRequest}}(\mbox{\hyperlink{namespacetesseract__collision_ac3da4f46ae16e86ba4f1dfd2935eb80ca5fb1f955b45e38e31789286a1790398d}{ContactTestType::ALL}}));}
-\DoxyCodeLine{87     \mbox{\hyperlink{namespacetesseract__collision_a1e54919ee87e54445b7926d0b2880882}{flattenMoveResults}}(std::move(result), result\_vector);}
-\DoxyCodeLine{88 }
-\DoxyCodeLine{89     \textcolor{keywordflow}{if} (result\_vector.size() != 300)}
-\DoxyCodeLine{90       \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& result : result\_vector)}
-\DoxyCodeLine{91         std::cout << result.link\_names[0] << \textcolor{stringliteral}{"{},"{}} << result.link\_names[1] << \textcolor{stringliteral}{"{},"{}} << result.distance << std::endl;}
-\DoxyCodeLine{92 }
-\DoxyCodeLine{93     \mbox{\hyperlink{collision__core__unit_8cpp_a6759a6545be66625356c6f193741efb0}{EXPECT\_EQ}}(result\_vector.size(), 300);}
-\DoxyCodeLine{94   \}}
-\DoxyCodeLine{95   \textcolor{keyword}{auto} end\_time = std::chrono::high\_resolution\_clock::now();}
-\DoxyCodeLine{96 }
-\DoxyCodeLine{97   CONSOLE\_BRIDGE\_logInform(\textcolor{stringliteral}{"{}DT: \%f ms"{}}, std::chrono::duration<double, std::milli>(end\_time -\/ start\_time).count());}
-\DoxyCodeLine{98 \}}
-\DoxyCodeLine{99 \}  \textcolor{comment}{// namespace tesseract\_collision::test\_suite}}
-\DoxyCodeLine{100 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_COLLISION\_COLLISION\_LARGE\_DATASET\_UNIT\_HPP}}
+\DoxyCodeLine{78   \mbox{\hyperlink{classtesseract__collision_1_1ContactResultMap}{ContactResultMap}} result;}
+\DoxyCodeLine{79   \mbox{\hyperlink{namespacetesseract__collision_a96d77f62b7c26962d1090f0a2f00419b}{ContactResultVector}} \mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}};}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81   \textcolor{keyword}{auto} start\_time = std::chrono::high\_resolution\_clock::now();}
+\DoxyCodeLine{82   num\_interations = 1;}
+\DoxyCodeLine{83   \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} i = 0; i < num\_interations; ++i)}
+\DoxyCodeLine{84   \{}
+\DoxyCodeLine{85     result.\mbox{\hyperlink{classtesseract__collision_1_1ContactResultMap_a555a633c2c5861d195ec7264aedec4b0}{clear}}();}
+\DoxyCodeLine{86     \mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}.clear();}
+\DoxyCodeLine{87     checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a1ddfa181400941e093c76a852df72425}{contactTest}}(result, \mbox{\hyperlink{structtesseract__collision_1_1ContactRequest}{ContactRequest}}(\mbox{\hyperlink{namespacetesseract__collision_ac3da4f46ae16e86ba4f1dfd2935eb80ca5fb1f955b45e38e31789286a1790398d}{ContactTestType::ALL}}));}
+\DoxyCodeLine{88     result.\mbox{\hyperlink{classtesseract__collision_1_1ContactResultMap_a687dcd33f54f08877a221e3869a77709}{flattenMoveResults}}(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}});}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90     \textcolor{keywordflow}{if} (\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}.size() != 300)}
+\DoxyCodeLine{91       \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& result : \mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}})}
+\DoxyCodeLine{92         std::cout << result.link\_names[0] << \textcolor{stringliteral}{"{},"{}} << result.link\_names[1] << \textcolor{stringliteral}{"{},"{}} << result.distance << std::endl;}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94     \mbox{\hyperlink{collision__core__unit_8cpp_a6759a6545be66625356c6f193741efb0}{EXPECT\_EQ}}(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}.size(), 300);}
+\DoxyCodeLine{95   \}}
+\DoxyCodeLine{96   \textcolor{keyword}{auto} end\_time = std::chrono::high\_resolution\_clock::now();}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98   CONSOLE\_BRIDGE\_logInform(\textcolor{stringliteral}{"{}DT: \%f ms"{}}, std::chrono::duration<double, std::milli>(end\_time -\/ start\_time).count());}
+\DoxyCodeLine{99 \}}
+\DoxyCodeLine{100 \}  \textcolor{comment}{// namespace tesseract\_collision::test\_suite}}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_COLLISION\_COLLISION\_LARGE\_DATASET\_UNIT\_HPP}}
 
 \end{DoxyCode}

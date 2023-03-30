@@ -100,27 +100,27 @@
 \DoxyCodeLine{102   checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a21d038a9836cdb5a3b44ad527fd93a5b}{setCollisionObjectsTransform}}(location);}
 \DoxyCodeLine{103 }
 \DoxyCodeLine{104   \textcolor{comment}{// Perform collision check}}
-\DoxyCodeLine{105   \mbox{\hyperlink{namespacetesseract__collision_a1eeace4cc41027dbde8e7dbeb77ca7cf}{ContactResultMap}} result;}
+\DoxyCodeLine{105   \mbox{\hyperlink{classtesseract__collision_1_1ContactResultMap}{ContactResultMap}} result;}
 \DoxyCodeLine{106   checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a1ddfa181400941e093c76a852df72425}{contactTest}}(result, \mbox{\hyperlink{structtesseract__collision_1_1ContactRequest}{ContactRequest}}(test\_type));}
 \DoxyCodeLine{107 }
-\DoxyCodeLine{108   \mbox{\hyperlink{namespacetesseract__collision_a96d77f62b7c26962d1090f0a2f00419b}{ContactResultVector}} result\_vector;}
-\DoxyCodeLine{109   \mbox{\hyperlink{namespacetesseract__collision_a1e54919ee87e54445b7926d0b2880882}{flattenMoveResults}}(std::move(result), result\_vector);}
+\DoxyCodeLine{108   \mbox{\hyperlink{namespacetesseract__collision_a96d77f62b7c26962d1090f0a2f00419b}{ContactResultVector}} \mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}};}
+\DoxyCodeLine{109   result.\mbox{\hyperlink{classtesseract__collision_1_1ContactResultMap_a687dcd33f54f08877a221e3869a77709}{flattenMoveResults}}(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}});}
 \DoxyCodeLine{110 }
-\DoxyCodeLine{111   \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(!result\_vector.empty());}
+\DoxyCodeLine{111   \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(!\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}.empty());}
 \DoxyCodeLine{112   \textcolor{keywordflow}{if} (test\_type == \mbox{\hyperlink{namespacetesseract__collision_ac3da4f46ae16e86ba4f1dfd2935eb80cae9c32f09a44ae1ae34e42d53502fab77}{ContactTestType::CLOSEST}})}
 \DoxyCodeLine{113   \{}
-\DoxyCodeLine{114     \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(result\_vector.size() == 1);}
-\DoxyCodeLine{115     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_a1ceb8bb3849a05a320b82729fd3681bb}{distance}}, -\/0.25, tol);}
+\DoxyCodeLine{114     \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}.size() == 1);}
+\DoxyCodeLine{115     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_a1ceb8bb3849a05a320b82729fd3681bb}{distance}}, -\/0.25, tol);}
 \DoxyCodeLine{116   \}}
 \DoxyCodeLine{117   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (test\_type == \mbox{\hyperlink{namespacetesseract__collision_ac3da4f46ae16e86ba4f1dfd2935eb80ca2c2624a5059934a947d6e25fe8332ade}{ContactTestType::FIRST}})}
 \DoxyCodeLine{118   \{}
-\DoxyCodeLine{119     \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(result\_vector.size() == 1);}
-\DoxyCodeLine{120     \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_a1ceb8bb3849a05a320b82729fd3681bb}{distance}} < 0.1);}
+\DoxyCodeLine{119     \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}.size() == 1);}
+\DoxyCodeLine{120     \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_a1ceb8bb3849a05a320b82729fd3681bb}{distance}} < 0.1);}
 \DoxyCodeLine{121   \}}
 \DoxyCodeLine{122   \textcolor{keywordflow}{else}}
 \DoxyCodeLine{123   \{}
-\DoxyCodeLine{124     \mbox{\hyperlink{collision__core__unit_8cpp_aa784f8de129e0ce90854ab7b6a043468}{EXPECT\_FALSE}}(result\_vector.empty());}
-\DoxyCodeLine{125     \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_a1ceb8bb3849a05a320b82729fd3681bb}{distance}} < 0.1);}
+\DoxyCodeLine{124     \mbox{\hyperlink{collision__core__unit_8cpp_aa784f8de129e0ce90854ab7b6a043468}{EXPECT\_FALSE}}(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}.empty());}
+\DoxyCodeLine{125     \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_a1ceb8bb3849a05a320b82729fd3681bb}{distance}} < 0.1);}
 \DoxyCodeLine{126   \}}
 \DoxyCodeLine{127 \}}
 \DoxyCodeLine{128 \}  \textcolor{comment}{// namespace detail}}

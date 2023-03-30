@@ -82,7 +82,6 @@ $(function() {
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
-<a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">types.h File Reference</div></div>
 </div><!--header-->
@@ -204,6 +203,9 @@ This graph shows which files directly or indirectly include this file:</div>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/db5/structtesseract__collision_1_1ContactResult.html">tesseract_collision::ContactResult</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d3e/classtesseract__collision_1_1ContactResultMap.html">tesseract_collision::ContactResultMap</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This structure hold contact results for link pairs.  <a href="../../df/d3e/classtesseract__collision_1_1ContactResultMap.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/df6/structtesseract__collision_1_1ContactRequest.html">tesseract_collision::ContactRequest</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="../../da/df6/structtesseract__collision_1_1ContactRequest.html" title="The ContactRequest struct.">ContactRequest</a> struct.  <a href="../../da/df6/structtesseract__collision_1_1ContactRequest.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -241,8 +243,6 @@ Typedefs</h2></td></tr>
 <tr class="separator:abe7752ce161fbd1139533ac566fec1cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a96d77f62b7c26962d1090f0a2f00419b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d79/namespacetesseract__collision.html#a96d77f62b7c26962d1090f0a2f00419b">tesseract_collision::ContactResultVector</a> = <a class="el" href="../../df/da9/namespacetesseract__common.html#a000d15c3ab8d8ba4ebdaae64153b053a">tesseract_common::AlignedVector</a>&lt; ContactResult &gt;</td></tr>
 <tr class="separator:a96d77f62b7c26962d1090f0a2f00419b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1eeace4cc41027dbde8e7dbeb77ca7cf"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d79/namespacetesseract__collision.html#a1eeace4cc41027dbde8e7dbeb77ca7cf">tesseract_collision::ContactResultMap</a> = <a class="el" href="../../df/da9/namespacetesseract__common.html#a2c5a4b6149060671cf8c3f9d15ef58c4">tesseract_common::AlignedMap</a>&lt; std::pair&lt; std::string, std::string &gt;, ContactResultVector &gt;</td></tr>
-<tr class="separator:a1eeace4cc41027dbde8e7dbeb77ca7cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a66fd355f5026f0f64424a756a3788c38"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d79/namespacetesseract__collision.html#a66fd355f5026f0f64424a756a3788c38">tesseract_collision::IsContactResultValidFn</a> = std::function&lt; bool(const ContactResult &amp;)&gt;</td></tr>
 <tr class="memdesc:a66fd355f5026f0f64424a756a3788c38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Should return true if contact results are valid, otherwise false.  <a href="../../d4/d79/namespacetesseract__collision.html#a66fd355f5026f0f64424a756a3788c38">More...</a><br /></td></tr>
 <tr class="separator:a66fd355f5026f0f64424a756a3788c38"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -280,17 +280,6 @@ Enumerations</h2></td></tr>
 <tr class="memdesc:ab4aafe369f7930ea6a356f0b578c16af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identifies how the provided AllowedCollisionMatrix should be applied relative to the isAllowedFn in the contact manager.  <a href="../../d4/d79/namespacetesseract__collision.html#ab4aafe369f7930ea6a356f0b578c16af">More...</a><br /></td></tr>
 <tr class="separator:ab4aafe369f7930ea6a356f0b578c16af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:a1e54919ee87e54445b7926d0b2880882"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d79/namespacetesseract__collision.html#a1e54919ee87e54445b7926d0b2880882">tesseract_collision::flattenMoveResults</a> (ContactResultMap &amp;&amp;<a class="el" href="../../d4/d0f/kinematics__core__unit_8cpp.html#a9d4c159548a3d787ff62c64175409328">m</a>, ContactResultVector &amp;<a class="el" href="../../de/df1/tesseract__common__unit_8cpp.html#ac4055e3a20b6b3af3d10590ea446ef6c">v</a>)</td></tr>
-<tr class="separator:a1e54919ee87e54445b7926d0b2880882"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0249bb2994ca5e8258ea55309467ae4a"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d79/namespacetesseract__collision.html#a0249bb2994ca5e8258ea55309467ae4a">tesseract_collision::flattenCopyResults</a> (const ContactResultMap &amp;<a class="el" href="../../d4/d0f/kinematics__core__unit_8cpp.html#a9d4c159548a3d787ff62c64175409328">m</a>, ContactResultVector &amp;<a class="el" href="../../de/df1/tesseract__common__unit_8cpp.html#ac4055e3a20b6b3af3d10590ea446ef6c">v</a>)</td></tr>
-<tr class="separator:a0249bb2994ca5e8258ea55309467ae4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2191bb7268899136708aa97b71b0f292"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d79/namespacetesseract__collision.html#a2191bb7268899136708aa97b71b0f292">tesseract_collision::flattenWrapperResults</a> (ContactResultMap &amp;<a class="el" href="../../d4/d0f/kinematics__core__unit_8cpp.html#a9d4c159548a3d787ff62c64175409328">m</a>, std::vector&lt; std::reference_wrapper&lt; ContactResult &gt; &gt; &amp;<a class="el" href="../../de/df1/tesseract__common__unit_8cpp.html#ac4055e3a20b6b3af3d10590ea446ef6c">v</a>)</td></tr>
-<tr class="separator:a2191bb7268899136708aa97b71b0f292"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11153b7e7d65c0cbc1930a8ce29e9b47"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d79/namespacetesseract__collision.html#a11153b7e7d65c0cbc1930a8ce29e9b47">tesseract_collision::flattenWrapperResults</a> (const ContactResultMap &amp;<a class="el" href="../../d4/d0f/kinematics__core__unit_8cpp.html#a9d4c159548a3d787ff62c64175409328">m</a>, std::vector&lt; std::reference_wrapper&lt; const ContactResult &gt; &gt; &amp;<a class="el" href="../../de/df1/tesseract__common__unit_8cpp.html#ac4055e3a20b6b3af3d10590ea446ef6c">v</a>)</td></tr>
-<tr class="separator:a11153b7e7d65c0cbc1930a8ce29e9b47"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a7b23767d95cb11ee74a0001502f930a5"><td class="memItemLeft" align="right" valign="top">static const std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d79/namespacetesseract__collision.html#a7b23767d95cb11ee74a0001502f930a5">tesseract_collision::ContactTestTypeStrings</a></td></tr>
@@ -309,7 +298,7 @@ Variables</h2></td></tr>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Mar 22 2023 15:47:57 for Tesseract by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Thu Mar 30 2023 23:19:53 for Tesseract by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

@@ -58,55 +58,56 @@
 \DoxyCodeLine{71 }
 \DoxyCodeLine{76   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix_a34d4949d62fd6e58b24e7c21803bed31}{removeAllowedCollision}}(\textcolor{keyword}{const} std::string\& link\_name)}
 \DoxyCodeLine{77   \{}
-\DoxyCodeLine{78     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a325f3c2b297a245575c6f2f91bd5f1e2}{it}} = \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix_a4f71038c5617e4208c9fcb9123c08448}{lookup\_table\_}}.begin(); \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a325f3c2b297a245575c6f2f91bd5f1e2}{it}} != \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix_a4f71038c5617e4208c9fcb9123c08448}{lookup\_table\_}}.end() \textcolor{comment}{/* not hoisted */}; \textcolor{comment}{/* no increment */})}
+\DoxyCodeLine{78     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} \mbox{\hyperlink{collision__core__unit_8cpp_a325f3c2b297a245575c6f2f91bd5f1e2}{it}} = \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix_a4f71038c5617e4208c9fcb9123c08448}{lookup\_table\_}}.begin(); \mbox{\hyperlink{collision__core__unit_8cpp_a325f3c2b297a245575c6f2f91bd5f1e2}{it}} != \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix_a4f71038c5617e4208c9fcb9123c08448}{lookup\_table\_}}.end() \textcolor{comment}{/* not hoisted */}; \textcolor{comment}{/* no increment */})}
 \DoxyCodeLine{79     \{}
-\DoxyCodeLine{80       \textcolor{keywordflow}{if} (\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a325f3c2b297a245575c6f2f91bd5f1e2}{it}}-\/>first.first == link\_name || \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a325f3c2b297a245575c6f2f91bd5f1e2}{it}}-\/>first.second == link\_name)}
+\DoxyCodeLine{80       \textcolor{keywordflow}{if} (\mbox{\hyperlink{collision__core__unit_8cpp_a325f3c2b297a245575c6f2f91bd5f1e2}{it}}-\/>first.first == link\_name || \mbox{\hyperlink{collision__core__unit_8cpp_a325f3c2b297a245575c6f2f91bd5f1e2}{it}}-\/>first.second == link\_name)}
 \DoxyCodeLine{81       \{}
-\DoxyCodeLine{82         \mbox{\hyperlink{tesseract__srdf__unit_8cpp_a325f3c2b297a245575c6f2f91bd5f1e2}{it}} = \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix_a4f71038c5617e4208c9fcb9123c08448}{lookup\_table\_}}.erase(\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a325f3c2b297a245575c6f2f91bd5f1e2}{it}});}
+\DoxyCodeLine{82         \mbox{\hyperlink{collision__core__unit_8cpp_a325f3c2b297a245575c6f2f91bd5f1e2}{it}} = \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix_a4f71038c5617e4208c9fcb9123c08448}{lookup\_table\_}}.erase(\mbox{\hyperlink{collision__core__unit_8cpp_a325f3c2b297a245575c6f2f91bd5f1e2}{it}});}
 \DoxyCodeLine{83       \}}
 \DoxyCodeLine{84       \textcolor{keywordflow}{else}}
 \DoxyCodeLine{85       \{}
-\DoxyCodeLine{86         ++\mbox{\hyperlink{tesseract__srdf__unit_8cpp_a325f3c2b297a245575c6f2f91bd5f1e2}{it}};}
+\DoxyCodeLine{86         ++\mbox{\hyperlink{collision__core__unit_8cpp_a325f3c2b297a245575c6f2f91bd5f1e2}{it}};}
 \DoxyCodeLine{87       \}}
 \DoxyCodeLine{88     \}}
 \DoxyCodeLine{89   \}}
 \DoxyCodeLine{90 }
 \DoxyCodeLine{97   \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix_a8e1b9f8f0d0a99a456aa43a4ccbf4c15}{isCollisionAllowed}}(\textcolor{keyword}{const} std::string\& link\_name1, \textcolor{keyword}{const} std::string\& link\_name2)\textcolor{keyword}{ const}}
 \DoxyCodeLine{98 \textcolor{keyword}{  }\{}
-\DoxyCodeLine{99     \textcolor{keyword}{auto} link\_pair = \mbox{\hyperlink{namespacetesseract__common_a11bc9620a27eede3300420410e0b4a7a}{tesseract\_common::makeOrderedLinkPair}}(link\_name1, link\_name2);}
-\DoxyCodeLine{100     \textcolor{keywordflow}{return} (\mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix_a4f71038c5617e4208c9fcb9123c08448}{lookup\_table\_}}.find(link\_pair) != \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix_a4f71038c5617e4208c9fcb9123c08448}{lookup\_table\_}}.end());}
-\DoxyCodeLine{101   \}}
-\DoxyCodeLine{102 }
-\DoxyCodeLine{107   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix_a73cf0e3b8e7bc09a19e67750ebe1f864}{clearAllowedCollisions}}() \{ \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix_a4f71038c5617e4208c9fcb9123c08448}{lookup\_table\_}}.clear(); \}}
-\DoxyCodeLine{108 }
-\DoxyCodeLine{113   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix_a2c7049482b44916ebb62b7f3ce71de66}{insertAllowedCollisionMatrix}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix}{AllowedCollisionMatrix}}\& \mbox{\hyperlink{collision__core__unit_8cpp_a714392901b0c74193a9659fc77891a60}{acm}})}
-\DoxyCodeLine{114   \{}
-\DoxyCodeLine{115     \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix_a4f71038c5617e4208c9fcb9123c08448}{lookup\_table\_}}.insert(\mbox{\hyperlink{collision__core__unit_8cpp_a714392901b0c74193a9659fc77891a60}{acm}}.getAllAllowedCollisions().begin(), \mbox{\hyperlink{collision__core__unit_8cpp_a714392901b0c74193a9659fc77891a60}{acm}}.getAllAllowedCollisions().end());}
-\DoxyCodeLine{116   \}}
-\DoxyCodeLine{117 }
-\DoxyCodeLine{118   \textcolor{keyword}{friend} std::ostream\& \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix_a3cc3aec9ac23d224aa128d26ac84df70}{operator<<}}(std::ostream\& os, \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix}{AllowedCollisionMatrix}}\& \mbox{\hyperlink{collision__core__unit_8cpp_a714392901b0c74193a9659fc77891a60}{acm}})}
-\DoxyCodeLine{119   \{}
-\DoxyCodeLine{120     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& pair : \mbox{\hyperlink{collision__core__unit_8cpp_a714392901b0c74193a9659fc77891a60}{acm}}.getAllAllowedCollisions())}
-\DoxyCodeLine{121       os << \textcolor{stringliteral}{"{}link="{}} << pair.first.first << \textcolor{stringliteral}{"{} link="{}} << pair.first.second << \textcolor{stringliteral}{"{} reason="{}} << pair.second << std::endl;}
-\DoxyCodeLine{122     \textcolor{keywordflow}{return} os;}
-\DoxyCodeLine{123   \}}
-\DoxyCodeLine{124   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix_a9b45662be7af08955526d361814b292c}{operator==}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix}{AllowedCollisionMatrix}}\& rhs) \textcolor{keyword}{const};}
-\DoxyCodeLine{125   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix_a5f22852d28bac337e818740ec3a22bee}{operator!=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix}{AllowedCollisionMatrix}}\& rhs) \textcolor{keyword}{const};}
-\DoxyCodeLine{126 }
-\DoxyCodeLine{127 \textcolor{keyword}{private}:}
-\DoxyCodeLine{128   \mbox{\hyperlink{namespacetesseract__common_a79d2a34647d0da5e574629878c142086}{AllowedCollisionEntries}} \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix_a4f71038c5617e4208c9fcb9123c08448}{lookup\_table\_}};}
-\DoxyCodeLine{129 }
-\DoxyCodeLine{130   \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix_ac98d07dd8f7b70e16ccb9a01abf56b9c}{boost::serialization::access}};}
-\DoxyCodeLine{131   \textcolor{keyword}{template} <\textcolor{keyword}{class} Archive>}
-\DoxyCodeLine{132   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix_ade8e24a702a875ed5e636892429bf6ce}{serialize}}(Archive\& ar, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} version);  \textcolor{comment}{// NOLINT}}
-\DoxyCodeLine{133 \};}
-\DoxyCodeLine{134 }
-\DoxyCodeLine{135 \}  \textcolor{comment}{// namespace tesseract\_common}}
-\DoxyCodeLine{136 }
-\DoxyCodeLine{137 \textcolor{preprocessor}{\#include <boost/serialization/export.hpp>}}
-\DoxyCodeLine{138 \textcolor{preprocessor}{\#include <boost/serialization/tracking.hpp>}}
-\DoxyCodeLine{139 BOOST\_CLASS\_EXPORT\_KEY2(\mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix}{tesseract\_common::AllowedCollisionMatrix}}, \textcolor{stringliteral}{"{}AllowedCollisionMatrix"{}})}
-\DoxyCodeLine{140 }
-\DoxyCodeLine{141 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_SCENE\_GRAPH\_ALLOWED\_COLLISION\_MATRIX\_H}}
+\DoxyCodeLine{99     \textcolor{keyword}{thread\_local} \mbox{\hyperlink{namespacetesseract__common_a5b28b7ae665b374a7ca166d496f648ce}{LinkNamesPair}} link\_pair;}
+\DoxyCodeLine{100     \mbox{\hyperlink{namespacetesseract__common_a11bc9620a27eede3300420410e0b4a7a}{tesseract\_common::makeOrderedLinkPair}}(link\_pair, link\_name1, link\_name2);}
+\DoxyCodeLine{101     \textcolor{keywordflow}{return} (\mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix_a4f71038c5617e4208c9fcb9123c08448}{lookup\_table\_}}.find(link\_pair) != \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix_a4f71038c5617e4208c9fcb9123c08448}{lookup\_table\_}}.end());}
+\DoxyCodeLine{102   \}}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{108   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix_a73cf0e3b8e7bc09a19e67750ebe1f864}{clearAllowedCollisions}}() \{ \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix_a4f71038c5617e4208c9fcb9123c08448}{lookup\_table\_}}.clear(); \}}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{114   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix_a2c7049482b44916ebb62b7f3ce71de66}{insertAllowedCollisionMatrix}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix}{AllowedCollisionMatrix}}\& \mbox{\hyperlink{collision__core__unit_8cpp_a714392901b0c74193a9659fc77891a60}{acm}})}
+\DoxyCodeLine{115   \{}
+\DoxyCodeLine{116     \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix_a4f71038c5617e4208c9fcb9123c08448}{lookup\_table\_}}.insert(\mbox{\hyperlink{collision__core__unit_8cpp_a714392901b0c74193a9659fc77891a60}{acm}}.getAllAllowedCollisions().begin(), \mbox{\hyperlink{collision__core__unit_8cpp_a714392901b0c74193a9659fc77891a60}{acm}}.getAllAllowedCollisions().end());}
+\DoxyCodeLine{117   \}}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119   \textcolor{keyword}{friend} std::ostream\& \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix_a3cc3aec9ac23d224aa128d26ac84df70}{operator<<}}(std::ostream\& os, \textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix}{AllowedCollisionMatrix}}\& \mbox{\hyperlink{collision__core__unit_8cpp_a714392901b0c74193a9659fc77891a60}{acm}})}
+\DoxyCodeLine{120   \{}
+\DoxyCodeLine{121     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& pair : \mbox{\hyperlink{collision__core__unit_8cpp_a714392901b0c74193a9659fc77891a60}{acm}}.getAllAllowedCollisions())}
+\DoxyCodeLine{122       os << \textcolor{stringliteral}{"{}link="{}} << pair.first.first << \textcolor{stringliteral}{"{} link="{}} << pair.first.second << \textcolor{stringliteral}{"{} reason="{}} << pair.second << std::endl;}
+\DoxyCodeLine{123     \textcolor{keywordflow}{return} os;}
+\DoxyCodeLine{124   \}}
+\DoxyCodeLine{125   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix_a9b45662be7af08955526d361814b292c}{operator==}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix}{AllowedCollisionMatrix}}\& rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{126   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix_a5f22852d28bac337e818740ec3a22bee}{operator!=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix}{AllowedCollisionMatrix}}\& rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128 \textcolor{keyword}{private}:}
+\DoxyCodeLine{129   \mbox{\hyperlink{namespacetesseract__common_a79d2a34647d0da5e574629878c142086}{AllowedCollisionEntries}} \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix_a4f71038c5617e4208c9fcb9123c08448}{lookup\_table\_}};}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{131   \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix_ac98d07dd8f7b70e16ccb9a01abf56b9c}{boost::serialization::access}};}
+\DoxyCodeLine{132   \textcolor{keyword}{template} <\textcolor{keyword}{class} Archive>}
+\DoxyCodeLine{133   \textcolor{keywordtype}{void} \mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix_ade8e24a702a875ed5e636892429bf6ce}{serialize}}(Archive\& ar, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} version);  \textcolor{comment}{// NOLINT}}
+\DoxyCodeLine{134 \};}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136 \}  \textcolor{comment}{// namespace tesseract\_common}}
+\DoxyCodeLine{137 }
+\DoxyCodeLine{138 \textcolor{preprocessor}{\#include <boost/serialization/export.hpp>}}
+\DoxyCodeLine{139 \textcolor{preprocessor}{\#include <boost/serialization/tracking.hpp>}}
+\DoxyCodeLine{140 BOOST\_CLASS\_EXPORT\_KEY2(\mbox{\hyperlink{classtesseract__common_1_1AllowedCollisionMatrix}{tesseract\_common::AllowedCollisionMatrix}}, \textcolor{stringliteral}{"{}AllowedCollisionMatrix"{}})}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_SCENE\_GRAPH\_ALLOWED\_COLLISION\_MATRIX\_H}}
 
 \end{DoxyCode}

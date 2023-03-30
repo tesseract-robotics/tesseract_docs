@@ -27,6 +27,8 @@ This graph shows which files directly or indirectly include this file\+:
 \item 
 struct \mbox{\hyperlink{structtesseract__collision_1_1ContactResult}{tesseract\+\_\+collision\+::\+Contact\+Result}}
 \item 
+class \mbox{\hyperlink{classtesseract__collision_1_1ContactResultMap}{tesseract\+\_\+collision\+::\+Contact\+Result\+Map}}
+\begin{DoxyCompactList}\small\item\em This structure hold contact results for link pairs. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structtesseract__collision_1_1ContactRequest}{tesseract\+\_\+collision\+::\+Contact\+Request}}
 \begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{structtesseract__collision_1_1ContactRequest}{Contact\+Request}} struct. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structtesseract__collision_1_1ContactTestData}{tesseract\+\_\+collision\+::\+Contact\+Test\+Data}}
@@ -58,8 +60,6 @@ using \mbox{\hyperlink{namespacetesseract__collision_af335a7f19e2820b8185b48aafa
 using \mbox{\hyperlink{namespacetesseract__collision_abe7752ce161fbd1139533ac566fec1cb}{tesseract\+\_\+collision\+::\+Is\+Contact\+Allowed\+Fn}} = std\+::function$<$ bool(const std\+::string \&, const std\+::string \&)$>$
 \begin{DoxyCompactList}\small\item\em Should return true if contact allowed, otherwise false. \end{DoxyCompactList}\item 
 using \mbox{\hyperlink{namespacetesseract__collision_a96d77f62b7c26962d1090f0a2f00419b}{tesseract\+\_\+collision\+::\+Contact\+Result\+Vector}} = \mbox{\hyperlink{namespacetesseract__common_a000d15c3ab8d8ba4ebdaae64153b053a}{tesseract\+\_\+common\+::\+Aligned\+Vector}}$<$ Contact\+Result $>$
-\item 
-using \mbox{\hyperlink{namespacetesseract__collision_a1eeace4cc41027dbde8e7dbeb77ca7cf}{tesseract\+\_\+collision\+::\+Contact\+Result\+Map}} = \mbox{\hyperlink{namespacetesseract__common_a2c5a4b6149060671cf8c3f9d15ef58c4}{tesseract\+\_\+common\+::\+Aligned\+Map}}$<$ std\+::pair$<$ std\+::string, std\+::string $>$, Contact\+Result\+Vector $>$
 \item 
 using \mbox{\hyperlink{namespacetesseract__collision_a66fd355f5026f0f64424a756a3788c38}{tesseract\+\_\+collision\+::\+Is\+Contact\+Result\+Valid\+Fn}} = std\+::function$<$ bool(const Contact\+Result \&)$>$
 \begin{DoxyCompactList}\small\item\em Should return true if contact results are valid, otherwise false. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -93,17 +93,6 @@ enum class \mbox{\hyperlink{namespacetesseract__collision_ab4aafe369f7930ea6a356
 , \mbox{\hyperlink{namespacetesseract__collision_ab4aafe369f7930ea6a356f0b578c16afa1d00e7dce692e8dc3f6877f035e3a616}{tesseract\+\_\+collision\+::\+OR}}
  \}
 \begin{DoxyCompactList}\small\item\em Identifies how the provided Allowed\+Collision\+Matrix should be applied relative to the is\+Allowed\+Fn in the contact manager. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Functions}
-\begin{DoxyCompactItemize}
-\item 
-std\+::size\+\_\+t \mbox{\hyperlink{namespacetesseract__collision_a1e54919ee87e54445b7926d0b2880882}{tesseract\+\_\+collision\+::flatten\+Move\+Results}} (Contact\+Result\+Map \&\&\mbox{\hyperlink{kinematics__core__unit_8cpp_a9d4c159548a3d787ff62c64175409328}{m}}, Contact\+Result\+Vector \&\mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}})
-\item 
-std\+::size\+\_\+t \mbox{\hyperlink{namespacetesseract__collision_a0249bb2994ca5e8258ea55309467ae4a}{tesseract\+\_\+collision\+::flatten\+Copy\+Results}} (const Contact\+Result\+Map \&\mbox{\hyperlink{kinematics__core__unit_8cpp_a9d4c159548a3d787ff62c64175409328}{m}}, Contact\+Result\+Vector \&\mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}})
-\item 
-std\+::size\+\_\+t \mbox{\hyperlink{namespacetesseract__collision_a2191bb7268899136708aa97b71b0f292}{tesseract\+\_\+collision\+::flatten\+Wrapper\+Results}} (Contact\+Result\+Map \&\mbox{\hyperlink{kinematics__core__unit_8cpp_a9d4c159548a3d787ff62c64175409328}{m}}, std\+::vector$<$ std\+::reference\+\_\+wrapper$<$ Contact\+Result $>$ $>$ \&\mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}})
-\item 
-std\+::size\+\_\+t \mbox{\hyperlink{namespacetesseract__collision_a11153b7e7d65c0cbc1930a8ce29e9b47}{tesseract\+\_\+collision\+::flatten\+Wrapper\+Results}} (const Contact\+Result\+Map \&\mbox{\hyperlink{kinematics__core__unit_8cpp_a9d4c159548a3d787ff62c64175409328}{m}}, std\+::vector$<$ std\+::reference\+\_\+wrapper$<$ const Contact\+Result $>$ $>$ \&\mbox{\hyperlink{tesseract__common__unit_8cpp_ac4055e3a20b6b3af3d10590ea446ef6c}{v}})
-\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 

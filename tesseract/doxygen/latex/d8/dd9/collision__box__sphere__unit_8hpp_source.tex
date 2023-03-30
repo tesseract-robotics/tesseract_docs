@@ -131,208 +131,204 @@
 \DoxyCodeLine{143   checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a21d038a9836cdb5a3b44ad527fd93a5b}{setCollisionObjectsTransform}}(location);}
 \DoxyCodeLine{144 }
 \DoxyCodeLine{145   \textcolor{comment}{// Perform collision check}}
-\DoxyCodeLine{146   \mbox{\hyperlink{namespacetesseract__collision_a1eeace4cc41027dbde8e7dbeb77ca7cf}{ContactResultMap}} result;}
+\DoxyCodeLine{146   \mbox{\hyperlink{classtesseract__collision_1_1ContactResultMap}{ContactResultMap}} result;}
 \DoxyCodeLine{147   checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a1ddfa181400941e093c76a852df72425}{contactTest}}(result, \mbox{\hyperlink{structtesseract__collision_1_1ContactRequest}{ContactRequest}}(\mbox{\hyperlink{namespacetesseract__collision_ac3da4f46ae16e86ba4f1dfd2935eb80cae9c32f09a44ae1ae34e42d53502fab77}{ContactTestType::CLOSEST}}));}
 \DoxyCodeLine{148 }
-\DoxyCodeLine{149   \mbox{\hyperlink{namespacetesseract__collision_a96d77f62b7c26962d1090f0a2f00419b}{ContactResultVector}} result\_vector;}
-\DoxyCodeLine{150   \mbox{\hyperlink{namespacetesseract__collision_a1e54919ee87e54445b7926d0b2880882}{flattenMoveResults}}(std::move(result), result\_vector);}
+\DoxyCodeLine{149   \mbox{\hyperlink{namespacetesseract__collision_a96d77f62b7c26962d1090f0a2f00419b}{ContactResultVector}} \mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}};}
+\DoxyCodeLine{150   result.\mbox{\hyperlink{classtesseract__collision_1_1ContactResultMap_a687dcd33f54f08877a221e3869a77709}{flattenMoveResults}}(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}});}
 \DoxyCodeLine{151 }
-\DoxyCodeLine{152   \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(!result\_vector.empty());}
-\DoxyCodeLine{153   \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_a1ceb8bb3849a05a320b82729fd3681bb}{distance}}, -\/0.55, 0.001);}
+\DoxyCodeLine{152   \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(!\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}.empty());}
+\DoxyCodeLine{153   \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_a1ceb8bb3849a05a320b82729fd3681bb}{distance}}, -\/0.55, 0.001);}
 \DoxyCodeLine{154 }
 \DoxyCodeLine{155   std::vector<int> idx = \{ 0, 1, 1 \};}
-\DoxyCodeLine{156   \textcolor{keywordflow}{if} (result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_a464caf777ea79db067179ebe2bd7ecc7}{link\_names}}[0] != \textcolor{stringliteral}{"{}box\_link"{}})}
+\DoxyCodeLine{156   \textcolor{keywordflow}{if} (\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_a464caf777ea79db067179ebe2bd7ecc7}{link\_names}}[0] != \textcolor{stringliteral}{"{}box\_link"{}})}
 \DoxyCodeLine{157     idx = \{ 1, 0, -\/1 \};}
 \DoxyCodeLine{158 }
-\DoxyCodeLine{159   \textcolor{keywordflow}{if} (result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_aef0b0de8aead4d0c192bfbc1665bdca1}{single\_contact\_point}})}
+\DoxyCodeLine{159   \textcolor{keywordflow}{if} (\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_aef0b0de8aead4d0c192bfbc1665bdca1}{single\_contact\_point}})}
 \DoxyCodeLine{160   \{}
-\DoxyCodeLine{161     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[0][0], result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[1][0], 0.001);}
-\DoxyCodeLine{162     \mbox{\hyperlink{collision__core__unit_8cpp_aa784f8de129e0ce90854ab7b6a043468}{EXPECT\_FALSE}}(std::abs(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[0][0] -\/ (0.5)) > 0.001 \&\&}
-\DoxyCodeLine{163                  std::abs(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[0][0] -\/ (-\/0.05)) > 0.001);}
-\DoxyCodeLine{164     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[0][1], 0.0, 0.001);}
-\DoxyCodeLine{165     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[0][2], 0.0, 0.001);}
+\DoxyCodeLine{161     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[0][0], \mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[1][0], 0.001);}
+\DoxyCodeLine{162     \mbox{\hyperlink{collision__core__unit_8cpp_aa784f8de129e0ce90854ab7b6a043468}{EXPECT\_FALSE}}(std::abs(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[0][0] -\/ (0.5)) > 0.001 \&\&}
+\DoxyCodeLine{163                  std::abs(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[0][0] -\/ (-\/0.05)) > 0.001);}
+\DoxyCodeLine{164     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[0][1], 0.0, 0.001);}
+\DoxyCodeLine{165     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[0][2], 0.0, 0.001);}
 \DoxyCodeLine{166   \}}
 \DoxyCodeLine{167   \textcolor{keywordflow}{else}}
 \DoxyCodeLine{168   \{}
-\DoxyCodeLine{169     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(idx[0])][0], 0.5, 0.001);}
-\DoxyCodeLine{170     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(idx[0])][1], 0.0, 0.001);}
-\DoxyCodeLine{171     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(idx[0])][2], 0.0, 0.001);}
-\DoxyCodeLine{172     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(idx[1])][0], -\/0.05, 0.001);}
-\DoxyCodeLine{173     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(idx[1])][1], 0.0, 0.001);}
-\DoxyCodeLine{174     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(idx[1])][2], 0.0, 0.001);}
+\DoxyCodeLine{169     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(idx[0])][0], 0.5, 0.001);}
+\DoxyCodeLine{170     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(idx[0])][1], 0.0, 0.001);}
+\DoxyCodeLine{171     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(idx[0])][2], 0.0, 0.001);}
+\DoxyCodeLine{172     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(idx[1])][0], -\/0.05, 0.001);}
+\DoxyCodeLine{173     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(idx[1])][1], 0.0, 0.001);}
+\DoxyCodeLine{174     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(idx[1])][2], 0.0, 0.001);}
 \DoxyCodeLine{175   \}}
 \DoxyCodeLine{176 }
-\DoxyCodeLine{177   \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_a7589b8c9c1397d28b5974168ee72f0a8}{normal}}[0], idx[2] * 1.0, 0.001);}
-\DoxyCodeLine{178   \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_a7589b8c9c1397d28b5974168ee72f0a8}{normal}}[1], idx[2] * 0.0, 0.001);}
-\DoxyCodeLine{179   \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_a7589b8c9c1397d28b5974168ee72f0a8}{normal}}[2], idx[2] * 0.0, 0.001);}
+\DoxyCodeLine{177   \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_a7589b8c9c1397d28b5974168ee72f0a8}{normal}}[0], idx[2] * 1.0, 0.001);}
+\DoxyCodeLine{178   \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_a7589b8c9c1397d28b5974168ee72f0a8}{normal}}[1], idx[2] * 0.0, 0.001);}
+\DoxyCodeLine{179   \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_a7589b8c9c1397d28b5974168ee72f0a8}{normal}}[2], idx[2] * 0.0, 0.001);}
 \DoxyCodeLine{180 }
 \DoxyCodeLine{182   \textcolor{comment}{// Test object is out side the contact distance}}
 \DoxyCodeLine{184 \textcolor{comment}{}  location[\textcolor{stringliteral}{"{}sphere\_link"{}}].translation() = Eigen::Vector3d(1, 0, 0);}
-\DoxyCodeLine{185   result = \mbox{\hyperlink{namespacetesseract__collision_a1eeace4cc41027dbde8e7dbeb77ca7cf}{ContactResultMap}}();}
-\DoxyCodeLine{186   result.clear();}
-\DoxyCodeLine{187   result\_vector.clear();}
-\DoxyCodeLine{188 }
-\DoxyCodeLine{189   \textcolor{comment}{// Use different method for setting transforms}}
-\DoxyCodeLine{190   checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a21d038a9836cdb5a3b44ad527fd93a5b}{setCollisionObjectsTransform}}(\textcolor{stringliteral}{"{}sphere\_link"{}}, location[\textcolor{stringliteral}{"{}sphere\_link"{}}]);}
-\DoxyCodeLine{191   checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a1ddfa181400941e093c76a852df72425}{contactTest}}(result, \mbox{\hyperlink{structtesseract__collision_1_1ContactRequest}{ContactRequest}}(\mbox{\hyperlink{namespacetesseract__collision_ac3da4f46ae16e86ba4f1dfd2935eb80cae9c32f09a44ae1ae34e42d53502fab77}{ContactTestType::CLOSEST}}));}
-\DoxyCodeLine{192   \mbox{\hyperlink{namespacetesseract__collision_a0249bb2994ca5e8258ea55309467ae4a}{flattenCopyResults}}(result, result\_vector);}
-\DoxyCodeLine{193 }
-\DoxyCodeLine{194   \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(result\_vector.empty());}
-\DoxyCodeLine{195 }
-\DoxyCodeLine{197   \textcolor{comment}{// Test object inside the contact distance}}
-\DoxyCodeLine{199 \textcolor{comment}{}  result = \mbox{\hyperlink{namespacetesseract__collision_a1eeace4cc41027dbde8e7dbeb77ca7cf}{ContactResultMap}}();}
-\DoxyCodeLine{200   result.clear();}
-\DoxyCodeLine{201   result\_vector.clear();}
-\DoxyCodeLine{202 }
-\DoxyCodeLine{203   checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_acbd053442a4d591c29aab5be5706ef04}{setCollisionMarginData}}(\mbox{\hyperlink{namespacetesseract__collision_a0717a3c53d08d510257f631ea96cb560}{CollisionMarginData}}(0.251));}
-\DoxyCodeLine{204   \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_abd2686026229a788a0e6836d20ea7008}{getCollisionMarginData}}().\mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_a8b73bd2450f2c9215e67bba3c048fe4b}{getMaxCollisionMargin}}(), 0.251, 1e-\/5);}
-\DoxyCodeLine{205   checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a1ddfa181400941e093c76a852df72425}{contactTest}}(result, \mbox{\hyperlink{structtesseract__collision_1_1ContactRequest}{ContactRequest}}(\mbox{\hyperlink{namespacetesseract__collision_ac3da4f46ae16e86ba4f1dfd2935eb80cae9c32f09a44ae1ae34e42d53502fab77}{ContactTestType::CLOSEST}}));}
-\DoxyCodeLine{206   \mbox{\hyperlink{namespacetesseract__collision_a1e54919ee87e54445b7926d0b2880882}{flattenMoveResults}}(std::move(result), result\_vector);}
-\DoxyCodeLine{207 }
-\DoxyCodeLine{208   \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(!result\_vector.empty());}
-\DoxyCodeLine{209   \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_a1ceb8bb3849a05a320b82729fd3681bb}{distance}}, 0.25, 0.001);}
-\DoxyCodeLine{210 }
-\DoxyCodeLine{211   idx = \{ 0, 1, 1 \};}
-\DoxyCodeLine{212   \textcolor{keywordflow}{if} (result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_a464caf777ea79db067179ebe2bd7ecc7}{link\_names}}[0] != \textcolor{stringliteral}{"{}box\_link"{}})}
-\DoxyCodeLine{213     idx = \{ 1, 0, -\/1 \};}
-\DoxyCodeLine{214 }
-\DoxyCodeLine{215   \textcolor{keywordflow}{if} (result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_aef0b0de8aead4d0c192bfbc1665bdca1}{single\_contact\_point}})}
-\DoxyCodeLine{216   \{}
-\DoxyCodeLine{217     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[0][0], result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[1][0], 0.001);}
-\DoxyCodeLine{218     \mbox{\hyperlink{collision__core__unit_8cpp_aa784f8de129e0ce90854ab7b6a043468}{EXPECT\_FALSE}}(std::abs(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[0][0] -\/ (0.5)) > 0.001 \&\&}
-\DoxyCodeLine{219                  std::abs(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[0][0] -\/ (0.75)) > 0.001);}
-\DoxyCodeLine{220     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[0][1], 0.0, 0.001);}
-\DoxyCodeLine{221     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[0][2], 0.0, 0.001);}
-\DoxyCodeLine{222   \}}
-\DoxyCodeLine{223   \textcolor{keywordflow}{else}}
-\DoxyCodeLine{224   \{}
-\DoxyCodeLine{225     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(idx[0])][0], 0.5, 0.001);}
-\DoxyCodeLine{226     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(idx[0])][1], 0.0, 0.001);}
-\DoxyCodeLine{227     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(idx[0])][2], 0.0, 0.001);}
-\DoxyCodeLine{228     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(idx[1])][0], 0.75, 0.001);}
-\DoxyCodeLine{229     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(idx[1])][1], 0.0, 0.001);}
-\DoxyCodeLine{230     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(idx[1])][2], 0.0, 0.001);}
-\DoxyCodeLine{231   \}}
-\DoxyCodeLine{232 }
-\DoxyCodeLine{233   \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_a7589b8c9c1397d28b5974168ee72f0a8}{normal}}[0], idx[2] * 1.0, 0.001);}
-\DoxyCodeLine{234   \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_a7589b8c9c1397d28b5974168ee72f0a8}{normal}}[1], idx[2] * 0.0, 0.001);}
-\DoxyCodeLine{235   \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_a7589b8c9c1397d28b5974168ee72f0a8}{normal}}[2], idx[2] * 0.0, 0.001);}
-\DoxyCodeLine{236 \}}
-\DoxyCodeLine{237 }
-\DoxyCodeLine{238 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1test__suite_1_1detail_a521cbd3bad6d73ea30872e67be93f646}{runTestConvex}}(\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager}{DiscreteContactManager}}\& checker)}
-\DoxyCodeLine{239 \{}
-\DoxyCodeLine{241   \textcolor{comment}{// Test when object is in collision}}
-\DoxyCodeLine{243 \textcolor{comment}{}  std::vector<std::string> \mbox{\hyperlink{tesseract__environment__collision_8cpp_a63bb2774cedec88326bab0804f03d82f}{active\_links}}\{ \textcolor{stringliteral}{"{}box\_link"{}}, \textcolor{stringliteral}{"{}sphere\_link"{}} \};}
-\DoxyCodeLine{244   checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a14111f72aeaa2f22cf79b64e54479fb0}{setActiveCollisionObjects}}(\mbox{\hyperlink{tesseract__environment__collision_8cpp_a63bb2774cedec88326bab0804f03d82f}{active\_links}});}
-\DoxyCodeLine{245   std::vector<std::string> check\_active\_links = checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_abd1ad9870349f58375a7383adccd25cc}{getActiveCollisionObjects}}();}
-\DoxyCodeLine{246   \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(\mbox{\hyperlink{namespacetesseract__common_a81e6b461e723426fcfde3465ceb4b79d}{tesseract\_common::isIdentical<std::string>}}(\mbox{\hyperlink{tesseract__environment__collision_8cpp_a63bb2774cedec88326bab0804f03d82f}{active\_links}}, check\_active\_links, \textcolor{keyword}{false}));}
+\DoxyCodeLine{185   result.\mbox{\hyperlink{classtesseract__collision_1_1ContactResultMap_a555a633c2c5861d195ec7264aedec4b0}{clear}}();}
+\DoxyCodeLine{186   \mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}.clear();}
+\DoxyCodeLine{187 }
+\DoxyCodeLine{188   \textcolor{comment}{// Use different method for setting transforms}}
+\DoxyCodeLine{189   checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a21d038a9836cdb5a3b44ad527fd93a5b}{setCollisionObjectsTransform}}(\textcolor{stringliteral}{"{}sphere\_link"{}}, location[\textcolor{stringliteral}{"{}sphere\_link"{}}]);}
+\DoxyCodeLine{190   checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a1ddfa181400941e093c76a852df72425}{contactTest}}(result, \mbox{\hyperlink{structtesseract__collision_1_1ContactRequest}{ContactRequest}}(\mbox{\hyperlink{namespacetesseract__collision_ac3da4f46ae16e86ba4f1dfd2935eb80cae9c32f09a44ae1ae34e42d53502fab77}{ContactTestType::CLOSEST}}));}
+\DoxyCodeLine{191   result.\mbox{\hyperlink{classtesseract__collision_1_1ContactResultMap_af0a1425ea83e7740c676d4e5d439a2b5}{flattenCopyResults}}(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}});}
+\DoxyCodeLine{192 }
+\DoxyCodeLine{193   \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}.empty());}
+\DoxyCodeLine{194 }
+\DoxyCodeLine{196   \textcolor{comment}{// Test object inside the contact distance}}
+\DoxyCodeLine{198 \textcolor{comment}{}  result.\mbox{\hyperlink{classtesseract__collision_1_1ContactResultMap_a555a633c2c5861d195ec7264aedec4b0}{clear}}();}
+\DoxyCodeLine{199   \mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}.clear();}
+\DoxyCodeLine{200 }
+\DoxyCodeLine{201   checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_acbd053442a4d591c29aab5be5706ef04}{setCollisionMarginData}}(\mbox{\hyperlink{namespacetesseract__collision_a0717a3c53d08d510257f631ea96cb560}{CollisionMarginData}}(0.251));}
+\DoxyCodeLine{202   \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_abd2686026229a788a0e6836d20ea7008}{getCollisionMarginData}}().\mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_a8b73bd2450f2c9215e67bba3c048fe4b}{getMaxCollisionMargin}}(), 0.251, 1e-\/5);}
+\DoxyCodeLine{203   checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a1ddfa181400941e093c76a852df72425}{contactTest}}(result, \mbox{\hyperlink{structtesseract__collision_1_1ContactRequest}{ContactRequest}}(\mbox{\hyperlink{namespacetesseract__collision_ac3da4f46ae16e86ba4f1dfd2935eb80cae9c32f09a44ae1ae34e42d53502fab77}{ContactTestType::CLOSEST}}));}
+\DoxyCodeLine{204   result.\mbox{\hyperlink{classtesseract__collision_1_1ContactResultMap_a687dcd33f54f08877a221e3869a77709}{flattenMoveResults}}(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}});}
+\DoxyCodeLine{205 }
+\DoxyCodeLine{206   \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(!\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}.empty());}
+\DoxyCodeLine{207   \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_a1ceb8bb3849a05a320b82729fd3681bb}{distance}}, 0.25, 0.001);}
+\DoxyCodeLine{208 }
+\DoxyCodeLine{209   idx = \{ 0, 1, 1 \};}
+\DoxyCodeLine{210   \textcolor{keywordflow}{if} (\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_a464caf777ea79db067179ebe2bd7ecc7}{link\_names}}[0] != \textcolor{stringliteral}{"{}box\_link"{}})}
+\DoxyCodeLine{211     idx = \{ 1, 0, -\/1 \};}
+\DoxyCodeLine{212 }
+\DoxyCodeLine{213   \textcolor{keywordflow}{if} (\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_aef0b0de8aead4d0c192bfbc1665bdca1}{single\_contact\_point}})}
+\DoxyCodeLine{214   \{}
+\DoxyCodeLine{215     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[0][0], \mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[1][0], 0.001);}
+\DoxyCodeLine{216     \mbox{\hyperlink{collision__core__unit_8cpp_aa784f8de129e0ce90854ab7b6a043468}{EXPECT\_FALSE}}(std::abs(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[0][0] -\/ (0.5)) > 0.001 \&\&}
+\DoxyCodeLine{217                  std::abs(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[0][0] -\/ (0.75)) > 0.001);}
+\DoxyCodeLine{218     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[0][1], 0.0, 0.001);}
+\DoxyCodeLine{219     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[0][2], 0.0, 0.001);}
+\DoxyCodeLine{220   \}}
+\DoxyCodeLine{221   \textcolor{keywordflow}{else}}
+\DoxyCodeLine{222   \{}
+\DoxyCodeLine{223     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(idx[0])][0], 0.5, 0.001);}
+\DoxyCodeLine{224     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(idx[0])][1], 0.0, 0.001);}
+\DoxyCodeLine{225     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(idx[0])][2], 0.0, 0.001);}
+\DoxyCodeLine{226     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(idx[1])][0], 0.75, 0.001);}
+\DoxyCodeLine{227     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(idx[1])][1], 0.0, 0.001);}
+\DoxyCodeLine{228     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(idx[1])][2], 0.0, 0.001);}
+\DoxyCodeLine{229   \}}
+\DoxyCodeLine{230 }
+\DoxyCodeLine{231   \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_a7589b8c9c1397d28b5974168ee72f0a8}{normal}}[0], idx[2] * 1.0, 0.001);}
+\DoxyCodeLine{232   \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_a7589b8c9c1397d28b5974168ee72f0a8}{normal}}[1], idx[2] * 0.0, 0.001);}
+\DoxyCodeLine{233   \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_a7589b8c9c1397d28b5974168ee72f0a8}{normal}}[2], idx[2] * 0.0, 0.001);}
+\DoxyCodeLine{234 \}}
+\DoxyCodeLine{235 }
+\DoxyCodeLine{236 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1test__suite_1_1detail_a521cbd3bad6d73ea30872e67be93f646}{runTestConvex}}(\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager}{DiscreteContactManager}}\& checker)}
+\DoxyCodeLine{237 \{}
+\DoxyCodeLine{239   \textcolor{comment}{// Test when object is in collision}}
+\DoxyCodeLine{241 \textcolor{comment}{}  std::vector<std::string> \mbox{\hyperlink{tesseract__environment__collision_8cpp_a63bb2774cedec88326bab0804f03d82f}{active\_links}}\{ \textcolor{stringliteral}{"{}box\_link"{}}, \textcolor{stringliteral}{"{}sphere\_link"{}} \};}
+\DoxyCodeLine{242   checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a14111f72aeaa2f22cf79b64e54479fb0}{setActiveCollisionObjects}}(\mbox{\hyperlink{tesseract__environment__collision_8cpp_a63bb2774cedec88326bab0804f03d82f}{active\_links}});}
+\DoxyCodeLine{243   std::vector<std::string> check\_active\_links = checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_abd1ad9870349f58375a7383adccd25cc}{getActiveCollisionObjects}}();}
+\DoxyCodeLine{244   \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(\mbox{\hyperlink{namespacetesseract__common_a81e6b461e723426fcfde3465ceb4b79d}{tesseract\_common::isIdentical<std::string>}}(\mbox{\hyperlink{tesseract__environment__collision_8cpp_a63bb2774cedec88326bab0804f03d82f}{active\_links}}, check\_active\_links, \textcolor{keyword}{false}));}
+\DoxyCodeLine{245 }
+\DoxyCodeLine{246   \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_ad515c562c2bc0cd98e3559dbd05bd7e4}{getIsContactAllowedFn}}() == \textcolor{keyword}{nullptr});}
 \DoxyCodeLine{247 }
-\DoxyCodeLine{248   \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_ad515c562c2bc0cd98e3559dbd05bd7e4}{getIsContactAllowedFn}}() == \textcolor{keyword}{nullptr});}
-\DoxyCodeLine{249 }
-\DoxyCodeLine{250   checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a7e2c12063bf47e53cdc52d9808731e53}{setDefaultCollisionMarginData}}(0.1);}
-\DoxyCodeLine{251   \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_abd2686026229a788a0e6836d20ea7008}{getCollisionMarginData}}().\mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_a8b73bd2450f2c9215e67bba3c048fe4b}{getMaxCollisionMargin}}(), 0.1, 1e-\/5);}
-\DoxyCodeLine{252 }
-\DoxyCodeLine{253   \textcolor{comment}{// Set the collision object transforms}}
-\DoxyCodeLine{254   \mbox{\hyperlink{namespacetesseract__common_a67bde3cb7bb235f0f61c370ef8bc74d8}{tesseract\_common::TransformMap}} location;}
-\DoxyCodeLine{255   location[\textcolor{stringliteral}{"{}box\_link"{}}] = Eigen::Isometry3d::Identity();}
-\DoxyCodeLine{256   location[\textcolor{stringliteral}{"{}sphere\_link"{}}] = Eigen::Isometry3d::Identity();}
-\DoxyCodeLine{257   location[\textcolor{stringliteral}{"{}sphere\_link"{}}].translation()(0) = 0.2;}
-\DoxyCodeLine{258   checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a21d038a9836cdb5a3b44ad527fd93a5b}{setCollisionObjectsTransform}}(location);}
-\DoxyCodeLine{259 }
-\DoxyCodeLine{260   \textcolor{comment}{// Perform collision check}}
-\DoxyCodeLine{261   \mbox{\hyperlink{namespacetesseract__collision_a1eeace4cc41027dbde8e7dbeb77ca7cf}{ContactResultMap}} result;}
-\DoxyCodeLine{262   checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a1ddfa181400941e093c76a852df72425}{contactTest}}(result, \mbox{\hyperlink{structtesseract__collision_1_1ContactRequest}{ContactRequest}}(\mbox{\hyperlink{namespacetesseract__collision_ac3da4f46ae16e86ba4f1dfd2935eb80cae9c32f09a44ae1ae34e42d53502fab77}{ContactTestType::CLOSEST}}));}
-\DoxyCodeLine{263 }
-\DoxyCodeLine{264   \mbox{\hyperlink{namespacetesseract__collision_a96d77f62b7c26962d1090f0a2f00419b}{ContactResultVector}} result\_vector;}
-\DoxyCodeLine{265   \mbox{\hyperlink{namespacetesseract__collision_a0249bb2994ca5e8258ea55309467ae4a}{flattenCopyResults}}(result, result\_vector);}
-\DoxyCodeLine{266 }
-\DoxyCodeLine{267   \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(!result\_vector.empty());}
-\DoxyCodeLine{268   \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_a1ceb8bb3849a05a320b82729fd3681bb}{distance}}, -\/0.53776, 0.001);}
-\DoxyCodeLine{269   \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[0][1], result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[1][1], 0.001);}
-\DoxyCodeLine{270   \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[0][2], result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[1][2], 0.001);}
-\DoxyCodeLine{271 }
-\DoxyCodeLine{272   std::vector<int> idx = \{ 0, 1, 1 \};}
-\DoxyCodeLine{273   \textcolor{keywordflow}{if} (result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_a464caf777ea79db067179ebe2bd7ecc7}{link\_names}}[0] != \textcolor{stringliteral}{"{}box\_link"{}})}
-\DoxyCodeLine{274     idx = \{ 1, 0, -\/1 \};}
-\DoxyCodeLine{275 }
-\DoxyCodeLine{276   \textcolor{keywordflow}{if} (result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_aef0b0de8aead4d0c192bfbc1665bdca1}{single\_contact\_point}})}
-\DoxyCodeLine{277   \{}
-\DoxyCodeLine{278     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[0][0], result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[1][0], 0.001);}
-\DoxyCodeLine{279     \mbox{\hyperlink{collision__core__unit_8cpp_aa784f8de129e0ce90854ab7b6a043468}{EXPECT\_FALSE}}(std::abs(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[0][0] -\/ (0.5)) > 0.001 \&\&}
-\DoxyCodeLine{280                  std::abs(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[0][0] -\/ (-\/0.03776)) > 0.001);}
-\DoxyCodeLine{281   \}}
-\DoxyCodeLine{282   \textcolor{keywordflow}{else}}
-\DoxyCodeLine{283   \{}
-\DoxyCodeLine{284     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(idx[0])][0], 0.5, 0.001);}
-\DoxyCodeLine{285     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(idx[1])][0], -\/0.03776, 0.001);}
-\DoxyCodeLine{286   \}}
-\DoxyCodeLine{287 }
-\DoxyCodeLine{288   \mbox{\hyperlink{kinematics__core__unit_8cpp_ab0c57dafb55423417d7f0fddf0944221}{EXPECT\_GT}}((idx[2] * result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_a7589b8c9c1397d28b5974168ee72f0a8}{normal}}).dot(Eigen::Vector3d(1, 0, 0)), 0.0);}
-\DoxyCodeLine{289   EXPECT\_LT(std::abs(std::acos((idx[2] * result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_a7589b8c9c1397d28b5974168ee72f0a8}{normal}}).dot(Eigen::Vector3d(1, 0, 0)))), 0.00001);}
-\DoxyCodeLine{290 }
-\DoxyCodeLine{292   \textcolor{comment}{// Test object is out side the contact distance}}
-\DoxyCodeLine{294 \textcolor{comment}{}  location[\textcolor{stringliteral}{"{}sphere\_link"{}}].translation() = Eigen::Vector3d(1, 0, 0);}
-\DoxyCodeLine{295   result = \mbox{\hyperlink{namespacetesseract__collision_a1eeace4cc41027dbde8e7dbeb77ca7cf}{ContactResultMap}}();}
-\DoxyCodeLine{296   result.clear();}
-\DoxyCodeLine{297   result\_vector.clear();}
-\DoxyCodeLine{298   checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a21d038a9836cdb5a3b44ad527fd93a5b}{setCollisionObjectsTransform}}(location);}
+\DoxyCodeLine{248   checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a7e2c12063bf47e53cdc52d9808731e53}{setDefaultCollisionMarginData}}(0.1);}
+\DoxyCodeLine{249   \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_abd2686026229a788a0e6836d20ea7008}{getCollisionMarginData}}().\mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_a8b73bd2450f2c9215e67bba3c048fe4b}{getMaxCollisionMargin}}(), 0.1, 1e-\/5);}
+\DoxyCodeLine{250 }
+\DoxyCodeLine{251   \textcolor{comment}{// Set the collision object transforms}}
+\DoxyCodeLine{252   \mbox{\hyperlink{namespacetesseract__common_a67bde3cb7bb235f0f61c370ef8bc74d8}{tesseract\_common::TransformMap}} location;}
+\DoxyCodeLine{253   location[\textcolor{stringliteral}{"{}box\_link"{}}] = Eigen::Isometry3d::Identity();}
+\DoxyCodeLine{254   location[\textcolor{stringliteral}{"{}sphere\_link"{}}] = Eigen::Isometry3d::Identity();}
+\DoxyCodeLine{255   location[\textcolor{stringliteral}{"{}sphere\_link"{}}].translation()(0) = 0.2;}
+\DoxyCodeLine{256   checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a21d038a9836cdb5a3b44ad527fd93a5b}{setCollisionObjectsTransform}}(location);}
+\DoxyCodeLine{257 }
+\DoxyCodeLine{258   \textcolor{comment}{// Perform collision check}}
+\DoxyCodeLine{259   \mbox{\hyperlink{classtesseract__collision_1_1ContactResultMap}{ContactResultMap}} result;}
+\DoxyCodeLine{260   checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a1ddfa181400941e093c76a852df72425}{contactTest}}(result, \mbox{\hyperlink{structtesseract__collision_1_1ContactRequest}{ContactRequest}}(\mbox{\hyperlink{namespacetesseract__collision_ac3da4f46ae16e86ba4f1dfd2935eb80cae9c32f09a44ae1ae34e42d53502fab77}{ContactTestType::CLOSEST}}));}
+\DoxyCodeLine{261 }
+\DoxyCodeLine{262   \mbox{\hyperlink{namespacetesseract__collision_a96d77f62b7c26962d1090f0a2f00419b}{ContactResultVector}} \mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}};}
+\DoxyCodeLine{263   result.\mbox{\hyperlink{classtesseract__collision_1_1ContactResultMap_af0a1425ea83e7740c676d4e5d439a2b5}{flattenCopyResults}}(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}});}
+\DoxyCodeLine{264 }
+\DoxyCodeLine{265   \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(!\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}.empty());}
+\DoxyCodeLine{266   \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_a1ceb8bb3849a05a320b82729fd3681bb}{distance}}, -\/0.53776, 0.001);}
+\DoxyCodeLine{267   \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[0][1], \mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[1][1], 0.001);}
+\DoxyCodeLine{268   \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[0][2], \mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[1][2], 0.001);}
+\DoxyCodeLine{269 }
+\DoxyCodeLine{270   std::vector<int> idx = \{ 0, 1, 1 \};}
+\DoxyCodeLine{271   \textcolor{keywordflow}{if} (\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_a464caf777ea79db067179ebe2bd7ecc7}{link\_names}}[0] != \textcolor{stringliteral}{"{}box\_link"{}})}
+\DoxyCodeLine{272     idx = \{ 1, 0, -\/1 \};}
+\DoxyCodeLine{273 }
+\DoxyCodeLine{274   \textcolor{keywordflow}{if} (\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_aef0b0de8aead4d0c192bfbc1665bdca1}{single\_contact\_point}})}
+\DoxyCodeLine{275   \{}
+\DoxyCodeLine{276     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[0][0], \mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[1][0], 0.001);}
+\DoxyCodeLine{277     \mbox{\hyperlink{collision__core__unit_8cpp_aa784f8de129e0ce90854ab7b6a043468}{EXPECT\_FALSE}}(std::abs(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[0][0] -\/ (0.5)) > 0.001 \&\&}
+\DoxyCodeLine{278                  std::abs(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[0][0] -\/ (-\/0.03776)) > 0.001);}
+\DoxyCodeLine{279   \}}
+\DoxyCodeLine{280   \textcolor{keywordflow}{else}}
+\DoxyCodeLine{281   \{}
+\DoxyCodeLine{282     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(idx[0])][0], 0.5, 0.001);}
+\DoxyCodeLine{283     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(idx[1])][0], -\/0.03776, 0.001);}
+\DoxyCodeLine{284   \}}
+\DoxyCodeLine{285 }
+\DoxyCodeLine{286   \mbox{\hyperlink{kinematics__core__unit_8cpp_ab0c57dafb55423417d7f0fddf0944221}{EXPECT\_GT}}((idx[2] * \mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_a7589b8c9c1397d28b5974168ee72f0a8}{normal}}).dot(Eigen::Vector3d(1, 0, 0)), 0.0);}
+\DoxyCodeLine{287   EXPECT\_LT(std::abs(std::acos((idx[2] * \mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_a7589b8c9c1397d28b5974168ee72f0a8}{normal}}).dot(Eigen::Vector3d(1, 0, 0)))), 0.00001);}
+\DoxyCodeLine{288 }
+\DoxyCodeLine{290   \textcolor{comment}{// Test object is out side the contact distance}}
+\DoxyCodeLine{292 \textcolor{comment}{}  location[\textcolor{stringliteral}{"{}sphere\_link"{}}].translation() = Eigen::Vector3d(1, 0, 0);}
+\DoxyCodeLine{293   result.\mbox{\hyperlink{classtesseract__collision_1_1ContactResultMap_a555a633c2c5861d195ec7264aedec4b0}{clear}}();}
+\DoxyCodeLine{294   \mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}.clear();}
+\DoxyCodeLine{295   checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a21d038a9836cdb5a3b44ad527fd93a5b}{setCollisionObjectsTransform}}(location);}
+\DoxyCodeLine{296 }
+\DoxyCodeLine{297   checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a1ddfa181400941e093c76a852df72425}{contactTest}}(result, \mbox{\hyperlink{structtesseract__collision_1_1ContactRequest}{ContactRequest}}(\mbox{\hyperlink{namespacetesseract__collision_ac3da4f46ae16e86ba4f1dfd2935eb80cae9c32f09a44ae1ae34e42d53502fab77}{ContactTestType::CLOSEST}}));}
+\DoxyCodeLine{298   result.\mbox{\hyperlink{classtesseract__collision_1_1ContactResultMap_a687dcd33f54f08877a221e3869a77709}{flattenMoveResults}}(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}});}
 \DoxyCodeLine{299 }
-\DoxyCodeLine{300   checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a1ddfa181400941e093c76a852df72425}{contactTest}}(result, \mbox{\hyperlink{structtesseract__collision_1_1ContactRequest}{ContactRequest}}(\mbox{\hyperlink{namespacetesseract__collision_ac3da4f46ae16e86ba4f1dfd2935eb80cae9c32f09a44ae1ae34e42d53502fab77}{ContactTestType::CLOSEST}}));}
-\DoxyCodeLine{301   \mbox{\hyperlink{namespacetesseract__collision_a1e54919ee87e54445b7926d0b2880882}{flattenMoveResults}}(std::move(result), result\_vector);}
-\DoxyCodeLine{302 }
-\DoxyCodeLine{303   \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(result\_vector.empty());}
-\DoxyCodeLine{304 }
-\DoxyCodeLine{306   \textcolor{comment}{// Test object inside the contact distance}}
-\DoxyCodeLine{308 \textcolor{comment}{}  result = \mbox{\hyperlink{namespacetesseract__collision_a1eeace4cc41027dbde8e7dbeb77ca7cf}{ContactResultMap}}();}
-\DoxyCodeLine{309   result.clear();}
-\DoxyCodeLine{310   result\_vector.clear();}
-\DoxyCodeLine{311 }
-\DoxyCodeLine{312   checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_acbd053442a4d591c29aab5be5706ef04}{setCollisionMarginData}}(\mbox{\hyperlink{namespacetesseract__collision_a0717a3c53d08d510257f631ea96cb560}{CollisionMarginData}}(0.27));}
-\DoxyCodeLine{313   \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_abd2686026229a788a0e6836d20ea7008}{getCollisionMarginData}}().\mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_a8b73bd2450f2c9215e67bba3c048fe4b}{getMaxCollisionMargin}}(), 0.27, 1e-\/5);}
-\DoxyCodeLine{314   checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a1ddfa181400941e093c76a852df72425}{contactTest}}(result, \mbox{\hyperlink{structtesseract__collision_1_1ContactRequest}{ContactRequest}}(\mbox{\hyperlink{namespacetesseract__collision_ac3da4f46ae16e86ba4f1dfd2935eb80cae9c32f09a44ae1ae34e42d53502fab77}{ContactTestType::CLOSEST}}));}
-\DoxyCodeLine{315   \mbox{\hyperlink{namespacetesseract__collision_a0249bb2994ca5e8258ea55309467ae4a}{flattenCopyResults}}(result, result\_vector);}
-\DoxyCodeLine{316 }
-\DoxyCodeLine{317   \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(!result\_vector.empty());}
-\DoxyCodeLine{318   \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_a1ceb8bb3849a05a320b82729fd3681bb}{distance}}, 0.26224, 0.001);}
-\DoxyCodeLine{319   \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[0][1], result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[1][1], 0.001);}
-\DoxyCodeLine{320   \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[0][2], result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[1][2], 0.001);}
+\DoxyCodeLine{300   \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}.empty());}
+\DoxyCodeLine{301 }
+\DoxyCodeLine{303   \textcolor{comment}{// Test object inside the contact distance}}
+\DoxyCodeLine{305 \textcolor{comment}{}  result.\mbox{\hyperlink{classtesseract__collision_1_1ContactResultMap_a555a633c2c5861d195ec7264aedec4b0}{clear}}();}
+\DoxyCodeLine{306   \mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}.clear();}
+\DoxyCodeLine{307 }
+\DoxyCodeLine{308   checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_acbd053442a4d591c29aab5be5706ef04}{setCollisionMarginData}}(\mbox{\hyperlink{namespacetesseract__collision_a0717a3c53d08d510257f631ea96cb560}{CollisionMarginData}}(0.27));}
+\DoxyCodeLine{309   \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_abd2686026229a788a0e6836d20ea7008}{getCollisionMarginData}}().\mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData_a8b73bd2450f2c9215e67bba3c048fe4b}{getMaxCollisionMargin}}(), 0.27, 1e-\/5);}
+\DoxyCodeLine{310   checker.\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a1ddfa181400941e093c76a852df72425}{contactTest}}(result, \mbox{\hyperlink{structtesseract__collision_1_1ContactRequest}{ContactRequest}}(\mbox{\hyperlink{namespacetesseract__collision_ac3da4f46ae16e86ba4f1dfd2935eb80cae9c32f09a44ae1ae34e42d53502fab77}{ContactTestType::CLOSEST}}));}
+\DoxyCodeLine{311   result.\mbox{\hyperlink{classtesseract__collision_1_1ContactResultMap_af0a1425ea83e7740c676d4e5d439a2b5}{flattenCopyResults}}(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}});}
+\DoxyCodeLine{312 }
+\DoxyCodeLine{313   \mbox{\hyperlink{collision__core__unit_8cpp_afe63203c82f4c445980c6e005d380ad7}{EXPECT\_TRUE}}(!\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}.empty());}
+\DoxyCodeLine{314   \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_a1ceb8bb3849a05a320b82729fd3681bb}{distance}}, 0.26224, 0.001);}
+\DoxyCodeLine{315   \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[0][1], \mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[1][1], 0.001);}
+\DoxyCodeLine{316   \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[0][2], \mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[1][2], 0.001);}
+\DoxyCodeLine{317 }
+\DoxyCodeLine{318   idx = \{ 0, 1, 1 \};}
+\DoxyCodeLine{319   \textcolor{keywordflow}{if} (\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_a464caf777ea79db067179ebe2bd7ecc7}{link\_names}}[0] != \textcolor{stringliteral}{"{}box\_link"{}})}
+\DoxyCodeLine{320     idx = \{ 1, 0, -\/1 \};}
 \DoxyCodeLine{321 }
-\DoxyCodeLine{322   idx = \{ 0, 1, 1 \};}
-\DoxyCodeLine{323   \textcolor{keywordflow}{if} (result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_a464caf777ea79db067179ebe2bd7ecc7}{link\_names}}[0] != \textcolor{stringliteral}{"{}box\_link"{}})}
-\DoxyCodeLine{324     idx = \{ 1, 0, -\/1 \};}
-\DoxyCodeLine{325 }
-\DoxyCodeLine{326   \textcolor{keywordflow}{if} (result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_aef0b0de8aead4d0c192bfbc1665bdca1}{single\_contact\_point}})}
-\DoxyCodeLine{327   \{}
-\DoxyCodeLine{328     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[0][0], result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[1][0], 0.001);}
-\DoxyCodeLine{329     \mbox{\hyperlink{collision__core__unit_8cpp_aa784f8de129e0ce90854ab7b6a043468}{EXPECT\_FALSE}}(std::abs(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[0][0] -\/ (0.5)) > 0.001 \&\&}
-\DoxyCodeLine{330                  std::abs(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[0][0] -\/ (0.76224)) > 0.001);}
-\DoxyCodeLine{331   \}}
-\DoxyCodeLine{332   \textcolor{keywordflow}{else}}
-\DoxyCodeLine{333   \{}
-\DoxyCodeLine{334     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(idx[0])][0], 0.5, 0.001);}
-\DoxyCodeLine{335     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(idx[1])][0], 0.76224, 0.001);}
-\DoxyCodeLine{336   \}}
-\DoxyCodeLine{337 }
-\DoxyCodeLine{338   \mbox{\hyperlink{kinematics__core__unit_8cpp_ab0c57dafb55423417d7f0fddf0944221}{EXPECT\_GT}}((idx[2] * result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_a7589b8c9c1397d28b5974168ee72f0a8}{normal}}).dot(Eigen::Vector3d(1, 0, 0)), 0.0);}
-\DoxyCodeLine{339   EXPECT\_LT(std::abs(std::acos((idx[2] * result\_vector[0].\mbox{\hyperlink{collision__core__unit_8cpp_a7589b8c9c1397d28b5974168ee72f0a8}{normal}}).dot(Eigen::Vector3d(1, 0, 0)))), 0.00001);}
-\DoxyCodeLine{340 \}}
-\DoxyCodeLine{341 \}  \textcolor{comment}{// namespace detail}}
-\DoxyCodeLine{342 }
-\DoxyCodeLine{343 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1test__suite_a64721a2ef6abc909e9a762274303107b}{runTest}}(\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager}{DiscreteContactManager}}\& checker, \textcolor{keywordtype}{bool} use\_convex\_mesh = \textcolor{keyword}{false})}
-\DoxyCodeLine{344 \{}
-\DoxyCodeLine{345   \textcolor{comment}{// Add collision objects}}
-\DoxyCodeLine{346   \mbox{\hyperlink{namespacetesseract__collision_1_1test__suite_1_1detail_a3fb030da7784f5e059d57666cb288f3d}{detail::addCollisionObjects}}(checker, use\_convex\_mesh);}
-\DoxyCodeLine{347 }
-\DoxyCodeLine{348   \textcolor{comment}{// Call it again to test adding same object}}
-\DoxyCodeLine{349   \mbox{\hyperlink{namespacetesseract__collision_1_1test__suite_1_1detail_a3fb030da7784f5e059d57666cb288f3d}{detail::addCollisionObjects}}(checker, use\_convex\_mesh);}
-\DoxyCodeLine{350 }
-\DoxyCodeLine{351   \textcolor{keywordflow}{if} (use\_convex\_mesh)}
-\DoxyCodeLine{352     \mbox{\hyperlink{namespacetesseract__collision_1_1test__suite_1_1detail_a521cbd3bad6d73ea30872e67be93f646}{detail::runTestConvex}}(checker);}
-\DoxyCodeLine{353   \textcolor{keywordflow}{else}}
-\DoxyCodeLine{354     \mbox{\hyperlink{namespacetesseract__collision_1_1test__suite_1_1detail_a7d8beb50971dd637b1921c2f9103e719}{detail::runTestPrimitive}}(checker);}
-\DoxyCodeLine{355 \}}
-\DoxyCodeLine{356 }
-\DoxyCodeLine{357 \}  \textcolor{comment}{// namespace tesseract\_collision::test\_suite}}
-\DoxyCodeLine{358 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_COLLISION\_COLLISION\_BOX\_SPHERE\_UNIT\_HPP}}
+\DoxyCodeLine{322   \textcolor{keywordflow}{if} (\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_aef0b0de8aead4d0c192bfbc1665bdca1}{single\_contact\_point}})}
+\DoxyCodeLine{323   \{}
+\DoxyCodeLine{324     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[0][0], \mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[1][0], 0.001);}
+\DoxyCodeLine{325     \mbox{\hyperlink{collision__core__unit_8cpp_aa784f8de129e0ce90854ab7b6a043468}{EXPECT\_FALSE}}(std::abs(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[0][0] -\/ (0.5)) > 0.001 \&\&}
+\DoxyCodeLine{326                  std::abs(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[0][0] -\/ (0.76224)) > 0.001);}
+\DoxyCodeLine{327   \}}
+\DoxyCodeLine{328   \textcolor{keywordflow}{else}}
+\DoxyCodeLine{329   \{}
+\DoxyCodeLine{330     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(idx[0])][0], 0.5, 0.001);}
+\DoxyCodeLine{331     \mbox{\hyperlink{collision__core__unit_8cpp_a1738e544100419ed5833a2de9b68408c}{EXPECT\_NEAR}}(\mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_ac6db8ff3812896b623d678843a730e0b}{nearest\_points}}[\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(idx[1])][0], 0.76224, 0.001);}
+\DoxyCodeLine{332   \}}
+\DoxyCodeLine{333 }
+\DoxyCodeLine{334   \mbox{\hyperlink{kinematics__core__unit_8cpp_ab0c57dafb55423417d7f0fddf0944221}{EXPECT\_GT}}((idx[2] * \mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_a7589b8c9c1397d28b5974168ee72f0a8}{normal}}).dot(Eigen::Vector3d(1, 0, 0)), 0.0);}
+\DoxyCodeLine{335   EXPECT\_LT(std::abs(std::acos((idx[2] * \mbox{\hyperlink{collision__core__unit_8cpp_a1a6d99c4cf0c0ef63a9ac446379dd7ad}{result\_vector}}[0].\mbox{\hyperlink{collision__core__unit_8cpp_a7589b8c9c1397d28b5974168ee72f0a8}{normal}}).dot(Eigen::Vector3d(1, 0, 0)))), 0.00001);}
+\DoxyCodeLine{336 \}}
+\DoxyCodeLine{337 \}  \textcolor{comment}{// namespace detail}}
+\DoxyCodeLine{338 }
+\DoxyCodeLine{339 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacetesseract__collision_1_1test__suite_a64721a2ef6abc909e9a762274303107b}{runTest}}(\mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager}{DiscreteContactManager}}\& checker, \textcolor{keywordtype}{bool} use\_convex\_mesh = \textcolor{keyword}{false})}
+\DoxyCodeLine{340 \{}
+\DoxyCodeLine{341   \textcolor{comment}{// Add collision objects}}
+\DoxyCodeLine{342   \mbox{\hyperlink{namespacetesseract__collision_1_1test__suite_1_1detail_a3fb030da7784f5e059d57666cb288f3d}{detail::addCollisionObjects}}(checker, use\_convex\_mesh);}
+\DoxyCodeLine{343 }
+\DoxyCodeLine{344   \textcolor{comment}{// Call it again to test adding same object}}
+\DoxyCodeLine{345   \mbox{\hyperlink{namespacetesseract__collision_1_1test__suite_1_1detail_a3fb030da7784f5e059d57666cb288f3d}{detail::addCollisionObjects}}(checker, use\_convex\_mesh);}
+\DoxyCodeLine{346 }
+\DoxyCodeLine{347   \textcolor{keywordflow}{if} (use\_convex\_mesh)}
+\DoxyCodeLine{348     \mbox{\hyperlink{namespacetesseract__collision_1_1test__suite_1_1detail_a521cbd3bad6d73ea30872e67be93f646}{detail::runTestConvex}}(checker);}
+\DoxyCodeLine{349   \textcolor{keywordflow}{else}}
+\DoxyCodeLine{350     \mbox{\hyperlink{namespacetesseract__collision_1_1test__suite_1_1detail_a7d8beb50971dd637b1921c2f9103e719}{detail::runTestPrimitive}}(checker);}
+\DoxyCodeLine{351 \}}
+\DoxyCodeLine{352 }
+\DoxyCodeLine{353 \}  \textcolor{comment}{// namespace tesseract\_collision::test\_suite}}
+\DoxyCodeLine{354 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// TESSERACT\_COLLISION\_COLLISION\_BOX\_SPHERE\_UNIT\_HPP}}
 
 \end{DoxyCode}

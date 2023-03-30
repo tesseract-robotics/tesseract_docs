@@ -1,42 +1,45 @@
 
 \begin{DoxyRefList}
+\item[Class \mbox{\hyperlink{classtesseract__collision_1_1ContactResultMap}{tesseract\+\_\+collision\+::Contact\+Result\+Map}} ]\label{todo__todo000002}%
+\Hypertarget{todo__todo000002}%
+This should be updated to leverage a object pool for {\ttfamily Contact\+Result\+Vector} where in the set and add methods it would check it the pair exists and if not it would pull from the object pool.  
 \item[Member \mbox{\hyperlink{namespacetesseract__collision_ac37834bbb711cf5148c4b3a00faf6162}{tesseract\+\_\+collision\+::get\+Collision\+Object\+Pairs}} (const std\+::vector$<$ std\+::string $>$ \&active\+\_\+links, const std\+::vector$<$ std\+::string $>$ \&static\+\_\+links, const Is\+Contact\+Allowed\+Fn \&acm=nullptr)]\label{todo__todo000001}%
 \Hypertarget{todo__todo000001}%
 Should this also filter out links without geometry?  
-\item[Member \mbox{\hyperlink{structtesseract__common_1_1ClassLoader_af2749622fe3be804a464ce5d5ea62ca9}{tesseract\+\_\+common\+::Class\+Loader\+::decorate}} (const std\+::string \&library\+\_\+name, const std\+::string \&library\+\_\+directory=\char`\"{}\char`\"{})]\label{todo__todo000002}%
-\Hypertarget{todo__todo000002}%
-When support is dropped for 18.\+04 switch to using boost\+::dll\+::shared\+\_\+library\+::decorate  
-\item[Member \mbox{\hyperlink{classtesseract__environment_1_1AddLinkCommand_a68054aa6870a1600fa5d1ff56b94a9e4}{tesseract\+\_\+environment\+::Add\+Link\+Command\+::Add\+Link\+Command}} (const \mbox{\hyperlink{classtesseract__scene__graph_1_1Link}{tesseract\+\_\+scene\+\_\+graph\+::\+Link}} \&link, const \mbox{\hyperlink{classtesseract__scene__graph_1_1Joint}{tesseract\+\_\+scene\+\_\+graph\+::\+Joint}} \&joint, bool replace\+\_\+allowed=false)]\label{todo__todo000003}%
+\item[Member \mbox{\hyperlink{structtesseract__common_1_1ClassLoader_af2749622fe3be804a464ce5d5ea62ca9}{tesseract\+\_\+common\+::Class\+Loader\+::decorate}} (const std\+::string \&library\+\_\+name, const std\+::string \&library\+\_\+directory=\char`\"{}\char`\"{})]\label{todo__todo000003}%
 \Hypertarget{todo__todo000003}%
+When support is dropped for 18.\+04 switch to using boost\+::dll\+::shared\+\_\+library\+::decorate  
+\item[Member \mbox{\hyperlink{classtesseract__environment_1_1AddLinkCommand_a68054aa6870a1600fa5d1ff56b94a9e4}{tesseract\+\_\+environment\+::Add\+Link\+Command\+::Add\+Link\+Command}} (const \mbox{\hyperlink{classtesseract__scene__graph_1_1Link}{tesseract\+\_\+scene\+\_\+graph\+::\+Link}} \&link, const \mbox{\hyperlink{classtesseract__scene__graph_1_1Joint}{tesseract\+\_\+scene\+\_\+graph\+::\+Joint}} \&joint, bool replace\+\_\+allowed=false)]\label{todo__todo000004}%
+\Hypertarget{todo__todo000004}%
 if joint is not fixed we should verify that limits are provided  
-\item[Member \mbox{\hyperlink{classtesseract__environment_1_1Environment_ae9a92e802b4924edfd5292874beb8c20}{tesseract\+\_\+environment\+::Environment\+::find\+\_\+tcp\+\_\+cb\+\_\+}} ]\label{todo__todo000006}%
+\item[Member \mbox{\hyperlink{classtesseract__environment_1_1Environment_ae9a92e802b4924edfd5292874beb8c20}{tesseract\+\_\+environment\+::Environment\+::find\+\_\+tcp\+\_\+cb\+\_\+}} ]\label{todo__todo000007}%
+\Hypertarget{todo__todo000007}%
+This needs to be switched to class so it may be serialized  
+\item[Member \mbox{\hyperlink{classtesseract__environment_1_1Environment_a7176424d42ff21299f0d4a226f34037f}{tesseract\+\_\+environment\+::Environment\+::is\+\_\+contact\+\_\+allowed\+\_\+fn\+\_\+}} ]\label{todo__todo000006}%
 \Hypertarget{todo__todo000006}%
 This needs to be switched to class so it may be serialized  
-\item[Member \mbox{\hyperlink{classtesseract__environment_1_1Environment_a7176424d42ff21299f0d4a226f34037f}{tesseract\+\_\+environment\+::Environment\+::is\+\_\+contact\+\_\+allowed\+\_\+fn\+\_\+}} ]\label{todo__todo000005}%
-\Hypertarget{todo__todo000005}%
-This needs to be switched to class so it may be serialized  
-\item[Member \mbox{\hyperlink{classtesseract__environment_1_1Environment_a0543f695f01a3cc661394d490d8ff110}{tesseract\+\_\+environment\+::Environment\+::operator==}} (const \mbox{\hyperlink{classtesseract__environment_1_1Environment}{Environment}} \&rhs) const]\label{todo__todo000007}%
-\Hypertarget{todo__todo000007}%
-uncomment after serialized  
-\item[Member \mbox{\hyperlink{classtesseract__environment_1_1ReplaceJointCommand_a9fdde52130fe2aa8cfeb09138b1ebac6}{tesseract\+\_\+environment\+::Replace\+Joint\+Command\+::Replace\+Joint\+Command}} (const \mbox{\hyperlink{classtesseract__scene__graph_1_1Joint}{tesseract\+\_\+scene\+\_\+graph\+::\+Joint}} \&joint)]\label{todo__todo000004}%
-\Hypertarget{todo__todo000004}%
-check limits  
-\item[Member \mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh_a5e41dc13a883eb68844620faa4c21c3e}{tesseract\+\_\+geometry\+::Polygon\+Mesh\+::operator==}} (const \mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{Polygon\+Mesh}} \&rhs) const]\label{todo__todo000008}%
+\item[Member \mbox{\hyperlink{classtesseract__environment_1_1Environment_a0543f695f01a3cc661394d490d8ff110}{tesseract\+\_\+environment\+::Environment\+::operator==}} (const \mbox{\hyperlink{classtesseract__environment_1_1Environment}{Environment}} \&rhs) const]\label{todo__todo000008}%
 \Hypertarget{todo__todo000008}%
-Finish \mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{Polygon\+Mesh}} == operator  
-\item[Member \mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh_a60bbb46c06ff67f684746f0262ded2a4}{tesseract\+\_\+geometry\+::Polygon\+Mesh\+::serialize}} (Archive \&ar, const unsigned int version)]\label{todo__todo000009}%
+uncomment after serialized  
+\item[Member \mbox{\hyperlink{classtesseract__environment_1_1ReplaceJointCommand_a9fdde52130fe2aa8cfeb09138b1ebac6}{tesseract\+\_\+environment\+::Replace\+Joint\+Command\+::Replace\+Joint\+Command}} (const \mbox{\hyperlink{classtesseract__scene__graph_1_1Joint}{tesseract\+\_\+scene\+\_\+graph\+::\+Joint}} \&joint)]\label{todo__todo000005}%
+\Hypertarget{todo__todo000005}%
+check limits  
+\item[Member \mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh_a5e41dc13a883eb68844620faa4c21c3e}{tesseract\+\_\+geometry\+::Polygon\+Mesh\+::operator==}} (const \mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{Polygon\+Mesh}} \&rhs) const]\label{todo__todo000009}%
 \Hypertarget{todo__todo000009}%
+Finish \mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh}{Polygon\+Mesh}} == operator  
+\item[Member \mbox{\hyperlink{classtesseract__geometry_1_1PolygonMesh_a60bbb46c06ff67f684746f0262ded2a4}{tesseract\+\_\+geometry\+::Polygon\+Mesh\+::serialize}} (Archive \&ar, const unsigned int version)]\label{todo__todo000010}%
+\Hypertarget{todo__todo000010}%
 Serialize mesh materials and textures  
-\item[Member \mbox{\hyperlink{classtesseract__scene__graph_1_1Collision_a2d871e4fd436b5fcffc187c026a0198b}{tesseract\+\_\+scene\+\_\+graph\+::Collision\+::operator==}} (const \mbox{\hyperlink{classtesseract__scene__graph_1_1Collision}{Collision}} \&rhs) const]\label{todo__todo000012}%
+\item[Member \mbox{\hyperlink{classtesseract__scene__graph_1_1Collision_a2d871e4fd436b5fcffc187c026a0198b}{tesseract\+\_\+scene\+\_\+graph\+::Collision\+::operator==}} (const \mbox{\hyperlink{classtesseract__scene__graph_1_1Collision}{Collision}} \&rhs) const]\label{todo__todo000013}%
+\Hypertarget{todo__todo000013}%
+Make utility to check derived type  
+\item[Member \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph_a3d78ee8fc4abe4542a4d4f5195a972c5}{tesseract\+\_\+scene\+\_\+graph\+::Scene\+Graph\+::get\+Joint\+Children\+Names}} (const std\+::vector$<$ std\+::string $>$ \&names) const]\label{todo__todo000011}%
+\Hypertarget{todo__todo000011}%
+Need to create custom visitor so already process joint\+\_\+names do not get processed again.  
+\item[Member \mbox{\hyperlink{classtesseract__scene__graph_1_1Visual_ac9b3249b7ae6c988bbd89bada10bff6a}{tesseract\+\_\+scene\+\_\+graph\+::Visual\+::operator==}} (const \mbox{\hyperlink{classtesseract__scene__graph_1_1Visual}{Visual}} \&rhs) const]\label{todo__todo000012}%
 \Hypertarget{todo__todo000012}%
 Make utility to check derived type  
-\item[Member \mbox{\hyperlink{classtesseract__scene__graph_1_1SceneGraph_a3d78ee8fc4abe4542a4d4f5195a972c5}{tesseract\+\_\+scene\+\_\+graph\+::Scene\+Graph\+::get\+Joint\+Children\+Names}} (const std\+::vector$<$ std\+::string $>$ \&names) const]\label{todo__todo000010}%
-\Hypertarget{todo__todo000010}%
-Need to create custom visitor so already process joint\+\_\+names do not get processed again.  
-\item[Member \mbox{\hyperlink{classtesseract__scene__graph_1_1Visual_ac9b3249b7ae6c988bbd89bada10bff6a}{tesseract\+\_\+scene\+\_\+graph\+::Visual\+::operator==}} (const \mbox{\hyperlink{classtesseract__scene__graph_1_1Visual}{Visual}} \&rhs) const]\label{todo__todo000011}%
-\Hypertarget{todo__todo000011}%
-Make utility to check derived type  
-\item[Member \mbox{\hyperlink{namespacetesseract__visualization_a88be2799de33d5369c59ee9eafb62e41}{tesseract\+\_\+visualization\+::add\+Cylinder}} (\mbox{\hyperlink{classtesseract__visualization_1_1EntityManager}{Entity\+Manager}} \&entity\+\_\+manager, ignition\+::msgs\+::\+Link \&link, long \&sub\+\_\+index, const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector3d $>$ \&pt1, const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector3d $>$ \&pt2, const \mbox{\hyperlink{classtesseract__scene__graph_1_1Material}{tesseract\+\_\+scene\+\_\+graph\+::\+Material}} \&material, const Eigen\+::\+Vector3d \&)]\label{todo__todo000013}%
-\Hypertarget{todo__todo000013}%
+\item[Member \mbox{\hyperlink{namespacetesseract__visualization_a88be2799de33d5369c59ee9eafb62e41}{tesseract\+\_\+visualization\+::add\+Cylinder}} (\mbox{\hyperlink{classtesseract__visualization_1_1EntityManager}{Entity\+Manager}} \&entity\+\_\+manager, ignition\+::msgs\+::\+Link \&link, long \&sub\+\_\+index, const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector3d $>$ \&pt1, const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector3d $>$ \&pt2, const \mbox{\hyperlink{classtesseract__scene__graph_1_1Material}{tesseract\+\_\+scene\+\_\+graph\+::\+Material}} \&material, const Eigen\+::\+Vector3d \&)]\label{todo__todo000014}%
+\Hypertarget{todo__todo000014}%
 LEVI fix 
 \end{DoxyRefList}

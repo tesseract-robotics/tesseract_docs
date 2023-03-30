@@ -272,6 +272,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a11bc9620a27eede3300420410e0b4a7a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/da9/namespacetesseract__common.html#a5b28b7ae665b374a7ca166d496f648ce">LinkNamesPair</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/da9/namespacetesseract__common.html#a11bc9620a27eede3300420410e0b4a7a">makeOrderedLinkPair</a> (const std::string &amp;link_name1, const std::string &amp;link_name2)</td></tr>
 <tr class="memdesc:a11bc9620a27eede3300420410e0b4a7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a pair of strings, where the pair.first is always &lt;= pair.second.  <a href="../../df/da9/namespacetesseract__common.html#a11bc9620a27eede3300420410e0b4a7a">More...</a><br /></td></tr>
 <tr class="separator:a11bc9620a27eede3300420410e0b4a7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a608064e370135b34db9cf81432777759"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/da9/namespacetesseract__common.html#a608064e370135b34db9cf81432777759">makeOrderedLinkPair</a> (<a class="el" href="../../df/da9/namespacetesseract__common.html#a5b28b7ae665b374a7ca166d496f648ce">LinkNamesPair</a> &amp;pair, const std::string &amp;link_name1, const std::string &amp;link_name2)</td></tr>
+<tr class="memdesc:a608064e370135b34db9cf81432777759"><td class="mdescLeft">&#160;</td><td class="mdescRight">Populate a pair of strings, where the pair.first is always &lt;= pair.second.  <a href="../../df/da9/namespacetesseract__common.html#a608064e370135b34db9cf81432777759">More...</a><br /></td></tr>
+<tr class="separator:a608064e370135b34db9cf81432777759"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5330a58c8c79cce5559a316e76118558"><td class="memTemplParams" colspan="2">template&lt;typename SerializableType &gt; </td></tr>
 <tr class="memitem:a5330a58c8c79cce5559a316e76118558"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../df/da9/namespacetesseract__common.html#a5330a58c8c79cce5559a316e76118558">testSerialization</a> (const SerializableType &amp;<a class="el" href="../../d4/d44/tesseract__common__serialization__unit_8cpp.html#a374f34993cc4a656388815cc9b64fa63">object</a>, const std::string &amp;typename_string)</td></tr>
 <tr class="memdesc:a5330a58c8c79cce5559a316e76118558"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests Boost serialization for a serializable type.  <a href="../../df/da9/namespacetesseract__common.html#a5330a58c8c79cce5559a316e76118558">More...</a><br /></td></tr>
@@ -2000,7 +2003,7 @@ template&lt;typename FloatType &gt; </div>
 </div>
 </div>
 <a id="a11bc9620a27eede3300420410e0b4a7a" name="a11bc9620a27eede3300420410e0b4a7a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a11bc9620a27eede3300420410e0b4a7a">&#9670;&#160;</a></span>makeOrderedLinkPair()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a11bc9620a27eede3300420410e0b4a7a">&#9670;&#160;</a></span>makeOrderedLinkPair() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2034,6 +2037,52 @@ template&lt;typename FloatType &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>LinkNamesPair a lexicographically sorted pair of strings </dd></dl>
+
+</div>
+</div>
+<a id="a608064e370135b34db9cf81432777759" name="a608064e370135b34db9cf81432777759"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a608064e370135b34db9cf81432777759">&#9670;&#160;</a></span>makeOrderedLinkPair() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void tesseract_common::makeOrderedLinkPair </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../df/da9/namespacetesseract__common.html#a5b28b7ae665b374a7ca166d496f648ce">LinkNamesPair</a> &amp;&#160;</td>
+          <td class="paramname"><em>pair</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>link_name1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>link_name2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Populate a pair of strings, where the pair.first is always &lt;= pair.second. </p>
+<p >This is used to avoid multiple memory application throughout the code base</p>
+<p >This is commonly used along with <a class="el" href="../../d7/de0/structtesseract__common_1_1PairHash.html">PairHash</a> as the key to an unordered_map&lt;LinkNamesPair, Type, PairHash&gt;</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pair</td><td>The link name pair to load a lexicographically sorted pair of strings </td></tr>
+    <tr><td class="paramname">link_name1</td><td>First link name </td></tr>
+    <tr><td class="paramname">link_name2</td><td>Second link nam </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -3383,7 +3432,7 @@ template&lt;typename FloatType &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Mar 22 2023 15:47:59 for Tesseract by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Thu Mar 30 2023 23:19:55 for Tesseract by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>
