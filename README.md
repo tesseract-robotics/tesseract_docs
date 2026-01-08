@@ -1,5 +1,10 @@
 # tesseract_docs
 
+## ⚠️ Attention
+
+**This project has been archived. Its content is being migrated to Doxygen so the documentation lives alongside the code. The new documentation is a work in progress and is available [here](https://tesseract-robotics.github.io/tesseract/)**
+
+
 ## Build Documentation Locally 
 
 1. Install
