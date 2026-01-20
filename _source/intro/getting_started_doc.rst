@@ -93,7 +93,7 @@ Cloning Source Dependencies with WSTool
 
 Clone the repositories in the dependencies.rosinstall file using wstool: ::
 
-  wstool init ~/tesseract_ws/src/ ~/tesseract_ws/src/tesseract_planning/dependencies.rosinstall
+  wstool init ~/tesseract_ws/src/ ~/tesseract_ws/src/tesseract_planning/dependencies.repos
 
 Installing Debian Dependencies with ROSDep (Optional)
 -----------------------------------------------------
